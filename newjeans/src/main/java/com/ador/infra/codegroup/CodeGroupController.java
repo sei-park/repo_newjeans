@@ -19,6 +19,11 @@ public class CodeGroupController {
 		service.selectList();
 		return "/xdm/v1/infra/codegroup/codeGroupXdmList";
 	}
+	
+	@RequestMapping(value="/xdm/v1/infra/codegroup/codeGroupXdmform")
+	public String codeXdmList() {
+		return "/xdm/v1/infra/codegroup/codeGroupXdmform";
+	}
 
 } 
   

@@ -10,11 +10,11 @@ import com.ador.infra.codegroup.CodeGroupService;
 public class CodeController {
 	
 	@Autowired
-	CodeGroupService service;
+	CodeService service;
 	
-	@RequestMapping(value="/xdm/v1/infra/codegroup/codeGroupXdmform")
+	@RequestMapping(value="/xdm/v1/infra/code/codeGroupXdmList")
 	public String codeXdmList() {
-		return "/xdm/v1/infra/codegroup/codeGroupXdmform";
+		return "/xdm/v1/infra/codegroup/codeXdmList";
 	}
  
 }
