@@ -7,9 +7,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class CodeGroupController {
 	
-	
 	// CodeGroupService codeGroupService = new CodeGroupService
-	@Autowired
+	@Autowired 
 	CodeGroupService service;
 	   
 	@RequestMapping(value="/xdm/v1/infra/codegroup/codeGroupXdmList")
@@ -18,12 +17,12 @@ public class CodeGroupController {
 		// service에 있는 함수를 호출 
 		service.selectList();
 		return "/xdm/v1/infra/codegroup/codeGroupXdmList";
-	}
+	} 
 	
-	@RequestMapping(value="/xdm/v1/infra/codegroup/codeGroupXdmform")
-	public String codeXdmList() {
-		return "/xdm/v1/infra/codegroup/codeGroupXdmform";
-	}
+	@RequestMapping(value="/xdm/v1/infra/codegroup/codeGroupXdmForm")
+	public String codeGroupXdmForm() {
+		return "/xdm/v1/infra/codegroup/codeGroupXdmForm";
+	} 
 
 } 
   
