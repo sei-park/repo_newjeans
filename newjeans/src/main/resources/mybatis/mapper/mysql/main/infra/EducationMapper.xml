@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.ador.infra.educationclass.EducationDao">
+
+	<resultMap type="com.ador.infra.educationclass.EducationDto" id="classResultMapObj"></resultMap>
+	
+	<select id="classList" resultMap="classResultMapObj">
+		select
+			d.seq,
+	        d.educationType,  
+	        d.educationName,
+	        d.educationExpenses,
+	        d.teacher,
+	        d.courseRegStart,
+	        d.courseRegEnd,
+	        d.studyStart,
+	        d.studtEnd,
+	        d.educationPlace,
+	        d.educationContent,
+	        d.regDate,
+	        d.revDate
+		from 
+			class d
+		order by 
+			d.seq desc
+	</select>
+	  
+</mapper>

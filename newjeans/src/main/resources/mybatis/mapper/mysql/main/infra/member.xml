@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.ador.infra.member.MemberDao">
+
+	<resultMap type="com.ador.infra.member.MemberDto" id="memberResultMapObj"></resultMap>
+	
+	<select id="memberList" resultMap="memberResultMapObj">
+		select 
+			c.seq,
+		    c.adminNy,
+		    c.name,
+		    c.id,
+		    c.password,
+		    c.gender,
+		    c.birth,
+		    c.email,
+		    c.number,
+		    c.desc,
+		    c.registerDate,
+		    c.reviseDate
+		from
+			members c
+		order by 
+			c.seq desc
+	</select>
+	  
+</mapper>

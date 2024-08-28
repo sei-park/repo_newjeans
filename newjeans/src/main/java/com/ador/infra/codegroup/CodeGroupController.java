@@ -1,5 +1,7 @@
 package com.ador.infra.codegroup;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -7,22 +9,17 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class CodeGroupController {
 	
-	// CodeGroupService codeGroupService = new CodeGroupService
-	@Autowired 
-	CodeGroupService service;
-	   
+	@Autowired
+	CodeGroupService codeGroupService;
+	
 	@RequestMapping(value="/xdm/v1/infra/codegroup/codeGroupXdmList")
 	public String codeGroupXdmList() {
 		
-		// service에 있는 함수를 호출 
-		service.selectList();
+		List<CodeGroupDto> codegroups = codeGroupService.selectList();
+		
+		System.out.println(codegroups.size());
+		
 		return "/xdm/v1/infra/codegroup/codeGroupXdmList";
-	} 
-	
-	@RequestMapping(value="/xdm/v1/infra/codegroup/codeGroupXdmForm")
-	public String codeGroupXdmForm() {
-		return "/xdm/v1/infra/codegroup/codeGroupXdmForm";
-	} 
+	}
 
-} 
-  
+}

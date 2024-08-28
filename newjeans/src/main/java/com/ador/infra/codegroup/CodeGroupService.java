@@ -1,5 +1,7 @@
 package com.ador.infra.codegroup;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -7,10 +9,11 @@ import org.springframework.stereotype.Service;
 public class CodeGroupService {
 	
 	@Autowired
-	CodeGroupDao dao;
+	CodeGroupDao codeGroupDao;
 	
-	public void selectList() {
-		dao.selectList();
+	public List<CodeGroupDto> selectList() {
+		List<CodeGroupDto> codegroups = codeGroupDao.selectList();
+		return codegroups;
 	}
 
 }

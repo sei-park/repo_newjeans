@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.ador.infra.restaurant.RestaurantDao">
+
+	<resultMap type="com.ador.infra.restaurant.RestaurantDto" id="restresultMapObj"></resultMap>
+	
+	<select id="restaurantList" resultMap="restresultMapObj">
+		select 
+				e.seq,
+		        e.brand,
+		        e.restaurantName,
+		        e.businessHoursStart,
+		        e.businessHoursEnd,
+		        e.tel,
+		        e.internetAddress,
+		        e.parkingNy,
+		        e.bookNy,
+		        e.corkageNy,
+		        e.about,
+		        e.regDate,
+		        e.revDate
+		from 
+				restaurant e
+		order by 
+				e.seq desc
+	</select>
+	  
+</mapper> 
