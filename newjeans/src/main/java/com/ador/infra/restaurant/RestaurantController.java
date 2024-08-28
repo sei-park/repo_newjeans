@@ -17,6 +17,13 @@ public class RestaurantController {
 		
 		List<RestaurantDto> rest = restaurantService.restaurantList();
 		
+		for(RestaurantDto restdto : rest) {
+			System.out.println(restdto.getBrand() + " | " + restdto.getRestaurantName() + " | " + restdto.getBusinessHoursStart()
+			+ " | " + restdto.getBusinessHoursEnd() + " | " + restdto.getTel() + "  | " + restdto.getInternetAddress()
+			+ " | " + restdto.getParkingNy() + " | " + restdto.getBookNy() + " | " + restdto.getCorkageNy()
+			+ " | " + restdto.getAbout() + " | " + restdto.getRegDate() + " | " + restdto.getRevDate());
+		}
+		
 		return "/xdm/v1/infra/restaurant/restaurantInformatoin";
 	}
 

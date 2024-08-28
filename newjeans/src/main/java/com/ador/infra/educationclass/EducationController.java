@@ -18,7 +18,11 @@ public class EducationController {
 		List<EducationDto> eduClass = educationService.classList();
 		
 		for(EducationDto dto : eduClass) {
-			System.out.println(dto.getEducationPlace());
+			System.out.println(dto.getSeq() + " | " + dto.getEducationType() + " | " + dto.getEducationName()+ " | " 
+					+ dto.getEducationExpenses() + " | " + dto.getTeacher() + dto.getCourseRegStart()
+					+ "| " + dto.getCourseRegEnd() + " | " + dto.getStudyStart() + " | " + dto.getStudtEnd()
+					+ " | " + dto.getEducationPlace() + " | " + dto.getEducationContent() + " | " 
+					+ dto.getRegDate() + " | " + dto.getRevDate());
 		}
 		
 		return "/xdm/v1/infra/education/educationclass";
