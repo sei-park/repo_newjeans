@@ -1,6 +1,6 @@
 <!doctype html>
-<html lang="en">
-
+<html lang="en" xmlns:th="http://www.thymeleaf.org"> <!-- thymeleaf 를 사용 -->
+ 
 <head>
 
     <meta charset="utf-8" />
@@ -950,7 +950,7 @@
                                                     <div class="row mb-3 align-items-center">
                                                         <div class="mb-2">
                                                             <!-- <h6>page1 > page2 > Default</h6> -->
-                                                            <h1>Code</h1>
+                                                            <h1>CodeGroup</h1>
                                                         </div>
                                                         <div class="col-md-2">
                                                             <select class="form-select"
@@ -994,7 +994,9 @@
                                                             <select class="form-select"
                                                                 aria-label="Default select example">
                                                                 <option selected>검색구분</option>
-                                                                <option value="1">-</option>
+                                                                <option value="1">1</option>
+                                                                <option value="2">2</option>
+                                                                <option value="3">3</option>
                                                             </select>
                                                         </div>
                                                         <div class="col-md-2">
@@ -1059,8 +1061,14 @@
                                                         <!-- <th style="width: 80px; min-width: 80px;">Action</th> -->
                                                     </tr><!-- end tr -->
                                                 </thead><!-- end thead -->
+                                                <!--  Date 추가  -->
                                                 <tbody>
-                                                    <tr>
+                                                	<tr th:if="${#lists.isEmpty(list)}">
+                                                		<td colspan="10">
+                                                			<p>There are no data!</p>
+                                                		</td>
+                                                	</tr> 
+                                                    <tr th:if="${!#lists.isEmpty(list)}" th:each="list : ${list}">
                                                         <th scope="row">
                                                             <div class="form-check font-size-16">
                                                                 <input type="checkbox" class="form-check-input"
@@ -1069,198 +1077,199 @@
                                                                     for="contacusercheck1"></label>
                                                             </div>
                                                         </th>
-                                                        <td>171</td>
-                                                        <td class="group-code">57</td>
-                                                        <td class="group-name">테테테</td>
-                                                        <td>278</td>
-                                                        <td class="alternate-code">-</td>
-                                                        <td>ㅁㄴㅇㄹ</td>
-                                                        <td class="codeName-eng">-</td>
-                                                        <td class="codeUse">Y</td>
-                                                        <td class="order">1</td>
-                                                        <td>2024-07-17 09:37:10</td>
-                                                    </tr><!-- end tr -->
-                                                    <tr>
-                                                        <th scope="row">
-                                                            <div class="form-check font-size-16">
-                                                                <input type="checkbox" class="form-check-input"
-                                                                    id="contacusercheck2">
-                                                                <label class="form-check-label"
-                                                                    for="contacusercheck2"></label>
-                                                            </div>
-                                                        </th>
-                                                        <td>170</td>
-                                                        <td class="group-code">33</td>
-                                                        <td class="group-name">로그인.로그인UI</td>
-                                                        <td>272</td>
-                                                        <td class="alternate-code">-</td>
-                                                        <td>사용자</td>
-                                                        <td class="codeName-eng">-</td>
-                                                        <td class="codeUse">Y</td>
-                                                        <td class="order">1</td>
-                                                        <td class="regDate">-</td>
-                                                    </tr><!-- end tr -->
-                                                    <tr>
-                                                        <th scope="row">
-                                                            <div class="form-check font-size-16">
-                                                                <input type="checkbox" class="form-check-input"
-                                                                    id="contacusercheck3">
-                                                                <label class="form-check-label"
-                                                                    for="contacusercheck3"></label>
-                                                            </div>
-                                                        </th>
-                                                        <td>169</td>
-                                                        <td class="group-code">33</td>
-                                                        <td class="group-name">로그인.로그인UI</td>
-                                                        <td>273</td>
-                                                        <td class="alternate-code">-</td>
-                                                        <td>관리자</td>
-                                                        <td class="codeName-eng">-</td>
-                                                        <td class="codeUse">Y</td>
-                                                        <td class="order">2</td>
-                                                        <td class="regDate">-</td>
+                                                        <td th:text="${list.ifcgSeq}">171</td>
+                                                        <td th:text="${list.ifcgName}" class="group-code">57</td>
+                                                        <td th:if="${list.ifcgUseNy eq 0}" class="codeUse">N</td>
+                                                        <td th:unless="${list.ifcgUseNy eq 0}" class="codeUse">Y</td>
+                                                        <td th:text="${list.ifcgOrder}" class="group-name">테테테</td>
+                                                        <td th:text="${list.ifcgDesc}" class="alternate-code">-</td>
+                                                        <td th:if="${list.ifcgDelNy eq 0}" class="codeUse">N</td>
+                                                        <td th:unless="${list.ifcgDelNy eq 0}" class="codeUse">Y</td> 
+                                                        <td th:text="${#dates.format(list.regDateTime, 'yyyy-MM-dd HH:mm:ss')}">2024-07-17 09:37:10</td>
+                                                        <td th:text="${#dates.format(list.regDateTimeRevise, 'yyyy-MM-dd HH:mm:ss')}">2024-07-17 09:37:10</td>
+                                                        
                                                     </tr>
+<!--                                                     <tr> -->
+<!--                                                         <th scope="row"> -->
+<!--                                                             <div class="form-check font-size-16"> -->
+<!--                                                                 <input type="checkbox" class="form-check-input" -->
+<!--                                                                     id="contacusercheck2"> -->
+<!--                                                                 <label class="form-check-label" -->
+<!--                                                                     for="contacusercheck2"></label> -->
+<!--                                                             </div> -->
+<!--                                                         </th> -->
+<!--                                                         <td>170</td> -->
+<!--                                                         <td class="group-code">33</td> -->
+<!--                                                         <td class="group-name">로그인.로그인UI</td> -->
+<!--                                                         <td>272</td> -->
+<!--                                                         <td class="alternate-code">-</td> -->
+<!--                                                         <td>사용자</td> -->
+<!--                                                         <td class="codeName-eng">-</td> -->
+<!--                                                         <td class="codeUse">Y</td> -->
+<!--                                                         <td class="order">1</td> -->
+<!--                                                         <td class="regDate">-</td> -->
+<!--                                                     </tr> -->
+<!--                                                     <tr> -->
+<!--                                                         <th scope="row"> -->
+<!--                                                             <div class="form-check font-size-16"> -->
+<!--                                                                 <input type="checkbox" class="form-check-input" -->
+<!--                                                                     id="contacusercheck3"> -->
+<!--                                                                 <label class="form-check-label" -->
+<!--                                                                     for="contacusercheck3"></label> -->
+<!--                                                             </div> -->
+<!--                                                         </th> -->
+<!--                                                         <td>169</td> -->
+<!--                                                         <td class="group-code">33</td> -->
+<!--                                                         <td class="group-name">로그인.로그인UI</td> -->
+<!--                                                         <td>273</td> -->
+<!--                                                         <td class="alternate-code">-</td> -->
+<!--                                                         <td>관리자</td> -->
+<!--                                                         <td class="codeName-eng">-</td> -->
+<!--                                                         <td class="codeUse">Y</td> -->
+<!--                                                         <td class="order">2</td> -->
+<!--                                                         <td class="regDate">-</td> -->
+<!--                                                     </tr> -->
                                                     <!-- end tr -->
-                                                    <tr>
-                                                        <th scope="row">
-                                                            <div class="form-check font-size-16">
-                                                                <input type="checkbox" class="form-check-input"
-                                                                    id="contacusercheck4">
-                                                                <label class="form-check-label"
-                                                                    for="contacusercheck4"></label>
-                                                            </div>
-                                                        </th>
-                                                        <td>168</td>
-                                                        <td class="group-code">32</td>
-                                                        <td class="group-name">qna.타입</td>
-                                                        <td>266</td>
-                                                        <td class="alternate-code">-</td>
-                                                        <td>기타</td>
-                                                        <td class="codeName-eng">-</td>
-                                                        <td class="codeUse">Y</td>
-                                                        <td class="order">1</td>
-                                                        <td class="regDate">-</td>
-                                                    </tr><!-- end tr -->
-                                                    <tr>
-                                                        <th scope="row">
-                                                            <div class="form-check font-size-16">
-                                                                <input type="checkbox" class="form-check-input"
-                                                                    id="contacusercheck5">
-                                                                <label class="form-check-label"
-                                                                    for="contacusercheck5"></label>
-                                                            </div>
-                                                        </th>
-                                                        <td>167</td>
-                                                        <td class="group-code">31</td>
-                                                        <td class="group-name">qna.상태</td>
-                                                        <td>262</td>
-                                                        <td class="alternate-code">-</td>
-                                                        <td>미확인</td>
-                                                        <td class="codeName-eng">-</td>
-                                                        <td class="codeUse">Y</td>
-                                                        <td class="order">1</td>
-                                                        <td class="regDate">-</td>
-                                                    </tr><!-- end tr -->
-                                                    <tr>
-                                                        <th scope="row">
-                                                            <div class="form-check font-size-16">
-                                                                <input type="checkbox" class="form-check-input"
-                                                                    id="contacusercheck6">
-                                                                <label class="form-check-label"
-                                                                    for="contacusercheck6"></label>
-                                                            </div>
-                                                        </th>
-                                                        <td>161</td>
-                                                        <td class="group-code">29</td>
-                                                        <td class="group-name">몰.자전거.구동방식</td>
-                                                        <td>253</td>
-                                                        <td class="alternate-code">-</td>
-                                                        <td>인간</td>
-                                                        <td class="codeName-eng">-</td>
-                                                        <td class="codeUse">Y</td>
-                                                        <td class="order">1</td>
-                                                        <td class="regDate">-</td>
-                                                    </tr><!-- end tr -->
-                                                    <tr>
-                                                        <th scope="row">
-                                                            <div class="form-check font-size-16">
-                                                                <input type="checkbox" class="form-check-input"
-                                                                    id="contacusercheck7">
-                                                                <label class="form-check-label"
-                                                                    for="contacusercheck7"></label>
-                                                            </div>
-                                                        </th>
-                                                        <td>160</td>
-                                                        <td class="group-code">29</td>
-                                                        <td class="group-name">몰.자전거.구동방식</td>
-                                                        <td>254</td>
-                                                        <td class="alternate-code">-</td>
-                                                        <td>전기</td>
-                                                        <td class="codeName-eng">-</td>
-                                                        <td class="codeUse">Y</td>
-                                                        <td class="order">2</td>
-                                                        <td class="regDate">-</td>
-                                                    </tr><!-- end tr -->
-                                                    <tr>
-                                                        <th scope="row">
-                                                            <div class="form-check font-size-16">
-                                                                <input type="checkbox" class="form-check-input"
-                                                                    id="contacusercheck8">
-                                                                <label class="form-check-label"
-                                                                    for="contacusercheck8"></label>
-                                                            </div>
-                                                        </th>
-                                                        <td>159</td>
-                                                        <td class="group-code">28</td>
-                                                        <td class="group-name">몰.자전거.타이어</td>
-                                                        <td>248</td>
-                                                        <td class="alternate-code">-</td>
-                                                        <td>클린쳐</td>
-                                                        <td class="codeName-eng">clincher</td>
-                                                        <td class="codeUse">Y</td>
-                                                        <td class="order">1</td>
-                                                        <td class="regDate">-</td>
-                                                    </tr><!-- end tr -->
-                                                    <tr>
-                                                        <th scope="row">
-                                                            <div class="form-check font-size-16">
-                                                                <input type="checkbox" class="form-check-input"
-                                                                    id="contacusercheck9">
-                                                                <label class="form-check-label"
-                                                                    for="contacusercheck9"></label>
-                                                            </div>
-                                                        </th>
-                                                        <td>158</td>
-                                                        <td class="group-code">28</td>
-                                                        <td class="group-name">몰.자전거.타이어</td>
-                                                        <td>249</td>
-                                                        <td class="alternate-code">-</td>
-                                                        <td>튜브리스</td>
-                                                        <td class="codeName-eng">Tubeless</td>
-                                                        <td class="codeUse">Y</td>
-                                                        <td class="order">2</td>
-                                                        <td class="regDate">-</td>
-                                                    </tr><!-- end tr -->
-                                                    <tr>
-                                                        <th scope="row">
-                                                            <div class="form-check font-size-16">
-                                                                <input type="checkbox" class="form-check-input"
-                                                                    id="contacusercheck10">
-                                                                <label class="form-check-label"
-                                                                    for="contacusercheck10"></label>
-                                                            </div>
-                                                        </th>
-                                                        <td>157</td>
-                                                        <td class="group-code">28</td>
-                                                        <td class="group-name">몰.자전거.타이어</td>
-                                                        <td>250</td>
-                                                        <td class="alternate-code">-</td>
-                                                        <td>튜블러</td>
-                                                        <td class="codeName-eng">Tubular</td>
-                                                        <td class="codeUse">Y</td>
-                                                        <td class="order">3</td>
-                                                        <td class="regDate">-</td>
-                                                    </tr><!-- end tr -->
+<!--                                                     <tr> -->
+<!--                                                         <th scope="row"> -->
+<!--                                                             <div class="form-check font-size-16"> -->
+<!--                                                                 <input type="checkbox" class="form-check-input" -->
+<!--                                                                     id="contacusercheck4"> -->
+<!--                                                                 <label class="form-check-label" -->
+<!--                                                                     for="contacusercheck4"></label> -->
+<!--                                                             </div> -->
+<!--                                                         </th> -->
+<!--                                                         <td>168</td> -->
+<!--                                                         <td class="group-code">32</td> -->
+<!--                                                         <td class="group-name">qna.타입</td> -->
+<!--                                                         <td>266</td> -->
+<!--                                                         <td class="alternate-code">-</td> -->
+<!--                                                         <td>기타</td> -->
+<!--                                                         <td class="codeName-eng">-</td> -->
+<!--                                                         <td class="codeUse">Y</td> -->
+<!--                                                         <td class="order">1</td> -->
+<!--                                                         <td class="regDate">-</td> -->
+<!--                                                     </tr> -->
+<!--                                                     <tr> -->
+<!--                                                         <th scope="row"> -->
+<!--                                                             <div class="form-check font-size-16"> -->
+<!--                                                                 <input type="checkbox" class="form-check-input" -->
+<!--                                                                     id="contacusercheck5"> -->
+<!--                                                                 <label class="form-check-label" -->
+<!--                                                                     for="contacusercheck5"></label> -->
+<!--                                                             </div> -->
+<!--                                                         </th> -->
+<!--                                                         <td>167</td> -->
+<!--                                                         <td class="group-code">31</td> -->
+<!--                                                         <td class="group-name">qna.상태</td> -->
+<!--                                                         <td>262</td> -->
+<!--                                                         <td class="alternate-code">-</td> -->
+<!--                                                         <td>미확인</td> -->
+<!--                                                         <td class="codeName-eng">-</td> -->
+<!--                                                         <td class="codeUse">Y</td> -->
+<!--                                                         <td class="order">1</td> -->
+<!--                                                         <td class="regDate">-</td> -->
+<!--                                                     </tr> -->
+<!--                                                     <tr> -->
+<!--                                                         <th scope="row"> -->
+<!--                                                             <div class="form-check font-size-16"> -->
+<!--                                                                 <input type="checkbox" class="form-check-input" -->
+<!--                                                                     id="contacusercheck6"> -->
+<!--                                                                 <label class="form-check-label" -->
+<!--                                                                     for="contacusercheck6"></label> -->
+<!--                                                             </div> -->
+<!--                                                         </th> -->
+<!--                                                         <td>161</td> -->
+<!--                                                         <td class="group-code">29</td> -->
+<!--                                                         <td class="group-name">몰.자전거.구동방식</td> -->
+<!--                                                         <td>253</td> -->
+<!--                                                         <td class="alternate-code">-</td> -->
+<!--                                                         <td>인간</td> -->
+<!--                                                         <td class="codeName-eng">-</td> -->
+<!--                                                         <td class="codeUse">Y</td> -->
+<!--                                                         <td class="order">1</td> -->
+<!--                                                         <td class="regDate">-</td> -->
+<!--                                                     </tr>end tr -->
+<!--                                                     <tr> -->
+<!--                                                         <th scope="row"> -->
+<!--                                                             <div class="form-check font-size-16"> -->
+<!--                                                                 <input type="checkbox" class="form-check-input" -->
+<!--                                                                     id="contacusercheck7"> -->
+<!--                                                                 <label class="form-check-label" -->
+<!--                                                                     for="contacusercheck7"></label> -->
+<!--                                                             </div> -->
+<!--                                                         </th> -->
+<!--                                                         <td>160</td> -->
+<!--                                                         <td class="group-code">29</td> -->
+<!--                                                         <td class="group-name">몰.자전거.구동방식</td> -->
+<!--                                                         <td>254</td> -->
+<!--                                                         <td class="alternate-code">-</td> -->
+<!--                                                         <td>전기</td> -->
+<!--                                                         <td class="codeName-eng">-</td> -->
+<!--                                                         <td class="codeUse">Y</td> -->
+<!--                                                         <td class="order">2</td> -->
+<!--                                                         <td class="regDate">-</td> -->
+<!--                                                     </tr>end tr -->
+<!--                                                     <tr> -->
+<!--                                                         <th scope="row"> -->
+<!--                                                             <div class="form-check font-size-16"> -->
+<!--                                                                 <input type="checkbox" class="form-check-input" -->
+<!--                                                                     id="contacusercheck8"> -->
+<!--                                                                 <label class="form-check-label" -->
+<!--                                                                     for="contacusercheck8"></label> -->
+<!--                                                             </div> -->
+<!--                                                         </th> -->
+<!--                                                         <td>159</td> -->
+<!--                                                         <td class="group-code">28</td> -->
+<!--                                                         <td class="group-name">몰.자전거.타이어</td> -->
+<!--                                                         <td>248</td> -->
+<!--                                                         <td class="alternate-code">-</td> -->
+<!--                                                         <td>클린쳐</td> -->
+<!--                                                         <td class="codeName-eng">clincher</td> -->
+<!--                                                         <td class="codeUse">Y</td> -->
+<!--                                                         <td class="order">1</td> -->
+<!--                                                         <td class="regDate">-</td> -->
+<!--                                                     </tr>end tr -->
+<!--                                                     <tr> -->
+<!--                                                         <th scope="row"> -->
+<!--                                                             <div class="form-check font-size-16"> -->
+<!--                                                                 <input type="checkbox" class="form-check-input" -->
+<!--                                                                     id="contacusercheck9"> -->
+<!--                                                                 <label class="form-check-label" -->
+<!--                                                                     for="contacusercheck9"></label> -->
+<!--                                                             </div> -->
+<!--                                                         </th> -->
+<!--                                                         <td>158</td> -->
+<!--                                                         <td class="group-code">28</td> -->
+<!--                                                         <td class="group-name">몰.자전거.타이어</td> -->
+<!--                                                         <td>249</td> -->
+<!--                                                         <td class="alternate-code">-</td> -->
+<!--                                                         <td>튜브리스</td> -->
+<!--                                                         <td class="codeName-eng">Tubeless</td> -->
+<!--                                                         <td class="codeUse">Y</td> -->
+<!--                                                         <td class="order">2</td> -->
+<!--                                                         <td class="regDate">-</td> -->
+<!--                                                     </tr>end tr -->
+<!--                                                     <tr> -->
+<!--                                                         <th scope="row"> -->
+<!--                                                             <div class="form-check font-size-16"> -->
+<!--                                                                 <input type="checkbox" class="form-check-input" -->
+<!--                                                                     id="contacusercheck10"> -->
+<!--                                                                 <label class="form-check-label" -->
+<!--                                                                     for="contacusercheck10"></label> -->
+<!--                                                             </div> -->
+<!--                                                         </th> -->
+<!--                                                         <td>157</td> -->
+<!--                                                         <td class="group-code">28</td> -->
+<!--                                                         <td class="group-name">몰.자전거.타이어</td> -->
+<!--                                                         <td>250</td> -->
+<!--                                                         <td class="alternate-code">-</td> -->
+<!--                                                         <td>튜블러</td> -->
+<!--                                                         <td class="codeName-eng">Tubular</td> -->
+<!--                                                         <td class="codeUse">Y</td> -->
+<!--                                                         <td class="order">3</td> -->
+<!--                                                         <td class="regDate">-</td> -->
+<!--                                                     </tr>end tr -->
                                                 </tbody><!-- end tbody -->
                                             </table><!-- end table -->
                                         </div><!-- end table responsive -->

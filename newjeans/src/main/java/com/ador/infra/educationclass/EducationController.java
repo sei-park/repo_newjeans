@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
@@ -13,17 +14,18 @@ public class EducationController {
 	EducationService educationService;
 	
 	@RequestMapping(value="/xdm/v1/infra/education/educationclass")
-	public String educationclass() {
-		
+	public String educationclass(Model model) {
+		  
 		List<EducationDto> eduClass = educationService.classList();
+		model.addAttribute("eduClasslist", eduClass);
 		
-		for(EducationDto dto : eduClass) {
-			System.out.println(dto.getSeq() + " | " + dto.getEducationType() + " | " + dto.getEducationName()+ " | " 
-					+ dto.getEducationExpenses() + " | " + dto.getTeacher() + dto.getCourseRegStart()
-					+ "| " + dto.getCourseRegEnd() + " | " + dto.getStudyStart() + " | " + dto.getStudtEnd()
-					+ " | " + dto.getEducationPlace() + " | " + dto.getEducationContent() + " | " 
-					+ dto.getRegDate() + " | " + dto.getRevDate());
-		}
+//		for(EducationDto dto : eduClass) {
+//			System.out.println(dto.getSeq() + " | " + dto.getEducationType() + " | " + dto.getEducationName()+ " | " 
+//					+ dto.getEducationExpenses() + " | " + dto.getTeacher() + dto.getCourseRegStart()
+//					+ "| " + dto.getCourseRegEnd() + " | " + dto.getStudyStart() + " | " + dto.getStudtEnd()
+//					+ " | " + dto.getEducationPlace() + " | " + dto.getEducationContent() + " | " 
+//					+ dto.getRegDate() + " | " + dto.getRevDate());
+//		}
 		
 		return "/xdm/v1/infra/education/educationclass";
 	}

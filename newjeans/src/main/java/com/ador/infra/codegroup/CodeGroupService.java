@@ -15,5 +15,10 @@ public class CodeGroupService {
 		List<CodeGroupDto> codegroups = codeGroupDao.selectList();
 		return codegroups;
 	}
+	
+	// 줄여서 쓰는 방법 
+//	public List<CodeGroupDto> selectList() {
+//		return codeGroupDao.selectList();
+//	}
 
 }
