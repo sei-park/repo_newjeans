@@ -13,6 +13,7 @@ public class CodeGroupController {
 	@Autowired
 	CodeGroupService codeGroupService;
 	
+	// 리스트
 	@RequestMapping(value="/xdm/v1/infra/codegroup/codeGroupXdmList")
 	public String codeGroupXdmList(Model model) {
 		
@@ -25,6 +26,22 @@ public class CodeGroupController {
 //		System.out.println(codegroups.size());
 		
 		return "/xdm/v1/infra/codegroup/codeGroupXdmList";
+	}
+	
+	// 폼  
+	@RequestMapping(value="/xdm/v1/infra/codegroup/codeGroupXdmForm")
+	public String codeGroupXdmForm() {		
+		return "/xdm/v1/infra/codegroup/codeGroupXdmForm";
+	}
+	
+	@RequestMapping(value="/xdm/v1/infra/codegroup/codeGroupXdmInst")
+	public String codeGroupXdmInst(CodeGroupDto codeGroupDto) {
+		 
+		System.out.println(codeGroupDto.getIfcgName());
+		
+		codeGroupService.insert(codeGroupDto); 
+		
+		return "redirect:/xdm/v1/infra/codegroup/codeGroupXdmList";
 	}
 
 }

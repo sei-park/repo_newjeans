@@ -16,10 +16,31 @@
 	        a.regDateTime,
 	        a.regDateTimeRevise
 		FROM
-			newjeans.codegroup a	
+			newjeans.codegroup a
 		ORDER BY 
 			a.ifcgSeq desc 
 	</select>
+	
+	<insert id="insert">
+		insert into codegroup (
+	        ifcgName,
+	        ifcgUseNy,
+	        ifcgOrder,
+	        ifcgDesc,
+	        ifcgDelNy,
+	        regDateTime,
+	        regDateTimeRevise
+		) values (
+			"뉴진스",
+		    1,
+		    1,
+		    null,
+		    1,
+		    now(),
+			now()
+		)
+
+	</insert>
 
 	
 	   

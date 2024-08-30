@@ -7,13 +7,16 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.ador.infra.codegroup.CodeGroupDto;
+
 @Controller
 public class MemberController {
 	 
 	@Autowired
 	MemberService memberService;
 	
-	@RequestMapping(value="/xdm/v1/infra/members/member")
+	// 리스트
+	@RequestMapping(value="/xdm/v1/infra/members/membersList")
 	public String member(Model model) {
 		
 		List<MemberDto> members = memberService.memberList();
@@ -27,7 +30,23 @@ public class MemberController {
 //			
 //		}
 		
-		return "/xdm/v1/infra/members/member";
+		return "/xdm/v1/infra/members/membersList";
 	}
+	
+	// 폼  
+	@RequestMapping(value="/xdm/v1/infra/members/membersForm")
+	public String codeGroupXdmForm() {	
+		
+		return "/xdm/v1/infra/members/membersForm";
+	}
+	
+	@RequestMapping(value="/xdm/v1/infra/members/membersXdmInst")
+	public String membersXdmInst() {
+			
+		return "redirect:/xdm/v1/infra/members/membersList";
+	}
+	
+
+
 
 }

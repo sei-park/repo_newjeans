@@ -8,5 +8,7 @@ import org.springframework.stereotype.Repository;
 public interface MemberDao {
 	
 	public List<MemberDto> memberList();
+	
+	public int insert(MemberDto memberDto);
 
 }
