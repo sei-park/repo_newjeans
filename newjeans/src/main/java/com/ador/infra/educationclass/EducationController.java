@@ -13,22 +13,40 @@ public class EducationController {
 	@Autowired
 	EducationService educationService;
 	
-	@RequestMapping(value="/xdm/v1/infra/education/educationclass")
+	// 리스트
+	@RequestMapping(value="/xdm/v1/infra/education/educationList")
 	public String educationclass(Model model) {
 		  
 		List<EducationDto> eduClass = educationService.classList();
 		model.addAttribute("eduClasslist", eduClass);
 		
-//		for(EducationDto dto : eduClass) {
-//			System.out.println(dto.getSeq() + " | " + dto.getEducationType() + " | " + dto.getEducationName()+ " | " 
-//					+ dto.getEducationExpenses() + " | " + dto.getTeacher() + dto.getCourseRegStart()
-//					+ "| " + dto.getCourseRegEnd() + " | " + dto.getStudyStart() + " | " + dto.getStudtEnd()
-//					+ " | " + dto.getEducationPlace() + " | " + dto.getEducationContent() + " | " 
-//					+ dto.getRegDate() + " | " + dto.getRevDate());
-//		}
-		
-		return "/xdm/v1/infra/education/educationclass";
+		return "/xdm/v1/infra/education/educationList";
 	}
-	 
+	
+	// 폼
+	@RequestMapping(value="/xdm/v1/infra/education/educationForm")
+	public String educationForm( ) {
+		return "/xdm/v1/infra/education/educationForm";
+	}
+	
+
+	@RequestMapping(value="/xdm/v1/infra/education/educationXdmInst")
+	public String educationXdmInst(EducationDto educationDto) {
+		
+		System.out.println(educationDto.getEducationName());
+		
+		educationService.classInsert(educationDto);
+	
+		return "redirect:/xdm/v1/infra/education/educationList";
+	}
+	
+	// ------------------------------------------------------
+	@RequestMapping("/xdm/v1/infra/education/educationMForm")
+	public String educationMForm() {
+		
+		return "/xdm/v1/infra/education/educationMForm";
+	}
+	
+	
 
 }

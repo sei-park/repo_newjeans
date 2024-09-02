@@ -16,7 +16,7 @@
 		    c.birth,
 		    c.email,
 		    c.number,
-		    c.desc,
+		    c.explanation,
 		    c.registerDate,
 		    c.reviseDate
 		from
@@ -27,29 +27,29 @@
 	
 	<insert id="membersInsert">
 		insert into members (
-		    adminNy,
-		    name,
-		    id,
-		    password,
-		    gender,
-		    birth,
-		    email,
-		    number,
-		    desc,
-		    registerDate,
-		    reviseDate
+			    adminNy,
+			    name,
+			    id,
+			    password,
+			    gender,
+			    birth,
+			    email,
+			    number,
+			    explanation,
+			    registerDate,
+			    reviseDate
 		) values (
-		    1,
-			"관리자",
-		    "tpdlqkr",
-		    "sei123",
-			"여자",
-		    "1996-12-10",
-		    "tpdlqkr@naver.com",
-		    "010-8310-2959",
-		    "관리자 입니다.",
-		    now(),
-		    now()
+			    1,
+				"관리자",
+			    "tpdlqkr",
+			    "sei123",
+				"여자",
+			    "1996-12-10",
+			    "tpdlqkr@naver.com",
+			    "010-8310-2959",
+			    null,
+			    now(),
+			    now()
 		)
 	
 

@@ -9,6 +9,6 @@ public interface MemberDao {
 	
 	public List<MemberDto> memberList();
 	
-	public int insert(MemberDto memberDto);
+	public int membersInsert(MemberDto memberDto);
 
 }

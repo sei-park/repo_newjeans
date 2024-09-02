@@ -16,8 +16,8 @@ public class MemberService {
 		return members;
 	}
 	
-	public int insert(MemberDto memberDto) {
-		return memberDao.insert(memberDto);
+	public int membersInsert(MemberDto memberDto) {
+		return memberDao.membersInsert(memberDto);
 	}
  
 }

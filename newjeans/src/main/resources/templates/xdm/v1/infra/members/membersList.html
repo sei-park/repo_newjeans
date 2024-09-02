@@ -1066,7 +1066,7 @@
                                                 <!--  Date 추가  -->
                                                 <tbody>
                                                 	<tr th:if="${#lists.isEmpty(memberlist)}">
-                                                		<td colspan="10">
+                                                		<td colspan="12">
                                                 			<p>There are no data!</p>
                                                 		</td>
                                                 	</tr> 
@@ -1082,14 +1082,14 @@
                                                         <td th:if="${list.adminNy eq 0}" class="codeUse">관리자</td>
                                                         <td th:unless="${list.adminNy eq 0}" class="codeUse">방문자</td>
                                                         <td th:text="${list.seq}" class="group-name">테테테</td>
-                                                        <td th:text="${list.name}" class="alternate-code">-</td>
+                                                        <td class="alternate-code"><a th:href="@{/xdm/v1/infra/members/membersMForm(seq=${list.seq})}" th:text="${list.name}"></a></td>
                                                     	<td th:text="${list.id}" class="alternate-code">-</td>
                                                     	<td th:text="${list.password}" class="alternate-code">-</td>
                                                     	<td th:text="${list.gender}" class="alternate-code">-</td>
                                                     	<td th:text="${list.birth}" class="alternate-code">-</td>
                                                     	<td th:text="${list.email}" class="alternate-code">-</td>
                                                     	<td th:text="${list.number}" class="alternate-code">-</td>
-                                                    	<td th:text="${list.desc}" class="alternate-code">-</td>
+                                                    	<td th:text="${list.explanation}" class="alternate-code">-</td>
                                                         <td th:text="${#dates.format(list.registerDate, 'yyyy-MM-dd HH:mm:ss')}"></td>
                                                         <td th:text="${#dates.format(list.reviseDate, 'yyyy-MM-dd HH:mm:ss')}"></td>
                                                         

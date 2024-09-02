@@ -13,20 +13,22 @@ public class CodeGroupController {
 	@Autowired
 	CodeGroupService codeGroupService;
 	
-	// 리스트
+    // 리스트
 	@RequestMapping(value="/xdm/v1/infra/codegroup/codeGroupXdmList")
 	public String codeGroupXdmList(Model model) {
 		
 		// 스프링에서 만든는 클래스는 모두 선언 클래스
 	    // Controller 에서 받은 객체를 html 에 넘기기 위해서는 Model 객체 사용해야 함 
 		List<CodeGroupDto> codegroups = codeGroupService.selectList();
+													
 		model.addAttribute("list", codegroups); // list : html 에서 쓰일 변수명		
-//		model.addAttribute("list", codeGroupService.selectList());
+	   //model.addAttribute("list", codeGroupService.selectList());
 		  
-//		System.out.println(codegroups.size());
+	   //System.out.println(codegroups.size()); 
 		
 		return "/xdm/v1/infra/codegroup/codeGroupXdmList";
 	}
+	
 	
 	// 폼  
 	@RequestMapping(value="/xdm/v1/infra/codegroup/codeGroupXdmForm")
@@ -42,6 +44,14 @@ public class CodeGroupController {
 		codeGroupService.insert(codeGroupDto); 
 		
 		return "redirect:/xdm/v1/infra/codegroup/codeGroupXdmList";
+	}
+	
+	// ---------------------------------------------------------------
+	
+	// M폼  
+	@RequestMapping(value="/xdm/v1/infra/codegroup/codeGroupXdmMForm")
+	public String codeGroupXdmMForm() {
+		return "/xdm/v1/infra/codegroup/codeGroupXdmMForm";
 	}
 
 }

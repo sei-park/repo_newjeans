@@ -25,5 +25,36 @@
 		order by 
 			d.seq desc
 	</select>
+	
+	<insert id="classInsert">
+		insert into class (
+			educationType,  
+	        educationName,
+	        educationExpenses,
+	        teacher,
+	        courseRegStart,
+	        courseRegEnd,
+	        studyStart,
+	        studtEnd,
+	        educationPlace,
+	        educationContent,
+	        regDate,
+	        revDate
+		) values (
+			 "온라인 교육",
+			 "자바",
+			 "100만원",
+			 "Tony",
+			 now(),	
+			 now(),
+			 now(),
+			 now(),
+			 "이젠아카데미 노원점",
+			 "기업의 자동화",
+			 now(),
+			 now()
+		)
+		 
+	</insert>
 	  
 </mapper>

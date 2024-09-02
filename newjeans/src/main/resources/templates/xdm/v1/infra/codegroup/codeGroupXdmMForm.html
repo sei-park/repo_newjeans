@@ -1,15 +1,24 @@
-<!doctype html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org"> <!-- thymeleaf 를 사용 -->
- 
+ <!doctype html>
+<html lang="en">
+
 <head>
 
     <meta charset="utf-8" />
-    <title>User List | Dashonic - Admin & Dashboard Template</title>
+    <title>Form Advanced Plugins | Dashonic - Admin & Dashboard Template</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
     <meta content="Pichforest" name="author" />
     <!-- App favicon -->
     <link rel="shortcut icon" href="/xdm/v1/template/ui/assets/images/favicon.ico">
+
+    <!-- plugin css -->
+    <link href="/xdm/v1/template/ui/assets/libs/choices.js/public//xdm/v1/template/ui/assets/styles/choices.min.css" rel="stylesheet" type="text/css" />
+    <link href="/xdm/v1/template/ui/assets/libs/flatpickr/flatpickr.min.css" rel="stylesheet">
+
+    <!-- One of the following themes -->
+    <link rel="stylesheet" href="/xdm/v1/template/ui/assets/libs/@simonwep/pickr/themes/classic.min.css" /> <!-- 'classic' theme -->
+    <link rel="stylesheet" href="/xdm/v1/template/ui/assets/libs/@simonwep/pickr/themes/monolith.min.css" /> <!-- 'monolith' theme -->
+    <link rel="stylesheet" href="/xdm/v1/template/ui/assets/libs/@simonwep/pickr/themes/nano.min.css" /> <!-- 'nano' theme -->
 
     <!-- Bootstrap Css -->
     <link href="/xdm/v1/template/ui/assets/css/bootstrap.min.css" id="bootstrap-style" rel="stylesheet" type="text/css" />
@@ -20,18 +29,11 @@
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font/bootstrap-icons.css">
 
-
-
 </head>
 
 <style>
-    .container {
-        margin-left: -20px;
-    } 
 
-    .pagination {
-        padding-left: 35%;
-    }
+
 </style>
 
 
@@ -923,585 +925,416 @@
                     <!-- start page title -->
                     <div class="row">
                         <div class="col-12">
-                            <!-- <div class="page-title-box d-flex align-items-center justify-content-between">
-                                <h4 class="mb-0">User List</h4>
-
-                                <div class="page-title-right">
-                                    <ol class="breadcrumb m-0">
-                                        <li class="breadcrumb-item"><a href="javascript: void(0);">Contacts</a></li>
-                                        <li class="breadcrumb-item active">User List</li>
-                                    </ol>
+                            <div class="page-title-box d-flex align-items-center justify-content-between">
+                                <div class="mb-0">
+                                    <!-- <h6><span>page1</span> > <span>page2</span> > Default</h6> -->
+                                    <!-- <h1>Code</h1> -->
                                 </div>
-
-                            </div> -->
+                            </div>
                         </div>
                     </div>
                     <!-- end page title -->
 
+                    <!--input-->
                     <div class="row">
-                        <div> <!--  class="col-lg-12" -->
+                        <div class="col-12"><!--col-12-->
                             <div class="card">
+                                <div class="card-header justify-content-between d-flex align-items-center">
+                                    <h1>Code Group M</h1><!--card-title-->
+                                </div><!-- end card header -->
+								
+								<!--  Form 추가 --> <!-- form 태그 안에 novalidate  class="needs-validation" -->
                                 <div class="card-body">
-                                    <div class="row">
-                                        <div> <!--  class="col-md-10" -->
-
-                                            <from>
-                                                <div class="container"> <!--input 추가-->
-                                                    <div class="row mb-3 align-items-center">
-                                                        <div class="mb-2">
-                                                            <!-- <h6>page1 > page2 > Default</h6> -->
-                                                            <h1>CodeGroup</h1>
-                                                        </div>
-                                                        <div class="col-md-2">
-                                                            <select class="form-select"
-                                                                aria-label="Default select example">
-                                                                <option selected>Y</option>
-                                                                <option value="1">N</option>
-                                                            </select>
-                                                        </div>
-                                                        <div class="col-md-2">
-                                                            <select class="form-select"
-                                                                aria-label="Default select example">
-                                                                <option selected>Y</option>
-                                                                <option value="1">N</option>
-                                                            </select>
-                                                        </div>
-                                                        <div class="col-md-2">
-                                                            <select class="form-select"
-                                                                aria-label="Default select example">
-                                                                <option selected>수정일</option>
-                                                                <option value="1">-</option>
-                                                            </select>
-                                                        </div>
-                                                        <div class="col-md-2">
-                                                            <div class="input-group flex-nowrap">
-                                                                <input type="text" class="form-control"
-                                                                    placeholder="2024-06-05" aria-label="Username"
-                                                                    aria-describedby="addon-wrapping">
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-md-2">
-                                                            <div class="input-group flex-nowrap">
-                                                                <input type="text" class="form-control"
-                                                                    placeholder="2024-07-05" aria-label="Username"
-                                                                    aria-describedby="addon-wrapping">
-                                                            </div>
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="row mb-3 align-items-center">
-                                                        <div class="col-md-2">
-                                                            <select class="form-select"
-                                                                aria-label="Default select example">
-                                                                <option selected>검색구분</option>
-                                                                <option value="1">1</option>
-                                                                <option value="2">2</option>
-                                                                <option value="3">3</option>
-                                                            </select>
-                                                        </div>
-                                                        <div class="col-md-2">
-                                                            <div class="input-group flex-nowrap ">
-                                                                <input type="text" class="form-control"
-                                                                    placeholder="검색어" aria-label="Username"
-                                                                    aria-describedby="addon-wrapping">
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-md-2" align="left">
-                                                            <button type="button" class="btn btn-outline-dark">
-                                                                <i class="uil-search"></i>
-                                                            </button>
-                                                            <button type="button" class="btn btn-outline-dark">
-                                                                <i class="uil-corner-down-left"></i>
-                                                            </button>
-                                                        </div>
-                                                    </div>
+                                    <form method="post" action="/xdm/v1/infra/codegroup/codeGroupXdmInst">
+                                        <div class="row"> <!--col-md-8-->
+                                            <div class="row">
+                                                <div class="col-md-3"><!--col-md-6-->
+                                                    <label for="choices-single-default"
+                                                        class="form-label font-size-13 text-muted">사용여부
+                                                        <sup>*</sup>
+                                                    </label>
+                                                    <select class="form-select" name="ifcgUseNy">
+                                                        <option value="1" th:selected="${item?.ifcgUseNy == 1}">사용</option>
+                                                        <option value="0" th:selected="${item?.ifcgUseNy == 0}">미사용</option>
+                                                    </select>
                                                 </div>
-                                                <div class="row mb-3">
-                                                    <div class="col-md-2" style="padding-top: 10px;">
-                                                        <h5 class="card-title">Total<span
-                                                                class="text-muted fw-normal ms-2">(834)</span></h5>
-                                                    </div>
+                                            </div>
 
-                                                    <div class="col-md-8"></div>
-
-                                                    <div class="col-md-2">
-                                                        <select class="form-select" aria-label="Default select example">
-                                                            <option selected>5</option>
-                                                            <option value="1">-</option>
-                                                        </select>
-                                                    </div>
+                                            <div class="row gy-3">
+                                                <div class="col-md-3"> <!--col-mb-3-->
+                                                    <label for="choices-single-groups"
+                                                        class="form-label font-size-13 text-muted">코드그룹번호</label>
+                                                    <input type="text" class="form-control" id="validationCustom01"
+                                                        placeholder="" value=""  name="ifcgSeq"> <!--  required -->
+                                                    <div class="valid-feedback">Looks good!</div>
                                                 </div>
-                                            </from>
+                                                <div class="col-md-3"> <!--col-mb-3-->
+                                                    <label for=" choices-single-groups"
+                                                        class="form-label font-size-13 text-muted">코드그룹이름</label>
+                                                    <input type="text" class="form-control" id="validationCustom03"
+                                                        placeholder=""  name="ifcgName"> <!--  required -->
+                                                    <div class="invalid-feedback">Please provide a valid city.</div>
+                                                </div>
+                                                <div class="col-md-3"> <!--col-mb-3-->
+                                                    <label for=" choices-single-groups"
+                                                        class="form-label font-size-13 text-muted">등록일</label>
+                                                    <input type="text" class="form-control" id="validationCustom03"
+                                                        placeholder="" > <!--  required -->
+                                                    <div class="invalid-feedback">Please provide a valid city. </div>
+                                                </div>
+                                                <div class="col-md-3"> <!--col-mb-3-->
+                                                    <label for=" choices-single-groups"
+                                                        class="form-label font-size-13 text-muted">수정일</label>
+                                                    <input type="text" class="form-control" id="validationCustom03"
+                                                        placeholder=""> <!--  required -->
+                                                    <div class="invalid-feedback">Please provide a valid city. </div>
+                                                </div>
+                                            </div>
 
+                                            <div class="row gy-3">
+                                                <div class=" col-md-3"><!--col-md-6-->
+                                                    <label for="choices-single-default"
+                                                        class="form-label font-size-13 text-muted">삭제여부</label>
+                                                    <select class="form-select">
+                                                        <option>사용</option>
+                                                        <option>미사용</option>
+                                                    </select>
+                                                </div>
+                                                <div class="col-md-3"><!--col-md-6-->
+                                                    <label for="choices-single-groups"
+                                                        class="form-label font-size-13 text-muted">순서</label>
+                                                    <input class="form-control" type="text" value=""
+                                                        id="example-text-input">
+                                                </div>
+                                            </div>
 
-                                        </div><!--col-md-6 -->
+                                            <div class="row gy-3">
+                                                <div class="col-md-6">
+                                                    <label for="choices-single-groups"class="form-label font-size-13 text-muted">설명</label>
+                                                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                                                </div>
+                                            </div>
 
-                                        <div class="table-responsive"> <!--리스트 시작-->
+<!--                                             <div class="row gy-3"> -->
+<!--                                                 <div class="col-md-3">col-md-6 -->
+<!--                                                     <label for="choices-single-groups" -->
+<!--                                                         class="form-label font-size-13 text-muted">다국어1</label> -->
+<!--                                                     <input class="form-control" type="text" value="" -->
+<!--                                                         id="example-text-input"> -->
+<!--                                                 </div> -->
+<!--                                                 <div class="col-md-3">col-md-6 -->
+<!--                                                     <label for="choices-single-groups" -->
+<!--                                                         class="form-label font-size-13 text-muted">다국어2</label> -->
+<!--                                                     <input class="form-control" type="text" value="" -->
+<!--                                                         id="example-text-input"> -->
+<!--                                                 </div> -->
+<!--                                                 <div class="col-md-3">col-md-6 -->
+<!--                                                     <label for="choices-single-groups" -->
+<!--                                                         class="form-label font-size-13 text-muted">다국어3</label> -->
+<!--                                                     <input class="form-control" type="text" value="" -->
+<!--                                                         id="example-text-input"> -->
+<!--                                                 </div> -->
+<!--                                                 <div class="col-md-3">col-md-6 -->
+<!--                                                     <label for="choices-single-groups" -->
+<!--                                                         class="form-label font-size-13 text-muted">다국어4</label> -->
+<!--                                                     <input class="form-control" type="text" value="" -->
+<!--                                                         id="example-text-input"> -->
+<!--                                                 </div> -->
+<!--                                             </div> -->
 
-                                            <table class="table align-middle table-nowrap table-check">
-                                                <thead>
-                                                    <tr>
-                                                        <th scope="col" style="width: 50px;">
-                                                            <div class="form-check font-size-16">
-                                                                <input type="checkbox" class="form-check-input"
-                                                                    id="checkAll">
-                                                                <label class="form-check-label" for="checkAll"></label>
-                                                            </div>
-                                                        </th>
-                                                        <th scope="col">코드그룹번호</th>
-                                                        <th scope="col">코드그룹이름</th>
-                                                        <th scope="col">사용여부</th>
-                                                        <th scope="col">순서</th>
-                                                        <th scope="col">설명</th>
-                                                        <th scope="col">삭제여부</th>
-                                                        <th scope="col">등록일</th>
-                                                        <th scope="col">수정일</th>
-                                                        <!-- <th style="width: 80px; min-width: 80px;">Action</th> -->
-                                                    </tr><!-- end tr -->
-                                                </thead><!-- end thead -->
-                                                <!--  Date 추가  -->
-                                                <tbody>
-                                                	<tr th:if="${#lists.isEmpty(list)}">
-                                                		<td colspan="8">
-                                                			<p>There are no data!</p>
-                                                		</td>
-                                                	</tr> 
-                                                    <tr th:if="${!#lists.isEmpty(list)}" th:each="list : ${list}">
-                                                        <th scope="row">
-                                                            <div class="form-check font-size-16">
-                                                                <input type="checkbox" class="form-check-input"
-                                                                    id="contacusercheck1">
-                                                                <label class="form-check-label"
-                                                                    for="contacusercheck1"></label>
-                                                            </div>
-                                                        </th>
-                                                        <td th:text="${list.ifcgSeq}"></td>
-<!--                                                    <td class="group-code"><a href="/xdm/v1/infra/codegroup/codeGroupXdmMForm?ifcgSeq=1" th:text="${list.ifcgName}"></a></td> -->
-                                                        <td class="group-code"><a th:href="@{/xdm/v1/infra/codegroup/codeGroupXdmMForm(ifcgSeq=${list.ifcgSeq})}" th:text="${list.ifcgName}"></a></td>
-                                                        <td th:if="${list.ifcgUseNy eq 0}" class="codeUse">N</td>
-                                                        <td th:unless="${list.ifcgUseNy eq 0}" class="codeUse">Y</td>
-                                                        <td th:text="${list.ifcgOrder}" class="group-name">테테테</td>
-                                                        <td th:text="${list.ifcgDesc}" class="alternate-code">-</td>
-                                                        <td th:if="${list.ifcgDelNy eq 0}" class="codeUse">N</td>
-                                                        <td th:unless="${list.ifcgDelNy eq 0}" class="codeUse">Y</td> 
-                                                        <td th:text="${#dates.format(list.regDateTime, 'yyyy-MM-dd HH:mm:ss')}">2024-07-17 09:37:10</td>
-                                                        <td th:text="${#dates.format(list.regDateTimeRevise, 'yyyy-MM-dd HH:mm:ss')}">2024-07-17 09:37:10</td>
-                                                    </tr>
-<!--                                                     <tr> -->
-<!--                                                         <th scope="row"> -->
-<!--                                                             <div class="form-check font-size-16"> -->
-<!--                                                                 <input type="checkbox" class="form-check-input" -->
-<!--                                                                     id="contacusercheck2"> -->
-<!--                                                                 <label class="form-check-label" -->
-<!--                                                                     for="contacusercheck2"></label> -->
-<!--                                                             </div> -->
-<!--                                                         </th> -->
-<!--                                                         <td>170</td> -->
-<!--                                                         <td class="group-code">33</td> -->
-<!--                                                         <td class="group-name">로그인.로그인UI</td> -->
-<!--                                                         <td>272</td> -->
-<!--                                                         <td class="alternate-code">-</td> -->
-<!--                                                         <td>사용자</td> -->
-<!--                                                         <td class="codeName-eng">-</td> -->
-<!--                                                         <td class="codeUse">Y</td> -->
-<!--                                                         <td class="order">1</td> -->
-<!--                                                         <td class="regDate">-</td> -->
-<!--                                                     </tr> -->
-<!--                                                     <tr> -->
-<!--                                                         <th scope="row"> -->
-<!--                                                             <div class="form-check font-size-16"> -->
-<!--                                                                 <input type="checkbox" class="form-check-input" -->
-<!--                                                                     id="contacusercheck3"> -->
-<!--                                                                 <label class="form-check-label" -->
-<!--                                                                     for="contacusercheck3"></label> -->
-<!--                                                             </div> -->
-<!--                                                         </th> -->
-<!--                                                         <td>169</td> -->
-<!--                                                         <td class="group-code">33</td> -->
-<!--                                                         <td class="group-name">로그인.로그인UI</td> -->
-<!--                                                         <td>273</td> -->
-<!--                                                         <td class="alternate-code">-</td> -->
-<!--                                                         <td>관리자</td> -->
-<!--                                                         <td class="codeName-eng">-</td> -->
-<!--                                                         <td class="codeUse">Y</td> -->
-<!--                                                         <td class="order">2</td> -->
-<!--                                                         <td class="regDate">-</td> -->
-<!--                                                     </tr> -->
-                                                    <!-- end tr -->
-<!--                                                     <tr> -->
-<!--                                                         <th scope="row"> -->
-<!--                                                             <div class="form-check font-size-16"> -->
-<!--                                                                 <input type="checkbox" class="form-check-input" -->
-<!--                                                                     id="contacusercheck4"> -->
-<!--                                                                 <label class="form-check-label" -->
-<!--                                                                     for="contacusercheck4"></label> -->
-<!--                                                             </div> -->
-<!--                                                         </th> -->
-<!--                                                         <td>168</td> -->
-<!--                                                         <td class="group-code">32</td> -->
-<!--                                                         <td class="group-name">qna.타입</td> -->
-<!--                                                         <td>266</td> -->
-<!--                                                         <td class="alternate-code">-</td> -->
-<!--                                                         <td>기타</td> -->
-<!--                                                         <td class="codeName-eng">-</td> -->
-<!--                                                         <td class="codeUse">Y</td> -->
-<!--                                                         <td class="order">1</td> -->
-<!--                                                         <td class="regDate">-</td> -->
-<!--                                                     </tr> -->
-<!--                                                     <tr> -->
-<!--                                                         <th scope="row"> -->
-<!--                                                             <div class="form-check font-size-16"> -->
-<!--                                                                 <input type="checkbox" class="form-check-input" -->
-<!--                                                                     id="contacusercheck5"> -->
-<!--                                                                 <label class="form-check-label" -->
-<!--                                                                     for="contacusercheck5"></label> -->
-<!--                                                             </div> -->
-<!--                                                         </th> -->
-<!--                                                         <td>167</td> -->
-<!--                                                         <td class="group-code">31</td> -->
-<!--                                                         <td class="group-name">qna.상태</td> -->
-<!--                                                         <td>262</td> -->
-<!--                                                         <td class="alternate-code">-</td> -->
-<!--                                                         <td>미확인</td> -->
-<!--                                                         <td class="codeName-eng">-</td> -->
-<!--                                                         <td class="codeUse">Y</td> -->
-<!--                                                         <td class="order">1</td> -->
-<!--                                                         <td class="regDate">-</td> -->
-<!--                                                     </tr> -->
-<!--                                                     <tr> -->
-<!--                                                         <th scope="row"> -->
-<!--                                                             <div class="form-check font-size-16"> -->
-<!--                                                                 <input type="checkbox" class="form-check-input" -->
-<!--                                                                     id="contacusercheck6"> -->
-<!--                                                                 <label class="form-check-label" -->
-<!--                                                                     for="contacusercheck6"></label> -->
-<!--                                                             </div> -->
-<!--                                                         </th> -->
-<!--                                                         <td>161</td> -->
-<!--                                                         <td class="group-code">29</td> -->
-<!--                                                         <td class="group-name">몰.자전거.구동방식</td> -->
-<!--                                                         <td>253</td> -->
-<!--                                                         <td class="alternate-code">-</td> -->
-<!--                                                         <td>인간</td> -->
-<!--                                                         <td class="codeName-eng">-</td> -->
-<!--                                                         <td class="codeUse">Y</td> -->
-<!--                                                         <td class="order">1</td> -->
-<!--                                                         <td class="regDate">-</td> -->
-<!--                                                     </tr>end tr -->
-<!--                                                     <tr> -->
-<!--                                                         <th scope="row"> -->
-<!--                                                             <div class="form-check font-size-16"> -->
-<!--                                                                 <input type="checkbox" class="form-check-input" -->
-<!--                                                                     id="contacusercheck7"> -->
-<!--                                                                 <label class="form-check-label" -->
-<!--                                                                     for="contacusercheck7"></label> -->
-<!--                                                             </div> -->
-<!--                                                         </th> -->
-<!--                                                         <td>160</td> -->
-<!--                                                         <td class="group-code">29</td> -->
-<!--                                                         <td class="group-name">몰.자전거.구동방식</td> -->
-<!--                                                         <td>254</td> -->
-<!--                                                         <td class="alternate-code">-</td> -->
-<!--                                                         <td>전기</td> -->
-<!--                                                         <td class="codeName-eng">-</td> -->
-<!--                                                         <td class="codeUse">Y</td> -->
-<!--                                                         <td class="order">2</td> -->
-<!--                                                         <td class="regDate">-</td> -->
-<!--                                                     </tr>end tr -->
-<!--                                                     <tr> -->
-<!--                                                         <th scope="row"> -->
-<!--                                                             <div class="form-check font-size-16"> -->
-<!--                                                                 <input type="checkbox" class="form-check-input" -->
-<!--                                                                     id="contacusercheck8"> -->
-<!--                                                                 <label class="form-check-label" -->
-<!--                                                                     for="contacusercheck8"></label> -->
-<!--                                                             </div> -->
-<!--                                                         </th> -->
-<!--                                                         <td>159</td> -->
-<!--                                                         <td class="group-code">28</td> -->
-<!--                                                         <td class="group-name">몰.자전거.타이어</td> -->
-<!--                                                         <td>248</td> -->
-<!--                                                         <td class="alternate-code">-</td> -->
-<!--                                                         <td>클린쳐</td> -->
-<!--                                                         <td class="codeName-eng">clincher</td> -->
-<!--                                                         <td class="codeUse">Y</td> -->
-<!--                                                         <td class="order">1</td> -->
-<!--                                                         <td class="regDate">-</td> -->
-<!--                                                     </tr>end tr -->
-<!--                                                     <tr> -->
-<!--                                                         <th scope="row"> -->
-<!--                                                             <div class="form-check font-size-16"> -->
-<!--                                                                 <input type="checkbox" class="form-check-input" -->
-<!--                                                                     id="contacusercheck9"> -->
-<!--                                                                 <label class="form-check-label" -->
-<!--                                                                     for="contacusercheck9"></label> -->
-<!--                                                             </div> -->
-<!--                                                         </th> -->
-<!--                                                         <td>158</td> -->
-<!--                                                         <td class="group-code">28</td> -->
-<!--                                                         <td class="group-name">몰.자전거.타이어</td> -->
-<!--                                                         <td>249</td> -->
-<!--                                                         <td class="alternate-code">-</td> -->
-<!--                                                         <td>튜브리스</td> -->
-<!--                                                         <td class="codeName-eng">Tubeless</td> -->
-<!--                                                         <td class="codeUse">Y</td> -->
-<!--                                                         <td class="order">2</td> -->
-<!--                                                         <td class="regDate">-</td> -->
-<!--                                                     </tr>end tr -->
-<!--                                                     <tr> -->
-<!--                                                         <th scope="row"> -->
-<!--                                                             <div class="form-check font-size-16"> -->
-<!--                                                                 <input type="checkbox" class="form-check-input" -->
-<!--                                                                     id="contacusercheck10"> -->
-<!--                                                                 <label class="form-check-label" -->
-<!--                                                                     for="contacusercheck10"></label> -->
-<!--                                                             </div> -->
-<!--                                                         </th> -->
-<!--                                                         <td>157</td> -->
-<!--                                                         <td class="group-code">28</td> -->
-<!--                                                         <td class="group-name">몰.자전거.타이어</td> -->
-<!--                                                         <td>250</td> -->
-<!--                                                         <td class="alternate-code">-</td> -->
-<!--                                                         <td>튜블러</td> -->
-<!--                                                         <td class="codeName-eng">Tubular</td> -->
-<!--                                                         <td class="codeUse">Y</td> -->
-<!--                                                         <td class="order">3</td> -->
-<!--                                                         <td class="regDate">-</td> -->
-<!--                                                     </tr>end tr -->
-                                                </tbody><!-- end tbody -->
-                                            </table><!-- end table -->
-                                        </div><!-- end table responsive -->
-                                    </div><!-- end row -->
+<!--                                             <div class="row gy-3"> -->
+<!--                                                 <div class="col-md-3">col-md-6 -->
+<!--                                                     <label for="choices-single-groups" -->
+<!--                                                         class="form-label font-size-13 text-muted">다국어5</label> -->
+<!--                                                     <input class="form-control" type="text" value="" -->
+<!--                                                         id="example-text-input"> -->
+<!--                                                 </div> -->
+<!--                                                 <div class="col-md-3">col-md-6 -->
+<!--                                                     <label for="choices-single-groups" -->
+<!--                                                         class="form-label font-size-13 text-muted">다국어6</label> -->
+<!--                                                     <input class="form-control" type="text" value="" -->
+<!--                                                         id="example-text-input"> -->
+<!--                                                 </div> -->
+<!--                                                 <div class="col-md-3">col-md-6 -->
+<!--                                                     <label for="choices-single-groups" -->
+<!--                                                         class="form-label font-size-13 text-muted">다국어7</label> -->
+<!--                                                     <input class="form-control" type="text" value="" -->
+<!--                                                         id="example-text-input"> -->
+<!--                                                 </div> -->
+<!--                                                 <div class="col-md-3">col-md-6 -->
+<!--                                                     <label for="choices-single-groups" -->
+<!--                                                         class="form-label font-size-13 text-muted">다국어8</label> -->
+<!--                                                     <input class="form-control" type="text" value="" -->
+<!--                                                         id="example-text-input"> -->
+<!--                                                 </div> -->
+<!--                                             </div> -->
 
-                                    <div class="row g-0 text-center text-sm-start"><!--g-0-->
-                                        <div class="gy-3 col-12 pagecol"><!--col-sm-6-->
-                                            <ul class="pagination pagination-rounded">
-                                                <!--pagination-rounded justify-content-center justify-content-sm-end mb-sm-0-->
-                                                <li class="page-item disabled">
-                                                    <a href="#" class="page-link"><i
-                                                            class="mdi mdi-chevron-left"></i></a>
-                                                </li>
-                                                <li class="page-item">
-                                                    <a href="#" class="page-link">1</a>
-                                                </li>
-                                                <li class="page-item active">
-                                                    <a href="#" class="page-link">2</a>
-                                                </li>
-                                                <li class="page-item">
-                                                    <a href="#" class="page-link">3</a>
-                                                </li>
-                                                <li class="page-item">
-                                                    <a href="#" class="page-link">4</a>
-                                                </li>
-                                                <li class="page-item">
-                                                    <a href="#" class="page-link">5</a>
-                                                </li>
-                                                <li class="page-item">
-                                                    <a href="#" class="page-link"><i
-                                                            class="mdi mdi-chevron-right"></i></a>
-                                                </li>
-                                            </ul><!-- end ul -->
-                                        </div><!-- end col -->
+<!--                                             <div class="row gy-3"> -->
+<!--                                                 <div class="col-md-3">col-md-6 -->
+<!--                                                     <label for="choices-single-groups" -->
+<!--                                                         class="form-label font-size-13 text-muted">예비1(VARCHER -->
+<!--                                                         TYPE)</label> -->
+<!--                                                     <input class="form-control" type="text" value="" -->
+<!--                                                         id="example-text-input"> -->
+<!--                                                 </div> -->
+<!--                                                 <div class="col-md-3">col-md-6 -->
+<!--                                                     <label for="choices-single-groups" -->
+<!--                                                         class="form-label font-size-13 text-muted">예비2(VARCHER -->
+<!--                                                         TYPE)</label> -->
+<!--                                                     <input class="form-control" type="text" value="" -->
+<!--                                                         id="example-text-input"> -->
+<!--                                                 </div> -->
+<!--                                                 <div class="col-md-3">col-md-6 -->
+<!--                                                     <label for="choices-single-groups" -->
+<!--                                                         class="form-label font-size-13 text-muted">예비3(VARCHER -->
+<!--                                                         TYPE)</label> -->
+<!--                                                     <input class="form-control" type="text" value="" -->
+<!--                                                         id="example-text-input"> -->
+<!--                                                 </div> -->
+<!--                                                 <div class="col-md-3">col-md-6 -->
+<!--                                                     <label for="choices-single-groups" -->
+<!--                                                         class="form-label font-size-13 text-muted">예비4(VARCHERTYPE)</label> -->
+<!--                                                     <input class="form-control" type="text" value="" -->
+<!--                                                         id="example-text-input"> -->
+<!--                                                 </div> -->
+<!--                                             </div> -->
 
-                                        <!-- 하단 버튼 -->
-                                        <div class="col-md-1 bottom-button">
-                                            <button type="button" class="btn btn-danger"><i
-                                                    class="bi bi-x-lg"></i></button>
-                                            <button type="button" class="btn btn-danger"><i
-                                                    class="bi bi-trash"></i></button>
-                                        </div>
+<!--                                             <div class="row gy-3"> -->
+<!--                                                 <div class="col-md-3">col-md-6 -->
+<!--                                                     <label for="choices-single-groups" -->
+<!--                                                         class="form-label font-size-13 text-muted">예비1(INT TYPE)</label> -->
+<!--                                                     <input class="form-control" type="text" value="" -->
+<!--                                                         id="example-text-input"> -->
+<!--                                                 </div> -->
+<!--                                                 <div class="col-md-3">col-md-6 -->
+<!--                                                     <label for="choices-single-groups" -->
+<!--                                                         class="form-label font-size-13 text-muted">예비2(INT TYPE)</label> -->
+<!--                                                     <input class="form-control" type="text" value="" -->
+<!--                                                         id="example-text-input"> -->
+<!--                                                 </div> -->
+<!--                                                 <div class="col-md-3">col-md-6 -->
+<!--                                                     <label for="choices-single-groups" -->
+<!--                                                         class="form-label font-size-13 text-muted">예비3(INT TYPE)</label> -->
+<!--                                                     <input class="form-control" type="text" value="" -->
+<!--                                                         id="example-text-input"> -->
+<!--                                                 </div> -->
+<!--                                                 <div class="col-md-3">col-md-6 -->
+<!--                                                     <label for="choices-single-groups" -->
+<!--                                                         class="form-label font-size-13 text-muted">예비4(INT TYPE)</label> -->
+<!--                                                     <input class="form-control" type="text" value="" -->
+<!--                                                         id="example-text-input"> -->
+<!--                                                 </div> -->
+<!--                                             </div> -->
 
-                                        <div class="col-md-10"></div>
+                                            <!------------submit icon------------>
+                                            <div class="row gy-3">
+                                                <div class="col-md-1">
+                                                    <a href="./0_list.html">
+                                                        <button type="button" class="btn btn-outline-primary">
+                                                            <i class="bx bx-list-ul"></i>
+                                                        </button>
+                                                    </a>
+                                                </div>
 
-                                        <div class="col-md-1 bottom-button-second">
-                                            <button type="button" class="btn btn-success"><i
-                                                    class="bi bi-file-earmark-excel"></i></button>
-                                            <button type="button" class="btn btn-primary"><i
-                                                    class="bi bi-plus-lg"></i></button>
-                                        </div>
+                                                <div class="col-md-10"></div>
+                                                
+                                                <!-- 버튼 -->
+                                                <div class="col-md-1" align="right">
+                                                    <button type="submit" class="btn btn-outline-primary">
+                                                        <i class="bx bx-data"></i>
+                                                    </button>
+                                                </div>
+                                            </div>
 
+                                            <!------------submit icon------------>
 
-                                    </div><!-- end row -->
-
-                                </div>
-                                <!-- end modal -->
-
-                            </div><!-- end card body -->
-                        </div><!-- end card -->
+                                    </form><!-- end form -->
+                                </div><!-- end card body -->
+                            </div><!-- end card -->
+                        </div><!--end col-12-->
                     </div><!-- end col -->
                 </div><!-- end row -->
 
-            </div> <!-- container-fluid -->
-        </div><!--main-content-->
-        <!-- End Page-content -->
-
-
-        <footer class="footer">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-sm-6">
-                        <script>document.write(new Date().getFullYear())</script> &copy; Dashonic.
-                    </div>
-                    <div class="col-sm-6">
-                        <div class="text-sm-end d-none d-sm-block">
-                            Crafted with <i class="mdi mdi-heart text-danger"></i> by <a href="https://Pichforest.com/"
-                                target="_blank" class="text-reset">Pichforest</a>
+                <footer class="footer">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <script>document.write(new Date().getFullYear())</script> &copy; Dashonic.
+                            </div>
+                            <!-- <div class="col-sm-6">
+                                <div class="text-sm-end d-none d-sm-block">
+                                    Crafted with <i class="mdi mdi-heart text-danger"></i> by <a href="https://Pichforest.com/" target="_blank" class="text-reset">Pichforest</a>
+                                </div>
+                            </div> -->
                         </div>
                     </div>
-                </div>
+                </footer>
             </div>
-        </footer>
-    </div>
-    <!-- end main content-->
+            <!-- end main content-->
 
-    </div>
-    <!-- END layout-wrapper -->
+        </div>
+        <!-- END layout-wrapper -->
 
-    <!-- Right Sidebar -->
-    <div class="right-bar">
-        <div data-simplebar class="h-100">
-            <div class="rightbar-title d-flex align-items-center bg-dark p-3">
+        <!-- Right Sidebar -->
+        <div class="right-bar">
+            <div data-simplebar class="h-100">
+                <div class="rightbar-title d-flex align-items-center bg-dark p-3">
 
-                <h5 class="m-0 me-2 text-white">Theme Customizer</h5>
+                    <h5 class="m-0 me-2 text-white">Theme Customizer</h5>
 
-                <a href="javascript:void(0);" class="right-bar-toggle-close ms-auto">
-                    <i class="mdi mdi-close noti-icon"></i>
-                </a>
-            </div>
-
-            <!-- Settings -->
-            <hr class="m-0" />
-
-            <div class="p-4">
-                <h6 class="mb-3">Layout</h6>
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="layout" id="layout-vertical" value="vertical">
-                    <label class="form-check-label" for="layout-vertical">Vertical</label>
-                </div>
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="layout" id="layout-horizontal"
-                        value="horizontal">
-                    <label class="form-check-label" for="layout-horizontal">Horizontal</label>
+                    <a href="javascript:void(0);" class="right-bar-toggle-close ms-auto">
+                        <i class="mdi mdi-close noti-icon"></i>
+                    </a>
                 </div>
 
-                <h6 class="mt-4 mb-3">Layout Mode</h6>
+                <!-- Settings -->
+                <hr class="m-0" />
 
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="layout-mode" id="layout-mode-light"
-                        value="light">
-                    <label class="form-check-label" for="layout-mode-light">Light</label>
-                </div>
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="layout-mode" id="layout-mode-dark" value="dark">
-                    <label class="form-check-label" for="layout-mode-dark">Dark</label>
-                </div>
-
-                <h6 class="mt-4 mb-3">Layout Width</h6>
-
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="layout-width" id="layout-width-fluid"
-                        value="fluid" onchange="document.body.setAttribute('data-layout-size', 'fluid')">
-                    <label class="form-check-label" for="layout-width-fluid">Fluid</label>
-                </div>
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="layout-width" id="layout-width-boxed"
-                        value="boxed" onchange="document.body.setAttribute('data-layout-size', 'boxed')">
-                    <label class="form-check-label" for="layout-width-boxed">Boxed</label>
-                </div>
-
-                <h6 class="mt-4 mb-3">Layout Position</h6>
-
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="layout-position" id="layout-position-fixed"
-                        value="fixed" onchange="document.body.setAttribute('data-layout-scrollable', 'false')">
-                    <label class="form-check-label" for="layout-position-fixed">Fixed</label>
-                </div>
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="layout-position" id="layout-position-scrollable"
-                        value="scrollable" onchange="document.body.setAttribute('data-layout-scrollable', 'true')">
-                    <label class="form-check-label" for="layout-position-scrollable">Scrollable</label>
-                </div>
-
-                <h6 class="mt-4 mb-3">Topbar Color</h6>
-
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="topbar-color" id="topbar-color-light"
-                        value="light" onchange="document.body.setAttribute('data-topbar', 'light')">
-                    <label class="form-check-label" for="topbar-color-light">Light</label>
-                </div>
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="topbar-color" id="topbar-color-dark" value="dark"
-                        onchange="document.body.setAttribute('data-topbar', 'dark')">
-                    <label class="form-check-label" for="topbar-color-dark">Dark</label>
-                </div>
-
-                <div id="sidebar-setting">
-                    <h6 class="mt-4 mb-3 sidebar-setting">Sidebar Size</h6>
-
-                    <div class="form-check sidebar-setting">
-                        <input class="form-check-input" type="radio" name="sidebar-size" id="sidebar-size-default"
-                            value="default" onchange="document.body.setAttribute('data-sidebar-size', 'lg')">
-                        <label class="form-check-label" for="sidebar-size-default">Default</label>
+                <div class="p-4">
+                    <h6 class="mb-3">Layout</h6>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="layout" id="layout-vertical"
+                            value="vertical">
+                        <label class="form-check-label" for="layout-vertical">Vertical</label>
                     </div>
-                    <div class="form-check sidebar-setting">
-                        <input class="form-check-input" type="radio" name="sidebar-size" id="sidebar-size-compact"
-                            value="compact" onchange="document.body.setAttribute('data-sidebar-size', 'md')">
-                        <label class="form-check-label" for="sidebar-size-compact">Compact</label>
-                    </div>
-                    <div class="form-check sidebar-setting">
-                        <input class="form-check-input" type="radio" name="sidebar-size" id="sidebar-size-small"
-                            value="small" onchange="document.body.setAttribute('data-sidebar-size', 'sm')">
-                        <label class="form-check-label" for="sidebar-size-small">Small (Icon View)</label>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="layout" id="layout-horizontal"
+                            value="horizontal">
+                        <label class="form-check-label" for="layout-horizontal">Horizontal</label>
                     </div>
 
-                    <h6 class="mt-4 mb-3 sidebar-setting">Sidebar Color</h6>
+                    <h6 class="mt-4 mb-3">Layout Mode</h6>
 
-                    <div class="form-check sidebar-setting">
-                        <input class="form-check-input" type="radio" name="sidebar-color" id="sidebar-color-light"
-                            value="light" onchange="document.body.setAttribute('data-sidebar', 'light')">
-                        <label class="form-check-label" for="sidebar-color-light">Light</label>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="layout-mode" id="layout-mode-light"
+                            value="light">
+                        <label class="form-check-label" for="layout-mode-light">Light</label>
                     </div>
-                    <div class="form-check sidebar-setting">
-                        <input class="form-check-input" type="radio" name="sidebar-color" id="sidebar-color-dark"
-                            value="dark" onchange="document.body.setAttribute('data-sidebar', 'dark')">
-                        <label class="form-check-label" for="sidebar-color-dark">Dark</label>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="layout-mode" id="layout-mode-dark"
+                            value="dark">
+                        <label class="form-check-label" for="layout-mode-dark">Dark</label>
                     </div>
-                    <div class="form-check sidebar-setting">
-                        <input class="form-check-input" type="radio" name="sidebar-color" id="sidebar-color-brand"
-                            value="brand" onchange="document.body.setAttribute('data-sidebar', 'brand')">
-                        <label class="form-check-label" for="sidebar-color-brand">Brand</label>
+
+                    <h6 class="mt-4 mb-3">Layout Width</h6>
+
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="layout-width" id="layout-width-fluid"
+                            value="fluid" onchange="document.body.setAttribute('data-layout-size', 'fluid')">
+                        <label class="form-check-label" for="layout-width-fluid">Fluid</label>
                     </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="layout-width" id="layout-width-boxed"
+                            value="boxed" onchange="document.body.setAttribute('data-layout-size', 'boxed')">
+                        <label class="form-check-label" for="layout-width-boxed">Boxed</label>
+                    </div>
+
+                    <h6 class="mt-4 mb-3">Layout Position</h6>
+
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="layout-position" id="layout-position-fixed"
+                            value="fixed" onchange="document.body.setAttribute('data-layout-scrollable', 'false')">
+                        <label class="form-check-label" for="layout-position-fixed">Fixed</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="layout-position"
+                            id="layout-position-scrollable" value="scrollable"
+                            onchange="document.body.setAttribute('data-layout-scrollable', 'true')">
+                        <label class="form-check-label" for="layout-position-scrollable">Scrollable</label>
+                    </div>
+
+                    <h6 class="mt-4 mb-3">Topbar Color</h6>
+
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="topbar-color" id="topbar-color-light"
+                            value="light" onchange="document.body.setAttribute('data-topbar', 'light')">
+                        <label class="form-check-label" for="topbar-color-light">Light</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="topbar-color" id="topbar-color-dark"
+                            value="dark" onchange="document.body.setAttribute('data-topbar', 'dark')">
+                        <label class="form-check-label" for="topbar-color-dark">Dark</label>
+                    </div>
+
+                    <div id="sidebar-setting">
+                        <h6 class="mt-4 mb-3 sidebar-setting">Sidebar Size</h6>
+
+                        <div class="form-check sidebar-setting">
+                            <input class="form-check-input" type="radio" name="sidebar-size" id="sidebar-size-default"
+                                value="default" onchange="document.body.setAttribute('data-sidebar-size', 'lg')">
+                            <label class="form-check-label" for="sidebar-size-default">Default</label>
+                        </div>
+                        <div class="form-check sidebar-setting">
+                            <input class="form-check-input" type="radio" name="sidebar-size" id="sidebar-size-compact"
+                                value="compact" onchange="document.body.setAttribute('data-sidebar-size', 'md')">
+                            <label class="form-check-label" for="sidebar-size-compact">Compact</label>
+                        </div>
+                        <div class="form-check sidebar-setting">
+                            <input class="form-check-input" type="radio" name="sidebar-size" id="sidebar-size-small"
+                                value="small" onchange="document.body.setAttribute('data-sidebar-size', 'sm')">
+                            <label class="form-check-label" for="sidebar-size-small">Small (Icon View)</label>
+                        </div>
+
+                        <h6 class="mt-4 mb-3 sidebar-setting">Sidebar Color</h6>
+
+                        <div class="form-check sidebar-setting">
+                            <input class="form-check-input" type="radio" name="sidebar-color" id="sidebar-color-light"
+                                value="light" onchange="document.body.setAttribute('data-sidebar', 'light')">
+                            <label class="form-check-label" for="sidebar-color-light">Light</label>
+                        </div>
+                        <div class="form-check sidebar-setting">
+                            <input class="form-check-input" type="radio" name="sidebar-color" id="sidebar-color-dark"
+                                value="dark" onchange="document.body.setAttribute('data-sidebar', 'dark')">
+                            <label class="form-check-label" for="sidebar-color-dark">Dark</label>
+                        </div>
+                        <div class="form-check sidebar-setting">
+                            <input class="form-check-input" type="radio" name="sidebar-color" id="sidebar-color-brand"
+                                value="brand" onchange="document.body.setAttribute('data-sidebar', 'brand')">
+                            <label class="form-check-label" for="sidebar-color-brand">Brand</label>
+                        </div>
+                    </div>
+
+                    <h6 class="mt-4 mb-3">Direction</h6>
+
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="layout-direction" id="layout-direction-ltr"
+                            value="ltr">
+                        <label class="form-check-label" for="layout-direction-ltr">LTR</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="layout-direction" id="layout-direction-rtl"
+                            value="rtl">
+                        <label class="form-check-label" for="layout-direction-rtl">RTL</label>
+                    </div>
+
                 </div>
 
-                <h6 class="mt-4 mb-3">Direction</h6>
+            </div> <!-- end slimscroll-menu-->
+        </div>
+        <!-- /Right-bar -->
 
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="layout-direction" id="layout-direction-ltr"
-                        value="ltr">
-                    <label class="form-check-label" for="layout-direction-ltr">LTR</label>
-                </div>
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="layout-direction" id="layout-direction-rtl"
-                        value="rtl">
-                    <label class="form-check-label" for="layout-direction-rtl">RTL</label>
-                </div>
+        <!-- Right bar overlay-->
+        <div class="rightbar-overlay"></div>
 
-            </div>
+        <!-- JAVASCRIPT -->
+        <script src="/xdm/v1/template/ui/assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <script src="/xdm/v1/template/ui/assets/libs/metismenujs/metismenujs.min.js"></script>
+        <script src="/xdm/v1/template/ui/assets/libs/simplebar/simplebar.min.js"></script>
+        <script src="/xdm/v1/template/ui/assets/libs/feather-icons/feather.min.js"></script>
 
-        </div> <!-- end slimscroll-menu-->
-    </div>
-    <!-- /Right-bar -->
+        <!-- plugins -->
+        <script src="/xdm/v1/template/ui/assets/libs/choices.js/public//xdm/v1/template/ui/assets/scripts/choices.min.js"></script>
+        <script src="/xdm/v1/template/ui/assets/libs/flatpickr/flatpickr.min.js"></script>
 
-    <!-- Right bar overlay-->
-    <div class="rightbar-overlay"></div>
+        <!-- Modern colorpicker bundle -->
+        <script src="/xdm/v1/template/ui/assets/libs/@simonwep/pickr/pickr.min.js"></script>
 
-    <!-- JAVASCRIPT -->
-    <script src="/xdm/v1/template/ui/assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="/xdm/v1/template/ui/assets/libs/metismenujs/metismenujs.min.js"></script>
-    <script src="/xdm/v1/template/ui/assets/libs/simplebar/simplebar.min.js"></script>
-    <script src="/xdm/v1/template/ui/assets/libs/feather-icons/feather.min.js"></script>
+        <!-- init js -->
+        <script src="/xdm/v1/template/ui/assets/js/pages/form-advanced.init.js"></script>
 
-<!--     <script src="/xdm/v1/template/ui/assets/js/app.js"></script> -->
+        <script src="/xdm/v1/template/ui/assets/js/pages/form-validation.init.js"></script>
+
+<!--         <script src="/xdm/v1/template/ui/assets/js/app.js"></script> -->
 
 </body>
 

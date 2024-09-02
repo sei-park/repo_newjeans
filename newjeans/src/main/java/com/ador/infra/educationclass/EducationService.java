@@ -15,4 +15,9 @@ public class EducationService {
 		List<EducationDto> eduClass = educationDao.classList();
 		return eduClass;
 	}
+	
+	public int classInsert(EducationDto educationDto) {
+		int result = educationDao.classInsert(educationDto);
+		return result;
+	}
 }

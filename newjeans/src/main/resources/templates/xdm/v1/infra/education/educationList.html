@@ -950,7 +950,7 @@
                                                     <div class="row mb-3 align-items-center">
                                                         <div class="mb-2">
                                                             <!-- <h6>page1 > page2 > Default</h6> -->
-                                                            <h1>레스토랑 정보</h1>
+                                                            <h1>CodeGroup</h1>
                                                         </div>
                                                         <div class="col-md-2">
                                                             <select class="form-select"
@@ -1048,27 +1048,30 @@
                                                                 <label class="form-check-label" for="checkAll"></label>
                                                             </div>
                                                         </th>
-                                                        <th scope="col">#</th>
-                                                        <th scope="col">코드그룹코드</th>
-                                                        <th scope="col">코드그룹이름</th>
-                                                        <th scope="col">코드</th>
-                                                        <th scope="col">대체코드</th>
-                                                        <th scope="col">코드이름</th>
-                                                        <th scope="col">코드이름(영문)</th>
-                                                        <th scope="col">사용</th>
-                                                        <th scope="col">순서</th>
+                                                        <th scope="col">교육번호</th>
+                                                        <th scope="col">교육형태</th>
+                                                        <th scope="col">강의명</th>
+                                                        <th scope="col">교육비</th>
+                                                        <th scope="col">강사</th>
+                                                        <th scope="col">수강신청시작</th>
+                                                        <th scope="col">수강신청끝</th>
+                                                        <th scope="col">학습시작</th>
+                                                        <th scope="col">학습끝</th>
+                                                        <th scope="col">교육장소</th>
+                                                        <th scope="col">교육내용</th>
                                                         <th scope="col">등록일</th>
+                                                        <th scope="col">수정일</th>
                                                         <!-- <th style="width: 80px; min-width: 80px;">Action</th> -->
                                                     </tr><!-- end tr -->
                                                 </thead><!-- end thead -->
                                                 <!--  Date 추가  -->
                                                 <tbody>
-                                                	<tr th:if="${#lists.isEmpty(restlist)}">
+                                                	<tr th:if="${#lists.isEmpty(eduClasslist)}">
                                                 		<td colspan="13">
                                                 			<p>There are no data!</p>
                                                 		</td>
                                                 	</tr> 
-                                                    <tr th:if="${!#lists.isEmpty(restlist)}" th:each="list : ${restlist}">
+                                                    <tr th:if="${!#lists.isEmpty(eduClasslist)}" th:each="list : ${eduClasslist}">
                                                         <th scope="row">
                                                             <div class="form-check font-size-16">
                                                                 <input type="checkbox" class="form-check-input"
@@ -1077,24 +1080,20 @@
                                                                     for="contacusercheck1"></label>
                                                             </div>
                                                         </th>
-                                                        <td th:text="${list.Seq}">171</td>
-                                                        <td th:text="${list.brand}" class="group-code">57</td>
-                                                        <td th:text="${list.restaurantName}"class="group-name">테테테</td>
-                                                        <td th:text="${#dates.format(list.businessHoursStart, 'yyyy-MM-dd HH:mm:ss')}">1</td>
-                                                        <td th:text="${#dates.format(list.businessHoursEnd, 'yyyy-MM-dd HH:mm:ss')}">1</td>
-                                                        <td th:text="${list.tel}">278</td>
-                                                        <td th:text="${list.internetAddress}" class="alternate-code">-</td>
-                                                        <td th:if="${list.parkingNy eq 0}" class="codeUse">N</td>
-                                                        <td th:unless="${list.parkingNy eq 0}" class="codeUse">Y</td>
-                                                        <td th:if="${list.bookNy eq 0}" class="codeUse">N</td>
-                                                        <td th:unless="${list.bookNy eq 0}" class="codeUse">Y</td>
-                                                        <td th:if="${list.corkageNy eq 0}" class="codeUse">N</td>
-                                                        <td th:unless="${list.corkageNy eq 0}" class="codeUse">Y</td>
-                                                        <td th:text="${list.about}" class="codeName-eng">-</td>
-                                                        <td th:text="${#dates.format(list.regDate, 'yyyy-MM-dd HH:mm:ss')}">1</td>
-                                                        <td th:text="${#dates.format(list.revDate, 'yyyy-MM-dd HH:mm:ss')}">1</td>
-                                                        
-                                                        
+                                                        <td th:text="${list.seq}"></td>
+                                                        <td th:text="${list.educationType}">
+<!--                                                    <td class="group-code"><a th:href="@{/xdm/v1/infra/codegroup/codeGroupXdmMForm(ifcgSeq=${list.ifcgSeq})}" th:text="${list.ifcgName}"></a></td> -->
+                                                        <td><a th:href="@{/xdm/v1/infra/education/educationMForm(seq=${list.seq})}" th:text="${list.educationName}"></a></td>
+                                                        <td th:text="${list.educationExpenses}"></td>
+                                                        <td th:text="${list.teacher}"></td>
+                                                        <td th:text="${#dates.format(list.courseRegStart, 'yyyy-MM-dd HH:mm:ss')}"></td>
+                                                        <td th:text="${#dates.format(list.courseRegEnd, 'yyyy-MM-dd HH:mm:ss')}"></td>
+                                                        <td th:text="${#dates.format(list.studyStart, 'yyyy-MM-dd HH:mm:ss')}"></td>
+                                                        <td th:text="${#dates.format(list.studtEnd, 'yyyy-MM-dd HH:mm:ss')}"></td>
+                                                        <td th:text="${list.educationPlace}">
+                                                        <td th:text="${list.educationContent}">
+                                                        <td th:text="${#dates.format(list.regDate, 'yyyy-MM-dd HH:mm:ss')}"></td>
+                                                        <td th:text="${#dates.format(list.revDate, 'yyyy-MM-dd HH:mm:ss')}"></td>
                                                     </tr>
 <!--                                                     <tr> -->
 <!--                                                         <th scope="row"> -->
@@ -1510,7 +1509,7 @@
     <script src="/xdm/v1/template/ui/assets/libs/simplebar/simplebar.min.js"></script>
     <script src="/xdm/v1/template/ui/assets/libs/feather-icons/feather.min.js"></script>
 
-    <script src="/xdm/v1/template/ui/assets/js/app.js"></script>
+<!--     <script src="/xdm/v1/template/ui/assets/js/app.js"></script> -->
 
 </body>
 

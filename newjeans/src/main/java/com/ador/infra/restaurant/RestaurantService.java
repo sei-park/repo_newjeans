@@ -15,5 +15,10 @@ public class RestaurantService {
 		List<RestaurantDto> rest = restaurantDao.restaurantList();
 		return rest;
 	}
+	
+	public int resInsert(RestaurantDto restaurantDto) {
+		int result = restaurantDao.resInsert(restaurantDto);
+		return result;
+	}
 
 }

@@ -41,12 +41,21 @@ public class MemberController {
 	}
 	
 	@RequestMapping(value="/xdm/v1/infra/members/membersXdmInst")
-	public String membersXdmInst() {
+	public String membersXdmInst(MemberDto memberDto) {
+		
+		System.out.println(memberDto.getName());
+		
+		memberService.membersInsert(memberDto);
 			
 		return "redirect:/xdm/v1/infra/members/membersList";
 	}
 	
-
+	// -------------------------------------------------------
+	// M폼
+	@RequestMapping(value="/xdm/v1/infra/members/membersMForm")
+	public String membersMForm() {
+		return "/xdm/v1/infra/members/membersMForm";
+	}
 
 
 }

@@ -7,6 +7,8 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface RestaurantDao {
 	
-	List<RestaurantDto> restaurantList();
+	public List<RestaurantDto> restaurantList();
+	
+	public int resInsert(RestaurantDto restaurantDto);
 
 }

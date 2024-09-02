@@ -13,7 +13,7 @@ public class MemberDto {
 	private String birth;
 	private String email;
 	private String number;
-	private String desc;
+	private String explanation;
 	private Date registerDate;
 	private Date reviseDate;
 	//-----
@@ -71,11 +71,11 @@ public class MemberDto {
 	public void setNumber(String number) {
 		this.number = number;
 	}
-	public String getDesc() {
-		return desc;
+	public String getExplanation() {
+		return explanation;
 	}
-	public void setDesc(String desc) {
-		this.desc = desc;
+	public void setExplanation(String explanation) {
+		this.explanation = explanation;
 	}
 	public Date getRegisterDate() {
 		return registerDate;
@@ -89,5 +89,8 @@ public class MemberDto {
 	public void setReviseDate(Date reviseDate) {
 		this.reviseDate = reviseDate;
 	}
+	
+	
+
 
 }
