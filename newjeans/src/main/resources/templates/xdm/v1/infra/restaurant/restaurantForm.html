@@ -1072,24 +1072,24 @@
 													<label for="choices-single-default"
 														class="form-label font-size-13 text-muted">주차가능여부</label> 
 													 <select class="form-select" name="parkingNy">
-														<option value="1" th:selected="${item?.parkingNy == 1}">가능</option>
-														<option value="0" th:selected="${item?.parkingNy == 0}">불가능</option>
+														<option value="1" th:selected="${restItem?.parkingNy == 1}">가능</option>
+														<option value="0" th:selected="${restItem?.parkingNy == 0}">불가능</option>
 													</select>
 												</div>
 												<div class=" col-md-3">
 													<label for="choices-single-default"
 														class="form-label font-size-13 text-muted">예약가능여부</label> 
 													<select class="form-select" name="bookNy">
-														<option value="1" th:selected="${item?.bookNy == 1}">가능</option>
-														<option value="0" th:selected="${item?.bookNy == 0}">불가능</option>
+														<option value="1" th:selected="${restItem?.bookNy == 1}">가능</option>
+														<option value="0" th:selected="${restItem?.bookNy == 0}">불가능</option>
 													</select>
 												</div>
 												<div class=" col-md-3">
 													<label for="choices-single-default"
 														class="form-label font-size-13 text-muted">무료콜키지여부</label> 
 													<select class="form-select" name="corkageNy">
-														<option value="1" th:selected="${item?.corkageNy == 1}">가능</option>
-														<option value="0" th:selected="${item?.corkageNy == 0}">불가능</option>
+														<option value="1" th:selected="${restItem?.corkageNy == 1}">가능</option>
+														<option value="0" th:selected="${restItem?.corkageNy == 0}">불가능</option>
 													</select>
 												</div>
 											</div>

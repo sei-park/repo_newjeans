@@ -50,7 +50,9 @@ public class RestaurantController {
     
 	// M폼
 	@RequestMapping(value="/xdm/v1/infra/restaurant/restaurantMForm")
-	public String restaurantMForm() {
+	public String restaurantMForm(RestaurantDto restaurantDto, Model model) {
+		
+		model.addAttribute("restItem", restaurantService.restSelectOne(restaurantDto));
 		return "/xdm/v1/infra/restaurant/restaurantMForm";
 	}
 
