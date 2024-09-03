@@ -41,20 +41,41 @@
 		    regDate,
 		    revDate
 		) values (
-		    "양식",
-		    "패밀리 레스토랑",
-		    "10:00:00",
-		    "20:00:00",
-		    "02-1111-2222",
-		    "ddkfldskfdlds",
-		    1,
-		    1,
-		    0,
-		    "hello",
+		    #{brand},
+		    #{restaurantName},
+		    now(),
+		    now(),
+		    #{tel},
+		    #{internetAddress},
+		    #{parkingNy},
+		    #{bookNy},
+		    #{corkageNy},
+		    #{about},
 		    now(),
 		    now()
-		)
+		)   
 		  
-	
 	</insert>
+	
+	<select id="restSelectOne" resultMap="restresultMapObj">
+		  select 
+				e.seq,
+		        e.brand,
+		        e.restaurantName,
+		        e.businessHoursStart,
+		        e.businessHoursEnd,
+		        e.tel,
+		        e.internetAddress,
+		        e.parkingNy,
+		        e.bookNy,
+		        e.corkageNy,
+		        e.about,
+		        e.regDate,
+		        e.revDate
+		  from 
+				restaurant e
+		  where 1=1
+				and e.seq = #{seq}
+
+	</select>
 </mapper> 

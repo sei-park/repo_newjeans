@@ -1003,7 +1003,7 @@
 													<label for="choices-single-groups"
 														class="form-label font-size-13 text-muted">강의번호</label> <input
 														type="text" class="form-control" id="validationCustom01"
-														placeholder="" value="" name="seq">
+														placeholder="" value="" name="seq" th:value="${classitem?.seq}">
 													<!--  required -->
 													<div class="valid-feedback">Looks good!</div>
 												</div>
@@ -1012,7 +1012,7 @@
 													<label for="choices-single-groups"
 														class="form-label font-size-13 text-muted">강의종류</label> <input
 														type="text" class="form-control" id="validationCustom01"
-														placeholder="" value="" name="educationType">
+														placeholder="" value="" name="educationType" th:value="${classitem?.educationType}">
 													<!--  required -->
 													<div class="valid-feedback">Looks good!</div>
 												</div>
@@ -1021,7 +1021,7 @@
 													<label for="choices-single-groups"
 														class="form-label font-size-13 text-muted">강의이름</label> <input
 														type="text" class="form-control" id="validationCustom01"
-														placeholder="" value="" name="educationName">
+														placeholder="" value="" name="educationName" th:value="${classitem?.educationName}">
 													<!--  required -->
 													<div class="valid-feedback">Looks good!</div>
 												</div>
@@ -1030,7 +1030,7 @@
 													<label for="choices-single-groups"
 														class="form-label font-size-13 text-muted">강의금액</label> <input
 														type="text" class="form-control" id="validationCustom01"
-														placeholder="" value="" name="educationExpenses">
+														placeholder="" value="" name="educationExpenses" th:value="${classitem?.educationExpenses}">
 													<!--  required -->
 													<div class="valid-feedback">Looks good!</div>
 												</div>
@@ -1042,7 +1042,7 @@
 													<label for="choices-single-groups"
 														class="form-label font-size-13 text-muted">강사</label> <input
 														type="text" class="form-control" id="validationCustom01"
-														placeholder="" value="" name="teacher">
+														placeholder="" value="" name="teacher" th:value="${classitem?.teacher}">
 													<!--  required -->
 													<div class="valid-feedback">Looks good!</div>
 												</div>
@@ -1095,7 +1095,7 @@
 													<label for=" choices-single-groups"
 														class="form-label font-size-13 text-muted">강의장소</label> <input
 														type="text" class="form-control" id="validationCustom03"
-														placeholder="" name="educationPlace">
+														placeholder="" name="educationPlace" th:value="${classitem?.educationPlace}">
 													<!--  required -->
 													<div class="invalid-feedback">Please provide a valid
 														city.</div>
@@ -1105,7 +1105,7 @@
 													<label for=" choices-single-groups"
 														class="form-label font-size-13 text-muted">강의내용</label> <input
 														type="text" class="form-control" id="validationCustom03"
-														placeholder="" name="educationContent">
+														placeholder="" name="educationContent" th:value="${classitem?.educationContent}">
 													<!--  required -->
 													<div class="invalid-feedback">Please provide a valid
 														city.</div>

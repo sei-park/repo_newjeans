@@ -41,20 +41,40 @@
 	        regDate,
 	        revDate
 		) values (
-			 "온라인 교육",
-			 "자바",
-			 "100만원",
-			 "Tony",
+			 #{educationType},
+			 #{educationName},
+			 #{educationExpenses},
+			 #{teacher},
 			 now(),	
 			 now(),
 			 now(),
 			 now(),
-			 "이젠아카데미 노원점",
-			 "기업의 자동화",
+			 #{educationPlace},
+			 #{educationContent},
 			 now(),
 			 now()
 		)
-		 
 	</insert>
+	
+	<select id="classSelectOne" resultMap="classResultMapObj">
+		select
+			d.seq,
+	        d.educationType,  
+	        d.educationName,
+	        d.educationExpenses,
+	        d.teacher,
+	        d.courseRegStart,
+	        d.courseRegEnd,
+	        d.studyStart,
+	        d.studtEnd,
+	        d.educationPlace,
+	        d.educationContent,
+	        d.regDate,
+	        d.revDate
+		from 
+			class d
+		where 1=1
+			and d.seq = #{seq}
+	</select>
 	  
 </mapper>

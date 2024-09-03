@@ -10,5 +10,8 @@ public interface EducationDao {
 	public List<EducationDto> classList();
 	
 	public int classInsert(EducationDto educationDto);
+	
+	public EducationDto classSelectOne(EducationDto educationDto);
+	
 
 }

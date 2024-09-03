@@ -10,5 +10,7 @@ public interface RestaurantDao {
 	public List<RestaurantDto> restaurantList();
 	
 	public int resInsert(RestaurantDto restaurantDto);
-
+	
+	public RestaurantDto restSelectOne(RestaurantDto restaurantDto);
+	
 }

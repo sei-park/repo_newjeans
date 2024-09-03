@@ -42,11 +42,11 @@ public class EducationController {
 	
 	// ------------------------------------------------------
 	@RequestMapping("/xdm/v1/infra/education/educationMForm")
-	public String educationMForm() {
-		
+	public String educationMForm(EducationDto educationDto, Model model) {
+		EducationDto dto = educationService.classSelectOne(educationDto);
+		model.addAttribute("classitem", dto);
 		return "/xdm/v1/infra/education/educationMForm";
 	}
-	
-	
+
 
 }

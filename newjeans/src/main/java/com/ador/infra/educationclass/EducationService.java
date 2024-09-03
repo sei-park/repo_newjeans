@@ -20,4 +20,9 @@ public class EducationService {
 		int result = educationDao.classInsert(educationDto);
 		return result;
 	}
+	
+	public EducationDto classSelectOne(EducationDto educationDto) {
+		EducationDto dto = educationDao.classSelectOne(educationDto);
+		return dto; 
+	}
 }

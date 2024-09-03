@@ -53,7 +53,10 @@ public class MemberController {
 	// -------------------------------------------------------
 	// M폼
 	@RequestMapping(value="/xdm/v1/infra/members/membersMForm")
-	public String membersMForm() {
+	public String membersMForm(MemberDto memberDto, Model model) {
+		
+		model.addAttribute("memberItem", memberService.memberSelectOne(memberDto));
+		
 		return "/xdm/v1/infra/members/membersMForm";
 	}
 

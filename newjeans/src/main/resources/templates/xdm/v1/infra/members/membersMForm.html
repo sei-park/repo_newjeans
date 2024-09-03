@@ -953,23 +953,23 @@
                                                         class="form-label font-size-13 text-muted">관리자여부
                                                         <sup>*</sup>
                                                     </label>
-                                                    <select class="form-select" name="adminNy">
-                                                        <option value="1" th:selected="${item?.adminNy == 1}">관리자</option>
-                                                        <option value="0" th:selected="${item?.adminNy == 0}">방문자</option>
+                                                    <select class="form-select" name="adminNy" th:value="${memberItem?.adminNy}">
+                                                        <option value="1" th:selected="${memberItem?.adminNy == 1}">관리자</option>
+                                                        <option value="0" th:selected="${memberItem?.adminNy == 0}">방문자</option>
                                                     </select>
                                                 </div>
                                                 <div class="col-md-3"> <!--col-mb-3-->
                                                     <label for="choices-single-groups"
                                                         class="form-label font-size-13 text-muted">회원번호</label>
                                                     <input type="text" class="form-control" id="validationCustom01"
-                                                        placeholder="" value=""  name="seq"> <!--  required -->
+                                                        placeholder="" value=""  name="seq" th:value="${memberItem?.seq}"> <!--  required -->
                                                     <div class="valid-feedback">Looks good!</div>
                                                 </div>
                                                 <div class="col-md-3"> <!--col-mb-3-->
                                                     <label for="choices-single-groups"
                                                         class="form-label font-size-13 text-muted">이름</label>
                                                     <input type="text" class="form-control" id="validationCustom01"
-                                                        placeholder="" value=""  name="name"> <!--  required -->
+                                                        placeholder="" value=""  name="name" th:value="${memberItem?.name}"> <!--  required -->
                                                     <div class="valid-feedback">Looks good!</div>
                                                 </div>
                                             </div>
@@ -979,28 +979,28 @@
                                                     <label for="choices-single-groups"
                                                         class="form-label font-size-13 text-muted">아이디</label>
                                                     <input type="text" class="form-control" id="validationCustom01"
-                                                        placeholder="" value=""  name="id"> <!--  required -->
+                                                        placeholder="" value=""  name="id" th:value="${memberItem?.id}"> <!--  required -->
                                                     <div class="valid-feedback">Looks good!</div>
                                                 </div>
                                                 <div class="col-md-3"> <!--col-mb-3-->
                                                     <label for=" choices-single-groups"
                                                         class="form-label font-size-13 text-muted">비밀번호</label>
                                                     <input type="text" class="form-control" id="validationCustom03"
-                                                        placeholder=""  name="password"> <!--  required -->
+                                                        placeholder=""  name="password" th:value="${memberItem?.password}"> <!--  required -->
                                                     <div class="invalid-feedback">Please provide a valid city.</div>
                                                 </div>
                                                 <div class="col-md-3"> <!--col-mb-3-->
                                                     <label for=" choices-single-groups"
                                                         class="form-label font-size-13 text-muted">성별</label>
                                                     <input type="text" class="form-control" id="validationCustom03"
-                                                        placeholder="" name="gender" > <!--  required -->
+                                                        placeholder="" name="gender" th:value="${memberItem?.gender}"> <!--  required -->
                                                     <div class="invalid-feedback">Please provide a valid city. </div>
                                                 </div>
                                                 <div class="col-md-3"> <!--col-mb-3-->
                                                     <label for=" choices-single-groups"
                                                         class="form-label font-size-13 text-muted">생년월일</label>
                                                     <input type="text" class="form-control" id="validationCustom03"
-                                                        placeholder="" name="birth"> <!--  required -->
+                                                        placeholder="" name="birth" th:value="${memberItem?.birth}"> <!--  required -->
                                                     <div class="invalid-feedback">Please provide a valid city. </div>
                                                 </div>
                                             </div>
@@ -1010,13 +1010,13 @@
                                                     <label for="choices-single-groups"
                                                         class="form-label font-size-13 text-muted">이메일</label>
                                                     <input class="form-control" type="text" value=""
-                                                        id="example-text-input" name="email">
+                                                        id="example-text-input" name="email" th:value="${memberItem?.email}">
                                                 </div>
                                                 <div class="col-md-3"><!--col-md-6-->
                                                     <label for="choices-single-groups"
                                                         class="form-label font-size-13 text-muted">전화번호</label>
                                                     <input class="form-control" type="text" value=""
-                                                        id="example-text-input" name="number">
+                                                        id="example-text-input" name="number" th:value="${memberItem?.number}">
                                                 </div>
 <!--                                                 <div class="col-md-3">col-md-6 -->
 <!--                                                     <label for="choices-single-groups" -->
@@ -1035,7 +1035,7 @@
                                             <div class="row gy-3">
                                                 <div class="col-md-6">
                                                     <label for="choices-single-groups"class="form-label font-size-13 text-muted">설명</label>
-                                                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="desc"></textarea>
+                                                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="explanation" th:text="${memberItem?.explanation}"></textarea>
                                                 </div>
                                             </div>
 

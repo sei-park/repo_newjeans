@@ -953,7 +953,7 @@
                                                         class="form-label font-size-13 text-muted">사용여부
                                                         <sup>*</sup>
                                                     </label>
-                                                    <select class="form-select" name="ifcgUseNy">
+                                                    <select class="form-select" name="ifcgUseNy" th:value="${item?.ifcgUseNy}">
                                                         <option value="1" th:selected="${item?.ifcgUseNy == 1}">사용</option>
                                                         <option value="0" th:selected="${item?.ifcgUseNy == 0}">미사용</option>
                                                     </select>
@@ -965,21 +965,21 @@
                                                     <label for="choices-single-groups"
                                                         class="form-label font-size-13 text-muted">코드그룹번호</label>
                                                     <input type="text" class="form-control" id="validationCustom01"
-                                                        placeholder="" value=""  name="ifcgSeq"> <!--  required -->
+                                                        placeholder="" value=""  name="ifcgSeq" th:value="${item?.ifcgSeq}"> <!--  required -->
                                                     <div class="valid-feedback">Looks good!</div>
                                                 </div>
                                                 <div class="col-md-3"> <!--col-mb-3-->
                                                     <label for=" choices-single-groups"
                                                         class="form-label font-size-13 text-muted">코드그룹이름</label>
                                                     <input type="text" class="form-control" id="validationCustom03"
-                                                        placeholder=""  name="ifcgName"> <!--  required -->
+                                                        placeholder=""  name="ifcgName" th:value="${item?.ifcgName}"> <!--  required -->
                                                     <div class="invalid-feedback">Please provide a valid city.</div>
                                                 </div>
                                                 <div class="col-md-3"> <!--col-mb-3-->
                                                     <label for=" choices-single-groups"
                                                         class="form-label font-size-13 text-muted">등록일</label>
                                                     <input type="text" class="form-control" id="validationCustom03"
-                                                        placeholder="" > <!--  required -->
+                                                        placeholder=""> <!--  required -->
                                                     <div class="invalid-feedback">Please provide a valid city. </div>
                                                 </div>
                                                 <div class="col-md-3"> <!--col-mb-3-->
@@ -995,23 +995,24 @@
                                                 <div class=" col-md-3"><!--col-md-6-->
                                                     <label for="choices-single-default"
                                                         class="form-label font-size-13 text-muted">삭제여부</label>
-                                                    <select class="form-select">
-                                                        <option>사용</option>
-                                                        <option>미사용</option>
+                                                      <select class="form-select" name="ifcgDelNy" th:value="${item?.ifcgDelNy}">
+                                                        <option value="1" th:selected="${item?.ifcgDelNy == 1}">Y</option>
+                                                        <option value="0" th:selected="${item?.ifcgDelNy == 0}">N</option>
                                                     </select>
                                                 </div>
                                                 <div class="col-md-3"><!--col-md-6-->
                                                     <label for="choices-single-groups"
                                                         class="form-label font-size-13 text-muted">순서</label>
                                                     <input class="form-control" type="text" value=""
-                                                        id="example-text-input">
+                                                        id="example-text-input" name="ifcgOrder" th:value="${item?.ifcgOrder}">
                                                 </div>
                                             </div>
 
                                             <div class="row gy-3">
                                                 <div class="col-md-6">
                                                     <label for="choices-single-groups"class="form-label font-size-13 text-muted">설명</label>
-                                                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                                                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" 
+                                                    name="ifcgDesc" th:text="${item?.ifcgDesc}"></textarea>
                                                 </div>
                                             </div>
 

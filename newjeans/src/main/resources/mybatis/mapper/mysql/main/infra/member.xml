@@ -39,20 +39,39 @@
 			    registerDate,
 			    reviseDate
 		) values (
-			    1,
-				"관리자",
-			    "tpdlqkr",
-			    "sei123",
-				"여자",
-			    "1996-12-10",
-			    "tpdlqkr@naver.com",
-			    "010-8310-2959",
-			    null,
+			    #{adminNy},
+				#{name},
+			    #{id},
+			    #{password},
+				#{gender},
+			    #{birth},
+			    #{email},
+			    #{number},
+			    #{explanation},
 			    now(),
 			    now()
-		)
+		) 
 	
-
 	</insert>
+	
+	<select id="memberSelectOne" resultMap="memberResultMapObj">
+		select 
+			c.seq,
+		    c.adminNy,
+		    c.name,
+		    c.id,
+		    c.password,
+		    c.gender,
+		    c.birth,
+		    c.email,
+		    c.number,
+		    c.explanation,
+		    c.registerDate,
+		    c.reviseDate
+		from
+			members c
+		where 1=1 
+			and c.seq = #{seq}
+	</select>
 	  
 </mapper>

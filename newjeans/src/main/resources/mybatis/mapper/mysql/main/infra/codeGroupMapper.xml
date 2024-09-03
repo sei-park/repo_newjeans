@@ -31,18 +31,32 @@
 	        regDateTime,
 	        regDateTimeRevise
 		) values (
-			"뉴진스",
-		    1,
-		    1,
-		    null,
-		    1,
+			#{ifcgName},
+		    #{ifcgUseNy},
+		    #{ifcgOrder},
+		    #{ifcgDesc},
+		    #{ifcgDelNy},
 		    now(),
 			now()
 		)
 
 	</insert>
-
 	
-	   
+	<select id="selectOne" resultMap="resultMapObj">
+		SELECT  
+			a.ifcgSeq,
+	        a.ifcgName,
+	        a.ifcgUseNy,
+	        a.ifcgOrder,
+	        a.ifcgDesc,
+	        a.ifcgDelNy,
+	        a.regDateTime,
+	        a.regDateTimeRevise
+		FROM
+			newjeans.codegroup a
+	    WHERE 1=1
+	    	AND a.ifcgSeq = #{ifcgSeq}
+	</select>
+	
 </mapper>
 
