@@ -16,6 +16,9 @@ public interface CodeGroupDao {
 	// selectone
 	public CodeGroupDto selectOne(CodeGroupDto codeGroupDto); // CodeGroupDto 한 건을 뽑음 
 	
+	// update
+	public int update(CodeGroupDto codeGroupDto);
+	
 	
 
 

@@ -29,6 +29,11 @@ public class CodeGroupService {
 		return dto;
 	}
 	
+	// update 
+	public int update(CodeGroupDto codeGroupDto) {
+		return codeGroupDao.update(codeGroupDto);
+	}
+
 	// 줄여서 쓰는 방법 
 //	public CodeGroupDto selectOne(CodeGroupDto codeGroupDto) {
 //		return codeGroupDao.selectOne(codeGroupDto);

@@ -45,10 +45,10 @@
 			 #{educationName},
 			 #{educationExpenses},
 			 #{teacher},
-			 now(),	
-			 now(),
-			 now(),
-			 now(),
+			 #{courseRegStart},	
+			 #{courseRegEnd},
+			 #{studyStart},
+			 #{studtEnd},
 			 #{educationPlace},
 			 #{educationContent},
 			 now(),
@@ -76,5 +76,23 @@
 		where 1=1
 			and d.seq = #{seq}
 	</select>
+	
+	<update id="classUpdate">
+		update class
+		set 
+			educationType = #{educationType},  
+	        educationName = #{educationName},
+	        educationExpenses = #{educationExpenses},
+	        teacher = #{teacher},
+	        courseRegStart = #{courseRegStart},
+	        courseRegEnd = #{courseRegEnd},
+	        studyStart = #{studyStart},
+	        studtEnd = #{studtEnd},
+	        educationPlace = #{educationPlace},
+	        educationContent = #{educationContent}
+	     where 1=1
+	     	and seq = #{seq}
+			
+	</update>
 	  
 </mapper>

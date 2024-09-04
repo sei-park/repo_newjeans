@@ -2,15 +2,19 @@ package com.ador.infra.codegroup;
 
 import java.util.Date;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 public class CodeGroupDto {
 	
 	private String ifcgSeq;
 	private String ifcgName;
 	private Integer ifcgUseNy;
 	private Integer ifcgOrder;
-	private String ifcgDesc;
 	private Integer ifcgDelNy;
+	private String ifcgDesc;
+	@DateTimeFormat(pattern="yyyy-MM-dd HH:mm:ss")
 	private Date regDateTime;
+	@DateTimeFormat(pattern="yyyy-MM-dd HH:mm:ss")
 	private Date regDateTimeRevise;
 	//-----
 	public String getIfcgSeq() {
@@ -37,17 +41,17 @@ public class CodeGroupDto {
 	public void setIfcgOrder(Integer ifcgOrder) {
 		this.ifcgOrder = ifcgOrder;
 	}
-	public String getIfcgDesc() {
-		return ifcgDesc;
-	}
-	public void setIfcgDesc(String ifcgDesc) {
-		this.ifcgDesc = ifcgDesc;
-	}
 	public Integer getIfcgDelNy() {
 		return ifcgDelNy;
 	}
 	public void setIfcgDelNy(Integer ifcgDelNy) {
 		this.ifcgDelNy = ifcgDelNy;
+	}
+	public String getIfcgDesc() {
+		return ifcgDesc;
+	}
+	public void setIfcgDesc(String ifcgDesc) {
+		this.ifcgDesc = ifcgDesc;
 	}
 	public Date getRegDateTime() {
 		return regDateTime;
@@ -61,4 +65,8 @@ public class CodeGroupDto {
 	public void setRegDateTimeRevise(Date regDateTimeRevise) {
 		this.regDateTimeRevise = regDateTimeRevise;
 	}
+	
+	
+	
+	
 }

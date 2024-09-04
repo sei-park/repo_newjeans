@@ -9,10 +9,10 @@ public class EducationDto {
 	private String educationName;
 	private String educationExpenses;
 	private String teacher;
-	private Date courseRegStart;
-	private Date courseRegEnd;
-	private Date studyStart;
-	private Date studtEnd;
+	private String courseRegStart;
+	private String courseRegEnd;
+	private String studyStart;
+	private String studtEnd;
 	private String educationPlace;
 	private String educationContent;
 	private Date regDate;
@@ -48,28 +48,28 @@ public class EducationDto {
 	public void setTeacher(String teacher) {
 		this.teacher = teacher;
 	}
-	public Date getCourseRegStart() {
+	public String getCourseRegStart() {
 		return courseRegStart;
 	}
-	public void setCourseRegStart(Date courseRegStart) {
+	public void setCourseRegStart(String courseRegStart) {
 		this.courseRegStart = courseRegStart;
 	}
-	public Date getCourseRegEnd() {
+	public String getCourseRegEnd() {
 		return courseRegEnd;
 	}
-	public void setCourseRegEnd(Date courseRegEnd) {
+	public void setCourseRegEnd(String courseRegEnd) {
 		this.courseRegEnd = courseRegEnd;
 	}
-	public Date getStudyStart() {
+	public String getStudyStart() {
 		return studyStart;
 	}
-	public void setStudyStart(Date studyStart) {
+	public void setStudyStart(String studyStart) {
 		this.studyStart = studyStart;
 	}
-	public Date getStudtEnd() {
+	public String getStudtEnd() {
 		return studtEnd;
 	}
-	public void setStudtEnd(Date studtEnd) {
+	public void setStudtEnd(String studtEnd) {
 		this.studtEnd = studtEnd;
 	}
 	public String getEducationPlace() {

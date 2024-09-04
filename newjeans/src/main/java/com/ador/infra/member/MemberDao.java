@@ -12,5 +12,7 @@ public interface MemberDao {
 	public int membersInsert(MemberDto memberDto);
 	
 	public MemberDto memberSelectOne(MemberDto memberDto);
+	
+	public int classUpdate(MemberDto memberDto);
 
 }

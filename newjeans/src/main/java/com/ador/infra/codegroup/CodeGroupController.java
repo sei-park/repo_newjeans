@@ -49,7 +49,7 @@ public class CodeGroupController {
 		return "redirect:/xdm/v1/infra/codegroup/codeGroupXdmList";
 	}
 	
-	////////// update ////////// 
+	////////// selectOne  ////////// 
 	
 	// M폼  
 //	@RequestMapping(value="/xdm/v1/infra/codegroup/codeGroupXdmMForm")
@@ -62,13 +62,22 @@ public class CodeGroupController {
 //		return "/xdm/v1/infra/codegroup/codeGroupXdmMForm";
 //	}
 	
-	// 줄여서 쓰는 방법 
+	// M폼 줄여서 쓰는 방법 
 	@RequestMapping(value="/xdm/v1/infra/codegroup/codeGroupXdmMForm")
 	public String codeGroupXdmMForm(CodeGroupDto codeGroupDto, Model model) {
 		
 		model.addAttribute("item" , codeGroupService.selectOne(codeGroupDto)); // "변수명", 객체
 		return "/xdm/v1/infra/codegroup/codeGroupXdmMForm";
 	}
+	
+	////////// update  ////////// 
+	@RequestMapping(value="/xdm/v1/infra/codegroup/codeGroupXdmUpdt")
+	public String codeGroupXdmUpdt(CodeGroupDto codeGroupDto) {
+		
+		codeGroupService.update(codeGroupDto);
+		return "redirect:/xdm/v1/infra/codegroup/codeGroupXdmList";
+	}
+	
 	
 	
 

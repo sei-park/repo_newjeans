@@ -13,5 +13,7 @@ public interface EducationDao {
 	
 	public EducationDto classSelectOne(EducationDto educationDto);
 	
+	public int classUpdate(EducationDto educationDto);
+	
 
 }

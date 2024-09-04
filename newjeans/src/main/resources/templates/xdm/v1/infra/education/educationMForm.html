@@ -1003,7 +1003,8 @@
 													<label for="choices-single-groups"
 														class="form-label font-size-13 text-muted">강의번호</label> <input
 														type="text" class="form-control" id="validationCustom01"
-														placeholder="" value="" name="seq" th:value="${classitem?.seq}">
+														placeholder="" value="" name="seq"
+														th:value="${classitem?.seq}">
 													<!--  required -->
 													<div class="valid-feedback">Looks good!</div>
 												</div>
@@ -1012,7 +1013,8 @@
 													<label for="choices-single-groups"
 														class="form-label font-size-13 text-muted">강의종류</label> <input
 														type="text" class="form-control" id="validationCustom01"
-														placeholder="" value="" name="educationType" th:value="${classitem?.educationType}">
+														placeholder="" value="" name="educationType"
+														th:value="${classitem?.educationType}">
 													<!--  required -->
 													<div class="valid-feedback">Looks good!</div>
 												</div>
@@ -1021,7 +1023,8 @@
 													<label for="choices-single-groups"
 														class="form-label font-size-13 text-muted">강의이름</label> <input
 														type="text" class="form-control" id="validationCustom01"
-														placeholder="" value="" name="educationName" th:value="${classitem?.educationName}">
+														placeholder="" value="" name="educationName"
+														th:value="${classitem?.educationName}">
 													<!--  required -->
 													<div class="valid-feedback">Looks good!</div>
 												</div>
@@ -1030,7 +1033,8 @@
 													<label for="choices-single-groups"
 														class="form-label font-size-13 text-muted">강의금액</label> <input
 														type="text" class="form-control" id="validationCustom01"
-														placeholder="" value="" name="educationExpenses" th:value="${classitem?.educationExpenses}">
+														placeholder="" value="" name="educationExpenses"
+														th:value="${classitem?.educationExpenses}">
 													<!--  required -->
 													<div class="valid-feedback">Looks good!</div>
 												</div>
@@ -1042,223 +1046,93 @@
 													<label for="choices-single-groups"
 														class="form-label font-size-13 text-muted">강사</label> <input
 														type="text" class="form-control" id="validationCustom01"
-														placeholder="" value="" name="teacher" th:value="${classitem?.teacher}">
+														placeholder="" value="" name="teacher"
+														th:value="${classitem?.teacher}">
 													<!--  required -->
 													<div class="valid-feedback">Looks good!</div>
 												</div>
-<!-- 												<div class="col-md-3"> -->
-												
-<!-- 													<label for=" choices-single-groups" -->
-<!-- 														class="form-label font-size-13 text-muted">수강신청시작</label> -->
-<!-- 													<input type="text" class="form-control" -->
-<!-- 														id="validationCustom03" placeholder="" -->
-<!-- 														name="courseRegStart"> -->
-<!-- 													 required -->
-<!-- 													<div class="invalid-feedback">Please provide a valid -->
-<!-- 														city.</div> -->
-<!-- 												</div> -->
-<!-- 												<div class="col-md-3"> -->
-<!-- 													col-mb-3 -->
-<!-- 													<label for=" choices-single-groups" -->
-<!-- 														class="form-label font-size-13 text-muted">수강신청시작</label> -->
-<!-- 													<input type="text" class="form-control" -->
-<!-- 														id="validationCustom03" placeholder="" name="courseRegEnd"> -->
-<!-- 													 required -->
-<!-- 													<div class="invalid-feedback">Please provide a valid -->
-<!-- 														city.</div> -->
-<!-- 												</div> -->
+												<div class="col-md-3">
+													<label for=" choices-single-groups"
+														class="form-label font-size-13 text-muted">수강신청시작</label>
+													<input type="text" class="form-control"
+														id="validationCustom03" placeholder=""
+														name="courseRegStart"
+														th:value="${classitem?.courseRegStart}">
+													<div class="invalid-feedback"></div>
+												</div>
+												<div class="col-md-3">
+													<label for=" choices-single-groups"
+														class="form-label font-size-13 text-muted">수강신청끝</label> <input
+														type="text" class="form-control" id="validationCustom03"
+														placeholder="" name="courseRegEnd"
+														th:value="${classitem?.courseRegEnd}">
+													<div class="invalid-feedback"></div>
+												</div>
 											</div>
 
 											<div class="row gy-3">
-<!-- 												<div class="col-md-3"> -->
-<!-- 													col-mb-3 -->
-<!-- 													<label for=" choices-single-groups" -->
-<!-- 														class="form-label font-size-13 text-muted">강의시작</label> <input -->
-<!-- 														type="text" class="form-control" id="validationCustom03" -->
-<!-- 														placeholder="" name="studyStart"> -->
-<!-- 													 required -->
-<!-- 													<div class="invalid-feedback">Please provide a valid -->
-<!-- 														city.</div> -->
-<!-- 												</div> -->
-<!-- 												<div class="col-md-3"> -->
-<!-- 													col-mb-3 -->
-<!-- 													<label for=" choices-single-groups" -->
-<!-- 														class="form-label font-size-13 text-muted">강의끝</label> <input -->
-<!-- 														type="text" class="form-control" id="validationCustom03" -->
-<!-- 														placeholder="" name="studtEnd"> -->
-<!-- 													 required -->
-<!-- 													<div class="invalid-feedback">Please provide a valid -->
-<!-- 														city.</div> -->
-<!-- 												</div> -->
+												<div class="col-md-3">
+													<label for=" choices-single-groups"
+														class="form-label font-size-13 text-muted">강의시작</label> <input
+														type="text" class="form-control" id="validationCustom03"
+														placeholder="" name="studyStart"
+														th:value="${classitem?.studyStart}">
+													<div class="invalid-feedback"></div>
+												</div>
+												<div class="col-md-3">
+													<label for=" choices-single-groups"
+														class="form-label font-size-13 text-muted">강의끝</label> <input
+														type="text" class="form-control" id="validationCustom03"
+														placeholder="" name="studtEnd"
+														th:value="${classitem?.studtEnd}"> 
+													<div class="invalid-feedback"></div>
+												</div>
 												<div class="col-md-3">
 													<!--col-mb-3-->
 													<label for=" choices-single-groups"
 														class="form-label font-size-13 text-muted">강의장소</label> <input
 														type="text" class="form-control" id="validationCustom03"
-														placeholder="" name="educationPlace" th:value="${classitem?.educationPlace}">
+														placeholder="" name="educationPlace"
+														th:value="${classitem?.educationPlace}">
 													<!--  required -->
-													<div class="invalid-feedback">Please provide a valid
-														city.</div>
+													<div class="invalid-feedback"></div>
 												</div>
 												<div class="col-md-3">
 													<!--col-mb-3-->
 													<label for=" choices-single-groups"
 														class="form-label font-size-13 text-muted">강의내용</label> <input
 														type="text" class="form-control" id="validationCustom03"
-														placeholder="" name="educationContent" th:value="${classitem?.educationContent}">
+														placeholder="" name="educationContent"
+														th:value="${classitem?.educationContent}">
 													<!--  required -->
-													<div class="invalid-feedback">Please provide a valid
-														city.</div>
+													<div class="invalid-feedback"></div>
 												</div>
 											</div>
 
-<!-- 											<div class="row gy-3"> -->
-<!-- 												<div class="col-md-3"> -->
-<!-- 													col-mb-3 -->
-<!-- 													<label for=" choices-single-groups" -->
-<!-- 														class="form-label font-size-13 text-muted">등록일</label> <input -->
-<!-- 														type="text" class="form-control" id="validationCustom03" -->
-<!-- 														placeholder="" name="regDate"> -->
-<!-- 													 required -->
-<!-- 													<div class="invalid-feedback">Please provide a valid -->
-<!-- 														city.</div> -->
-<!-- 												</div> -->
-<!-- 												<div class="col-md-3"> -->
-<!-- 													col-mb-3 -->
-<!-- 													<label for=" choices-single-groups" -->
-<!-- 														class="form-label font-size-13 text-muted">수정일</label> <input -->
-<!-- 														type="text" class="form-control" id="validationCustom03" -->
-<!-- 														placeholder="" name="revDate"> -->
-<!-- 													 required -->
-<!-- 													<div class="invalid-feedback">Please provide a valid -->
-<!-- 														city.</div> -->
-<!-- 												</div> -->
-<!-- 											</div> -->
+											<!-- 											<div class="row gy-3"> -->
+											<!-- 												<div class="col-md-3"> -->
+											<!-- 													col-mb-3 -->
+											<!-- 													<label for=" choices-single-groups" -->
+											<!-- 														class="form-label font-size-13 text-muted">등록일</label> <input -->
+											<!-- 														type="text" class="form-control" id="validationCustom03" -->
+											<!-- 														placeholder="" name="regDate"> -->
+											<!-- 													 required -->
+											<!-- 													<div class="invalid-feedback">Please provide a valid -->
+											<!-- 														city.</div> -->
+											<!-- 												</div> -->
+											<!-- 												<div class="col-md-3"> -->
+											<!-- 													col-mb-3 -->
+											<!-- 													<label for=" choices-single-groups" -->
+											<!-- 														class="form-label font-size-13 text-muted">수정일</label> <input -->
+											<!-- 														type="text" class="form-control" id="validationCustom03" -->
+											<!-- 														placeholder="" name="revDate"> -->
+											<!-- 													 required -->
+											<!-- 													<div class="invalid-feedback">Please provide a valid -->
+											<!-- 														city.</div> -->
+											<!-- 												</div> -->
+											<!-- 											</div> -->
 
-<!-- 											<div class="row gy-3"> -->
-<!-- 												<div class="col-md-3"> -->
-<!-- 													col-md-6 -->
-<!-- 													<label for="choices-single-groups" -->
-<!-- 														class="form-label font-size-13 text-muted">다국어1</label> <input -->
-<!-- 														class="form-control" type="text" value="" -->
-<!-- 														id="example-text-input"> -->
-<!-- 												</div> -->
-<!-- 												<div class="col-md-3"> -->
-<!-- 													col-md-6 -->
-<!-- 													<label for="choices-single-groups" -->
-<!-- 														class="form-label font-size-13 text-muted">다국어2</label> <input -->
-<!-- 														class="form-control" type="text" value="" -->
-<!-- 														id="example-text-input"> -->
-<!-- 												</div> -->
-<!-- 												<div class="col-md-3"> -->
-<!-- 													col-md-6 -->
-<!-- 													<label for="choices-single-groups" -->
-<!-- 														class="form-label font-size-13 text-muted">다국어3</label> <input -->
-<!-- 														class="form-control" type="text" value="" -->
-<!-- 														id="example-text-input"> -->
-<!-- 												</div> -->
-<!-- 												<div class="col-md-3"> -->
-<!-- 													col-md-6 -->
-<!-- 													<label for="choices-single-groups" -->
-<!-- 														class="form-label font-size-13 text-muted">다국어4</label> <input -->
-<!-- 														class="form-control" type="text" value="" -->
-<!-- 														id="example-text-input"> -->
-<!-- 												</div> -->
-<!-- 											</div> -->
-
-<!-- 											<div class="row gy-3"> -->
-<!-- 												<div class="col-md-3"> -->
-<!-- 													col-md-6 -->
-<!-- 													<label for="choices-single-groups" -->
-<!-- 														class="form-label font-size-13 text-muted">다국어5</label> <input -->
-<!-- 														class="form-control" type="text" value="" -->
-<!-- 														id="example-text-input"> -->
-<!-- 												</div> -->
-<!-- 												<div class="col-md-3"> -->
-<!-- 													col-md-6 -->
-<!-- 													<label for="choices-single-groups" -->
-<!-- 														class="form-label font-size-13 text-muted">다국어6</label> <input -->
-<!-- 														class="form-control" type="text" value="" -->
-<!-- 														id="example-text-input"> -->
-<!-- 												</div> -->
-<!-- 												<div class="col-md-3"> -->
-<!-- 													col-md-6 -->
-<!-- 													<label for="choices-single-groups" -->
-<!-- 														class="form-label font-size-13 text-muted">다국어7</label> <input -->
-<!-- 														class="form-control" type="text" value="" -->
-<!-- 														id="example-text-input"> -->
-<!-- 												</div> -->
-<!-- 												<div class="col-md-3"> -->
-<!-- 													col-md-6 -->
-<!-- 													<label for="choices-single-groups" -->
-<!-- 														class="form-label font-size-13 text-muted">다국어8</label> <input -->
-<!-- 														class="form-control" type="text" value="" -->
-<!-- 														id="example-text-input"> -->
-<!-- 												</div> -->
-<!-- 											</div> -->
-
-<!-- 											<div class="row gy-3"> -->
-<!-- 												<div class="col-md-3"> -->
-<!-- 													col-md-6 -->
-<!-- 													<label for="choices-single-groups" -->
-<!-- 														class="form-label font-size-13 text-muted">예비1(VARCHER -->
-<!-- 														TYPE)</label> <input class="form-control" type="text" value="" -->
-<!-- 														id="example-text-input"> -->
-<!-- 												</div> -->
-<!-- 												<div class="col-md-3"> -->
-<!-- 													col-md-6 -->
-<!-- 													<label for="choices-single-groups" -->
-<!-- 														class="form-label font-size-13 text-muted">예비2(VARCHER -->
-<!-- 														TYPE)</label> <input class="form-control" type="text" value="" -->
-<!-- 														id="example-text-input"> -->
-<!-- 												</div> -->
-<!-- 												<div class="col-md-3"> -->
-<!-- 													col-md-6 -->
-<!-- 													<label for="choices-single-groups" -->
-<!-- 														class="form-label font-size-13 text-muted">예비3(VARCHER -->
-<!-- 														TYPE)</label> <input class="form-control" type="text" value="" -->
-<!-- 														id="example-text-input"> -->
-<!-- 												</div> -->
-<!-- 												<div class="col-md-3"> -->
-<!-- 													col-md-6 -->
-<!-- 													<label for="choices-single-groups" -->
-<!-- 														class="form-label font-size-13 text-muted">예비4(VARCHERTYPE)</label> -->
-<!-- 													<input class="form-control" type="text" value="" -->
-<!-- 														id="example-text-input"> -->
-<!-- 												</div> -->
-<!-- 											</div> -->
-
-<!-- 											<div class="row gy-3"> -->
-<!-- 												<div class="col-md-3"> -->
-<!-- 													col-md-6 -->
-<!-- 													<label for="choices-single-groups" -->
-<!-- 														class="form-label font-size-13 text-muted">예비1(INT -->
-<!-- 														TYPE)</label> <input class="form-control" type="text" value="" -->
-<!-- 														id="example-text-input"> -->
-<!-- 												</div> -->
-<!-- 												<div class="col-md-3"> -->
-<!-- 													col-md-6 -->
-<!-- 													<label for="choices-single-groups" -->
-<!-- 														class="form-label font-size-13 text-muted">예비2(INT -->
-<!-- 														TYPE)</label> <input class="form-control" type="text" value="" -->
-<!-- 														id="example-text-input"> -->
-<!-- 												</div> -->
-<!-- 												<div class="col-md-3"> -->
-<!-- 													col-md-6 -->
-<!-- 													<label for="choices-single-groups" -->
-<!-- 														class="form-label font-size-13 text-muted">예비3(INT -->
-<!-- 														TYPE)</label> <input class="form-control" type="text" value="" -->
-<!-- 														id="example-text-input"> -->
-<!-- 												</div> -->
-<!-- 												<div class="col-md-3"> -->
-<!-- 													col-md-6 -->
-<!-- 													<label for="choices-single-groups" -->
-<!-- 														class="form-label font-size-13 text-muted">예비4(INT -->
-<!-- 														TYPE)</label> <input class="form-control" type="text" value="" -->
-<!-- 														id="example-text-input"> -->
-<!-- 												</div> -->
-<!-- 											</div> -->
-
+											
 											<!------------submit icon------------>
 											<div class="row gy-3">
 												<div class="col-md-1">

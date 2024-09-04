@@ -5,14 +5,14 @@
 
 	<resultMap type="com.ador.infra.codegroup.CodeGroupDto" id="resultMapObj"></resultMap>
 	
-	<select id="selectList" resultMap="resultMapObj">
+	<select id="selectList" resultMap="resultMapObj"> <!-- 쿼리를 작동시키는 id -->
 		SELECT  
 			a.ifcgSeq,
 	        a.ifcgName,
 	        a.ifcgUseNy,
 	        a.ifcgOrder,
-	        a.ifcgDesc,
 	        a.ifcgDelNy,
+	        a.ifcgDesc,
 	        a.regDateTime,
 	        a.regDateTimeRevise
 		FROM
@@ -26,16 +26,16 @@
 	        ifcgName,
 	        ifcgUseNy,
 	        ifcgOrder,
-	        ifcgDesc,
 	        ifcgDelNy,
+	        ifcgDesc,
 	        regDateTime,
 	        regDateTimeRevise
 		) values (
 			#{ifcgName},
 		    #{ifcgUseNy},
 		    #{ifcgOrder},
+		    0,
 		    #{ifcgDesc},
-		    #{ifcgDelNy},
 		    now(),
 			now()
 		)
@@ -48,8 +48,8 @@
 	        a.ifcgName,
 	        a.ifcgUseNy,
 	        a.ifcgOrder,
-	        a.ifcgDesc,
 	        a.ifcgDelNy,
+	        a.ifcgDesc,
 	        a.regDateTime,
 	        a.regDateTimeRevise
 		FROM
@@ -57,6 +57,22 @@
 	    WHERE 1=1
 	    	AND a.ifcgSeq = #{ifcgSeq}
 	</select>
+	
+	<update id="update">
+		UPDATE codegroup
+		SET
+	        ifcgName = #{ifcgName},
+	        ifcgUseNy = #{ifcgUseNy},
+	        ifcgOrder = #{ifcgOrder},
+	        ifcgDelNy = #{ifcgDelNy},
+	        ifcgDesc = #{ifcgDesc},
+	        regDateTime = #{regDateTime},
+	        regDateTimeRevise = now()
+	    WHERE 1=1
+	    	AND ifcgSeq = #{ifcgSeq}
+	</update>
+	
+	
 	
 </mapper>
 

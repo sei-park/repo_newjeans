@@ -948,6 +948,23 @@
                                     <form method="post" action="/xdm/v1/infra/codegroup/codeGroupXdmInst">
                                         <div class="row"> <!--col-md-8-->
                                             <div class="row">
+                                            	  <div class="col-md-3"> <!--col-mb-3-->
+                                                    <label for="choices-single-groups"
+                                                        class="form-label font-size-13 text-muted">코드그룹</label>
+                                                    <input type="text" class="form-control" id="validationCustom01"
+                                                        placeholder="" value="" name="ifcgSeq" readonly> <!--  required -->
+                                                    <div class="valid-feedback">Looks good!</div>
+                                                </div>
+                                                <div class="col-md-3"> <!--col-mb-3-->
+                                                    <label for=" choices-single-groups"
+                                                        class="form-label font-size-13 text-muted">코드그룹이름</label>
+                                                    <input type="text" class="form-control" id="validationCustom03"
+                                                        placeholder="" name="ifcgName"> <!--  required -->
+                                                    <div class="invalid-feedback">Please provide a valid city.</div>
+                                                </div>
+                                            </div>
+
+                                            <div class="row gy-3">
                                                 <div class="col-md-3"><!--col-md-6-->
                                                     <label for="choices-single-default"
                                                         class="form-label font-size-13 text-muted">사용여부
@@ -958,55 +975,55 @@
                                                         <option value="0" th:selected="${item?.ifcgUseNy == 0}">미사용</option>
                                                     </select>
                                                 </div>
-                                            </div>
-
-                                            <div class="row gy-3">
-                                                <div class="col-md-3"> <!--col-mb-3-->
-                                                    <label for="choices-single-groups"
-                                                        class="form-label font-size-13 text-muted">코드그룹번호</label>
-                                                    <input type="text" class="form-control" id="validationCustom01"
-                                                        placeholder="" value="" name="ifcgSeq"> <!--  required -->
-                                                    <div class="valid-feedback">Looks good!</div>
-                                                </div>
-                                                <div class="col-md-3"> <!--col-mb-3-->
-                                                    <label for=" choices-single-groups"
-                                                        class="form-label font-size-13 text-muted">코드그룹이름</label>
-                                                    <input type="text" class="form-control" id="validationCustom03"
-                                                        placeholder="" name="ifcgName"> <!--  required -->
-                                                    <div class="invalid-feedback">Please provide a valid city.</div>
-                                                </div>
-<!--                                                 <div class="col-md-3"> col-mb-3 -->
-<!--                                                     <label for=" choices-single-groups" -->
-<!--                                                         class="form-label font-size-13 text-muted">등록일</label> -->
-<!--                                                     <input type="text" class="form-control" id="validationCustom03" -->
-<!--                                                         placeholder="" name="regDateTime">  required -->
-<!--                                                     <div class="invalid-feedback">Please provide a valid city. </div> -->
+                                                
+<!--                                                 <div class=" col-md-3">col-md-6 -->
+<!--                                                     <label for="choices-single-default" -->
+<!--                                                         class="form-label font-size-13 text-muted">삭제여부</label> -->
+<!--                                                     <select class="form-select" name="ifcgDelNy"> -->
+<!--                                                         <option value="1">Y</option> -->
+<!--                                                         <option value="0">N</option> -->
+<!--                                                     </select> -->
 <!--                                                 </div> -->
-<!--                                                 <div class="col-md-3"> col-mb-3 -->
-<!--                                                     <label for=" choices-single-groups" -->
-<!--                                                         class="form-label font-size-13 text-muted">수정일</label> -->
-<!--                                                     <input type="text" class="form-control" id="validationCustom03" -->
-<!--                                                         placeholder="">  required -->
-<!--                                                     <div class="invalid-feedback" name="regDateTimeRevise">Please provide a valid city. </div> -->
-<!--                                                 </div> -->
-                                            </div>
-
-                                            <div class="row gy-3">
-                                                <div class=" col-md-3"><!--col-md-6-->
-                                                    <label for="choices-single-default"
-                                                        class="form-label font-size-13 text-muted">삭제여부</label>
-                                                    <select class="form-select" name="ifcgDelNy">
-                                                        <option value="1">Y</option>
-                                                        <option value="0">N</option>
-                                                    </select>
-                                                </div>
                                                 <div class="col-md-3"><!--col-md-6-->
                                                     <label for="choices-single-groups"
                                                         class="form-label font-size-13 text-muted">순서</label>
                                                     <input class="form-control" type="text" value=""
                                                         id="example-text-input" name="ifcgOrder">
                                                 </div>
+                                                
+                                                <!-- 등록일 수정일 -->
+<!--                                                 <div class="col-md-3"> -->
+<!--                                                     <label for=" choices-single-groups" -->
+<!--                                                         class="form-label font-size-13 text-muted">등록일</label> -->
+<!--                                                     <input type="text" class="form-control" id="validationCustom03" -->
+<!--                                                         placeholder="" name="regDateTime">   -->
+<!--                                                     <div class="invalid-feedback">Please provide a valid city. </div> -->
+<!--                                                 </div> -->
+<!--                                                 <div class="col-md-3">  -->
+<!--                                                     <label for=" choices-single-groups" -->
+<!--                                                         class="form-label font-size-13 text-muted">수정일</label> -->
+<!--                                                     <input type="text" class="form-control" id="validationCustom03" -->
+<!--                                                         placeholder="">  -->
+<!--                                                     <div class="invalid-feedback" name="regDateTimeRevise">Please provide a valid city. </div> -->
+<!--                                                 </div> -->
                                             </div>
+
+<!--                                             <div class="row gy-3"> -->
+<!--                                                 <div class=" col-md-3">col-md-6 -->
+<!--                                                     <label for="choices-single-default" -->
+<!--                                                         class="form-label font-size-13 text-muted">삭제여부</label> -->
+<!--                                                     <select class="form-select" name="ifcgDelNy"> -->
+<!--                                                         <option value="1">Y</option> -->
+<!--                                                         <option value="0">N</option> -->
+<!--                                                     </select> -->
+<!--                                                 </div> -->
+<!--                                                 <div class="col-md-3">col-md-6 -->
+<!--                                                     <label for="choices-single-groups" -->
+<!--                                                         class="form-label font-size-13 text-muted">순서</label> -->
+<!--                                                     <input class="form-control" type="text" value="" -->
+<!--                                                         id="example-text-input" name="ifcgOrder"> -->
+<!--                                                 </div> -->
+<!--                                             </div> -->
 
                                             <div class="row gy-3">
                                                 <div class="col-md-6">
@@ -1129,7 +1146,7 @@
                                             <!------------submit icon------------>
                                             <div class="row gy-3">
                                                 <div class="col-md-1">
-                                                    <a href="./0_list.html">
+                                                    <a href="/xdm/v1/infra/codegroup/codeGroupXdmList">
                                                         <button type="button" class="btn btn-outline-primary">
                                                             <i class="bx bx-list-ul"></i>
                                                         </button>

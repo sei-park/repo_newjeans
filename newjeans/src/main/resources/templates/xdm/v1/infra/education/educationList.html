@@ -950,7 +950,7 @@
                                                     <div class="row mb-3 align-items-center">
                                                         <div class="mb-2">
                                                             <!-- <h6>page1 > page2 > Default</h6> -->
-                                                            <h1>강의 리스트</h1>
+                                                            <h1>Education List</h1>
                                                         </div>
                                                         <div class="col-md-2">
                                                             <select class="form-select"
@@ -1057,8 +1057,8 @@
                                                         <th scope="col">수강신청끝</th>
                                                         <th scope="col">학습시작</th>
                                                         <th scope="col">학습끝</th>
-                                                        <th scope="col">교육장소</th>
-                                                        <th scope="col">교육내용</th>
+                                                        <th scope="col">강의장소</th>
+                                                        <th scope="col">강의내용</th>
                                                         <th scope="col">등록일</th>
                                                         <th scope="col">수정일</th>
                                                         <!-- <th style="width: 80px; min-width: 80px;">Action</th> -->
@@ -1086,10 +1086,10 @@
                                                         <td><a th:href="@{/xdm/v1/infra/education/educationMForm(seq=${list.seq})}" th:text="${list.educationName}"></a></td>
                                                         <td th:text="${list.educationExpenses}"></td>
                                                         <td th:text="${list.teacher}"></td>
-                                                        <td th:text="${#dates.format(list.courseRegStart, 'yyyy-MM-dd HH:mm:ss')}"></td>
-                                                        <td th:text="${#dates.format(list.courseRegEnd, 'yyyy-MM-dd HH:mm:ss')}"></td>
-                                                        <td th:text="${#dates.format(list.studyStart, 'yyyy-MM-dd HH:mm:ss')}"></td>
-                                                        <td th:text="${#dates.format(list.studtEnd, 'yyyy-MM-dd HH:mm:ss')}"></td>
+                                                        <td th:text="${list.courseRegStart}"></td>
+                                                        <td th:text="${list.courseRegEnd}"></td>
+                                                        <td th:text="${list.studyStart}"></td>
+                                                        <td th:text="${list.studtEnd}"></td>
                                                         <td th:text="${list.educationPlace}">
                                                         <td th:text="${list.educationContent}">
                                                         <td th:text="${#dates.format(list.regDate, 'yyyy-MM-dd HH:mm:ss')}"></td>
