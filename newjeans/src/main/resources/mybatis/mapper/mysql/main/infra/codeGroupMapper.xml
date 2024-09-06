@@ -66,7 +66,6 @@
 	        ifcgOrder = #{ifcgOrder},
 	        ifcgDelNy = #{ifcgDelNy},
 	        ifcgDesc = #{ifcgDesc},
-	        regDateTime = #{regDateTime},
 	        regDateTimeRevise = now()
 	    WHERE 1=1
 	    	AND ifcgSeq = #{ifcgSeq}

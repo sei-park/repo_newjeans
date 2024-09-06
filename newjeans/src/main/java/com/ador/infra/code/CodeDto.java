@@ -13,6 +13,9 @@ public class CodeDto {
 	private Date registerDate;
 	private Date reviseDate;
 	private String codegroup_ifcgSeq;
+	// codegroup 에 연결할 columns추가
+	private String ifcgSeq;
+	private String ifcgName;
 	//-----
 	public String getIfcdSeq() {
 		return ifcdSeq;
@@ -68,6 +71,22 @@ public class CodeDto {
 	public void setCodegroup_ifcgSeq(String codegroup_ifcgSeq) {
 		this.codegroup_ifcgSeq = codegroup_ifcgSeq;
 	}
+	public String getIfcgSeq() {
+		return ifcgSeq;
+	}
+	public void setIfcgSeq(String ifcgSeq) {
+		this.ifcgSeq = ifcgSeq;
+	}
+	public String getIfcgName() {
+		return ifcgName;
+	}
+	public void setIfcgName(String ifcgName) {
+		this.ifcgName = ifcgName;
+	}
+	
+	
+	
+	
 	
 	
 

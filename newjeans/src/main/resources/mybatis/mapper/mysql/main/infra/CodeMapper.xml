@@ -20,6 +20,67 @@
 			code b
 		order by
 			b.ifcdSeq desc
-	</select> 
-	  
+	</select>
+	
+	<!-- codegroup, code 연결 -->
+	<select id="selectListCode" resultMap="codeResultMapObj">
+		select
+			a.ifcgSeq,
+		    a.ifcgName
+		from
+			codegroup a
+		where 1=1 
+			and a.ifcgDelNy = 1
+		order by  
+			a.ifcgOrder desc
+	</select>
+	
+	<insert id="codeInsert">
+		insert into code (
+			ifcdName,
+		    ifcdUseNy,
+		    ifcdOrder,
+		    ifcdDesc,
+		    ifcdDelNy,
+		    registerDate,
+		    reviseDate, 
+		    codegroup_ifcgSeq
+		) values (
+			#{ifcdName},
+			#{ifcdUseNy},
+			#{ifcdOrder},
+			#{ifcdDesc},
+			0,
+			now(),
+			now(),
+			#{codegroup_ifcgSeq}
+		)
+	</insert>
+	
+	<select id="codeSelectOne" resultMap="codeResultMapObj">
+		select
+			b.ifcdSeq,
+		    b.ifcdName,
+		    b.ifcdUseNy,
+		    b.ifcdOrder,
+		    b.ifcdDesc,
+		    b.ifcdDelNy,
+		    b.registerDate,
+		    b.reviseDate, 
+		    b.codegroup_ifcgSeq
+		from
+			code b
+		where 1=1
+ 			and b.ifcdSeq = #{ifcdSeq}
+	</select>
+
+
+	
+
+
+	
+
+	
+	
+	   
 </mapper>

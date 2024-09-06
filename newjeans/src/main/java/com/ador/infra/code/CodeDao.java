@@ -7,6 +7,17 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface CodeDao {
 	
-	List<CodeDto> codeSelectList();
-
+	// select
+	public List<CodeDto> codeSelectList();
+	
+	// codegroup - code select 
+	public List<CodeDto> selectListCode();
+	
+	// insert 
+	public int codeInsert(CodeDto codeDto);
+	
+	// selectone 
+	public CodeDto codeSelectOne(CodeDto codeDto);
+						
+	
 }

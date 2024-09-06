@@ -10,10 +10,25 @@ public class CodeService {
 	
 	@Autowired
 	CodeDao codeDao;
-	
+    
+	// select
 	public List<CodeDto> codeSelectList() {
-		List<CodeDto> codes = codeDao.codeSelectList();
-		return codes;
+		return codeDao.codeSelectList();
+	}
+	
+	// codegroup - code select 
+	public List<CodeDto> selectListCode() {
+		return codeDao.selectListCode();
+	}
+	
+	// insert 
+	public int codeInsert(CodeDto codeDto) {
+		return codeDao.codeInsert(codeDto);
+	}
+	
+	// selectOne
+	public CodeDto codeSelectOne(CodeDto codeDto) {
+		return codeDao.codeSelectOne(codeDto);
 	}
 
-}
+} 

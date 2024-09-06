@@ -940,7 +940,7 @@
                         <div class="col-12"><!--col-12-->
                             <div class="card">
                                 <div class="card-header justify-content-between d-flex align-items-center">
-                                    <h1>Code Group</h1><!--card-title-->
+                                    <h1>Code</h1><!--card-title-->
                                 </div><!-- end card header -->
 								
 								<!--  Form 추가 --> <!-- form 태그 안에 novalidate  class="needs-validation" -->
@@ -950,16 +950,23 @@
                                             <div class="row">
                                                   <div class="col-md-3"> <!--col-mb-3-->
                                                     <label for="choices-single-groups"
-                                                        class="form-label font-size-13 text-muted">코드그룹</label>
+                                                        class="form-label font-size-13 text-muted">코드그룹번호</label>
                                                     <input type="text" class="form-control" id="validationCustom01"
-                                                        placeholder="" value=""  name="ifcgSeq" th:value="${item?.ifcgSeq}" readonly> <!--  required -->
+                                                        placeholder="" value=""  name="codegroup_ifcgSeq" th:value="${item?.codegroup_ifcgSeq}" readonly> <!--  required -->
                                                     <div class="valid-feedback">Looks good!</div>
                                                 </div>
                                                 <div class="col-md-3"> <!--col-mb-3-->
                                                     <label for=" choices-single-groups"
-                                                        class="form-label font-size-13 text-muted">코드그룹이름</label>
+                                                        class="form-label font-size-13 text-muted">코드번호</label>
                                                     <input type="text" class="form-control" id="validationCustom03"
-                                                        placeholder=""  name="ifcgName" th:value="${item?.ifcgName}"> <!--  required -->
+                                                        placeholder=""  name="ifcdSeq" th:value="${item?.ifcdSeq}"> <!--  required -->
+                                                    <div class="invalid-feedback">Please provide a valid city.</div>
+                                                </div>
+                                                <div class="col-md-3"> <!--col-mb-3-->
+                                                    <label for=" choices-single-groups"
+                                                        class="form-label font-size-13 text-muted">코드이름</label>
+                                                    <input type="text" class="form-control" id="validationCustom03"
+                                                        placeholder=""  name="ifcdName" th:value="${item?.ifcdName}"> <!--  required -->
                                                     <div class="invalid-feedback">Please provide a valid city.</div>
                                                 </div>
                                             </div>
@@ -981,6 +988,12 @@
                                                     <input class="form-control" type="text" value=""
                                                         id="example-text-input" name="ifcgOrder" th:value="${item?.ifcgOrder}">
                                                 </div>
+                                                <div class="col-md-3"><!--col-md-6-->
+                                                    <label for="choices-single-groups"
+                                                        class="form-label font-size-13 text-muted">삭제여부</label>
+                                                    <input class="form-control" type="text" value=""
+                                                        id="example-text-input" name="ifcgOrder" th:value="${item?.ifcgOrder}">
+                                                </div>
                                             </div>
 
                                             <div class="row gy-3">
@@ -991,31 +1004,31 @@
                                                 </div>
                                             </div>
 
-                                            <div class="row gy-3">
-                                            	 <div class=" col-md-3">
-                                                    <label for="choices-single-default"
-                                                        class="form-label font-size-13 text-muted">삭제여부</label>
-                                                      <select class="form-select" name="ifcgDelNy" th:value="${item?.ifcgDelNy}" disabled>
-                                                        <option value="1" th:selected="${item?.ifcgDelNy == 1}">Y</option>
-                                                        <option value="0" th:selected="${item?.ifcgDelNy == 0}">N</option>
-                                                    </select>
-                                                </div>
-                                                 <div class="col-md-3">
-                                                    <label for=" choices-single-groups"
-                                                        class="form-label font-size-13 text-muted">등록일</label>
-                                                    <input type="datetime" class="form-control" id="validationCustom03"
-                                                        placeholder="" name="regDateTime" th:value="${#dates.format(item?.regDateTime, 'yyyy-MM-dd HH:mm:ss')}" disabled>  
-                                                    <div class="invalid-feedback">Please provide a valid city. </div>
-                                                </div>
-                                                <div class="col-md-3">
-                                                    <label for=" choices-single-groups"
-                                                        class="form-label font-size-13 text-muted">수정일</label>
-                                                    <input type="datetime" class="form-control" id="validationCustom03"
-                                                        placeholder="" name="regDateTimeRevise" th:value="${#dates.format(item?.regDateTimeRevise, 'yyyy-MM-dd HH:mm:ss')}" disabled> 
-                                                    <div class="invalid-feedback">Please provide a valid city.</div>
-                                                </div>
+<!--                                             <div class="row gy-3"> -->
+<!--                                             	 <div class=" col-md-3"> -->
+<!--                                                     <label for="choices-single-default" -->
+<!--                                                         class="form-label font-size-13 text-muted">삭제여부</label> -->
+<!--                                                       <select class="form-select" name="ifcgDelNy" th:value="${item?.ifcgDelNy}" disabled> -->
+<!--                                                         <option value="1" th:selected="${item?.ifcgDelNy == 1}">Y</option> -->
+<!--                                                         <option value="0" th:selected="${item?.ifcgDelNy == 0}">N</option> -->
+<!--                                                     </select> -->
+<!--                                                 </div> -->
+<!--                                                  <div class="col-md-3"> -->
+<!--                                                     <label for=" choices-single-groups" -->
+<!--                                                         class="form-label font-size-13 text-muted">등록일</label> -->
+<!--                                                     <input type="datetime" class="form-control" id="validationCustom03" -->
+<!--                                                         placeholder="" name="regDateTime" th:value="${#dates.format(item?.regDateTime, 'yyyy-MM-dd HH:mm:ss')}" disabled>   -->
+<!--                                                     <div class="invalid-feedback">Please provide a valid city. </div> -->
+<!--                                                 </div> -->
+<!--                                                 <div class="col-md-3"> -->
+<!--                                                     <label for=" choices-single-groups" -->
+<!--                                                         class="form-label font-size-13 text-muted">수정일</label> -->
+<!--                                                     <input type="datetime" class="form-control" id="validationCustom03" -->
+<!--                                                         placeholder="" name="regDateTimeRevise" th:value="${#dates.format(item?.regDateTimeRevise, 'yyyy-MM-dd HH:mm:ss')}" disabled>  -->
+<!--                                                     <div class="invalid-feedback">Please provide a valid city.</div> -->
+<!--                                                 </div> -->
                                               
-                                            </div>
+<!--                                             </div> -->
 
 <!--                                             <div class="row gy-3"> -->
 <!--                                                 <div class="col-md-3">col-md-6 -->

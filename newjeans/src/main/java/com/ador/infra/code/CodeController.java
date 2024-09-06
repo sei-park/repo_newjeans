@@ -13,7 +13,8 @@ public class CodeController {
 	@Autowired
 	CodeService codeService;
 	
-	@RequestMapping(value="/xdm/v1/infra/code/codeXdmList")
+	// select
+	@RequestMapping(value="/xdm/v1/infra/code/codeXdmList") 
 	public String codeXdmList(Model model) { 
 		
 		List<CodeDto> codes = codeService.codeSelectList();
@@ -21,5 +22,35 @@ public class CodeController {
 		
 		return "/xdm/v1/infra/code/codeXdmList";
 	}
+	
+	@RequestMapping(value="/xdm/v1/infra/code/codeXdmForm")
+	public String codeXdmForm(Model model) {
+		
+		List<CodeDto> codeGroups = codeService.selectListCode();
+		model.addAttribute("listCodeGroup", codeGroups);
+		
+		return "/xdm/v1/infra/code/codeXdmForm";
+	}
+	
+	// insert 
+	@RequestMapping(value="/xdm/v1/infra/code/codeXdmInst")
+	public String codeXdmInst(CodeDto codeDto) {
+		
+		codeService.codeInsert(codeDto);
+		System.out.println(codeDto.getCodegroup_ifcgSeq());
+		
+		return "redirect:/xdm/v1/infra/code/codeXdmList";
+	}
+	
+	@RequestMapping(value="/xdm/v1/infra/code/codeXdmMForm")
+	public String codeXdmMForm(CodeDto codeDto, Model model) {
+
+		model.addAttribute("codeItem", codeService.codeSelectOne(codeDto));
+		return "/xdm/v1/infra/code/codeXdmMForm";
+	}
+	
+	
+	
+
 
 }

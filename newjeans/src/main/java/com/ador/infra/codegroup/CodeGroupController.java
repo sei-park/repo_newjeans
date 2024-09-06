@@ -34,7 +34,7 @@ public class CodeGroupController {
 	
 	// 폼  
 	@RequestMapping(value="/xdm/v1/infra/codegroup/codeGroupXdmForm")
-	public String codeGroupXdmForm() {		
+	public String codeGroupXdmForm() {
 		return "/xdm/v1/infra/codegroup/codeGroupXdmForm";
 	}
 	
@@ -50,19 +50,7 @@ public class CodeGroupController {
 	}
 	
 	////////// selectOne  ////////// 
-	
-	// M폼  
-//	@RequestMapping(value="/xdm/v1/infra/codegroup/codeGroupXdmMForm")
-//	public String codeGroupXdmMForm(CodeGroupDto codeGroupDto, Model model) {
-//		
-//		CodeGroupDto dto = codeGroupService.selectOne(codeGroupDto);
-//		
-//		model.addAttribute("item" ,dto); // "변수명", 객체
-//		
-//		return "/xdm/v1/infra/codegroup/codeGroupXdmMForm";
-//	}
-	
-	// M폼 줄여서 쓰는 방법 
+	// M폼 축약
 	@RequestMapping(value="/xdm/v1/infra/codegroup/codeGroupXdmMForm")
 	public String codeGroupXdmMForm(CodeGroupDto codeGroupDto, Model model) {
 		
@@ -77,6 +65,18 @@ public class CodeGroupController {
 		codeGroupService.update(codeGroupDto);
 		return "redirect:/xdm/v1/infra/codegroup/codeGroupXdmList";
 	}
+	
+	// M폼  
+//	@RequestMapping(value="/xdm/v1/infra/codegroup/codeGroupXdmMForm")
+//	public String codeGroupXdmMForm(CodeGroupDto codeGroupDto, Model model) {
+//		
+//		CodeGroupDto dto = codeGroupService.selectOne(codeGroupDto);
+//		
+//		model.addAttribute("item" ,dto); // "변수명", 객체
+//		
+//		return "/xdm/v1/infra/codegroup/codeGroupXdmMForm";
+//	}
+	
 	
 	
 	

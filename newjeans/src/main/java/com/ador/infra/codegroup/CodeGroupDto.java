@@ -66,7 +66,5 @@ public class CodeGroupDto {
 		this.regDateTimeRevise = regDateTimeRevise;
 	}
 	
-	
-	
-	
 }
+

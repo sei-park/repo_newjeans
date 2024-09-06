@@ -32,6 +32,8 @@
     .pagination {
         padding-left: 35%;
     }
+    
+
 </style>
 
 
@@ -994,7 +996,9 @@
                                                             <select class="form-select"
                                                                 aria-label="Default select example">
                                                                 <option selected>검색구분</option>
-                                                                <option value="1">-</option>
+                                                                <option value="1">1</option>
+                                                                <option value="2">2</option>
+                                                                <option value="3">3</option>
                                                             </select>
                                                         </div>
                                                         <div class="col-md-2">
@@ -1046,21 +1050,25 @@
                                                                 <label class="form-check-label" for="checkAll"></label>
                                                             </div>
                                                         </th>
-                                                        <th scope="col">#</th>
-                                                        <th scope="col">이름</th>
+                                                        <th scope="col">No</th>
+                                                        <th scope="col">코드그룹번호</th>
+                                                        <th scope="col">코드이름</th>
                                                         <th scope="col">사용여부</th>
                                                         <th scope="col">순서</th>
-                                                        <th scope="col">설명</th>
                                                         <th scope="col">삭제여부</th>
-                                                        <th scope="col">등록날짜</th>
-                                                        <th scope="col">수정날짜</th>
-                                                        <th scope="col">코드그룹코드</th>
-                                                     
+                                                        <th scope="col">등록일</th>
+                                                        <th scope="col">수정일</th>
                                                         <!-- <th style="width: 80px; min-width: 80px;">Action</th> -->
                                                     </tr><!-- end tr -->
                                                 </thead><!-- end thead -->
+                                                <!--  Date 추가  -->
                                                 <tbody>
-                                                    <tr th:each="list : ${codelist}">
+                                                	<tr th:if="${#lists.isEmpty(codelist)}">
+                                                		<td colspan="8">
+                                                			<p>There are no data!</p>
+                                                		</td>
+                                                	</tr> 
+                                                    <tr th:if="${!#lists.isEmpty(codelist)}" th:each="list : ${codelist}">
                                                         <th scope="row">
                                                             <div class="form-check font-size-16">
                                                                 <input type="checkbox" class="form-check-input"
@@ -1068,18 +1076,17 @@
                                                                 <label class="form-check-label"
                                                                     for="contacusercheck1"></label>
                                                             </div>
-                                                        </th>
-                                                        <td th:text="${list.ifcdSeq}">171</td>
-                                                        <td th:text="${list.ifcdName}" class="group-code">57</td>
-                                                        <td th:if="${list.ifcdUseNy eq 0}" class="codeUse">N</td>
+                                                        </th> 
+                                                        <td></td> <!-- No -->
+                                                        <td th:text="${list.codegroup_ifcgSeq}"></td>
+														<td><a href="/xdm/v1/infra/code/codeXdmMForm?ifcdSeq=1" th:text="${list.ifcdName}"></a></td>
+                                                        <td th:if="${list.ifcdUseNy eq 0}" class="codeUse">N</td>  
                                                         <td th:unless="${list.ifcdUseNy eq 0}" class="codeUse">Y</td>
-                                                        <td th:text="${list.ifcdOrder}">278</td>
-                                                        <td th:text="${list.ifcdDesc}" class="alternate-code">-</td>
-                                                        <td th:text="${list.ifcdDelNy eq 0}" class="group-code">57</td>
-                                                        <td th:if="${list.ifcdDelNy eq 0}" class="codeUse">N</td>
-                                                         <td th:text="${#dates.format(list.registerDate, 'yyyy-MM-dd HH:mm:ss')}">2024-07-17 09:37:10</td>
-                                                        <td th:text="${#dates.format(list.reviseDate, 'yyyy-MM-dd HH:mm:ss')}">2024-07-17 09:37:10</td>
-                                                        <td th:text="${list.codegroup_ifcgSeq}" class="order">1</td>    
+                                                        <td th:text="${list.ifcdOrder}" class="group-name"></td>
+                                                        <td th:if="${list.ifcdDelNy eq 0}" class="codeUse">N</td>  
+                                                        <td th:unless="${list.ifcdDelNy eq 0}" class="codeUse">Y</td>
+                                                        <td th:text="${#dates.format(list.registerDate, 'yyyy-MM-dd HH:mm:ss')}"></td>
+                                                        <td th:text="${#dates.format(list.reviseDate, 'yyyy-MM-dd HH:mm:ss')}"></td>
                                                     </tr>
 <!--                                                     <tr> -->
 <!--                                                         <th scope="row"> -->
@@ -1302,7 +1309,7 @@
                                             <button type="button" class="btn btn-danger"><i
                                                     class="bi bi-x-lg"></i></button>
                                             <button type="button" class="btn btn-danger"><i
-                                                    class="bi bi-trash"></i></button>
+                                                    class="bi bi-trash" id="model-button"></i></button>
                                         </div>
 
                                         <div class="col-md-10"></div>
@@ -1310,8 +1317,11 @@
                                         <div class="col-md-1 bottom-button-second">
                                             <button type="button" class="btn btn-success"><i
                                                     class="bi bi-file-earmark-excel"></i></button>
-                                            <button type="button" class="btn btn-primary"><i
-                                                    class="bi bi-plus-lg"></i></button>
+                                        <a href="/xdm/v1/infra/code/codeXdmForm">
+                                            <button type="button" class="btn btn-primary">
+                                                 <i class="bi bi-plus-lg"></i>
+                                            </button>
+                                         </a>
                                         </div>
 
 
@@ -1495,7 +1505,7 @@
     <script src="/xdm/v1/template/ui/assets/libs/simplebar/simplebar.min.js"></script>
     <script src="/xdm/v1/template/ui/assets/libs/feather-icons/feather.min.js"></script>
 
-    <script src="/xdm/v1/template/ui/assets/js/app.js"></script>
+<!--     <script src="/xdm/v1/template/ui/assets/js/app.js"></script> -->
 
 </body>
 
