@@ -940,7 +940,7 @@
                         <div class="col-12"><!--col-12-->
                             <div class="card">
                                 <div class="card-header justify-content-between d-flex align-items-center">
-                                    <h1>Code Group</h1><!--card-title-->
+                                    <h1>Code Group M</h1><!--card-title-->
                                 </div><!-- end card header -->
 								
 								<!--  Form 추가 --> <!-- form 태그 안에 novalidate  class="needs-validation" -->
@@ -995,7 +995,7 @@
                                             	 <div class=" col-md-3">
                                                     <label for="choices-single-default"
                                                         class="form-label font-size-13 text-muted">삭제여부</label>
-                                                      <select class="form-select" name="ifcgDelNy" th:value="${item?.ifcgDelNy}" disabled>
+                                                      <select class="form-select" name="ifcgDelNy" th:value="${item?.ifcgDelNy}" readonly>
                                                         <option value="1" th:selected="${item?.ifcgDelNy == 1}">Y</option>
                                                         <option value="0" th:selected="${item?.ifcgDelNy == 0}">N</option>
                                                     </select>
@@ -1004,14 +1004,14 @@
                                                     <label for=" choices-single-groups"
                                                         class="form-label font-size-13 text-muted">등록일</label>
                                                     <input type="datetime" class="form-control" id="validationCustom03"
-                                                        placeholder="" name="regDateTime" th:value="${#dates.format(item?.regDateTime, 'yyyy-MM-dd HH:mm:ss')}" disabled>  
+                                                        placeholder="" name="regDateTime" th:value="${#dates.format(item?.regDateTime, 'yyyy-MM-dd HH:mm:ss')}" readonly>  
                                                     <div class="invalid-feedback">Please provide a valid city. </div>
                                                 </div>
                                                 <div class="col-md-3">
                                                     <label for=" choices-single-groups"
                                                         class="form-label font-size-13 text-muted">수정일</label>
                                                     <input type="datetime" class="form-control" id="validationCustom03"
-                                                        placeholder="" name="regDateTimeRevise" th:value="${#dates.format(item?.regDateTimeRevise, 'yyyy-MM-dd HH:mm:ss')}" disabled> 
+                                                        placeholder="" name="regDateTimeRevise" th:value="${#dates.format(item?.regDateTimeRevise, 'yyyy-MM-dd HH:mm:ss')}" readonly> 
                                                     <div class="invalid-feedback">Please provide a valid city.</div>
                                                 </div>
                                               

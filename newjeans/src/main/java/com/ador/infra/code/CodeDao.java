@@ -9,8 +9,8 @@ public interface CodeDao {
 	
 	// select
 	public List<CodeDto> codeSelectList();
-	
-	// codegroup - code select 
+	 
+	// codegroup - code select 연결
 	public List<CodeDto> selectListCode();
 	
 	// insert 
@@ -18,6 +18,9 @@ public interface CodeDao {
 	
 	// selectone 
 	public CodeDto codeSelectOne(CodeDto codeDto);
+	
+	// update
+	public int codeUpdate(CodeDto codeDto);
 						
 	
 }

@@ -23,6 +23,7 @@ public class CodeController {
 		return "/xdm/v1/infra/code/codeXdmList";
 	}
 	
+	// codegroup - code 연결 
 	@RequestMapping(value="/xdm/v1/infra/code/codeXdmForm")
 	public String codeXdmForm(Model model) {
 		
@@ -40,13 +41,26 @@ public class CodeController {
 		System.out.println(codeDto.getCodegroup_ifcgSeq());
 		
 		return "redirect:/xdm/v1/infra/code/codeXdmList";
-	}
+	} 
 	
+	// selectOne
 	@RequestMapping(value="/xdm/v1/infra/code/codeXdmMForm")
 	public String codeXdmMForm(CodeDto codeDto, Model model) {
-
+		
+		List<CodeDto> codeGroups = codeService.selectListCode();
+		model.addAttribute("listCodeGroup", codeGroups);  
+		
 		model.addAttribute("codeItem", codeService.codeSelectOne(codeDto));
 		return "/xdm/v1/infra/code/codeXdmMForm";
+	}
+	
+	// update
+	@RequestMapping(value="/xdm/v1/infra/code/codeXdmUpdt")
+	public String codeXdmUpdt(CodeDto codeDto) {
+		
+		codeService.codeUpdate(codeDto);
+		return "redirect:/xdm/v1/infra/code/codeXdmList";
+		
 	}
 	
 	

@@ -1,4 +1,4 @@
- <!doctype html>
+<!doctype html>
 <html lang="en">
 
 <head>
@@ -31,10 +31,6 @@
 
 </head>
 
-<style>
-
-
-</style>
 
 
 <body>
@@ -945,90 +941,95 @@
 								
 								<!--  Form 추가 --> <!-- form 태그 안에 novalidate  class="needs-validation" -->
                                 <div class="card-body">
-                                    <form method="post" action="/xdm/v1/infra/codegroup/codeGroupXdmUpdt">
+                                    <form method="post" action="/xdm/v1/infra/code/codeXdmUpdt">
                                         <div class="row"> <!--col-md-8-->
                                             <div class="row">
-                                                  <div class="col-md-3"> <!--col-mb-3-->
-                                                    <label for="choices-single-groups"
-                                                        class="form-label font-size-13 text-muted">코드그룹번호</label>
-                                                    <input type="text" class="form-control" id="validationCustom01"
-                                                        placeholder="" value=""  name="codegroup_ifcgSeq" th:value="${item?.codegroup_ifcgSeq}" readonly> <!--  required -->
-                                                    <div class="valid-feedback">Looks good!</div>
+                                            	 <div class="col-md-3">
+                                                    <label for="choices-single-default"
+                                                        class="form-label font-size-13 text-muted">코드그룹번호
+                                                        <sup>*</sup>
+                                                    </label>
+                                                    <select class="form-select" name="codegroup_ifcgSeq">
+                                                        <option value="">선택하세요</option>
+                                                        <option th:each="list : ${listCodeGroup}" th:value="${list.ifcgSeq}" th:text="${list.ifcgName}" 
+                                                        th:selected="${list.ifcgSeq == codeItem?.codegroup_ifcgSeq}"></option>
+                                                    </select>
                                                 </div>
-                                                <div class="col-md-3"> <!--col-mb-3-->
-                                                    <label for=" choices-single-groups"
-                                                        class="form-label font-size-13 text-muted">코드번호</label>
-                                                    <input type="text" class="form-control" id="validationCustom03"
-                                                        placeholder=""  name="ifcdSeq" th:value="${item?.ifcdSeq}"> <!--  required -->
-                                                    <div class="invalid-feedback">Please provide a valid city.</div>
+                                            	  <div class="col-md-3"><!--col-md-6-->
+                                                    <label for="choices-single-groups"
+                                                        class="form-label font-size-13 text-muted">코드번호</label>    
+                                                    <input class="form-control" type="text" value=""
+                                                        id="example-text-input" name="ifcdSeq" th:value="${codeItem?.ifcdSeq}" readonly>
                                                 </div>
                                                 <div class="col-md-3"> <!--col-mb-3-->
                                                     <label for=" choices-single-groups"
                                                         class="form-label font-size-13 text-muted">코드이름</label>
                                                     <input type="text" class="form-control" id="validationCustom03"
-                                                        placeholder=""  name="ifcdName" th:value="${item?.ifcdName}"> <!--  required -->
+                                                        placeholder="" name="ifcdName" th:value="${codeItem?.ifcdName}"> <!--  required -->
                                                     <div class="invalid-feedback">Please provide a valid city.</div>
                                                 </div>
                                             </div>
 
                                             <div class="row gy-3">
-                                                <div class="col-md-3"><!--col-md-6-->
+                                            	 <div class="col-md-3">
                                                     <label for="choices-single-default"
                                                         class="form-label font-size-13 text-muted">사용여부
                                                         <sup>*</sup>
                                                     </label>
-                                                    <select class="form-select" name="ifcgUseNy" th:value="${item?.ifcgUseNy}">
-                                                        <option value="1" th:selected="${item?.ifcgUseNy == 1}">사용</option>
-                                                        <option value="0" th:selected="${item?.ifcgUseNy == 0}">미사용</option>
+                                                    <select class="form-select" name="ifcdUseNy" th:value="${codeItem?.ifcdUseNy}">
+                                                        <option value="1" th:selected="${codeItem?.ifcdUseNy == 1}">사용</option>
+                                                        <option value="0" th:selected="${codeItem?.ifcdUseNy == 0}">미사용</option>
                                                     </select>
                                                 </div>
-                                                <div class="col-md-3"><!--col-md-6-->
+                                                 <div class="col-md-3">
                                                     <label for="choices-single-groups"
                                                         class="form-label font-size-13 text-muted">순서</label>
                                                     <input class="form-control" type="text" value=""
-                                                        id="example-text-input" name="ifcgOrder" th:value="${item?.ifcgOrder}">
-                                                </div>
-                                                <div class="col-md-3"><!--col-md-6-->
-                                                    <label for="choices-single-groups"
-                                                        class="form-label font-size-13 text-muted">삭제여부</label>
-                                                    <input class="form-control" type="text" value=""
-                                                        id="example-text-input" name="ifcgOrder" th:value="${item?.ifcgOrder}">
+                                                        id="example-text-input" name="ifcdOrder" th:value="${codeItem?.ifcdOrder}">
                                                 </div>
                                             </div>
-
-                                            <div class="row gy-3">
-                                            	 <div class="col-md-6">
-                                                    <label for="choices-single-groups"class="form-label font-size-13 text-muted">설명</label>
-                                                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" 
-                                                    name="ifcgDesc" th:text="${item?.ifcgDesc}"></textarea>
-                                                </div>
-                                            </div>
-
-<!--                                             <div class="row gy-3"> -->
-<!--                                             	 <div class=" col-md-3"> -->
-<!--                                                     <label for="choices-single-default" -->
-<!--                                                         class="form-label font-size-13 text-muted">삭제여부</label> -->
-<!--                                                       <select class="form-select" name="ifcgDelNy" th:value="${item?.ifcgDelNy}" disabled> -->
-<!--                                                         <option value="1" th:selected="${item?.ifcgDelNy == 1}">Y</option> -->
-<!--                                                         <option value="0" th:selected="${item?.ifcgDelNy == 0}">N</option> -->
-<!--                                                     </select> -->
-<!--                                                 </div> -->
-<!--                                                  <div class="col-md-3"> -->
-<!--                                                     <label for=" choices-single-groups" -->
-<!--                                                         class="form-label font-size-13 text-muted">등록일</label> -->
-<!--                                                     <input type="datetime" class="form-control" id="validationCustom03" -->
-<!--                                                         placeholder="" name="regDateTime" th:value="${#dates.format(item?.regDateTime, 'yyyy-MM-dd HH:mm:ss')}" disabled>   -->
-<!--                                                     <div class="invalid-feedback">Please provide a valid city. </div> -->
-<!--                                                 </div> -->
+      
+                                            
+                                                
+                                                <!-- 등록일 수정일 -->
 <!--                                                 <div class="col-md-3"> -->
 <!--                                                     <label for=" choices-single-groups" -->
-<!--                                                         class="form-label font-size-13 text-muted">수정일</label> -->
-<!--                                                     <input type="datetime" class="form-control" id="validationCustom03" -->
-<!--                                                         placeholder="" name="regDateTimeRevise" th:value="${#dates.format(item?.regDateTimeRevise, 'yyyy-MM-dd HH:mm:ss')}" disabled>  -->
-<!--                                                     <div class="invalid-feedback">Please provide a valid city.</div> -->
+<!--                                                         class="form-label font-size-13 text-muted">등록일</label> -->
+<!--                                                     <input type="text" class="form-control" id="validationCustom03" -->
+<!--                                                         placeholder="" name="regDateTime">   -->
+<!--                                                     <div class="invalid-feedback">Please provide a valid city. </div> -->
 <!--                                                 </div> -->
-                                              
+<!--                                                 <div class="col-md-3">  -->
+<!--                                                     <label for=" choices-single-groups" -->
+<!--                                                         class="form-label font-size-13 text-muted">수정일</label> -->
+<!--                                                     <input type="text" class="form-control" id="validationCustom03" -->
+<!--                                                         placeholder="">  -->
+<!--                                                     <div class="invalid-feedback" name="regDateTimeRevise">Please provide a valid city. </div> -->
+<!--                                                 </div> -->
+                                  
+<!--                                         <div class="row gy-3"> 
+<!--                                                 <div class=" col-md-3">col-md-6 -->
+<!--                                                     <label for="choices-single-default" -->
+<!--                                                         class="form-label font-size-13 text-muted">삭제여부</label> -->
+<!--                                                     <select class="form-select" name="ifcgDelNy"> -->
+<!--                                                         <option value="1">Y</option> -->
+<!--                                                         <option value="0">N</option> -->
+<!--                                                     </select> -->
+<!--                                                 </div> -->
+<!--                                                 <div class="col-md-3">col-md-6 -->
+<!--                                                     <label for="choices-single-groups" -->
+<!--                                                         class="form-label font-size-13 text-muted">순서</label> -->
+<!--                                                     <input class="form-control" type="text" value="" -->
+<!--                                                         id="example-text-input" name="ifcgOrder"> -->
+<!--                                                 </div> -->
 <!--                                             </div> -->
+
+                                            <div class="row gy-3">
+                                                <div class="col-md-6">
+                                                    <label for="choices-single-groups"class="form-label font-size-13 text-muted">설명</label>
+                                                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="ifcdDesc" th:text="${codeItem?.ifcdDesc}"></textarea>
+                                                 </div>
+                                            </div>
 
 <!--                                             <div class="row gy-3"> -->
 <!--                                                 <div class="col-md-3">col-md-6 -->

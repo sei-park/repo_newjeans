@@ -30,5 +30,10 @@ public class CodeService {
 	public CodeDto codeSelectOne(CodeDto codeDto) {
 		return codeDao.codeSelectOne(codeDto);
 	}
+	
+	// update 
+	public int codeUpdate(CodeDto codeDto) {
+		return codeDao.codeUpdate(codeDto);
+	}
 
 } 

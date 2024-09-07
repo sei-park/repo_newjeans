@@ -30,11 +30,11 @@
 	        ifcgDesc,
 	        regDateTime,
 	        regDateTimeRevise
-		) values (
+		) values ( 
 			#{ifcgName},
 		    #{ifcgUseNy},
 		    #{ifcgOrder},
-		    0,
+		    #{ifcgDelNy}, 
 		    #{ifcgDesc},
 		    now(),
 			now()
@@ -45,7 +45,7 @@
 	<select id="selectOne" resultMap="resultMapObj">
 		SELECT  
 			a.ifcgSeq,
-	        a.ifcgName,
+	        a.ifcgName, 
 	        a.ifcgUseNy,
 	        a.ifcgOrder,
 	        a.ifcgDelNy,
@@ -65,7 +65,7 @@
 	        ifcgUseNy = #{ifcgUseNy},
 	        ifcgOrder = #{ifcgOrder},
 	        ifcgDelNy = #{ifcgDelNy},
-	        ifcgDesc = #{ifcgDesc},
+	        ifcgDesc = #{ifcgDesc}, 
 	        regDateTimeRevise = now()
 	    WHERE 1=1
 	    	AND ifcgSeq = #{ifcgSeq}

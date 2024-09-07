@@ -30,7 +30,7 @@
 		from
 			codegroup a
 		where 1=1 
-			and a.ifcgDelNy = 1
+			and a.ifcgDelNy = 0
 		order by  
 			a.ifcgOrder desc
 	</select>
@@ -57,6 +57,7 @@
 		)
 	</insert>
 	
+	<!-- selectOne -->
 	<select id="codeSelectOne" resultMap="codeResultMapObj">
 		select
 			b.ifcdSeq,
@@ -73,7 +74,22 @@
 		where 1=1
  			and b.ifcdSeq = #{ifcdSeq}
 	</select>
+	
+	<update id="codeUpdate">
+		UPDATE code
+		SET
+	        ifcdName = #{ifcdName},
+	        ifcdUseNy = #{ifcdUseNy},
+	        ifcdOrder = #{ifcdOrder},
+	        ifcdDelNy = #{ifcdDelNy},
+	        ifcdDesc = #{ifcdDesc},
+	        reviseDate = now()
+	    WHERE 1=1
+	    	AND ifcdSeq = #{ifcdSeq}
+	</update>
+	
 
+ 
 
 	
 
