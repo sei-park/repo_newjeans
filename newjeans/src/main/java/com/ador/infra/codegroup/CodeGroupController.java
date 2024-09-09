@@ -12,10 +12,8 @@ public class CodeGroupController {
 	
 	@Autowired
 	CodeGroupService codeGroupService;
-	
-	
+	 
 	//////////select ////////// 
-    // 리스트
 	@RequestMapping(value="/xdm/v1/infra/codegroup/codeGroupXdmList")
 	public String codeGroupXdmList(Model model) {
 		
@@ -50,7 +48,7 @@ public class CodeGroupController {
 	}
 	
 	////////// selectOne  ////////// 
-	// M폼 축약
+	// M폼 축약형
 	@RequestMapping(value="/xdm/v1/infra/codegroup/codeGroupXdmMForm")
 	public String codeGroupXdmMForm(CodeGroupDto codeGroupDto, Model model) {
 		
@@ -63,6 +61,24 @@ public class CodeGroupController {
 	public String codeGroupXdmUpdt(CodeGroupDto codeGroupDto) {
 		
 		codeGroupService.update(codeGroupDto);
+		return "redirect:/xdm/v1/infra/codegroup/codeGroupXdmList";
+	}
+	
+	// update ifcgDelNy(삭제여부 1로 변경)
+	@RequestMapping(value="/xdm/v1/infra/codegroup/codeGroupXdmMUdel")
+	public String codeGroupXdmMUdel(CodeGroupDto codeGroupDto) {
+		
+	  codeGroupService.uelete(codeGroupDto);
+      return "redirect:/xdm/v1/infra/codegroup/codeGroupXdmList";
+	}
+	
+	
+	// delete
+	@RequestMapping(value="/xdm/v1/infra/codegroup/codeGroupXdmMDel")
+	public String codeGroupXdmMForm(CodeGroupDto codeGroupDto) {
+		
+		codeGroupService.delete(codeGroupDto);
+		System.out.println(codeGroupDto.getIfcgName());
 		return "redirect:/xdm/v1/infra/codegroup/codeGroupXdmList";
 	}
 	

@@ -88,14 +88,6 @@
 	    	AND ifcdSeq = #{ifcdSeq}
 	</update>
 	
-
- 
-
-	
-
-
-	
-
 	
 	
 	   

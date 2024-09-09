@@ -33,6 +33,16 @@ public class CodeGroupService {
 	public int update(CodeGroupDto codeGroupDto) {
 		return codeGroupDao.update(codeGroupDto);
 	}
+	
+	// update ifcgDelNy
+	public int uelete(CodeGroupDto codeGroupDto) {
+		return codeGroupDao.uelete(codeGroupDto);
+	}
+	
+	// delete
+	public int delete(CodeGroupDto codeGroupDto) {
+		return codeGroupDao.delete(codeGroupDto);
+	}
 
 	// 줄여서 쓰는 방법 
 //	public CodeGroupDto selectOne(CodeGroupDto codeGroupDto) {

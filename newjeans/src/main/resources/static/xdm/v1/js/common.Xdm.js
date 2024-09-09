@@ -1,5 +1,5 @@
 
-// 모달 창 
+// model 
 const exampleModal = document.getElementById('exampleModal')
 if (exampleModal) {
 	exampleModal.addEventListener('show.bs.modal', event => {
@@ -14,4 +14,7 @@ if (exampleModal) {
 		modalBodyInput.value = recipient
 	})
 }
+
+
+
 

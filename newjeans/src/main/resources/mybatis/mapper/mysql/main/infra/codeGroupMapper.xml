@@ -34,12 +34,11 @@
 			#{ifcgName},
 		    #{ifcgUseNy},
 		    #{ifcgOrder},
-		    #{ifcgDelNy}, 
+		    0, 
 		    #{ifcgDesc},
 		    now(),
 			now()
 		)
-
 	</insert>
 	
 	<select id="selectOne" resultMap="resultMapObj">
@@ -64,14 +63,30 @@
 	        ifcgName = #{ifcgName},
 	        ifcgUseNy = #{ifcgUseNy},
 	        ifcgOrder = #{ifcgOrder},
-	        ifcgDelNy = #{ifcgDelNy},
+	        ifcgDelNy = 0,
 	        ifcgDesc = #{ifcgDesc}, 
 	        regDateTimeRevise = now()
 	    WHERE 1=1
 	    	AND ifcgSeq = #{ifcgSeq}
 	</update>
 	
+	<!-- 삭제 -->
+	<update id="uelete"> 
+		UPDATE codegroup
+		SET
+	        ifcgDelNy = 1
+	    WHERE 1=1
+	    	AND ifcgSeq = #{ifcgSeq}
+	</update>
+	
+	<delete id="delete">
+		DELETE FROM codegroup
+		WHERE 1=1
+			AND ifcgSeq = #{ifcgSeq}
+	</delete>
 	
 	
+	
+
 </mapper>
 
