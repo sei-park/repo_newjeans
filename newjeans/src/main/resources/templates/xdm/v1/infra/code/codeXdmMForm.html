@@ -941,7 +941,7 @@
 								
 								<!--  Form 추가 --> <!-- form 태그 안에 novalidate  class="needs-validation" -->
                                 <div class="card-body">
-                                    <form method="post" action="/xdm/v1/infra/code/codeXdmUpdt">
+                                    <form method="post" action="/xdm/v1/infra/code/codeXdmUpdt" name="form">
                                         <div class="row"> <!--col-md-8-->
                                             <div class="row">
                                             	 <div class="col-md-3">
@@ -991,24 +991,11 @@
       
                                             
                                                 
-                                                <!-- 등록일 수정일 -->
-<!--                                                 <div class="col-md-3"> -->
-<!--                                                     <label for=" choices-single-groups" -->
-<!--                                                         class="form-label font-size-13 text-muted">등록일</label> -->
-<!--                                                     <input type="text" class="form-control" id="validationCustom03" -->
-<!--                                                         placeholder="" name="regDateTime">   -->
-<!--                                                     <div class="invalid-feedback">Please provide a valid city. </div> -->
-<!--                                                 </div> -->
-<!--                                                 <div class="col-md-3">  -->
-<!--                                                     <label for=" choices-single-groups" -->
-<!--                                                         class="form-label font-size-13 text-muted">수정일</label> -->
-<!--                                                     <input type="text" class="form-control" id="validationCustom03" -->
-<!--                                                         placeholder="">  -->
-<!--                                                     <div class="invalid-feedback" name="regDateTimeRevise">Please provide a valid city. </div> -->
-<!--                                                 </div> -->
+                                            
+                                          
                                   
 <!--                                         <div class="row gy-3"> 
-<!--                                                 <div class=" col-md-3">col-md-6 -->
+<!--                                                 <div class=" col-md-3">
 <!--                                                     <label for="choices-single-default" -->
 <!--                                                         class="form-label font-size-13 text-muted">삭제여부</label> -->
 <!--                                                     <select class="form-select" name="ifcgDelNy"> -->
@@ -1029,6 +1016,31 @@
                                                     <label for="choices-single-groups"class="form-label font-size-13 text-muted">설명</label>
                                                     <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="ifcdDesc" th:text="${codeItem?.ifcdDesc}"></textarea>
                                                  </div>
+                                            </div>
+                                            
+                                            <div class="row gy-3">
+                                                <div class=" col-md-3">
+                                                    <label for="choices-single-default"
+                                                        class="form-label font-size-13 text-muted">삭제여부</label>
+                                                    <select class="form-select" name="ifcgDelNy" disabled>
+                                                        <option value="1">Y</option>
+                                                        <option value="0">N</option>
+                                                    </select>
+                                                </div>	
+                                                <div class="col-md-3"> 
+                                                    <label for=" choices-single-groups"
+                                                        class="form-label font-size-13 text-muted">등록일</label>
+                                                    <input type="text" class="form-control" id="validationCustom03"
+                                                        placeholder="" name="regDateTime" readonly>  
+                                                    <div class="invalid-feedback">Please provide a valid city. </div>
+                                                </div>
+                                                <div class="col-md-3"> 
+                                                    <label for=" choices-single-groups"
+                                                        class="form-label font-size-13 text-muted">수정일</label>
+                                                    <input type="text" class="form-control" id="validationCustom03"
+                                                        placeholder="" readonly> 
+                                                    <div class="invalid-feedback" name="regDateTimeRevise">Please provide a valid city. </div>
+                                                </div>
                                             </div>
 
 <!--                                             <div class="row gy-3"> -->
@@ -1144,15 +1156,23 @@
 
                                             <!------------submit icon------------>
                                             <div class="row gy-3">
-                                                <div class="col-md-1">
+                                                <div class="col-md-3">
                                                     <a href="/xdm/v1/infra/codegroup/codeGroupXdmList">
                                                         <button type="button" class="btn btn-outline-primary">
                                                             <i class="bx bx-list-ul"></i>
                                                         </button>
                                                     </a>
+                                                    <!-- x 버튼 -->
+	                                                <button type="button" class="btn btn-danger"  id="btnDelete" data-bs-toggle="modal" data-bs-target="">
+	                                                   <i class="bi bi-x-lg"></i>
+												    </button>
+                                                    <!-- 휴지통 버튼 -->
+                                                    <button type="button" class="btn btn-danger" id="btnUelete" data-bs-toggle="modal" data-bs-target="">
+                                                       <i class="bi bi-trash"></i>
+											        </button>
                                                 </div>
 
-                                                <div class="col-md-10"></div>
+                                                <div class="col-md-8"></div>
                                                 
                                                 <!-- 버튼 -->
                                                 <div class="col-md-1" align="right">
@@ -1351,6 +1371,24 @@
         <script src="/xdm/v1/template/ui/assets/js/pages/form-validation.init.js"></script>
 
 <!--         <script src="/xdm/v1/template/ui/assets/js/app.js"></script> -->
+
+		<script>
+		// 휴지통 버튼 uelete
+		document.getElementById("btnUelete").onclick = function() {
+			alert("btnUelete 확인");
+			let form = document.querySelector("form[name=form]");	
+		    form.action = "/xdm/v1/infra/code/codeXdmMUDel";
+		    form.submit();
+		}
+		
+		// x 버튼 delete
+		document.getElementById("btnDelete").onclick = function() {
+			alert("btnDelete 확인");
+			let form = document.querySelector("form[name=form]");
+		    form.action = "/xdm/v1/infra/code/codeXdmMDel";
+		    form.submit();
+		}
+		</script>
 
 </body>
 

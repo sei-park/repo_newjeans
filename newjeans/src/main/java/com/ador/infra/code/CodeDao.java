@@ -21,6 +21,12 @@ public interface CodeDao {
 	
 	// update
 	public int codeUpdate(CodeDto codeDto);
+	
+	// update ifcdDelNy
+	public int uelete(CodeDto codeDto);
+	
+	// delete
+	public int delete(CodeDto codeDto);
 						
 	
 }

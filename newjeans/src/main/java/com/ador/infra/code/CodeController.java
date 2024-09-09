@@ -63,6 +63,22 @@ public class CodeController {
 		
 	}
 	
+	// update ifcdDelNy(삭제여부 1로 변경)
+	@RequestMapping(value="/xdm/v1/infra/code/codeXdmMUDel")
+	public String codeXdmMUDel(CodeDto codeDto) {
+		
+		codeService.uelete(codeDto);
+		return "redirect:/xdm/v1/infra/code/codeXdmList";
+	}
+	
+	// delete
+	@RequestMapping(value="/xdm/v1/infra/code/codeXdmMDel")
+	public String codeXdmMDel(CodeDto codeDto) {
+		
+		codeService.delete(codeDto);
+		return "redirect:/xdm/v1/infra/code/codeXdmList";
+	}
+	
 	
 	
 

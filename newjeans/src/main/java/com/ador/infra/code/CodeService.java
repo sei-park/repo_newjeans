@@ -35,5 +35,15 @@ public class CodeService {
 	public int codeUpdate(CodeDto codeDto) {
 		return codeDao.codeUpdate(codeDto);
 	}
+	
+	// update ifcdDelNy
+	public int uelete(CodeDto codeDto) {
+		return codeDao.uelete(codeDto);
+	}
+	
+	// delete
+	public int delete(CodeDto codeDto) {
+		return codeDao.delete(codeDto);
+	}
 
 } 
