@@ -2,6 +2,8 @@ package com.ador.infra.code;
 
 import java.util.Date;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 public class CodeDto {
 	
 	private String ifcdSeq;
@@ -10,7 +12,9 @@ public class CodeDto {
 	private Integer ifcdOrder;
 	private String ifcdDesc;
 	private Integer ifcdDelNy;
+	@DateTimeFormat(pattern="yyyy-MM-dd HH:mm:ss")
 	private Date registerDate;
+	@DateTimeFormat(pattern="yyyy-MM-dd HH:mm:ss")
 	private Date reviseDate;
 	private String codegroup_ifcgSeq;
 	// codegroup 에 연결할 columns추가

@@ -7,7 +7,7 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface CodeGroupDao {
 	
-	// select
+	// selectList
 	public List<CodeGroupDto> selectList();
 	
 	// insert 
@@ -24,6 +24,7 @@ public interface CodeGroupDao {
 	
 	// delete
 	public int delete(CodeGroupDto codeGroupDto);
+	
 	
 	
 }

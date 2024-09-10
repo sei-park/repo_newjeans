@@ -1101,6 +1101,7 @@
 														<th scope="col">삭제여부</th>
 														<th scope="col">등록일</th>
 														<th scope="col">수정일</th>
+														<th scope="col">개수</th>
 													</tr>
 													<!-- end tr -->
 												</thead>
@@ -1132,6 +1133,7 @@
 															09:37:10</td>
 														<td th:text="${#dates.format(list.regDateTimeRevise, 'yyyy-MM-dd HH:mm:ss')}">2024-07-17
 															09:37:10</td>
+														<td th:text="${list.count}"></td>
 															
 													</tr>
 												</tbody>

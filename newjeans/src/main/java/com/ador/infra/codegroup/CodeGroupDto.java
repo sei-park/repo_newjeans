@@ -16,6 +16,11 @@ public class CodeGroupDto {
 	private Date regDateTime;
 	@DateTimeFormat(pattern="yyyy-MM-dd HH:mm:ss")
 	private Date regDateTimeRevise;
+	
+	// count 데이터 추가(쿼리에서 만들어진 변수명 추가해줘야 함)
+	// 쿼리에서 만들어진 변수명에는 변수명 앞에 x를 써주는게 편함 
+	private Integer count;
+	
 	//-----
 	public String getIfcgSeq() {
 		return ifcgSeq;
@@ -65,6 +70,14 @@ public class CodeGroupDto {
 	public void setRegDateTimeRevise(Date regDateTimeRevise) {
 		this.regDateTimeRevise = regDateTimeRevise;
 	}
+	public Integer getCount() {
+		return count;
+	}
+	public void setCount(Integer count) {
+		this.count = count;
+	}
+	
+	
 	
 }
 

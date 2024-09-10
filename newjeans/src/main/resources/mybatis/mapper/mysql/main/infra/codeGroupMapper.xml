@@ -14,7 +14,8 @@
 	        a.ifcgDelNy,
 	        a.ifcgDesc,
 	        a.regDateTime,
-	        a.regDateTimeRevise
+	        a.regDateTimeRevise,
+	        (select count(ifcdSeq) from Code b where 1=1 and b.codegroup_ifcgSeq = a.ifcgSeq) as count <!-- 서브쿼리 -->
 		FROM
 			newjeans.codegroup a
 		ORDER BY 
@@ -70,7 +71,7 @@
 	    	AND ifcgSeq = #{ifcgSeq}
 	</update>
 	
-	<!-- 삭제 -->
+	<!-- update delete / ifcgDelNy 0 -> 1로 변경 -->
 	<update id="uelete"> 
 		UPDATE codegroup
 		SET
@@ -79,11 +80,13 @@
 	    	AND ifcgSeq = #{ifcgSeq}
 	</update>
 	
+	 <!-- 삭제 -->
 	<delete id="delete">
 		DELETE FROM codegroup
 		WHERE 1=1
 			AND ifcgSeq = #{ifcgSeq}
 	</delete>
+	
 	
 	
 	

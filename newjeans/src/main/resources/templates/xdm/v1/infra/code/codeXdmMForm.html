@@ -988,28 +988,6 @@
                                                         id="example-text-input" name="ifcdOrder" th:value="${codeItem?.ifcdOrder}">
                                                 </div>
                                             </div>
-      
-                                            
-                                                
-                                            
-                                          
-                                  
-<!--                                         <div class="row gy-3"> 
-<!--                                                 <div class=" col-md-3">
-<!--                                                     <label for="choices-single-default" -->
-<!--                                                         class="form-label font-size-13 text-muted">삭제여부</label> -->
-<!--                                                     <select class="form-select" name="ifcgDelNy"> -->
-<!--                                                         <option value="1">Y</option> -->
-<!--                                                         <option value="0">N</option> -->
-<!--                                                     </select> -->
-<!--                                                 </div> -->
-<!--                                                 <div class="col-md-3">col-md-6 -->
-<!--                                                     <label for="choices-single-groups" -->
-<!--                                                         class="form-label font-size-13 text-muted">순서</label> -->
-<!--                                                     <input class="form-control" type="text" value="" -->
-<!--                                                         id="example-text-input" name="ifcgOrder"> -->
-<!--                                                 </div> -->
-<!--                                             </div> -->
 
                                             <div class="row gy-3">
                                                 <div class="col-md-6">
@@ -1022,23 +1000,23 @@
                                                 <div class=" col-md-3">
                                                     <label for="choices-single-default"
                                                         class="form-label font-size-13 text-muted">삭제여부</label>
-                                                    <select class="form-select" name="ifcgDelNy" disabled>
-                                                        <option value="1">Y</option>
-                                                        <option value="0">N</option>
+                                                    <select class="form-select" name="ifcdDelNy" disabled>
+                                                        <option value="1" th:selected="${codeItem?.ifcdDelNy == 1}">Y</option>
+                                                        <option value="0" th:selected="${codeItem?.ifcdDelNy == 0}">N</option>
                                                     </select>
                                                 </div>	
                                                 <div class="col-md-3"> 
                                                     <label for=" choices-single-groups"
                                                         class="form-label font-size-13 text-muted">등록일</label>
                                                     <input type="text" class="form-control" id="validationCustom03"
-                                                        placeholder="" name="regDateTime" readonly>  
+                                                        placeholder="" name="registerDate" th:value="${#dates.format(codeItem?.registerDate, 'yyyy-MM-dd HH:mm:ss')}" readonly>  
                                                     <div class="invalid-feedback">Please provide a valid city. </div>
                                                 </div>
                                                 <div class="col-md-3"> 
                                                     <label for=" choices-single-groups"
                                                         class="form-label font-size-13 text-muted">수정일</label>
                                                     <input type="text" class="form-control" id="validationCustom03"
-                                                        placeholder="" readonly> 
+                                                        placeholder="" name="reviseDate" th:value="${#dates.format(codeItem?.reviseDate, 'yyyy-MM-dd HH:mm:ss')}" readonly> 
                                                     <div class="invalid-feedback" name="regDateTimeRevise">Please provide a valid city. </div>
                                                 </div>
                                             </div>

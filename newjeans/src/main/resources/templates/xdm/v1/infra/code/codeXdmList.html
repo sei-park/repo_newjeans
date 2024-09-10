@@ -1052,6 +1052,7 @@
                                                         </th>
                                                         <th scope="col">No</th>
                                                         <th scope="col">코드그룹번호</th>
+                                                        <th scope="col">코드그룹이름</th>
                                                         <th scope="col">코드번호</th>
                                                         <th scope="col">코드이름</th>
                                                         <th scope="col">사용여부</th>
@@ -1080,6 +1081,7 @@
                                                         </th> 
                                                         <td></td> <!-- No -->
                                                         <td th:text="${list.codegroup_ifcgSeq}"></td>
+                                                        <td th:text="${list.ifcgName}"></td>
                                                         <td th:text="${list.ifcdSeq}"></td>
 														<td><a th:href="@{/xdm/v1/infra/code/codeXdmMForm(ifcdSeq=${list.ifcdSeq})}" th:text="${list.ifcdName}"></a></td>
                                                         <td th:if="${list.ifcdUseNy eq 0}" class="codeUse">N</td>  

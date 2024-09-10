@@ -15,9 +15,12 @@
 		    b.ifcdDelNy,
 		    b.registerDate,
 		    b.reviseDate, 
-		    b.codegroup_ifcgSeq
+		    b.codegroup_ifcgSeq,
+		    a.ifcgName
 		from
 			code b
+			left join codegroup a
+			on a.ifcgSeq = b.codegroup_ifcgSeq
 		order by
 			b.ifcdSeq desc
 	</select>
@@ -81,7 +84,7 @@
 	        ifcdName = #{ifcdName},
 	        ifcdUseNy = #{ifcdUseNy},
 	        ifcdOrder = #{ifcdOrder},
-	        ifcdDelNy = #{ifcdDelNy},
+	        ifcdDelNy = 0,
 	        ifcdDesc = #{ifcdDesc},
 	        reviseDate = now()
 	    WHERE 1=1
