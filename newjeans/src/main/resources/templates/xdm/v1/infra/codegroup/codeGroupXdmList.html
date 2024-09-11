@@ -39,8 +39,8 @@
 .pagination {
 	padding-left: 35%;
 }
- 
-.modal { 	
+
+.modal {
 	transform: translateY(-500px);
 }
 </style>
@@ -982,248 +982,246 @@
 							<!--  class="col-lg-12" -->
 							<div class="card">
 								<div class="card-body">
-									<div class="row">
-										<div>
-											<!--  class="col-md-10" -->
+									<form name="form" method="post" action="/xdm/v1/infra/codegroup/codeGroupXdmList">
+										<div class="row">
+											<div>
+												<div class="container">
+													<!--input 추가-->
+													<div class="row mb-3 align-items-center">
+														<div class="mb-2">
+															<!-- <h6>page1 > page2 > Default</h6> -->
+															<h1>Code Group</h1>
+														</div>
+														<div class="col-md-2">
+															<select class="form-select"
+																aria-label="Default select example" name="shDelNy">
+																<option value="">삭제여부</option>
+																<option value="0">N</option>
+																<option value="1">Y</option>
+															</select>
+														</div>
+														<div class="col-md-2">
+															<select class="form-select"
+																aria-label="Default select example" name="shUseNy">
+																<option value="">사용여부</option>
+																<option value="0">N</option>
+																<option value="1">Y</option>
+															</select>
+														</div>
+														<div class="col-md-2">
+															<select class="form-select"
+																aria-label="Default select example">
+																<option selected>수정일</option>
+																<option value="1">-</option>
+															</select>
+														</div>
+														<div class="col-md-2">
+															<div class="input-group flex-nowrap">
+																<input type="text" class="form-control"
+																	placeholder="2024-06-05" aria-label="Username"
+																	aria-describedby="addon-wrapping">
+															</div>
+														</div>
+														<div class="col-md-2">
+															<div class="input-group flex-nowrap">
+																<input type="text" class="form-control"
+																	placeholder="2024-07-05" aria-label="Username"
+																	aria-describedby="addon-wrapping">
+															</div>
+														</div>
+													</div>
 
-											<from>
-											<div class="container">
-												<!--input 추가-->
-												<div class="row mb-3 align-items-center">
-													<div class="mb-2">
-														<!-- <h6>page1 > page2 > Default</h6> -->
-														<h1>Code Group</h1>
+													<div class="row mb-3 align-items-center">
+														<div class="col-md-2">
+															<select class="form-select"
+																aria-label="Default select example" name="shOption">
+																<option value="">검색구분</option>
+																<option value="1">코드그룹</option>
+																<option value="2">코드그룹이름</option>
+															</select>
+														</div>
+														<div class="col-md-2">
+															<div class="input-group flex-nowrap">
+																<input type="text" class="form-control" name="shValue"
+																	placeholder="검색어" aria-label="Username"
+																	aria-describedby="addon-wrapping">
+															</div>
+														</div>
+														<div class="col-md-2" align="left">
+															<button type="submit" class="btn btn-outline-dark">
+																<i class="uil-search"></i>
+															</button>
+															<button type="button" class="btn btn-outline-dark">
+																<i class="uil-corner-down-left"></i>
+															</button>
+														</div>
 													</div>
+												</div>
+												<div class="row mb-3">
+													<div class="col-md-2" style="padding-top: 10px;">
+														<h5 class="card-title">
+															Total<span class="text-muted fw-normal ms-2">(834)</span>
+														</h5>
+													</div>
+
+													<div class="col-md-8"></div>
+
 													<div class="col-md-2">
 														<select class="form-select"
 															aria-label="Default select example">
-															<option selected>Y</option>
-															<option value="1">N</option>
-														</select>
-													</div>
-													<div class="col-md-2">
-														<select class="form-select"
-															aria-label="Default select example">
-															<option selected>Y</option>
-															<option value="1">N</option>
-														</select>
-													</div>
-													<div class="col-md-2">
-														<select class="form-select"
-															aria-label="Default select example">
-															<option selected>수정일</option>
+															<option selected>5</option>
 															<option value="1">-</option>
 														</select>
 													</div>
-													<div class="col-md-2">
-														<div class="input-group flex-nowrap">
-															<input type="text" class="form-control"
-																placeholder="2024-06-05" aria-label="Username"
-																aria-describedby="addon-wrapping">
-														</div>
-													</div>
-													<div class="col-md-2">
-														<div class="input-group flex-nowrap">
-															<input type="text" class="form-control"
-																placeholder="2024-07-05" aria-label="Username"
-																aria-describedby="addon-wrapping">
-														</div>
-													</div>
-												</div>
-
-												<div class="row mb-3 align-items-center">
-													<div class="col-md-2">
-														<select class="form-select"
-															aria-label="Default select example">
-															<option selected>검색구분</option>
-															<option value="1">1</option>
-															<option value="2">2</option>
-															<option value="3">3</option>
-														</select>
-													</div>
-													<div class="col-md-2">
-														<div class="input-group flex-nowrap ">
-															<input type="text" class="form-control" placeholder="검색어"
-																aria-label="Username" aria-describedby="addon-wrapping">
-														</div>
-													</div>
-													<div class="col-md-2" align="left">
-														<button type="button" class="btn btn-outline-dark">
-															<i class="uil-search"></i>
-														</button>
-														<button type="button" class="btn btn-outline-dark">
-															<i class="uil-corner-down-left"></i>
-														</button>
-													</div>
 												</div>
 											</div>
-											<div class="row mb-3">
-												<div class="col-md-2" style="padding-top: 10px;">
-													<h5 class="card-title">
-														Total<span class="text-muted fw-normal ms-2">(834)</span>
-													</h5>
-												</div>
+											<!--col-md-6 -->
 
-												<div class="col-md-8"></div>
+											<div class="table-responsive">
+												<!--리스트 시작-->
 
-												<div class="col-md-2">
-													<select class="form-select"
-														aria-label="Default select example">
-														<option selected>5</option>
-														<option value="1">-</option>
-													</select>
-												</div>
+												<table class="table align-middle table-nowrap table-check">
+													<thead>
+														<tr>
+															<th scope="col" style="width: 50px;">
+																<div class="form-check font-size-16">
+																	<input type="checkbox" class="form-check-input"
+																		id="checkAll"> <label class="form-check-label"
+																		for="checkAll"></label>
+																</div>
+															</th>
+															<th scope="col">No</th>
+															<th scope="col">코드그룹</th>
+															<th scope="col">코드그룹이름</th>
+															<th scope="col">사용여부</th>
+															<th scope="col">순서</th>
+															<th scope="col">삭제여부</th>
+															<th scope="col">등록일</th>
+															<th scope="col">수정일</th>
+															<th scope="col">개수</th>
+														</tr>
+														<!-- end tr -->
+													</thead>
+													<!-- end thead -->
+													<!--  Date 추가  -->
+													<tbody>
+														<tr th:if="${#lists.isEmpty(list)}">
+															<td colspan="8">
+																<p>There are no data!</p>
+															</td>
+														</tr>
+														<tr th:if="${!#lists.isEmpty(list)}"
+															th:each="list : ${list}">
+															<th scope="row">
+																<div class="form-check font-size-16">
+																	<input type="checkbox" class="form-check-input"
+																		id="contacusercheck1"> <label
+																		class="form-check-label" for="contacusercheck1"></label>
+																</div>
+															</th>
+															<td></td>
+															<td th:text="${list.ifcgSeq}"></td>
+															<td class="group-code"><a
+																th:href="@{/xdm/v1/infra/codegroup/codeGroupXdmMForm(ifcgSeq=${list.ifcgSeq})}"
+																th:text="${list.ifcgName}"></a></td>
+															<td th:if="${list.ifcgUseNy eq 0}" class="codeUse">N</td>
+															<td th:unless="${list.ifcgUseNy eq 0}" class="codeUse">Y</td>
+															<td th:text="${list.ifcgOrder}" class="group-name">테테테</td>
+															<td th:if="${list.ifcgDelNy eq 0}" class="codeUse">N</td>
+															<td th:unless="${list.ifcgDelNy eq 0}" class="codeUse">Y</td>
+															<td
+																th:text="${#dates.format(list.regDateTime, 'yyyy-MM-dd HH:mm:ss')}">2024-07-17
+																09:37:10</td>
+															<td
+																th:text="${#dates.format(list.regDateTimeRevise, 'yyyy-MM-dd HH:mm:ss')}">2024-07-17
+																09:37:10</td>
+															<td th:text="${list.count}"></td>
+														</tr>
+													</tbody>
+													<!-- end tbody -->
+												</table>
+												<!-- end table -->
 											</div>
-											</from>
-
-
+											<!-- end table responsive -->
 										</div>
-										<!--col-md-6 -->
+										<!-- end row -->
 
-										<div class="table-responsive">
-											<!--리스트 시작-->
-
-											<table class="table align-middle table-nowrap table-check">
-												<thead>
-													<tr>
-														<th scope="col" style="width: 50px;">
-															<div class="form-check font-size-16">
-																<input type="checkbox" class="form-check-input"
-																	id="checkAll"> <label class="form-check-label"
-																	for="checkAll"></label>
-															</div>
-														</th>
-														<th scope="col">No</th>
-														<th scope="col">코드그룹</th>
-														<th scope="col">코드그룹이름</th>
-														<th scope="col">사용여부</th>
-														<th scope="col">순서</th>
-														<th scope="col">삭제여부</th>
-														<th scope="col">등록일</th>
-														<th scope="col">수정일</th>
-														<th scope="col">개수</th>
-													</tr>
-													<!-- end tr -->
-												</thead>
-												<!-- end thead -->
-												<!--  Date 추가  -->
-												<tbody>
-													<tr th:if="${#lists.isEmpty(list)}">
-														<td colspan="8">
-															<p>There are no data!</p>
-														</td>
-													</tr>
-													<tr th:if="${!#lists.isEmpty(list)}" th:each="list : ${list}">
-														<th scope="row">
-															<div class="form-check font-size-16">
-																<input type="checkbox" class="form-check-input"
-																	id="contacusercheck1"> <label
-																	class="form-check-label" for="contacusercheck1"></label>
-															</div>
-														</th>
-														<td></td>
-														<td th:text="${list.ifcgSeq}"></td>
-														<td class="group-code"><a th:href="@{/xdm/v1/infra/codegroup/codeGroupXdmMForm(ifcgSeq=${list.ifcgSeq})}" th:text="${list.ifcgName}"></a></td>
-														<td th:if="${list.ifcgUseNy eq 0}" class="codeUse">N</td>
-														<td th:unless="${list.ifcgUseNy eq 0}" class="codeUse">Y</td>
-														<td th:text="${list.ifcgOrder}" class="group-name">테테테</td>
-														<td th:if="${list.ifcgDelNy eq 0}" class="codeUse">N</td>
-														<td th:unless="${list.ifcgDelNy eq 0}" class="codeUse">Y</td> 
-														<td th:text="${#dates.format(list.regDateTime, 'yyyy-MM-dd HH:mm:ss')}">2024-07-17
-															09:37:10</td>
-														<td th:text="${#dates.format(list.regDateTimeRevise, 'yyyy-MM-dd HH:mm:ss')}">2024-07-17
-															09:37:10</td>
-														<td th:text="${list.count}"></td>
-															
-													</tr>
-												</tbody>
-												<!-- end tbody -->
-											</table>
-											<!-- end table -->
-										</div>
-										<!-- end table responsive -->
-									</div>
-									<!-- end row -->
-
-									<div class="row g-0 text-center text-sm-start">
-										<!--g-0-->
-										<div class="gy-3 col-12 pagecol">
-											<!--col-sm-6-->
-											<ul class="pagination pagination-rounded">
-												<!--pagination-rounded justify-content-center justify-content-sm-end mb-sm-0-->
-												<li class="page-item disabled"><a href="#"
-													class="page-link"><i class="mdi mdi-chevron-left"></i></a>
-												</li>
-												<li class="page-item"><a href="#" class="page-link">1</a>
-												</li>
-												<li class="page-item active"><a href="#"
-													class="page-link">2</a></li>
-												<li class="page-item"><a href="#" class="page-link">3</a>
-												</li>
-												<li class="page-item"><a href="#" class="page-link">4</a>
-												</li>
-												<li class="page-item"><a href="#" class="page-link">5</a>
-												</li>
-												<li class="page-item"><a href="#" class="page-link"><i
-														class="mdi mdi-chevron-right"></i></a></li>
-											</ul>
-											<!-- end ul -->
-										</div>
-										<!-- end col -->
-
-										<!-- 하단 버튼 -->
-										<div class="col-md-1 bottom-button">
-											<button type="button" class="btn btn-danger">
-												<i class="bi bi-x-lg"></i>
-											</button>
-										<!-- 모달 버튼 -->
-											<button type="button" class="btn btn-danger"
-												data-bs-toggle="modal" data-bs-target="#exampleModal">
-												<i class="bi bi-trash"></i>
-											</button>
-
-										</div>
-
-										<!-- Modal -->
-										<div class="modal fade" id="exampleModal" tabindex="-1"
-											aria-labelledby="exampleModalLabel" aria-hidden="true">
-											<div class="modal-dialog">
-												<div class="modal-content">
-													<div class="modal-header">
-														<h1 class="modal-title fs-5" id="exampleModalLabel">Modal
-															title</h1>
-														<button type="button" class="btn-close"
-															data-bs-dismiss="modal" aria-label="Close"></button>
-													</div>
-													<div class="modal-body">...</div>
-													<div class="modal-footer">
-														<button type="button" class="btn btn-secondary"
-															data-bs-dismiss="modal">닫기</button>
-													</div>
-												</div>
+										<div class="row g-0 text-center text-sm-start">
+											<!--g-0-->
+											<div class="gy-3 col-12 pagecol">
+												<!--col-sm-6-->
+												<ul class="pagination pagination-rounded">
+													<!--pagination-rounded justify-content-center justify-content-sm-end mb-sm-0-->
+													<li class="page-item disabled"><a href="#"
+														class="page-link"><i class="mdi mdi-chevron-left"></i></a>
+													</li>
+													<li class="page-item"><a href="#" class="page-link">1</a>
+													</li>
+													<li class="page-item active"><a href="#"
+														class="page-link">2</a></li>
+													<li class="page-item"><a href="#" class="page-link">3</a>
+													</li>
+													<li class="page-item"><a href="#" class="page-link">4</a>
+													</li>
+													<li class="page-item"><a href="#" class="page-link">5</a>
+													</li>
+													<li class="page-item"><a href="#" class="page-link"><i
+															class="mdi mdi-chevron-right"></i></a></li>
+												</ul>
+												<!-- end ul -->
 											</div>
-										</div>
+											<!-- end col -->
 
-										<div class="col-md-10"></div>
-
-										<div class="col-md-1 bottom-button-second">
-											<button type="button" class="btn btn-success">
-												<i class="bi bi-file-earmark-excel"></i>
-											</button>
-											<a href="/xdm/v1/infra/codegroup/codeGroupXdmForm">
-												<button type="button" class="btn btn-primary">
-													<i class="bi bi-plus-lg"></i>
+											<!-- 하단 버튼 -->
+											<div class="col-md-1 bottom-button">
+												<button type="button" class="btn btn-danger">
+													<i class="bi bi-x-lg"></i>
 												</button>
-											</a>
+												<!-- 모달 버튼 -->
+												<button type="button" class="btn btn-danger"
+													data-bs-toggle="modal" data-bs-target="#exampleModal">
+													<i class="bi bi-trash"></i>
+												</button>
+
+											</div>
+
+											<!-- Modal -->
+											<div class="modal fade" id="exampleModal" tabindex="-1"
+												aria-labelledby="exampleModalLabel" aria-hidden="true">
+												<div class="modal-dialog">
+													<div class="modal-content">
+														<div class="modal-header">
+															<h1 class="modal-title fs-5" id="exampleModalLabel">Modal
+																title</h1>
+															<button type="button" class="btn-close"
+																data-bs-dismiss="modal" aria-label="Close"></button>
+														</div>
+														<div class="modal-body">...</div>
+														<div class="modal-footer">
+															<button type="button" class="btn btn-secondary"
+																data-bs-dismiss="modal">닫기</button>
+														</div>
+													</div>
+												</div>
+											</div>
+
+											<div class="col-md-10"></div>
+
+											<div class="col-md-1 bottom-button-second">
+												<button type="button" class="btn btn-success">
+													<i class="bi bi-file-earmark-excel"></i>
+												</button>
+												<a href="/xdm/v1/infra/codegroup/codeGroupXdmForm">
+													<button type="button" class="btn btn-primary">
+														<i class="bi bi-plus-lg"></i>
+													</button>
+												</a>
+											</div>
 										</div>
-
-
+										<!-- end row -->
 									</div>
-									<!-- end row -->
-
-								</div>
 								<!-- end modal -->
-
+								</form>
 							</div>
 							<!-- end card body -->
 						</div>
@@ -1420,13 +1418,17 @@
 	<div class="rightbar-overlay"></div>
 
 	<!-- JAVASCRIPT -->
-	<script src="/xdm/v1/template/ui/assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
-	<script src="/xdm/v1/template/ui/assets/libs/metismenujs/metismenujs.min.js"></script>
-	<script src="/xdm/v1/template/ui/assets/libs/simplebar/simplebar.min.js"></script>
-	<script src="/xdm/v1/template/ui/assets/libs/feather-icons/feather.min.js"></script>
-	
+	<script
+		src="/xdm/v1/template/ui/assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
+	<script
+		src="/xdm/v1/template/ui/assets/libs/metismenujs/metismenujs.min.js"></script>
+	<script
+		src="/xdm/v1/template/ui/assets/libs/simplebar/simplebar.min.js"></script>
+	<script
+		src="/xdm/v1/template/ui/assets/libs/feather-icons/feather.min.js"></script>
 
- 
+
+
 
 
 </body>

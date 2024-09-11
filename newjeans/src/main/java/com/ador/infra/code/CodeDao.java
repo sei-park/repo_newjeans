@@ -8,7 +8,7 @@ import org.springframework.stereotype.Repository;
 public interface CodeDao {
 	
 	// select
-	public List<CodeDto> codeSelectList();
+	public List<CodeDto> codeSelectList(CodeVo codeVo);
 	 
 	// codegroup - code select 연결
 	public List<CodeDto> selectListCode();

@@ -12,8 +12,8 @@ public class CodeGroupService {
 	CodeGroupDao codeGroupDao;
 	
 	// select
-	public List<CodeGroupDto> selectList() {
-		List<CodeGroupDto> codegroups = codeGroupDao.selectList();
+	public List<CodeGroupDto> selectList(CodeGroupVo codeGroupVo) {
+		List<CodeGroupDto> codegroups = codeGroupDao.selectList(codeGroupVo);
 		return codegroups;
 	}
 	
@@ -43,6 +43,7 @@ public class CodeGroupService {
 	public int delete(CodeGroupDto codeGroupDto) {
 		return codeGroupDao.delete(codeGroupDto);
 	}
+
 	
 	// 줄여서 쓰는 방법 
 //	public CodeGroupDto selectOne(CodeGroupDto codeGroupDto) {

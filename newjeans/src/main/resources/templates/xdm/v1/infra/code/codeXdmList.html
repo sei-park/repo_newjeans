@@ -944,10 +944,9 @@
                         <div> <!--  class="col-lg-12" -->
                             <div class="card">
                                 <div class="card-body">
-                                    <div class="row">
-                                        <div> <!--  class="col-md-10" -->
-
-                                            <from>
+                                	<form name="form" method="post" action="/xdm/v1/infra/code/codeXdmList">
+                                    	<div class="row">
+                                        	<div> 
                                                 <div class="container"> <!--input 추가-->
                                                     <div class="row mb-3 align-items-center">
                                                         <div class="mb-2">
@@ -956,22 +955,24 @@
                                                         </div>
                                                         <div class="col-md-2">
                                                             <select class="form-select"
-                                                                aria-label="Default select example">
-                                                                <option selected>Y</option>
-                                                                <option value="1">N</option>
+                                                                aria-label="Default select example" name="shDelNy">
+                                                                <option value="">삭제여부</option>
+                                                                <option value="0">N</option>
+                                                                <option value="1">Y</option>
+                                                            </select>
+                                                        </div>
+                                                        <div class="col-md-2">
+                                                            <select class="form-select"
+                                                                aria-label="Default select example" name="shUseNy">
+                                                                <option value="">사용여부</option>
+                                                                <option value="0">N</option>
+                                                                <option value="1">Y</option>
                                                             </select>
                                                         </div>
                                                         <div class="col-md-2">
                                                             <select class="form-select"
                                                                 aria-label="Default select example">
-                                                                <option selected>Y</option>
-                                                                <option value="1">N</option>
-                                                            </select>
-                                                        </div>
-                                                        <div class="col-md-2">
-                                                            <select class="form-select"
-                                                                aria-label="Default select example">
-                                                                <option selected>수정일</option>
+                                                                <option value="">수정일</option>
                                                                 <option value="1">-</option>
                                                             </select>
                                                         </div>
@@ -994,22 +995,21 @@
                                                     <div class="row mb-3 align-items-center">
                                                         <div class="col-md-2">
                                                             <select class="form-select"
-                                                                aria-label="Default select example">
-                                                                <option selected>검색구분</option>
-                                                                <option value="1">1</option>
-                                                                <option value="2">2</option>
-                                                                <option value="3">3</option>
+                                                                aria-label="Default select example" name="shOption">
+                                                                <option value="">검색구분</option>
+                                                                <option value="1">코드그룹번호</option>
+                                                                <option value="2">코드이름</option>
                                                             </select>
                                                         </div>
                                                         <div class="col-md-2">
-                                                            <div class="input-group flex-nowrap ">
+                                                            <div class="input-group flex-nowrap">
                                                                 <input type="text" class="form-control"
                                                                     placeholder="검색어" aria-label="Username"
-                                                                    aria-describedby="addon-wrapping">
+                                                                    aria-describedby="addon-wrapping" name="shValue">
                                                             </div>
                                                         </div>
                                                         <div class="col-md-2" align="left">
-                                                            <button type="button" class="btn btn-outline-dark">
+                                                            <button type="submit" class="btn btn-outline-dark">
                                                                 <i class="uil-search"></i>
                                                             </button>
                                                             <button type="button" class="btn btn-outline-dark">
@@ -1033,7 +1033,7 @@
                                                         </select>
                                                     </div>
                                                 </div>
-                                            </from>
+                                            
 
 
                                         </div><!--col-md-6 -->
@@ -1333,9 +1333,9 @@
 
                                     </div><!-- end row -->
 
-                                </div>
+                                	</div>	
                                 <!-- end modal -->
-
+								</form>
                             </div><!-- end card body -->
                         </div><!-- end card -->
                     </div><!-- end col -->

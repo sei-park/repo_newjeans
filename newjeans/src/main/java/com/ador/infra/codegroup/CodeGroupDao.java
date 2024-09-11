@@ -8,7 +8,7 @@ import org.springframework.stereotype.Repository;
 public interface CodeGroupDao {
 	
 	// selectList
-	public List<CodeGroupDto> selectList();
+	public List<CodeGroupDto> selectList(CodeGroupVo codeGroupVo);
 	
 	// insert 
 	public int insert(CodeGroupDto codeGroupDto); // int 인 이유 : 데이터가 몇 건이 처리됐는지 확인
@@ -24,6 +24,7 @@ public interface CodeGroupDao {
 	
 	// delete
 	public int delete(CodeGroupDto codeGroupDto);
+
 	
 	
 	

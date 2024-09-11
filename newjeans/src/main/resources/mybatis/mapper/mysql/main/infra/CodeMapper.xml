@@ -21,6 +21,13 @@
 			code b
 			left join codegroup a
 			on a.ifcgSeq = b.codegroup_ifcgSeq
+		where 1=1
+			<if test="shDelNy != null and !shDelNy.equals('')">AND ifcdDelNy = #{shDelNy}</if> <!-- 삭제 여부 -->
+			<if test="shUseNy != null and !shUseNy.equals('')">AND ifcdUseNy = #{shUseNy}</if> <!-- 사용 여부 -->
+			<choose> <!-- 검색 구분 -->
+				<when test="shOption == 1">AND codegroup_ifcgSeq = #{shValue}</when>
+				<when test="shOption == 2">AND ifcdName LIKE CONCAT('%',#{shValue},'%')</when>
+			</choose>  
 		order by
 			b.ifcdSeq desc
 	</select>

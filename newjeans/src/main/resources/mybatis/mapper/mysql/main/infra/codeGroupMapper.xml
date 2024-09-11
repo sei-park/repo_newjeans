@@ -15,9 +15,16 @@
 	        a.ifcgDesc,
 	        a.regDateTime,
 	        a.regDateTimeRevise,
-	        (select count(ifcdSeq) from Code b where 1=1 and b.codegroup_ifcgSeq = a.ifcgSeq) as count <!-- 서브쿼리 -->
+	        (select count(ifcdSeq) from Code b where 1=1 and b.codegroup_ifcgSeq = a.ifcgSeq) as count <!-- 카운트 -->
 		FROM
 			newjeans.codegroup a
+		WHERE 1=1
+			<if test="shDelNy != null and !shDelNy.equals('')">AND ifcgDelNy = #{shDelNy}</if> <!-- 삭제 여부 -->
+			<if test="shUseNy != null and !shUseNy.equals('')">AND ifcgUseNy = #{shUseNy}</if> <!-- 사용 여부 -->  
+			<choose> <!-- 검색 구분 -->
+				<when test="shOption == 1">AND ifcgSeq = #{shValue}</when>
+				<when test="shOption == 2">AND ifcgName LIKE CONCAT('%',#{shValue},'%')</when>
+			</choose> 
 		ORDER BY 
 			a.ifcgSeq desc 
 	</select>
