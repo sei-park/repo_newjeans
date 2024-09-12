@@ -7,6 +7,9 @@ public class CodeVo {
 	private Integer shUseNy;
 	private Integer shOption;
 	private String shValue;
+	private String shDateStart; // datatype이 text이기 때문에 데이터타입은 String
+	private String shDateEnd; // datatype이 text이기 때문에 데이터타입은 String
+	private Integer shOptionDate;
 	//--
 	public Integer getShDelNy() {
 		return shDelNy;
@@ -32,6 +35,25 @@ public class CodeVo {
 	public void setShValue(String shValue) {
 		this.shValue = shValue;
 	}
+	public String getShDateStart() {
+		return shDateStart;
+	}
+	public void setShDateStart(String shDateStart) {
+		this.shDateStart = shDateStart;
+	}
+	public String getShDateEnd() {
+		return shDateEnd;
+	}
+	public void setShDateEnd(String shDateEnd) {
+		this.shDateEnd = shDateEnd;
+	}
+	public Integer getShOptionDate() {
+		return shOptionDate;
+	}
+	public void setShOptionDate(Integer shOptionDate) {
+		this.shOptionDate = shOptionDate;
+	}
+	
 	
 	
 	

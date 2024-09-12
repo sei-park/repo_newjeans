@@ -15,7 +15,11 @@ public class CodeController {
 	
 	// select
 	@RequestMapping(value="/xdm/v1/infra/code/codeXdmList") 
-	public String codeXdmList(CodeVo codeVo, Model model) { 
+	public String codeXdmList(CodeVo codeVo, Model model) {
+		
+		// getshDateStart()에 "00:00:00"을 넣고 setShDateStart에서 보여줌 
+		codeVo.setShDateStart(codeVo.getShDateStart() + " 00:00:00"); 
+		codeVo.setShDateEnd(codeVo.getShDateEnd() + " 23:59:59");
 		
 		List<CodeDto> codes = codeService.codeSelectList(codeVo);
 		model.addAttribute("codelist", codes);

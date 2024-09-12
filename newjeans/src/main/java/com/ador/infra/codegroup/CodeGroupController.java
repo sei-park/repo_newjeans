@@ -17,14 +17,18 @@ public class CodeGroupController {
 	@RequestMapping(value="/xdm/v1/infra/codegroup/codeGroupXdmList")
 	public String codeGroupXdmList(CodeGroupVo codeGroupVo, Model model) {
 		
+		// getshDateStart()에 "00:00:00"을 넣고 setShDateStart에서 보여줌 
+		codeGroupVo.setShDateStart(codeGroupVo.getShDateStart() + " 00:00:00"); 
+		codeGroupVo.setShDateEnd(codeGroupVo.getShDateEnd() + " 23:59:59");
+		
 		// 스프링에서 만든는 클래스는 모두 선언 클래스
 	    // Controller 에서 받은 객체를 html 에 넘기기 위해서는 Model 객체 사용해야 함 
 		List<CodeGroupDto> codegroups = codeGroupService.selectList(codeGroupVo);
 													 
 		model.addAttribute("list", codegroups); // list : html 에서 쓰일 변수명
 	   //model.addAttribute("list", codeGroupService.selectList());
-
-	   //System.out.println(codegroups.size());  
+        
+	   //System.out.println(codegroups.size());
 		
 		return "/xdm/v1/infra/codegroup/codeGroupXdmList";
 	}

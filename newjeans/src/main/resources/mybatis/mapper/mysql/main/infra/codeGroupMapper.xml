@@ -20,7 +20,14 @@
 			newjeans.codegroup a
 		WHERE 1=1
 			<if test="shDelNy != null and !shDelNy.equals('')">AND ifcgDelNy = #{shDelNy}</if> <!-- 삭제 여부 -->
-			<if test="shUseNy != null and !shUseNy.equals('')">AND ifcgUseNy = #{shUseNy}</if> <!-- 사용 여부 -->  
+			<if test="shUseNy != null and !shUseNy.equals('')">AND ifcgUseNy = #{shUseNy}</if> <!-- 사용 여부 -->
+			
+			<!-- 달력 -->
+			<choose>
+				<when test="shOptionDate == 1">AND a.regDateTime BETWEEN #{shDateStart} AND #{shDateEnd}</when> 
+				<when test="shOptionDate == 2">AND a.regDateTimeRevise BETWEEN #{shDateStart} AND #{shDateEnd}</when> 
+			</choose>
+			
 			<choose> <!-- 검색 구분 -->
 				<when test="shOption == 1">AND ifcgSeq = #{shValue}</when>
 				<when test="shOption == 2">AND ifcgName LIKE CONCAT('%',#{shValue},'%')</when>
