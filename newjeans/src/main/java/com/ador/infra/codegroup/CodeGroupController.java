@@ -27,8 +27,6 @@ public class CodeGroupController {
 													 
 		model.addAttribute("list", codegroups); // list : html 에서 쓰일 변수명
 	   //model.addAttribute("list", codeGroupService.selectList());
-        
-	   //System.out.println(codegroups.size());
 		
 		return "/xdm/v1/infra/codegroup/codeGroupXdmList";
 	}

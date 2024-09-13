@@ -28,7 +28,8 @@
 				<when test="shOptionDate == 2">AND a.regDateTimeRevise BETWEEN #{shDateStart} AND #{shDateEnd}</when> 
 			</choose>
 			
-			<choose> <!-- 검색 구분 -->
+			<!-- 검색 구분 -->
+			<choose> 
 				<when test="shOption == 1">AND ifcgSeq = #{shValue}</when>
 				<when test="shOption == 2">AND ifcgName LIKE CONCAT('%',#{shValue},'%')</when>
 			</choose> 

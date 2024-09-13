@@ -1016,14 +1016,14 @@
 														<div class="col-md-2">
 															<div class="input-group flex-nowrap">
 																<input type="text" class="form-control"
-																	placeholder="" aria-label="Username"
+																	placeholder="2024-01-01" aria-label="Username"
 																	aria-describedby="addon-wrapping" id="shDateStart" name="shDateStart" autocomplete="off">
 															</div>
 														</div>
 														<div class="col-md-2">
 															<div class="input-group flex-nowrap">
 																<input type="text" class="form-control"
-																	placeholder="" aria-label="Username"
+																	placeholder="2024-12-31" aria-label="Username"
 																	aria-describedby="addon-wrapping" id="shDateEnd" name="shDateEnd" autocomplete="off">
 																	<!-- autocomplete="off" 자동완성 방지 -->
 															</div>
@@ -1128,11 +1128,9 @@
 															<td th:text="${list.ifcgOrder}" class="group-name">테테테</td>
 															<td th:if="${list.ifcgDelNy eq 0}" class="codeUse">N</td>
 															<td th:unless="${list.ifcgDelNy eq 0}" class="codeUse">Y</td>
-															<td
-																th:text="${#dates.format(list.regDateTime, 'yyyy-MM-dd HH:mm:ss')}">2024-07-17
+															<td th:text="${#dates.format(list.regDateTime, 'yyyy-MM-dd HH:mm:ss')}">2024-07-17
 																09:37:10</td>
-															<td
-																th:text="${#dates.format(list.regDateTimeRevise, 'yyyy-MM-dd HH:mm:ss')}">2024-07-17
+															<td th:text="${#dates.format(list.regDateTimeRevise, 'yyyy-MM-dd HH:mm:ss')}">2024-07-17
 																09:37:10</td>
 															<td th:text="${list.count}"></td>
 														</tr>
@@ -1428,7 +1426,7 @@
     
     <script>
     	window.addEventListener('load', function() { // 화면이 로드 될 때 함수 안에 내용을 실행
-    		$.datetimepicker.setLocale('ko'); 
+    		$.datetimepicker.setLocale('ko'); // 언어는 한국어를 사용 
     	
     		$("#shDateStart, #shDateEnd").datetimepicker({ // "시작일, 종료일"
     			timepicker:false, // 시간은 보여주지 말고 
