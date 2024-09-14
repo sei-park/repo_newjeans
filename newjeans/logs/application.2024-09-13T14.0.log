@@ -1,0 +1,113 @@
+2024-09-13T14:57:18.328 [File Watcher] INFO o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification) 
+2024-09-13T14:57:18.353 [Thread-7] INFO o.a.c.h.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"] 
+2024-09-13T14:57:19.416 [restartedMain] INFO c.a.NewjeansApplication - Starting NewjeansApplication using Java 17.0.11 with PID 16080 (C:\factory\ws_sts4_4240\repo_newjeans\newjeans\bin\main started by USER in C:\factory\ws_sts4_4240\repo_newjeans\newjeans) 
+2024-09-13T14:57:19.418 [restartedMain] INFO c.a.NewjeansApplication - No active profile set, falling back to 1 default profile: "default" 
+2024-09-13T14:57:19.681 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat initialized with port 8080 (http) 
+2024-09-13T14:57:19.682 [restartedMain] INFO o.a.c.h.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"] 
+2024-09-13T14:57:19.682 [restartedMain] INFO o.a.c.c.StandardService - Starting service [Tomcat] 
+2024-09-13T14:57:19.682 [restartedMain] INFO o.a.c.c.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.28] 
+2024-09-13T14:57:19.709 [restartedMain] INFO o.a.c.c.C.[.[.[/] - Initializing Spring embedded WebApplicationContext 
+2024-09-13T14:57:19.709 [restartedMain] INFO o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 289 ms 
+2024-09-13T14:57:19.860 [restartedMain] INFO o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729 
+2024-09-13T14:57:19.866 [restartedMain] INFO o.a.c.h.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"] 
+2024-09-13T14:57:19.870 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/' 
+2024-09-13T14:57:19.874 [restartedMain] INFO c.a.NewjeansApplication - Started NewjeansApplication in 0.495 seconds (process running for 12839.396) 
+2024-09-13T14:57:19.875 [restartedMain] INFO o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged 
+2024-09-13T14:57:24.965 [http-nio-8080-exec-1] INFO o.a.c.c.C.[.[.[/] - Initializing Spring DispatcherServlet 'dispatcherServlet' 
+2024-09-13T14:57:24.965 [http-nio-8080-exec-1] INFO o.s.w.s.DispatcherServlet - Initializing Servlet 'dispatcherServlet' 
+2024-09-13T14:57:24.966 [http-nio-8080-exec-1] INFO o.s.w.s.DispatcherServlet - Completed initialization in 1 ms 
+2024-09-13T14:57:24.968 [http-nio-8080-exec-1] INFO c.z.h.HikariDataSource - HikariPool-2 - Starting... 
+2024-09-13T14:57:24.987 [http-nio-8080-exec-1] INFO c.z.h.p.HikariPool - HikariPool-2 - Added connection net.sf.log4jdbc.sql.jdbcapi.ConnectionSpy@34181496 
+2024-09-13T14:57:24.988 [http-nio-8080-exec-1] INFO c.z.h.HikariDataSource - HikariPool-2 - Start completed. 
+2024-09-13T14:57:24.991 [http-nio-8080-exec-1] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+31. SELECT  
+			a.ifcgSeq,
+	        a.ifcgName,
+	        a.ifcgUseNy,
+	        a.ifcgOrder,
+	        a.ifcgDelNy,
+	        a.ifcgDesc,
+	        a.regDateTime,
+	        a.regDateTimeRevise,
+	        (select count(ifcdSeq) from Code b where 1=1 and b.codegroup_ifcgSeq = a.ifcgSeq) as count 
+		FROM
+			newjeans.codegroup a
+		WHERE 1=1
+
+			 AND ifcgSeq = '식당'  
+		ORDER BY 
+			a.ifcgSeq desc
+ {executed in 2 msec} 
+2024-09-13T14:57:27.986 [http-nio-8080-exec-7] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+31. SELECT  
+			a.ifcgSeq,
+	        a.ifcgName,
+	        a.ifcgUseNy,
+	        a.ifcgOrder,
+	        a.ifcgDelNy,
+	        a.ifcgDesc,
+	        a.regDateTime,
+	        a.regDateTimeRevise,
+	        (select count(ifcdSeq) from Code b where 1=1 and b.codegroup_ifcgSeq = a.ifcgSeq) as count 
+		FROM
+			newjeans.codegroup a
+		WHERE 1=1
+
+		ORDER BY 
+			a.ifcgSeq desc
+ {executed in 1 msec} 
+2024-09-13T14:57:31.104 [http-nio-8080-exec-9] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+31. SELECT  
+			a.ifcgSeq,
+	        a.ifcgName,
+	        a.ifcgUseNy,
+	        a.ifcgOrder,
+	        a.ifcgDelNy,
+	        a.ifcgDesc,
+	        a.regDateTime,
+	        a.regDateTimeRevise,
+	        (select count(ifcdSeq) from Code b where 1=1 and b.codegroup_ifcgSeq = a.ifcgSeq) as count 
+		FROM
+			newjeans.codegroup a
+		WHERE 1=1
+
+		ORDER BY 
+			a.ifcgSeq desc
+ {executed in 0 msec} 
+2024-09-13T14:57:36.590 [http-nio-8080-exec-6] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+31. SELECT  
+			a.ifcgSeq,
+	        a.ifcgName,
+	        a.ifcgUseNy,
+	        a.ifcgOrder,
+	        a.ifcgDelNy,
+	        a.ifcgDesc,
+	        a.regDateTime,
+	        a.regDateTimeRevise,
+	        (select count(ifcdSeq) from Code b where 1=1 and b.codegroup_ifcgSeq = a.ifcgSeq) as count 
+		FROM
+			newjeans.codegroup a
+		WHERE 1=1
+
+			 AND ifcgName LIKE CONCAT('%','식당','%')  
+		ORDER BY 
+			a.ifcgSeq desc
+ {executed in 1 msec} 
+2024-09-13T14:57:37.459 [http-nio-8080-exec-1] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+31. SELECT  
+			a.ifcgSeq,
+	        a.ifcgName,
+	        a.ifcgUseNy,
+	        a.ifcgOrder,
+	        a.ifcgDelNy,
+	        a.ifcgDesc,
+	        a.regDateTime,
+	        a.regDateTimeRevise,
+	        (select count(ifcdSeq) from Code b where 1=1 and b.codegroup_ifcgSeq = a.ifcgSeq) as count 
+		FROM
+			newjeans.codegroup a
+		WHERE 1=1
+
+		ORDER BY 
+			a.ifcgSeq desc
+ {executed in 0 msec} 

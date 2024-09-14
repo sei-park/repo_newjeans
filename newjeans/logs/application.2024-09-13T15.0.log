@@ -1,0 +1,56 @@
+2024-09-13T15:06:11.950 [http-nio-8080-exec-6] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+31. SELECT  
+			a.ifcgSeq,
+	        a.ifcgName,
+	        a.ifcgUseNy,
+	        a.ifcgOrder,
+	        a.ifcgDelNy,
+	        a.ifcgDesc,
+	        a.regDateTime,
+	        a.regDateTimeRevise,
+	        (select count(ifcdSeq) from Code b where 1=1 and b.codegroup_ifcgSeq = a.ifcgSeq) as count 
+		FROM
+			newjeans.codegroup a
+		WHERE 1=1
+
+		ORDER BY 
+			a.ifcgSeq desc
+ {executed in 1 msec} 
+2024-09-13T15:06:15.279 [http-nio-8080-exec-10] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+31. SELECT  
+			a.ifcgSeq,
+	        a.ifcgName,
+	        a.ifcgUseNy,
+	        a.ifcgOrder,
+	        a.ifcgDelNy,
+	        a.ifcgDesc,
+	        a.regDateTime,
+	        a.regDateTimeRevise,
+	        (select count(ifcdSeq) from Code b where 1=1 and b.codegroup_ifcgSeq = a.ifcgSeq) as count 
+		FROM
+			newjeans.codegroup a
+		WHERE 1=1
+
+			 AND ifcgSeq = '13'  
+		ORDER BY 
+			a.ifcgSeq desc
+ {executed in 0 msec} 
+2024-09-13T15:08:39.336 [File Watcher] INFO o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification) 
+2024-09-13T15:08:39.337 [Thread-11] INFO o.a.c.h.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"] 
+2024-09-13T15:08:40.273 [Thread-11] INFO c.z.h.HikariDataSource - HikariPool-2 - Shutdown initiated... 
+2024-09-13T15:08:40.281 [Thread-11] INFO c.z.h.HikariDataSource - HikariPool-2 - Shutdown completed. 
+2024-09-13T15:08:40.354 [restartedMain] INFO c.a.NewjeansApplication - Starting NewjeansApplication using Java 17.0.11 with PID 16080 (C:\factory\ws_sts4_4240\repo_newjeans\newjeans\bin\main started by USER in C:\factory\ws_sts4_4240\repo_newjeans\newjeans) 
+2024-09-13T15:08:40.355 [restartedMain] INFO c.a.NewjeansApplication - No active profile set, falling back to 1 default profile: "default" 
+2024-09-13T15:08:40.643 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat initialized with port 8080 (http) 
+2024-09-13T15:08:40.644 [restartedMain] INFO o.a.c.h.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"] 
+2024-09-13T15:08:40.644 [restartedMain] INFO o.a.c.c.StandardService - Starting service [Tomcat] 
+2024-09-13T15:08:40.644 [restartedMain] INFO o.a.c.c.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.28] 
+2024-09-13T15:08:40.670 [restartedMain] INFO o.a.c.c.C.[.[.[/] - Initializing Spring embedded WebApplicationContext 
+2024-09-13T15:08:40.670 [restartedMain] INFO o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 312 ms 
+2024-09-13T15:08:40.816 [restartedMain] INFO o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729 
+2024-09-13T15:08:40.822 [restartedMain] INFO o.a.c.h.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"] 
+2024-09-13T15:08:40.827 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/' 
+2024-09-13T15:08:40.831 [restartedMain] INFO c.a.NewjeansApplication - Started NewjeansApplication in 0.515 seconds (process running for 13520.354) 
+2024-09-13T15:08:40.832 [restartedMain] INFO o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged 
+2024-09-13T15:33:27.359 [RMI TCP Connection(238)-127.0.0.1] INFO o.s.b.a.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin - Application shutdown requested. 
+2024-09-13T15:33:27.363 [RMI TCP Connection(238)-127.0.0.1] INFO o.a.c.h.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"] 

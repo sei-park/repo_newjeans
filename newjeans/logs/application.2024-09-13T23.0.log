@@ -1,0 +1,56 @@
+2024-09-13T23:36:27.240 [http-nio-8080-exec-1] INFO o.a.c.c.C.[.[.[/] - Initializing Spring DispatcherServlet 'dispatcherServlet' 
+2024-09-13T23:36:27.242 [http-nio-8080-exec-1] INFO o.s.w.s.DispatcherServlet - Initializing Servlet 'dispatcherServlet' 
+2024-09-13T23:36:27.244 [http-nio-8080-exec-1] INFO o.s.w.s.DispatcherServlet - Completed initialization in 1 ms 
+2024-09-13T23:36:31.454 [http-nio-8080-exec-3] INFO c.z.h.HikariDataSource - HikariPool-1 - Starting... 
+2024-09-13T23:36:31.848 [http-nio-8080-exec-3] INFO c.z.h.p.HikariPool - HikariPool-1 - Added connection net.sf.log4jdbc.sql.jdbcapi.ConnectionSpy@323aa5dd 
+2024-09-13T23:36:31.851 [http-nio-8080-exec-3] INFO c.z.h.HikariDataSource - HikariPool-1 - Start completed. 
+2024-09-13T23:36:31.882 [http-nio-8080-exec-3] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. SELECT  
+			a.ifcgSeq,
+	        a.ifcgName,
+	        a.ifcgUseNy,
+	        a.ifcgOrder,
+	        a.ifcgDelNy,
+	        a.ifcgDesc,
+	        a.regDateTime,
+	        a.regDateTimeRevise,
+	        (select count(ifcdSeq) from Code b where 1=1 and b.codegroup_ifcgSeq = a.ifcgSeq) as count 
+		FROM
+			newjeans.codegroup a
+		WHERE 1=1
+
+		ORDER BY 
+			a.ifcgSeq desc
+ {executed in 12 msec} 
+2024-09-13T23:38:11.366 [http-nio-8080-exec-5] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. select
+			b.ifcdSeq,
+		    b.ifcdName,
+		    b.ifcdUseNy,
+		    b.ifcdOrder,
+		    b.ifcdDesc,
+		    b.ifcdDelNy,
+		    b.registerDate,
+		    b.reviseDate, 
+		    b.codegroup_ifcgSeq,
+		    a.ifcgName
+		from
+			code b
+			left join codegroup a
+			on a.ifcgSeq = b.codegroup_ifcgSeq
+		where 1=1
+
+		order by
+			b.ifcdSeq desc
+ {executed in 2 msec} 
+2024-09-13T23:38:17.899 [http-nio-8080-exec-1] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. select
+			a.ifcgSeq,
+		    a.ifcgName
+		from
+			codegroup a
+		where 1=1 
+			and a.ifcgDelNy = 0
+		order by  
+			a.ifcgOrder desc
+ {executed in 1 msec} 

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.ador.infra.hotelmember.HotelMemberDao">
+
+	<resultMap type="com.ador.infra.hotelmember.HotelMemberDto" id="resultMapObj"></resultMap>
+	
+	<select id="memberSelectList" resultMap="resultMapObj" >
+		SELECT  
+			a.htmSeq,
+	        a.htmUserName,
+	        a.htmGender,
+	        a.htmBirth,
+	        a.htmId,
+	        a.htmPassword,
+	        a.htmPhoneNumber,
+	        a.htmEmail,
+	        a.htmAddress,
+	        a.htmDetailedAddress,
+	        a.htmZipCode,
+	        a.htmRegDate,
+	        a.htmGrade,
+	        a.htmRegAgreeContentNy,
+	        a.htmEditMemberDate,
+	        a.htmDelNy
+		FROM
+			newjeans.hotelmember a	
+		ORDER BY 
+			a.htmSeq desc
+	</select>
+	
+	
+	  
+	
+
+</mapper>
+
