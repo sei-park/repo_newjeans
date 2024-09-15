@@ -15,9 +15,9 @@ public class HotelMemberController {
     
 	// selectList
 	@RequestMapping(value="/xdm/v1/infra/hotelmember/hotelMemberXdmList")
-	public String hotelMemberXdmList(Model model) {
+	public String hotelMemberXdmList(HotelMemberVo hotelMemberVo, Model model) {
 		
-		model.addAttribute("memberList", hotelMemberService.memberSelectList());
+		model.addAttribute("memberList", hotelMemberService.memberSelectList(hotelMemberVo));
 		return "/xdm/v1/infra/hotelmember/hotelMemberXdmList";
 	}
 	
@@ -42,13 +42,29 @@ public class HotelMemberController {
 		return "/xdm/v1/infra/hotelmember/hotelMemberXdmMForm";
 	}
 	
+	// update 
 	@RequestMapping(value="/xdm/v1/infra/hotelmember/hotelMemberXdmUpdt")
 	public String hotelMemberXdmUpdt(HotelMemberDto hotelMemberDto) {
 		
 		hotelMemberService.memberUpdate(hotelMemberDto);
-		return "/xdm/v1/infra/hotelmember/hotelMemberXdmMForm";
+		return "redirect:/xdm/v1/infra/hotelmember/hotelMemberXdmList";
 	}
 	
+	// update delete
+	@RequestMapping(value="/xdm/v1/infra/hotelmember/hotelMemberXdmUedl")
+	public String hotelMemberXdmUedl(HotelMemberDto hotelMemberDto) {
+		
+		hotelMemberService.uelete(hotelMemberDto);
+		return "redirect:/xdm/v1/infra/hotelmember/hotelMemberXdmList";
+	}
+	
+	// delete
+	@RequestMapping(value="/xdm/v1/infra/hotelmember/hotelMemberXdmDel")
+	public String hotelMemberXdmDel(HotelMemberDto hotelMemberDto) {
+		
+		hotelMemberService.delete(hotelMemberDto);
+	    return "redirect:/xdm/v1/infra/hotelmember/hotelMemberXdmList";
+	}
 	
 	
 	

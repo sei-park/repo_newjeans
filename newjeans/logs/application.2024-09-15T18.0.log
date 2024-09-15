@@ -5635,3 +5635,7 @@ org.springframework.expression.spel.SpelEvaluationException: EL1008E: Property o
 		WHERE 1=1
 			AND a.htmSeq = '1'
  {executed in 1 msec} 
+2024-09-15T18:33:41.500 [RMI TCP Connection(357)-127.0.0.1] INFO o.s.b.a.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin - Application shutdown requested. 
+2024-09-15T18:33:41.502 [RMI TCP Connection(357)-127.0.0.1] INFO o.a.c.h.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"] 
+2024-09-15T18:33:42.635 [RMI TCP Connection(357)-127.0.0.1] INFO c.z.h.HikariDataSource - HikariPool-10 - Shutdown initiated... 
+2024-09-15T18:33:42.638 [RMI TCP Connection(357)-127.0.0.1] INFO c.z.h.HikariDataSource - HikariPool-10 - Shutdown completed. 

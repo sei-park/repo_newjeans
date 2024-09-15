@@ -944,7 +944,7 @@
                                 </div><!-- end card header -->
 
                                 <div class="card-body">
-                                    <form method="post" action="/xdm/v1/infra/hotelmember/hotelMemberXdmUpdt">
+                                    <form method="post" action="/xdm/v1/infra/hotelmember/hotelMemberXdmUpdt" name="form">
                                         <div class="row"> <!--col-md-8-->
                                             <div class="row">
                                                 <div class="col-md-3">
@@ -1065,7 +1065,7 @@
                                                     <label for="choices-single-default"
                                                         class="form-label font-size-13 text-muted">탈퇴여부
                                                     </label>
-                                                    <select class="form-select" name="htmDelNy">
+                                                    <select class="form-select" name="htmDelNy" disabled>
                                                         <option value="1" th:selected="${memberItem?.htmDelNy == 1}">Y</option>
                                                         <option value="0" th:selected="${memberItem?.htmDelNy == 0}">N</option>
                                                     </select>
@@ -1193,22 +1193,28 @@
 
                                             <!------------submit icon------------>
                                             <div class="row gy-3">
-                                                <div class="col-md-1">
+                                                <div class="col-md-3">
                                                     <a href="./0_list.html">
                                                         <button type="button" class="btn btn-outline-primary">
                                                             <i class="bx bx-list-ul"></i>
                                                         </button>
                                                     </a>
+                                                    <button type="button" class="btn btn-danger" id="btnDelete">
+                                                    <i class="bi bi-x-lg"></i></button><!-- delete -->
+                                                    <button type="button" class="btn btn-danger" id="btnUelete">
+                                                    <i class="bi bi-trash"></i></button><!-- uelete -->
                                                 </div>
-
-                                                <div class="col-md-10"></div>
+                                                
+<!--                                              <div class="col-md-10"></div> -->
+                                             
                                              <!-- 제출버튼 -->
-                                                <div class="col-md-1" align="right">
+                                                <div class="col-md-9" align="right">
                                                     <button type="submit" class="btn btn-outline-primary">
                                                         <i class="bx bx-data"></i>
                                                     </button>
                                                 </div>
-                                            </div>
+                                            </div> 
+                                            
 
                                             <!------------submit icon------------>
 
@@ -1395,8 +1401,26 @@
 
         <!-- init js -->
         <script src="/xdm/v1/template/ui/assets/js/pages/form-advanced.init.js"></script>
-
         <script src="/xdm/v1/template/ui/assets/js/pages/form-validation.init.js"></script>
+        
+        <script>
+		// 휴지통 버튼 uelete
+		document.getElementById("btnUelete").onclick = function() {
+			alert("update delete 확인");
+			let form = document.querySelector("form[name=form]");	
+		    form.action = "/xdm/v1/infra/hotelmember/hotelMemberXdmUedl";
+		    form.submit();
+		}
+		
+		// x 버튼 delete
+		document.getElementById("btnDelete").onclick = function() {
+			alert("delete 확인");
+			let form = document.querySelector("form[name=form]");
+		    form.action = "/xdm/v1/infra/hotelmember/hotelMemberXdmDel";
+		    form.submit();
+		}
+		</script>
+        
 
 
 

@@ -32,6 +32,17 @@
     .pagination {
         padding-left: 35%;
     }
+      
+    .title th {
+    	font-weight: bold;
+    	text-align: center;
+    }
+    
+    .contentList {
+    	text-align: center;
+    }
+    
+
     
 </style>
 
@@ -943,7 +954,7 @@
                         <div> <!--  class="col-lg-12" -->
                             <div class="card">
                                 <div class="card-body">
-                                   <from>
+                                   <form name="form" method="post" action="/xdm/v1/infra/hotelmember/hotelMemberXdmList">
                                      <div class="row">
                                         <div> <!--  class="col-md-10" -->
                                                 <div class="container"> <!--input 추가-->
@@ -954,8 +965,8 @@
                                                         </div>
                                                         <div class="col-md-2">
                                                             <select class="form-select"
-                                                                aria-label="Default select example">
-                                                                <option value="">삭제여부</option>
+                                                                aria-label="Default select example" name="shDelNy">
+                                                                <option value="">탈퇴여부</option>
                                                                 <option value="0">N</option>
                                                                 <option value="1">Y</option>
                                                             </select>
@@ -1011,10 +1022,12 @@
                                                             </div>
                                                         </div>
                                                         <div class="col-md-2" align="left">
-                                                            <button type="button" class="btn btn-outline-dark">
+                                                            <!-- 검색버튼 -->
+                                                            <button type="submit" class="btn btn-outline-dark">
                                                                 <i class="uil-search"></i>
                                                             </button>
-                                                            <button type="button" class="btn btn-outline-dark">
+                                                            <!-- 뒤로가기버튼 -->
+                                                            <button type="reset" class="btn btn-outline-dark" id="btnReset">
                                                                 <i class="uil-corner-down-left"></i>
                                                             </button>
                                                         </div>
@@ -1044,7 +1057,7 @@
 
                                             <table class="table align-middle table-nowrap table-check">
                                                 <thead>
-                                                    <tr>
+                                                    <tr class="title">
                                                         <th scope="col" style="width: 50px;">
                                                             <div class="form-check font-size-16">
                                                                 <input type="checkbox" class="form-check-input"
@@ -1064,10 +1077,10 @@
                                                         <th scope="col">우편번호</th>
                                                         <th scope="col">아이디</th>
                                                         <th scope="col">비밀번호</th>
-                                                        <th scope="col">회원등록일</th>
                                                         <th scope="col">등급</th>
-                                                        <th scope="col">가입약관동의여부</th>
-                                                        <th scope="col">회원정보수정일</th>
+                                                        <th scope="col">등록일</th>
+                                                        <th scope="col">수정일</th>
+                                                        <th scope="col">약관동의여부</th>
                                                         <th scope="col">탈퇴여부</th>
                                                         <!-- <th style="width: 80px; min-width: 80px;">Action</th> -->
                                                     </tr><!-- end tr -->
@@ -1078,7 +1091,7 @@
 																<p>There are no data!</p>
 															</td>
 													</tr>
-                                                    <tr th:if="${!#lists.isEmpty(memberList)}" th:each="list : ${memberList}">
+                                                    <tr th:if="${!#lists.isEmpty(memberList)}" th:each="list : ${memberList}" class="contentList">
                                                         <th scope="row">
                                                             <div class="form-check font-size-16">
                                                                 <input type="checkbox" class="form-check-input"
@@ -1100,14 +1113,14 @@
                                                         <td class="order" th:text="${list.htmDetailedAddress}"></td>
                                                         <td class="order" th:text="${list.htmZipCode}"></td>
                                                         <td class="alternate-code" th:text="${list.htmId}"></td>
-                                                        <td th:text="${list.htmPassword}"></td>  
-                                                        <td th:text="${#dates.format(list.htmRegDate,'yyyy-MM-dd HH:mm:ss')}"></td>
+                                                        <td th:text="${list.htmPassword}"></td>
                                                         <td th:if="${list.htmGrade eq 1}" class="codeUse">gold</td>
                                                         <td th:if="${list.htmGrade eq 2}" class="codeUse">silver</td>
                                                         <td th:if="${list.htmGrade eq 3}" class="codeUse">green</td>
+                                                        <td th:text="${#dates.format(list.htmRegDate,'yyyy-MM-dd HH:mm:ss')}"></td>
+                                                        <td th:text="${#dates.format(list.htmEditMemberDate, 'yyyy-MM-dd HH:mm:ss')}"></td>
                                                         <td th:if="${list.htmRegAgreeContentNy eq 0}" class="codeUse">N</td>
 														<td th:unless="${list.htmRegAgreeContentNy eq 0}" class="codeUse">Y</td>
-														<td th:text="${#dates.format(list.htmEditMemberDate, 'yyyy-MM-dd HH:mm:ss')}"></td>
 														<td th:if="${list.htmDelNy eq 0}" class="codeUse">N</td>
 														<td th:unless="${list.htmDelNy eq 0}" class="codeUse">Y</td>
                                                     </tr><!-- end tr -->
@@ -1164,13 +1177,10 @@
                                                     class="bi bi-plus-lg"></i></button>
                                              </a>
                                         </div>
-
-
                                     </div><!-- end row -->
-
                                 </div>
                                 <!-- end modal -->
-								 </from>
+								 </form>
                             </div><!-- end card body -->
                         </div><!-- end card -->
                     </div><!-- end col -->
@@ -1345,6 +1355,15 @@
     <script src="/xdm/v1/template/ui/assets/libs/metismenujs/metismenujs.min.js"></script>
     <script src="/xdm/v1/template/ui/assets/libs/simplebar/simplebar.min.js"></script>
     <script src="/xdm/v1/template/ui/assets/libs/feather-icons/feather.min.js"></script>
+    
+    <script>
+    // reset
+    document.getElementById("btnReset").onclick = function() {
+    	form.submit();
+	}
+    
+    
+    </script>
 
 
 

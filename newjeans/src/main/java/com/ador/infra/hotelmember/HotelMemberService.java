@@ -17,8 +17,8 @@ public class HotelMemberService {
 //	}
 	
 	// selectList
-	public List<HotelMemberDto> memberSelectList() {
-		return hotelMemberDao.memberSelectList();
+	public List<HotelMemberDto> memberSelectList(HotelMemberVo hotelMemberVo) {
+		return hotelMemberDao.memberSelectList(hotelMemberVo);
 	}
 	
 	// insert 
@@ -35,5 +35,16 @@ public class HotelMemberService {
 	public int memberUpdate(HotelMemberDto hotelMemberDto) {
 		return hotelMemberDao.memberUpdate(hotelMemberDto);
 	}
+	
+	// uelete
+	public int uelete(HotelMemberDto hotelMemberDto) {
+		return hotelMemberDao.uelete(hotelMemberDto);
+	}
+	
+	// delete
+	public int delete(HotelMemberDto hotelMemberDto) {
+		return hotelMemberDao.delete(hotelMemberDto);
+	}
+	
  
 }

@@ -5,6 +5,7 @@
 
 	<resultMap type="com.ador.infra.hotelmember.HotelMemberDto" id="resultMapObj"></resultMap>
 	
+	<!-- selectList -->
 	<select id="memberSelectList" resultMap="resultMapObj">
 		SELECT  
 			a.htmSeq,
@@ -25,11 +26,14 @@
 	        a.htmDelNy,
 	        a.htmDesc
 		FROM
-			newjeans.hotelmember a	
+			newjeans.hotelmember a
+		WHERE 1=1
+			<if test="shDelNy != null and !shDelNy.equals('')">AND htmDelNy = #{shDelNy}</if>	
 		ORDER BY 
 			a.htmSeq desc
 	</select>
 	
+	<!-- insert -->
 	<insert id="memberInsert">
 		insert into hotelmember (
 			htmUserName,
@@ -68,6 +72,7 @@
 		)
 	</insert>
 	
+	<!-- selectOne -->
 	<select id="memberSelectOne" resultMap="resultMapObj">
 		SELECT  
 			a.htmSeq,
@@ -93,6 +98,7 @@
 			AND a.htmSeq = #{htmSeq}
 	</select>
 	
+	<!-- update -->
 	<update id="memberUpdate">
 		update hotelmember
 		set 
@@ -114,6 +120,26 @@
 	    where 1=1
 	    	and htmSeq = #{htmSeq}
 	</update>
+	
+	<!-- update delete -->
+	<update id="uelete">
+		UPDATE hotelmember
+		SET
+	        htmDelNy = 1
+	    WHERE 1=1
+	    	AND htmSeq = #{htmSeq}
+	</update>
+	
+	<!-- delete -->
+	<delete id="delete">
+		DELETE FROM hotelmember
+		WHERE 1=1
+			AND htmSeq = #{htmSeq}
+	</delete>
+	
+	
+	
+	
 	
 	
 	  
