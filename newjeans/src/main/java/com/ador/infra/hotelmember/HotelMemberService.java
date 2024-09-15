@@ -16,9 +16,24 @@ public class HotelMemberService {
 //		return members;
 //	}
 	
+	// selectList
 	public List<HotelMemberDto> memberSelectList() {
 		return hotelMemberDao.memberSelectList();
 	}
 	
+	// insert 
+	public int memberInsert(HotelMemberDto hotelMemberDto) {
+		return hotelMemberDao.memberInsert(hotelMemberDto);
+	}
+	
+	// selectOne
+	public HotelMemberDto memberSelectOne(HotelMemberDto hotelMemberDto) {
+		return hotelMemberDao.memberSelectOne(hotelMemberDto);
+	}
+	
+	// update
+	public int memberUpdate(HotelMemberDto hotelMemberDto) {
+		return hotelMemberDao.memberUpdate(hotelMemberDto);
+	}
  
 }

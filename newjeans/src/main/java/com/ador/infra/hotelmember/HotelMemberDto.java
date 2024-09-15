@@ -24,6 +24,7 @@ public class HotelMemberDto {
 	@DateTimeFormat(pattern="yyyy-MM-dd HH:mm:ss")
 	private Date htmEditMemberDate;
 	private Integer htmDelNy;
+	private String htmDesc;
     //--
 	public String getHtmSeq() {
 		return htmSeq;
@@ -120,6 +121,12 @@ public class HotelMemberDto {
 	}
 	public void setHtmDelNy(Integer htmDelNy) {
 		this.htmDelNy = htmDelNy;
+	}
+	public String getHtmDesc() {
+		return htmDesc;
+	}
+	public void setHtmDesc(String htmDesc) {
+		this.htmDesc = htmDesc;
 	}
 	
 	

@@ -944,52 +944,59 @@
                                 </div><!-- end card header -->
 
                                 <div class="card-body">
-                                    <form>
+                                    <form method="post" action="/xdm/v1/infra/hotelmember/hotelMemberXdmInst">
                                         <div class="row"> <!--col-md-8-->
                                             <div class="row">
                                                 <div class="col-md-3">
                                                     <label for="choices-single-groups"
                                                         class="form-label font-size-13 text-muted">회원번호</label>
-                                                    <input type="text" class="form-control" id="validationCustom01">
+                                                    <input type="text" class="form-control" id="validationCustom01" name="htmSeq" disabled	>
                                                     <div class="valid-feedback">Looks good!</div>
                                                 </div>
                                                 <div class="col-md-3">
                                                     <label for="choices-single-groups"
                                                         class="form-label font-size-13 text-muted">이름</label>
-                                                    <input type="text" class="form-control" id="validationCustom01">
+                                                    <input type="text" class="form-control" id="validationCustom01" name="htmUserName">
                                                     <div class="valid-feedback">Looks good!</div>
                                                 </div>
                                                 <div class="col-md-3">
-                                                    <label for="choices-single-groups"
-                                                        class="form-label font-size-13 text-muted">등급</label>
-                                                    <input type="text" class="form-control" id="validationCustom01">
-                                                    <div class="valid-feedback">Looks good!</div>
-                                                </div> 
+                                                    <label for="choices-single-default"
+                                                        class="form-label font-size-13 text-muted">등급
+                                                    </label>
+                                                    <select class="form-select" name="htmGrade">
+                                                        <option value="1">gold</option>
+                                                        <option value="2">silver</option>
+                                                        <option value="3">green</option>
+                                                    </select>
+                                                </div>
                                             </div>  
 
                                             <div class="row gy-3">
-                                               <div class="col-md-3">
-                                                    <label for="choices-single-groups"
-                                                        class="form-label font-size-13 text-muted">성별</label>
-                                                    <input type="text" class="form-control" id="validationCustom01">
-                                                    <div class="valid-feedback">Looks good!</div>
-                                                </div> 
+                                                <div class="col-md-3">
+                                                    <label for="choices-single-default"
+                                                        class="form-label font-size-13 text-muted">성별
+                                                    </label>
+                                                    <select class="form-select" name="htmGender">
+                                                        <option value="1">남자</option>
+                                                        <option value="2">여자</option>
+                                                    </select>
+                                                </div>
                                                 <div class="col-md-3">
                                                     <label for="choices-single-groups"
                                                         class="form-label font-size-13 text-muted">생년월일</label>
-                                                    <input type="text" class="form-control" id="validationCustom01">
+                                                    <input type="text" class="form-control" id="validationCustom01" name="htmBirth">
                                                     <div class="valid-feedback">Looks good!</div>
                                                 </div> 
                                                 <div class="col-md-3">
                                                     <label for="choices-single-groups"
                                                         class="form-label font-size-13 text-muted">휴대폰번호</label>
-                                                    <input type="text" class="form-control" id="validationCustom01">
+                                                    <input type="text" class="form-control" id="validationCustom01" name="htmPhoneNumber">
                                                     <div class="valid-feedback">Looks good!</div>
                                                 </div> 
                                                 <div class="col-md-3">
                                                     <label for="choices-single-groups"
                                                         class="form-label font-size-13 text-muted">이메일</label>
-                                                    <input type="text" class="form-control" id="validationCustom01">
+                                                    <input type="text" class="form-control" id="validationCustom01" name="htmEmail">
                                                     <div class="valid-feedback">Looks good!</div>
                                                 </div> 
                                             </div>
@@ -998,19 +1005,19 @@
                                                  <div class="col-md-3">
                                                     <label for="choices-single-groups"
                                                         class="form-label font-size-13 text-muted">주소</label>
-                                                    <input type="text" class="form-control" id="validationCustom01">
+                                                    <input type="text" class="form-control" id="validationCustom01" name="htmAddress">
                                                     <div class="valid-feedback">Looks good!</div>
                                                 </div> 
                                                 <div class="col-md-3">
                                                     <label for="choices-single-groups"
                                                         class="form-label font-size-13 text-muted">상세주소</label>
-                                                    <input type="text" class="form-control" id="validationCustom01">
+                                                    <input type="text" class="form-control" id="validationCustom01" name="htmDetailedAddress">
                                                     <div class="valid-feedback">Looks good!</div>
                                                 </div>
                                                 <div class="col-md-3">
                                                     <label for="choices-single-groups"
                                                         class="form-label font-size-13 text-muted">우편번호</label>
-                                                    <input type="text" class="form-control" id="validationCustom01">
+                                                    <input type="text" class="form-control" id="validationCustom01" name="htmZipCode">
                                                     <div class="valid-feedback">Looks good!</div>
                                                 </div>
                                             </div>
@@ -1019,48 +1026,54 @@
                                             	 <div class="col-md-3">
                                                     <label for="choices-single-groups"
                                                         class="form-label font-size-13 text-muted">아이디</label>
-                                                    <input type="text" class="form-control" id="validationCustom01">
+                                                    <input type="text" class="form-control" id="validationCustom01" name="htmId">
                                                     <div class="valid-feedback">Looks good!</div>
                                                 </div>
                                                  <div class="col-md-3">
                                                     <label for="choices-single-groups"
                                                         class="form-label font-size-13 text-muted">비밀번호</label>
-                                                    <input type="text" class="form-control" id="validationCustom01">
+                                                    <input type="text" class="form-control" id="validationCustom01" name="htmPassword">
                                                     <div class="valid-feedback">Looks good!</div>
                                                 </div>
                                                  <div class="col-md-3">
                                                     <label for="choices-single-groups"
-                                                        class="form-label font-size-13 text-muted">가입일</label>
-                                                    <input type="text" class="form-control" id="validationCustom01">
+                                                        class="form-label font-size-13 text-muted">회원등록일</label>
+                                                    <input type="text" class="form-control" id="validationCustom01" name="htmRegDate" disabled>
                                                     <div class="valid-feedback">Looks good!</div>
                                                 </div>
                                                 <div class="col-md-3">
                                                     <label for="choices-single-groups"
                                                         class="form-label font-size-13 text-muted">회원정보수정일</label>
-                                                    <input type="text" class="form-control" id="validationCustom01">
+                                                    <input type="text" class="form-control" id="validationCustom01" name="htmEditMemberDate" disabled>
                                                     <div class="valid-feedback">Looks good!</div>
                                                 </div>
                                             </div>
                                             
                                             <div class="row gy-3">
-                                                <div class="col-md-3">
-                                                    <label for="choices-single-groups"
-                                                        class="form-label font-size-13 text-muted">약관동의여부</label>
-                                                    <input type="text" class="form-control" id="validationCustom01">
-                                                    <div class="valid-feedback">Looks good!</div>
+                                              	 <div class="col-md-3">
+                                                    <label for="choices-single-default"
+                                                        class="form-label font-size-13 text-muted">약관동의여부
+                                                    </label>
+                                                    <select class="form-select" name="htmRegAgreeContentNy">
+                                                        <option value="1">동의</option>
+                                                        <option value="0">미동의</option>
+                                                    </select>
                                                 </div>
-                                                 <div class="col-md-3">
-                                                    <label for="choices-single-groups"
-                                                        class="form-label font-size-13 text-muted">탈퇴여부</label>
-                                                    <input type="text" class="form-control" id="validationCustom01">
-                                                    <div class="valid-feedback">Looks good!</div>
+                                              	<div class="col-md-3">
+                                                    <label for="choices-single-default"
+                                                        class="form-label font-size-13 text-muted">삭제여부
+                                                    </label>
+                                                    <select class="form-select" name="htmDelNy">
+                                                        <option value="1">사용</option>
+                                                        <option value="0">미사용</option>
+                                                    </select>
                                                 </div>
                                             </div>
                                             
                                             <div class="row gy-3">
                                             	<div class="col-md-6">
                                                     <label for="choices-single-groups"class="form-label font-size-13 text-muted">설명</label>
-                                                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                                                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="htmDesc"></textarea>
                                                 </div>
                                             </div>
                                        
@@ -1187,7 +1200,7 @@
                                                 </div>
 
                                                 <div class="col-md-10"></div>
-                                                
+                                             <!-- 제출버튼 -->
                                                 <div class="col-md-1" align="right">
                                                     <button type="submit" class="btn btn-outline-primary">
                                                         <i class="bx bx-data"></i>

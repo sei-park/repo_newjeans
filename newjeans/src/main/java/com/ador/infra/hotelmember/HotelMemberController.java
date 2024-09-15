@@ -12,7 +12,8 @@ public class HotelMemberController {
 	
 	@Autowired
 	HotelMemberService hotelMemberService;
-		
+    
+	// selectList
 	@RequestMapping(value="/xdm/v1/infra/hotelmember/hotelMemberXdmList")
 	public String hotelMemberXdmList(Model model) {
 		
@@ -24,6 +25,32 @@ public class HotelMemberController {
 	public String hotelMemberXdmForm() {
 		return "/xdm/v1/infra/hotelmember/hotelMemberXdmForm";
 	}
-
+	
+	// insert
+	@RequestMapping(value="/xdm/v1/infra/hotelmember/hotelMemberXdmInst")
+	public String hotelMemberXdmInst(HotelMemberDto hotelMemberDto) {
+		
+		hotelMemberService.memberInsert(hotelMemberDto);
+		return "redirect:/xdm/v1/infra/hotelmember/hotelMemberXdmList";
+	} 
+	
+	// selectOne 
+	@RequestMapping(value="/xdm/v1/infra/hotelmember/hotelMemberXdmMForm")
+	public String codeGroupXdmMForm(HotelMemberDto hotelMemberDto, Model model) {
+		
+		model.addAttribute("memberItem", hotelMemberService.memberSelectOne(hotelMemberDto));
+		return "/xdm/v1/infra/hotelmember/hotelMemberXdmMForm";
+	}
+	
+	@RequestMapping(value="/xdm/v1/infra/hotelmember/hotelMemberXdmUpdt")
+	public String hotelMemberXdmUpdt(HotelMemberDto hotelMemberDto) {
+		
+		hotelMemberService.memberUpdate(hotelMemberDto);
+		return "/xdm/v1/infra/hotelmember/hotelMemberXdmMForm";
+	}
+	
+	
+	
+	
 }
   

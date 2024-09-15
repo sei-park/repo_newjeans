@@ -5,7 +5,7 @@
 
 	<resultMap type="com.ador.infra.hotelmember.HotelMemberDto" id="resultMapObj"></resultMap>
 	
-	<select id="memberSelectList" resultMap="resultMapObj" >
+	<select id="memberSelectList" resultMap="resultMapObj">
 		SELECT  
 			a.htmSeq,
 	        a.htmUserName,
@@ -22,12 +22,98 @@
 	        a.htmGrade,
 	        a.htmRegAgreeContentNy,
 	        a.htmEditMemberDate,
-	        a.htmDelNy
+	        a.htmDelNy,
+	        a.htmDesc
 		FROM
 			newjeans.hotelmember a	
 		ORDER BY 
 			a.htmSeq desc
 	</select>
+	
+	<insert id="memberInsert">
+		insert into hotelmember (
+			htmUserName,
+	        htmGender,
+	        htmBirth,
+	        htmId,
+	        htmPassword,
+	        htmPhoneNumber,
+	        htmEmail,
+	        htmAddress,
+	        htmDetailedAddress,
+	        htmZipCode,
+	        htmRegDate,
+	        htmGrade,
+	        htmRegAgreeContentNy,
+	        htmEditMemberDate,
+	        htmDelNy,
+	        htmDesc
+		) values (
+			#{htmUserName},
+			#{htmGender},
+			#{htmBirth},
+			#{htmId},
+			#{htmPassword},
+			#{htmPhoneNumber},
+			#{htmEmail},
+			#{htmAddress},
+			#{htmDetailedAddress},
+			#{htmZipCode},
+			now(),
+			#{htmGrade},
+			#{htmRegAgreeContentNy},
+			now(),
+			0,
+			#{htmDesc}
+		)
+	</insert>
+	
+	<select id="memberSelectOne" resultMap="resultMapObj">
+		SELECT  
+			a.htmSeq,
+	        a.htmUserName,
+	        a.htmGender,
+	        a.htmBirth,
+	        a.htmId,
+	        a.htmPassword,
+	        a.htmPhoneNumber,
+	        a.htmEmail,
+	        a.htmAddress,
+	        a.htmDetailedAddress,
+	        a.htmZipCode,
+	        a.htmRegDate,
+	        a.htmGrade,
+	        a.htmRegAgreeContentNy,
+	        a.htmEditMemberDate,
+	        a.htmDelNy,
+	        a.htmDesc
+		FROM
+			newjeans.hotelmember a	
+		WHERE 1=1
+			AND a.htmSeq = #{htmSeq}
+	</select>
+	
+	<update id="memberUpdate">
+		update hotelmember
+		set 
+		    htmUserName = #{htmUserName},  
+	        htmGender = #{htmGender},
+	        htmBirth = #{htmBirth},
+	        htmId = #{htmId},
+	        htmPassword = #{htmPassword},
+	        htmPhoneNumber = #{htmPhoneNumber},
+	        htmEmail = #{htmEmail},
+	        htmAddress = #{htmAddress},
+	        htmDetailedAddress = #{htmDetailedAddress},
+	        htmZipCode = #{htmZipCode},
+	        htmGrade = #{htmGrade},
+	        htmRegAgreeContentNy = #{htmRegAgreeContentNy},
+	        htmEditMemberDate = now(),
+	        htmDelNy = 0,
+	        htmDesc = #{htmDesc}
+	    where 1=1
+	    	and htmSeq = #{htmSeq}
+	</update>
 	
 	
 	  
