@@ -17,6 +17,11 @@ public class HotelMemberController {
 	@RequestMapping(value="/xdm/v1/infra/hotelmember/hotelMemberXdmList")
 	public String hotelMemberXdmList(HotelMemberVo hotelMemberVo, Model model) {
 		
+		// getshDateStart()에 "00:00:00"을 넣고 setShDateStart에서 보여줌 
+		hotelMemberVo.setShDateStart(hotelMemberVo.getShDateStart() + " 00:00:00"); 
+		hotelMemberVo.setShDateEnd(hotelMemberVo.getShDateEnd() + " 23:59:59");
+				
+		
 		model.addAttribute("memberList", hotelMemberService.memberSelectList(hotelMemberVo));
 		return "/xdm/v1/infra/hotelmember/hotelMemberXdmList";
 	}

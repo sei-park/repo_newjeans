@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.ador.infra.hotel.HotelDao">
+
+	<resultMap type="com.ador.infra.hotel.HotelDto" id="resultMapObj"></resultMap>
+	
+	<select id="hotelList">
+		select
+			a.htseq, 
+			a.htName, 
+			a.htAddress, 
+			a.htNotice, 
+			a.htMap,
+			a.htInclusionItemsNy, 
+			a.htFacilityNy,  
+			a.htNameSearchNy, 
+			a.htPriceSearchNy,
+			a.htStarSearchNy,  
+			a.htClassSearchNy,  
+			a.htRestaurantNy,  
+			a.htSpaNy,  
+			a.htFitnessCenterNy,  
+			a.htPoolNy,  
+			a.htIoungeNy,  
+			a.htStockRoomNy,  
+			a.htParkingNy,  
+			a.htShuttleBusNy,  
+			a.htBreakfastNy,  
+			a.htRoomServiceNy,  
+			a.htElseNy
+		from
+		    hotel a
+		order by
+			a.htseq desc
+	</select>
+	
+
+	
+	
+
+</mapper>
+

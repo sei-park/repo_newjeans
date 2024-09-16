@@ -28,7 +28,21 @@
 		FROM
 			newjeans.hotelmember a
 		WHERE 1=1
-			<if test="shDelNy != null and !shDelNy.equals('')">AND htmDelNy = #{shDelNy}</if>	
+			<if test="shDelNy != null and !shDelNy.equals('')">AND htmDelNy = #{shDelNy}</if>
+			
+			<!-- 달력 -->
+			<choose>
+				<when test="shOptionDate == 1">AND a.htmRegDate BETWEEN #{shDateStart} AND #{shDateEnd}</when> 
+				<when test="shOptionDate == 2">AND a.htmEditMemberDate BETWEEN #{shDateStart} AND #{shDateEnd}</when> 
+			</choose>
+			
+			<!-- 검색 구분 -->
+			<choose> 
+				<when test="shOption == 1">AND htmSeq = #{shValue}</when>
+				<when test="shOption == 2">AND htmUserName LIKE CONCAT('%',#{shValue},'%')</when>
+				<when test="shOption == 3">AND htmGender = #{shValue}</when>
+				<when test="shOption == 4">AND htmGrade = #{shValue}</when>
+			</choose> 
 		ORDER BY 
 			a.htmSeq desc
 	</select>
