@@ -487,3 +487,5 @@ Caused by: org.xml.sax.SAXParseException: Premature end of file.
 2024-09-17T00:13:05.212 [http-nio-8080-exec-1] INFO o.a.c.c.C.[.[.[/] - Initializing Spring DispatcherServlet 'dispatcherServlet' 
 2024-09-17T00:13:05.213 [http-nio-8080-exec-1] INFO o.s.w.s.DispatcherServlet - Initializing Servlet 'dispatcherServlet' 
 2024-09-17T00:13:05.215 [http-nio-8080-exec-1] INFO o.s.w.s.DispatcherServlet - Completed initialization in 2 ms 
+2024-09-17T00:28:39.504 [RMI TCP Connection(36)-127.0.0.1] INFO o.s.b.a.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin - Application shutdown requested. 
+2024-09-17T00:28:39.506 [RMI TCP Connection(36)-127.0.0.1] INFO o.a.c.h.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"] 

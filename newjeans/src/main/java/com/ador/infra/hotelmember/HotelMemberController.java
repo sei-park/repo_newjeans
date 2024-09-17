@@ -21,7 +21,6 @@ public class HotelMemberController {
 		hotelMemberVo.setShDateStart(hotelMemberVo.getShDateStart() + " 00:00:00"); 
 		hotelMemberVo.setShDateEnd(hotelMemberVo.getShDateEnd() + " 23:59:59");
 				
-		
 		model.addAttribute("memberList", hotelMemberService.memberSelectList(hotelMemberVo));
 		return "/xdm/v1/infra/hotelmember/hotelMemberXdmList";
 	}

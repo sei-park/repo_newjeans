@@ -5,35 +5,41 @@
 
 	<resultMap type="com.ador.infra.hotel.HotelDto" id="resultMapObj"></resultMap>
 	
-	<select id="hotelList">
+	<select id="hotelList" resultMap="resultMapObj">
 		select
-			a.htseq, 
-			a.htName, 
-			a.htAddress, 
-			a.htNotice, 
-			a.htMap,
-			a.htInclusionItemsNy, 
-			a.htFacilityNy,  
-			a.htNameSearchNy, 
-			a.htPriceSearchNy,
-			a.htStarSearchNy,  
-			a.htClassSearchNy,  
-			a.htRestaurantNy,  
-			a.htSpaNy,  
-			a.htFitnessCenterNy,  
-			a.htPoolNy,  
-			a.htIoungeNy,  
-			a.htStockRoomNy,  
-			a.htParkingNy,  
-			a.htShuttleBusNy,  
-			a.htBreakfastNy,  
-			a.htRoomServiceNy,  
-			a.htElseNy
+		    a.htseq,
+		    a.htName,
+		    a.htAddress,
+		    a.htcountry,
+		    a.htDesc,
+		    a.htDelNy,
+		    a.htRegDate,
+		    a.htReviseDate
 		from
 		    hotel a
 		order by
-			a.htseq desc
+			a.htseq desc 
 	</select>
+	
+	<insert id="hotelInsert">
+		insert into hotel (
+			htName,
+			htAddress,
+			htcountry,
+			htDesc,
+			htDelNy,
+			htRegDate,
+		    htReviseDate
+		) values (
+			#{htName},
+			#{htAddress},
+			#{htcountry},
+			#{htDesc},
+			0,
+			now(),
+			now()
+		) 
+	</insert>
 	
 
 	
