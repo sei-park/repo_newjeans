@@ -973,12 +973,12 @@
                                                     <div class="row mb-3 align-items-center">
                                                         <div class="mb-2">
                                                             <!-- <h6>page1 > page2 > Default</h6> -->
-                                                            <h1>Member List</h1>
+                                                            <h1>Member</h1>
                                                         </div>
                                                         <div class="col-md-2">
                                                             <select class="form-select"
                                                                 aria-label="Default select example" name="shDelNy">
-                                                                <option value="">탈퇴여부</option>
+                                                                <option value="">삭제여부</option>
                                                                 <option value="0">N</option>
                                                                 <option value="1">Y</option>
                                                             </select>
@@ -1125,9 +1125,7 @@
                                                         <td class="order" th:text="${list.htmZipCode}"></td>
                                                         <td class="alternate-code" th:text="${list.htmId}"></td>
                                                         <td th:text="${list.htmPassword}"></td>
-                                                        <td th:if="${list.htmGrade eq 1}" class="codeUse">gold</td>
-                                                        <td th:if="${list.htmGrade eq 2}" class="codeUse">silver</td>
-                                                        <td th:if="${list.htmGrade eq 3}" class="codeUse">green</td>
+                                                        <td th:text="${list.htmGrade}"></td>
                                                         <td th:text="${#dates.format(list.htmRegDate,'yyyy-MM-dd HH:mm:ss')}"></td>
                                                         <td th:text="${#dates.format(list.htmEditMemberDate, 'yyyy-MM-dd HH:mm:ss')}"></td>
                                                         <td th:if="${list.htmRegAgreeContentNy eq 0}" class="codeUse">N</td>

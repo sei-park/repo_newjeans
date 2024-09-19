@@ -17,6 +17,20 @@
 		    a.htReviseDate
 		from
 		    hotel a
+		where 1=1
+			<if test="shDelNy != null and !shDelNy.equals('')">AND htDelNy = #{shDelNy}</if> <!-- 삭제 여부 -->
+			
+			<!-- 달력 -->
+			<choose>
+				<when test="shOptionDate == 1">AND a.htRegDate BETWEEN #{shDateStart} AND #{shDateEnd}</when> 
+				<when test="shOptionDate == 2">AND a.htReviseDate BETWEEN #{shDateStart} AND #{shDateEnd}</when> 
+			</choose>
+			
+			<!-- 검색 구분 -->
+			<choose> 
+				<when test="shOption == 1">AND htseq = #{shValue}</when>
+				<when test="shOption == 2">AND htName LIKE CONCAT('%',#{shValue},'%')</when>
+			</choose> 
 		order by
 			a.htseq desc 
 	</select>
@@ -40,6 +54,53 @@
 			now()
 		) 
 	</insert>
+	
+	<select id="hotelSelectOne" resultMap="resultMapObj">
+		select  
+			a.htseq,
+		    a.htName,
+		    a.htAddress,
+		    a.htcountry,
+		    a.htDesc,
+		    a.htDelNy,
+		    a.htRegDate,
+		    a.htReviseDate
+		from
+			hotel a
+	    where 1=1
+	    	AND a.htseq = #{htseq}
+	</select>
+	
+	<update id="hotelUpdate">
+		update hotel
+		set
+			htName = #{htName},
+			htAddress = #{htAddress},
+			htcountry = #{htcountry},
+			htDesc = #{htDesc},
+			htDelNy = 0,
+		    htReviseDate = now()
+		where 1=1
+			and htseq = #{htseq}
+	</update>
+	
+	<update id="uelete">
+		update hotel
+		set 
+			htDelNy = 1
+		where 1=1
+			and htseq = #{htseq}
+	</update>
+	
+	<delete id="delete">
+		delete from hotel
+		where 1=1 
+			and htseq = #{htseq}
+	</delete>
+	
+	
+	
+	  
 	
 
 	
