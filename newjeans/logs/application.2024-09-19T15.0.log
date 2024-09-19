@@ -1,0 +1,356 @@
+2024-09-19T15:00:01.551 [http-nio-8080-exec-5] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+161. select
+		    a.htseq,
+		    a.htName,
+		    a.htAddress,
+		    a.htcountry,
+		    a.htDesc,
+		    a.htDelNy,
+		    a.htRegDate,
+		    a.htReviseDate
+		from
+		    hotel a
+		where 1=1
+
+		order by
+			a.htseq desc
+ {executed in 1 msec} 
+2024-09-19T15:00:06.245 [http-nio-8080-exec-4] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+161. select
+		    a.htseq,
+		    a.htName,
+		    a.htAddress,
+		    a.htcountry,
+		    a.htDesc,
+		    a.htDelNy,
+		    a.htRegDate,
+		    a.htReviseDate
+		from
+		    hotel a
+		where 1=1
+
+		order by
+			a.htseq desc
+ {executed in 1 msec} 
+2024-09-19T15:00:16.110 [http-nio-8080-exec-7] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+161. select
+		    a.htseq,
+		    a.htName,
+		    a.htAddress,
+		    a.htcountry,
+		    a.htDesc,
+		    a.htDelNy,
+		    a.htRegDate,
+		    a.htReviseDate
+		from
+		    hotel a
+		where 1=1
+
+		order by
+			a.htseq desc
+ {executed in 0 msec} 
+2024-09-19T15:00:54.041 [File Watcher] INFO o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification) 
+2024-09-19T15:00:54.044 [Thread-219] INFO o.a.c.h.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"] 
+2024-09-19T15:00:54.902 [Thread-219] INFO c.z.h.HikariDataSource - HikariPool-14 - Shutdown initiated... 
+2024-09-19T15:00:54.906 [Thread-219] INFO c.z.h.HikariDataSource - HikariPool-14 - Shutdown completed. 
+2024-09-19T15:00:54.975 [restartedMain] INFO c.a.NewjeansApplication - Starting NewjeansApplication using Java 17.0.11 with PID 19268 (C:\factory\ws_sts4_4240\repo_newjeans\newjeans\bin\main started by USER in C:\factory\ws_sts4_4240\repo_newjeans\newjeans) 
+2024-09-19T15:00:54.975 [restartedMain] INFO c.a.NewjeansApplication - No active profile set, falling back to 1 default profile: "default" 
+2024-09-19T15:00:55.191 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat initialized with port 8080 (http) 
+2024-09-19T15:00:55.191 [restartedMain] INFO o.a.c.h.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"] 
+2024-09-19T15:00:55.191 [restartedMain] INFO o.a.c.c.StandardService - Starting service [Tomcat] 
+2024-09-19T15:00:55.192 [restartedMain] INFO o.a.c.c.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.28] 
+2024-09-19T15:00:55.217 [restartedMain] INFO o.a.c.c.C.[.[.[/] - Initializing Spring embedded WebApplicationContext 
+2024-09-19T15:00:55.217 [restartedMain] INFO o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 240 ms 
+2024-09-19T15:00:55.344 [restartedMain] INFO o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729 
+2024-09-19T15:00:55.349 [restartedMain] INFO o.a.c.h.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"] 
+2024-09-19T15:00:55.352 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/' 
+2024-09-19T15:00:55.355 [restartedMain] INFO c.a.NewjeansApplication - Started NewjeansApplication in 0.408 seconds (process running for 19398.788) 
+2024-09-19T15:00:55.356 [restartedMain] INFO o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged 
+2024-09-19T15:02:02.782 [File Watcher] INFO o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification) 
+2024-09-19T15:02:02.784 [Thread-223] INFO o.a.c.h.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"] 
+2024-09-19T15:02:03.747 [restartedMain] INFO c.a.NewjeansApplication - Starting NewjeansApplication using Java 17.0.11 with PID 19268 (C:\factory\ws_sts4_4240\repo_newjeans\newjeans\bin\main started by USER in C:\factory\ws_sts4_4240\repo_newjeans\newjeans) 
+2024-09-19T15:02:03.748 [restartedMain] INFO c.a.NewjeansApplication - No active profile set, falling back to 1 default profile: "default" 
+2024-09-19T15:02:03.968 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat initialized with port 8080 (http) 
+2024-09-19T15:02:03.968 [restartedMain] INFO o.a.c.h.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"] 
+2024-09-19T15:02:03.968 [restartedMain] INFO o.a.c.c.StandardService - Starting service [Tomcat] 
+2024-09-19T15:02:03.968 [restartedMain] INFO o.a.c.c.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.28] 
+2024-09-19T15:02:03.991 [restartedMain] INFO o.a.c.c.C.[.[.[/] - Initializing Spring embedded WebApplicationContext 
+2024-09-19T15:02:03.991 [restartedMain] INFO o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 242 ms 
+2024-09-19T15:02:04.109 [restartedMain] INFO o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729 
+2024-09-19T15:02:04.114 [restartedMain] INFO o.a.c.h.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"] 
+2024-09-19T15:02:04.117 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/' 
+2024-09-19T15:02:04.120 [restartedMain] INFO c.a.NewjeansApplication - Started NewjeansApplication in 0.4 seconds (process running for 19467.553) 
+2024-09-19T15:02:04.121 [restartedMain] INFO o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged 
+2024-09-19T15:03:30.683 [http-nio-8080-exec-1] INFO o.a.c.c.C.[.[.[/] - Initializing Spring DispatcherServlet 'dispatcherServlet' 
+2024-09-19T15:03:30.683 [http-nio-8080-exec-1] INFO o.s.w.s.DispatcherServlet - Initializing Servlet 'dispatcherServlet' 
+2024-09-19T15:03:30.684 [http-nio-8080-exec-1] INFO o.s.w.s.DispatcherServlet - Completed initialization in 1 ms 
+2024-09-19T15:03:30.685 [http-nio-8080-exec-1] INFO c.z.h.HikariDataSource - HikariPool-15 - Starting... 
+2024-09-19T15:03:30.698 [http-nio-8080-exec-1] INFO c.z.h.p.HikariPool - HikariPool-15 - Added connection net.sf.log4jdbc.sql.jdbcapi.ConnectionSpy@34d2333 
+2024-09-19T15:03:30.699 [http-nio-8080-exec-1] INFO c.z.h.HikariDataSource - HikariPool-15 - Start completed. 
+2024-09-19T15:03:30.702 [http-nio-8080-exec-1] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+174. select
+		    a.htseq,
+		    a.htName,
+		    a.htAddress,
+		    a.htcountry,
+		    a.htDesc,
+		    a.htDelNy,
+		    a.htRegDate,
+		    a.htReviseDate
+		from
+		    hotel a
+		where 1=1
+
+			 AND htName LIKE CONCAT('%','시그니엘 서울','%')  
+		order by
+			a.htseq desc
+ {executed in 2 msec} 
+2024-09-19T15:03:36.050 [http-nio-8080-exec-4] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+174. select
+		    a.htseq,
+		    a.htName,
+		    a.htAddress,
+		    a.htcountry,
+		    a.htDesc,
+		    a.htDelNy,
+		    a.htRegDate,
+		    a.htReviseDate
+		from
+		    hotel a
+		where 1=1
+
+		order by
+			a.htseq desc
+ {executed in 1 msec} 
+2024-09-19T15:03:40.440 [http-nio-8080-exec-5] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+174. select
+		    a.htseq,
+		    a.htName,
+		    a.htAddress,
+		    a.htcountry,
+		    a.htDesc,
+		    a.htDelNy,
+		    a.htRegDate,
+		    a.htReviseDate
+		from
+		    hotel a
+		where 1=1
+
+			 AND htName LIKE CONCAT('%','테스트1','%')  
+		order by
+			a.htseq desc
+ {executed in 1 msec} 
+2024-09-19T15:11:59.559 [http-nio-8080-exec-8] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+174. select
+		    a.htseq,
+		    a.htName,
+		    a.htAddress,
+		    a.htcountry,
+		    a.htDesc,
+		    a.htDelNy,
+		    a.htRegDate,
+		    a.htReviseDate
+		from
+		    hotel a
+		where 1=1
+
+		order by
+			a.htseq desc
+ {executed in 0 msec} 
+2024-09-19T15:16:56.002 [http-nio-8080-exec-3] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+174. SELECT  
+			a.htmSeq,
+	        a.htmUserName,
+	        a.htmGender,
+	        a.htmBirth,
+	        a.htmId,
+	        a.htmPassword,
+	        a.htmPhoneNumber,
+	        a.htmEmail,
+	        a.htmAddress,
+	        a.htmDetailedAddress,
+	        a.htmZipCode,
+	        a.htmRegDate,
+	        a.htmGrade,
+	        a.htmRegAgreeContentNy,
+	        a.htmEditMemberDate,
+	        a.htmDelNy,
+	        a.htmDesc
+		FROM
+			newjeans.hotelmember a
+		WHERE 1=1
+
+		ORDER BY 
+			a.htmSeq desc
+ {executed in 2 msec} 
+2024-09-19T15:18:22.982 [http-nio-8080-exec-7] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+174. select
+		    a.htseq,
+		    a.htName,
+		    a.htAddress,
+		    a.htcountry,
+		    a.htDesc,
+		    a.htDelNy,
+		    a.htRegDate,
+		    a.htReviseDate
+		from
+		    hotel a
+		where 1=1
+
+			 AND htName LIKE CONCAT('%','시그니엘 서울','%')  
+		order by
+			a.htseq desc
+ {executed in 1 msec} 
+2024-09-19T15:18:26.351 [http-nio-8080-exec-4] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+174. select  
+			a.htseq,
+		    a.htName,
+		    a.htAddress,
+		    a.htcountry,
+		    a.htDesc,
+		    a.htDelNy,
+		    a.htRegDate,
+		    a.htReviseDate
+		from
+			hotel a
+	    where 1=1
+	    	AND a.htseq = '1'
+ {executed in 1 msec} 
+2024-09-19T15:19:01.253 [http-nio-8080-exec-5] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+174. select  
+			a.htseq,
+		    a.htName,
+		    a.htAddress,
+		    a.htcountry,
+		    a.htDesc,
+		    a.htDelNy,
+		    a.htRegDate,
+		    a.htReviseDate
+		from
+			hotel a
+	    where 1=1
+	    	AND a.htseq = '4'
+ {executed in 0 msec} 
+2024-09-19T15:21:14.875 [http-nio-8080-exec-2] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+174. SELECT  
+			a.htmSeq,
+	        a.htmUserName,
+	        a.htmGender,
+	        a.htmBirth,
+	        a.htmId,
+	        a.htmPassword,
+	        a.htmPhoneNumber,
+	        a.htmEmail,
+	        a.htmAddress,
+	        a.htmDetailedAddress,
+	        a.htmZipCode,
+	        a.htmRegDate,
+	        a.htmGrade,
+	        a.htmRegAgreeContentNy,
+	        a.htmEditMemberDate,
+	        a.htmDelNy,
+	        a.htmDesc
+		FROM
+			newjeans.hotelmember a
+		WHERE 1=1
+
+		ORDER BY 
+			a.htmSeq desc
+ {executed in 2 msec} 
+2024-09-19T15:21:26.327 [http-nio-8080-exec-10] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+174. select
+		    a.htseq,
+		    a.htName,
+		    a.htAddress,
+		    a.htcountry,
+		    a.htDesc,
+		    a.htDelNy,
+		    a.htRegDate,
+		    a.htReviseDate
+		from
+		    hotel a
+		where 1=1
+
+		order by
+			a.htseq desc
+ {executed in 1 msec} 
+2024-09-19T15:22:28.244 [http-nio-8080-exec-9] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+174. select
+		    a.htseq,
+		    a.htName,
+		    a.htAddress,
+		    a.htcountry,
+		    a.htDesc,
+		    a.htDelNy,
+		    a.htRegDate,
+		    a.htReviseDate
+		from
+		    hotel a
+		where 1=1
+
+		order by
+			a.htseq desc
+ {executed in 1 msec} 
+2024-09-19T15:23:59.315 [http-nio-8080-exec-8] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+174. select  
+			a.htseq,
+		    a.htName,
+		    a.htAddress,
+		    a.htcountry,
+		    a.htDesc,
+		    a.htDelNy,
+		    a.htRegDate,
+		    a.htReviseDate
+		from
+			hotel a
+	    where 1=1
+	    	AND a.htseq = '4'
+ {executed in 1 msec} 
+2024-09-19T15:29:23.728 [http-nio-8080-exec-8] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+174. SELECT  
+			a.htmSeq,
+	        a.htmUserName,
+	        a.htmGender,
+	        a.htmBirth,
+	        a.htmId,
+	        a.htmPassword,
+	        a.htmPhoneNumber,
+	        a.htmEmail,
+	        a.htmAddress,
+	        a.htmDetailedAddress,
+	        a.htmZipCode,
+	        a.htmRegDate,
+	        a.htmGrade,
+	        a.htmRegAgreeContentNy,
+	        a.htmEditMemberDate,
+	        a.htmDelNy,
+	        a.htmDesc
+		FROM
+			newjeans.hotelmember a	
+		WHERE 1=1
+			AND a.htmSeq = '1'
+ {executed in 1 msec} 
+2024-09-19T15:29:26.221 [http-nio-8080-exec-10] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+174. SELECT  
+			a.htmSeq,
+	        a.htmUserName,
+	        a.htmGender,
+	        a.htmBirth,
+	        a.htmId,
+	        a.htmPassword,
+	        a.htmPhoneNumber,
+	        a.htmEmail,
+	        a.htmAddress,
+	        a.htmDetailedAddress,
+	        a.htmZipCode,
+	        a.htmRegDate,
+	        a.htmGrade,
+	        a.htmRegAgreeContentNy,
+	        a.htmEditMemberDate,
+	        a.htmDelNy,
+	        a.htmDesc
+		FROM
+			newjeans.hotelmember a	
+		WHERE 1=1
+			AND a.htmSeq = '1'
+ {executed in 1 msec} 
