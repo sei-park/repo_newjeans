@@ -40,8 +40,11 @@
 			<choose> 
 				<when test="shOption == 1">AND htmSeq = #{shValue}</when>
 				<when test="shOption == 2">AND htmUserName LIKE CONCAT('%',#{shValue},'%')</when>
-				<when test="shOption == 3">AND htmGender = #{shValue}</when>
-				<when test="shOption == 4">AND htmGrade = #{shValue}</when>
+				<when test="shOption == 3">AND htmGender LIKE CONCAT('%',#{shValue},'%')</when>
+				<when test="shOption == 4">AND htmGrade LIKE CONCAT('%',#{shValue},'%')</when>
+				<when test="shOption == 5">AND htmEmail LIKE CONCAT('%',#{shValue},'%')</when>
+				<when test="shOption == 6">AND htmPhoneNumber LIKE CONCAT('%',#{shValue},'%')</when>
+				<when test="shOption == 7">AND htmId LIKE CONCAT('%',#{shValue},'%')</when>
 			</choose> 
 		ORDER BY 
 			a.htmSeq desc

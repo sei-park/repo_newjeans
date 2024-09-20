@@ -7,14 +7,32 @@
 	
 	<select id="hotelList" resultMap="resultMapObj">
 		select
-		    a.htseq,
+		 	a.htseq,
 		    a.htName,
 		    a.htAddress,
 		    a.htcountry,
 		    a.htDesc,
 		    a.htDelNy,
 		    a.htRegDate,
-		    a.htReviseDate
+		    a.htReviseDate,
+		    a.htNotice,
+		    a.htMap,
+		    a.htInclusionItems,
+		    a.htNameSearch,
+		    a.htPriceSearch,
+		    a.htStarSearch,
+		    a.htClassSearch,
+		    a.htRestaurantNy,
+		    a.htSpaNy,
+		    a.htFitnessCenterNy,
+		    a.htPoolNy,
+		    a.htloungeNy,
+		    a.htStockRoomNy,
+		    a.htParkingNy,
+		    a.htShuttleBusNy,
+		    a.htBreakfastNy,
+		    a.htRoomServiceNy,
+		    a.htElseNy
 		from
 		    hotel a
 		where 1=1
@@ -37,13 +55,31 @@
 	
 	<insert id="hotelInsert">
 		insert into hotel (
-			htName,
-			htAddress,
-			htcountry,
-			htDesc,
-			htDelNy,
-			htRegDate,
-		    htReviseDate
+		    htName,
+		    htAddress,
+		    htcountry,
+		    htDesc,
+		    htDelNy,
+		    htRegDate,
+		    htReviseDate,
+		    htNotice,
+		    htMap,
+		    htInclusionItems,
+		    htNameSearch,
+		    htPriceSearch,
+		    htStarSearch,
+		    htClassSearch,
+		    htRestaurantNy,
+		    htSpaNy,
+		    htFitnessCenterNy,
+		    htPoolNy,
+		    htloungeNy,
+		    htStockRoomNy,
+		    htParkingNy,
+		    htShuttleBusNy,
+		    htBreakfastNy,
+		    htRoomServiceNy,
+		    htElseNy
 		) values (
 			#{htName},
 			#{htAddress},
@@ -51,20 +87,56 @@
 			#{htDesc},
 			0,
 			now(),
-			now()
+			now(),
+			#{htNotice},
+			#{htMap},
+			#{htInclusionItems},
+			#{htNameSearch},
+			#{htPriceSearch},
+			#{htStarSearch},
+			#{htClassSearch},
+			#{htRestaurantNy},
+			#{htSpaNy},
+			#{htFitnessCenterNy},
+			#{htPoolNy},
+			#{htloungeNy},
+			#{htStockRoomNy},
+			#{htParkingNy},
+			#{htShuttleBusNy},
+			#{htBreakfastNy},
+			#{htRoomServiceNy},
+			#{htElseNy}
 		) 
 	</insert>
 	
 	<select id="hotelSelectOne" resultMap="resultMapObj">
 		select  
-			a.htseq,
+		 	a.htseq,
 		    a.htName,
 		    a.htAddress,
 		    a.htcountry,
 		    a.htDesc,
 		    a.htDelNy,
 		    a.htRegDate,
-		    a.htReviseDate
+		    a.htReviseDate,
+		    a.htNotice,
+		    a.htMap,
+		    a.htInclusionItems,
+		    a.htNameSearch,
+		    a.htPriceSearch,
+		    a.htStarSearch,
+		    a.htClassSearch,
+		    a.htRestaurantNy,
+		    a.htSpaNy,
+		    a.htFitnessCenterNy,
+		    a.htPoolNy,
+		    a.htloungeNy,
+		    a.htStockRoomNy,
+		    a.htParkingNy,
+		    a.htShuttleBusNy,
+		    a.htBreakfastNy,
+		    a.htRoomServiceNy,
+		    a.htElseNy
 		from
 			hotel a
 	    where 1=1
@@ -74,12 +146,30 @@
 	<update id="hotelUpdate">
 		update hotel
 		set
-			htName = #{htName},
-			htAddress = #{htAddress},
-			htcountry = #{htcountry},
-			htDesc = #{htDesc},
-			htDelNy = 0,
-		    htReviseDate = now()
+		 	htName = #{htName},
+		    htAddress = #{htAddress},
+		    htcountry = #{htcountry},
+		    htDesc = #{htDesc},
+		    htDelNy = 0,
+		    htReviseDate = now(),
+		    htNotice = #{htNotice},
+		    htMap = #{htMap},
+		    htInclusionItems = #{htInclusionItems},
+		    htNameSearch = #{htNameSearch},
+		    htPriceSearch = #{htPriceSearch},
+		    htStarSearch = #{htStarSearch},
+		    htClassSearch = #{htClassSearch},
+		    htRestaurantNy = #{htRestaurantNy},
+		    htSpaNy = #{htSpaNy},
+		    htFitnessCenterNy = #{htFitnessCenterNy},
+		    htPoolNy = #{htPoolNy},
+		    htloungeNy = #{htloungeNy},
+		    htStockRoomNy = #{htStockRoomNy},
+		    htParkingNy = #{htStockRoomNy},
+		    htShuttleBusNy = #{htShuttleBusNy},
+		    htBreakfastNy = #{htBreakfastNy},
+		    htRoomServiceNy= #{htRoomServiceNy},
+		    htElseNy = #{htElseNy}
 		where 1=1
 			and htseq = #{htseq}
 	</update>
