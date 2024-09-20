@@ -1,0 +1,128 @@
+2024-09-20T10:34:49.557 [File Watcher] INFO o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification) 
+2024-09-20T10:34:49.571 [Thread-5] INFO o.a.c.h.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"] 
+2024-09-20T10:34:50.550 [Thread-5] INFO c.z.h.HikariDataSource - HikariPool-1 - Shutdown initiated... 
+2024-09-20T10:34:50.556 [Thread-5] INFO c.z.h.HikariDataSource - HikariPool-1 - Shutdown completed. 
+2024-09-20T10:34:50.663 [restartedMain] INFO c.a.NewjeansApplication - Starting NewjeansApplication using Java 17.0.11 with PID 8880 (C:\factory\ws_sts4_4240\repo_newjeans\newjeans\bin\main started by USER in C:\factory\ws_sts4_4240\repo_newjeans\newjeans) 
+2024-09-20T10:34:50.663 [restartedMain] INFO c.a.NewjeansApplication - No active profile set, falling back to 1 default profile: "default" 
+2024-09-20T10:34:51.117 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat initialized with port 8080 (http) 
+2024-09-20T10:34:51.118 [restartedMain] INFO o.a.c.h.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"] 
+2024-09-20T10:34:51.118 [restartedMain] INFO o.a.c.c.StandardService - Starting service [Tomcat] 
+2024-09-20T10:34:51.118 [restartedMain] INFO o.a.c.c.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.28] 
+2024-09-20T10:34:51.150 [restartedMain] INFO o.a.c.c.C.[.[.[/] - Initializing Spring embedded WebApplicationContext 
+2024-09-20T10:34:51.151 [restartedMain] INFO o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 485 ms 
+2024-09-20T10:34:51.374 [restartedMain] INFO o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729 
+2024-09-20T10:34:51.381 [restartedMain] INFO o.a.c.h.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"] 
+2024-09-20T10:34:51.385 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/' 
+2024-09-20T10:34:51.390 [restartedMain] INFO c.a.NewjeansApplication - Started NewjeansApplication in 0.774 seconds (process running for 3889.907) 
+2024-09-20T10:34:51.391 [restartedMain] INFO o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged 
+2024-09-20T10:36:52.452 [File Watcher] INFO o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification) 
+2024-09-20T10:36:52.456 [Thread-7] INFO o.a.c.h.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"] 
+2024-09-20T10:36:53.449 [restartedMain] INFO c.a.NewjeansApplication - Starting NewjeansApplication using Java 17.0.11 with PID 8880 (C:\factory\ws_sts4_4240\repo_newjeans\newjeans\bin\main started by USER in C:\factory\ws_sts4_4240\repo_newjeans\newjeans) 
+2024-09-20T10:36:53.450 [restartedMain] INFO c.a.NewjeansApplication - No active profile set, falling back to 1 default profile: "default" 
+2024-09-20T10:36:53.726 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat initialized with port 8080 (http) 
+2024-09-20T10:36:53.726 [restartedMain] INFO o.a.c.h.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"] 
+2024-09-20T10:36:53.727 [restartedMain] INFO o.a.c.c.StandardService - Starting service [Tomcat] 
+2024-09-20T10:36:53.727 [restartedMain] INFO o.a.c.c.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.28] 
+2024-09-20T10:36:53.753 [restartedMain] INFO o.a.c.c.C.[.[.[/] - Initializing Spring embedded WebApplicationContext 
+2024-09-20T10:36:53.753 [restartedMain] INFO o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 301 ms 
+2024-09-20T10:36:53.934 [restartedMain] INFO o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729 
+2024-09-20T10:36:53.940 [restartedMain] INFO o.a.c.h.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"] 
+2024-09-20T10:36:53.944 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/' 
+2024-09-20T10:36:53.948 [restartedMain] INFO c.a.NewjeansApplication - Started NewjeansApplication in 0.54 seconds (process running for 4012.47) 
+2024-09-20T10:36:53.950 [restartedMain] INFO o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged 
+2024-09-20T10:37:27.796 [File Watcher] INFO o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification) 
+2024-09-20T10:37:27.798 [Thread-11] INFO o.a.c.h.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"] 
+2024-09-20T10:37:28.742 [restartedMain] INFO c.a.NewjeansApplication - Starting NewjeansApplication using Java 17.0.11 with PID 8880 (C:\factory\ws_sts4_4240\repo_newjeans\newjeans\bin\main started by USER in C:\factory\ws_sts4_4240\repo_newjeans\newjeans) 
+2024-09-20T10:37:28.743 [restartedMain] INFO c.a.NewjeansApplication - No active profile set, falling back to 1 default profile: "default" 
+2024-09-20T10:37:29.005 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat initialized with port 8080 (http) 
+2024-09-20T10:37:29.005 [restartedMain] INFO o.a.c.h.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"] 
+2024-09-20T10:37:29.005 [restartedMain] INFO o.a.c.c.StandardService - Starting service [Tomcat] 
+2024-09-20T10:37:29.005 [restartedMain] INFO o.a.c.c.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.28] 
+2024-09-20T10:37:29.034 [restartedMain] INFO o.a.c.c.C.[.[.[/] - Initializing Spring embedded WebApplicationContext 
+2024-09-20T10:37:29.035 [restartedMain] INFO o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 291 ms 
+2024-09-20T10:37:29.183 [restartedMain] INFO o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729 
+2024-09-20T10:37:29.189 [restartedMain] INFO o.a.c.h.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"] 
+2024-09-20T10:37:29.193 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/' 
+2024-09-20T10:37:29.197 [restartedMain] INFO c.a.NewjeansApplication - Started NewjeansApplication in 0.493 seconds (process running for 4047.72) 
+2024-09-20T10:37:29.198 [restartedMain] INFO o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged 
+2024-09-20T10:42:43.460 [File Watcher] INFO o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification) 
+2024-09-20T10:42:43.464 [Thread-15] INFO o.a.c.h.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"] 
+2024-09-20T10:42:44.485 [restartedMain] INFO c.a.NewjeansApplication - Starting NewjeansApplication using Java 17.0.11 with PID 8880 (C:\factory\ws_sts4_4240\repo_newjeans\newjeans\bin\main started by USER in C:\factory\ws_sts4_4240\repo_newjeans\newjeans) 
+2024-09-20T10:42:44.486 [restartedMain] INFO c.a.NewjeansApplication - No active profile set, falling back to 1 default profile: "default" 
+2024-09-20T10:42:44.739 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat initialized with port 8080 (http) 
+2024-09-20T10:42:44.739 [restartedMain] INFO o.a.c.h.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"] 
+2024-09-20T10:42:44.739 [restartedMain] INFO o.a.c.c.StandardService - Starting service [Tomcat] 
+2024-09-20T10:42:44.739 [restartedMain] INFO o.a.c.c.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.28] 
+2024-09-20T10:42:44.765 [restartedMain] INFO o.a.c.c.C.[.[.[/] - Initializing Spring embedded WebApplicationContext 
+2024-09-20T10:42:44.765 [restartedMain] INFO o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 277 ms 
+2024-09-20T10:42:44.910 [restartedMain] INFO o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729 
+2024-09-20T10:42:44.917 [restartedMain] INFO o.a.c.h.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"] 
+2024-09-20T10:42:44.923 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/' 
+2024-09-20T10:42:44.927 [restartedMain] INFO c.a.NewjeansApplication - Started NewjeansApplication in 0.48 seconds (process running for 4363.464) 
+2024-09-20T10:42:44.929 [restartedMain] INFO o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged 
+2024-09-20T10:42:52.807 [http-nio-8080-exec-1] INFO o.a.c.c.C.[.[.[/] - Initializing Spring DispatcherServlet 'dispatcherServlet' 
+2024-09-20T10:42:52.807 [http-nio-8080-exec-1] INFO o.s.w.s.DispatcherServlet - Initializing Servlet 'dispatcherServlet' 
+2024-09-20T10:42:52.808 [http-nio-8080-exec-1] INFO o.s.w.s.DispatcherServlet - Completed initialization in 1 ms 
+2024-09-20T10:42:52.810 [http-nio-8080-exec-1] INFO c.z.h.HikariDataSource - HikariPool-2 - Starting... 
+2024-09-20T10:42:52.828 [http-nio-8080-exec-1] INFO c.z.h.p.HikariPool - HikariPool-2 - Added connection net.sf.log4jdbc.sql.jdbcapi.ConnectionSpy@30e6374 
+2024-09-20T10:42:52.828 [http-nio-8080-exec-1] INFO c.z.h.HikariDataSource - HikariPool-2 - Start completed. 
+2024-09-20T10:42:52.831 [http-nio-8080-exec-1] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+31. select
+		  	a.htseq,
+		    a.htName,
+		    a.htAddress,
+		    a.htcountry,
+		    a.htDesc,
+		    a.htDelNy,
+		    a.htRegDate,
+		    a.htReviseDate,
+		    a.htNotice,
+		    a.htStarSearch,
+		    a.htClassSearch,
+		    a.htRestaurant,
+		    a.htSpa,
+		    a.htFitnessCenter,
+		    a.htPool,
+		    a.htlounge,
+		    a.htStockRoom,
+		    a.htParking,
+		    a.htShuttleBus,
+		    a.htBreakfast,
+		    a.htRoomService,
+		    a.htElse
+		from
+		    hotel a
+		where 1=1
+
+		order by
+			a.htseq desc
+ {executed in 1 msec} 
+2024-09-20T10:42:56.197 [http-nio-8080-exec-2] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+31. select  
+		 	a.htseq,
+		    a.htName,
+		    a.htAddress,
+		    a.htcountry,
+		    a.htDesc,
+		    a.htDelNy,
+		    a.htRegDate,
+		    a.htReviseDate,
+		    a.htNotice,
+		    a.htStarSearch,
+		    a.htClassSearch,
+		    a.htRestaurant,
+		    a.htSpa,
+		    a.htFitnessCenter,
+		    a.htPool,
+		    a.htlounge,
+		    a.htStockRoom,
+		    a.htParking,
+		    a.htShuttleBus,
+		    a.htBreakfast,
+		    a.htRoomService,
+		    a.htElse
+		from
+			hotel a
+	    where 1=1
+	    	AND a.htseq = '1'
+ {executed in 1 msec} 
