@@ -986,7 +986,7 @@
 <!--                                                         <div class="col-md-2"> -->
 <!--                                                             <select class="form-select" -->
 <!--                                                                 aria-label="Default select example"> -->
-<!--                                                                 <option value="">약관동의여부</option> -->
+<!--                                                                 <option value="">약관동의부여</option> -->
 <!--                                                                 <option value="0">N</option> -->
 <!--                                                                 <option value="1">Y</option> -->
 <!--                                                             </select> -->
@@ -1030,6 +1030,17 @@
                                                                 <input type="text" class="form-control" placeholder="검색어" aria-label="Username"
                                                                  aria-describedby="addon-wrapping" name="shValue">
                                                             </div>
+                                                        </div>
+                                                        <div class="col-md-2">
+                                                            <select class="form-select"
+                                                                aria-label="Default select example" name="shStar">
+                                                                <option value="">별점</option>
+                                                                <option value="5">5점</option>
+                                                                <option value="4">4점</option>
+                                                                <option value="3">3점</option>
+                                                                <option value="2">2점</option>
+                                                                <option value="1">1점</option>
+                                                            </select>
                                                         </div>
                                                         <div class="col-md-2" align="left">
                                                             <!-- 검색버튼 -->
@@ -1083,6 +1094,7 @@
                                                         <th scope="col">삭제여부</th>
                                                         <th scope="col">등록일</th>
                                                         <th scope="col">수정일</th>
+<!--                                                         <th scope="col">별점</th> -->
                                                         <!-- <th style="width: 80px; min-width: 80px;">Action</th> -->
                                                     </tr><!-- end tr -->
                                                 </thead><!-- end thead -->
@@ -1111,6 +1123,7 @@
 														<td th:unless="${list.htDelNy eq 0}" class="codeUse">Y</td>
 														<td th:text="${#dates.format(list.htRegDate,'yyyy-MM-dd HH:mm:ss')}"></td>
 														<td th:text="${#dates.format(list.htReviseDate,'yyyy-MM-dd HH:mm:ss')}"></td>
+<!-- 														<td th:text="${list.htStarSearch}"></td> -->
 	                                                    </tr><!-- end tr -->
                                                 </tbody><!-- end tbody -->
                                             </table><!-- end table -->

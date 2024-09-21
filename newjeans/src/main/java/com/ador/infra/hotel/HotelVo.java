@@ -8,6 +8,7 @@ public class HotelVo {
 	private Integer shOptionDate;
 	private Integer shOption;
 	private String shValue;
+	private Integer shStar;
 	//--
 	public Integer getShDelNy() {
 		return shDelNy;
@@ -45,6 +46,13 @@ public class HotelVo {
 	public void setShValue(String shValue) {
 		this.shValue = shValue;
 	}
+	public Integer getShStar() {
+		return shStar;
+	}
+	public void setShStar(Integer shStar) {
+		this.shStar = shStar;
+	}
+	
 	
 	
 

@@ -550,3 +550,7 @@
 		ORDER BY 
 			a.htmSeq desc
  {executed in 1 msec} 
+2024-09-20T17:23:48.066 [RMI TCP Connection(545)-127.0.0.1] INFO o.s.b.a.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin - Application shutdown requested. 
+2024-09-20T17:23:48.068 [RMI TCP Connection(545)-127.0.0.1] INFO o.a.c.h.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"] 
+2024-09-20T17:23:49.196 [RMI TCP Connection(545)-127.0.0.1] INFO c.z.h.HikariDataSource - HikariPool-11 - Shutdown initiated... 
+2024-09-20T17:23:49.200 [RMI TCP Connection(545)-127.0.0.1] INFO c.z.h.HikariDataSource - HikariPool-11 - Shutdown completed. 
