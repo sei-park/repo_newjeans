@@ -1,0 +1,4074 @@
+2024-09-22T00:06:49.084 [http-nio-8080-exec-6] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. select
+		 	a.htseq,
+		    a.htName,
+		    a.htAddress,
+		    a.htcountry,
+		    a.htDesc,
+		    a.htDelNy,
+		    a.htRegDate,
+		    a.htReviseDate,
+		    a.htNotice,
+		    a.htMap,
+		    a.htInclusionItems,
+		    a.htNameSearch,
+		    a.htPriceSearch,
+		    a.htStarSearch,
+		    a.htClassSearch,
+		    a.htRestaurantNy,
+		    a.htSpaNy,
+		    a.htFitnessCenterNy,
+		    a.htPoolNy,
+		    a.htloungeNy,
+		    a.htStockRoomNy,
+		    a.htParkingNy,
+		    a.htShuttleBusNy,
+		    a.htBreakfastNy,
+		    a.htRoomServiceNy,
+		    a.htElseNy
+		from
+		    hotel a
+		where 1=1
+			 AND htDelNy = 1  
+
+		order by
+			a.htseq desc
+ {executed in 1 msec} 
+2024-09-22T00:06:50.195 [http-nio-8080-exec-7] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. select
+		 	a.htseq,
+		    a.htName,
+		    a.htAddress,
+		    a.htcountry,
+		    a.htDesc,
+		    a.htDelNy,
+		    a.htRegDate,
+		    a.htReviseDate,
+		    a.htNotice,
+		    a.htMap,
+		    a.htInclusionItems,
+		    a.htNameSearch,
+		    a.htPriceSearch,
+		    a.htStarSearch,
+		    a.htClassSearch,
+		    a.htRestaurantNy,
+		    a.htSpaNy,
+		    a.htFitnessCenterNy,
+		    a.htPoolNy,
+		    a.htloungeNy,
+		    a.htStockRoomNy,
+		    a.htParkingNy,
+		    a.htShuttleBusNy,
+		    a.htBreakfastNy,
+		    a.htRoomServiceNy,
+		    a.htElseNy
+		from
+		    hotel a
+		where 1=1
+
+		order by
+			a.htseq desc
+ {executed in 0 msec} 
+2024-09-22T00:06:52.503 [http-nio-8080-exec-9] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. select
+		 	a.htseq,
+		    a.htName,
+		    a.htAddress,
+		    a.htcountry,
+		    a.htDesc,
+		    a.htDelNy,
+		    a.htRegDate,
+		    a.htReviseDate,
+		    a.htNotice,
+		    a.htMap,
+		    a.htInclusionItems,
+		    a.htNameSearch,
+		    a.htPriceSearch,
+		    a.htStarSearch,
+		    a.htClassSearch,
+		    a.htRestaurantNy,
+		    a.htSpaNy,
+		    a.htFitnessCenterNy,
+		    a.htPoolNy,
+		    a.htloungeNy,
+		    a.htStockRoomNy,
+		    a.htParkingNy,
+		    a.htShuttleBusNy,
+		    a.htBreakfastNy,
+		    a.htRoomServiceNy,
+		    a.htElseNy
+		from
+		    hotel a
+		where 1=1
+			 AND htDelNy = 0  
+
+		order by
+			a.htseq desc
+ {executed in 2 msec} 
+2024-09-22T00:06:53.473 [http-nio-8080-exec-10] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. select
+		 	a.htseq,
+		    a.htName,
+		    a.htAddress,
+		    a.htcountry,
+		    a.htDesc,
+		    a.htDelNy,
+		    a.htRegDate,
+		    a.htReviseDate,
+		    a.htNotice,
+		    a.htMap,
+		    a.htInclusionItems,
+		    a.htNameSearch,
+		    a.htPriceSearch,
+		    a.htStarSearch,
+		    a.htClassSearch,
+		    a.htRestaurantNy,
+		    a.htSpaNy,
+		    a.htFitnessCenterNy,
+		    a.htPoolNy,
+		    a.htloungeNy,
+		    a.htStockRoomNy,
+		    a.htParkingNy,
+		    a.htShuttleBusNy,
+		    a.htBreakfastNy,
+		    a.htRoomServiceNy,
+		    a.htElseNy
+		from
+		    hotel a
+		where 1=1
+
+		order by
+			a.htseq desc
+ {executed in 1 msec} 
+2024-09-22T00:07:02.976 [http-nio-8080-exec-7] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. select  
+		 	a.htseq,
+		    a.htName,
+		    a.htAddress,
+		    a.htcountry,
+		    a.htDesc,
+		    a.htDelNy,
+		    a.htRegDate,
+		    a.htReviseDate,
+		    a.htNotice,
+		    a.htMap,
+		    a.htInclusionItems,
+		    a.htNameSearch,
+		    a.htPriceSearch,
+		    a.htStarSearch,
+		    a.htClassSearch,
+		    a.htRestaurantNy,
+		    a.htSpaNy,
+		    a.htFitnessCenterNy,
+		    a.htPoolNy,
+		    a.htloungeNy,
+		    a.htStockRoomNy,
+		    a.htParkingNy,
+		    a.htShuttleBusNy,
+		    a.htBreakfastNy,
+		    a.htRoomServiceNy,
+		    a.htElseNy
+		from
+			hotel a
+	    where 1=1
+	    	AND a.htseq = '1'
+ {executed in 1 msec} 
+2024-09-22T00:07:49.814 [http-nio-8080-exec-1] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. select
+		 	a.htseq,
+		    a.htName,
+		    a.htAddress,
+		    a.htcountry,
+		    a.htDesc,
+		    a.htDelNy,
+		    a.htRegDate,
+		    a.htReviseDate,
+		    a.htNotice,
+		    a.htMap,
+		    a.htInclusionItems,
+		    a.htNameSearch,
+		    a.htPriceSearch,
+		    a.htStarSearch,
+		    a.htClassSearch,
+		    a.htRestaurantNy,
+		    a.htSpaNy,
+		    a.htFitnessCenterNy,
+		    a.htPoolNy,
+		    a.htloungeNy,
+		    a.htStockRoomNy,
+		    a.htParkingNy,
+		    a.htShuttleBusNy,
+		    a.htBreakfastNy,
+		    a.htRoomServiceNy,
+		    a.htElseNy
+		from
+		    hotel a
+		where 1=1
+
+		order by
+			a.htseq desc
+ {executed in 1 msec} 
+2024-09-22T00:07:58.444 [http-nio-8080-exec-2] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. select  
+		 	a.htseq,
+		    a.htName,
+		    a.htAddress,
+		    a.htcountry,
+		    a.htDesc,
+		    a.htDelNy,
+		    a.htRegDate,
+		    a.htReviseDate,
+		    a.htNotice,
+		    a.htMap,
+		    a.htInclusionItems,
+		    a.htNameSearch,
+		    a.htPriceSearch,
+		    a.htStarSearch,
+		    a.htClassSearch,
+		    a.htRestaurantNy,
+		    a.htSpaNy,
+		    a.htFitnessCenterNy,
+		    a.htPoolNy,
+		    a.htloungeNy,
+		    a.htStockRoomNy,
+		    a.htParkingNy,
+		    a.htShuttleBusNy,
+		    a.htBreakfastNy,
+		    a.htRoomServiceNy,
+		    a.htElseNy
+		from
+			hotel a
+	    where 1=1
+	    	AND a.htseq = '7'
+ {executed in 2 msec} 
+2024-09-22T00:08:22.990 [http-nio-8080-exec-2] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. select  
+		 	a.htseq,
+		    a.htName,
+		    a.htAddress,
+		    a.htcountry,
+		    a.htDesc,
+		    a.htDelNy,
+		    a.htRegDate,
+		    a.htReviseDate,
+		    a.htNotice,
+		    a.htMap,
+		    a.htInclusionItems,
+		    a.htNameSearch,
+		    a.htPriceSearch,
+		    a.htStarSearch,
+		    a.htClassSearch,
+		    a.htRestaurantNy,
+		    a.htSpaNy,
+		    a.htFitnessCenterNy,
+		    a.htPoolNy,
+		    a.htloungeNy,
+		    a.htStockRoomNy,
+		    a.htParkingNy,
+		    a.htShuttleBusNy,
+		    a.htBreakfastNy,
+		    a.htRoomServiceNy,
+		    a.htElseNy
+		from
+			hotel a
+	    where 1=1
+	    	AND a.htseq = '7'
+ {executed in 1 msec} 
+2024-09-22T00:08:29.358 [http-nio-8080-exec-2] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. select  
+		 	a.htseq,
+		    a.htName,
+		    a.htAddress,
+		    a.htcountry,
+		    a.htDesc,
+		    a.htDelNy,
+		    a.htRegDate,
+		    a.htReviseDate,
+		    a.htNotice,
+		    a.htMap,
+		    a.htInclusionItems,
+		    a.htNameSearch,
+		    a.htPriceSearch,
+		    a.htStarSearch,
+		    a.htClassSearch,
+		    a.htRestaurantNy,
+		    a.htSpaNy,
+		    a.htFitnessCenterNy,
+		    a.htPoolNy,
+		    a.htloungeNy,
+		    a.htStockRoomNy,
+		    a.htParkingNy,
+		    a.htShuttleBusNy,
+		    a.htBreakfastNy,
+		    a.htRoomServiceNy,
+		    a.htElseNy
+		from
+			hotel a
+	    where 1=1
+	    	AND a.htseq = '7'
+ {executed in 1 msec} 
+2024-09-22T00:08:43.223 [http-nio-8080-exec-2] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+1. select  
+		 	a.htseq,
+		    a.htName,
+		    a.htAddress,
+		    a.htcountry,
+		    a.htDesc,
+		    a.htDelNy,
+		    a.htRegDate,
+		    a.htReviseDate,
+		    a.htNotice,
+		    a.htMap,
+		    a.htInclusionItems,
+		    a.htNameSearch,
+		    a.htPriceSearch,
+		    a.htStarSearch,
+		    a.htClassSearch,
+		    a.htRestaurantNy,
+		    a.htSpaNy,
+		    a.htFitnessCenterNy,
+		    a.htPoolNy,
+		    a.htloungeNy,
+		    a.htStockRoomNy,
+		    a.htParkingNy,
+		    a.htShuttleBusNy,
+		    a.htBreakfastNy,
+		    a.htRoomServiceNy,
+		    a.htElseNy
+		from
+			hotel a
+	    where 1=1
+	    	AND a.htseq = '7'
+ {executed in 1 msec} 
+2024-09-22T00:09:51.529 [File Watcher] INFO o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification) 
+2024-09-22T00:09:51.533 [Thread-5] INFO o.a.c.h.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"] 
+2024-09-22T00:09:52.474 [Thread-5] INFO c.z.h.HikariDataSource - HikariPool-1 - Shutdown initiated... 
+2024-09-22T00:09:52.484 [Thread-5] INFO c.z.h.HikariDataSource - HikariPool-1 - Shutdown completed. 
+2024-09-22T00:09:52.579 [restartedMain] INFO c.a.NewjeansApplication - Starting NewjeansApplication using Java 17.0.11 with PID 22800 (C:\factory\ws_sts4_4240\repo_newjeans\newjeans\bin\main started by USER in C:\factory\ws_sts4_4240\repo_newjeans\newjeans) 
+2024-09-22T00:09:52.579 [restartedMain] INFO c.a.NewjeansApplication - No active profile set, falling back to 1 default profile: "default" 
+2024-09-22T00:09:52.976 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat initialized with port 8080 (http) 
+2024-09-22T00:09:52.977 [restartedMain] INFO o.a.c.h.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"] 
+2024-09-22T00:09:52.977 [restartedMain] INFO o.a.c.c.StandardService - Starting service [Tomcat] 
+2024-09-22T00:09:52.977 [restartedMain] INFO o.a.c.c.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.28] 
+2024-09-22T00:09:53.009 [restartedMain] INFO o.a.c.c.C.[.[.[/] - Initializing Spring embedded WebApplicationContext 
+2024-09-22T00:09:53.009 [restartedMain] INFO o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 425 ms 
+2024-09-22T00:09:53.217 [restartedMain] INFO o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729 
+2024-09-22T00:09:53.224 [restartedMain] INFO o.a.c.h.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"] 
+2024-09-22T00:09:53.232 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/' 
+2024-09-22T00:09:53.237 [restartedMain] INFO c.a.NewjeansApplication - Started NewjeansApplication in 0.71 seconds (process running for 1210.712) 
+2024-09-22T00:09:53.239 [restartedMain] INFO o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged 
+2024-09-22T00:09:53.326 [http-nio-8080-exec-1] INFO o.a.c.c.C.[.[.[/] - Initializing Spring DispatcherServlet 'dispatcherServlet' 
+2024-09-22T00:09:53.326 [http-nio-8080-exec-1] INFO o.s.w.s.DispatcherServlet - Initializing Servlet 'dispatcherServlet' 
+2024-09-22T00:09:53.327 [http-nio-8080-exec-1] INFO o.s.w.s.DispatcherServlet - Completed initialization in 1 ms 
+2024-09-22T00:09:53.329 [http-nio-8080-exec-1] INFO c.z.h.HikariDataSource - HikariPool-2 - Starting... 
+2024-09-22T00:09:53.344 [http-nio-8080-exec-1] INFO c.z.h.p.HikariPool - HikariPool-2 - Added connection net.sf.log4jdbc.sql.jdbcapi.ConnectionSpy@47ce037e 
+2024-09-22T00:09:53.345 [http-nio-8080-exec-1] INFO c.z.h.HikariDataSource - HikariPool-2 - Start completed. 
+2024-09-22T00:09:53.346 [http-nio-8080-exec-1] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+11. select
+		 	a.htseq,
+		    a.htName,
+		    a.htAddress,
+		    a.htcountry,
+		    a.htDesc,
+		    a.htDelNy,
+		    a.htRegDate,
+		    a.htReviseDate,
+		    a.htNotice,
+		    a.htMap,
+		    a.htInclusionItems,
+		    a.htNameSearch,
+		    a.htPriceSearch,
+		    a.htStarSearch,
+		    a.htClassSearch,
+		    a.htRestaurantNy,
+		    a.htSpaNy,
+		    a.htFitnessCenterNy,
+		    a.htPoolNy,
+		    a.htloungeNy,
+		    a.htStockRoomNy,
+		    a.htParkingNy,
+		    a.htShuttleBusNy,
+		    a.htBreakfastNy,
+		    a.htRoomServiceNy,
+		    a.htElseNy
+		from
+		    hotel a
+		where 1=1
+
+		order by
+			a.htseq desc
+ {executed in 1 msec} 
+2024-09-22T00:10:03.107 [http-nio-8080-exec-4] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+11. select
+		 	a.htseq,
+		    a.htName,
+		    a.htAddress,
+		    a.htcountry,
+		    a.htDesc,
+		    a.htDelNy,
+		    a.htRegDate,
+		    a.htReviseDate,
+		    a.htNotice,
+		    a.htMap,
+		    a.htInclusionItems,
+		    a.htNameSearch,
+		    a.htPriceSearch,
+		    a.htStarSearch,
+		    a.htClassSearch,
+		    a.htRestaurantNy,
+		    a.htSpaNy,
+		    a.htFitnessCenterNy,
+		    a.htPoolNy,
+		    a.htloungeNy,
+		    a.htStockRoomNy,
+		    a.htParkingNy,
+		    a.htShuttleBusNy,
+		    a.htBreakfastNy,
+		    a.htRoomServiceNy,
+		    a.htElseNy
+		from
+		    hotel a
+		where 1=1
+
+			 AND htcountry LIKE CONCAT('%','대한민국','%')  
+		order by
+			a.htseq desc
+ {executed in 1 msec} 
+2024-09-22T00:10:05.917 [http-nio-8080-exec-2] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+11. select
+		 	a.htseq,
+		    a.htName,
+		    a.htAddress,
+		    a.htcountry,
+		    a.htDesc,
+		    a.htDelNy,
+		    a.htRegDate,
+		    a.htReviseDate,
+		    a.htNotice,
+		    a.htMap,
+		    a.htInclusionItems,
+		    a.htNameSearch,
+		    a.htPriceSearch,
+		    a.htStarSearch,
+		    a.htClassSearch,
+		    a.htRestaurantNy,
+		    a.htSpaNy,
+		    a.htFitnessCenterNy,
+		    a.htPoolNy,
+		    a.htloungeNy,
+		    a.htStockRoomNy,
+		    a.htParkingNy,
+		    a.htShuttleBusNy,
+		    a.htBreakfastNy,
+		    a.htRoomServiceNy,
+		    a.htElseNy
+		from
+		    hotel a
+		where 1=1
+
+		order by
+			a.htseq desc
+ {executed in 1 msec} 
+2024-09-22T00:10:09.715 [http-nio-8080-exec-3] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+11. select  
+		 	a.htseq,
+		    a.htName,
+		    a.htAddress,
+		    a.htcountry,
+		    a.htDesc,
+		    a.htDelNy,
+		    a.htRegDate,
+		    a.htReviseDate,
+		    a.htNotice,
+		    a.htMap,
+		    a.htInclusionItems,
+		    a.htNameSearch,
+		    a.htPriceSearch,
+		    a.htStarSearch,
+		    a.htClassSearch,
+		    a.htRestaurantNy,
+		    a.htSpaNy,
+		    a.htFitnessCenterNy,
+		    a.htPoolNy,
+		    a.htloungeNy,
+		    a.htStockRoomNy,
+		    a.htParkingNy,
+		    a.htShuttleBusNy,
+		    a.htBreakfastNy,
+		    a.htRoomServiceNy,
+		    a.htElseNy
+		from
+			hotel a
+	    where 1=1
+	    	AND a.htseq = '7'
+ {executed in 1 msec} 
+2024-09-22T00:11:51.244 [http-nio-8080-exec-2] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+11. select  
+		 	a.htseq,
+		    a.htName,
+		    a.htAddress,
+		    a.htcountry,
+		    a.htDesc,
+		    a.htDelNy,
+		    a.htRegDate,
+		    a.htReviseDate,
+		    a.htNotice,
+		    a.htMap,
+		    a.htInclusionItems,
+		    a.htNameSearch,
+		    a.htPriceSearch,
+		    a.htStarSearch,
+		    a.htClassSearch,
+		    a.htRestaurantNy,
+		    a.htSpaNy,
+		    a.htFitnessCenterNy,
+		    a.htPoolNy,
+		    a.htloungeNy,
+		    a.htStockRoomNy,
+		    a.htParkingNy,
+		    a.htShuttleBusNy,
+		    a.htBreakfastNy,
+		    a.htRoomServiceNy,
+		    a.htElseNy
+		from
+			hotel a
+	    where 1=1
+	    	AND a.htseq = '7'
+ {executed in 0 msec} 
+2024-09-22T00:12:02.045 [http-nio-8080-exec-5] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+11. select  
+		 	a.htseq,
+		    a.htName,
+		    a.htAddress,
+		    a.htcountry,
+		    a.htDesc,
+		    a.htDelNy,
+		    a.htRegDate,
+		    a.htReviseDate,
+		    a.htNotice,
+		    a.htMap,
+		    a.htInclusionItems,
+		    a.htNameSearch,
+		    a.htPriceSearch,
+		    a.htStarSearch,
+		    a.htClassSearch,
+		    a.htRestaurantNy,
+		    a.htSpaNy,
+		    a.htFitnessCenterNy,
+		    a.htPoolNy,
+		    a.htloungeNy,
+		    a.htStockRoomNy,
+		    a.htParkingNy,
+		    a.htShuttleBusNy,
+		    a.htBreakfastNy,
+		    a.htRoomServiceNy,
+		    a.htElseNy
+		from
+			hotel a
+	    where 1=1
+	    	AND a.htseq = '7'
+ {executed in 2 msec} 
+2024-09-22T00:12:46.747 [http-nio-8080-exec-3] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+11. select
+		 	a.htseq,
+		    a.htName,
+		    a.htAddress,
+		    a.htcountry,
+		    a.htDesc,
+		    a.htDelNy,
+		    a.htRegDate,
+		    a.htReviseDate,
+		    a.htNotice,
+		    a.htMap,
+		    a.htInclusionItems,
+		    a.htNameSearch,
+		    a.htPriceSearch,
+		    a.htStarSearch,
+		    a.htClassSearch,
+		    a.htRestaurantNy,
+		    a.htSpaNy,
+		    a.htFitnessCenterNy,
+		    a.htPoolNy,
+		    a.htloungeNy,
+		    a.htStockRoomNy,
+		    a.htParkingNy,
+		    a.htShuttleBusNy,
+		    a.htBreakfastNy,
+		    a.htRoomServiceNy,
+		    a.htElseNy
+		from
+		    hotel a
+		where 1=1
+
+			 AND htcountry LIKE CONCAT('%','1','%')  
+		order by
+			a.htseq desc
+ {executed in 1 msec} 
+2024-09-22T00:12:48.342 [http-nio-8080-exec-8] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+11. select
+		 	a.htseq,
+		    a.htName,
+		    a.htAddress,
+		    a.htcountry,
+		    a.htDesc,
+		    a.htDelNy,
+		    a.htRegDate,
+		    a.htReviseDate,
+		    a.htNotice,
+		    a.htMap,
+		    a.htInclusionItems,
+		    a.htNameSearch,
+		    a.htPriceSearch,
+		    a.htStarSearch,
+		    a.htClassSearch,
+		    a.htRestaurantNy,
+		    a.htSpaNy,
+		    a.htFitnessCenterNy,
+		    a.htPoolNy,
+		    a.htloungeNy,
+		    a.htStockRoomNy,
+		    a.htParkingNy,
+		    a.htShuttleBusNy,
+		    a.htBreakfastNy,
+		    a.htRoomServiceNy,
+		    a.htElseNy
+		from
+		    hotel a
+		where 1=1
+
+		order by
+			a.htseq desc
+ {executed in 1 msec} 
+2024-09-22T00:12:52.236 [http-nio-8080-exec-6] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+11. select
+		 	a.htseq,
+		    a.htName,
+		    a.htAddress,
+		    a.htcountry,
+		    a.htDesc,
+		    a.htDelNy,
+		    a.htRegDate,
+		    a.htReviseDate,
+		    a.htNotice,
+		    a.htMap,
+		    a.htInclusionItems,
+		    a.htNameSearch,
+		    a.htPriceSearch,
+		    a.htStarSearch,
+		    a.htClassSearch,
+		    a.htRestaurantNy,
+		    a.htSpaNy,
+		    a.htFitnessCenterNy,
+		    a.htPoolNy,
+		    a.htloungeNy,
+		    a.htStockRoomNy,
+		    a.htParkingNy,
+		    a.htShuttleBusNy,
+		    a.htBreakfastNy,
+		    a.htRoomServiceNy,
+		    a.htElseNy
+		from
+		    hotel a
+		where 1=1
+
+			 AND htcountry LIKE CONCAT('%','6','%')  
+		order by
+			a.htseq desc
+ {executed in 0 msec} 
+2024-09-22T00:12:53.063 [http-nio-8080-exec-9] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+11. select
+		 	a.htseq,
+		    a.htName,
+		    a.htAddress,
+		    a.htcountry,
+		    a.htDesc,
+		    a.htDelNy,
+		    a.htRegDate,
+		    a.htReviseDate,
+		    a.htNotice,
+		    a.htMap,
+		    a.htInclusionItems,
+		    a.htNameSearch,
+		    a.htPriceSearch,
+		    a.htStarSearch,
+		    a.htClassSearch,
+		    a.htRestaurantNy,
+		    a.htSpaNy,
+		    a.htFitnessCenterNy,
+		    a.htPoolNy,
+		    a.htloungeNy,
+		    a.htStockRoomNy,
+		    a.htParkingNy,
+		    a.htShuttleBusNy,
+		    a.htBreakfastNy,
+		    a.htRoomServiceNy,
+		    a.htElseNy
+		from
+		    hotel a
+		where 1=1
+
+		order by
+			a.htseq desc
+ {executed in 1 msec} 
+2024-09-22T00:13:16.371 [http-nio-8080-exec-7] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+11. select  
+		 	a.htseq,
+		    a.htName,
+		    a.htAddress,
+		    a.htcountry,
+		    a.htDesc,
+		    a.htDelNy,
+		    a.htRegDate,
+		    a.htReviseDate,
+		    a.htNotice,
+		    a.htMap,
+		    a.htInclusionItems,
+		    a.htNameSearch,
+		    a.htPriceSearch,
+		    a.htStarSearch,
+		    a.htClassSearch,
+		    a.htRestaurantNy,
+		    a.htSpaNy,
+		    a.htFitnessCenterNy,
+		    a.htPoolNy,
+		    a.htloungeNy,
+		    a.htStockRoomNy,
+		    a.htParkingNy,
+		    a.htShuttleBusNy,
+		    a.htBreakfastNy,
+		    a.htRoomServiceNy,
+		    a.htElseNy
+		from
+			hotel a
+	    where 1=1
+	    	AND a.htseq = '7'
+ {executed in 1 msec} 
+2024-09-22T00:13:35.784 [File Watcher] INFO o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification) 
+2024-09-22T00:13:35.787 [Thread-7] INFO o.a.c.h.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"] 
+2024-09-22T00:13:36.803 [Thread-7] INFO c.z.h.HikariDataSource - HikariPool-2 - Shutdown initiated... 
+2024-09-22T00:13:36.808 [Thread-7] INFO c.z.h.HikariDataSource - HikariPool-2 - Shutdown completed. 
+2024-09-22T00:13:36.897 [restartedMain] INFO c.a.NewjeansApplication - Starting NewjeansApplication using Java 17.0.11 with PID 22800 (C:\factory\ws_sts4_4240\repo_newjeans\newjeans\bin\main started by USER in C:\factory\ws_sts4_4240\repo_newjeans\newjeans) 
+2024-09-22T00:13:36.898 [restartedMain] INFO c.a.NewjeansApplication - No active profile set, falling back to 1 default profile: "default" 
+2024-09-22T00:13:37.177 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat initialized with port 8080 (http) 
+2024-09-22T00:13:37.178 [restartedMain] INFO o.a.c.h.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"] 
+2024-09-22T00:13:37.178 [restartedMain] INFO o.a.c.c.StandardService - Starting service [Tomcat] 
+2024-09-22T00:13:37.178 [restartedMain] INFO o.a.c.c.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.28] 
+2024-09-22T00:13:37.206 [restartedMain] INFO o.a.c.c.C.[.[.[/] - Initializing Spring embedded WebApplicationContext 
+2024-09-22T00:13:37.206 [restartedMain] INFO o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 306 ms 
+2024-09-22T00:13:37.399 [restartedMain] INFO o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729 
+2024-09-22T00:13:37.405 [restartedMain] INFO o.a.c.h.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"] 
+2024-09-22T00:13:37.409 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/' 
+2024-09-22T00:13:37.413 [restartedMain] INFO c.a.NewjeansApplication - Started NewjeansApplication in 0.556 seconds (process running for 1434.888) 
+2024-09-22T00:13:37.415 [restartedMain] INFO o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged 
+2024-09-22T00:13:49.491 [http-nio-8080-exec-1] INFO o.a.c.c.C.[.[.[/] - Initializing Spring DispatcherServlet 'dispatcherServlet' 
+2024-09-22T00:13:49.491 [http-nio-8080-exec-1] INFO o.s.w.s.DispatcherServlet - Initializing Servlet 'dispatcherServlet' 
+2024-09-22T00:13:49.492 [http-nio-8080-exec-1] INFO o.s.w.s.DispatcherServlet - Completed initialization in 1 ms 
+2024-09-22T00:13:49.494 [http-nio-8080-exec-1] INFO c.z.h.HikariDataSource - HikariPool-3 - Starting... 
+2024-09-22T00:13:49.508 [http-nio-8080-exec-1] INFO c.z.h.p.HikariPool - HikariPool-3 - Added connection net.sf.log4jdbc.sql.jdbcapi.ConnectionSpy@38b271de 
+2024-09-22T00:13:49.509 [http-nio-8080-exec-1] INFO c.z.h.HikariDataSource - HikariPool-3 - Start completed. 
+2024-09-22T00:13:49.510 [http-nio-8080-exec-1] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+21. select  
+		 	a.htseq,
+		    a.htName,
+		    a.htAddress,
+		    a.htcountry,
+		    a.htDesc,
+		    a.htDelNy,
+		    a.htRegDate,
+		    a.htReviseDate,
+		    a.htNotice,
+		    a.htMap,
+		    a.htInclusionItems,
+		    a.htNameSearch,
+		    a.htPriceSearch,
+		    a.htStarSearch,
+		    a.htClassSearch,
+		    a.htRestaurantNy,
+		    a.htSpaNy,
+		    a.htFitnessCenterNy,
+		    a.htPoolNy,
+		    a.htloungeNy,
+		    a.htStockRoomNy,
+		    a.htParkingNy,
+		    a.htShuttleBusNy,
+		    a.htBreakfastNy,
+		    a.htRoomServiceNy,
+		    a.htElseNy
+		from
+			hotel a
+	    where 1=1
+	    	AND a.htseq = '7'
+ {executed in 1 msec} 
+2024-09-22T00:13:52.360 [http-nio-8080-exec-3] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+21. SELECT  
+			a.htmSeq,
+	        a.htmUserName,
+	        a.htmGender,
+	        a.htmBirth,
+	        a.htmId,
+	        a.htmPassword,
+	        a.htmPhoneNumber,
+	        a.htmEmail,
+	        a.htmAddress,
+	        a.htmDetailedAddress,
+	        a.htmZipCode,
+	        a.htmRegDate,
+	        a.htmGrade,
+	        a.htmRegAgreeContentNy,
+	        a.htmEditMemberDate,
+	        a.htmDelNy,
+	        a.htmDesc
+		FROM
+			newjeans.hotelmember a
+		WHERE 1=1
+
+		ORDER BY 
+			a.htmSeq desc
+ {executed in 1 msec} 
+2024-09-22T00:13:56.141 [http-nio-8080-exec-6] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+21. select
+		 	a.htseq,
+		    a.htName,
+		    a.htAddress,
+		    a.htcountry,
+		    a.htDesc,
+		    a.htDelNy,
+		    a.htRegDate,
+		    a.htReviseDate,
+		    a.htNotice,
+		    a.htMap,
+		    a.htInclusionItems,
+		    a.htNameSearch,
+		    a.htPriceSearch,
+		    a.htStarSearch,
+		    a.htClassSearch,
+		    a.htRestaurantNy,
+		    a.htSpaNy,
+		    a.htFitnessCenterNy,
+		    a.htPoolNy,
+		    a.htloungeNy,
+		    a.htStockRoomNy,
+		    a.htParkingNy,
+		    a.htShuttleBusNy,
+		    a.htBreakfastNy,
+		    a.htRoomServiceNy,
+		    a.htElseNy
+		from
+		    hotel a
+		where 1=1
+
+		order by
+			a.htseq desc
+ {executed in 1 msec} 
+2024-09-22T00:14:12.017 [File Watcher] INFO o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification) 
+2024-09-22T00:14:12.018 [Thread-11] INFO o.a.c.h.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"] 
+2024-09-22T00:14:13.007 [Thread-11] INFO c.z.h.HikariDataSource - HikariPool-3 - Shutdown initiated... 
+2024-09-22T00:14:13.011 [Thread-11] INFO c.z.h.HikariDataSource - HikariPool-3 - Shutdown completed. 
+2024-09-22T00:14:13.106 [restartedMain] INFO c.a.NewjeansApplication - Starting NewjeansApplication using Java 17.0.11 with PID 22800 (C:\factory\ws_sts4_4240\repo_newjeans\newjeans\bin\main started by USER in C:\factory\ws_sts4_4240\repo_newjeans\newjeans) 
+2024-09-22T00:14:13.106 [restartedMain] INFO c.a.NewjeansApplication - No active profile set, falling back to 1 default profile: "default" 
+2024-09-22T00:14:13.387 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat initialized with port 8080 (http) 
+2024-09-22T00:14:13.387 [restartedMain] INFO o.a.c.h.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"] 
+2024-09-22T00:14:13.388 [restartedMain] INFO o.a.c.c.StandardService - Starting service [Tomcat] 
+2024-09-22T00:14:13.388 [restartedMain] INFO o.a.c.c.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.28] 
+2024-09-22T00:14:13.415 [restartedMain] INFO o.a.c.c.C.[.[.[/] - Initializing Spring embedded WebApplicationContext 
+2024-09-22T00:14:13.415 [restartedMain] INFO o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 307 ms 
+2024-09-22T00:14:13.566 [restartedMain] INFO o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729 
+2024-09-22T00:14:13.573 [restartedMain] INFO o.a.c.h.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"] 
+2024-09-22T00:14:13.578 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/' 
+2024-09-22T00:14:13.584 [restartedMain] INFO c.a.NewjeansApplication - Started NewjeansApplication in 0.52 seconds (process running for 1471.059) 
+2024-09-22T00:14:13.585 [restartedMain] INFO o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged 
+2024-09-22T00:14:28.358 [File Watcher] INFO o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification) 
+2024-09-22T00:14:28.361 [Thread-15] INFO o.a.c.h.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"] 
+2024-09-22T00:14:29.352 [restartedMain] INFO c.a.NewjeansApplication - Starting NewjeansApplication using Java 17.0.11 with PID 22800 (C:\factory\ws_sts4_4240\repo_newjeans\newjeans\bin\main started by USER in C:\factory\ws_sts4_4240\repo_newjeans\newjeans) 
+2024-09-22T00:14:29.352 [restartedMain] INFO c.a.NewjeansApplication - No active profile set, falling back to 1 default profile: "default" 
+2024-09-22T00:14:29.600 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat initialized with port 8080 (http) 
+2024-09-22T00:14:29.600 [restartedMain] INFO o.a.c.h.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"] 
+2024-09-22T00:14:29.600 [restartedMain] INFO o.a.c.c.StandardService - Starting service [Tomcat] 
+2024-09-22T00:14:29.601 [restartedMain] INFO o.a.c.c.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.28] 
+2024-09-22T00:14:29.627 [restartedMain] INFO o.a.c.c.C.[.[.[/] - Initializing Spring embedded WebApplicationContext 
+2024-09-22T00:14:29.628 [restartedMain] INFO o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 274 ms 
+2024-09-22T00:14:29.779 [restartedMain] INFO o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729 
+2024-09-22T00:14:29.785 [restartedMain] INFO o.a.c.h.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"] 
+2024-09-22T00:14:29.789 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/' 
+2024-09-22T00:14:29.794 [restartedMain] INFO c.a.NewjeansApplication - Started NewjeansApplication in 0.479 seconds (process running for 1487.269) 
+2024-09-22T00:14:29.795 [restartedMain] INFO o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged 
+2024-09-22T00:15:06.854 [File Watcher] INFO o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification) 
+2024-09-22T00:15:06.858 [Thread-19] INFO o.a.c.h.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"] 
+2024-09-22T00:15:07.798 [restartedMain] INFO c.a.NewjeansApplication - Starting NewjeansApplication using Java 17.0.11 with PID 22800 (C:\factory\ws_sts4_4240\repo_newjeans\newjeans\bin\main started by USER in C:\factory\ws_sts4_4240\repo_newjeans\newjeans) 
+2024-09-22T00:15:07.798 [restartedMain] INFO c.a.NewjeansApplication - No active profile set, falling back to 1 default profile: "default" 
+2024-09-22T00:15:08.061 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat initialized with port 8080 (http) 
+2024-09-22T00:15:08.062 [restartedMain] INFO o.a.c.h.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"] 
+2024-09-22T00:15:08.062 [restartedMain] INFO o.a.c.c.StandardService - Starting service [Tomcat] 
+2024-09-22T00:15:08.062 [restartedMain] INFO o.a.c.c.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.28] 
+2024-09-22T00:15:08.090 [restartedMain] INFO o.a.c.c.C.[.[.[/] - Initializing Spring embedded WebApplicationContext 
+2024-09-22T00:15:08.090 [restartedMain] INFO o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 290 ms 
+2024-09-22T00:15:08.231 [restartedMain] INFO o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729 
+2024-09-22T00:15:08.235 [restartedMain] INFO o.a.c.h.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"] 
+2024-09-22T00:15:08.239 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/' 
+2024-09-22T00:15:08.243 [restartedMain] INFO c.a.NewjeansApplication - Started NewjeansApplication in 0.481 seconds (process running for 1525.718) 
+2024-09-22T00:15:08.244 [restartedMain] INFO o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged 
+2024-09-22T00:16:08.709 [http-nio-8080-exec-1] INFO o.a.c.c.C.[.[.[/] - Initializing Spring DispatcherServlet 'dispatcherServlet' 
+2024-09-22T00:16:08.710 [http-nio-8080-exec-1] INFO o.s.w.s.DispatcherServlet - Initializing Servlet 'dispatcherServlet' 
+2024-09-22T00:16:08.711 [http-nio-8080-exec-1] INFO o.s.w.s.DispatcherServlet - Completed initialization in 1 ms 
+2024-09-22T00:16:08.713 [http-nio-8080-exec-1] INFO c.z.h.HikariDataSource - HikariPool-4 - Starting... 
+2024-09-22T00:16:08.728 [http-nio-8080-exec-1] INFO c.z.h.p.HikariPool - HikariPool-4 - Added connection net.sf.log4jdbc.sql.jdbcapi.ConnectionSpy@6218ae42 
+2024-09-22T00:16:08.729 [http-nio-8080-exec-1] INFO c.z.h.HikariDataSource - HikariPool-4 - Start completed. 
+2024-09-22T00:16:08.731 [http-nio-8080-exec-1] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+31. select
+		 	a.htseq,
+		    a.htName,
+		    a.htAddress,
+		    a.htcountry,
+		    a.htDesc,
+		    a.htDelNy,
+		    a.htRegDate,
+		    a.htReviseDate,
+		    a.htNotice,
+		    a.htMap,
+		    a.htInclusionItems,
+		    a.htNameSearch,
+		    a.htPriceSearch,
+		    a.htStarSearch,
+		    a.htClassSearch,
+		    a.htRestaurantNy,
+		    a.htSpaNy,
+		    a.htFitnessCenterNy,
+		    a.htPoolNy,
+		    a.htloungeNy,
+		    a.htStockRoomNy,
+		    a.htParkingNy,
+		    a.htShuttleBusNy,
+		    a.htBreakfastNy,
+		    a.htRoomServiceNy,
+		    a.htElseNy
+		from
+		    hotel a
+		where 1=1
+
+		order by
+			a.htseq desc
+ {executed in 2 msec} 
+2024-09-22T00:17:17.839 [http-nio-8080-exec-2] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+31. select
+		 	a.htseq,
+		    a.htName,
+		    a.htAddress,
+		    a.htcountry,
+		    a.htDesc,
+		    a.htDelNy,
+		    a.htRegDate,
+		    a.htReviseDate,
+		    a.htNotice,
+		    a.htMap,
+		    a.htInclusionItems,
+		    a.htNameSearch,
+		    a.htPriceSearch,
+		    a.htStarSearch,
+		    a.htClassSearch,
+		    a.htRestaurantNy,
+		    a.htSpaNy,
+		    a.htFitnessCenterNy,
+		    a.htPoolNy,
+		    a.htloungeNy,
+		    a.htStockRoomNy,
+		    a.htParkingNy,
+		    a.htShuttleBusNy,
+		    a.htBreakfastNy,
+		    a.htRoomServiceNy,
+		    a.htElseNy
+		from
+		    hotel a
+		where 1=1
+
+		order by
+			a.htseq desc
+ {executed in 1 msec} 
+2024-09-22T00:17:31.651 [http-nio-8080-exec-1] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+31. select
+		 	a.htseq,
+		    a.htName,
+		    a.htAddress,
+		    a.htcountry,
+		    a.htDesc,
+		    a.htDelNy,
+		    a.htRegDate,
+		    a.htReviseDate,
+		    a.htNotice,
+		    a.htMap,
+		    a.htInclusionItems,
+		    a.htNameSearch,
+		    a.htPriceSearch,
+		    a.htStarSearch,
+		    a.htClassSearch,
+		    a.htRestaurantNy,
+		    a.htSpaNy,
+		    a.htFitnessCenterNy,
+		    a.htPoolNy,
+		    a.htloungeNy,
+		    a.htStockRoomNy,
+		    a.htParkingNy,
+		    a.htShuttleBusNy,
+		    a.htBreakfastNy,
+		    a.htRoomServiceNy,
+		    a.htElseNy
+		from
+		    hotel a
+		where 1=1
+
+		order by
+			a.htseq desc
+ {executed in 1 msec} 
+2024-09-22T00:20:46.897 [File Watcher] INFO o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification) 
+2024-09-22T00:20:46.899 [Thread-23] INFO o.a.c.h.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"] 
+2024-09-22T00:20:47.806 [Thread-23] INFO c.z.h.HikariDataSource - HikariPool-4 - Shutdown initiated... 
+2024-09-22T00:20:47.811 [Thread-23] INFO c.z.h.HikariDataSource - HikariPool-4 - Shutdown completed. 
+2024-09-22T00:20:47.899 [restartedMain] INFO c.a.NewjeansApplication - Starting NewjeansApplication using Java 17.0.11 with PID 22800 (C:\factory\ws_sts4_4240\repo_newjeans\newjeans\bin\main started by USER in C:\factory\ws_sts4_4240\repo_newjeans\newjeans) 
+2024-09-22T00:20:47.899 [restartedMain] INFO c.a.NewjeansApplication - No active profile set, falling back to 1 default profile: "default" 
+2024-09-22T00:20:48.179 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat initialized with port 8080 (http) 
+2024-09-22T00:20:48.180 [restartedMain] INFO o.a.c.h.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"] 
+2024-09-22T00:20:48.180 [restartedMain] INFO o.a.c.c.StandardService - Starting service [Tomcat] 
+2024-09-22T00:20:48.180 [restartedMain] INFO o.a.c.c.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.28] 
+2024-09-22T00:20:48.207 [restartedMain] INFO o.a.c.c.C.[.[.[/] - Initializing Spring embedded WebApplicationContext 
+2024-09-22T00:20:48.207 [restartedMain] INFO o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 306 ms 
+2024-09-22T00:20:48.375 [restartedMain] INFO o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729 
+2024-09-22T00:20:48.381 [restartedMain] INFO o.a.c.h.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"] 
+2024-09-22T00:20:48.385 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/' 
+2024-09-22T00:20:48.389 [restartedMain] INFO c.a.NewjeansApplication - Started NewjeansApplication in 0.528 seconds (process running for 1865.864) 
+2024-09-22T00:20:48.390 [restartedMain] INFO o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged 
+2024-09-22T00:21:04.300 [File Watcher] INFO o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification) 
+2024-09-22T00:21:04.301 [Thread-27] INFO o.a.c.h.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"] 
+2024-09-22T00:21:05.383 [restartedMain] INFO c.a.NewjeansApplication - Starting NewjeansApplication using Java 17.0.11 with PID 22800 (C:\factory\ws_sts4_4240\repo_newjeans\newjeans\bin\main started by USER in C:\factory\ws_sts4_4240\repo_newjeans\newjeans) 
+2024-09-22T00:21:05.383 [restartedMain] INFO c.a.NewjeansApplication - No active profile set, falling back to 1 default profile: "default" 
+2024-09-22T00:21:05.632 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat initialized with port 8080 (http) 
+2024-09-22T00:21:05.633 [restartedMain] INFO o.a.c.h.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"] 
+2024-09-22T00:21:05.633 [restartedMain] INFO o.a.c.c.StandardService - Starting service [Tomcat] 
+2024-09-22T00:21:05.633 [restartedMain] INFO o.a.c.c.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.28] 
+2024-09-22T00:21:05.660 [restartedMain] INFO o.a.c.c.C.[.[.[/] - Initializing Spring embedded WebApplicationContext 
+2024-09-22T00:21:05.660 [restartedMain] INFO o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 275 ms 
+2024-09-22T00:21:05.801 [restartedMain] INFO o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729 
+2024-09-22T00:21:05.807 [restartedMain] INFO o.a.c.h.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"] 
+2024-09-22T00:21:05.812 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/' 
+2024-09-22T00:21:05.816 [restartedMain] INFO c.a.NewjeansApplication - Started NewjeansApplication in 0.472 seconds (process running for 1883.291) 
+2024-09-22T00:21:05.817 [restartedMain] INFO o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged 
+2024-09-22T00:21:13.422 [File Watcher] INFO o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification) 
+2024-09-22T00:21:13.425 [Thread-31] INFO o.a.c.h.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"] 
+2024-09-22T00:21:14.475 [restartedMain] INFO c.a.NewjeansApplication - Starting NewjeansApplication using Java 17.0.11 with PID 22800 (C:\factory\ws_sts4_4240\repo_newjeans\newjeans\bin\main started by USER in C:\factory\ws_sts4_4240\repo_newjeans\newjeans) 
+2024-09-22T00:21:14.476 [restartedMain] INFO c.a.NewjeansApplication - No active profile set, falling back to 1 default profile: "default" 
+2024-09-22T00:21:14.718 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat initialized with port 8080 (http) 
+2024-09-22T00:21:14.718 [restartedMain] INFO o.a.c.h.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"] 
+2024-09-22T00:21:14.718 [restartedMain] INFO o.a.c.c.StandardService - Starting service [Tomcat] 
+2024-09-22T00:21:14.718 [restartedMain] INFO o.a.c.c.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.28] 
+2024-09-22T00:21:14.744 [restartedMain] INFO o.a.c.c.C.[.[.[/] - Initializing Spring embedded WebApplicationContext 
+2024-09-22T00:21:14.744 [restartedMain] INFO o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 267 ms 
+2024-09-22T00:21:14.884 [restartedMain] INFO o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729 
+2024-09-22T00:21:14.889 [restartedMain] INFO o.a.c.h.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"] 
+2024-09-22T00:21:14.893 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/' 
+2024-09-22T00:21:14.898 [restartedMain] INFO c.a.NewjeansApplication - Started NewjeansApplication in 0.458 seconds (process running for 1892.372) 
+2024-09-22T00:21:14.899 [restartedMain] INFO o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged 
+2024-09-22T00:22:22.720 [http-nio-8080-exec-1] INFO o.a.c.c.C.[.[.[/] - Initializing Spring DispatcherServlet 'dispatcherServlet' 
+2024-09-22T00:22:22.721 [http-nio-8080-exec-1] INFO o.s.w.s.DispatcherServlet - Initializing Servlet 'dispatcherServlet' 
+2024-09-22T00:22:22.722 [http-nio-8080-exec-1] INFO o.s.w.s.DispatcherServlet - Completed initialization in 1 ms 
+2024-09-22T00:22:22.724 [http-nio-8080-exec-1] INFO c.z.h.HikariDataSource - HikariPool-5 - Starting... 
+2024-09-22T00:22:22.743 [http-nio-8080-exec-1] INFO c.z.h.p.HikariPool - HikariPool-5 - Added connection net.sf.log4jdbc.sql.jdbcapi.ConnectionSpy@381cb00 
+2024-09-22T00:22:22.743 [http-nio-8080-exec-1] INFO c.z.h.HikariDataSource - HikariPool-5 - Start completed. 
+2024-09-22T00:22:22.745 [http-nio-8080-exec-1] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+41. select
+		 	a.htseq,
+		    a.htName,
+		    a.htAddress,
+		    a.htcountry,
+		    a.htDesc,
+		    a.htDelNy,
+		    a.htRegDate,
+		    a.htReviseDate,
+		    a.htNotice,
+		    a.htMap,
+		    a.htInclusionItems,
+		    a.htNameSearch,
+		    a.htPriceSearch,
+		    a.htStarSearch,
+		    a.htClassSearch,
+		    a.htRestaurantNy,
+		    a.htSpaNy,
+		    a.htFitnessCenterNy,
+		    a.htPoolNy,
+		    a.htloungeNy,
+		    a.htStockRoomNy,
+		    a.htParkingNy,
+		    a.htShuttleBusNy,
+		    a.htBreakfastNy,
+		    a.htRoomServiceNy,
+		    a.htElseNy
+		from
+		    hotel a
+		where 1=1
+
+		order by
+			a.htseq desc
+ {executed in 2 msec} 
+2024-09-22T00:22:27.620 [http-nio-8080-exec-4] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+41. select
+		 	a.htseq,
+		    a.htName,
+		    a.htAddress,
+		    a.htcountry,
+		    a.htDesc,
+		    a.htDelNy,
+		    a.htRegDate,
+		    a.htReviseDate,
+		    a.htNotice,
+		    a.htMap,
+		    a.htInclusionItems,
+		    a.htNameSearch,
+		    a.htPriceSearch,
+		    a.htStarSearch,
+		    a.htClassSearch,
+		    a.htRestaurantNy,
+		    a.htSpaNy,
+		    a.htFitnessCenterNy,
+		    a.htPoolNy,
+		    a.htloungeNy,
+		    a.htStockRoomNy,
+		    a.htParkingNy,
+		    a.htShuttleBusNy,
+		    a.htBreakfastNy,
+		    a.htRoomServiceNy,
+		    a.htElseNy
+		from
+		    hotel a
+		where 1=1
+
+		order by
+			a.htseq desc
+ {executed in 1 msec} 
+2024-09-22T00:22:30.322 [http-nio-8080-exec-1] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+41. select
+		 	a.htseq,
+		    a.htName,
+		    a.htAddress,
+		    a.htcountry,
+		    a.htDesc,
+		    a.htDelNy,
+		    a.htRegDate,
+		    a.htReviseDate,
+		    a.htNotice,
+		    a.htMap,
+		    a.htInclusionItems,
+		    a.htNameSearch,
+		    a.htPriceSearch,
+		    a.htStarSearch,
+		    a.htClassSearch,
+		    a.htRestaurantNy,
+		    a.htSpaNy,
+		    a.htFitnessCenterNy,
+		    a.htPoolNy,
+		    a.htloungeNy,
+		    a.htStockRoomNy,
+		    a.htParkingNy,
+		    a.htShuttleBusNy,
+		    a.htBreakfastNy,
+		    a.htRoomServiceNy,
+		    a.htElseNy
+		from
+		    hotel a
+		where 1=1
+
+			 AND htStarSearch = 1  
+
+		order by
+			a.htseq desc
+ {executed in 1 msec} 
+2024-09-22T00:22:34.086 [http-nio-8080-exec-9] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+41. select
+		 	a.htseq,
+		    a.htName,
+		    a.htAddress,
+		    a.htcountry,
+		    a.htDesc,
+		    a.htDelNy,
+		    a.htRegDate,
+		    a.htReviseDate,
+		    a.htNotice,
+		    a.htMap,
+		    a.htInclusionItems,
+		    a.htNameSearch,
+		    a.htPriceSearch,
+		    a.htStarSearch,
+		    a.htClassSearch,
+		    a.htRestaurantNy,
+		    a.htSpaNy,
+		    a.htFitnessCenterNy,
+		    a.htPoolNy,
+		    a.htloungeNy,
+		    a.htStockRoomNy,
+		    a.htParkingNy,
+		    a.htShuttleBusNy,
+		    a.htBreakfastNy,
+		    a.htRoomServiceNy,
+		    a.htElseNy
+		from
+		    hotel a
+		where 1=1
+
+		order by
+			a.htseq desc
+ {executed in 1 msec} 
+2024-09-22T00:22:35.562 [http-nio-8080-exec-1] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+41. select  
+		 	a.htseq,
+		    a.htName,
+		    a.htAddress,
+		    a.htcountry,
+		    a.htDesc,
+		    a.htDelNy,
+		    a.htRegDate,
+		    a.htReviseDate,
+		    a.htNotice,
+		    a.htMap,
+		    a.htInclusionItems,
+		    a.htNameSearch,
+		    a.htPriceSearch,
+		    a.htStarSearch,
+		    a.htClassSearch,
+		    a.htRestaurantNy,
+		    a.htSpaNy,
+		    a.htFitnessCenterNy,
+		    a.htPoolNy,
+		    a.htloungeNy,
+		    a.htStockRoomNy,
+		    a.htParkingNy,
+		    a.htShuttleBusNy,
+		    a.htBreakfastNy,
+		    a.htRoomServiceNy,
+		    a.htElseNy
+		from
+			hotel a
+	    where 1=1
+	    	AND a.htseq = '7'
+ {executed in 1 msec} 
+2024-09-22T00:22:37.635 [http-nio-8080-exec-8] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+41. select  
+		 	a.htseq,
+		    a.htName,
+		    a.htAddress,
+		    a.htcountry,
+		    a.htDesc,
+		    a.htDelNy,
+		    a.htRegDate,
+		    a.htReviseDate,
+		    a.htNotice,
+		    a.htMap,
+		    a.htInclusionItems,
+		    a.htNameSearch,
+		    a.htPriceSearch,
+		    a.htStarSearch,
+		    a.htClassSearch,
+		    a.htRestaurantNy,
+		    a.htSpaNy,
+		    a.htFitnessCenterNy,
+		    a.htPoolNy,
+		    a.htloungeNy,
+		    a.htStockRoomNy,
+		    a.htParkingNy,
+		    a.htShuttleBusNy,
+		    a.htBreakfastNy,
+		    a.htRoomServiceNy,
+		    a.htElseNy
+		from
+			hotel a
+	    where 1=1
+	    	AND a.htseq = '7'
+ {executed in 1 msec} 
+2024-09-22T00:22:39.452 [http-nio-8080-exec-4] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+41. select  
+		 	a.htseq,
+		    a.htName,
+		    a.htAddress,
+		    a.htcountry,
+		    a.htDesc,
+		    a.htDelNy,
+		    a.htRegDate,
+		    a.htReviseDate,
+		    a.htNotice,
+		    a.htMap,
+		    a.htInclusionItems,
+		    a.htNameSearch,
+		    a.htPriceSearch,
+		    a.htStarSearch,
+		    a.htClassSearch,
+		    a.htRestaurantNy,
+		    a.htSpaNy,
+		    a.htFitnessCenterNy,
+		    a.htPoolNy,
+		    a.htloungeNy,
+		    a.htStockRoomNy,
+		    a.htParkingNy,
+		    a.htShuttleBusNy,
+		    a.htBreakfastNy,
+		    a.htRoomServiceNy,
+		    a.htElseNy
+		from
+			hotel a
+	    where 1=1
+	    	AND a.htseq = '5'
+ {executed in 1 msec} 
+2024-09-22T00:22:41.230 [http-nio-8080-exec-4] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+41. select  
+		 	a.htseq,
+		    a.htName,
+		    a.htAddress,
+		    a.htcountry,
+		    a.htDesc,
+		    a.htDelNy,
+		    a.htRegDate,
+		    a.htReviseDate,
+		    a.htNotice,
+		    a.htMap,
+		    a.htInclusionItems,
+		    a.htNameSearch,
+		    a.htPriceSearch,
+		    a.htStarSearch,
+		    a.htClassSearch,
+		    a.htRestaurantNy,
+		    a.htSpaNy,
+		    a.htFitnessCenterNy,
+		    a.htPoolNy,
+		    a.htloungeNy,
+		    a.htStockRoomNy,
+		    a.htParkingNy,
+		    a.htShuttleBusNy,
+		    a.htBreakfastNy,
+		    a.htRoomServiceNy,
+		    a.htElseNy
+		from
+			hotel a
+	    where 1=1
+	    	AND a.htseq = '4'
+ {executed in 1 msec} 
+2024-09-22T00:22:42.743 [http-nio-8080-exec-4] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+41. select  
+		 	a.htseq,
+		    a.htName,
+		    a.htAddress,
+		    a.htcountry,
+		    a.htDesc,
+		    a.htDelNy,
+		    a.htRegDate,
+		    a.htReviseDate,
+		    a.htNotice,
+		    a.htMap,
+		    a.htInclusionItems,
+		    a.htNameSearch,
+		    a.htPriceSearch,
+		    a.htStarSearch,
+		    a.htClassSearch,
+		    a.htRestaurantNy,
+		    a.htSpaNy,
+		    a.htFitnessCenterNy,
+		    a.htPoolNy,
+		    a.htloungeNy,
+		    a.htStockRoomNy,
+		    a.htParkingNy,
+		    a.htShuttleBusNy,
+		    a.htBreakfastNy,
+		    a.htRoomServiceNy,
+		    a.htElseNy
+		from
+			hotel a
+	    where 1=1
+	    	AND a.htseq = '3'
+ {executed in 1 msec} 
+2024-09-22T00:22:44.156 [http-nio-8080-exec-5] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+41. select  
+		 	a.htseq,
+		    a.htName,
+		    a.htAddress,
+		    a.htcountry,
+		    a.htDesc,
+		    a.htDelNy,
+		    a.htRegDate,
+		    a.htReviseDate,
+		    a.htNotice,
+		    a.htMap,
+		    a.htInclusionItems,
+		    a.htNameSearch,
+		    a.htPriceSearch,
+		    a.htStarSearch,
+		    a.htClassSearch,
+		    a.htRestaurantNy,
+		    a.htSpaNy,
+		    a.htFitnessCenterNy,
+		    a.htPoolNy,
+		    a.htloungeNy,
+		    a.htStockRoomNy,
+		    a.htParkingNy,
+		    a.htShuttleBusNy,
+		    a.htBreakfastNy,
+		    a.htRoomServiceNy,
+		    a.htElseNy
+		from
+			hotel a
+	    where 1=1
+	    	AND a.htseq = '2'
+ {executed in 1 msec} 
+2024-09-22T00:22:45.315 [http-nio-8080-exec-10] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+41. select  
+		 	a.htseq,
+		    a.htName,
+		    a.htAddress,
+		    a.htcountry,
+		    a.htDesc,
+		    a.htDelNy,
+		    a.htRegDate,
+		    a.htReviseDate,
+		    a.htNotice,
+		    a.htMap,
+		    a.htInclusionItems,
+		    a.htNameSearch,
+		    a.htPriceSearch,
+		    a.htStarSearch,
+		    a.htClassSearch,
+		    a.htRestaurantNy,
+		    a.htSpaNy,
+		    a.htFitnessCenterNy,
+		    a.htPoolNy,
+		    a.htloungeNy,
+		    a.htStockRoomNy,
+		    a.htParkingNy,
+		    a.htShuttleBusNy,
+		    a.htBreakfastNy,
+		    a.htRoomServiceNy,
+		    a.htElseNy
+		from
+			hotel a
+	    where 1=1
+	    	AND a.htseq = '1'
+ {executed in 0 msec} 
+2024-09-22T00:22:48.730 [http-nio-8080-exec-10] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+41. select
+		 	a.htseq,
+		    a.htName,
+		    a.htAddress,
+		    a.htcountry,
+		    a.htDesc,
+		    a.htDelNy,
+		    a.htRegDate,
+		    a.htReviseDate,
+		    a.htNotice,
+		    a.htMap,
+		    a.htInclusionItems,
+		    a.htNameSearch,
+		    a.htPriceSearch,
+		    a.htStarSearch,
+		    a.htClassSearch,
+		    a.htRestaurantNy,
+		    a.htSpaNy,
+		    a.htFitnessCenterNy,
+		    a.htPoolNy,
+		    a.htloungeNy,
+		    a.htStockRoomNy,
+		    a.htParkingNy,
+		    a.htShuttleBusNy,
+		    a.htBreakfastNy,
+		    a.htRoomServiceNy,
+		    a.htElseNy
+		from
+		    hotel a
+		where 1=1
+
+			 AND htStarSearch = 5  
+
+		order by
+			a.htseq desc
+ {executed in 1 msec} 
+2024-09-22T00:22:50.052 [http-nio-8080-exec-1] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+41. select  
+		 	a.htseq,
+		    a.htName,
+		    a.htAddress,
+		    a.htcountry,
+		    a.htDesc,
+		    a.htDelNy,
+		    a.htRegDate,
+		    a.htReviseDate,
+		    a.htNotice,
+		    a.htMap,
+		    a.htInclusionItems,
+		    a.htNameSearch,
+		    a.htPriceSearch,
+		    a.htStarSearch,
+		    a.htClassSearch,
+		    a.htRestaurantNy,
+		    a.htSpaNy,
+		    a.htFitnessCenterNy,
+		    a.htPoolNy,
+		    a.htloungeNy,
+		    a.htStockRoomNy,
+		    a.htParkingNy,
+		    a.htShuttleBusNy,
+		    a.htBreakfastNy,
+		    a.htRoomServiceNy,
+		    a.htElseNy
+		from
+			hotel a
+	    where 1=1
+	    	AND a.htseq = '4'
+ {executed in 1 msec} 
+2024-09-22T00:22:52.037 [http-nio-8080-exec-6] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+41. select
+		 	a.htseq,
+		    a.htName,
+		    a.htAddress,
+		    a.htcountry,
+		    a.htDesc,
+		    a.htDelNy,
+		    a.htRegDate,
+		    a.htReviseDate,
+		    a.htNotice,
+		    a.htMap,
+		    a.htInclusionItems,
+		    a.htNameSearch,
+		    a.htPriceSearch,
+		    a.htStarSearch,
+		    a.htClassSearch,
+		    a.htRestaurantNy,
+		    a.htSpaNy,
+		    a.htFitnessCenterNy,
+		    a.htPoolNy,
+		    a.htloungeNy,
+		    a.htStockRoomNy,
+		    a.htParkingNy,
+		    a.htShuttleBusNy,
+		    a.htBreakfastNy,
+		    a.htRoomServiceNy,
+		    a.htElseNy
+		from
+		    hotel a
+		where 1=1
+
+		order by
+			a.htseq desc
+ {executed in 1 msec} 
+2024-09-22T00:22:56.749 [http-nio-8080-exec-3] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+41. select  
+		 	a.htseq,
+		    a.htName,
+		    a.htAddress,
+		    a.htcountry,
+		    a.htDesc,
+		    a.htDelNy,
+		    a.htRegDate,
+		    a.htReviseDate,
+		    a.htNotice,
+		    a.htMap,
+		    a.htInclusionItems,
+		    a.htNameSearch,
+		    a.htPriceSearch,
+		    a.htStarSearch,
+		    a.htClassSearch,
+		    a.htRestaurantNy,
+		    a.htSpaNy,
+		    a.htFitnessCenterNy,
+		    a.htPoolNy,
+		    a.htloungeNy,
+		    a.htStockRoomNy,
+		    a.htParkingNy,
+		    a.htShuttleBusNy,
+		    a.htBreakfastNy,
+		    a.htRoomServiceNy,
+		    a.htElseNy
+		from
+			hotel a
+	    where 1=1
+	    	AND a.htseq = '1'
+ {executed in 0 msec} 
+2024-09-22T00:22:59.262 [http-nio-8080-exec-8] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+41. select  
+		 	a.htseq,
+		    a.htName,
+		    a.htAddress,
+		    a.htcountry,
+		    a.htDesc,
+		    a.htDelNy,
+		    a.htRegDate,
+		    a.htReviseDate,
+		    a.htNotice,
+		    a.htMap,
+		    a.htInclusionItems,
+		    a.htNameSearch,
+		    a.htPriceSearch,
+		    a.htStarSearch,
+		    a.htClassSearch,
+		    a.htRestaurantNy,
+		    a.htSpaNy,
+		    a.htFitnessCenterNy,
+		    a.htPoolNy,
+		    a.htloungeNy,
+		    a.htStockRoomNy,
+		    a.htParkingNy,
+		    a.htShuttleBusNy,
+		    a.htBreakfastNy,
+		    a.htRoomServiceNy,
+		    a.htElseNy
+		from
+			hotel a
+	    where 1=1
+	    	AND a.htseq = '2'
+ {executed in 1 msec} 
+2024-09-22T00:23:00.994 [http-nio-8080-exec-9] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+41. select  
+		 	a.htseq,
+		    a.htName,
+		    a.htAddress,
+		    a.htcountry,
+		    a.htDesc,
+		    a.htDelNy,
+		    a.htRegDate,
+		    a.htReviseDate,
+		    a.htNotice,
+		    a.htMap,
+		    a.htInclusionItems,
+		    a.htNameSearch,
+		    a.htPriceSearch,
+		    a.htStarSearch,
+		    a.htClassSearch,
+		    a.htRestaurantNy,
+		    a.htSpaNy,
+		    a.htFitnessCenterNy,
+		    a.htPoolNy,
+		    a.htloungeNy,
+		    a.htStockRoomNy,
+		    a.htParkingNy,
+		    a.htShuttleBusNy,
+		    a.htBreakfastNy,
+		    a.htRoomServiceNy,
+		    a.htElseNy
+		from
+			hotel a
+	    where 1=1
+	    	AND a.htseq = '3'
+ {executed in 1 msec} 
+2024-09-22T00:23:02.293 [http-nio-8080-exec-8] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+41. select  
+		 	a.htseq,
+		    a.htName,
+		    a.htAddress,
+		    a.htcountry,
+		    a.htDesc,
+		    a.htDelNy,
+		    a.htRegDate,
+		    a.htReviseDate,
+		    a.htNotice,
+		    a.htMap,
+		    a.htInclusionItems,
+		    a.htNameSearch,
+		    a.htPriceSearch,
+		    a.htStarSearch,
+		    a.htClassSearch,
+		    a.htRestaurantNy,
+		    a.htSpaNy,
+		    a.htFitnessCenterNy,
+		    a.htPoolNy,
+		    a.htloungeNy,
+		    a.htStockRoomNy,
+		    a.htParkingNy,
+		    a.htShuttleBusNy,
+		    a.htBreakfastNy,
+		    a.htRoomServiceNy,
+		    a.htElseNy
+		from
+			hotel a
+	    where 1=1
+	    	AND a.htseq = '4'
+ {executed in 0 msec} 
+2024-09-22T00:23:03.928 [http-nio-8080-exec-6] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+41. select  
+		 	a.htseq,
+		    a.htName,
+		    a.htAddress,
+		    a.htcountry,
+		    a.htDesc,
+		    a.htDelNy,
+		    a.htRegDate,
+		    a.htReviseDate,
+		    a.htNotice,
+		    a.htMap,
+		    a.htInclusionItems,
+		    a.htNameSearch,
+		    a.htPriceSearch,
+		    a.htStarSearch,
+		    a.htClassSearch,
+		    a.htRestaurantNy,
+		    a.htSpaNy,
+		    a.htFitnessCenterNy,
+		    a.htPoolNy,
+		    a.htloungeNy,
+		    a.htStockRoomNy,
+		    a.htParkingNy,
+		    a.htShuttleBusNy,
+		    a.htBreakfastNy,
+		    a.htRoomServiceNy,
+		    a.htElseNy
+		from
+			hotel a
+	    where 1=1
+	    	AND a.htseq = '5'
+ {executed in 0 msec} 
+2024-09-22T00:23:05.117 [http-nio-8080-exec-3] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+41. select  
+		 	a.htseq,
+		    a.htName,
+		    a.htAddress,
+		    a.htcountry,
+		    a.htDesc,
+		    a.htDelNy,
+		    a.htRegDate,
+		    a.htReviseDate,
+		    a.htNotice,
+		    a.htMap,
+		    a.htInclusionItems,
+		    a.htNameSearch,
+		    a.htPriceSearch,
+		    a.htStarSearch,
+		    a.htClassSearch,
+		    a.htRestaurantNy,
+		    a.htSpaNy,
+		    a.htFitnessCenterNy,
+		    a.htPoolNy,
+		    a.htloungeNy,
+		    a.htStockRoomNy,
+		    a.htParkingNy,
+		    a.htShuttleBusNy,
+		    a.htBreakfastNy,
+		    a.htRoomServiceNy,
+		    a.htElseNy
+		from
+			hotel a
+	    where 1=1
+	    	AND a.htseq = '7'
+ {executed in 0 msec} 
+2024-09-22T00:23:07.843 [http-nio-8080-exec-8] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+41. select
+		 	a.htseq,
+		    a.htName,
+		    a.htAddress,
+		    a.htcountry,
+		    a.htDesc,
+		    a.htDelNy,
+		    a.htRegDate,
+		    a.htReviseDate,
+		    a.htNotice,
+		    a.htMap,
+		    a.htInclusionItems,
+		    a.htNameSearch,
+		    a.htPriceSearch,
+		    a.htStarSearch,
+		    a.htClassSearch,
+		    a.htRestaurantNy,
+		    a.htSpaNy,
+		    a.htFitnessCenterNy,
+		    a.htPoolNy,
+		    a.htloungeNy,
+		    a.htStockRoomNy,
+		    a.htParkingNy,
+		    a.htShuttleBusNy,
+		    a.htBreakfastNy,
+		    a.htRoomServiceNy,
+		    a.htElseNy
+		from
+		    hotel a
+		where 1=1
+
+			 AND htStarSearch = 1  
+
+		order by
+			a.htseq desc
+ {executed in 1 msec} 
+2024-09-22T00:23:09.978 [http-nio-8080-exec-5] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+41. select  
+		 	a.htseq,
+		    a.htName,
+		    a.htAddress,
+		    a.htcountry,
+		    a.htDesc,
+		    a.htDelNy,
+		    a.htRegDate,
+		    a.htReviseDate,
+		    a.htNotice,
+		    a.htMap,
+		    a.htInclusionItems,
+		    a.htNameSearch,
+		    a.htPriceSearch,
+		    a.htStarSearch,
+		    a.htClassSearch,
+		    a.htRestaurantNy,
+		    a.htSpaNy,
+		    a.htFitnessCenterNy,
+		    a.htPoolNy,
+		    a.htloungeNy,
+		    a.htStockRoomNy,
+		    a.htParkingNy,
+		    a.htShuttleBusNy,
+		    a.htBreakfastNy,
+		    a.htRoomServiceNy,
+		    a.htElseNy
+		from
+			hotel a
+	    where 1=1
+	    	AND a.htseq = '1'
+ {executed in 1 msec} 
+2024-09-22T00:23:29.563 [http-nio-8080-exec-7] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+41. select
+		 	a.htseq,
+		    a.htName,
+		    a.htAddress,
+		    a.htcountry,
+		    a.htDesc,
+		    a.htDelNy,
+		    a.htRegDate,
+		    a.htReviseDate,
+		    a.htNotice,
+		    a.htMap,
+		    a.htInclusionItems,
+		    a.htNameSearch,
+		    a.htPriceSearch,
+		    a.htStarSearch,
+		    a.htClassSearch,
+		    a.htRestaurantNy,
+		    a.htSpaNy,
+		    a.htFitnessCenterNy,
+		    a.htPoolNy,
+		    a.htloungeNy,
+		    a.htStockRoomNy,
+		    a.htParkingNy,
+		    a.htShuttleBusNy,
+		    a.htBreakfastNy,
+		    a.htRoomServiceNy,
+		    a.htElseNy
+		from
+		    hotel a
+		where 1=1
+
+		order by
+			a.htseq desc
+ {executed in 2 msec} 
+2024-09-22T00:23:29.895 [http-nio-8080-exec-2] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+41. select
+		 	a.htseq,
+		    a.htName,
+		    a.htAddress,
+		    a.htcountry,
+		    a.htDesc,
+		    a.htDelNy,
+		    a.htRegDate,
+		    a.htReviseDate,
+		    a.htNotice,
+		    a.htMap,
+		    a.htInclusionItems,
+		    a.htNameSearch,
+		    a.htPriceSearch,
+		    a.htStarSearch,
+		    a.htClassSearch,
+		    a.htRestaurantNy,
+		    a.htSpaNy,
+		    a.htFitnessCenterNy,
+		    a.htPoolNy,
+		    a.htloungeNy,
+		    a.htStockRoomNy,
+		    a.htParkingNy,
+		    a.htShuttleBusNy,
+		    a.htBreakfastNy,
+		    a.htRoomServiceNy,
+		    a.htElseNy
+		from
+		    hotel a
+		where 1=1
+
+		order by
+			a.htseq desc
+ {executed in 1 msec} 
+2024-09-22T00:23:32.456 [http-nio-8080-exec-1] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+41. select
+		 	a.htseq,
+		    a.htName,
+		    a.htAddress,
+		    a.htcountry,
+		    a.htDesc,
+		    a.htDelNy,
+		    a.htRegDate,
+		    a.htReviseDate,
+		    a.htNotice,
+		    a.htMap,
+		    a.htInclusionItems,
+		    a.htNameSearch,
+		    a.htPriceSearch,
+		    a.htStarSearch,
+		    a.htClassSearch,
+		    a.htRestaurantNy,
+		    a.htSpaNy,
+		    a.htFitnessCenterNy,
+		    a.htPoolNy,
+		    a.htloungeNy,
+		    a.htStockRoomNy,
+		    a.htParkingNy,
+		    a.htShuttleBusNy,
+		    a.htBreakfastNy,
+		    a.htRoomServiceNy,
+		    a.htElseNy
+		from
+		    hotel a
+		where 1=1
+
+			 AND htStarSearch = 2  
+
+		order by
+			a.htseq desc
+ {executed in 1 msec} 
+2024-09-22T00:23:33.627 [http-nio-8080-exec-9] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+41. select
+		 	a.htseq,
+		    a.htName,
+		    a.htAddress,
+		    a.htcountry,
+		    a.htDesc,
+		    a.htDelNy,
+		    a.htRegDate,
+		    a.htReviseDate,
+		    a.htNotice,
+		    a.htMap,
+		    a.htInclusionItems,
+		    a.htNameSearch,
+		    a.htPriceSearch,
+		    a.htStarSearch,
+		    a.htClassSearch,
+		    a.htRestaurantNy,
+		    a.htSpaNy,
+		    a.htFitnessCenterNy,
+		    a.htPoolNy,
+		    a.htloungeNy,
+		    a.htStockRoomNy,
+		    a.htParkingNy,
+		    a.htShuttleBusNy,
+		    a.htBreakfastNy,
+		    a.htRoomServiceNy,
+		    a.htElseNy
+		from
+		    hotel a
+		where 1=1
+
+		order by
+			a.htseq desc
+ {executed in 1 msec} 
+2024-09-22T00:23:35.153 [http-nio-8080-exec-6] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+41. select
+		 	a.htseq,
+		    a.htName,
+		    a.htAddress,
+		    a.htcountry,
+		    a.htDesc,
+		    a.htDelNy,
+		    a.htRegDate,
+		    a.htReviseDate,
+		    a.htNotice,
+		    a.htMap,
+		    a.htInclusionItems,
+		    a.htNameSearch,
+		    a.htPriceSearch,
+		    a.htStarSearch,
+		    a.htClassSearch,
+		    a.htRestaurantNy,
+		    a.htSpaNy,
+		    a.htFitnessCenterNy,
+		    a.htPoolNy,
+		    a.htloungeNy,
+		    a.htStockRoomNy,
+		    a.htParkingNy,
+		    a.htShuttleBusNy,
+		    a.htBreakfastNy,
+		    a.htRoomServiceNy,
+		    a.htElseNy
+		from
+		    hotel a
+		where 1=1
+
+			 AND htStarSearch = 3  
+
+		order by
+			a.htseq desc
+ {executed in 0 msec} 
+2024-09-22T00:23:36.769 [http-nio-8080-exec-9] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+41. select
+		 	a.htseq,
+		    a.htName,
+		    a.htAddress,
+		    a.htcountry,
+		    a.htDesc,
+		    a.htDelNy,
+		    a.htRegDate,
+		    a.htReviseDate,
+		    a.htNotice,
+		    a.htMap,
+		    a.htInclusionItems,
+		    a.htNameSearch,
+		    a.htPriceSearch,
+		    a.htStarSearch,
+		    a.htClassSearch,
+		    a.htRestaurantNy,
+		    a.htSpaNy,
+		    a.htFitnessCenterNy,
+		    a.htPoolNy,
+		    a.htloungeNy,
+		    a.htStockRoomNy,
+		    a.htParkingNy,
+		    a.htShuttleBusNy,
+		    a.htBreakfastNy,
+		    a.htRoomServiceNy,
+		    a.htElseNy
+		from
+		    hotel a
+		where 1=1
+
+		order by
+			a.htseq desc
+ {executed in 2 msec} 
+2024-09-22T00:23:37.195 [http-nio-8080-exec-9] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+41. select
+		 	a.htseq,
+		    a.htName,
+		    a.htAddress,
+		    a.htcountry,
+		    a.htDesc,
+		    a.htDelNy,
+		    a.htRegDate,
+		    a.htReviseDate,
+		    a.htNotice,
+		    a.htMap,
+		    a.htInclusionItems,
+		    a.htNameSearch,
+		    a.htPriceSearch,
+		    a.htStarSearch,
+		    a.htClassSearch,
+		    a.htRestaurantNy,
+		    a.htSpaNy,
+		    a.htFitnessCenterNy,
+		    a.htPoolNy,
+		    a.htloungeNy,
+		    a.htStockRoomNy,
+		    a.htParkingNy,
+		    a.htShuttleBusNy,
+		    a.htBreakfastNy,
+		    a.htRoomServiceNy,
+		    a.htElseNy
+		from
+		    hotel a
+		where 1=1
+
+		order by
+			a.htseq desc
+ {executed in 2 msec} 
+2024-09-22T00:23:42.157 [http-nio-8080-exec-1] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+41. select
+		 	a.htseq,
+		    a.htName,
+		    a.htAddress,
+		    a.htcountry,
+		    a.htDesc,
+		    a.htDelNy,
+		    a.htRegDate,
+		    a.htReviseDate,
+		    a.htNotice,
+		    a.htMap,
+		    a.htInclusionItems,
+		    a.htNameSearch,
+		    a.htPriceSearch,
+		    a.htStarSearch,
+		    a.htClassSearch,
+		    a.htRestaurantNy,
+		    a.htSpaNy,
+		    a.htFitnessCenterNy,
+		    a.htPoolNy,
+		    a.htloungeNy,
+		    a.htStockRoomNy,
+		    a.htParkingNy,
+		    a.htShuttleBusNy,
+		    a.htBreakfastNy,
+		    a.htRoomServiceNy,
+		    a.htElseNy
+		from
+		    hotel a
+		where 1=1
+
+			 AND htStarSearch = 5  
+
+		order by
+			a.htseq desc
+ {executed in 0 msec} 
+2024-09-22T00:23:46.108 [http-nio-8080-exec-7] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+41. select
+		 	a.htseq,
+		    a.htName,
+		    a.htAddress,
+		    a.htcountry,
+		    a.htDesc,
+		    a.htDelNy,
+		    a.htRegDate,
+		    a.htReviseDate,
+		    a.htNotice,
+		    a.htMap,
+		    a.htInclusionItems,
+		    a.htNameSearch,
+		    a.htPriceSearch,
+		    a.htStarSearch,
+		    a.htClassSearch,
+		    a.htRestaurantNy,
+		    a.htSpaNy,
+		    a.htFitnessCenterNy,
+		    a.htPoolNy,
+		    a.htloungeNy,
+		    a.htStockRoomNy,
+		    a.htParkingNy,
+		    a.htShuttleBusNy,
+		    a.htBreakfastNy,
+		    a.htRoomServiceNy,
+		    a.htElseNy
+		from
+		    hotel a
+		where 1=1
+
+		order by
+			a.htseq desc
+ {executed in 1 msec} 
+2024-09-22T00:23:47.218 [http-nio-8080-exec-4] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+41. select
+		 	a.htseq,
+		    a.htName,
+		    a.htAddress,
+		    a.htcountry,
+		    a.htDesc,
+		    a.htDelNy,
+		    a.htRegDate,
+		    a.htReviseDate,
+		    a.htNotice,
+		    a.htMap,
+		    a.htInclusionItems,
+		    a.htNameSearch,
+		    a.htPriceSearch,
+		    a.htStarSearch,
+		    a.htClassSearch,
+		    a.htRestaurantNy,
+		    a.htSpaNy,
+		    a.htFitnessCenterNy,
+		    a.htPoolNy,
+		    a.htloungeNy,
+		    a.htStockRoomNy,
+		    a.htParkingNy,
+		    a.htShuttleBusNy,
+		    a.htBreakfastNy,
+		    a.htRoomServiceNy,
+		    a.htElseNy
+		from
+		    hotel a
+		where 1=1
+
+		order by
+			a.htseq desc
+ {executed in 1 msec} 
+2024-09-22T00:23:47.951 [http-nio-8080-exec-10] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+41. select
+		 	a.htseq,
+		    a.htName,
+		    a.htAddress,
+		    a.htcountry,
+		    a.htDesc,
+		    a.htDelNy,
+		    a.htRegDate,
+		    a.htReviseDate,
+		    a.htNotice,
+		    a.htMap,
+		    a.htInclusionItems,
+		    a.htNameSearch,
+		    a.htPriceSearch,
+		    a.htStarSearch,
+		    a.htClassSearch,
+		    a.htRestaurantNy,
+		    a.htSpaNy,
+		    a.htFitnessCenterNy,
+		    a.htPoolNy,
+		    a.htloungeNy,
+		    a.htStockRoomNy,
+		    a.htParkingNy,
+		    a.htShuttleBusNy,
+		    a.htBreakfastNy,
+		    a.htRoomServiceNy,
+		    a.htElseNy
+		from
+		    hotel a
+		where 1=1
+
+		order by
+			a.htseq desc
+ {executed in 1 msec} 
+2024-09-22T00:23:49.873 [http-nio-8080-exec-6] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+41. select
+		 	a.htseq,
+		    a.htName,
+		    a.htAddress,
+		    a.htcountry,
+		    a.htDesc,
+		    a.htDelNy,
+		    a.htRegDate,
+		    a.htReviseDate,
+		    a.htNotice,
+		    a.htMap,
+		    a.htInclusionItems,
+		    a.htNameSearch,
+		    a.htPriceSearch,
+		    a.htStarSearch,
+		    a.htClassSearch,
+		    a.htRestaurantNy,
+		    a.htSpaNy,
+		    a.htFitnessCenterNy,
+		    a.htPoolNy,
+		    a.htloungeNy,
+		    a.htStockRoomNy,
+		    a.htParkingNy,
+		    a.htShuttleBusNy,
+		    a.htBreakfastNy,
+		    a.htRoomServiceNy,
+		    a.htElseNy
+		from
+		    hotel a
+		where 1=1
+
+			 AND htStarSearch = 1  
+
+		order by
+			a.htseq desc
+ {executed in 1 msec} 
+2024-09-22T00:23:52.781 [http-nio-8080-exec-3] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+41. select
+		 	a.htseq,
+		    a.htName,
+		    a.htAddress,
+		    a.htcountry,
+		    a.htDesc,
+		    a.htDelNy,
+		    a.htRegDate,
+		    a.htReviseDate,
+		    a.htNotice,
+		    a.htMap,
+		    a.htInclusionItems,
+		    a.htNameSearch,
+		    a.htPriceSearch,
+		    a.htStarSearch,
+		    a.htClassSearch,
+		    a.htRestaurantNy,
+		    a.htSpaNy,
+		    a.htFitnessCenterNy,
+		    a.htPoolNy,
+		    a.htloungeNy,
+		    a.htStockRoomNy,
+		    a.htParkingNy,
+		    a.htShuttleBusNy,
+		    a.htBreakfastNy,
+		    a.htRoomServiceNy,
+		    a.htElseNy
+		from
+		    hotel a
+		where 1=1
+
+		order by
+			a.htseq desc
+ {executed in 0 msec} 
+2024-09-22T00:24:42.551 [http-nio-8080-exec-1] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+41. select
+		 	a.htseq,
+		    a.htName,
+		    a.htAddress,
+		    a.htcountry,
+		    a.htDesc,
+		    a.htDelNy,
+		    a.htRegDate,
+		    a.htReviseDate,
+		    a.htNotice,
+		    a.htMap,
+		    a.htInclusionItems,
+		    a.htNameSearch,
+		    a.htPriceSearch,
+		    a.htStarSearch,
+		    a.htClassSearch,
+		    a.htRestaurantNy,
+		    a.htSpaNy,
+		    a.htFitnessCenterNy,
+		    a.htPoolNy,
+		    a.htloungeNy,
+		    a.htStockRoomNy,
+		    a.htParkingNy,
+		    a.htShuttleBusNy,
+		    a.htBreakfastNy,
+		    a.htRoomServiceNy,
+		    a.htElseNy
+		from
+		    hotel a
+		where 1=1
+
+		order by
+			a.htseq desc
+ {executed in 1 msec} 
+2024-09-22T00:24:54.488 [http-nio-8080-exec-10] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+41. select
+		 	a.htseq,
+		    a.htName,
+		    a.htAddress,
+		    a.htcountry,
+		    a.htDesc,
+		    a.htDelNy,
+		    a.htRegDate,
+		    a.htReviseDate,
+		    a.htNotice,
+		    a.htMap,
+		    a.htInclusionItems,
+		    a.htNameSearch,
+		    a.htPriceSearch,
+		    a.htStarSearch,
+		    a.htClassSearch,
+		    a.htRestaurantNy,
+		    a.htSpaNy,
+		    a.htFitnessCenterNy,
+		    a.htPoolNy,
+		    a.htloungeNy,
+		    a.htStockRoomNy,
+		    a.htParkingNy,
+		    a.htShuttleBusNy,
+		    a.htBreakfastNy,
+		    a.htRoomServiceNy,
+		    a.htElseNy
+		from
+		    hotel a
+		where 1=1
+
+		order by
+			a.htseq desc
+ {executed in 1 msec} 
+2024-09-22T00:24:59.349 [http-nio-8080-exec-1] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+41. select
+		 	a.htseq,
+		    a.htName,
+		    a.htAddress,
+		    a.htcountry,
+		    a.htDesc,
+		    a.htDelNy,
+		    a.htRegDate,
+		    a.htReviseDate,
+		    a.htNotice,
+		    a.htMap,
+		    a.htInclusionItems,
+		    a.htNameSearch,
+		    a.htPriceSearch,
+		    a.htStarSearch,
+		    a.htClassSearch,
+		    a.htRestaurantNy,
+		    a.htSpaNy,
+		    a.htFitnessCenterNy,
+		    a.htPoolNy,
+		    a.htloungeNy,
+		    a.htStockRoomNy,
+		    a.htParkingNy,
+		    a.htShuttleBusNy,
+		    a.htBreakfastNy,
+		    a.htRoomServiceNy,
+		    a.htElseNy
+		from
+		    hotel a
+		where 1=1
+
+			 AND htStarSearch = 1  
+
+		order by
+			a.htseq desc
+ {executed in 1 msec} 
+2024-09-22T00:25:02.197 [http-nio-8080-exec-9] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+41. select
+		 	a.htseq,
+		    a.htName,
+		    a.htAddress,
+		    a.htcountry,
+		    a.htDesc,
+		    a.htDelNy,
+		    a.htRegDate,
+		    a.htReviseDate,
+		    a.htNotice,
+		    a.htMap,
+		    a.htInclusionItems,
+		    a.htNameSearch,
+		    a.htPriceSearch,
+		    a.htStarSearch,
+		    a.htClassSearch,
+		    a.htRestaurantNy,
+		    a.htSpaNy,
+		    a.htFitnessCenterNy,
+		    a.htPoolNy,
+		    a.htloungeNy,
+		    a.htStockRoomNy,
+		    a.htParkingNy,
+		    a.htShuttleBusNy,
+		    a.htBreakfastNy,
+		    a.htRoomServiceNy,
+		    a.htElseNy
+		from
+		    hotel a
+		where 1=1
+
+		order by
+			a.htseq desc
+ {executed in 1 msec} 
+2024-09-22T00:25:04.911 [http-nio-8080-exec-4] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+41. select
+		 	a.htseq,
+		    a.htName,
+		    a.htAddress,
+		    a.htcountry,
+		    a.htDesc,
+		    a.htDelNy,
+		    a.htRegDate,
+		    a.htReviseDate,
+		    a.htNotice,
+		    a.htMap,
+		    a.htInclusionItems,
+		    a.htNameSearch,
+		    a.htPriceSearch,
+		    a.htStarSearch,
+		    a.htClassSearch,
+		    a.htRestaurantNy,
+		    a.htSpaNy,
+		    a.htFitnessCenterNy,
+		    a.htPoolNy,
+		    a.htloungeNy,
+		    a.htStockRoomNy,
+		    a.htParkingNy,
+		    a.htShuttleBusNy,
+		    a.htBreakfastNy,
+		    a.htRoomServiceNy,
+		    a.htElseNy
+		from
+		    hotel a
+		where 1=1
+
+			 AND htStarSearch = 5  
+
+		order by
+			a.htseq desc
+ {executed in 0 msec} 
+2024-09-22T00:25:06.822 [http-nio-8080-exec-8] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+41. select
+		 	a.htseq,
+		    a.htName,
+		    a.htAddress,
+		    a.htcountry,
+		    a.htDesc,
+		    a.htDelNy,
+		    a.htRegDate,
+		    a.htReviseDate,
+		    a.htNotice,
+		    a.htMap,
+		    a.htInclusionItems,
+		    a.htNameSearch,
+		    a.htPriceSearch,
+		    a.htStarSearch,
+		    a.htClassSearch,
+		    a.htRestaurantNy,
+		    a.htSpaNy,
+		    a.htFitnessCenterNy,
+		    a.htPoolNy,
+		    a.htloungeNy,
+		    a.htStockRoomNy,
+		    a.htParkingNy,
+		    a.htShuttleBusNy,
+		    a.htBreakfastNy,
+		    a.htRoomServiceNy,
+		    a.htElseNy
+		from
+		    hotel a
+		where 1=1
+
+		order by
+			a.htseq desc
+ {executed in 1 msec} 
+2024-09-22T00:32:52.863 [File Watcher] INFO o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification) 
+2024-09-22T00:32:52.865 [Thread-35] INFO o.a.c.h.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"] 
+2024-09-22T00:32:53.765 [Thread-35] INFO c.z.h.HikariDataSource - HikariPool-5 - Shutdown initiated... 
+2024-09-22T00:32:53.769 [Thread-35] INFO c.z.h.HikariDataSource - HikariPool-5 - Shutdown completed. 
+2024-09-22T00:32:53.860 [restartedMain] INFO c.a.NewjeansApplication - Starting NewjeansApplication using Java 17.0.11 with PID 22800 (C:\factory\ws_sts4_4240\repo_newjeans\newjeans\bin\main started by USER in C:\factory\ws_sts4_4240\repo_newjeans\newjeans) 
+2024-09-22T00:32:53.861 [restartedMain] INFO c.a.NewjeansApplication - No active profile set, falling back to 1 default profile: "default" 
+2024-09-22T00:32:54.145 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat initialized with port 8080 (http) 
+2024-09-22T00:32:54.146 [restartedMain] INFO o.a.c.h.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"] 
+2024-09-22T00:32:54.146 [restartedMain] INFO o.a.c.c.StandardService - Starting service [Tomcat] 
+2024-09-22T00:32:54.146 [restartedMain] INFO o.a.c.c.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.28] 
+2024-09-22T00:32:54.172 [restartedMain] INFO o.a.c.c.C.[.[.[/] - Initializing Spring embedded WebApplicationContext 
+2024-09-22T00:32:54.173 [restartedMain] INFO o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 310 ms 
+2024-09-22T00:32:54.339 [restartedMain] INFO o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729 
+2024-09-22T00:32:54.346 [restartedMain] INFO o.a.c.h.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"] 
+2024-09-22T00:32:54.350 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/' 
+2024-09-22T00:32:54.355 [restartedMain] INFO c.a.NewjeansApplication - Started NewjeansApplication in 0.532 seconds (process running for 2591.829) 
+2024-09-22T00:32:54.355 [restartedMain] INFO o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged 
+2024-09-22T00:33:15.892 [http-nio-8080-exec-1] INFO o.a.c.c.C.[.[.[/] - Initializing Spring DispatcherServlet 'dispatcherServlet' 
+2024-09-22T00:33:15.892 [http-nio-8080-exec-1] INFO o.s.w.s.DispatcherServlet - Initializing Servlet 'dispatcherServlet' 
+2024-09-22T00:33:15.893 [http-nio-8080-exec-1] INFO o.s.w.s.DispatcherServlet - Completed initialization in 1 ms 
+2024-09-22T00:33:15.895 [http-nio-8080-exec-1] INFO c.z.h.HikariDataSource - HikariPool-6 - Starting... 
+2024-09-22T00:33:15.913 [http-nio-8080-exec-1] INFO c.z.h.p.HikariPool - HikariPool-6 - Added connection net.sf.log4jdbc.sql.jdbcapi.ConnectionSpy@3e1f1534 
+2024-09-22T00:33:15.913 [http-nio-8080-exec-1] INFO c.z.h.HikariDataSource - HikariPool-6 - Start completed. 
+2024-09-22T00:33:15.914 [http-nio-8080-exec-1] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+51. select
+		 	a.htseq,
+		    a.htName,
+		    a.htAddress,
+		    a.htcountry,
+		    a.htDesc,
+		    a.htDelNy,
+		    a.htRegDate,
+		    a.htReviseDate,
+		    a.htNotice,
+		    a.htMap,
+		    a.htInclusionItems,
+		    a.htNameSearch,
+		    a.htPriceSearch,
+		    a.htStarSearch,
+		    a.htClassSearch,
+		    a.htRestaurantNy,
+		    a.htSpaNy,
+		    a.htFitnessCenterNy,
+		    a.htPoolNy,
+		    a.htloungeNy,
+		    a.htStockRoomNy,
+		    a.htParkingNy,
+		    a.htShuttleBusNy,
+		    a.htBreakfastNy,
+		    a.htRoomServiceNy,
+		    a.htElseNy
+		from
+		    hotel a
+		where 1=1
+
+		order by
+			a.htseq desc
+ {executed in 1 msec} 
+2024-09-22T00:33:18.944 [http-nio-8080-exec-5] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+51. select
+		 	a.htseq,
+		    a.htName,
+		    a.htAddress,
+		    a.htcountry,
+		    a.htDesc,
+		    a.htDelNy,
+		    a.htRegDate,
+		    a.htReviseDate,
+		    a.htNotice,
+		    a.htMap,
+		    a.htInclusionItems,
+		    a.htNameSearch,
+		    a.htPriceSearch,
+		    a.htStarSearch,
+		    a.htClassSearch,
+		    a.htRestaurantNy,
+		    a.htSpaNy,
+		    a.htFitnessCenterNy,
+		    a.htPoolNy,
+		    a.htloungeNy,
+		    a.htStockRoomNy,
+		    a.htParkingNy,
+		    a.htShuttleBusNy,
+		    a.htBreakfastNy,
+		    a.htRoomServiceNy,
+		    a.htElseNy
+		from
+		    hotel a
+		where 1=1
+
+			 AND htStarSearch = 1 
+
+		order by
+			a.htseq desc
+ {executed in 1 msec} 
+2024-09-22T00:33:20.302 [http-nio-8080-exec-9] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+51. select
+		 	a.htseq,
+		    a.htName,
+		    a.htAddress,
+		    a.htcountry,
+		    a.htDesc,
+		    a.htDelNy,
+		    a.htRegDate,
+		    a.htReviseDate,
+		    a.htNotice,
+		    a.htMap,
+		    a.htInclusionItems,
+		    a.htNameSearch,
+		    a.htPriceSearch,
+		    a.htStarSearch,
+		    a.htClassSearch,
+		    a.htRestaurantNy,
+		    a.htSpaNy,
+		    a.htFitnessCenterNy,
+		    a.htPoolNy,
+		    a.htloungeNy,
+		    a.htStockRoomNy,
+		    a.htParkingNy,
+		    a.htShuttleBusNy,
+		    a.htBreakfastNy,
+		    a.htRoomServiceNy,
+		    a.htElseNy
+		from
+		    hotel a
+		where 1=1
+
+		order by
+			a.htseq desc
+ {executed in 1 msec} 
+2024-09-22T00:33:22.083 [http-nio-8080-exec-3] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+51. select
+		 	a.htseq,
+		    a.htName,
+		    a.htAddress,
+		    a.htcountry,
+		    a.htDesc,
+		    a.htDelNy,
+		    a.htRegDate,
+		    a.htReviseDate,
+		    a.htNotice,
+		    a.htMap,
+		    a.htInclusionItems,
+		    a.htNameSearch,
+		    a.htPriceSearch,
+		    a.htStarSearch,
+		    a.htClassSearch,
+		    a.htRestaurantNy,
+		    a.htSpaNy,
+		    a.htFitnessCenterNy,
+		    a.htPoolNy,
+		    a.htloungeNy,
+		    a.htStockRoomNy,
+		    a.htParkingNy,
+		    a.htShuttleBusNy,
+		    a.htBreakfastNy,
+		    a.htRoomServiceNy,
+		    a.htElseNy
+		from
+		    hotel a
+		where 1=1
+
+			 AND htStarSearch = 2 
+
+		order by
+			a.htseq desc
+ {executed in 1 msec} 
+2024-09-22T00:33:23.654 [http-nio-8080-exec-4] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+51. select
+		 	a.htseq,
+		    a.htName,
+		    a.htAddress,
+		    a.htcountry,
+		    a.htDesc,
+		    a.htDelNy,
+		    a.htRegDate,
+		    a.htReviseDate,
+		    a.htNotice,
+		    a.htMap,
+		    a.htInclusionItems,
+		    a.htNameSearch,
+		    a.htPriceSearch,
+		    a.htStarSearch,
+		    a.htClassSearch,
+		    a.htRestaurantNy,
+		    a.htSpaNy,
+		    a.htFitnessCenterNy,
+		    a.htPoolNy,
+		    a.htloungeNy,
+		    a.htStockRoomNy,
+		    a.htParkingNy,
+		    a.htShuttleBusNy,
+		    a.htBreakfastNy,
+		    a.htRoomServiceNy,
+		    a.htElseNy
+		from
+		    hotel a
+		where 1=1
+
+		order by
+			a.htseq desc
+ {executed in 1 msec} 
+2024-09-22T00:33:26.157 [http-nio-8080-exec-7] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+51. select
+		 	a.htseq,
+		    a.htName,
+		    a.htAddress,
+		    a.htcountry,
+		    a.htDesc,
+		    a.htDelNy,
+		    a.htRegDate,
+		    a.htReviseDate,
+		    a.htNotice,
+		    a.htMap,
+		    a.htInclusionItems,
+		    a.htNameSearch,
+		    a.htPriceSearch,
+		    a.htStarSearch,
+		    a.htClassSearch,
+		    a.htRestaurantNy,
+		    a.htSpaNy,
+		    a.htFitnessCenterNy,
+		    a.htPoolNy,
+		    a.htloungeNy,
+		    a.htStockRoomNy,
+		    a.htParkingNy,
+		    a.htShuttleBusNy,
+		    a.htBreakfastNy,
+		    a.htRoomServiceNy,
+		    a.htElseNy
+		from
+		    hotel a
+		where 1=1
+
+			 AND htStarSearch = 3 
+
+		order by
+			a.htseq desc
+ {executed in 1 msec} 
+2024-09-22T00:33:26.911 [http-nio-8080-exec-2] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+51. select
+		 	a.htseq,
+		    a.htName,
+		    a.htAddress,
+		    a.htcountry,
+		    a.htDesc,
+		    a.htDelNy,
+		    a.htRegDate,
+		    a.htReviseDate,
+		    a.htNotice,
+		    a.htMap,
+		    a.htInclusionItems,
+		    a.htNameSearch,
+		    a.htPriceSearch,
+		    a.htStarSearch,
+		    a.htClassSearch,
+		    a.htRestaurantNy,
+		    a.htSpaNy,
+		    a.htFitnessCenterNy,
+		    a.htPoolNy,
+		    a.htloungeNy,
+		    a.htStockRoomNy,
+		    a.htParkingNy,
+		    a.htShuttleBusNy,
+		    a.htBreakfastNy,
+		    a.htRoomServiceNy,
+		    a.htElseNy
+		from
+		    hotel a
+		where 1=1
+
+		order by
+			a.htseq desc
+ {executed in 0 msec} 
+2024-09-22T00:33:28.591 [http-nio-8080-exec-10] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+51. select
+		 	a.htseq,
+		    a.htName,
+		    a.htAddress,
+		    a.htcountry,
+		    a.htDesc,
+		    a.htDelNy,
+		    a.htRegDate,
+		    a.htReviseDate,
+		    a.htNotice,
+		    a.htMap,
+		    a.htInclusionItems,
+		    a.htNameSearch,
+		    a.htPriceSearch,
+		    a.htStarSearch,
+		    a.htClassSearch,
+		    a.htRestaurantNy,
+		    a.htSpaNy,
+		    a.htFitnessCenterNy,
+		    a.htPoolNy,
+		    a.htloungeNy,
+		    a.htStockRoomNy,
+		    a.htParkingNy,
+		    a.htShuttleBusNy,
+		    a.htBreakfastNy,
+		    a.htRoomServiceNy,
+		    a.htElseNy
+		from
+		    hotel a
+		where 1=1
+
+			 AND htStarSearch = 4 
+
+		order by
+			a.htseq desc
+ {executed in 1 msec} 
+2024-09-22T00:33:30.012 [http-nio-8080-exec-6] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+51. select
+		 	a.htseq,
+		    a.htName,
+		    a.htAddress,
+		    a.htcountry,
+		    a.htDesc,
+		    a.htDelNy,
+		    a.htRegDate,
+		    a.htReviseDate,
+		    a.htNotice,
+		    a.htMap,
+		    a.htInclusionItems,
+		    a.htNameSearch,
+		    a.htPriceSearch,
+		    a.htStarSearch,
+		    a.htClassSearch,
+		    a.htRestaurantNy,
+		    a.htSpaNy,
+		    a.htFitnessCenterNy,
+		    a.htPoolNy,
+		    a.htloungeNy,
+		    a.htStockRoomNy,
+		    a.htParkingNy,
+		    a.htShuttleBusNy,
+		    a.htBreakfastNy,
+		    a.htRoomServiceNy,
+		    a.htElseNy
+		from
+		    hotel a
+		where 1=1
+
+		order by
+			a.htseq desc
+ {executed in 0 msec} 
+2024-09-22T00:33:31.749 [http-nio-8080-exec-10] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+51. select
+		 	a.htseq,
+		    a.htName,
+		    a.htAddress,
+		    a.htcountry,
+		    a.htDesc,
+		    a.htDelNy,
+		    a.htRegDate,
+		    a.htReviseDate,
+		    a.htNotice,
+		    a.htMap,
+		    a.htInclusionItems,
+		    a.htNameSearch,
+		    a.htPriceSearch,
+		    a.htStarSearch,
+		    a.htClassSearch,
+		    a.htRestaurantNy,
+		    a.htSpaNy,
+		    a.htFitnessCenterNy,
+		    a.htPoolNy,
+		    a.htloungeNy,
+		    a.htStockRoomNy,
+		    a.htParkingNy,
+		    a.htShuttleBusNy,
+		    a.htBreakfastNy,
+		    a.htRoomServiceNy,
+		    a.htElseNy
+		from
+		    hotel a
+		where 1=1
+
+			 AND htStarSearch = 4 
+
+		order by
+			a.htseq desc
+ {executed in 1 msec} 
+2024-09-22T00:33:32.212 [http-nio-8080-exec-7] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+51. select
+		 	a.htseq,
+		    a.htName,
+		    a.htAddress,
+		    a.htcountry,
+		    a.htDesc,
+		    a.htDelNy,
+		    a.htRegDate,
+		    a.htReviseDate,
+		    a.htNotice,
+		    a.htMap,
+		    a.htInclusionItems,
+		    a.htNameSearch,
+		    a.htPriceSearch,
+		    a.htStarSearch,
+		    a.htClassSearch,
+		    a.htRestaurantNy,
+		    a.htSpaNy,
+		    a.htFitnessCenterNy,
+		    a.htPoolNy,
+		    a.htloungeNy,
+		    a.htStockRoomNy,
+		    a.htParkingNy,
+		    a.htShuttleBusNy,
+		    a.htBreakfastNy,
+		    a.htRoomServiceNy,
+		    a.htElseNy
+		from
+		    hotel a
+		where 1=1
+
+		order by
+			a.htseq desc
+ {executed in 1 msec} 
+2024-09-22T00:33:34.154 [http-nio-8080-exec-8] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+51. select
+		 	a.htseq,
+		    a.htName,
+		    a.htAddress,
+		    a.htcountry,
+		    a.htDesc,
+		    a.htDelNy,
+		    a.htRegDate,
+		    a.htReviseDate,
+		    a.htNotice,
+		    a.htMap,
+		    a.htInclusionItems,
+		    a.htNameSearch,
+		    a.htPriceSearch,
+		    a.htStarSearch,
+		    a.htClassSearch,
+		    a.htRestaurantNy,
+		    a.htSpaNy,
+		    a.htFitnessCenterNy,
+		    a.htPoolNy,
+		    a.htloungeNy,
+		    a.htStockRoomNy,
+		    a.htParkingNy,
+		    a.htShuttleBusNy,
+		    a.htBreakfastNy,
+		    a.htRoomServiceNy,
+		    a.htElseNy
+		from
+		    hotel a
+		where 1=1
+
+			 AND htStarSearch = 5 
+
+		order by
+			a.htseq desc
+ {executed in 0 msec} 
+2024-09-22T00:33:35.065 [http-nio-8080-exec-1] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+51. select
+		 	a.htseq,
+		    a.htName,
+		    a.htAddress,
+		    a.htcountry,
+		    a.htDesc,
+		    a.htDelNy,
+		    a.htRegDate,
+		    a.htReviseDate,
+		    a.htNotice,
+		    a.htMap,
+		    a.htInclusionItems,
+		    a.htNameSearch,
+		    a.htPriceSearch,
+		    a.htStarSearch,
+		    a.htClassSearch,
+		    a.htRestaurantNy,
+		    a.htSpaNy,
+		    a.htFitnessCenterNy,
+		    a.htPoolNy,
+		    a.htloungeNy,
+		    a.htStockRoomNy,
+		    a.htParkingNy,
+		    a.htShuttleBusNy,
+		    a.htBreakfastNy,
+		    a.htRoomServiceNy,
+		    a.htElseNy
+		from
+		    hotel a
+		where 1=1
+
+		order by
+			a.htseq desc
+ {executed in 0 msec} 
+2024-09-22T00:33:58.763 [http-nio-8080-exec-7] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+51. select
+		 	a.htseq,
+		    a.htName,
+		    a.htAddress,
+		    a.htcountry,
+		    a.htDesc,
+		    a.htDelNy,
+		    a.htRegDate,
+		    a.htReviseDate,
+		    a.htNotice,
+		    a.htMap,
+		    a.htInclusionItems,
+		    a.htNameSearch,
+		    a.htPriceSearch,
+		    a.htStarSearch,
+		    a.htClassSearch,
+		    a.htRestaurantNy,
+		    a.htSpaNy,
+		    a.htFitnessCenterNy,
+		    a.htPoolNy,
+		    a.htloungeNy,
+		    a.htStockRoomNy,
+		    a.htParkingNy,
+		    a.htShuttleBusNy,
+		    a.htBreakfastNy,
+		    a.htRoomServiceNy,
+		    a.htElseNy
+		from
+		    hotel a
+		where 1=1
+
+		order by
+			a.htseq desc
+ {executed in 1 msec} 
+2024-09-22T00:33:59.357 [File Watcher] INFO o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification) 
+2024-09-22T00:33:59.358 [Thread-39] INFO o.a.c.h.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"] 
+2024-09-22T00:34:00.362 [Thread-39] INFO c.z.h.HikariDataSource - HikariPool-6 - Shutdown initiated... 
+2024-09-22T00:34:00.369 [Thread-39] INFO c.z.h.HikariDataSource - HikariPool-6 - Shutdown completed. 
+2024-09-22T00:34:00.463 [restartedMain] INFO c.a.NewjeansApplication - Starting NewjeansApplication using Java 17.0.11 with PID 22800 (C:\factory\ws_sts4_4240\repo_newjeans\newjeans\bin\main started by USER in C:\factory\ws_sts4_4240\repo_newjeans\newjeans) 
+2024-09-22T00:34:00.464 [restartedMain] INFO c.a.NewjeansApplication - No active profile set, falling back to 1 default profile: "default" 
+2024-09-22T00:34:00.730 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat initialized with port 8080 (http) 
+2024-09-22T00:34:00.731 [restartedMain] INFO o.a.c.h.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"] 
+2024-09-22T00:34:00.731 [restartedMain] INFO o.a.c.c.StandardService - Starting service [Tomcat] 
+2024-09-22T00:34:00.731 [restartedMain] INFO o.a.c.c.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.28] 
+2024-09-22T00:34:00.759 [restartedMain] INFO o.a.c.c.C.[.[.[/] - Initializing Spring embedded WebApplicationContext 
+2024-09-22T00:34:00.759 [restartedMain] INFO o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 294 ms 
+2024-09-22T00:34:00.923 [restartedMain] INFO o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729 
+2024-09-22T00:34:00.929 [restartedMain] INFO o.a.c.h.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"] 
+2024-09-22T00:34:00.934 [restartedMain] INFO o.s.b.w.e.t.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/' 
+2024-09-22T00:34:00.938 [restartedMain] INFO c.a.NewjeansApplication - Started NewjeansApplication in 0.511 seconds (process running for 2658.412) 
+2024-09-22T00:34:00.939 [restartedMain] INFO o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged 
+2024-09-22T00:34:00.942 [http-nio-8080-exec-1] INFO o.a.c.c.C.[.[.[/] - Initializing Spring DispatcherServlet 'dispatcherServlet' 
+2024-09-22T00:34:00.942 [http-nio-8080-exec-1] INFO o.s.w.s.DispatcherServlet - Initializing Servlet 'dispatcherServlet' 
+2024-09-22T00:34:00.943 [http-nio-8080-exec-1] INFO o.s.w.s.DispatcherServlet - Completed initialization in 1 ms 
+2024-09-22T00:34:01.132 [http-nio-8080-exec-4] INFO c.z.h.HikariDataSource - HikariPool-7 - Starting... 
+2024-09-22T00:34:01.154 [http-nio-8080-exec-4] INFO c.z.h.p.HikariPool - HikariPool-7 - Added connection net.sf.log4jdbc.sql.jdbcapi.ConnectionSpy@4a0c78b4 
+2024-09-22T00:34:01.154 [http-nio-8080-exec-4] INFO c.z.h.HikariDataSource - HikariPool-7 - Start completed. 
+2024-09-22T00:34:01.157 [http-nio-8080-exec-4] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+61. select
+		 	a.htseq,
+		    a.htName,
+		    a.htAddress,
+		    a.htcountry,
+		    a.htDesc,
+		    a.htDelNy,
+		    a.htRegDate,
+		    a.htReviseDate,
+		    a.htNotice,
+		    a.htMap,
+		    a.htInclusionItems,
+		    a.htNameSearch,
+		    a.htPriceSearch,
+		    a.htStarSearch,
+		    a.htClassSearch,
+		    a.htRestaurantNy,
+		    a.htSpaNy,
+		    a.htFitnessCenterNy,
+		    a.htPoolNy,
+		    a.htloungeNy,
+		    a.htStockRoomNy,
+		    a.htParkingNy,
+		    a.htShuttleBusNy,
+		    a.htBreakfastNy,
+		    a.htRoomServiceNy,
+		    a.htElseNy
+		from
+		    hotel a
+		where 1=1
+
+			 AND htStarSearch = 5 
+
+		order by
+			a.htseq desc
+ {executed in 2 msec} 
+2024-09-22T00:34:01.984 [http-nio-8080-exec-7] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+61. select
+		 	a.htseq,
+		    a.htName,
+		    a.htAddress,
+		    a.htcountry,
+		    a.htDesc,
+		    a.htDelNy,
+		    a.htRegDate,
+		    a.htReviseDate,
+		    a.htNotice,
+		    a.htMap,
+		    a.htInclusionItems,
+		    a.htNameSearch,
+		    a.htPriceSearch,
+		    a.htStarSearch,
+		    a.htClassSearch,
+		    a.htRestaurantNy,
+		    a.htSpaNy,
+		    a.htFitnessCenterNy,
+		    a.htPoolNy,
+		    a.htloungeNy,
+		    a.htStockRoomNy,
+		    a.htParkingNy,
+		    a.htShuttleBusNy,
+		    a.htBreakfastNy,
+		    a.htRoomServiceNy,
+		    a.htElseNy
+		from
+		    hotel a
+		where 1=1
+
+		order by
+			a.htseq desc
+ {executed in 1 msec} 
+2024-09-22T00:34:15.198 [http-nio-8080-exec-6] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+61. select
+		 	a.htseq,
+		    a.htName,
+		    a.htAddress,
+		    a.htcountry,
+		    a.htDesc,
+		    a.htDelNy,
+		    a.htRegDate,
+		    a.htReviseDate,
+		    a.htNotice,
+		    a.htMap,
+		    a.htInclusionItems,
+		    a.htNameSearch,
+		    a.htPriceSearch,
+		    a.htStarSearch,
+		    a.htClassSearch,
+		    a.htRestaurantNy,
+		    a.htSpaNy,
+		    a.htFitnessCenterNy,
+		    a.htPoolNy,
+		    a.htloungeNy,
+		    a.htStockRoomNy,
+		    a.htParkingNy,
+		    a.htShuttleBusNy,
+		    a.htBreakfastNy,
+		    a.htRoomServiceNy,
+		    a.htElseNy
+		from
+		    hotel a
+		where 1=1
+
+		order by
+			a.htseq desc
+ {executed in 0 msec} 
+2024-09-22T00:34:22.422 [http-nio-8080-exec-4] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+61. select
+		 	a.htseq,
+		    a.htName,
+		    a.htAddress,
+		    a.htcountry,
+		    a.htDesc,
+		    a.htDelNy,
+		    a.htRegDate,
+		    a.htReviseDate,
+		    a.htNotice,
+		    a.htMap,
+		    a.htInclusionItems,
+		    a.htNameSearch,
+		    a.htPriceSearch,
+		    a.htStarSearch,
+		    a.htClassSearch,
+		    a.htRestaurantNy,
+		    a.htSpaNy,
+		    a.htFitnessCenterNy,
+		    a.htPoolNy,
+		    a.htloungeNy,
+		    a.htStockRoomNy,
+		    a.htParkingNy,
+		    a.htShuttleBusNy,
+		    a.htBreakfastNy,
+		    a.htRoomServiceNy,
+		    a.htElseNy
+		from
+		    hotel a
+		where 1=1
+
+		order by
+			a.htseq desc
+ {executed in 1 msec} 
+2024-09-22T00:34:24.837 [http-nio-8080-exec-3] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+61. select
+		 	a.htseq,
+		    a.htName,
+		    a.htAddress,
+		    a.htcountry,
+		    a.htDesc,
+		    a.htDelNy,
+		    a.htRegDate,
+		    a.htReviseDate,
+		    a.htNotice,
+		    a.htMap,
+		    a.htInclusionItems,
+		    a.htNameSearch,
+		    a.htPriceSearch,
+		    a.htStarSearch,
+		    a.htClassSearch,
+		    a.htRestaurantNy,
+		    a.htSpaNy,
+		    a.htFitnessCenterNy,
+		    a.htPoolNy,
+		    a.htloungeNy,
+		    a.htStockRoomNy,
+		    a.htParkingNy,
+		    a.htShuttleBusNy,
+		    a.htBreakfastNy,
+		    a.htRoomServiceNy,
+		    a.htElseNy
+		from
+		    hotel a
+		where 1=1
+
+			 AND htStarSearch = 5 
+
+		order by
+			a.htseq desc
+ {executed in 1 msec} 
+2024-09-22T00:34:27.210 [http-nio-8080-exec-7] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+61. select  
+		 	a.htseq,
+		    a.htName,
+		    a.htAddress,
+		    a.htcountry,
+		    a.htDesc,
+		    a.htDelNy,
+		    a.htRegDate,
+		    a.htReviseDate,
+		    a.htNotice,
+		    a.htMap,
+		    a.htInclusionItems,
+		    a.htNameSearch,
+		    a.htPriceSearch,
+		    a.htStarSearch,
+		    a.htClassSearch,
+		    a.htRestaurantNy,
+		    a.htSpaNy,
+		    a.htFitnessCenterNy,
+		    a.htPoolNy,
+		    a.htloungeNy,
+		    a.htStockRoomNy,
+		    a.htParkingNy,
+		    a.htShuttleBusNy,
+		    a.htBreakfastNy,
+		    a.htRoomServiceNy,
+		    a.htElseNy
+		from
+			hotel a
+	    where 1=1
+	    	AND a.htseq = '4'
+ {executed in 1 msec} 
+2024-09-22T00:34:29.275 [http-nio-8080-exec-9] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+61. select
+		 	a.htseq,
+		    a.htName,
+		    a.htAddress,
+		    a.htcountry,
+		    a.htDesc,
+		    a.htDelNy,
+		    a.htRegDate,
+		    a.htReviseDate,
+		    a.htNotice,
+		    a.htMap,
+		    a.htInclusionItems,
+		    a.htNameSearch,
+		    a.htPriceSearch,
+		    a.htStarSearch,
+		    a.htClassSearch,
+		    a.htRestaurantNy,
+		    a.htSpaNy,
+		    a.htFitnessCenterNy,
+		    a.htPoolNy,
+		    a.htloungeNy,
+		    a.htStockRoomNy,
+		    a.htParkingNy,
+		    a.htShuttleBusNy,
+		    a.htBreakfastNy,
+		    a.htRoomServiceNy,
+		    a.htElseNy
+		from
+		    hotel a
+		where 1=1
+
+		order by
+			a.htseq desc
+ {executed in 1 msec} 
+2024-09-22T00:34:32.229 [http-nio-8080-exec-4] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+61. select  
+		 	a.htseq,
+		    a.htName,
+		    a.htAddress,
+		    a.htcountry,
+		    a.htDesc,
+		    a.htDelNy,
+		    a.htRegDate,
+		    a.htReviseDate,
+		    a.htNotice,
+		    a.htMap,
+		    a.htInclusionItems,
+		    a.htNameSearch,
+		    a.htPriceSearch,
+		    a.htStarSearch,
+		    a.htClassSearch,
+		    a.htRestaurantNy,
+		    a.htSpaNy,
+		    a.htFitnessCenterNy,
+		    a.htPoolNy,
+		    a.htloungeNy,
+		    a.htStockRoomNy,
+		    a.htParkingNy,
+		    a.htShuttleBusNy,
+		    a.htBreakfastNy,
+		    a.htRoomServiceNy,
+		    a.htElseNy
+		from
+			hotel a
+	    where 1=1
+	    	AND a.htseq = '1'
+ {executed in 1 msec} 
+2024-09-22T00:34:33.559 [http-nio-8080-exec-3] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+61. select  
+		 	a.htseq,
+		    a.htName,
+		    a.htAddress,
+		    a.htcountry,
+		    a.htDesc,
+		    a.htDelNy,
+		    a.htRegDate,
+		    a.htReviseDate,
+		    a.htNotice,
+		    a.htMap,
+		    a.htInclusionItems,
+		    a.htNameSearch,
+		    a.htPriceSearch,
+		    a.htStarSearch,
+		    a.htClassSearch,
+		    a.htRestaurantNy,
+		    a.htSpaNy,
+		    a.htFitnessCenterNy,
+		    a.htPoolNy,
+		    a.htloungeNy,
+		    a.htStockRoomNy,
+		    a.htParkingNy,
+		    a.htShuttleBusNy,
+		    a.htBreakfastNy,
+		    a.htRoomServiceNy,
+		    a.htElseNy
+		from
+			hotel a
+	    where 1=1
+	    	AND a.htseq = '2'
+ {executed in 1 msec} 
+2024-09-22T00:34:35.212 [http-nio-8080-exec-4] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+61. select  
+		 	a.htseq,
+		    a.htName,
+		    a.htAddress,
+		    a.htcountry,
+		    a.htDesc,
+		    a.htDelNy,
+		    a.htRegDate,
+		    a.htReviseDate,
+		    a.htNotice,
+		    a.htMap,
+		    a.htInclusionItems,
+		    a.htNameSearch,
+		    a.htPriceSearch,
+		    a.htStarSearch,
+		    a.htClassSearch,
+		    a.htRestaurantNy,
+		    a.htSpaNy,
+		    a.htFitnessCenterNy,
+		    a.htPoolNy,
+		    a.htloungeNy,
+		    a.htStockRoomNy,
+		    a.htParkingNy,
+		    a.htShuttleBusNy,
+		    a.htBreakfastNy,
+		    a.htRoomServiceNy,
+		    a.htElseNy
+		from
+			hotel a
+	    where 1=1
+	    	AND a.htseq = '3'
+ {executed in 1 msec} 
+2024-09-22T00:34:36.447 [http-nio-8080-exec-8] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+61. select  
+		 	a.htseq,
+		    a.htName,
+		    a.htAddress,
+		    a.htcountry,
+		    a.htDesc,
+		    a.htDelNy,
+		    a.htRegDate,
+		    a.htReviseDate,
+		    a.htNotice,
+		    a.htMap,
+		    a.htInclusionItems,
+		    a.htNameSearch,
+		    a.htPriceSearch,
+		    a.htStarSearch,
+		    a.htClassSearch,
+		    a.htRestaurantNy,
+		    a.htSpaNy,
+		    a.htFitnessCenterNy,
+		    a.htPoolNy,
+		    a.htloungeNy,
+		    a.htStockRoomNy,
+		    a.htParkingNy,
+		    a.htShuttleBusNy,
+		    a.htBreakfastNy,
+		    a.htRoomServiceNy,
+		    a.htElseNy
+		from
+			hotel a
+	    where 1=1
+	    	AND a.htseq = '4'
+ {executed in 1 msec} 
+2024-09-22T00:34:37.443 [http-nio-8080-exec-1] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+61. select  
+		 	a.htseq,
+		    a.htName,
+		    a.htAddress,
+		    a.htcountry,
+		    a.htDesc,
+		    a.htDelNy,
+		    a.htRegDate,
+		    a.htReviseDate,
+		    a.htNotice,
+		    a.htMap,
+		    a.htInclusionItems,
+		    a.htNameSearch,
+		    a.htPriceSearch,
+		    a.htStarSearch,
+		    a.htClassSearch,
+		    a.htRestaurantNy,
+		    a.htSpaNy,
+		    a.htFitnessCenterNy,
+		    a.htPoolNy,
+		    a.htloungeNy,
+		    a.htStockRoomNy,
+		    a.htParkingNy,
+		    a.htShuttleBusNy,
+		    a.htBreakfastNy,
+		    a.htRoomServiceNy,
+		    a.htElseNy
+		from
+			hotel a
+	    where 1=1
+	    	AND a.htseq = '5'
+ {executed in 1 msec} 
+2024-09-22T00:34:38.499 [http-nio-8080-exec-7] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+61. select  
+		 	a.htseq,
+		    a.htName,
+		    a.htAddress,
+		    a.htcountry,
+		    a.htDesc,
+		    a.htDelNy,
+		    a.htRegDate,
+		    a.htReviseDate,
+		    a.htNotice,
+		    a.htMap,
+		    a.htInclusionItems,
+		    a.htNameSearch,
+		    a.htPriceSearch,
+		    a.htStarSearch,
+		    a.htClassSearch,
+		    a.htRestaurantNy,
+		    a.htSpaNy,
+		    a.htFitnessCenterNy,
+		    a.htPoolNy,
+		    a.htloungeNy,
+		    a.htStockRoomNy,
+		    a.htParkingNy,
+		    a.htShuttleBusNy,
+		    a.htBreakfastNy,
+		    a.htRoomServiceNy,
+		    a.htElseNy
+		from
+			hotel a
+	    where 1=1
+	    	AND a.htseq = '7'
+ {executed in 1 msec} 
+2024-09-22T00:34:43.166 [http-nio-8080-exec-7] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+61. select
+		 	a.htseq,
+		    a.htName,
+		    a.htAddress,
+		    a.htcountry,
+		    a.htDesc,
+		    a.htDelNy,
+		    a.htRegDate,
+		    a.htReviseDate,
+		    a.htNotice,
+		    a.htMap,
+		    a.htInclusionItems,
+		    a.htNameSearch,
+		    a.htPriceSearch,
+		    a.htStarSearch,
+		    a.htClassSearch,
+		    a.htRestaurantNy,
+		    a.htSpaNy,
+		    a.htFitnessCenterNy,
+		    a.htPoolNy,
+		    a.htloungeNy,
+		    a.htStockRoomNy,
+		    a.htParkingNy,
+		    a.htShuttleBusNy,
+		    a.htBreakfastNy,
+		    a.htRoomServiceNy,
+		    a.htElseNy
+		from
+		    hotel a
+		where 1=1
+
+			 AND htStarSearch = 1 
+
+		order by
+			a.htseq desc
+ {executed in 1 msec} 
+2024-09-22T00:34:44.381 [http-nio-8080-exec-9] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+61. select
+		 	a.htseq,
+		    a.htName,
+		    a.htAddress,
+		    a.htcountry,
+		    a.htDesc,
+		    a.htDelNy,
+		    a.htRegDate,
+		    a.htReviseDate,
+		    a.htNotice,
+		    a.htMap,
+		    a.htInclusionItems,
+		    a.htNameSearch,
+		    a.htPriceSearch,
+		    a.htStarSearch,
+		    a.htClassSearch,
+		    a.htRestaurantNy,
+		    a.htSpaNy,
+		    a.htFitnessCenterNy,
+		    a.htPoolNy,
+		    a.htloungeNy,
+		    a.htStockRoomNy,
+		    a.htParkingNy,
+		    a.htShuttleBusNy,
+		    a.htBreakfastNy,
+		    a.htRoomServiceNy,
+		    a.htElseNy
+		from
+		    hotel a
+		where 1=1
+
+		order by
+			a.htseq desc
+ {executed in 1 msec} 
+2024-09-22T00:34:48.631 [http-nio-8080-exec-8] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+61. select  
+		 	a.htseq,
+		    a.htName,
+		    a.htAddress,
+		    a.htcountry,
+		    a.htDesc,
+		    a.htDelNy,
+		    a.htRegDate,
+		    a.htReviseDate,
+		    a.htNotice,
+		    a.htMap,
+		    a.htInclusionItems,
+		    a.htNameSearch,
+		    a.htPriceSearch,
+		    a.htStarSearch,
+		    a.htClassSearch,
+		    a.htRestaurantNy,
+		    a.htSpaNy,
+		    a.htFitnessCenterNy,
+		    a.htPoolNy,
+		    a.htloungeNy,
+		    a.htStockRoomNy,
+		    a.htParkingNy,
+		    a.htShuttleBusNy,
+		    a.htBreakfastNy,
+		    a.htRoomServiceNy,
+		    a.htElseNy
+		from
+			hotel a
+	    where 1=1
+	    	AND a.htseq = '3'
+ {executed in 1 msec} 
+2024-09-22T00:34:49.860 [http-nio-8080-exec-8] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+61. select  
+		 	a.htseq,
+		    a.htName,
+		    a.htAddress,
+		    a.htcountry,
+		    a.htDesc,
+		    a.htDelNy,
+		    a.htRegDate,
+		    a.htReviseDate,
+		    a.htNotice,
+		    a.htMap,
+		    a.htInclusionItems,
+		    a.htNameSearch,
+		    a.htPriceSearch,
+		    a.htStarSearch,
+		    a.htClassSearch,
+		    a.htRestaurantNy,
+		    a.htSpaNy,
+		    a.htFitnessCenterNy,
+		    a.htPoolNy,
+		    a.htloungeNy,
+		    a.htStockRoomNy,
+		    a.htParkingNy,
+		    a.htShuttleBusNy,
+		    a.htBreakfastNy,
+		    a.htRoomServiceNy,
+		    a.htElseNy
+		from
+			hotel a
+	    where 1=1
+	    	AND a.htseq = '4'
+ {executed in 1 msec} 
+2024-09-22T00:34:51.393 [http-nio-8080-exec-7] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+61. select  
+		 	a.htseq,
+		    a.htName,
+		    a.htAddress,
+		    a.htcountry,
+		    a.htDesc,
+		    a.htDelNy,
+		    a.htRegDate,
+		    a.htReviseDate,
+		    a.htNotice,
+		    a.htMap,
+		    a.htInclusionItems,
+		    a.htNameSearch,
+		    a.htPriceSearch,
+		    a.htStarSearch,
+		    a.htClassSearch,
+		    a.htRestaurantNy,
+		    a.htSpaNy,
+		    a.htFitnessCenterNy,
+		    a.htPoolNy,
+		    a.htloungeNy,
+		    a.htStockRoomNy,
+		    a.htParkingNy,
+		    a.htShuttleBusNy,
+		    a.htBreakfastNy,
+		    a.htRoomServiceNy,
+		    a.htElseNy
+		from
+			hotel a
+	    where 1=1
+	    	AND a.htseq = '5'
+ {executed in 1 msec} 
+2024-09-22T00:34:52.813 [http-nio-8080-exec-3] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+61. select  
+		 	a.htseq,
+		    a.htName,
+		    a.htAddress,
+		    a.htcountry,
+		    a.htDesc,
+		    a.htDelNy,
+		    a.htRegDate,
+		    a.htReviseDate,
+		    a.htNotice,
+		    a.htMap,
+		    a.htInclusionItems,
+		    a.htNameSearch,
+		    a.htPriceSearch,
+		    a.htStarSearch,
+		    a.htClassSearch,
+		    a.htRestaurantNy,
+		    a.htSpaNy,
+		    a.htFitnessCenterNy,
+		    a.htPoolNy,
+		    a.htloungeNy,
+		    a.htStockRoomNy,
+		    a.htParkingNy,
+		    a.htShuttleBusNy,
+		    a.htBreakfastNy,
+		    a.htRoomServiceNy,
+		    a.htElseNy
+		from
+			hotel a
+	    where 1=1
+	    	AND a.htseq = '7'
+ {executed in 1 msec} 
+2024-09-22T00:34:56.244 [http-nio-8080-exec-4] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+61. select
+		 	a.htseq,
+		    a.htName,
+		    a.htAddress,
+		    a.htcountry,
+		    a.htDesc,
+		    a.htDelNy,
+		    a.htRegDate,
+		    a.htReviseDate,
+		    a.htNotice,
+		    a.htMap,
+		    a.htInclusionItems,
+		    a.htNameSearch,
+		    a.htPriceSearch,
+		    a.htStarSearch,
+		    a.htClassSearch,
+		    a.htRestaurantNy,
+		    a.htSpaNy,
+		    a.htFitnessCenterNy,
+		    a.htPoolNy,
+		    a.htloungeNy,
+		    a.htStockRoomNy,
+		    a.htParkingNy,
+		    a.htShuttleBusNy,
+		    a.htBreakfastNy,
+		    a.htRoomServiceNy,
+		    a.htElseNy
+		from
+		    hotel a
+		where 1=1
+
+			 AND htStarSearch = 1 
+
+		order by
+			a.htseq desc
+ {executed in 1 msec} 
+2024-09-22T00:34:58.151 [http-nio-8080-exec-9] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+61. select  
+		 	a.htseq,
+		    a.htName,
+		    a.htAddress,
+		    a.htcountry,
+		    a.htDesc,
+		    a.htDelNy,
+		    a.htRegDate,
+		    a.htReviseDate,
+		    a.htNotice,
+		    a.htMap,
+		    a.htInclusionItems,
+		    a.htNameSearch,
+		    a.htPriceSearch,
+		    a.htStarSearch,
+		    a.htClassSearch,
+		    a.htRestaurantNy,
+		    a.htSpaNy,
+		    a.htFitnessCenterNy,
+		    a.htPoolNy,
+		    a.htloungeNy,
+		    a.htStockRoomNy,
+		    a.htParkingNy,
+		    a.htShuttleBusNy,
+		    a.htBreakfastNy,
+		    a.htRoomServiceNy,
+		    a.htElseNy
+		from
+			hotel a
+	    where 1=1
+	    	AND a.htseq = '1'
+ {executed in 1 msec} 
+2024-09-22T00:35:00.281 [http-nio-8080-exec-4] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+61. select
+		 	a.htseq,
+		    a.htName,
+		    a.htAddress,
+		    a.htcountry,
+		    a.htDesc,
+		    a.htDelNy,
+		    a.htRegDate,
+		    a.htReviseDate,
+		    a.htNotice,
+		    a.htMap,
+		    a.htInclusionItems,
+		    a.htNameSearch,
+		    a.htPriceSearch,
+		    a.htStarSearch,
+		    a.htClassSearch,
+		    a.htRestaurantNy,
+		    a.htSpaNy,
+		    a.htFitnessCenterNy,
+		    a.htPoolNy,
+		    a.htloungeNy,
+		    a.htStockRoomNy,
+		    a.htParkingNy,
+		    a.htShuttleBusNy,
+		    a.htBreakfastNy,
+		    a.htRoomServiceNy,
+		    a.htElseNy
+		from
+		    hotel a
+		where 1=1
+
+		order by
+			a.htseq desc
+ {executed in 1 msec} 
+2024-09-22T00:35:01.914 [http-nio-8080-exec-2] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+61. select
+		 	a.htseq,
+		    a.htName,
+		    a.htAddress,
+		    a.htcountry,
+		    a.htDesc,
+		    a.htDelNy,
+		    a.htRegDate,
+		    a.htReviseDate,
+		    a.htNotice,
+		    a.htMap,
+		    a.htInclusionItems,
+		    a.htNameSearch,
+		    a.htPriceSearch,
+		    a.htStarSearch,
+		    a.htClassSearch,
+		    a.htRestaurantNy,
+		    a.htSpaNy,
+		    a.htFitnessCenterNy,
+		    a.htPoolNy,
+		    a.htloungeNy,
+		    a.htStockRoomNy,
+		    a.htParkingNy,
+		    a.htShuttleBusNy,
+		    a.htBreakfastNy,
+		    a.htRoomServiceNy,
+		    a.htElseNy
+		from
+		    hotel a
+		where 1=1
+
+			 AND htStarSearch = 5 
+
+		order by
+			a.htseq desc
+ {executed in 0 msec} 
+2024-09-22T00:35:02.981 [http-nio-8080-exec-10] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+61. select  
+		 	a.htseq,
+		    a.htName,
+		    a.htAddress,
+		    a.htcountry,
+		    a.htDesc,
+		    a.htDelNy,
+		    a.htRegDate,
+		    a.htReviseDate,
+		    a.htNotice,
+		    a.htMap,
+		    a.htInclusionItems,
+		    a.htNameSearch,
+		    a.htPriceSearch,
+		    a.htStarSearch,
+		    a.htClassSearch,
+		    a.htRestaurantNy,
+		    a.htSpaNy,
+		    a.htFitnessCenterNy,
+		    a.htPoolNy,
+		    a.htloungeNy,
+		    a.htStockRoomNy,
+		    a.htParkingNy,
+		    a.htShuttleBusNy,
+		    a.htBreakfastNy,
+		    a.htRoomServiceNy,
+		    a.htElseNy
+		from
+			hotel a
+	    where 1=1
+	    	AND a.htseq = '4'
+ {executed in 0 msec} 
+2024-09-22T00:35:04.286 [http-nio-8080-exec-1] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+61. select
+		 	a.htseq,
+		    a.htName,
+		    a.htAddress,
+		    a.htcountry,
+		    a.htDesc,
+		    a.htDelNy,
+		    a.htRegDate,
+		    a.htReviseDate,
+		    a.htNotice,
+		    a.htMap,
+		    a.htInclusionItems,
+		    a.htNameSearch,
+		    a.htPriceSearch,
+		    a.htStarSearch,
+		    a.htClassSearch,
+		    a.htRestaurantNy,
+		    a.htSpaNy,
+		    a.htFitnessCenterNy,
+		    a.htPoolNy,
+		    a.htloungeNy,
+		    a.htStockRoomNy,
+		    a.htParkingNy,
+		    a.htShuttleBusNy,
+		    a.htBreakfastNy,
+		    a.htRoomServiceNy,
+		    a.htElseNy
+		from
+		    hotel a
+		where 1=1
+
+		order by
+			a.htseq desc
+ {executed in 1 msec} 
+2024-09-22T00:35:06.759 [http-nio-8080-exec-9] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+61. select
+		 	a.htseq,
+		    a.htName,
+		    a.htAddress,
+		    a.htcountry,
+		    a.htDesc,
+		    a.htDelNy,
+		    a.htRegDate,
+		    a.htReviseDate,
+		    a.htNotice,
+		    a.htMap,
+		    a.htInclusionItems,
+		    a.htNameSearch,
+		    a.htPriceSearch,
+		    a.htStarSearch,
+		    a.htClassSearch,
+		    a.htRestaurantNy,
+		    a.htSpaNy,
+		    a.htFitnessCenterNy,
+		    a.htPoolNy,
+		    a.htloungeNy,
+		    a.htStockRoomNy,
+		    a.htParkingNy,
+		    a.htShuttleBusNy,
+		    a.htBreakfastNy,
+		    a.htRoomServiceNy,
+		    a.htElseNy
+		from
+		    hotel a
+		where 1=1
+
+			 AND htStarSearch = 3 
+
+		order by
+			a.htseq desc
+ {executed in 1 msec} 
+2024-09-22T00:35:07.538 [http-nio-8080-exec-4] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+61. select  
+		 	a.htseq,
+		    a.htName,
+		    a.htAddress,
+		    a.htcountry,
+		    a.htDesc,
+		    a.htDelNy,
+		    a.htRegDate,
+		    a.htReviseDate,
+		    a.htNotice,
+		    a.htMap,
+		    a.htInclusionItems,
+		    a.htNameSearch,
+		    a.htPriceSearch,
+		    a.htStarSearch,
+		    a.htClassSearch,
+		    a.htRestaurantNy,
+		    a.htSpaNy,
+		    a.htFitnessCenterNy,
+		    a.htPoolNy,
+		    a.htloungeNy,
+		    a.htStockRoomNy,
+		    a.htParkingNy,
+		    a.htShuttleBusNy,
+		    a.htBreakfastNy,
+		    a.htRoomServiceNy,
+		    a.htElseNy
+		from
+			hotel a
+	    where 1=1
+	    	AND a.htseq = '7'
+ {executed in 1 msec} 
+2024-09-22T00:35:09.592 [http-nio-8080-exec-6] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+61. select  
+		 	a.htseq,
+		    a.htName,
+		    a.htAddress,
+		    a.htcountry,
+		    a.htDesc,
+		    a.htDelNy,
+		    a.htRegDate,
+		    a.htReviseDate,
+		    a.htNotice,
+		    a.htMap,
+		    a.htInclusionItems,
+		    a.htNameSearch,
+		    a.htPriceSearch,
+		    a.htStarSearch,
+		    a.htClassSearch,
+		    a.htRestaurantNy,
+		    a.htSpaNy,
+		    a.htFitnessCenterNy,
+		    a.htPoolNy,
+		    a.htloungeNy,
+		    a.htStockRoomNy,
+		    a.htParkingNy,
+		    a.htShuttleBusNy,
+		    a.htBreakfastNy,
+		    a.htRoomServiceNy,
+		    a.htElseNy
+		from
+			hotel a
+	    where 1=1
+	    	AND a.htseq = '5'
+ {executed in 1 msec} 
+2024-09-22T00:35:11.096 [http-nio-8080-exec-1] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+61. select  
+		 	a.htseq,
+		    a.htName,
+		    a.htAddress,
+		    a.htcountry,
+		    a.htDesc,
+		    a.htDelNy,
+		    a.htRegDate,
+		    a.htReviseDate,
+		    a.htNotice,
+		    a.htMap,
+		    a.htInclusionItems,
+		    a.htNameSearch,
+		    a.htPriceSearch,
+		    a.htStarSearch,
+		    a.htClassSearch,
+		    a.htRestaurantNy,
+		    a.htSpaNy,
+		    a.htFitnessCenterNy,
+		    a.htPoolNy,
+		    a.htloungeNy,
+		    a.htStockRoomNy,
+		    a.htParkingNy,
+		    a.htShuttleBusNy,
+		    a.htBreakfastNy,
+		    a.htRoomServiceNy,
+		    a.htElseNy
+		from
+			hotel a
+	    where 1=1
+	    	AND a.htseq = '3'
+ {executed in 0 msec} 
+2024-09-22T00:35:12.294 [http-nio-8080-exec-1] DEBUG j.sqltiming -  com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+61. select
+		 	a.htseq,
+		    a.htName,
+		    a.htAddress,
+		    a.htcountry,
+		    a.htDesc,
+		    a.htDelNy,
+		    a.htRegDate,
+		    a.htReviseDate,
+		    a.htNotice,
+		    a.htMap,
+		    a.htInclusionItems,
+		    a.htNameSearch,
+		    a.htPriceSearch,
+		    a.htStarSearch,
+		    a.htClassSearch,
+		    a.htRestaurantNy,
+		    a.htSpaNy,
+		    a.htFitnessCenterNy,
+		    a.htPoolNy,
+		    a.htloungeNy,
+		    a.htStockRoomNy,
+		    a.htParkingNy,
+		    a.htShuttleBusNy,
+		    a.htBreakfastNy,
+		    a.htRoomServiceNy,
+		    a.htElseNy
+		from
+		    hotel a
+		where 1=1
+
+		order by
+			a.htseq desc
+ {executed in 1 msec} 
