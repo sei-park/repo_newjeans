@@ -9,6 +9,9 @@ public class HotelVo {
 	private Integer shOption;
 	private String shValue;
 	private Integer shStar;
+	private Integer shRestaurant;
+	private Integer shSpa;
+	private Integer shFitnessCenter;
 	//--
 	public Integer getShDelNy() {
 		return shDelNy;
@@ -52,6 +55,26 @@ public class HotelVo {
 	public void setShStar(Integer shStar) {
 		this.shStar = shStar;
 	}
+	public Integer getShRestaurant() {
+		return shRestaurant;
+	}
+	public void setShRestaurant(Integer shRestaurant) {
+		this.shRestaurant = shRestaurant;
+	}
+	public Integer getShSpa() {
+		return shSpa;
+	}
+	public void setShSpa(Integer shSpa) {
+		this.shSpa = shSpa;
+	}
+	public Integer getShFitnessCenter() {
+		return shFitnessCenter;
+	}
+	public void setShFitnessCenter(Integer shFitnessCenter) {
+		this.shFitnessCenter = shFitnessCenter;
+	}
+	
+	
 	
 	
 	

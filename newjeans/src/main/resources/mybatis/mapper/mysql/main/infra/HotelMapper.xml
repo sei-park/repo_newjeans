@@ -38,11 +38,21 @@
 		where 1=1
 			<if test="shDelNy != null and !shDelNy.equals('')">AND htDelNy = #{shDelNy}</if> <!-- 삭제 여부 -->
 			
+			<!-- 별점 -->
 			<if test="shStar == 5">AND htStarSearch = #{shStar}</if>
 			<if test="shStar == 4">AND htStarSearch = #{shStar}</if>
 			<if test="shStar == 3">AND htStarSearch = #{shStar}</if>
 			<if test="shStar == 2">AND htStarSearch = #{shStar}</if>
 			<if test="shStar == 1">AND htStarSearch = #{shStar}</if>
+			
+			<!-- 레스토랑 -->
+			<if test="shRestaurant != null and !shRestaurant.equals('')">AND htRestaurantNy = #{shRestaurant}</if>
+			
+			<!-- 스파/온천 -->
+			<if test="shSpa != null and !shSpa.equals('')">AND htSpaNy = #{shSpa}</if>
+			
+			<!-- 피트니스센터 -->
+			<if test="shFitnessCenter != null and !shFitnessCenter.equals('')">AND htFitnessCenterNy = #{shFitnessCenter}</if>
 			 
 			<!-- 달력 -->
 			<choose>
