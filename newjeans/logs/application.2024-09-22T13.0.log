@@ -2515,3 +2515,7 @@ org.apache.ibatis.reflection.ReflectionException: There is no getter for propert
 		order by
 			a.htseq desc
  {executed in 2 msec} 
+2024-09-22T13:26:52.325 [RMI TCP Connection(39)-127.0.0.1] INFO o.s.b.a.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin - Application shutdown requested. 
+2024-09-22T13:26:52.327 [RMI TCP Connection(39)-127.0.0.1] INFO o.a.c.h.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"] 
+2024-09-22T13:26:53.509 [RMI TCP Connection(39)-127.0.0.1] INFO c.z.h.HikariDataSource - HikariPool-6 - Shutdown initiated... 
+2024-09-22T13:26:53.513 [RMI TCP Connection(39)-127.0.0.1] INFO c.z.h.HikariDataSource - HikariPool-6 - Shutdown completed. 

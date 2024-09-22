@@ -53,6 +53,30 @@
 			
 			<!-- 피트니스센터 -->
 			<if test="shFitnessCenter != null and !shFitnessCenter.equals('')">AND htFitnessCenterNy = #{shFitnessCenter}</if>
+			
+			<!-- 수영장 -->
+			<if test="shPool != null and !shPool.equals('')">AND htPoolNy = #{shPool}</if>
+			
+			<!-- 라운지 -->
+			<if test="shlounge != null and !shlounge.equals('')">AND htloungeNy = #{shlounge}</if>
+			
+			<!-- 물품보관소 -->
+			<if test="shStockRoom != null and !shStockRoom.equals('')">AND htStockRoomNy = #{shStockRoom}</if>
+			
+			<!-- 무료주차 -->
+			<if test="shParking != null and !shParking.equals('')">AND htParkingNy = #{shParking}</if>
+			
+			<!-- 공항셔틀버스 -->
+			<if test="shShuttleBus != null and !shShuttleBus.equals('')">AND htShuttleBusNy = #{shShuttleBus}</if>
+			
+			<!-- 조식 -->
+			<if test="shBreakfast != null and !shBreakfast.equals('')">AND htBreakfastNy = #{shBreakfast}</if>
+			
+			<!-- 룸서비스 -->
+			<if test="shRoomService != null and !shRoomService.equals('')">AND htRoomServiceNy = #{shRoomService}</if>
+			
+			<!-- 기타 -->
+			<if test="shElse != null and !shElse.equals('')">AND htElseNy = #{shElse}</if>
 			 
 			<!-- 달력 -->
 			<choose>

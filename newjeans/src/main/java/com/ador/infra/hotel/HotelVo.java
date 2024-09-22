@@ -12,6 +12,14 @@ public class HotelVo {
 	private Integer shRestaurant;
 	private Integer shSpa;
 	private Integer shFitnessCenter;
+	private Integer shPool;
+	private Integer shlounge;
+	private Integer shStockRoom;
+	private Integer shParking;
+	private Integer shShuttleBus;
+	private Integer shBreakfast;
+	private Integer shRoomService;
+	private Integer shElse;
 	//--
 	public Integer getShDelNy() {
 		return shDelNy;
@@ -73,6 +81,55 @@ public class HotelVo {
 	public void setShFitnessCenter(Integer shFitnessCenter) {
 		this.shFitnessCenter = shFitnessCenter;
 	}
+	public Integer getShPool() {
+		return shPool;
+	}
+	public void setShPool(Integer shPool) {
+		this.shPool = shPool;
+	}
+	public Integer getShlounge() {
+		return shlounge;
+	}
+	public void setShlounge(Integer shlounge) {
+		this.shlounge = shlounge;
+	}
+	public Integer getShStockRoom() {
+		return shStockRoom;
+	}
+	public void setShStockRoom(Integer shStockRoom) {
+		this.shStockRoom = shStockRoom;
+	}
+	public Integer getShParking() {
+		return shParking;
+	}
+	public void setShParking(Integer shParking) {
+		this.shParking = shParking;
+	}
+	public Integer getShShuttleBus() {
+		return shShuttleBus;
+	}
+	public void setShShuttleBus(Integer shShuttleBus) {
+		this.shShuttleBus = shShuttleBus;
+	}
+	public Integer getShBreakfast() {
+		return shBreakfast;
+	}
+	public void setShBreakfast(Integer shBreakfast) {
+		this.shBreakfast = shBreakfast;
+	}
+	public Integer getShRoomService() {
+		return shRoomService;
+	}
+	public void setShRoomService(Integer shRoomService) {
+		this.shRoomService = shRoomService;
+	}
+	public Integer getShElse() {
+		return shElse;
+	}
+	public void setShElse(Integer shElse) {
+		this.shElse = shElse;
+	}
+	
 	
 	
 	
