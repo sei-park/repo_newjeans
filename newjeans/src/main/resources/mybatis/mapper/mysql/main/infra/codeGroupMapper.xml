@@ -5,17 +5,7 @@
 
 	<resultMap type="com.ador.infra.codegroup.CodeGroupDto" id="resultMapObj"></resultMap>
 	
-	<select id="selectList" resultMap="resultMapObj"> <!-- 쿼리를 작동시키는 id -->
-		SELECT  
-			a.ifcgSeq,
-	        a.ifcgName,
-	        a.ifcgUseNy,
-	        a.ifcgOrder,
-	        a.ifcgDelNy,
-	        a.ifcgDesc,
-	        a.regDateTime,
-	        a.regDateTimeRevise,
-	        (select count(ifcdSeq) from Code b where 1=1 and b.codegroup_ifcgSeq = a.ifcgSeq) as count <!-- 카운트 -->
+	<sql id="selectCommon">
 		FROM
 			newjeans.codegroup a
 		WHERE 1=1
@@ -33,8 +23,30 @@
 				<when test="shOption == 1">AND ifcgSeq = #{shValue}</when>
 				<when test="shOption == 2">AND ifcgName LIKE CONCAT('%',#{shValue},'%')</when>
 			</choose> 
+	</sql>
+	
+	<select id="selectOneCount">
+		SELECT COUNT(*)
+		<include refid="selectCommon"/>	
+	</select>
+	
+	<select id="selectList" resultMap="resultMapObj"> <!-- 쿼리를 작동시키는 id -->
+		select aa.* from (
+		SELECT  
+			a.ifcgSeq,
+	        a.ifcgName,
+	        a.ifcgUseNy,
+	        a.ifcgOrder,
+	        a.ifcgDelNy,
+	        a.ifcgDesc,
+	        a.regDateTime,
+	        a.regDateTimeRevise,
+	        (select count(ifcdSeq) from Code b where 1=1 and b.codegroup_ifcgSeq = a.ifcgSeq) as count <!-- 카운트 -->
+	    <include refid="selectCommon"/>
 		ORDER BY 
 			a.ifcgSeq desc 
+		) aa
+		limit #{rowNumToShow} offset #{startRnumForMysql}
 	</select>
 	
 	<insert id="insert">
