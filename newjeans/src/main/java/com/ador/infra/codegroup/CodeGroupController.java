@@ -1,12 +1,12 @@
 package com.ador.infra.codegroup;
 
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.ador.common.util.UtilDateTime;
 
 @Controller
 public class CodeGroupController {
@@ -18,23 +18,31 @@ public class CodeGroupController {
 	@RequestMapping(value="/xdm/v1/infra/codegroup/codeGroupXdmList")
 	public String codeGroupXdmList(@ModelAttribute("vo") CodeGroupVo codeGroupVo, Model model) {
 		
-		// getshDateStart()에 "00:00:00"을 넣고 setShDateStart에서 보여줌 
-		codeGroupVo.setShDateStart(codeGroupVo.getShDateStart() + " 00:00:00"); 
-		codeGroupVo.setShDateEnd(codeGroupVo.getShDateEnd() + " 23:59:59");
-		
 		// 스프링에서 만든는 클래스는 모두 선언 클래스
 	    // Controller 에서 받은 객체를 html 에 넘기기 위해서는 Model 객체 사용해야 함 
-		List<CodeGroupDto> codegroups = codeGroupService.selectList(codeGroupVo);
+		
+		// getshDateStart()에 "00:00:00"을 넣고 setShDateStart에서 보여줌 
+//		codeGroupVo.setShDateStart(codeGroupVo.getShDateStart() + " 00:00:00"); 
+//		codeGroupVo.setShDateEnd(codeGroupVo.getShDateEnd() + " 23:59:59");
+	
+		/* 초기값 세팅이 없는 경우 사용 */
+		// shDateStart 값이 null 이거나 비어 있을 경우 UtilDateTime 클래스를 실행 
+		codeGroupVo.setShDateStart(codeGroupVo.getShDateStart() == null || codeGroupVo.getShDateStart() == "" ? null : UtilDateTime.add00TimeString(codeGroupVo.getShDateStart()));
+		// shDateEnd 값이 null 이거나 비어 있을 경우 UtilDateTime 클래스를 실행 
+		codeGroupVo.setShDateEnd(codeGroupVo.getShDateEnd() == null || codeGroupVo.getShDateEnd() == "" ? null : UtilDateTime.add59TimeString(codeGroupVo.getShDateEnd()));
+		
+		// List<CodeGroupDto> codegroups = codeGroupService.selectList(codeGroupVo);
 		
 		codeGroupVo.setParamsPaging(codeGroupService.selectOneCount(codeGroupVo));
 		
 		if(codeGroupVo.getTotalRows() > 0) {
 			model.addAttribute("list", codeGroupService.selectList(codeGroupVo));
+		//	model.addAttribute("vo", codeGroupVo); 
 		}
-															 
-		model.addAttribute("list", codegroups); // list : html 에서 쓰일 변수명
-	   //model.addAttribute("list", codeGroupService.selectList());
 		
+		System.out.println("현재 페이지 : " + codeGroupVo.getThisPage());
+		System.out.println(codeGroupVo.getShDateStart());
+															 
 		return "/xdm/v1/infra/codegroup/codeGroupXdmList";
 	}
 	

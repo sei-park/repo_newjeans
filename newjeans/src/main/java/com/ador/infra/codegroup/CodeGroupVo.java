@@ -1,5 +1,7 @@
 package com.ador.infra.codegroup;
 
+import com.ador.common.constants.Constants;
+
 public class CodeGroupVo {
 	
 	// search

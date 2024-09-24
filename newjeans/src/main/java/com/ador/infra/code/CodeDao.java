@@ -27,6 +27,9 @@ public interface CodeDao {
 	
 	// delete
 	public int delete(CodeDto codeDto);
+	
+	// paging 
+	public int selectOneCount(CodeVo codeVo);
 						
 	
 }

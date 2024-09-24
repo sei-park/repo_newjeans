@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
@@ -15,14 +16,20 @@ public class CodeController {
 	
 	// select
 	@RequestMapping(value="/xdm/v1/infra/code/codeXdmList") 
-	public String codeXdmList(CodeVo codeVo, Model model) {
+	public String codeXdmList(@ModelAttribute("vo") CodeVo codeVo, Model model) { 
 		
 		// getshDateStart()에 "00:00:00"을 넣고 setShDateStart에서 보여줌 
 		codeVo.setShDateStart(codeVo.getShDateStart() + " 00:00:00"); 
 		codeVo.setShDateEnd(codeVo.getShDateEnd() + " 23:59:59");
 		
-		List<CodeDto> codes = codeService.codeSelectList(codeVo);
-		model.addAttribute("codelist", codes);
+		codeVo.setParamsPaging(codeService.selectOneCount(codeVo));
+		
+		if(codeVo.getTotalRows() > 0) {
+			model.addAttribute("codelist", codeService.codeSelectList(codeVo));
+		}
+		
+//		List<CodeDto> codes = codeService.codeSelectList(codeVo);
+//		model.addAttribute("codelist", codes);
 		
 		return "/xdm/v1/infra/code/codeXdmList";
 	}

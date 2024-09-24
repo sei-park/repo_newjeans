@@ -46,6 +46,11 @@ public class CodeService {
 		return codeDao.delete(codeDto);
 	}
 	
+	// paging 
+	public int selectOneCount(CodeVo codeVo) {
+		return codeDao.selectOneCount(codeVo);
+	}
+	
 
 
 } 

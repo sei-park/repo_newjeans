@@ -25,6 +25,9 @@ public interface HotelMemberDao {
 	// delete
 	public int delete(HotelMemberDto hotelMemberDto);
 	
+	// paging 
+	public int selectOneCount(HotelMemberVo hotelMemberVo);
+	
 
 }
  

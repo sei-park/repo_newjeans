@@ -5,18 +5,7 @@
 
 	<resultMap type="com.ador.infra.code.CodeDto" id="codeResultMapObj"></resultMap>
 	
-	<select id="codeSelectList" resultMap="codeResultMapObj">
-		select
-			b.ifcdSeq,
-		    b.ifcdName,
-		    b.ifcdUseNy,
-		    b.ifcdOrder,
-		    b.ifcdDesc,
-		    b.ifcdDelNy,
-		    b.registerDate,
-		    b.reviseDate, 
-		    b.codegroup_ifcgSeq,
-		    a.ifcgName
+	<sql id="selectCommon">
 		from
 			code b
 			left join codegroup a
@@ -35,8 +24,31 @@
 				<when test="shOption == 1">AND codegroup_ifcgSeq = #{shValue}</when>
 				<when test="shOption == 2">AND ifcdName LIKE CONCAT('%',#{shValue},'%')</when>
 			</choose>  
+	</sql>
+	
+	<select id="selectOneCount">
+		SELECT COUNT(*)
+		<include refid="selectCommon"/>	
+	</select>
+	
+	<select id="codeSelectList" resultMap="codeResultMapObj">
+		select aa.* from (
+		select
+			b.ifcdSeq,
+		    b.ifcdName,
+		    b.ifcdUseNy,
+		    b.ifcdOrder,
+		    b.ifcdDesc,
+		    b.ifcdDelNy,
+		    b.registerDate,
+		    b.reviseDate, 
+		    b.codegroup_ifcgSeq,
+		    a.ifcgName
+		<include refid="selectCommon"/>
 		order by
 			b.ifcdSeq desc
+		) aa
+		limit #{rowNumToShow} offset #{startRnumForMysql}
 	</select>
 	
 	<!-- codegroup, code 연결 -->

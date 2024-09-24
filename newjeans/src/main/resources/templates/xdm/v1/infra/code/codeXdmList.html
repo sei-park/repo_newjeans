@@ -948,6 +948,8 @@
                             <div class="card">
                                 <div class="card-body">
                                 	<form name="form" method="post" action="/xdm/v1/infra/code/codeXdmList">
+                                	<input type="hidden" name="thisPage" th:value="${vo.thisPage}" default="1"/>
+									<input type="hidden" id="rowNumToShow" name="rowNumToShow" th:value="${vo.rowNumToShow}"/>
                                     	<div class="row">
                                         	<div> 
                                                 <div class="container"> <!--input 추가-->
@@ -1024,8 +1026,7 @@
                                                 </div>
                                                 <div class="row mb-3">
                                                     <div class="col-md-2" style="padding-top: 10px;">
-                                                        <h5 class="card-title">Total<span
-                                                                class="text-muted fw-normal ms-2">(834)</span></h5>
+                                                        <h5 class="card-title" th:text="'Total : ' + ${vo.totalRows}"></h5>
                                                     </div>
 
                                                     <div class="col-md-8"></div>
@@ -1285,30 +1286,43 @@
                                     <div class="row g-0 text-center text-sm-start"><!--g-0-->
                                         <div class="gy-3 col-12 pagecol"><!--col-sm-6-->
                                             <ul class="pagination pagination-rounded">
-                                                <!--pagination-rounded justify-content-center justify-content-sm-end mb-sm-0-->
-                                                <li class="page-item disabled">
-                                                    <a href="#" class="page-link"><i
-                                                            class="mdi mdi-chevron-left"></i></a>
-                                                </li>
-                                                <li class="page-item">
-                                                    <a href="#" class="page-link">1</a>
-                                                </li>
-                                                <li class="page-item active">
-                                                    <a href="#" class="page-link">2</a>
-                                                </li>
-                                                <li class="page-item">
-                                                    <a href="#" class="page-link">3</a>
-                                                </li>
-                                                <li class="page-item">
-                                                    <a href="#" class="page-link">4</a>
-                                                </li>
-                                                <li class="page-item">
-                                                    <a href="#" class="page-link">5</a>
-                                                </li>
-                                                <li class="page-item">
-                                                    <a href="#" class="page-link"><i
-                                                            class="mdi mdi-chevron-right"></i></a>
-                                                </li>
+                                            		<li class="page-item" th:if="${vo.startPage gt vo.pageNumToShow}" style="cursor: pointer;">
+														<a class="page-link" href="javascript:goList(${vo.startPage - 1})" th:attr="onclick=|goList('${vo.startPage - 1}')|">
+														<i class="mdi mdi-chevron-left"></i>
+														</a>
+													</li>
+													<li class="page-item" th:each="num: ${#numbers.sequence(vo.startPage, vo.endPage)}" th:classappend="${num eq vo.thisPage} ? active : ''" 
+													style="cursor: pointer;">
+														<a class="page-link" th:attr="onclick=|goList('${num}')|" th:text="${num}"></a>
+													</li>
+													<li class="page-item" th:if="${vo.endPage ne vo.totalPages}">
+														<a class="page-link" th:attr="onclick=|goList('${vo.endPage + 1}')|">
+														  <i class="mdi mdi-chevron-right"></i>
+														</a>
+													</li>
+<!--                                                 <li class="page-item disabled"> -->
+<!--                                                     <a href="#" class="page-link"><i -->
+<!--                                                             class="mdi mdi-chevron-left"></i></a> -->
+<!--                                                 </li> -->
+<!--                                                 <li class="page-item"> -->
+<!--                                                     <a href="#" class="page-link">1</a> -->
+<!--                                                 </li> -->
+<!--                                                 <li class="page-item active"> -->
+<!--                                                     <a href="#" class="page-link">2</a> -->
+<!--                                                 </li> -->
+<!--                                                 <li class="page-item"> -->
+<!--                                                     <a href="#" class="page-link">3</a> -->
+<!--                                                 </li> -->
+<!--                                                 <li class="page-item"> -->
+<!--                                                     <a href="#" class="page-link">4</a> -->
+<!--                                                 </li> -->
+<!--                                                 <li class="page-item"> -->
+<!--                                                     <a href="#" class="page-link">5</a> -->
+<!--                                                 </li> -->
+<!--                                                 <li class="page-item"> -->
+<!--                                                     <a href="#" class="page-link"><i -->
+<!--                                                             class="mdi mdi-chevron-right"></i></a> -->
+<!--                                                 </li> -->
                                             </ul><!-- end ul -->
                                         </div><!-- end col -->
 
@@ -1528,6 +1542,19 @@
     			format: 'Y-m-d' // 형식은 이렇게 보여줌 
     		});
     	});
+    	
+     	// paging 
+    	goList = function (thisPage) {
+		    document.querySelector("input[name=thisPage]").value = thisPage;
+		    form.action = "/xdm/v1/infra/code/codeXdmList";
+		    form.submit();
+		}
+    	
+    	goList = function (thisPage) {
+    	    document.querySelector("input[name=thisPage]").value = thisPage;
+    	    document.querySelector("form[name=form]").action = "/xdm/v1/infra/code/codeXdmList";
+    	    document.querySelector("form[name=form]").submit();
+    	}
     </script>
 
 

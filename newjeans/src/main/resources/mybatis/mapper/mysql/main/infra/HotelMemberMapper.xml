@@ -5,26 +5,7 @@
 
 	<resultMap type="com.ador.infra.hotelmember.HotelMemberDto" id="resultMapObj"></resultMap>
 	
-	<!-- selectList -->
-	<select id="memberSelectList" resultMap="resultMapObj">
-		SELECT  
-			a.htmSeq,
-	        a.htmUserName,
-	        a.htmGender,
-	        a.htmBirth,
-	        a.htmId,
-	        a.htmPassword,
-	        a.htmPhoneNumber,
-	        a.htmEmail,
-	        a.htmAddress,
-	        a.htmDetailedAddress,
-	        a.htmZipCode,
-	        a.htmRegDate,
-	        a.htmGrade,
-	        a.htmRegAgreeContentNy,
-	        a.htmEditMemberDate,
-	        a.htmDelNy,
-	        a.htmDesc
+	<sql id="selectCommon">
 		FROM
 			newjeans.hotelmember a
 		WHERE 1=1
@@ -46,8 +27,39 @@
 				<when test="shOption == 6">AND htmPhoneNumber LIKE CONCAT('%',#{shValue},'%')</when>
 				<when test="shOption == 7">AND htmId LIKE CONCAT('%',#{shValue},'%')</when>
 			</choose> 
+	</sql>
+	
+	<select id="selectOneCount">
+		SELECT COUNT(*)
+		<include refid="selectCommon"/>	
+	</select>
+	
+	<!-- selectList -->    
+	<select id="memberSelectList" resultMap="resultMapObj">
+		select aa.* from (
+		SELECT  
+			a.htmSeq,
+	        a.htmUserName,
+	        a.htmGender,
+	        a.htmBirth,
+	        a.htmId,
+	        a.htmPassword,
+	        a.htmPhoneNumber,
+	        a.htmEmail,
+	        a.htmAddress,
+	        a.htmDetailedAddress,
+	        a.htmZipCode,
+	        a.htmRegDate,
+	        a.htmGrade,
+	        a.htmRegAgreeContentNy,
+	        a.htmEditMemberDate,
+	        a.htmDelNy,
+	        a.htmDesc
+	    <include refid="selectCommon"/>
 		ORDER BY 
 			a.htmSeq desc
+		) aa
+		limit #{rowNumToShow} offset #{startRnumForMysql}
 	</select>
 	
 	<!-- insert -->
