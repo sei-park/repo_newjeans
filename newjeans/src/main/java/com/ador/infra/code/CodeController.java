@@ -8,6 +8,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.ador.common.util.UtilDateTime;
+
 @Controller
 public class CodeController {
 	
@@ -19,8 +21,14 @@ public class CodeController {
 	public String codeXdmList(@ModelAttribute("vo") CodeVo codeVo, Model model) { 
 		
 		// getshDateStart()에 "00:00:00"을 넣고 setShDateStart에서 보여줌 
-		codeVo.setShDateStart(codeVo.getShDateStart() + " 00:00:00"); 
-		codeVo.setShDateEnd(codeVo.getShDateEnd() + " 23:59:59");
+//		codeVo.setShDateStart(codeVo.getShDateStart() + " 00:00:00"); 
+//		codeVo.setShDateEnd(codeVo.getShDateEnd() + " 23:59:59");
+		
+		/* 초기값 세팅이 없는 경우 사용 */
+		// shDateStart 값이 null 이거나 비어 있을 경우 UtilDateTime 클래스를 실행 
+		codeVo.setShDateStart(codeVo.getShDateStart() == null || codeVo.getShDateStart() == "" ? null : UtilDateTime.add00TimeString(codeVo.getShDateStart()));
+		// shDateEnd 값이 null 이거나 비어 있을 경우 UtilDateTime 클래스를 실행 
+		codeVo.setShDateEnd(codeVo.getShDateEnd() == null || codeVo.getShDateEnd() == "" ? null : UtilDateTime.add59TimeString(codeVo.getShDateEnd()));
 		
 		codeVo.setParamsPaging(codeService.selectOneCount(codeVo));
 		

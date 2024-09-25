@@ -1,6 +1,8 @@
 package com.ador.infra.code;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
@@ -20,6 +22,9 @@ public class CodeDto {
 	// codegroup 에 연결할 columns추가
 	private String ifcgSeq;
 	private String ifcgName;
+	
+    // for cache
+	public static List<CodeDto> cachedCodeArrayList = new ArrayList<CodeDto>();
 	//-----
 	public String getIfcdSeq() {
 		return ifcdSeq;
@@ -86,6 +91,12 @@ public class CodeDto {
 	}
 	public void setIfcgName(String ifcgName) {
 		this.ifcgName = ifcgName;
+	}
+	public static List<CodeDto> getCachedCodeArrayList() {
+		return cachedCodeArrayList;
+	}
+	public static void setCachedCodeArrayList(List<CodeDto> cachedCodeArrayList) {
+		CodeDto.cachedCodeArrayList = cachedCodeArrayList;
 	}
 	
 	

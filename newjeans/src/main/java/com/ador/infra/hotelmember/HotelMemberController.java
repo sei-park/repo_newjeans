@@ -27,6 +27,7 @@ public class HotelMemberController {
 		if(hotelMemberVo.getTotalRows() > 0) {
 			model.addAttribute("memberList", hotelMemberService.memberSelectList(hotelMemberVo));
 		}
+		
 				
 //		model.addAttribute("memberList", hotelMemberService.memberSelectList(hotelMemberVo));
 		return "/xdm/v1/infra/hotelmember/hotelMemberXdmList";

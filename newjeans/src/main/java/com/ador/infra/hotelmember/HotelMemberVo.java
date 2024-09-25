@@ -1,5 +1,7 @@
 package com.ador.infra.hotelmember;
 
+import com.ador.common.constants.Constants;
+
 public class HotelMemberVo {
 	
 	private Integer shDelNy;

@@ -1119,8 +1119,13 @@
                                                         <td><a th:href="@{/xdm/v1/infra/hotelmember/hotelMemberXdmMForm(htmSeq=${list.htmSeq})}"
 																th:text="${list.htmSeq}"></a></td>
                                                         <td class="group-code" th:text="${list.htmUserName}"></td>
-                                                        <td th:if="${list.htmGender eq 1}" class="codeUse">남자</td>
-														<td th:unless="${list.htmGender eq 1}" class="codeUse">여자</td>
+                                                        
+<!--                                                         <td th:if="${list.htmGender eq 1}" class="codeUse">남자</td> -->
+<!-- 														<td th:unless="${list.htmGender eq 1}" class="codeUse">여자</td> -->
+
+														<td th:if="${list.htmGender != null}" th:text="${@codeService.selectOneCachedCode(list.htmGender)}"></td>
+														<td th:unless="${list.htmGender != null}"></td>
+
                                                         <td th:text="${list.htmBirth}"></td>
                                                         <td th:text="${list.htmPhoneNumber}"></td>
                                                         <td th:text="${list.htmEmail}"></td>

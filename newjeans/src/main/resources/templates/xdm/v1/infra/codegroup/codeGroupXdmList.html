@@ -1020,7 +1020,7 @@
 																<input type="text" class="form-control"
 																	placeholder="시작일" aria-label="Username"
 																	aria-describedby="addon-wrapping" id="shDateStart" name="shDateStart" 
-																	th:value="${#strings.substring(vo.shDateStart, 0, 10)}" autocomplete="off">
+																	th:value="${#strings.substring(vo.shDateStart, 0, 10)}" autocomplete="off" style="cursor: pointer;">
 															</div>
 														</div>
 														<div class="col-md-2">
@@ -1028,7 +1028,7 @@
 																<input type="text" class="form-control"
 																	placeholder="종료일" aria-label="Username"
 																	aria-describedby="addon-wrapping" id="shDateEnd" name="shDateEnd" 
-																	th:value="${#strings.substring(vo.shDateEnd, 0, 10)}" autocomplete="off">
+																	th:value="${#strings.substring(vo.shDateEnd, 0, 10)}" autocomplete="off" style="cursor: pointer;">
 																	<!-- autocomplete="off" 자동완성 방지 -->
 															</div>
 														</div>
@@ -1454,8 +1454,9 @@
     	}
     	
     	// 리스트 보여주는 옵션 
-    	document.getElementById("changeRowNum").onchange = function () {
-    	    document.getElementById("rowNumToShow").value = document.getElementById("changeRowNum").value;
+    	document.getElementById("changeRowNum").onchange = function () { // 리스트 옵션 id를 가져옴 
+    		// (리스트 옵션 id의 값)을 (화면에 보여줄 데이터 줄 개수 id 값)에 넣어줌
+    	    document.getElementById("rowNumToShow").value = document.getElementById("changeRowNum").value;  
     	    form.action = "/xdm/v1/infra/codegroup/codeGroupXdmList";
     	    form.submit();
     	}
