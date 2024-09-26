@@ -40,7 +40,11 @@
 .modal {
 	transform: translateY(-500px);
 }
+
+
 </style>
+
+
 
 
 <body>
@@ -1121,7 +1125,8 @@
 																		class="form-check-label" for="contacusercheck1"></label>
 																</div>
 															</th>
-															<td></td>
+															<!-- 전체 데이터 개수 - (현재 페이지 -1) * 화면에 보여줄 데이터 줄 개수 : 이 개수의 index 번호 -->
+															<td th:text="${vo.totalRows - ((vo.thisPage - 1) * vo.rowNumToShow + listStat.index)}" class="align-middle"></td>
 															<td th:text="${list.ifcgSeq}"></td>
 															<td class="group-code"><a
 																th:href="@{/xdm/v1/infra/codegroup/codeGroupXdmMForm(ifcgSeq=${list.ifcgSeq})}"
@@ -1132,7 +1137,7 @@
 															<td th:if="${list.ifcgDelNy eq 0}" class="codeUse">N</td>
 															<td th:unless="${list.ifcgDelNy eq 0}" class="codeUse">Y</td>
 															<td th:text="${#dates.format(list.regDateTime, 'yyyy-MM-dd HH:mm:ss')}">2024-07-17
-																09:37:10</td>
+															 	09:37:10</td>
 															<td th:text="${#dates.format(list.regDateTimeRevise, 'yyyy-MM-dd HH:mm:ss')}">2024-07-17
 																09:37:10</td>
 															<td th:text="${list.count}"></td>

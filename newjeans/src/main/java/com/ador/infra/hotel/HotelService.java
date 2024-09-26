@@ -41,4 +41,9 @@ public class HotelService {
 		return hotelDao.delete(hotelDto);
 	}
 	
+	// paging
+	public int selectOneCount(HotelVo hotelVo) {
+		return hotelDao.selectOneCount(hotelVo);
+	}
+	
 }

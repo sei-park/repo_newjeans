@@ -10,6 +10,7 @@ public class HotelMemberVo {
 	private String shDateStart;
 	private String shDateEnd;
 	private Integer shOptionDate;
+	private Integer shRegAgreeContent;
 	
 	// paging 
 	private int thisPage = 1;									// 현재 페이지
@@ -135,6 +136,18 @@ public class HotelMemberVo {
 		this.startRnumForMysql = startRnumForMysql;
 	}
 	
+	
+	
+	/////////////////////////////////////////////////
+	
+	public Integer getShRegAgreeContent() {
+		return shRegAgreeContent;
+	}
+
+	public void setShRegAgreeContent(Integer shRegAgreeContent) {
+		this.shRegAgreeContent = shRegAgreeContent;
+	}
+
 	public void setParamsPaging(int totalRows) {
 
 		setTotalRows(totalRows);

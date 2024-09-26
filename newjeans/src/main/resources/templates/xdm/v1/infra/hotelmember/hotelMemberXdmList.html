@@ -980,39 +980,41 @@
                                                         <div class="col-md-2">
                                                             <select class="form-select"
                                                                 aria-label="Default select example" name="shDelNy">
-                                                                <option value="">탈퇴여부</option>
-                                                                <option value="0">N</option>
-                                                                <option value="1">Y</option>
+                                                                <option value="" th:selected="${vo.shDelNy == null}">탈퇴여부</option>
+                                                                <option value="0" th:selected="${vo.shDelNy == 0}">N</option>
+                                                                <option value="1" th:selected="${vo.shDelNy == 1}">Y</option>
                                                             </select>
                                                         </div>
                                                         <div class="col-md-2">
                                                             <select class="form-select"
-                                                                aria-label="Default select example">
-                                                                <option value="">약관동의여부</option>
-                                                                <option value="0">N</option>
-                                                                <option value="1">Y</option>
+                                                                aria-label="Default select example" name="shRegAgreeContent">
+                                                                <option value="" th:selected="${vo.shRegAgreeContent == null}">약관동의여부</option>
+                                                                <option value="0" th:selected="${vo.shRegAgreeContent == 0}">N</option>
+                                                                <option value="1" th:selected="${vo.shRegAgreeContent == 1}">Y</option>
                                                             </select>
                                                         </div>
                                                         <div class="col-md-2">
                                                             <select class="form-select"
                                                                 aria-label="Default select example" name="shOptionDate">
-                                                                <option value="">선택하세요</option>
-                                                                <option value="1">등록일</option>
-                                                                <option value="2">수정일</option>
+                                                                <option value="" th:selected="${vo.shOptionDate == null}">선택하세요</option>
+                                                                <option value="1" th:selected="${vo.shOptionDate == 1}">등록일</option>
+                                                                <option value="2" th:selected="${vo.shOptionDate == 2}">수정일</option>
                                                             </select>
                                                         </div>
                                                         <div class="col-md-2">
                                                             <div class="input-group flex-nowrap">
                                                                 <input type="text" class="form-control"
-                                                                    placeholder="2024-06-05" aria-label="Username"
-                                                                    aria-describedby="addon-wrapping" id="shDateStart" name="shDateStart" autocomplete="off">
+                                                                    placeholder="시작일" aria-label="Username"
+                                                                    aria-describedby="addon-wrapping" id="shDateStart" name="shDateStart" autocomplete="off"
+                                                                    th:value="${#strings.substring(vo.shDateStart, 0, 10)}">
                                                             </div>
                                                         </div>
                                                         <div class="col-md-2">
                                                             <div class="input-group flex-nowrap">
                                                                 <input type="text" class="form-control"
-                                                                    placeholder="2024-07-05" aria-label="Username"
-                                                                    aria-describedby="addon-wrapping" id="shDateEnd" name="shDateEnd" autocomplete="off"	>
+                                                                    placeholder="종료일" aria-label="Username"
+                                                                    aria-describedby="addon-wrapping" id="shDateEnd" name="shDateEnd" autocomplete="off"
+                                                                    th:value="${#strings.substring(vo.shDateEnd, 0, 10)}">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -1021,20 +1023,20 @@
                                                         <div class="col-md-2">
                                                             <select class="form-select"
                                                                 aria-label="Default select example" name="shOption">
-                                                                <option value="">검색구분</option>
-                                                                <option value="1">회원번호</option>
-                                                                <option value="2">이름</option>
-                                                                <option value="3">성별</option>
-                                                                <option value="4">등급</option>
-                                                                <option value="5">이메일</option>
-                                                                <option value="6">휴대폰번호</option>
-                                                                <option value="7">아이디</option>
+                                                                <option value="" th:selected="${vo.shOption == null}">검색구분</option>
+                                                                <option value="1" th:selected="${vo.shOption == 1}">회원번호</option>
+                                                                <option value="2" th:selected="${vo.shOption == 2}">이름</option>
+                                                                <option value="3" th:selected="${vo.shOption == 3}">성별</option>
+                                                                <option value="4" th:selected="${vo.shOption == 4}">등급</option>
+                                                                <option value="5" th:selected="${vo.shOption == 5}">이메일</option>
+                                                                <option value="6" th:selected="${vo.shOption == 6}">휴대폰번호</option>
+                                                                <option value="7" th:selected="${vo.shOption == 7}">아이디</option>
                                                             </select>
                                                         </div>
                                                         <div class="col-md-2">
                                                             <div class="input-group flex-nowrap ">
                                                                 <input type="text" class="form-control" placeholder="검색어" aria-label="Username"
-                                                                 aria-describedby="addon-wrapping" name="shValue">
+                                                                 aria-describedby="addon-wrapping" name="shValue" th:value="${vo.shValue}" onkeyup="enterkey()">
                                                             </div>
                                                         </div>
                                                         <div class="col-md-2" align="left">
@@ -1115,7 +1117,7 @@
                                                                     for="contacusercheck1"></label>
                                                             </div>
                                                         </th>
-                                                        <td></td>
+                                                        <td th:text="${vo.totalRows - ((vo.thisPage - 1) * vo.rowNumToShow + listStat.index)}" class="align-middle"></td>
                                                         <td><a th:href="@{/xdm/v1/infra/hotelmember/hotelMemberXdmMForm(htmSeq=${list.htmSeq})}"
 																th:text="${list.htmSeq}"></a></td>
                                                         <td class="group-code" th:text="${list.htmUserName}"></td>
@@ -1134,7 +1136,12 @@
                                                         <td class="order" th:text="${list.htmZipCode}"></td>
                                                         <td class="alternate-code" th:text="${list.htmId}"></td>
                                                         <td th:text="${list.htmPassword}"></td>
-                                                        <td th:text="${list.htmGrade}"></td>
+                                                        
+<!--                                                         <td th:text="${list.htmGrade}"></td>   -->
+                                                        
+                                                        <td th:if="${list.htmGrade != null}" th:text="${@codeService.selectOneCachedCode(list.htmGrade)}"></td>
+														<td th:unless="${list.htmGrade != null}"></td>
+                                                        
                                                         <td th:text="${#dates.format(list.htmRegDate,'yyyy-MM-dd HH:mm:ss')}"></td>
                                                         <td th:text="${#dates.format(list.htmEditMemberDate, 'yyyy-MM-dd HH:mm:ss')}"></td>
                                                         <td th:if="${list.htmRegAgreeContentNy eq 0}" class="codeUse">N</td>

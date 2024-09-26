@@ -1007,6 +1007,7 @@
                                                                 <option value="" th:selected="${vo.shOption == null}">검색구분</option>
 																<option value="1" th:selected="${vo.shOption == 1}">코드그룹번호</option>
 																<option value="2" th:selected="${vo.shOption == 2}">코드그룹이름</option>
+																<option value="3" th:selected="${vo.shOption == 3}">코드번호</option>
                                                             </select>
                                                         </div>
                                                         <div class="col-md-2">
@@ -1090,7 +1091,7 @@
                                                                     for="contacusercheck1"></label>
                                                             </div>
                                                         </th> 
-                                                        <td></td> <!-- No -->
+                                                        <td th:text="${vo.totalRows - ((vo.thisPage - 1) * vo.rowNumToShow + listStat.index)}" class="align-middle"></td>
                                                         <td th:text="${list.codegroup_ifcgSeq}"></td>
                                                         <td th:text="${list.ifcgName}"></td>
                                                         <td th:text="${list.ifcdSeq}"></td>

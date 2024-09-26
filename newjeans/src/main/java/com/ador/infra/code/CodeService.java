@@ -73,7 +73,7 @@ public class CodeService {
 	
     // codegroup의 seq 번호를 받고 해당하는 code의 내용을 List로 출력 
 	public static List<CodeDto> selectListCachedCode(String codegroup_ifcgSeq) {
-		System.out.println("codegroup_ifcgSeq : " + codegroup_ifcgSeq);
+//		System.out.println("codegroup_ifcgSeq : " + codegroup_ifcgSeq);
 		List<CodeDto> rt = new ArrayList<CodeDto>();
 		for(CodeDto codeRow : CodeDto.cachedCodeArrayList) {
 			if (codeRow.getCodegroup_ifcgSeq().equals(codegroup_ifcgSeq)) {
@@ -85,10 +85,9 @@ public class CodeService {
 		return rt;
 	}
 
-	
+	// code의 seq를 받아서 문자열로 출력 
 	public static String selectOneCachedCode(int code) {
-		System.out.println("code : " + code);
-//		System.out.println("CodeDto.cachedCodeArrayList : " + CodeDto.cachedCodeArrayList);
+//		System.out.println("code : " + code);
 		String rt = "";
 		for(CodeDto codeRow : CodeDto.cachedCodeArrayList) {
 			if (codeRow.getIfcdSeq().equals(Integer.toString(code))) {

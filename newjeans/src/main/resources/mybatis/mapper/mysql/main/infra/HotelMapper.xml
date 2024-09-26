@@ -5,34 +5,7 @@
 
 	<resultMap type="com.ador.infra.hotel.HotelDto" id="resultMapObj"></resultMap>
 	
-	<select id="hotelList" resultMap="resultMapObj">
-		select
-		 	a.htseq,
-		    a.htName,
-		    a.htAddress,
-		    a.htcountry,
-		    a.htDesc,
-		    a.htDelNy,
-		    a.htRegDate,
-		    a.htReviseDate,
-		    a.htNotice,
-		    a.htMap,
-		    a.htInclusionItems,
-		    a.htNameSearch,
-		    a.htPriceSearch,
-		    a.htStarSearch,
-		    a.htClassSearch,
-		    a.htRestaurantNy,
-		    a.htSpaNy,
-		    a.htFitnessCenterNy,
-		    a.htPoolNy,
-		    a.htloungeNy,
-		    a.htStockRoomNy,
-		    a.htParkingNy,
-		    a.htShuttleBusNy,
-		    a.htBreakfastNy,
-		    a.htRoomServiceNy,
-		    a.htElseNy
+	<sql id="selectCommon">
 		from
 		    hotel a
 		where 1=1
@@ -90,8 +63,47 @@
 				<when test="shOption == 2">AND htName LIKE CONCAT('%',#{shValue},'%')</when>
 				<when test="shOption == 3">AND htStarSearch LIKE CONCAT('%',#{shValue},'%')</when>
 			</choose> 
+	</sql>
+	
+	<select id="selectOneCount">
+		SELECT COUNT(*)
+		<include refid="selectCommon"/>	
+	</select>
+	
+	<select id="hotelList" resultMap="resultMapObj">
+		select aa.* from (
+		select
+		 	a.htseq,
+		    a.htName,
+		    a.htAddress,
+		    a.htcountry,
+		    a.htDesc,
+		    a.htDelNy,
+		    a.htRegDate,
+		    a.htReviseDate,
+		    a.htNotice,
+		    a.htMap,
+		    a.htInclusionItems,
+		    a.htNameSearch,
+		    a.htPriceSearch,
+		    a.htStarSearch,
+		    a.htClassSearch,
+		    a.htRestaurantNy,
+		    a.htSpaNy,
+		    a.htFitnessCenterNy,
+		    a.htPoolNy,
+		    a.htloungeNy,
+		    a.htStockRoomNy,
+		    a.htParkingNy,
+		    a.htShuttleBusNy,
+		    a.htBreakfastNy,
+		    a.htRoomServiceNy,
+		    a.htElseNy
+		<include refid="selectCommon"/>
 		order by
-			a.htseq desc 
+			a.htseq desc
+		) aa
+		limit #{rowNumToShow} offset #{startRnumForMysql}
 	</select>
 	
 	<insert id="hotelInsert">

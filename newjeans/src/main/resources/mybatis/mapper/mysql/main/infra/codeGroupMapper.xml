@@ -67,6 +67,10 @@
 		    now(),
 			now()
 		)
+		<!-- 마지막으로 insert된 seq 정보를 가져옴. seq 정보가 바로 넘어가도록 함 -->
+		<selectKey resultType="String" keyProperty="ifcgSeq" order="AFTER">
+				SELECT last_insert_id()
+	    </selectKey>
 	</insert>
 	
 	<select id="selectOne" resultMap="resultMapObj">

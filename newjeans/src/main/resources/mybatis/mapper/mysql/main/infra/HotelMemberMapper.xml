@@ -10,6 +10,7 @@
 			newjeans.hotelmember a
 		WHERE 1=1
 			<if test="shDelNy != null and !shDelNy.equals('')">AND htmDelNy = #{shDelNy}</if>
+			<if test="shRegAgreeContent != null and !shRegAgreeContent.equals('')">AND htmRegAgreeContentNy = #{shRegAgreeContent}</if>
 			
 			<!-- 달력 -->
 			<choose>

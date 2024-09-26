@@ -23,6 +23,7 @@
 			<choose> <!-- 검색 구분 -->
 				<when test="shOption == 1">AND codegroup_ifcgSeq = #{shValue}</when>
 				<when test="shOption == 2">AND ifcdName LIKE CONCAT('%',#{shValue},'%')</when>
+				<when test="shOption == 3">AND ifcdSeq LIKE CONCAT('%',#{shValue},'%')</when>
 			</choose>  
 	</sql>
 	
@@ -119,6 +120,7 @@
 	<update id="codeUpdate">
 		UPDATE code
 		SET
+			codegroup_ifcgSeq = #{codegroup_ifcgSeq},
 	        ifcdName = #{ifcdName},
 	        ifcdUseNy = #{ifcdUseNy},
 	        ifcdOrder = #{ifcdOrder},

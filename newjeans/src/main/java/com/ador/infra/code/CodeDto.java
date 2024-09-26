@@ -25,6 +25,8 @@ public class CodeDto {
 	
     // for cache
 	public static List<CodeDto> cachedCodeArrayList = new ArrayList<CodeDto>();
+	
+	
 	//-----
 	public String getIfcdSeq() {
 		return ifcdSeq;
