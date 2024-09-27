@@ -59,7 +59,7 @@ public class CodeGroupController {
 		 
 		System.out.println("IfcgName = " + codeGroupDto.getIfcgName());
 		
-		codeGroupService.insert(codeGroupDto); 
+		codeGroupService.insert(codeGroupDto);
 		
 		return "redirect:/xdm/v1/infra/codegroup/codeGroupXdmList";
 	}
@@ -110,7 +110,11 @@ public class CodeGroupController {
 //		
 //		return "/xdm/v1/infra/codegroup/codeGroupXdmMForm";
 //	}
-	
+	 
+	@RequestMapping(value="/xdm/v1/infra/codegroup/test")
+	public String test() {
+		return "/xdm/v1/infra/codegroup/test";
+	}
 	
 	
 	

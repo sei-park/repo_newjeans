@@ -12,7 +12,7 @@
     <link rel="shortcut icon" href="/xdm/v1/template/ui/assets/images/favicon.ico">
 
     <!-- plugin css -->
-    <link href="/xdm/v1/template/ui/assets/libs/choices.js/public//xdm/v1/template/ui/assets/styles/choices.min.css" rel="stylesheet" type="text/css" />
+    <link href="/xdm/v1/template/ui/assets/libs/choices.js/public/xdm/v1/template/ui/assets/styles/choices.min.css" rel="stylesheet" type="text/css" />
     <link href="/xdm/v1/template/ui/assets/libs/flatpickr/flatpickr.min.css" rel="stylesheet">
 
     <!-- One of the following themes -->
@@ -28,6 +28,9 @@
     <link href="/xdm/v1/template/ui/assets/css/app.min.css" id="app-style" rel="stylesheet" type="text/css" />
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font/bootstrap-icons.css">
+    
+    
+    
 
 </head>
 
@@ -945,22 +948,22 @@
 								
 								<!--  Form 추가 --> <!-- form 태그 안에 novalidate  class="needs-validation" -->
                                 <div class="card-body">
-                                    <form method="post" action="/xdm/v1/infra/codegroup/codeGroupXdmInst">
+                                    <form class="needs-validation" novalidate method="post" action="/xdm/v1/infra/codegroup/codeGroupXdmInst" name="form">
                                         <div class="row"> <!--col-md-8-->
                                             <div class="row">
                                             	<div class="col-md-3">
                                                     <label for="choices-single-groups"
-                                                        class="form-label font-size-13 text-muted">코드그룹</label>
+                                                        class="form-label font-size-13 text-muted">그룹</label>
                                                     <input type="text" class="form-control" id="validationCustom01"
                                                         placeholder="" value="" name="ifcgSeq" disabled>
                                                     <div class="valid-feedback">Looks good!</div>
                                                 </div>
-                                                <div class="col-md-3"> <!--col-mb-3-->
+                                                <div class="col-md-3"> 
                                                     <label for=" choices-single-groups"
                                                         class="form-label font-size-13 text-muted">코드그룹이름</label>
-                                                    <input type="text" class="form-control" id="validationCustom03"
-                                                        placeholder="" name="ifcgName"> <!--  required -->
-                                                    <div class="invalid-feedback">Please provide a valid city.</div>
+                                                    <input type="text" class="form-control" id="ifcgName"
+                                                        placeholder="" name="ifcgName" required>
+                                                    <div class="invalid-feedback">이름을 입력해 주세요</div>
                                                 </div>
                                             </div>
 
@@ -970,7 +973,8 @@
                                                         class="form-label font-size-13 text-muted">사용여부
                                                         <sup>*</sup>
                                                     </label>
-                                                    <select class="form-select" name="ifcgUseNy">
+                                                    <select class="form-select" name="ifcgUseNy" id="ifcgUseNy">
+                                                    	<option value="" th:selected="${item?.ifcgUseNy == null}">선택하세요</option>
                                                         <option value="1" th:selected="${item?.ifcgUseNy == 1}">사용</option>
                                                         <option value="0" th:selected="${item?.ifcgUseNy == 0}">미사용</option>
                                                     </select>
@@ -1163,7 +1167,7 @@
                                                 
                                                 <!-- 버튼 -->
                                                 <div class="col-md-1" align="right">
-                                                    <button type="submit" class="btn btn-outline-primary">
+                                                    <button type="button" class="btn btn-outline-primary" id="btnSubmit">
                                                         <i class="bx bx-data"></i>
                                                     </button>
                                                 </div>
@@ -1346,7 +1350,7 @@
         <script src="/xdm/v1/template/ui/assets/libs/feather-icons/feather.min.js"></script>
 
         <!-- plugins -->
-        <script src="/xdm/v1/template/ui/assets/libs/choices.js/public//xdm/v1/template/ui/assets/scripts/choices.min.js"></script>
+        <script src="/xdm/v1/template/ui/assets/libs/choices.js/public/xdm/v1/template/ui/assets/scripts/choices.min.js"></script>
         <script src="/xdm/v1/template/ui/assets/libs/flatpickr/flatpickr.min.js"></script>
 
         <!-- Modern colorpicker bundle -->
@@ -1354,10 +1358,63 @@
 
         <!-- init js -->
         <script src="/xdm/v1/template/ui/assets/js/pages/form-advanced.init.js"></script>
+<!--         <script src="/xdm/v1/template/ui/assets/js/pages/form-validation.init.js"></script> -->
+        
+        <script>
+        
+        validation
+    	document.getElementById("btnSubmit").onclick = function (){ // 버튼을 클릭했을 때 함수 실행                 
+    		// trim() : 값의 앞 뒤 공백 제거 함수
+    	    var obj = document.getElementById("ifcgName"); // 해당 id를 가져와서 obj에 넣음   
+    	    var objValue = document.getElementById("ifcgName").value.trim(); // id 값을 앞 뒤 공백 제거를 하고 objValue에 넣음  
+    		
+    	    if (objValue == "" || objValue == null) { // objValue가 비어있거나 값이 없을 때
+    	    	alert("이름을 입력해 주세요"); // alert창을 띄우고
+    			obj.focus(); // input창에 포커스를 맞춤
+    			return false; // 함수를 빠져나감
+    	    } else { // 그게 아니라면 
+     			//by pass
+    	    }	
+    		alert(document.getElementById("ifcgName").value); // 입력한 내용을 alert창에 띄움 
+    	}
+        
+    	document.getElementById("btnSubmit").onclick = function (){ // 버튼 id를 클릭하면 아래 함수를 실행 
+//     		alert(document.getElementById("ifcgName").value);	 
+    		
+    	    var ifcgName = document.getElementById("ifcgName"); // id를 가져와 ifcgName 변수에 넣음 
+    	    var ifcgNameValue = document.getElementById("ifcgName").value.trim(); // id를 가져와 ifcgNameValue에 넣고 그 값의 앞 뒤 공백을 제거
+    		
+    	    if (ifcgNameValue == "" || ifcgNameValue == null) { // 값이 비어 있거나 없을 경우
+    			alert("이름을 입력해 주세요"); // alert창을 띄움
+    			ifcgName.focus(); // ifcgName의 input창에 포커스 함
+    			return false; // 함수를 빠져나옴 
+    	    } else { 
+//     			by pass
+    	    }
+    	     
+    	    var ifcgUseNy = document.getElementById("ifcgUseNy");
+    	    var ifcgUseNyValue = document.getElementById("ifcgUseNy").value.trim();
 
-        <script src="/xdm/v1/template/ui/assets/js/pages/form-validation.init.js"></script>
+    	    if (ifcgUseNyValue == "" || ifcgUseNyValue == null) {
+    			alert("사용여부를 선택해 주세요");
+    			ifcgUseNy.focus();
+    			return false;
+    	    } else {
+//     			by pass
+    	    }
+    	     
+    		form.action = "/xdm/v1/infra/codegroup/codeGroupXdmInst"; // insert 경로로 이동 
+    		form.submit(); 
+    		 
+    	} 
+    	
+ 
+    	
+   
+        </script>
+        
+        
 
-<!--         <script src="/xdm/v1/template/ui/assets/js/app.js"></script> -->
 
 </body>
 

@@ -938,11 +938,9 @@
                                 <div class="card-header justify-content-between d-flex align-items-center">
                                     <h1>Code</h1><!--card-title-->
                                 </div><!-- end card header -->
-								
-								<!--  Form 추가 --> <!-- form 태그 안에 novalidate  class="needs-validation" -->
-								
+									
                                 <div class="card-body">
-                                    <form method="post" action="/xdm/v1/infra/code/codeXdmInst">
+                                    <form method="post" action="/xdm/v1/infra/code/codeXdmInst" name="form" class="needs-validation" novalidate>
                                         <div class="row"> <!--col-md-8-->
                                             <div class="row">
                                             	 <div class="col-md-3">
@@ -964,10 +962,11 @@
                                                 <div class="col-md-3"> <!--col-mb-3-->
                                                     <label for=" choices-single-groups"
                                                         class="form-label font-size-13 text-muted">코드이름</label>
-                                                    <input type="text" class="form-control" id="validationCustom03"
-                                                        placeholder="" name="ifcdName"> <!--  required -->
-                                                    <div class="invalid-feedback">Please provide a valid city.</div>
+                                                    <input type="text" class="form-control"
+                                                        placeholder="" name="ifcdName" id="ifcdName" required> 
+                                                    <div class="invalid-feedback">이름을 입력해 주세요</div>
                                                 </div>
+                                                
                                             </div>
 
                                             <div class="row gy-3">
@@ -976,7 +975,8 @@
                                                         class="form-label font-size-13 text-muted">사용여부
                                                         <sup>*</sup>
                                                     </label>
-                                                    <select class="form-select" name="ifcdUseNy">
+                                                    <select class="form-select" name="ifcdUseNy" id="ifcdUseNy">
+                                                        <option value="">선택해주세요</option>
                                                         <option value="1">사용</option>
                                                         <option value="0">미사용</option>
                                                     </select>
@@ -1156,7 +1156,7 @@
                                                 
                                                 <!-- 버튼 -->
                                                 <div class="col-md-1" align="right">
-                                                    <button type="submit" class="btn btn-outline-primary">
+                                                    <button type="button" class="btn btn-outline-primary" id="btnSubmit">
                                                         <i class="bx bx-data"></i>
                                                     </button>
                                                 </div>
@@ -1347,10 +1347,44 @@
 
         <!-- init js -->
         <script src="/xdm/v1/template/ui/assets/js/pages/form-advanced.init.js"></script>
+        <script src="/xdm/v1/template/ui/assets/js/pages/form-validation.init.js"></script>  
+        
+      
+        <script>
+        
+        document.getElementById("btnSubmit").onclick = function (){ // 버튼 id를 클릭하면 아래 함수를 실행 
+    		
+    	    var ifcdName = document.getElementById("ifcdName"); // id를 가져와 ifcgName 변수에 넣음 
+    	    var ifcdNameValue = document.getElementById("ifcdName").value.trim(); // id를 가져와 ifcgNameValue에 넣고 그 값의 앞 뒤 공백을 제거
+    		
+    	    if (ifcdNameValue == "" || ifcdNameValue == null) { // 값이 비어 있거나 없을 경우
+    			alert("이름을 입력해 주세요"); // alert창을 띄움
+    			ifcdName.focus(); // ifcgName의 input창에 포커스 함
+    			return false; // 함수를 빠져나옴 
+    	    } else { 
+     			// by pass
+    	    }  
+    	    
+    	    var ifcdUseNy = document.getElementById("ifcdUseNy");
+    	    var ifcdUseNyValue = document.getElementById("ifcdUseNy").value.trim();
 
-        <script src="/xdm/v1/template/ui/assets/js/pages/form-validation.init.js"></script>
+    	    if (ifcdUseNyValue == "" || ifcdUseNyValue == null) {
+    			alert("사용여부를 선택해 주세요");
+    			ifcdUseNy.focus();
+    			return false;
+    	    } else {
+    		   //by pass
+    	    }
+    	    
+    	    form.action = "/xdm/v1/infra/code/codeXdmInst"; // insert 경로로 이동 
+    		form.submit(); 
+     	    
+        } // btnSubmit end 
+        
+        
+        
+        </script>
 
-<!--         <script src="/xdm/v1/template/ui/assets/js/app.js"></script> -->
 
 </body>
 

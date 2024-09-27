@@ -12,7 +12,7 @@
     <link rel="shortcut icon" href="/xdm/v1/template/ui/assets/images/favicon.ico">
 
     <!-- plugin css -->
-    <link href="/xdm/v1/templ ate/ui/assets/libs/choices.js/public//xdm/v1/template/ui/assets/styles/choices.min.css" rel="stylesheet" type="text/css" />
+    <link href="/xdm/v1/template/ui/assets/libs/choices.js/public//xdm/v1/template/ui/assets/styles/choices.min.css" rel="stylesheet" type="text/css" />
     <link href="/xdm/v1/template/ui/assets/libs/flatpickr/flatpickr.min.css" rel="stylesheet">
 
     <!-- One of the following themes -->
@@ -32,6 +32,7 @@
 </head>
 
 <style>
+
 
 
 </style>
@@ -940,308 +941,202 @@
                         <div class="col-12"><!--col-12-->
                             <div class="card">
                                 <div class="card-header justify-content-between d-flex align-items-center">
-                                    <h1>Hotel Form</h1><!--card-title-->
+                                    <h1>Code</h1><!--card-title-->
                                 </div><!-- end card header -->
 
                                 <div class="card-body">
-                                    <form method="post" action="/xdm/v1/infra/hotel/hotelXdmInst" name="form">
+                                    <form class="needs-validation" novalidate>
                                         <div class="row"> <!--col-md-8-->
                                             <div class="row">
-                                                <div class="col-md-3">
-                                                    <label for="choices-single-groups"
-                                                        class="form-label font-size-13 text-muted">호텔번호</label>
-                                                    <input type="text" class="form-control" id="validationCustom01" name="htseq" disabled>
-                                                    <div class="valid-feedback">Looks good!</div>
-                                                </div>
-                                                <div class="col-md-3">
-                                                    <label for="choices-single-groups"
-                                                        class="form-label font-size-13 text-muted">호텔이름</label>
-                                                    <input type="text" class="form-control" name="htName" id="htName">
-                                                    <div class="valid-feedback">Looks good!</div>
-                                                </div>
-                                                <div class="col-md-3">
-                                                    <label for="choices-single-groups"
-                                                        class="form-label font-size-13 text-muted">주소</label>
-                                                    <input type="text" class="form-control" id="validationCustom01" name="htAddress">
-                                                    <div class="valid-feedback">Looks good!</div>
-                                                </div>
-                                                <div class="col-md-3">
+                                                <div class="col-md-3"><!--col-md-6-->
                                                     <label for="choices-single-default"
-                                                        class="form-label font-size-13 text-muted">국가
+                                                        class="form-label font-size-13 text-muted">코드그룹
+                                                        <sup>*</sup>
                                                     </label>
-                                                    <select class="form-select" name="htcountry" id="htcountry">
-                                                    	<option value="">선택해주세요</option>
-                                                        <option value="1">대한민국</option>
-                                                        <option value="2">일본</option>
-                                                        <option value="3">중국</option>
-                                                        <option value="4">베트남</option>
-                                                        <option value="5">미국</option>
-                                                        <option value="6">프랑스</option>
-                                                        <option value="7">태국</option>
+                                                    <!-- <select class="form-control" data-trigger name="choices-single-default" id="choices-single-default">
+                                                        <option value="">선택하세요</option>
+                                                        <option value="Choice 1">-</option>
+                                                        <option value="Choice 2">-</option>
+                                                        <option value="Choice 3">-</option>
+                                                    </select> -->
+                                                    <select class="form-select">
+                                                        <option>선택하세요</option>
+                                                        <option>-</option>
+                                                        <option>-</option>
                                                     </select>
                                                 </div>
-                                            </div>  
+                                            </div>
 
                                             <div class="row gy-3">
-                                            	<div class="col-md-3">
-                                            		<label for="choices-single-default"
-                                                        class="form-label font-size-13 text-muted">별점
-                                                    </label>
-                                                    <select class="form-select" name="htStarSearch">
-                                                        <option value="5">5점</option>
-                                                        <option value="4">4점</option>
-                                                        <option value="3">3점</option>
-                                                        <option value="2">2점</option>
-                                                        <option value="1">1점</option>
-                                                    </select>
-                                            	</div>
-                                            	<div class="col-md-3">
-                                            		<label for="choices-single-default"
-                                                        class="form-label font-size-13 text-muted">레스토랑
-                                                    </label>
-                                                    <select class="form-select" name="htRestaurantNy">
-                                                        <option value="0">N</option>
-                                                        <option value="1">Y</option>
-                                                    </select>
-                                            	</div>
-                                            	<div class="col-md-3">
-                                            	    <label for="choices-single-default"
-                                                        class="form-label font-size-13 text-muted">스파/온천
-                                                    </label>
-                                                    <select class="form-select" name="htSpaNy">
-                                                        <option value="0">N</option>
-                                                        <option value="1">Y</option>
-                                                    </select>
-                                            	</div>
-                                                <div class="col-md-3">
-                                            		<label for="choices-single-default"
-                                                        class="form-label font-size-13 text-muted">피트니스센터
-                                                    </label>
-                                                    <select class="form-select" name="htFitnessCenterNy">
-                                                        <option value="0">N</option>
-                                                        <option value="1">Y</option>
-                                                    </select>
-                                            	</div>
-                                            </div>
-                                            
-                                            <div class="row gy-3">
-                                            	 <div class="col-md-3">
-                                            		<label for="choices-single-default"
-                                                        class="form-label font-size-13 text-muted">수영장
-                                                    </label>
-                                                    <select class="form-select" name="htPoolNy">
-                                                        <option value="0">N</option>
-                                                        <option value="1">Y</option>
-                                                    </select>
-                                            	</div>
-                                            	<div class="col-md-3">
-                                            		<label for="choices-single-default"
-                                                        class="form-label font-size-13 text-muted">라운지
-                                                    </label>
-                                                    <select class="form-select" name="htloungeNy">
-                                                        <option value="0">N</option>
-                                                        <option value="1">Y</option>
-                                                    </select>
-                                            	</div>
-                                            	<div class="col-md-3">
-                                            		<label for="choices-single-default"
-                                                        class="form-label font-size-13 text-muted">물품보관소
-                                                    </label>
-                                                    <select class="form-select" name="htStockRoomNy">
-                                                        <option value="0">N</option>
-                                                        <option value="1">Y</option>
-                                                    </select>
-                                            	</div>
-                                            	<div class="col-md-3">
-                                            		<label for="choices-single-default"
-                                                        class="form-label font-size-13 text-muted">무료주차
-                                                    </label>
-                                                    <select class="form-select" name="htParkingNy">
-                                                        <option value="0">N</option>
-                                                        <option value="1">Y</option>
-                                                    </select>
-                                            	</div>
-                                            </div>
-                                            
-                                            <div class="row gy-3">
-                                            	 <div class="col-md-3">
-                                            		<label for="choices-single-default"
-                                                        class="form-label font-size-13 text-muted">공항셔틀버스
-                                                    </label>
-                                                    <select class="form-select" name="htShuttleBusNy">
-                                                        <option value="0">N</option>
-                                                        <option value="1">Y</option>
-                                                    </select>
-                                            	</div>
-                                            	 <div class="col-md-3">
-                                            		<label for="choices-single-default"
-                                                        class="form-label font-size-13 text-muted">조식
-                                                    </label>
-                                                    <select class="form-select" name="htBreakfastNy">
-                                                        <option value="0">N</option>
-                                                        <option value="1">Y</option>
-                                                    </select>
-                                            	</div>
-                                            	 <div class="col-md-3">
-                                            		<label for="choices-single-default"
-                                                        class="form-label font-size-13 text-muted">룸서비스
-                                                    </label>
-                                                    <select class="form-select" name="htRoomServiceNy">
-                                                        <option value="0">N</option>
-                                                        <option value="1">Y</option>
-                                                    </select>
-                                            	</div>
-                                            	 <div class="col-md-3">
-                                            		<label for="choices-single-default"
-                                                        class="form-label font-size-13 text-muted">기타
-                                                    </label>
-                                                    <select class="form-select" name="htElseNy">
-                                                        <option value="0">N</option>
-                                                        <option value="1">Y</option>
-                                                    </select>
-                                            	</div>
-                                            </div>
-                                            
-                                            <div class="row gy-3">
-                                                <div class="col-md-3">
+                                                <div class="col-md-3"> <!--col-mb-3-->
                                                     <label for="choices-single-groups"
-                                                        class="form-label font-size-13 text-muted">등록일</label>
-                                                    <input type="text" class="form-control" id="validationCustom01" name="htRegDate" disabled>
+                                                        class="form-label font-size-13 text-muted">코드</label>
+                                                    <input type="text" class="form-control" id="validationCustom01"
+                                                        placeholder="First name" value="자동생성" required>
                                                     <div class="valid-feedback">Looks good!</div>
                                                 </div>
-                                                <div class="col-md-3">
-                                                    <label for="choices-single-groups"
-                                                        class="form-label font-size-13 text-muted">수정일</label>
-                                                    <input type="text" class="form-control" id="validationCustom01" name="htReviseDate" disabled>
-                                                    <div class="valid-feedback">Looks good!</div>
+                                                <div class="col-md-3"> <!--col-mb-3-->
+                                                    <label for=" choices-single-groups"
+                                                        class="form-label font-size-13 text-muted">코드(ANOTHER)<sup>*</sup></label>
+                                                    <input type="text" class="form-control" id="validationCustom03"
+                                                        placeholder="한글영대소문자,숫자" required>
+                                                    <div class="invalid-feedback">Please provide a valid city.</div>
+                                                </div>
+                                                <div class="col-md-3"> <!--col-mb-3-->
+                                                    <label for=" choices-single-groups"
+                                                        class="form-label font-size-13 text-muted">코드이름<sup>*</sup></label>
+                                                    <input type="text" class="form-control" id="validationCustom03"
+                                                        placeholder="한글영대소문자,숫자" required>
+                                                    <div class="invalid-feedback">Please provide a valid city. </div>
+                                                </div>
+                                                <div class="col-md-3"> <!--col-mb-3-->
+                                                    <label for=" choices-single-groups"
+                                                        class="form-label font-size-13 text-muted">코드이름(영문)</label>
+                                                    <input type="text" class="form-control" id="validationCustom03"
+                                                        placeholder="영대소문자,숫자" required>
+                                                    <div class="invalid-feedback">Please provide a valid city. </div>
                                                 </div>
                                             </div>
-                                            
-                                             <div class="row gy-3">
-                                             	<div class="col-md-6">
-                                                    <label for="choices-single-groups"class="form-label font-size-13 text-muted">공지사항</label>
-                                                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="htNotice"></textarea>
-                                                </div>
-                                             </div>
-                                            
+
                                             <div class="row gy-3">
-                                            	<div class="col-md-6">
+                                                <div class=" col-md-3"><!--col-md-6-->
+                                                    <label for="choices-single-default"
+                                                        class="form-label font-size-13 text-muted">사용여부<sup>*</sup></label>
+                                                    <!-- <select class="form-control" data-trigger name="choices-single-default" id="choices-single-default">
+                                                    <option value="">사용</option>
+                                                    <option value="Choice 1">-</option>
+                                                </select> -->
+                                                    <select class="form-select">
+                                                        <option>사용</option>
+                                                        <option>-</option>
+                                                        <option>-</option>
+                                                    </select>
+                                                </div>
+                                                <div class="col-md-3"><!--col-md-6-->
+                                                    <label for="choices-single-groups"
+                                                        class="form-label font-size-13 text-muted">순서<sup>*</sup></label>
+                                                    <input class="form-control" type="text" value=""
+                                                        id="example-text-input">
+                                                </div>
+                                            </div>
+
+                                            <div class="row gy-3">
+                                                <div class="col-md-6">
                                                     <label for="choices-single-groups"class="form-label font-size-13 text-muted">설명</label>
-                                                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="htDesc"></textarea>
+                                                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
                                                 </div>
                                             </div>
-                                       
 
-<!--                                             <div class="row gy-3"> -->
-<!--                                                 <div class="col-md-3">col-md-6 -->
-<!--                                                     <label for="choices-single-groups" -->
-<!--                                                         class="form-label font-size-13 text-muted">다국어1</label> -->
-<!--                                                     <input class="form-control" type="text" value="" -->
-<!--                                                         id="example-text-input"> -->
-<!--                                                 </div> -->
-<!--                                                 <div class="col-md-3">col-md-6 -->
-<!--                                                     <label for="choices-single-groups" -->
-<!--                                                         class="form-label font-size-13 text-muted">다국어2</label> -->
-<!--                                                     <input class="form-control" type="text" value="" -->
-<!--                                                         id="example-text-input"> -->
-<!--                                                 </div> -->
-<!--                                                 <div class="col-md-3">col-md-6 -->
-<!--                                                     <label for="choices-single-groups" -->
-<!--                                                         class="form-label font-size-13 text-muted">다국어3</label> -->
-<!--                                                     <input class="form-control" type="text" value="" -->
-<!--                                                         id="example-text-input"> -->
-<!--                                                 </div> -->
-<!--                                                 <div class="col-md-3">col-md-6 -->
-<!--                                                     <label for="choices-single-groups" -->
-<!--                                                         class="form-label font-size-13 text-muted">다국어4</label> -->
-<!--                                                     <input class="form-control" type="text" value="" -->
-<!--                                                         id="example-text-input"> -->
-<!--                                                 </div> -->
-<!--                                             </div> -->
+                                            <div class="row gy-3">
+                                                <div class="col-md-3"><!--col-md-6-->
+                                                    <label for="choices-single-groups"
+                                                        class="form-label font-size-13 text-muted">다국어1</label>
+                                                    <input class="form-control" type="text" value=""
+                                                        id="example-text-input">
+                                                </div>
+                                                <div class="col-md-3"><!--col-md-6-->
+                                                    <label for="choices-single-groups"
+                                                        class="form-label font-size-13 text-muted">다국어2</label>
+                                                    <input class="form-control" type="text" value=""
+                                                        id="example-text-input">
+                                                </div>
+                                                <div class="col-md-3"><!--col-md-6-->
+                                                    <label for="choices-single-groups"
+                                                        class="form-label font-size-13 text-muted">다국어3</label>
+                                                    <input class="form-control" type="text" value=""
+                                                        id="example-text-input">
+                                                </div>
+                                                <div class="col-md-3"><!--col-md-6-->
+                                                    <label for="choices-single-groups"
+                                                        class="form-label font-size-13 text-muted">다국어4</label>
+                                                    <input class="form-control" type="text" value=""
+                                                        id="example-text-input">
+                                                </div>
+                                            </div>
 
-<!--                                             <div class="row gy-3"> -->
-<!--                                                 <div class="col-md-3">col-md-6 -->
-<!--                                                     <label for="choices-single-groups" -->
-<!--                                                         class="form-label font-size-13 text-muted">다국어5</label> -->
-<!--                                                     <input class="form-control" type="text" value="" -->
-<!--                                                         id="example-text-input"> -->
-<!--                                                 </div> -->
-<!--                                                 <div class="col-md-3">col-md-6 -->
-<!--                                                     <label for="choices-single-groups" -->
-<!--                                                         class="form-label font-size-13 text-muted">다국어6</label> -->
-<!--                                                     <input class="form-control" type="text" value="" -->
-<!--                                                         id="example-text-input"> -->
-<!--                                                 </div> -->
-<!--                                                 <div class="col-md-3">col-md-6 -->
-<!--                                                     <label for="choices-single-groups" -->
-<!--                                                         class="form-label font-size-13 text-muted">다국어7</label> -->
-<!--                                                     <input class="form-control" type="text" value="" -->
-<!--                                                         id="example-text-input"> -->
-<!--                                                 </div> -->
-<!--                                                 <div class="col-md-3">col-md-6 -->
-<!--                                                     <label for="choices-single-groups" -->
-<!--                                                         class="form-label font-size-13 text-muted">다국어8</label> -->
-<!--                                                     <input class="form-control" type="text" value="" -->
-<!--                                                         id="example-text-input"> -->
-<!--                                                 </div> -->
-<!--                                             </div> -->
+                                            <div class="row gy-3">
+                                                <div class="col-md-3"><!--col-md-6-->
+                                                    <label for="choices-single-groups"
+                                                        class="form-label font-size-13 text-muted">다국어5</label>
+                                                    <input class="form-control" type="text" value=""
+                                                        id="example-text-input">
+                                                </div>
+                                                <div class="col-md-3"><!--col-md-6-->
+                                                    <label for="choices-single-groups"
+                                                        class="form-label font-size-13 text-muted">다국어6</label>
+                                                    <input class="form-control" type="text" value=""
+                                                        id="example-text-input">
+                                                </div>
+                                                <div class="col-md-3"><!--col-md-6-->
+                                                    <label for="choices-single-groups"
+                                                        class="form-label font-size-13 text-muted">다국어7</label>
+                                                    <input class="form-control" type="text" value=""
+                                                        id="example-text-input">
+                                                </div>
+                                                <div class="col-md-3"><!--col-md-6-->
+                                                    <label for="choices-single-groups"
+                                                        class="form-label font-size-13 text-muted">다국어8</label>
+                                                    <input class="form-control" type="text" value=""
+                                                        id="example-text-input">
+                                                </div>
+                                            </div>
 
-<!--                                             <div class="row gy-3"> -->
-<!--                                                 <div class="col-md-3">col-md-6 -->
-<!--                                                     <label for="choices-single-groups" -->
-<!--                                                         class="form-label font-size-13 text-muted">예비1(VARCHER -->
-<!--                                                         TYPE)</label> -->
-<!--                                                     <input class="form-control" type="text" value="" -->
-<!--                                                         id="example-text-input"> -->
-<!--                                                 </div> -->
-<!--                                                 <div class="col-md-3">col-md-6 -->
-<!--                                                     <label for="choices-single-groups" -->
-<!--                                                         class="form-label font-size-13 text-muted">예비2(VARCHER -->
-<!--                                                         TYPE)</label> -->
-<!--                                                     <input class="form-control" type="text" value="" -->
-<!--                                                         id="example-text-input"> -->
-<!--                                                 </div> -->
-<!--                                                 <div class="col-md-3">col-md-6 -->
-<!--                                                     <label for="choices-single-groups" -->
-<!--                                                         class="form-label font-size-13 text-muted">예비3(VARCHER -->
-<!--                                                         TYPE)</label> -->
-<!--                                                     <input class="form-control" type="text" value="" -->
-<!--                                                         id="example-text-input"> -->
-<!--                                                 </div> -->
-<!--                                                 <div class="col-md-3">col-md-6 -->
-<!--                                                     <label for="choices-single-groups" -->
-<!--                                                         class="form-label font-size-13 text-muted">예비4(VARCHERTYPE)</label> -->
-<!--                                                     <input class="form-control" type="text" value="" -->
-<!--                                                         id="example-text-input"> -->
-<!--                                                 </div> -->
-<!--                                             </div> -->
+                                            <div class="row gy-3">
+                                                <div class="col-md-3"><!--col-md-6-->
+                                                    <label for="choices-single-groups"
+                                                        class="form-label font-size-13 text-muted">예비1(VARCHER
+                                                        TYPE)</label>
+                                                    <input class="form-control" type="text" value=""
+                                                        id="example-text-input">
+                                                </div>
+                                                <div class="col-md-3"><!--col-md-6-->
+                                                    <label for="choices-single-groups"
+                                                        class="form-label font-size-13 text-muted">예비2(VARCHER
+                                                        TYPE)</label>
+                                                    <input class="form-control" type="text" value=""
+                                                        id="example-text-input">
+                                                </div>
+                                                <div class="col-md-3"><!--col-md-6-->
+                                                    <label for="choices-single-groups"
+                                                        class="form-label font-size-13 text-muted">예비3(VARCHER
+                                                        TYPE)</label>
+                                                    <input class="form-control" type="text" value=""
+                                                        id="example-text-input">
+                                                </div>
+                                                <div class="col-md-3"><!--col-md-6-->
+                                                    <label for="choices-single-groups"
+                                                        class="form-label font-size-13 text-muted">예비4(VARCHERTYPE)</label>
+                                                    <input class="form-control" type="text" value=""
+                                                        id="example-text-input">
+                                                </div>
+                                            </div>
 
-<!--                                             <div class="row gy-3"> -->
-<!--                                                 <div class="col-md-3">col-md-6 -->
-<!--                                                     <label for="choices-single-groups" -->
-<!--                                                         class="form-label font-size-13 text-muted">예비1(INT TYPE)</label> -->
-<!--                                                     <input class="form-control" type="text" value="" -->
-<!--                                                         id="example-text-input"> -->
-<!--                                                 </div> -->
-<!--                                                 <div class="col-md-3">col-md-6 -->
-<!--                                                     <label for="choices-single-groups" -->
-<!--                                                         class="form-label font-size-13 text-muted">예비2(INT TYPE)</label> -->
-<!--                                                     <input class="form-control" type="text" value="" -->
-<!--                                                         id="example-text-input"> -->
-<!--                                                 </div> -->
-<!--                                                 <div class="col-md-3">col-md-6 -->
-<!--                                                     <label for="choices-single-groups" -->
-<!--                                                         class="form-label font-size-13 text-muted">예비3(INT TYPE)</label> -->
-<!--                                                     <input class="form-control" type="text" value="" -->
-<!--                                                         id="example-text-input"> -->
-<!--                                                 </div> -->
-<!--                                                 <div class="col-md-3">col-md-6 -->
-<!--                                                     <label for="choices-single-groups" -->
-<!--                                                         class="form-label font-size-13 text-muted">예비4(INT TYPE)</label> -->
-<!--                                                     <input class="form-control" type="text" value="" -->
-<!--                                                         id="example-text-input"> -->
-<!--                                                 </div> -->
-<!--                                             </div> -->
+                                            <div class="row gy-3">
+                                                <div class="col-md-3"><!--col-md-6-->
+                                                    <label for="choices-single-groups"
+                                                        class="form-label font-size-13 text-muted">예비1(INT TYPE)</label>
+                                                    <input class="form-control" type="text" value=""
+                                                        id="example-text-input">
+                                                </div>
+                                                <div class="col-md-3"><!--col-md-6-->
+                                                    <label for="choices-single-groups"
+                                                        class="form-label font-size-13 text-muted">예비2(INT TYPE)</label>
+                                                    <input class="form-control" type="text" value=""
+                                                        id="example-text-input">
+                                                </div>
+                                                <div class="col-md-3"><!--col-md-6-->
+                                                    <label for="choices-single-groups"
+                                                        class="form-label font-size-13 text-muted">예비3(INT TYPE)</label>
+                                                    <input class="form-control" type="text" value=""
+                                                        id="example-text-input">
+                                                </div>
+                                                <div class="col-md-3"><!--col-md-6-->
+                                                    <label for="choices-single-groups"
+                                                        class="form-label font-size-13 text-muted">예비4(INT TYPE)</label>
+                                                    <input class="form-control" type="text" value=""
+                                                        id="example-text-input">
+                                                </div>
+                                            </div>
 
                                             <!------------submit icon------------>
                                             <div class="row gy-3">
@@ -1254,9 +1149,9 @@
                                                 </div>
 
                                                 <div class="col-md-10"></div>
-                                             <!-- 제출버튼 -->
+                                                
                                                 <div class="col-md-1" align="right">
-                                                    <button type="button" class="btn btn-outline-primary" id="btnSubmit">
+                                                    <button type="submit" class="btn btn-outline-primary">
                                                         <i class="bx bx-data"></i>
                                                     </button>
                                                 </div>
@@ -1448,50 +1343,8 @@
         <!-- init js -->
         <script src="/xdm/v1/template/ui/assets/js/pages/form-advanced.init.js"></script>
         <script src="/xdm/v1/template/ui/assets/js/pages/form-validation.init.js"></script>
-        
-        <script>
-        document.getElementById("btnSubmit").onclick = function() {
-        	
-        	var htName = document.getElementById("htName"); 
-     		var htNameValue = document.getElementById("htName").value.trim();
 
-     		if (htNameValue == "" || htNameValue == null) { 
-     			alert("이름을 입력해 주세요"); 
-     			htName.focus();
-     			return false; 
-     		} else {
-     			// by pass
-     		}
-     		
-     		var htcountry = document.getElementById("htcountry"); 
-     		var htcountryValue = document.getElementById("htcountry").value.trim();
-
-     		if (htcountryValue == "" || htcountryValue == null) { 
-     			alert("국가를 선택해 주세요"); 
-     			htcountry.focus();
-     			return false; 
-     		} else {
-     			// by pass
-     		}
-     		
-     		form.action = "/xdm/v1/infra/hotel/hotelXdmInst"; // insert 경로로 이동 
-			form.submit();
-        	
-        	
-        	
-        }
-        
-       
-        
-        
-        
-        
-        
-        
-        
-        </script>
-
-
+<!--         <script src="/xdm/v1/template/ui/assets/js/app.js"></script> -->
 
 </body>
 

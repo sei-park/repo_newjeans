@@ -1214,7 +1214,11 @@
                                                         <td><a th:href="@{/xdm/v1/infra/hotel/hotelXdmMForm(htseq=${list.htseq})}"
 														th:text="${list.htName}"></a></td>
                                                         <td th:text="${list.htAddress}"></td>
-                                                        <td th:text="${list.htcountry}"></td>
+<!--                                                         <td th:text="${list.htcountry}"></td> -->
+
+														<td th:if="${list.htcountry != null}" th:text="${@codeService.selectOneCachedCode(list.htcountry)}"></td>
+														<td th:unless="${list.htcountry != null}"></td>
+														
                                                         <td th:if="${list.htDelNy eq 0}" class="codeUse">N</td>
 														<td th:unless="${list.htDelNy eq 0}" class="codeUse">Y</td>
 														<td th:text="${#dates.format(list.htRegDate,'yyyy-MM-dd HH:mm:ss')}"></td>
