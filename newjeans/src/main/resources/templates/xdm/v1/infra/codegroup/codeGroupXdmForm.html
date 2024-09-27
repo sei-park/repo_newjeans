@@ -960,24 +960,25 @@
                                                 </div>
                                                 <div class="col-md-3"> 
                                                     <label for=" choices-single-groups"
-                                                        class="form-label font-size-13 text-muted">코드그룹이름</label>
+                                                        class="form-label font-size-13 text-muted">코드그룹이름 <sup>*</sup></label>
                                                     <input type="text" class="form-control" id="ifcgName"
                                                         placeholder="" name="ifcgName" required>
                                                     <div class="invalid-feedback">이름을 입력해 주세요</div>
                                                 </div>
                                             </div>
 
-                                            <div class="row gy-3">
+                                            <div class="row gy-3">  
                                             	 <div class="col-md-3"><!--col-md-6-->
                                                     <label for="choices-single-default"
                                                         class="form-label font-size-13 text-muted">사용여부
                                                         <sup>*</sup>
                                                     </label>
-                                                    <select class="form-select" name="ifcgUseNy" id="ifcgUseNy">
+                                                    <select class="form-select" name="ifcgUseNy" id="ifcgUseNy" required>
                                                     	<option value="" th:selected="${item?.ifcgUseNy == null}">선택하세요</option>
                                                         <option value="1" th:selected="${item?.ifcgUseNy == 1}">사용</option>
                                                         <option value="0" th:selected="${item?.ifcgUseNy == 0}">미사용</option>
                                                     </select>
+                                                    <div class="invalid-feedback">사용여부를 선택해 주세요</div>
                                                 </div>
                                                  <div class="col-md-3"><!--col-md-6-->
                                                     <label for="choices-single-groups"
@@ -989,8 +990,8 @@
                                             
                                             <div class="row gy-3">
                                                 <div class="col-md-6">
-                                                    <label for="choices-single-groups"class="form-label font-size-13 text-muted">설명</label>
-                                                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="ifcgDesc"></textarea>
+                                                    <label for="choices-single-groups" class="form-label font-size-13 text-muted">설명</label>
+                                                    <textarea class="form-control" rows="3" name="ifcgDesc" id="ifcgDesc"></textarea>
                                                  </div>
                                             </div>
                                             
@@ -1362,52 +1363,54 @@
         
         <script>
         
-        validation
-    	document.getElementById("btnSubmit").onclick = function (){ // 버튼을 클릭했을 때 함수 실행                 
-    		// trim() : 값의 앞 뒤 공백 제거 함수
-    	    var obj = document.getElementById("ifcgName"); // 해당 id를 가져와서 obj에 넣음   
-    	    var objValue = document.getElementById("ifcgName").value.trim(); // id 값을 앞 뒤 공백 제거를 하고 objValue에 넣음  
+        //validation
+//     	document.getElementById("btnSubmit").onclick = function (){ // 버튼을 클릭했을 때 함수 실행                 
+//     		// trim() : 값의 앞 뒤 공백 제거 함수
+//     	    var obj = document.getElementById("ifcgName"); // 해당 id를 가져와서 obj에 넣음   
+//     	    var objValue = document.getElementById("ifcgName").value.trim(); // id 값을 앞 뒤 공백 제거를 하고 objValue에 넣음  
     		
-    	    if (objValue == "" || objValue == null) { // objValue가 비어있거나 값이 없을 때
-    	    	alert("이름을 입력해 주세요"); // alert창을 띄우고
-    			obj.focus(); // input창에 포커스를 맞춤
-    			return false; // 함수를 빠져나감
-    	    } else { // 그게 아니라면 
-     			//by pass
-    	    }	
-    		alert(document.getElementById("ifcgName").value); // 입력한 내용을 alert창에 띄움 
-    	}
+//     	    if (objValue == "" || objValue == null) { // objValue가 비어있거나 값이 없을 때
+//     	    	alert("이름을 입력해 주세요"); // alert창을 띄우고
+//     			obj.focus(); // input창에 포커스를 맞춤
+//     			return false; // 함수를 빠져나감
+//     	    } else { // 그게 아니라면 
+//      			//by pass
+//     	    }	
+//     		alert(document.getElementById("ifcgName").value); // 입력한 내용을 alert창에 띄움 
+//     	}
         
     	document.getElementById("btnSubmit").onclick = function (){ // 버튼 id를 클릭하면 아래 함수를 실행 
-//     		alert(document.getElementById("ifcgName").value);	 
     		
     	    var ifcgName = document.getElementById("ifcgName"); // id를 가져와 ifcgName 변수에 넣음 
     	    var ifcgNameValue = document.getElementById("ifcgName").value.trim(); // id를 가져와 ifcgNameValue에 넣고 그 값의 앞 뒤 공백을 제거
     		
     	    if (ifcgNameValue == "" || ifcgNameValue == null) { // 값이 비어 있거나 없을 경우
-    			alert("이름을 입력해 주세요"); // alert창을 띄움
+    	    	form.classList.add("was-validated"); // 클래스를 추가해서 validation 실행 
     			ifcgName.focus(); // ifcgName의 input창에 포커스 함
     			return false; // 함수를 빠져나옴 
     	    } else { 
-//     			by pass
-    	    }
+     			// by pass
+    	    }  
     	     
     	    var ifcgUseNy = document.getElementById("ifcgUseNy");
     	    var ifcgUseNyValue = document.getElementById("ifcgUseNy").value.trim();
 
     	    if (ifcgUseNyValue == "" || ifcgUseNyValue == null) {
-    			alert("사용여부를 선택해 주세요");
+    	    	form.classList.add("was-validated");
     			ifcgUseNy.focus();
     			return false;
     	    } else {
-//     			by pass
+    			// by pass
     	    }
-    	     
+    	    
     		form.action = "/xdm/v1/infra/codegroup/codeGroupXdmInst"; // insert 경로로 이동 
     		form.submit(); 
-    		 
-    	} 
+    		
+    		
+    	}          
     	
+  
+  	
  
     	
    
