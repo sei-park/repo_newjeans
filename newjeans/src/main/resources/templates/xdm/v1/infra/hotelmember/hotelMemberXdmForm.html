@@ -991,8 +991,7 @@
 								<!-- end card header -->
 
 								<div class="card-body">
-									<form method="post"
-										action="/xdm/v1/infra/hotelmember/hotelMemberXdmInst"
+									<form method="post" action="/xdm/v1/infra/hotelmember/hotelMemberXdmInst"
 										name="form">
 										<div class="row">
 											<!--col-md-8-->
@@ -1022,17 +1021,17 @@
 													</select>
 												</div>
 											</div>
-
 											<div class="row gy-3">
 												<div class="col-md-3">
 													<label for="choices-single-default"
-														class="form-label font-size-13 text-muted">성별</label> <select
-														class="form-select" name="htmGender">
+														class="form-label font-size-13 text-muted">성별</label> 
+														<select class="form-select" name="htmGender">
 														<option value="">선택하세요</option>
 														<option
 															th:each="list : ${@codeService.selectListCachedCode(1)}"
 															th:value="${list.ifcdSeq}" th:text="${list.ifcdName}"
-															th:selected="${list.ifcdSeq} == ${memberItem?.htmGender}"></option>
+															th:selected="${list.ifcdSeq} == ${memberItem?.htmGender}">
+														</option>
 													</select>
 												</div>
 												<div class="col-md-3">

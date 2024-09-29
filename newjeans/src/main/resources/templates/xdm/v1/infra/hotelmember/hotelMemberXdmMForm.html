@@ -977,8 +977,13 @@
                                                         class="form-label font-size-13 text-muted">성별
                                                     </label>
                                                     <select class="form-select" name="htmGender" th:value="${memberItem?.htmGender}">
-                                                        <option value="1" th:selected="${memberItem?.htmGender == 1}">남자</option>
-                                                        <option value="2" th:selected="${memberItem?.htmGender == 2}">여자</option>
+                                                    	<option  
+															th:each="list : ${@codeService.selectListCachedCode(1)}"
+															th:value="${list.ifcdSeq}" th:text="${list.ifcdName}"
+															th:selected="${list.ifcdSeq} == ${memberItem?.htmGender}">
+														</option>
+<!--                                                         <option value="1" th:selected="${memberItem?.htmGender == 1}">남자</option> -->
+<!--                                                         <option value="2" th:selected="${memberItem?.htmGender == 2}">여자</option> -->
                                                     </select>
                                                 </div>
                                                 <div class="col-md-3">
