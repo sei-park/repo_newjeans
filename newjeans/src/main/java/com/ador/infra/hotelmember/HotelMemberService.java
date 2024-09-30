@@ -1,6 +1,8 @@
 package com.ador.infra.hotelmember;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -49,6 +51,11 @@ public class HotelMemberService {
 	// paging 
 	public int selectOneCount(HotelMemberVo hotelMemberVo) {
 		return hotelMemberDao.selectOneCount(hotelMemberVo);
+	}
+	
+	// login 
+	public HotelMemberDto selectOneLogin(HotelMemberDto hotelMemberDto) {
+		return hotelMemberDao.selectOneLogin(hotelMemberDto);   
 	}
 	
  

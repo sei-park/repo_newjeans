@@ -1,10 +1,14 @@
 package com.ador.infra.hotelmember;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.ador.common.util.UtilDateTime;
 
@@ -86,15 +90,32 @@ public class HotelMemberController {
 	// signin
 	@RequestMapping(value="/xdm/v1/infra/hotelmember/signin")
 	public String signin() {
-		return "/xdm/v1/infra/hotelmember/signin";
+		return "/xdm/v1/infra/hotelmember/signin";	 
 	}
 	
+//	@ResponseBody 
+//	@RequestMapping(value="/xdm/v1/infra/hotelmember/signin")
+//	public Map<String, Object> signin(HotelMemberDto hotelMemberDto) {
+//		Map<String, Object> returnMap = new HashMap<String, Object>();
+//		
+//		HotelMemberDto rtMember = hotelMemberService.selectOneLogin(hotelMemberDto);
+//		 
+//		if(rtMember != null) {
+//			returnMap.put("rt", "success");   
+//		} else {
+//			returnMap.put("rt", "fail");
+//		}
+//		return returnMap;
+// 	} 
+//	
 	// singup
 	@RequestMapping(value="/xdm/v1/infra/hotelmember/signup")
 	public String signup() {
 		return "/xdm/v1/infra/hotelmember/signup";
 	}  
-  	
+	
+	
+
 	
 	
 }

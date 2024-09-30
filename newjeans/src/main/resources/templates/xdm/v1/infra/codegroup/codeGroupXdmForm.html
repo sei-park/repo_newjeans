@@ -959,11 +959,12 @@
                                                     <div class="valid-feedback">Looks good!</div>
                                                 </div>
                                                 <div class="col-md-3"> 
-                                                    <label for=" choices-single-groups"
-                                                        class="form-label font-size-13 text-muted">코드그룹이름 <sup>*</sup></label>
+                                                    <label for="choices-single-groups"
+                                                        class="form-label font-size-13 text-muted">	이름 <sup>*</sup></label>
                                                     <input type="text" class="form-control" id="ifcgName"
-                                                        placeholder="" name="ifcgName" required>
-                                                    <div class="invalid-feedback">이름을 입력해 주세요</div>
+                                                        placeholder="" name="ifcgName" required>     
+                                                    <div class="invalid-feedback" id="feedback">이름을 입력해 주세요</div>
+                                                    <div class="invalid-feedback" id="regExp">이름은 한글, 영대소문자, 숫자만 입력해 주세요</div>
                                                 </div>
                                             </div>
 
@@ -973,18 +974,19 @@
                                                         class="form-label font-size-13 text-muted">사용여부
                                                         <sup>*</sup>
                                                     </label>
-                                                    <select class="form-select" name="ifcgUseNy" id="ifcgUseNy" required>
+                                                    <select class="form-select" name="ifcgUseNy" id="ifcgUseNy" required>  
                                                     	<option value="" th:selected="${item?.ifcgUseNy == null}">선택하세요</option>
                                                         <option value="1" th:selected="${item?.ifcgUseNy == 1}">사용</option>
                                                         <option value="0" th:selected="${item?.ifcgUseNy == 0}">미사용</option>
                                                     </select>
-                                                    <div class="invalid-feedback">사용여부를 선택해 주세요</div>
+                                                    <div class="invalid-feedback" id="feedback">사용여부를 선택해 주세요</div>
                                                 </div>
                                                  <div class="col-md-3"><!--col-md-6-->
                                                     <label for="choices-single-groups"
                                                         class="form-label font-size-13 text-muted">순서</label>
                                                     <input class="form-control" type="text" value=""
-                                                        id="example-text-input" name="ifcgOrder">
+                                                        id="ifcgOrder" name="ifcgOrder" required>
+                                                   <div class="invalid-feedback">순서를 입력해 주세요</div>     
                                                 </div>
                                             </div>
                                             
@@ -1362,7 +1364,7 @@
 <!--         <script src="/xdm/v1/template/ui/assets/js/pages/form-validation.init.js"></script> -->
         
         <script>
-        
+           
         // validation
 //     	document.getElementById("btnSubmit").onclick = function (){ // 버튼을 클릭했을 때 함수 실행                 
 //     		// trim() : 값의 앞 뒤 공백 제거 함수
@@ -1383,35 +1385,93 @@
     		
     	    var ifcgName = document.getElementById("ifcgName"); // id를 가져와 ifcgName 변수에 넣음 
     	    var ifcgNameValue = document.getElementById("ifcgName").value.trim(); // id를 가져와 ifcgNameValue에 넣고 그 값의 앞 뒤 공백을 제거
-    		
-    	    if (ifcgNameValue == "" || ifcgNameValue == null) { // 값이 비어 있거나 없을 경우
-    	    	form.classList.add("was-validated"); // 클래스를 추가해서 validation 실행 
-    			ifcgName.focus(); // ifcgName의 input창에 포커스 함
-    			return false; // 함수를 빠져나옴 
-    	    } else { 
-     			// by pass
-    	    }  
-    	     
+    	    var ifcgNameRegExp = /^[ㄱ-ㅎ가-힣A-Za-z0-9]+$/; // 정규표현식 
+    	    
+    	    var feedback = document.getElementById("feedback"); // 값이 비어있을 경우   
+    	    var regExp = document.getElementById("regExp"); // 정규표현식이 틀릴 경우
+    	    
+    	    // Validation 초기화  
+    	    // form.classList.remove('is-valid', 'is-invalid');
+    	    ifcgName.classList.remove('is-valid', 'is-invalid');
+    	    feedback.style.display = 'none';
+    	    regExp.style.display = 'none';
+    	    
+    	    // 값이 비어 있거나 없을 경우 
+//     	    if(ifcgNameValue == "" || ifcgNameValue == null) { 
+//     	    	feedback.style.display='block';
+//     	    	ifcgName.classList.add('is-invalid');
+//     	    	ifcgName.focus(); // ifcgName의 input창에 포커스 함
+//      			return false; // 함수를 빠져나옴   
+//     	    } else if(!ifcgNameRegExp.test(ifcgNameValue)) { // 정규표현식에 맞지 않을 경우 
+//     	    	regExp.style.display='block';
+//     	    	ifcgName.classList.add('is-invalid');
+//     	    	ifcgName.focus();  
+//     	    	return false; 
+//     	    } else {                                  
+//     	    	form.classList.add('is-valid');
+//     	    }
+    	    
+//     	    if(ifcgNameValue == "" || ifcgNameValue == null) { 
+//     	    	feedback.style.display='block';
+//     	    	ifcgName.classList.add('is-invalid');
+//     	    	ifcgName.focus(); // ifcgName의 input창에 포커스 함
+//     	    } else if(!ifcgNameRegExp.test(ifcgNameValue)) { // 정규표현식에 맞지 않을 경우
+//     	    	regExp.style.display='block';
+//     	    	ifcgName.classList.add('is-invalid');
+//     	    	ifcgName.focus();  
+//     	    	return false; 
+//     	    } else {                                  
+//     	    	form.classList.add('is-valid');
+//     	    }
+ 
+    	    if(ifcgNameValue == "" || ifcgNameValue == null) { 
+    	    	feedback.style.display='block';
+    	    	ifcgName.classList.add('is-invalid');
+    	    	ifcgName.focus(); // ifcgName의 input창에 포커스 함
+     			return false; // 함수를 빠져나옴   
+    	    } else {
+    	      // by pass 	   
+    	    }   
+    	    
+    	    if(!ifcgNameRegExp.test(ifcgNameValue)) { // 정규표현식에 맞지 않을 경우 
+    	    	regExp.style.display='block';
+    	    	ifcgName.classList.add('is-invalid');
+    	    	ifcgName.focus();  
+    	    	return false; 
+    	    } else {                                  
+    	    	ifcgName.classList.add('is-valid');
+    	    }
+ 
+    	  
     	    var ifcgUseNy = document.getElementById("ifcgUseNy");
     	    var ifcgUseNyValue = document.getElementById("ifcgUseNy").value.trim();
-
-    	    if (ifcgUseNyValue == "" || ifcgUseNyValue == null) {
-    	    	form.classList.add("was-validated");
+    	    
+    	    if(ifcgUseNyValue == "" || ifcgUseNyValue == null) {
+    	    	ifcgUseNy.classList.add('is-invalid'); 
     			ifcgUseNy.focus();
+    			return false;   
+    	    } else {
+    	    	ifcgUseNy.classList.remove('is-invalid');
+    	    	ifcgUseNy.classList.add('is-valid');
+    	    }  
+    	    
+    	    var ifcgOrder = document.getElementById("ifcgOrder");
+    	    var ifcgOrderValue = document.getElementById("ifcgOrder").value.trim();
+    	    
+    	    if(ifcgOrderValue == "" || ifcgOrderValue == null) {
+    	    	ifcgOrder.classList.add('is-invalid'); 
+    	    	ifcgOrder.focus();
     			return false;
     	    } else {
-    			// by pass
-    	    }
-    	    
+    	    	ifcgOrder.classList.remove('is-valid');  
+    	    }  
+
     		form.action = "/xdm/v1/infra/codegroup/codeGroupXdmInst"; // insert 경로로 이동 
     		form.submit(); 
     		
     	}          
-    	
-  
-  	
- 
-    	
+    	   
+
    
         </script>
         

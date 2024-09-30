@@ -100,6 +100,30 @@
         <script src="/xdm/v1/template/ui/assets/libs/metismenujs/metismenujs.min.js"></script>
         <script src="/xdm/v1/template/ui/assets/libs/simplebar/simplebar.min.js"></script>
         <script src="/xdm/v1/template/ui/assets/libs/feather-icons/feather.min.js"></script>
+        
+        <script>
+        // login
+        $.ajax({
+			async: true 
+			,cache: false
+			,type: "post"
+			/* ,dataType:"json" */
+			,url: "/xdm/v1/infra/hotelmember/signin"
+			/* ,data : $("#formLogin").serialize() */
+			,data : { "htmId" : $("#htmId").val(), "htmPassword" : $("#htmPassword").val()}
+			,success: function(response) {
+				if(response.rt == "success") {
+					location.href="/xdm/v1/infra/hotelmember/hotelMemberXdmList";
+				} else {
+			 		// by pass 
+				}
+			}
+			,error : function(jqXHR, textStatus, errorThrown){
+				alert("ajaxUpdate " + jqXHR.textStatus + " : " + jqXHR.errorThrown);
+			}
+		});
+        
+        </script>
 
     </body>
 </html>

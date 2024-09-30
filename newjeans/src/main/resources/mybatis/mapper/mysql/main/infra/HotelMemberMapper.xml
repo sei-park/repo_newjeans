@@ -128,6 +128,17 @@
 			AND a.htmSeq = #{htmSeq}
 	</select>
 	
+	<!-- 로그인 -->
+	<select id="selectOneLogin" resultMap="resultMapObj">
+		SELECT
+			a.htmId,
+		    a.htmPassword
+	   FROM
+			newjeans.hotelmember a	       
+	   WHERE 1=1   
+			AND a.htmSeq = #{htmSeq}
+	</select>
+	
 	<!-- update -->
 	<update id="memberUpdate">
 		update hotelmember
