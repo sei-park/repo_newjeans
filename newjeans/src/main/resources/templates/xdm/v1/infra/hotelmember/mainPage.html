@@ -1900,9 +1900,11 @@
     <script src="/xdm/v1/template/ui/assets/libs/jsvectormap/maps/world-merc.js"></script>
     <script src="/xdm/v1/template/ui/assets/js/pages/dashboard-sales.init.js"></script>
     
+    <script src="/xdm/v1/jquery/jquery-3.7.1.min.js"></script>
+    
     <script>
     document.getElementById("logoutBtn").onclick = function () {
-    	
+    	alert("확인");
     	   $.ajax({  
    			async: true   
    			,cache: false
@@ -1910,10 +1912,9 @@
    			/* ,dataType:"json" */
    			,url: "/xdm/v1/infra/hotelmember/signoutXdmProc"
    			/* ,data : $("#formLogin").serialize() */
-   			,data : { "htmId" : $("#htmId").val(), "htmPassword" : $("#htmPassword").val()}
    			,success: function(response) {
    				if(response.rt == "success") {
-   					location.href="/xdm/v1/infra/hotelmember/signin";
+   					location.href="/xdm/v1/infra/hotelmember/signin";  
    				} else {        
    					// by pass  
    				}

@@ -133,12 +133,12 @@ public class HotelMemberController {
 	@RequestMapping(value="/xdm/v1/infra/hotelmember/mainPage")
 	public String mainPage() {
 		return "/xdm/v1/infra/hotelmember/mainPage";
-	}
-
-	@ResponseBody
+	}        
+    
+	@ResponseBody         
 	@RequestMapping(value="/xdm/v1/infra/hotelmember/signoutXdmProc")
 	public Map<String, Object> signoutXdmProc(HttpSession httpSession) throws Exception {
-		Map<String, Object> returnMap = new HashMap<String, Object>();
+		Map<String, Object> returnMap = new HashMap<String, Object>(); 
 		httpSession.invalidate();
 		returnMap.put("rt", "success");
 		return returnMap;
