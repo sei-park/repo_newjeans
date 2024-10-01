@@ -40,34 +40,38 @@
                                     </a>
                                 </div>
                                 <div class="mb-4">
-                                    <h5>Welcome Back !</h5>
+                                    <h5>Welcome Back!</h5>
                                     <p>Sign in to continue to Dashonic.</p>
                                 </div>
-                                <form>
+                                <form class="needs-validation" novalidate name="form" id="form">
                                     <div class="form-floating form-floating-custom mb-3">
-                                        <input type="text" class="form-control" id="input-username" placeholder="Enter User Name">
-                                        <label for="input-username">Username</label>
+                                        <input type="text" class="form-control" id="htmId" name="htmId" required placeholder="Enter User Name">
+                                        <label for="input-username">아이디</label>
                                         <div class="form-floating-icon">
                                             <i class="uil uil-users-alt"></i>
                                         </div>
+                                        <div class="invalid-feedback" id="idFeedback">아이디를 입력해 주세요</div>
+                                        <div class="invalid-feedback" id="idRegExp">아이디는 영대소문자, 숫자만 입력해 주세요</div>
                                     </div>
                                     <div class="form-floating form-floating-custom mb-3">
-                                        <input type="password" class="form-control" id="input-password" placeholder="Enter Password">
-                                        <label for="input-password">Password</label>
+                                        <input type="password" class="form-control" id="htmPassword" name="htmPassword" required placeholder="Enter Password">
+                                        <label for="input-password">비밀번호</label>
                                         <div class="form-floating-icon">
                                             <i class="uil uil-padlock"></i>
                                         </div>
+                                        <div class="invalid-feedback" id="pwFeedback">비밀번호를 입력해 주세요</div>
+                                        <div class="invalid-feedback" id="pwRegExp">영문 숫자 조합 8자리 이상으로 입력해주세요</div>
                                     </div>
 
                                     <div class="form-check form-check-info font-size-16">
                                         <input class="form-check-input" type="checkbox" id="remember-check">
                                         <label class="form-check-label font-size-14" for="remember-check">
-                                            Remember me
+                                            아이디 기억하기
                                         </label>
                                     </div>
 
                                     <div class="mt-3">
-                                        <button class="btn btn-info w-100" type="submit">Log In</button>
+                                        <button class="btn btn-info w-100" type="button" id="loginBtn">로그인</button>
                                     </div>
 
                                     <div class="mt-4">
@@ -85,7 +89,7 @@
                     <div class="row">
                         <div class="col-xl-12">
                             <div class="text-center text-muted p-4">
-                                <p class="mb-0">&copy; <script>document.write(new Date().getFullYear())</script> Dashonic. Crafted with <i class="mdi mdi-heart text-danger"></i> by Pichforest</p>
+<!--                                 <p class="mb-0">&copy; <script>document.write(new Date().getFullYear())</script> Dashonic. Crafted with <i class="mdi mdi-heart text-danger"></i> by Pichforest</p> -->
                             </div>
                         </div><!-- end col -->
                     </div><!-- end row -->
@@ -101,27 +105,99 @@
         <script src="/xdm/v1/template/ui/assets/libs/simplebar/simplebar.min.js"></script>
         <script src="/xdm/v1/template/ui/assets/libs/feather-icons/feather.min.js"></script>
         
+        <script src="/xdm/v1/jquery/jquery-3.7.1.min.js"></script>
+        
         <script>
+        
         // login
-        $.ajax({
-			async: true 
+        document.getElementById("loginBtn").onclick = function () {
+        
+        // 아이디
+        let userName = document.getElementById("htmId");
+        let userNameValue = document.getElementById("htmId").value.trim();
+        let userNameRegExp = /^[a-z]+[a-z0-9]{5,19}$/g; // 아이디 정규식
+            
+        // 비밀번호
+        let password = document.getElementById("htmPassword");
+        let passwordValue = document.getElementById("htmPassword").value.trim();
+        let passwordRegExp = /^(?=.*[a-zA-Z])(?=.*[0-9]).{8,25}$/; // 비밀번호 정규식(영문 숫자 조합 8자리 이상)
+        
+        // 아이디 피드백
+        let idFeedback = document.getElementById("idFeedback"); // 값이 없을 경우 피드백 
+	    let idRegExp = document.getElementById("idRegExp"); // 정규표현식이 틀릴 경우 피드백 
+	    
+	    // 비밀번호 피드백
+	    let pwFeedback = document.getElementById("pwFeedback"); // 값이 없을 경우 피드백 
+	    let pwRegExp = document.getElementById("pwRegExp"); // 정규표현식이 틀릴 경우 피드백
+	    
+	 	// Validation 초기화
+	 	userName.classList.remove('is-valid', 'is-invalid');    
+	 	idFeedback.style.display = 'none';
+	 	idRegExp.style.display = 'none';
+	 	pwFeedback.style.display = 'none';
+	 	pwRegExp.style.display = 'none';
+    	
+    	// (아이디) 값이 비어 있거나 없을 경우 
+	    if(userNameValue == "" || userNameValue == null) { 
+	    	idFeedback.style.display='block'; 
+	    	userName.classList.add('is-invalid');  
+	    	userName.focus(); 
+ 			return false;   
+	    } else {
+	      // by pass 	   
+	    } 
+    	
+		// (아이디) 정규표현식에 맞지 않을 경우
+	    if(!userNameRegExp.test(userNameValue)) {  
+	    	idRegExp.style.display='block';
+	    	userName.classList.add('is-invalid');   
+	    	userName.focus(); 
+	    	return false;
+	    } else {                                 
+	    	userName.classList.add('is-valid');
+	    } 
+		
+	    ////////////////////////////////////////////////
+		
+		// (비밀번호) 값이 비어 있거나 없을 경우
+		 if(passwordValue == "" || passwordValue == null) { 
+			pwFeedback.style.display='block'; 
+	    	password.classList.add('is-invalid');  
+	    	password.focus(); 
+ 			return false;   
+	    } else {
+	      // by pass 	   
+	    }
+		
+		// (비밀번호) 정규표현식에 맞지 않을 경우 
+		if(!passwordRegExp.test(passwordValue)) {  
+			pwRegExp.style.display='block';
+	    	password.classList.add('is-invalid');   
+	    	password.focus(); 
+	    	return false;
+	    } else {                                 
+	    	password.classList.add('is-valid');
+	    }
+		
+		
+        $.ajax({  
+			async: true   
 			,cache: false
 			,type: "post"
 			/* ,dataType:"json" */
-			,url: "/xdm/v1/infra/hotelmember/signin"
+			,url: "/xdm/v1/infra/hotelmember/signinXdmProc"
 			/* ,data : $("#formLogin").serialize() */
 			,data : { "htmId" : $("#htmId").val(), "htmPassword" : $("#htmPassword").val()}
 			,success: function(response) {
 				if(response.rt == "success") {
-					location.href="/xdm/v1/infra/hotelmember/hotelMemberXdmList";
-				} else {
-			 		// by pass 
+					location.href="/xdm/v1/infra/hotelmember/mainPage";
+				} else {        
+			 		alert("아이디 또는 비밀번호를 다시 확인해주세요");  
 				}
-			}
-			,error : function(jqXHR, textStatus, errorThrown){
-				alert("ajaxUpdate " + jqXHR.textStatus + " : " + jqXHR.errorThrown);
-			}
-		});
+			  }
+          }); // ajax end
+        
+      } // loginBtn end 
         
         </script>
 
