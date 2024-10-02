@@ -108,7 +108,7 @@ public class HotelMemberController {
 		// 객체가 비어 있다고 가정했을 때 rtMember.getHtmId() 사용 불가
 		// 객체 내에 있는 함수를 사용하는 것이 아니라 객체 자체를 사용해야 함 
 		HotelMemberDto rtMember = hotelMemberService.selectOneLogin(hotelMemberDto);  
-		 
+		 	
 		if(rtMember != null) {
 			HotelMemberDto rtMemberSession = hotelMemberService.selectOneLogin(hotelMemberDto);
 			if(rtMemberSession != null) {

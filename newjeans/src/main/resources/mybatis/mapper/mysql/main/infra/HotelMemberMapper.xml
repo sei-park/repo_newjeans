@@ -130,26 +130,17 @@
 	
 	<!-- 로그인 -->
 	<select id="selectOneLogin" resultMap="resultMapObj">
-	   SELECT
+	   SELECT  
+	   		a.htmSeq,
 			a.htmId,
-		    a.htmPassword
+		    a.htmPassword,
+		    a.htmUserName
 	   FROM
 			newjeans.hotelmember a	       
-	   WHERE 1=1   
-			AND a.htmId = #{htmId}
+	   WHERE 1=1
+	   		<!-- htmId, htmPassword를 입력받아서 위에 select 값을 가져옴 -->
+			AND a.htmId = #{htmId}  
 			AND a.htmPassword = #{htmPassword}
-	</select>
-	
-	<!-- 로그인(세션) 유지 -->
-	<select id="selectOneId" resultMap="resultMapObj">
-		SELECT
-			a.htmSeq,
-			a.htmId,  
-			a.htmUserName  
-		FROM
-			newjeans.hotelmember a
-		WHERE 1=1
-			AND a.htmId = #{htmId}
 	</select>
 	
 	<!-- update -->
