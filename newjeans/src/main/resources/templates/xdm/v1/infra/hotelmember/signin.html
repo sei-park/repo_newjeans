@@ -133,7 +133,7 @@
         // 아이디
         let userName = document.getElementById("htmId");
         let userNameValue = document.getElementById("htmId").value.trim();
-        let userNameRegExp = /^[a-z]+[a-z0-9]{5,19}$/g; // 아이디 정규식
+        let userNameRegExp = /^[a-zA-Z0-9]{5,19}$/g; // 영문 대소문자로 시작하는 영문자 또는 숫자 6~20자 
             
         // 비밀번호
         let password = document.getElementById("htmPassword");
