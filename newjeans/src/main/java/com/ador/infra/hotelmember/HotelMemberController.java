@@ -100,7 +100,7 @@ public class HotelMemberController {
 	
 	// login
 	@ResponseBody // ajax 어노테이션
-	@RequestMapping(value="/xdm/v1/infra/hotelmember/signinXdmProc")
+	@RequestMapping(value="/xdm/v1/infra/hotelmember/signinXdmProc") // 로그인 처리 페이지 
 	public Map<String, Object> signinXdmProc(HotelMemberDto hotelMemberDto, HttpSession httpSession) {
 		Map<String, Object> returnMap = new HashMap<String, Object>();
 		
