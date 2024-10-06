@@ -591,17 +591,35 @@
                                     <div class="invalid-feedback" id="genderFeedback">성별을 선택해 주세요</div>
                                 </div>
                                 
-                                <div class="form-group">
+                                <div class="form-group">  
                                     <input type="text" class="form-control" placeholder="이메일 주소" id="htmEmail"/ required>
                                 </div>
                                 <div class="invalid-feedback" id="emailFeedback">이메일 주소를 입력해 주세요</div>
                                 <div class="invalid-feedback" id="emailRegExp">이메일 주소를 확인해주세요</div>
                                 
                                 <div class="form-group">
-                                    <input type="text" class="form-control" placeholder="휴대폰 번호 (-은 제외)" id="htmPhoneNumber" required />
+                                    <input type="text" class="form-control" placeholder="휴대폰 번호 (- 제외)" id="htmPhoneNumber" required />
                                 </div>
                                 <div class="invalid-feedback" id="phoneFeedback">휴대폰 번호를 입력해 주세요</div>
                                 <div class="invalid-feedback" id="phoneRegExp">휴대폰 번호를 확인해주세요</div>
+                                
+<!--                                 <div class="form-group"> -->
+<!--                                     <input type="text" class="form-control" placeholder="주소(시,군,구)" id="htmAddress" required /> -->
+<!--                                 </div> -->
+<!--                                 <div class="invalid-feedback" id="addressFeedback">주소를 입력해 주세요</div> -->
+<!--                                 <div class="invalid-feedback" id="addressRegExp">주소를 확인해주세요</div> -->
+                                
+<!--                                 <div class="form-group"> -->
+<!--                                     <input type="text" class="form-control" placeholder="상세주소" id="htmDetailedAddress" required /> -->
+<!--                                 </div> -->
+<!--                                 <div class="invalid-feedback" id="detailAdFeedback">상세주소를 입력해 주세요</div> -->
+<!--                                 <div class="invalid-feedback" id="detailAdRegExp">상세주소를 확인해주세요</div> -->
+                                
+<!--                                 <div class="form-group"> -->
+<!--                                     <input type="text" class="form-control" placeholder="우편번호" id="htmZipCode" required /> -->
+<!--                                 </div> -->
+<!--                                 <div class="invalid-feedback" id="zipcodeFeedback">우편번호를 입력해 주세요</div> -->
+<!--                                 <div class="invalid-feedback" id="zipcodeRegExp">우편번호를 확인해주세요</div> -->
                                 
                                 <div class="form-group">
                                     <input type="text" class="form-control" placeholder="아이디" id="htmId" required />
@@ -828,6 +846,21 @@
     	// let userPhoneRegExp = /^01([0|1|6|7|8|9])-?([0-9]{3,4})-?([0-9]{4})$/;
     	let userPhoneRegExp = /^01([0|1|6|7|8|9])([0-9]{3,4})([0-9]{4})$/;
     	
+//     	// 주소  
+//     	let userAddress = document.getElementById("htmAddress");
+//     	let userAddressValue = document.getElementById("htmAddress").value.trim();
+//     	//let userAddressRegExp = new RegExp("");
+    	
+//     	// 상세주소 
+//     	let userDetailAddress = document.getElementById("htmDetailedAddress");
+//     	let userDetailAddressValue = document.getElementById("htmDetailedAddress").value.trim();
+//     	// 상세주소 정규식은 주소의 정규식 사용 
+    	
+//     	// 우편번호
+//     	let userZipcode = document.getElementById("htmZipCode");
+//     	let userZipcodeValue = document.getElementById("htmZipCode").value.trim();
+//     	let userZipcodeRegExp = /[0-9]{5}/;
+    	
     	// 아이디
     	let userId = document.getElementById("htmId");
     	let userIdValue = document.getElementById("htmId").value.trim();
@@ -856,6 +889,18 @@
     	userPhoneNumber.classList.remove('is-valid', 'is-invalid');
     	phoneFeedback.style.display = 'none';
     	phoneRegExp.style.display = 'none';
+//     	// 주소
+//     	userAddress.classList.remove('is-valid', 'is-invalid');
+//     	addressFeedback.style.display = 'none';
+//     	addressRegExp.style.display = 'none';   
+//     	// 상세주소
+//     	userDetailAddress.classList.remove('is-valid', 'is-invalid');
+//     	detailAdFeedback.style.display = 'none';
+//     	detailAdRegExp.style.display = 'none';
+//     	// 우편번호
+//     	userZipcode.classList.remove('is-valid', 'is-invalid');
+//     	zipcodeFeedback.style.display = 'none';
+//     	zipcodeRegExp.style.display = 'none';
     	// 아이디
     	userId.classList.remove('is-valid', 'is-invalid');
     	idFeedback.style.display = 'none';
@@ -947,6 +992,51 @@
     	}
 		
 		///////////////////////////////////////////////
+		
+		// 주소가 비어 있거나 없을 경우   
+// 		if(userAddressValue == "" || userAddressValue == null) {
+// 			addressFeedback.style.display ='block'; 
+// 			userAddress.classList.add('is-invalid');  
+// 			userAddress.focus(); 
+//  			return false; 
+//     	} else {
+//     		// by pass        
+//     	}
+		  
+		// 주소 정규식에 맞지 않을 경우(정규식 잘 안됨)
+// 		if(!userAddressRegExp.test(userAddressValue)) {
+// 			addressRegExp.style.display='block';
+// 	 		userAddress.classList.add('is-invalid');   
+// 	 		userAddress.focus(); 
+// 	    	return false;
+//     	} else {
+//     		userAddress.classList.add('is-valid');
+//     	}
+
+		///////////////////////////////////////////////
+		
+		// 상세주소가 비어 있거나 없을 경우
+		
+		
+		// 상세주소 정규식에 맞지 않을 경우 
+		
+		
+		// 우편번호가 비어 있거나 없을 경우 
+		
+		
+		// 우편번호 정규식에 맞지 않을 경우 
+	
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 		
 		// 아이디가 비어 있거나 없을 경우 
 		if(userIdValue == "" || userIdValue == null) {
