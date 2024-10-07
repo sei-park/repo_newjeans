@@ -32,7 +32,7 @@
                     <div class="row justify-content-center my-auto">
                         <div class="col-md-8 col-lg-6 col-xl-4">
                             
-                            <div class="text-center  py-5">
+                            <div class="text-center py-5">
                                 <div class="mb-4 mb-md-5">
                                     <a href="index.html" class="d-block auth-logo">
                                         <img src="/xdm/v1/template/ui/assets/images/logo-dark.png" alt="" height="22" class="auth-logo-dark">
@@ -126,7 +126,6 @@
         <script src="/xdm/v1/jquery/jquery-3.7.1.min.js"></script>
         
         <script>
-        
         // login
         document.getElementById("loginBtn").onclick = function () { // 로그인 버튼 
         
@@ -198,27 +197,26 @@
 	    }
 		
 		
-        $.ajax({  
-			async: true   
-			,cache: false
-			,type: "post"
+        $.ajax({ // AJAX 요청을 시작하는 jQuery 매서드
+			async: true // 요청을 비동기로 처리 
+			,cache: false // 요청 결과를 캐시하지 않도록 설정 
+			,type: "post" // HTTP 매서드를 POST로 설정 
 			/* ,dataType:"json" */
-			,url: "/xdm/v1/infra/hotelmember/signinXdmProc"
-			/* ,data : $("#formLogin").serialize() */
-			,data : { "htmId" : $("#htmId").val(), "htmPassword" : $("#htmPassword").val()}
-			,success: function(response) {
-				if(response.rt == "success") {
-					location.href="/xdm/v1/infra/hotelmember/mainPage";
-				} else {        
-					$("#exampleModal").modal("show"); // 로그인 정보가 맞지 않을 때 모달 창 띄움
-					userName.classList.add('is-invalid');
+			,url: "/xdm/v1/infra/hotelmember/signinXdmProc" // 요청을 보낼 url 
+			/* ,data : $("#formLogin").serialize() */ 
+			,data : { "htmId" : $("#htmId").val(), "htmPassword" : $("#htmPassword").val()} // 사용자 id와 비밀번호를 가져와서 전송 
+			,success: function(response) { // 요청이 성공적으로 완료되면 실행될 함수 
+				if(response.rt == "success") { // 응답의 rt 속성이 "success" 일 경우 
+					location.href="/xdm/v1/infra/hotelmember/mainPage"; // 메인페이지로 리다이렉션  
+				} else {  
+					$("#exampleModal").modal("show"); // 로그인 실패 시 모달 창을 띄움
+					userName.classList.add('is-invalid'); 
 					password.classList.add('is-invalid');
 				}
 			  }
           }); // ajax end
         
       } // loginBtn end 
-        
         </script>
 
     </body>

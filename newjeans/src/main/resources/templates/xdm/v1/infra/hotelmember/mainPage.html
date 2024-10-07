@@ -22,7 +22,7 @@
         <link href="/xdm/v1/template/ui/assets/css/app.min.css" id="app-style" rel="stylesheet" type="text/css" />
 
     </head>
-
+    
     
     <body> 
 
@@ -1901,32 +1901,27 @@
     <script src="/xdm/v1/template/ui/assets/js/pages/dashboard-sales.init.js"></script>
     
     <script src="/xdm/v1/jquery/jquery-3.7.1.min.js"></script>
+    <script src="/xdm/v1/js/common.xdm.js"></script>
     
     <script>
-    document.getElementById("logoutBtn").onclick = function () {
-    	alert("로그아웃되었습니다");
-    	   $.ajax({  
-   			async: true   
-   			,cache: false
-   			,type: "post"
-   			/* ,dataType:"json" */
-   			,url: "/xdm/v1/infra/hotelmember/signoutXdmProc"
-   			/* ,data : $("#formLogin").serialize() */
-   			,success: function(response) {
-   				if(response.rt == "success") {
-   					location.href="/xdm/v1/infra/hotelmember/signin";  
-   				} else {        
-   					// by pass  
-   				}
-   			  }      
-             }); // ajax end
-    	    
-    } // logoutBtn end 
-
-    
-    
-    
-    
+//     document.getElementById("logoutBtn").onclick = function () {
+//     	alert("로그아웃되었습니다");
+//     	   $.ajax({ 
+//    			async: true 
+//    			,cache: false
+//    			,type: "post" 
+//    			/* ,dataType:"json" */
+//    			,url: "/xdm/v1/infra/hotelmember/signoutXdmProc"   
+//    			/* ,data : $("#formLogin").serialize() */
+//    			,success: function(response) {
+//    				if(response.rt == "success") {
+//    					location.href="/xdm/v1/infra/hotelmember/signin";  
+//    				} else {        
+//    					// by pass  
+//    				}
+//    			  }        
+//              }); // ajax end
+//     } // logoutBtn end 
     </script>
 
    

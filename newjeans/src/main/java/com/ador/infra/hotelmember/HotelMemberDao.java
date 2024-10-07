@@ -32,8 +32,7 @@ public interface HotelMemberDao {
 	// login
 	public HotelMemberDto selectOneLogin(HotelMemberDto hotelMemberDto);
 	
-	// session
-	public HotelMemberDto selectOneId(HotelMemberDto hotelMemberDto);  
+
      
 	
 }

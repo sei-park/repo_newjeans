@@ -57,11 +57,6 @@ public class HotelMemberService {
 	public HotelMemberDto selectOneLogin(HotelMemberDto hotelMemberDto) {
 		return hotelMemberDao.selectOneLogin(hotelMemberDto);   
 	}
-	
-	// session
-    public HotelMemberDto selectOneId(HotelMemberDto hotelMemberDto) {
-    	return hotelMemberDao.selectOneId(hotelMemberDto);
-    }
-	
+
  
 }
