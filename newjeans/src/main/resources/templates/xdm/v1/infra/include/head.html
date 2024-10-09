@@ -384,15 +384,15 @@
                             <img class="rounded-circle header-profile-user" src="/xdm/v1/template/ui/assets/images/users/avatar-1.jpg"
                             alt="Header Avatar">
                             <span class="ms-2 d-none d-sm-block user-item-desc">
-                                <span class="user-name" th:text="${session.sessIdXdm}">Kate Dudley</span>
+                                <span class="user-name" th:text="${session.sessIdXdm}">아이디</span>
                                 <!--  다르게 쓰는 방법 : <h6 class="mt-2 text-black">[[${session.sessNameXdm}]]</h6> -->
                                 <span class="user-sub-title">Administrator</span>
                             </span>
                         </button>
                         <div class="dropdown-menu dropdown-menu-end pt-0">
                             <div class="p-3 bg-primary border-bottom">
-                                <h6 class="mb-0 text-white" th:text="${session.sessNameXdm}">Kate Dudley</h6>
-                                <p class="mb-0 font-size-11 text-white-50 fw-semibold" th:text="${session.sessEmailXdm}">kate.dudley@email.com</p>
+                                <h6 class="mb-0 text-white" th:text="${session.sessNameXdm}">이름</h6>
+                                <p class="mb-0 font-size-11 text-white-50 fw-semibold" th:text="${session.sessEmailXdm}">이메일</p>
                             </div>
                             <a class="dropdown-item" href="pages-profile.html"><i class="mdi mdi-account-circle text-muted font-size-16 align-middle me-1"></i> <span class="align-middle">Profile</span></a>
                             <a class="dropdown-item" href="apps-chat.html"><i class="mdi mdi-message-text-outline text-muted font-size-16 align-middle me-1"></i> <span class="align-middle">Messages</span></a>

@@ -20,7 +20,7 @@ public class WebMvcConfigurerImpl implements WebMvcConfigurer {
    					    "/resources/**", 
 //						"/xdm/v1/**", // resources 하위 폴더
 						"/xdm/v1/infra/hotelmember/signin", // 로그인 페이지 제외 
-						"/xdm/v1/infra/hotelmember/signinXdmProc" // 로그인 처리 페이지 제외 
+						"/xdm/v1/infra/hotelmember/signinXdmProc" // 로그인 처리 페이지 제외
 				);       
 	}   
 	      

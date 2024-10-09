@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zxx">
+<html lang="zxx" xmlns:th="http://www.thymeleaf.org">
 
 <head>
     <meta charset="utf-8">
@@ -528,7 +528,7 @@
                                     <a href="#" class="search-box"><i class="fas fa-search"></i></a>
                                 </div>
                                 <div class="option-item">
-                                    <a href="contact.html" class="btn  btn_navber">Get free quote</a>
+                                    <a href="contact.html" class="btn btn_navber">Get free quote</a>
                                 </div>
                             </div>
                         </div>
@@ -678,7 +678,7 @@
                            <div class="row">
                            		<div class="col-md-12" align="center">
                                 	<div class="form-group col-md-6">
-                                    	<input type="password" class="form-control" placeholder="비밀번호" id="htmPassword" name="htmPassword" required/>
+                                    	<input type="password" class="form-control" placeholder="비밀번호(영문,숫자 조합 8자리 이상)" id="htmPassword" name="htmPassword" required />
                                 	</div>
                                 	<div class="invalid-feedback" id="pwFeedback">비밀번호를 입력해 주세요</div>
                                 	<div class="invalid-feedback" id="pwRegExp">비밀번호를 확인 해주세요</div>
@@ -696,7 +696,7 @@
                            </div>
                                 
                                 <div class="common_form_submit">
-                                    <button class="btn btn_theme btn_md" type="button" id="resBtn">회원가입 하기</button>
+                                    <button class="btn btn_theme btn_md" type="button" id="signupBtn">회원가입 하기</button>
                                 </div>
                                 <div class="have_acount_area other_author_option">
                                     <div class="line_or">
@@ -882,7 +882,7 @@
     // validation
      
     // signup 
-    document.getElementById("resBtn").onclick = function () { // 회원가입 버튼
+    document.getElementById("signupBtn").onclick = function () { // 회원가입 버튼
     	
     	// 이름
     	let userName = document.getElementById("htmUserName");
@@ -1153,7 +1153,7 @@
 		form.action = "/xdm/v1/infra/hotelmember/hotelMemberXdmInst"; // insert 경로로 이동 
 		form.submit();
 	
-    } // resBtn end  
+    } // signupBtn end  
     
     // 카카오 주소 API
     function sample6_execDaumPostcode() {

@@ -98,7 +98,7 @@ public class HotelMemberController {
 		return "/xdm/v1/infra/hotelmember/signin";	 
 	} 
 	
-	// login
+	// login(로그인 처리)
 	@ResponseBody // ajax 어노테이션
 	@RequestMapping(value="/xdm/v1/infra/hotelmember/signinXdmProc") // 로그인 처리 페이지 
 	public Map<String, Object> signinXdmProc(HotelMemberDto hotelMemberDto, HttpSession httpSession) {
@@ -142,18 +142,14 @@ public class HotelMemberController {
 	@ResponseBody         
 	@RequestMapping(value="/xdm/v1/infra/hotelmember/signoutXdmProc")
 	public Map<String, Object> signoutXdmProc(HttpSession httpSession) throws Exception {
-		Map<String, Object> returnMap = new HashMap<String, Object>(); 
-		httpSession.invalidate();
+		Map<String, Object> returnMap = new HashMap<String, Object>();
+		//httpSession.removeAttribute("adminSessionAttribute"); // 관리자 세션만 삭제. 괄호 안에는 세션에 저장된 속성의 이름(키)가 들어감 
+		httpSession.invalidate(); 세션 전체 삭제 
 		returnMap.put("rt", "success");
 		return returnMap;
 	}
 	
-	// singup
-//	@RequestMapping(value="/xdm/v1/infra/hotelmember/signup")
-//	public String signup() {
-//		return "/xdm/v1/infra/hotelmember/signup";
-//	} 
-	    
+ 
  
 	
 	
