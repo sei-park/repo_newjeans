@@ -16,9 +16,9 @@ public class usrProductController {
 	HotelService hotelService;
 	
 	@RequestMapping(value="/v1/infra/usrmember/usrHotelList")  
-	public String usrHotelList(HotelDto hotelDto, Model model) {
+	public String usrHotelList(HotelVo hotelVo, Model model) {
 		
-		model.addAttribute("hotelItem", hotelService.hotelSelectOne(hotelDto));
+		model.addAttribute("hotelList", hotelService.hotelList(hotelVo));
 		return "/usr/v1/infra/usrmember/usrHotelList"; 
 	}    
 	

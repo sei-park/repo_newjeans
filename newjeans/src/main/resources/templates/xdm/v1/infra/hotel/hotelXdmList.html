@@ -1197,12 +1197,10 @@
 															</td>
 													</tr>
                                                     <tr th:if="${!#lists.isEmpty(hotelList)}" th:each="list : ${hotelList}" class="contentList">
-                                                        <th scope="row">
+                                                        <th scope="row">  
                                                             <div class="form-check font-size-16">
-                                                                <input type="checkbox" class="form-check-input"
-                                                                    id="contacusercheck1">
-                                                                <label class="form-check-label"
-                                                                    for="contacusercheck1"></label>
+                                                                <input type="checkbox" class="form-check-input" id="contacusercheck1">  
+                                                                <label class="form-check-label" for="contacusercheck1"></label>
                                                             </div>
                                                         </th>
                                                         <td th:text="${vo.totalRows - ((vo.thisPage - 1) * vo.rowNumToShow + listStat.index)}" class="align-middle"></td>
@@ -1219,7 +1217,7 @@
 														<td th:text="${#dates.format(list.htRegDate,'yyyy-MM-dd HH:mm:ss')}"></td>
 														<td th:text="${#dates.format(list.htReviseDate,'yyyy-MM-dd HH:mm:ss')}"></td>
 <!-- 														<td th:text="${list.htStarSearch}"></td> -->
-	                                                    </tr><!-- end tr -->
+	                                                 </tr><!-- end tr -->
                                                 </tbody><!-- end tbody -->
                                             </table><!-- end table -->
                                         </div><!-- end table responsive -->

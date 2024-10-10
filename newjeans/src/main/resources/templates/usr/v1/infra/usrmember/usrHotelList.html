@@ -2101,7 +2101,7 @@
     </section>
 
  <!-- 폼 시작 -->
- <form name="form" method="post" action="/xdm/v1/infra/hotel/hotelXdmUpdt"> 
+ <form name="form" method="post" action="/xdm/v1/infra/hotel/hotelXdmList"> 
     <section id="explore_area" class="section_padding">
         <div class="container">
             <!-- Section Heading -->
@@ -2380,7 +2380,8 @@
                     <div class="row">
                         <div class="col-lg-12">
                             <div class="cruise_search_result_wrapper">
-                                <div class="cruise_search_item">
+                            	<!-- 리스트 시작 -->
+                                <div class="cruise_search_item" th:if="${!#lists.isEmpty(hotelList)}" th:each="list : ${hotelList}">
                                     <div class="row">
                                         <div class="col-lg-4">
                                             <div class="cruise_item_img">
@@ -2388,15 +2389,21 @@
                                             </div>
                                         </div>
                                         <div class="col-lg-8">
-                                            <div class="cruise_item_inner_content">
+                                            <div class="cruise_item_inner_content">    
                                                 <div class="cruise_content_top_wrapper">  
                                                     <div class="cruise_content_top_left">
-                                                    <!-- 시그니엘 서울 -->
-                                                        <h4 name="htName" th:value="${hotelItem?.htName}"></h4>          
-                                                        <p><i class="fas fa-map-marker-alt"></i> 대한민국, 서울</p>
-                                                    </div>
+                                                        <h4 th:text="${list.htName}"></h4>          
+                                                        <p><i class="fas fa-map-marker-alt"></i><span th:text="${list.htAddress}" style="padding:5px";></span></p>
+                                                    </div>  
                                                     <div class="cruise_content_top_right">
-                                                        <h5>4.8/5 </h5>
+                                                        <h5 th:text="${list.htStarSearch} + ' / 5'"></h5> 
+                                                          <label class="form-check-label" for="flexCheckDefault">
+					                                            <i class="fas fa-star color_theme"></i>
+					                                            <i class="fas fa-star color_theme"></i>
+					                                            <i class="fas fa-star color_theme"></i>
+					                                            <i class="fas fa-star color_theme"></i>
+					                                            <i class="fas fa-star color_theme"></i>
+                                        				  </label>
                                                         <h4>(2035 reviewes)</h4>
                                                     </div>
                                                 </div>
@@ -2437,227 +2444,227 @@
                                     </div>
                                 </div>
 
-                                <div class="cruise_search_item">
-                                    <div class="row">
-                                        <div class="col-lg-4">
-                                            <div class="cruise_item_img">
-                                                <img src="/usr/v1/usertemplate/ui/assets/image/hotel_list_dalat.jpg" alt="img">
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-8">
-                                            <div class="cruise_item_inner_content">
-                                                <div class="cruise_content_top_wrapper">
-                                                    <div class="cruise_content_top_left">
-                                                        <h4>아티스 호텔 달랏</h4>
-                                                        <p><i class="fas fa-map-marker-alt"></i> 베트남, 달랏</p>
-                                                    </div>
-                                                    <div class="cruise_content_top_right">
-                                                        <h5>4.3/5 </h5>
-                                                        <h4>(1590 reviewes)</h4>
-                                                    </div>
-                                                </div>
-                                                <div class="cruise_content_middel_wrapper">
-                                                    <div class="cruise_content_middel_left">
-                                                        <h5>디럭스 트윈 시티뷰</h5>
-                                                        <p>싱글베드 2개</p>
-                                                    </div>
-                                                    <div class="cruise_content_middel_right">
-                                                        <p>1박, 성인 2명</p>
-                                                    </div>
-                                                </div>
-                                                <div class="cruise_content_middel_wrapper">
-                                                    <div class="cruise_content_middel_left">
-                                                        <h5>일주일 전까지 무료 취소</h5>
-                                                        <p>선결제</p>
-                                                    </div>
-                                                    <div class="cruise_content_middel_right">
-                                                        <h3>₩60,040 <sub> / 1박</sub></h3>
-                                                        <p>세금 및 기타 요금 포함</p>
-                                                    </div>
-                                                </div>
-                                                <div class="cruise_content_bottom_wrapper">
-                                                    <div class="cruise_content_bottom_left">
-                                                        <ul>
-                                                            <li>조식</li>
-                                                            <li>스파/웰빙</li>
-                                                            <li>수영장</li>
-                                                        </ul>
-                                                    </div>
-                                                    <div class="cruise_content_bottom_right">
-                                                        <a href="hotel-details.html" class="btn btn_theme btn_md">예약 가능 옵션 보기</a>
-                                                     </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+<!--                                 <div class="cruise_search_item"> -->
+<!--                                     <div class="row"> -->
+<!--                                         <div class="col-lg-4"> -->
+<!--                                             <div class="cruise_item_img"> -->
+<!--                                                 <img src="/usr/v1/usertemplate/ui/assets/image/hotel_list_dalat.jpg" alt="img"> -->
+<!--                                             </div> -->
+<!--                                         </div> -->
+<!--                                         <div class="col-lg-8"> -->
+<!--                                             <div class="cruise_item_inner_content"> -->
+<!--                                                 <div class="cruise_content_top_wrapper"> -->
+<!--                                                     <div class="cruise_content_top_left"> -->
+<!--                                                         <h4>아티스 호텔 달랏</h4> -->
+<!--                                                         <p><i class="fas fa-map-marker-alt"></i> 베트남, 달랏</p> -->
+<!--                                                     </div> -->
+<!--                                                     <div class="cruise_content_top_right"> -->
+<!--                                                         <h5>4.3/5 </h5> -->
+<!--                                                         <h4>(1590 reviewes)</h4> -->
+<!--                                                     </div> -->
+<!--                                                 </div> -->
+<!--                                                 <div class="cruise_content_middel_wrapper"> -->
+<!--                                                     <div class="cruise_content_middel_left"> -->
+<!--                                                         <h5>디럭스 트윈 시티뷰</h5> -->
+<!--                                                         <p>싱글베드 2개</p> -->
+<!--                                                     </div> -->
+<!--                                                     <div class="cruise_content_middel_right"> -->
+<!--                                                         <p>1박, 성인 2명</p> -->
+<!--                                                     </div> -->
+<!--                                                 </div> -->
+<!--                                                 <div class="cruise_content_middel_wrapper"> -->
+<!--                                                     <div class="cruise_content_middel_left"> -->
+<!--                                                         <h5>일주일 전까지 무료 취소</h5> -->
+<!--                                                         <p>선결제</p> -->
+<!--                                                     </div> -->
+<!--                                                     <div class="cruise_content_middel_right"> -->
+<!--                                                         <h3>₩60,040 <sub> / 1박</sub></h3> -->
+<!--                                                         <p>세금 및 기타 요금 포함</p> -->
+<!--                                                     </div> -->
+<!--                                                 </div> -->
+<!--                                                 <div class="cruise_content_bottom_wrapper"> -->
+<!--                                                     <div class="cruise_content_bottom_left"> -->
+<!--                                                         <ul> -->
+<!--                                                             <li>조식</li> -->
+<!--                                                             <li>스파/웰빙</li> -->
+<!--                                                             <li>수영장</li> -->
+<!--                                                         </ul> -->
+<!--                                                     </div> -->
+<!--                                                     <div class="cruise_content_bottom_right"> -->
+<!--                                                         <a href="hotel-details.html" class="btn btn_theme btn_md">예약 가능 옵션 보기</a> -->
+<!--                                                      </div> -->
+<!--                                                 </div> -->
+<!--                                             </div> -->
+<!--                                         </div> -->
+<!--                                     </div> -->
+<!--                                 </div> -->
 
-                                <div class="cruise_search_item">
-                                    <div class="row">
-                                        <div class="col-lg-4">
-                                            <div class="cruise_item_img">
-                                                <img src="/usr/v1/usertemplate/ui/assets/image/hotel_list_sapporo.jpg" alt="img">
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-8">
-                                            <div class="cruise_item_inner_content">
-                                                <div class="cruise_content_top_wrapper">
-                                                    <div class="cruise_content_top_left">
-                                                        <h4>온센 료칸 유엔 삿포로</h4>
-                                                        <p><i class="fas fa-map-marker-alt"></i> 일본, 삿포로</p>
-                                                    </div>
-                                                    <div class="cruise_content_top_right">
-                                                        <h5>4.8/5 </h5>
-                                                        <h4>(850 reviewes)</h4>
-                                                    </div>
-                                                </div>
-                                                <div class="cruise_content_middel_wrapper">
-                                                    <div class="cruise_content_middel_left">
-                                                        <h5>스위트 트윈룸</h5>
-                                                        <p>싱글베드 2개</p>
-                                                    </div>
-                                                    <div class="cruise_content_middel_right">
-                                                        <p>1박, 성인 2명</p>
-                                                    </div>
-                                                </div>
-                                                <div class="cruise_content_middel_wrapper">
-                                                    <div class="cruise_content_middel_left">
-                                                        <h5>2일 전까지 무료 취소</h5>
-                                                        <p>선결제</p>
-                                                    </div>
-                                                    <div class="cruise_content_middel_right">
-                                                        <h3>₩378,887  <sub> / 1박</sub></h3>
-                                                        <p>세금 및 기타 요금 포함</p>
-                                                    </div>
-                                                </div>
-                                                <div class="cruise_content_bottom_wrapper">
-                                                    <div class="cruise_content_bottom_left">
-                                                        <ul>
-                                                            <li>조식</li>
-                                                            <li>룸서비스</li>
-                                                            <li>온천</li>
-                                                            <li>공항 셔틀버스</li>
-                                                        </ul>
-                                                    </div>
-                                                    <div class="cruise_content_bottom_right">
-                                                        <a href="hotel-details.html" class="btn btn_theme btn_md">예약 가능 옵션 보기</a>
-                                                     </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+<!--                                 <div class="cruise_search_item"> -->
+<!--                                     <div class="row"> -->
+<!--                                         <div class="col-lg-4"> -->
+<!--                                             <div class="cruise_item_img"> -->
+<!--                                                 <img src="/usr/v1/usertemplate/ui/assets/image/hotel_list_sapporo.jpg" alt="img"> -->
+<!--                                             </div> -->
+<!--                                         </div> -->
+<!--                                         <div class="col-lg-8"> -->
+<!--                                             <div class="cruise_item_inner_content"> -->
+<!--                                                 <div class="cruise_content_top_wrapper"> -->
+<!--                                                     <div class="cruise_content_top_left"> -->
+<!--                                                         <h4>온센 료칸 유엔 삿포로</h4> -->
+<!--                                                         <p><i class="fas fa-map-marker-alt"></i> 일본, 삿포로</p> -->
+<!--                                                     </div> -->
+<!--                                                     <div class="cruise_content_top_right"> -->
+<!--                                                         <h5>4.8/5 </h5> -->
+<!--                                                         <h4>(850 reviewes)</h4> -->
+<!--                                                     </div> -->
+<!--                                                 </div> -->
+<!--                                                 <div class="cruise_content_middel_wrapper"> -->
+<!--                                                     <div class="cruise_content_middel_left"> -->
+<!--                                                         <h5>스위트 트윈룸</h5> -->
+<!--                                                         <p>싱글베드 2개</p> -->
+<!--                                                     </div> -->
+<!--                                                     <div class="cruise_content_middel_right"> -->
+<!--                                                         <p>1박, 성인 2명</p> -->
+<!--                                                     </div> -->
+<!--                                                 </div> -->
+<!--                                                 <div class="cruise_content_middel_wrapper"> -->
+<!--                                                     <div class="cruise_content_middel_left"> -->
+<!--                                                         <h5>2일 전까지 무료 취소</h5> -->
+<!--                                                         <p>선결제</p> -->
+<!--                                                     </div> -->
+<!--                                                     <div class="cruise_content_middel_right"> -->
+<!--                                                         <h3>₩378,887  <sub> / 1박</sub></h3> -->
+<!--                                                         <p>세금 및 기타 요금 포함</p> -->
+<!--                                                     </div> -->
+<!--                                                 </div> -->
+<!--                                                 <div class="cruise_content_bottom_wrapper"> -->
+<!--                                                     <div class="cruise_content_bottom_left"> -->
+<!--                                                         <ul> -->
+<!--                                                             <li>조식</li> -->
+<!--                                                             <li>룸서비스</li> -->
+<!--                                                             <li>온천</li> -->
+<!--                                                             <li>공항 셔틀버스</li> -->
+<!--                                                         </ul> -->
+<!--                                                     </div> -->
+<!--                                                     <div class="cruise_content_bottom_right"> -->
+<!--                                                         <a href="hotel-details.html" class="btn btn_theme btn_md">예약 가능 옵션 보기</a> -->
+<!--                                                      </div> -->
+<!--                                                 </div> -->
+<!--                                             </div> -->
+<!--                                         </div> -->
+<!--                                     </div> -->
+<!--                                 </div> -->
 
-                                <div class="cruise_search_item">
-                                    <div class="row">
-                                        <div class="col-lg-4">
-                                            <div class="cruise_item_img">
-                                                <img src="/usr/v1/usertemplate/ui/assets/image/hotel_list_jeju.jpeg" alt="img">
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-8">
-                                            <div class="cruise_item_inner_content">
-                                                <div class="cruise_content_top_wrapper">
-                                                    <div class="cruise_content_top_left">
-                                                        <h4>더 그랜드 섬오름</h4>
-                                                        <p><i class="fas fa-map-marker-alt"></i> 대한민국, 제주</p>
-                                                    </div>
-                                                    <div class="cruise_content_top_right">
-                                                        <h5>4.9/5</h5>
-                                                        <h4>(95 reviewes)</h4>
-                                                    </div>
-                                                </div>
-                                                <div class="cruise_content_middel_wrapper">
-                                                    <div class="cruise_content_middel_left">
-                                                        <h5>그라운드플레이스룸 1</h5>
-                                                        <p>더블베드 2개</p>
-                                                    </div>
-                                                    <div class="cruise_content_middel_right">
-                                                        <p>1박, 성인 2명</p>
-                                                    </div>
-                                                </div>
-                                                <div class="cruise_content_middel_wrapper">
-                                                    <div class="cruise_content_middel_left">
-                                                        <h5>2주전까지 무료 취소</h5>
-                                                        <p>선결제</p>
-                                                    </div>
-                                                    <div class="cruise_content_middel_right">
-                                                        <h3>₩210,873 <sub> / 1박</sub></h3>
-                                                        <p>세금 및 기타 요금 포함</p>
-                                                    </div>
-                                                </div>
-                                                <div class="cruise_content_bottom_wrapper">
-                                                    <div class="cruise_content_bottom_left">
-                                                        <ul>
-                                                            <li>조식</li>
-                                                            <li>수영장</li>
-                                                            <li>바베큐</li>
-                                                            <li>무료 주차</li>
-                                                        </ul>
-                                                    </div>
-                                                    <div class="cruise_content_bottom_right">
-                                                        <a href="hotel-details.html" class="btn btn_theme btn_md">예약 가능 옵션 보기</a>
-                                                     </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+<!--                                 <div class="cruise_search_item"> -->
+<!--                                     <div class="row"> -->
+<!--                                         <div class="col-lg-4"> -->
+<!--                                             <div class="cruise_item_img"> -->
+<!--                                                 <img src="/usr/v1/usertemplate/ui/assets/image/hotel_list_jeju.jpeg" alt="img"> -->
+<!--                                             </div> -->
+<!--                                         </div> -->
+<!--                                         <div class="col-lg-8"> -->
+<!--                                             <div class="cruise_item_inner_content"> -->
+<!--                                                 <div class="cruise_content_top_wrapper"> -->
+<!--                                                     <div class="cruise_content_top_left"> -->
+<!--                                                         <h4>더 그랜드 섬오름</h4> -->
+<!--                                                         <p><i class="fas fa-map-marker-alt"></i> 대한민국, 제주</p> -->
+<!--                                                     </div> -->
+<!--                                                     <div class="cruise_content_top_right"> -->
+<!--                                                         <h5>4.9/5</h5> -->
+<!--                                                         <h4>(95 reviewes)</h4> -->
+<!--                                                     </div> -->
+<!--                                                 </div> -->
+<!--                                                 <div class="cruise_content_middel_wrapper"> -->
+<!--                                                     <div class="cruise_content_middel_left"> -->
+<!--                                                         <h5>그라운드플레이스룸 1</h5> -->
+<!--                                                         <p>더블베드 2개</p> -->
+<!--                                                     </div> -->
+<!--                                                     <div class="cruise_content_middel_right"> -->
+<!--                                                         <p>1박, 성인 2명</p> -->
+<!--                                                     </div> -->
+<!--                                                 </div> -->
+<!--                                                 <div class="cruise_content_middel_wrapper"> -->
+<!--                                                     <div class="cruise_content_middel_left"> -->
+<!--                                                         <h5>2주전까지 무료 취소</h5> -->
+<!--                                                         <p>선결제</p> -->
+<!--                                                     </div> -->
+<!--                                                     <div class="cruise_content_middel_right"> -->
+<!--                                                         <h3>₩210,873 <sub> / 1박</sub></h3> -->
+<!--                                                         <p>세금 및 기타 요금 포함</p> -->
+<!--                                                     </div> -->
+<!--                                                 </div> -->
+<!--                                                 <div class="cruise_content_bottom_wrapper"> -->
+<!--                                                     <div class="cruise_content_bottom_left"> -->
+<!--                                                         <ul> -->
+<!--                                                             <li>조식</li> -->
+<!--                                                             <li>수영장</li> -->
+<!--                                                             <li>바베큐</li> -->
+<!--                                                             <li>무료 주차</li> -->
+<!--                                                         </ul> -->
+<!--                                                     </div> -->
+<!--                                                     <div class="cruise_content_bottom_right"> -->
+<!--                                                         <a href="hotel-details.html" class="btn btn_theme btn_md">예약 가능 옵션 보기</a> -->
+<!--                                                      </div> -->
+<!--                                                 </div> -->
+<!--                                             </div> -->
+<!--                                         </div> -->
+<!--                                     </div> -->
+<!--                                 </div> -->
 
-                                <div class="cruise_search_item">
-                                    <div class="row">
-                                        <div class="col-lg-4">
-                                            <div class="cruise_item_img">
-                                                <img src="/usr/v1/usertemplate/ui/assets/image/hotel_list_xian.jpeg" alt="img">
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-8">
-                                            <div class="cruise_item_inner_content">
-                                                <div class="cruise_content_top_wrapper">
-                                                    <div class="cruise_content_top_left">
-                                                        <h4>JW 메리어트 호텔 시안 사우스웨스트</h4>
-                                                        <p><i class="fas fa-map-marker-alt"></i> 중국, 시안</p>
-                                                    </div>
-                                                    <div class="cruise_content_top_right">
-                                                        <h5>4.8/5</h5>
-                                                        <h4>(1566 reviewes)</h4>
-                                                    </div>
-                                                </div>
-                                                <div class="cruise_content_middel_wrapper">
-                                                    <div class="cruise_content_middel_left">
-                                                        <h5>디럭스룸</h5>
-                                                        <p>킹베드 1개</p>
-                                                    </div>
-                                                    <div class="cruise_content_middel_right">
-                                                        <p>1박, 성인 2명</p>
-                                                    </div>
-                                                </div>
-                                                <div class="cruise_content_middel_wrapper">
-                                                    <div class="cruise_content_middel_left">
-                                                        <h5>2주전까지 무료 취소</h5>
-                                                        <p>선결제</p>
-                                                    </div>
-                                                    <div class="cruise_content_middel_right">
-                                                        <h3>₩126,785<sub> / 1박</sub></h3>
-                                                        <p>세금 및 기타 요금 포함</p>
-                                                    </div>
-                                                </div>
-                                                <div class="cruise_content_bottom_wrapper">
-                                                    <div class="cruise_content_bottom_left">
-                                                        <ul>
-                                                            <li>레스토랑</li>
-                                                            <li>무료 주차</li>
-                                                            <li>수영장</li>
-                                                            <li>피트니스 센터</li>
-                                                        </ul>
-                                                    </div>
-                                                    <div class="cruise_content_bottom_right">
-                                                        <a href="hotel-details.html" class="btn btn_theme btn_md">예약 가능 옵션 보기</a>
-                                                     </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+<!--                                 <div class="cruise_search_item"> -->
+<!--                                     <div class="row"> -->
+<!--                                         <div class="col-lg-4"> -->
+<!--                                             <div class="cruise_item_img"> -->
+<!--                                                 <img src="/usr/v1/usertemplate/ui/assets/image/hotel_list_xian.jpeg" alt="img"> -->
+<!--                                             </div> -->
+<!--                                         </div> -->
+<!--                                         <div class="col-lg-8"> -->
+<!--                                             <div class="cruise_item_inner_content"> -->
+<!--                                                 <div class="cruise_content_top_wrapper"> -->
+<!--                                                     <div class="cruise_content_top_left"> -->
+<!--                                                         <h4>JW 메리어트 호텔 시안 사우스웨스트</h4> -->
+<!--                                                         <p><i class="fas fa-map-marker-alt"></i> 중국, 시안</p> -->
+<!--                                                     </div> -->
+<!--                                                     <div class="cruise_content_top_right"> -->
+<!--                                                         <h5>4.8/5</h5> -->
+<!--                                                         <h4>(1566 reviewes)</h4> -->
+<!--                                                     </div> -->
+<!--                                                 </div> -->
+<!--                                                 <div class="cruise_content_middel_wrapper"> -->
+<!--                                                     <div class="cruise_content_middel_left"> -->
+<!--                                                         <h5>디럭스룸</h5> -->
+<!--                                                         <p>킹베드 1개</p> -->
+<!--                                                     </div> -->
+<!--                                                     <div class="cruise_content_middel_right"> -->
+<!--                                                         <p>1박, 성인 2명</p> -->
+<!--                                                     </div> -->
+<!--                                                 </div> -->
+<!--                                                 <div class="cruise_content_middel_wrapper"> -->
+<!--                                                     <div class="cruise_content_middel_left"> -->
+<!--                                                         <h5>2주전까지 무료 취소</h5> -->
+<!--                                                         <p>선결제</p> -->
+<!--                                                     </div> -->
+<!--                                                     <div class="cruise_content_middel_right"> -->
+<!--                                                         <h3>₩126,785<sub> / 1박</sub></h3> -->
+<!--                                                         <p>세금 및 기타 요금 포함</p> -->
+<!--                                                     </div> -->
+<!--                                                 </div> -->
+<!--                                                 <div class="cruise_content_bottom_wrapper"> -->
+<!--                                                     <div class="cruise_content_bottom_left"> -->
+<!--                                                         <ul> -->
+<!--                                                             <li>레스토랑</li> -->
+<!--                                                             <li>무료 주차</li> -->
+<!--                                                             <li>수영장</li> -->
+<!--                                                             <li>피트니스 센터</li> -->
+<!--                                                         </ul> -->
+<!--                                                     </div> -->
+<!--                                                     <div class="cruise_content_bottom_right"> -->
+<!--                                                         <a href="hotel-details.html" class="btn btn_theme btn_md">예약 가능 옵션 보기</a> -->
+<!--                                                      </div> -->
+<!--                                                 </div> -->
+<!--                                             </div> -->
+<!--                                         </div> -->
+<!--                                     </div> -->
                                 </div>
                             </div>
                             <!-- <div class="load_more_flight">
