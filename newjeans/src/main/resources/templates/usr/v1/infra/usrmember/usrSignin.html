@@ -35,6 +35,19 @@
     <link rel="icon" type="image/png" href="/usr/v1/usertemplate/ui/assets/img/favicon.png">
 </head>
 
+<style>
+#idFeedback {
+ 	transform: translateY(-30%);
+ }
+ 
+ #pwFeedback {
+ 	transform: translateY(-170%);
+ }
+
+
+
+</style>
+
 <body>
     <!-- preloader Area -->
     <div class="preloader">
@@ -560,7 +573,7 @@
                                     		<input type="text" class="form-control" placeholder="아이디" id="htmId" name="htmId" required />
                                	 		</div>
                                	 		<div class="invalid-feedback" id="idFeedback">아이디를 입력해 주세요</div>
-                               	 		<div class="invalid-feedback" id="idCheckFeedback">아이디를 입력해 주세요</div>
+<!--                                	 		<div class="invalid-feedback" id="idCheckFeedback">아이디를 입력해 주세요</div> -->
                             		</div>
                             	</div>
                             	<div class="row">
@@ -570,7 +583,7 @@
                                     		<a href="forgot-password.html">비밀번호 찾기</a>
                                	 		</div>
                                	 		<div class="invalid-feedback" id="pwFeedback">비밀번호를 입력해 주세요</div>
-                               	 		<div class="invalid-feedback" id="pwCheckFeedback">비밀번호를 입력해 주세요</div>
+<!--                                	 		<div class="invalid-feedback" id="pwCheckFeedback">비밀번호를 입력해 주세요</div> -->
                             		</div>
                             	</div>
                                 <div class="common_form_submit">
@@ -776,11 +789,11 @@
     	// 아이디
     	userId.classList.remove('is-valid', 'is-invalid');
     	idFeedback.style.display = 'none';
-    	idCheckFeedback.style.display = 'none';
+//     	idCheckFeedback.style.display = 'none';
     	//비밀번호
     	userPw.classList.remove('is-valid', 'is-invalid');
     	pwFeedback.style.display = 'none';
-    	pwCheckFeedback.style.display = 'none';
+//     	pwCheckFeedback.style.display = 'none';
     	
     	// 아이디가 비어 있거나 없을 경우 
 		if(userIdValue == "" || userIdValue == null) {
@@ -827,6 +840,17 @@
     	
     	
     } // signinBtn end
+    
+ 	// 엔터키로 로그인
+    // enterkey() 함수는 keydown 이벤트 리스너에 추가되어야 함
+    document.getElementById("htmId").addEventListener("keydown", enterkey);
+    document.getElementById("htmPassword").addEventListener("keydown", enterkey);
+    
+    function enterkey() { 
+  	  if (window.event.keyCode == 13) { // 엔터키 코드가 13
+  		  document.getElementById("signinBtn").click(); // 로그인 버튼 클릭 이벤트 실행      
+  	  }
+  	}
     
     
     

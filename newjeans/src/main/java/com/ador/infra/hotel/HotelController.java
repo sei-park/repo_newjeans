@@ -78,7 +78,7 @@ public class HotelController {
 	// delete
 	@RequestMapping(value="/xdm/v1/infra/hotel/hotelXdmDel")
 	public String hotelXdmDel(HotelDto hotelDto) {
-		
+		  
 		hotelService.delete(hotelDto);
 		return "redirect:/xdm/v1/infra/hotel/hotelXdmList";
 	}

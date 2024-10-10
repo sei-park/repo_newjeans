@@ -36,14 +36,50 @@
 </head> 
 
 <style>
-#nameFeedback {
+/* .invalid-feedback { */
+/* 	display:block; */
+/* } */  
+
+#nameFeedback, #nameRegExp {
 	transform: translateY(-30%);
 }
 
 #genderFeedback { 
- 	transform: translateY(40%);   
-} 
-
+	transform: translateX(-34%);
+	position: relative;
+	top: 12px;
+ }
+ 
+#birthFeedback, #birthRegExp {
+ 	transform: translateY(-30%);
+ }
+ 
+#emailFeedback, #emailRegExp {
+ 	transform: translateY(-30%);
+ }
+ 
+#phoneFeedback, #phoneRegExp {
+ 	transform: translateY(-30%);
+ }
+ 
+#addressFeedback {
+ 	transform: translateX(42%);
+ 	position: relative;
+	top: 10px;
+ }
+ 
+#idFeedback, #idRegExp {
+ 	transform: translateY(-30%);
+ }
+ 
+#pwFeedback, #pwRegExp {
+ 	transform: translateY(-30%);
+ }
+ 
+#pwCheckFeedback, #pwMatchFeedback {
+	transform: translateY(-30%);
+}
+ 
 #postcodeBtn {
 	color: var(--white-color);
     background-color: var(--main-color);
@@ -709,7 +745,7 @@
                                                     width="50px"></a></li>
                                         <!-- <li><a href="#!"><img src="/usr/v1/usertemplate/ui/assets/img/icon/twitter.png" alt="icon"></a></li> -->
                                     </ul>
-                                    <p>계정이 있습니다 <a href="./0_login.html">로그인 하러 가기</a></p>
+                                    <p>계정이 있습니다 <a href="/v1/infra/usrmember/usrSignin">로그인 하러 가기</a></p>
                                 </div>
                             </form> <!-- form end -->
                         </div>
@@ -888,7 +924,7 @@
     	let userName = document.getElementById("htmUserName");
     	let userNameValue = document.getElementById("htmUserName").value.trim();
     	let userNameRegExp = /^[가-힣]+$/; // 이름 정규식(한글만 가능)
-    	
+    	    
     	// 성별
     	let userGender = document.getElementById("htmGender");
     	let userGenderValue = document.getElementById("htmGender").value.trim();
@@ -987,7 +1023,7 @@
     	} else {
     		userName.classList.add('is-valid');
     	}
-    	
+    	      
     	///////////////////////////////////////////////
     	
     	// 성별이 비어 있거나 없을 경우 

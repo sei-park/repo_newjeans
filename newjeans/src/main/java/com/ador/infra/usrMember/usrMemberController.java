@@ -74,14 +74,15 @@ public class usrMemberController {
 	@RequestMapping(value="/v1/infra/usrmember/usrSignoutProc")
 	public Map<String, Object> signoutXdmProc(HttpSession httpSession) throws Exception {
 		Map<String, Object> returnMap = new HashMap<String, Object>();
-		//httpSession.removeAttribute("userSessionAttribute"); // 사용자 세션만 삭제 
-		httpSession.invalidate();
+		//httpSession.invalidate(); // 세션 전체 삭제  
+		httpSession.setAttribute("sessSeqUsr", null);
 		returnMap.put("rt", "success");
-		return returnMap;
+		return returnMap;    
 	}
 	
-	              
+	
+	               
 	
 
-}
+}  
  

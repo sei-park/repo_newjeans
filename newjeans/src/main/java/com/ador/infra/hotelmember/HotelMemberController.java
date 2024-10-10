@@ -143,13 +143,13 @@ public class HotelMemberController {
 	@RequestMapping(value="/xdm/v1/infra/hotelmember/signoutXdmProc")
 	public Map<String, Object> signoutXdmProc(HttpSession httpSession) throws Exception {
 		Map<String, Object> returnMap = new HashMap<String, Object>();
-		//httpSession.removeAttribute("adminSessionAttribute"); // 관리자 세션만 삭제. 괄호 안에는 세션에 저장된 속성의 이름(키)가 들어감 
-		httpSession.invalidate(); 세션 전체 삭제 
-		returnMap.put("rt", "success");
+		// httpSession.invalidate(); //세션 전체 삭제 
+		httpSession.setAttribute("sessSeqXdm", "");
+		returnMap.put("rt", "success");     
 		return returnMap;
 	}
 	
- 
+   
  
 	
 	

@@ -1207,8 +1207,7 @@
                                                         </th>
                                                         <td th:text="${vo.totalRows - ((vo.thisPage - 1) * vo.rowNumToShow + listStat.index)}" class="align-middle"></td>
                                                         <td th:text="${list.htseq}"></td> 
-                                                        <td><a th:href="@{/xdm/v1/infra/hotel/hotelXdmMForm(htseq=${list.htseq})}"
-														th:text="${list.htName}"></a></td>
+                                                        <td><a th:href="@{/xdm/v1/infra/hotel/hotelXdmMForm(htseq=${list.htseq})}" th:text="${list.htName}"></a></td>
                                                         <td th:text="${list.htAddress}"></td>
 <!--                                                         <td th:text="${list.htcountry}"></td> -->
 
