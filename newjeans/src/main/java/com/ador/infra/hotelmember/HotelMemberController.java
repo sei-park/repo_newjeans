@@ -13,7 +13,9 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.ador.common.constants.Constants;
 import com.ador.common.util.UtilDateTime;
 
+import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpSession;
+
 
 @Controller
 public class HotelMemberController {
@@ -142,16 +144,26 @@ public class HotelMemberController {
 	@RequestMapping(value="/xdm/v1/infra/hotelmember/signoutXdmProc")
 	public Map<String, Object> signoutXdmProc(HttpSession httpSession) throws Exception {
 		Map<String, Object> returnMap = new HashMap<String, Object>();
-		// httpSession.invalidate(); //세션 전체 삭제
+		//httpSession.invalidate(); //세션 전체 삭제
 		httpSession.setAttribute("sessSeqXdm", null);
 		httpSession.setAttribute("sessIdXdm", null);
-		httpSession.setAttribute("sessNameXdm", null);   
-		httpSession.setAttribute("sessEmailXdm", null);   
+		httpSession.setAttribute("sessNameXdm", null);    
+		httpSession.setAttribute("sessEmailXdm", null);
+		
+		// 세션 쿠키 삭제
+	    Cookie cookie = new Cookie("JSESSIONID", null); // 세션 쿠키 이름 JSESSIONID
+	    cookie.setPath("/"); // 애플리케이션 전체에서 유효하도록 설정
+	    cookie.setMaxAge(0); // 쿠키의 유효기간을 0으로 설정하여 삭제
+	    
 		returnMap.put("rt", "success");
 		return returnMap; 
 	}
 	
-   
+	
+	
+	
+	
+     
  
 	
 	
