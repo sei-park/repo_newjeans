@@ -41,7 +41,6 @@ public class HotelMemberController {
 			model.addAttribute("memberList", hotelMemberService.memberSelectList(hotelMemberVo));
 		}
 				
-//		model.addAttribute("memberList", hotelMemberService.memberSelectList(hotelMemberVo));
 		return "/xdm/v1/infra/hotelmember/hotelMemberXdmList";
 	}
 	
@@ -116,10 +115,10 @@ public class HotelMemberController {
 				httpSession.setAttribute("sessSeqXdm", rtMemberSession.getHtmSeq()); // seq 정보를 가져옴 
 				httpSession.setAttribute("sessIdXdm", rtMemberSession.getHtmId()); // 아이디 정보를 가져옴
 				httpSession.setAttribute("sessNameXdm", rtMemberSession.getHtmUserName()); // 이름 정보를 가져옴 
-				httpSession.setAttribute("sessEmailXdm", rtMemberSession.getHtmEmail()); // 이메일 정보를 가져옴 
+				httpSession.setAttribute("sessEmailXdm", rtMemberSession.getHtmEmail()); // 이메일 정보를 가져옴
 				
 				returnMap.put("rt", "success"); // 로그인 성공 
-				
+				  
 				// console
 				System.out.println("sessSeqXdm: " + httpSession.getAttribute("sessSeqXdm"));
 				System.out.println("sessIdXdm: " + httpSession.getAttribute("sessIdXdm"));
@@ -143,10 +142,13 @@ public class HotelMemberController {
 	@RequestMapping(value="/xdm/v1/infra/hotelmember/signoutXdmProc")
 	public Map<String, Object> signoutXdmProc(HttpSession httpSession) throws Exception {
 		Map<String, Object> returnMap = new HashMap<String, Object>();
-		// httpSession.invalidate(); //세션 전체 삭제 
-		httpSession.setAttribute("sessSeqXdm", "");
-		returnMap.put("rt", "success");     
-		return returnMap;
+		// httpSession.invalidate(); //세션 전체 삭제
+		httpSession.setAttribute("sessSeqXdm", null);
+		httpSession.setAttribute("sessIdXdm", null);
+		httpSession.setAttribute("sessNameXdm", null);   
+		httpSession.setAttribute("sessEmailXdm", null);   
+		returnMap.put("rt", "success");
+		return returnMap; 
 	}
 	
    

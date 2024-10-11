@@ -1,3 +1,4 @@
+//alert("확인!!!!");
 
 // model 
 const exampleModal = document.getElementById('exampleModal')
@@ -12,7 +13,7 @@ if (exampleModal) {
 
 		modalTitle.textContent = `New message to ${recipient}`
 		modalBodyInput.value = recipient
-	})
+	})  
 }
 
 // 로그아웃
@@ -29,7 +30,7 @@ document.getElementById("logoutBtn").onclick = function () {
   				if(response.rt == "success") {
   					location.href="/xdm/v1/infra/hotelmember/signin";  
   				} else {        
-  					// by pass  
+  					// by pass
   				}
   			  }      
             }); // ajax end
@@ -39,7 +40,7 @@ document.getElementById("logoutBtn").onclick = function () {
    
      
    
-   
+         
    
    
    

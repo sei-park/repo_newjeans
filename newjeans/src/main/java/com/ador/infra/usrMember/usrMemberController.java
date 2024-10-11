@@ -20,7 +20,7 @@ public class usrMemberController {
 	@Autowired
 	HotelMemberService hotelMemberService;
 	
-	// index(사용자 메인페이지)
+	// index(사용자 메인페이지)  
 	@RequestMapping(value="/v1/infra/usrmember/usrIndex")
 	public String usrIndex() {
 		return "/usr/v1/infra/usrmember/usrIndex";
@@ -55,7 +55,7 @@ public class usrMemberController {
 				httpSession.setAttribute("sessNameUsr", rtMemberSession.getHtmUserName()); // 이름 정보를 가져옴
 				httpSession.setAttribute("sessEmailUsr", rtMemberSession.getHtmEmail()); // 이메일 정보를 가져옴 
 				
-				returnMap.put("rt", "success"); // 로그인 성공 
+				returnMap.put("rt", "success"); // 로그인 성공   
 				
 				// console
 				System.out.println("sessSeqUsr: " + httpSession.getAttribute("sessSeqUsr"));

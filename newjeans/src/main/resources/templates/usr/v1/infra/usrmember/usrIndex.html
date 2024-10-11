@@ -57,26 +57,48 @@
         <!-- Top Bar -->
         <div class="topbar-area">
             <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-lg-6 col-md-6">
-                        <ul class="topbar-list">
-<!--                             <li th:text="${session.sessNameUsr} + ' 님 '"></li>  -->
-<!--                             <li th:text="${session.sessEmailUsr}"></li> -->
-							<li th:if="${session.sessSeqUsr != null}" th:text="${session.sessNameUsr} + ' 님 '"></li> 
-            				<li th:if="${session.sessSeqUsr != null}" th:text="${session.sessEmailUsr}"></li>
-           					<li th:if="${session.sessSeqUsr == null}">로그인해주세요</li> <!-- 로그아웃 시 표시 -->
-                        </ul>       
-                    </div>   
-                    <div class="col-lg-6 col-md-6">
-                        <ul class="topbar-others-options">
-<!--                             <li><a href="/v1/infra/usrmember/usrSignin">Login</a></li> -->
-<!--                             <li><a href="/v1/infra/usrmember/usrSignup">Sign up</a></li> -->
-							<li th:if="${session.sessSeqUsr == null}"><a href="/v1/infra/usrmember/usrSignin">Sign in</a></li>
-            				<li th:if="${session.sessSeqUsr == null}"><a href="/v1/infra/usrmember/usrSignup">Sign up</a></li>
-            				<li id="logoutBtn" th:if="${session.sessSeqUsr != null}"><a href="/v1/infra/usrmember/usrSignout">Logout</a></li> <!-- 로그인 시 로그아웃 버튼 -->
-                        </ul>
-                    </div>
-                </div>
+<!--                 <div class="row align-items-center"> -->
+<!--                     <div class="col-lg-6 col-md-6"> -->
+<!--                         <ul class="topbar-list"> -->
+<!-- 							<li th:if="${session.sessSeqUsr != null}" th:text="${session.sessNameUsr} + ' 님 '"></li>  -->
+<!--             				<li th:if="${session.sessSeqUsr != null}" th:text="${session.sessEmailUsr}"></li> -->
+<!--            					<li th:if="${session.sessSeqUsr == null}">로그인해주세요</li> 로그아웃 시 표시 -->
+<!--                         </ul>        -->
+<!--                     </div>    -->
+<!--                     <div class="col-lg-6 col-md-6"> -->
+<!--                         <ul class="topbar-others-options"> -->
+<!-- 							<li th:if="${session.sessSeqUsr == null}"><a href="/v1/infra/usrmember/usrSignin">Sign in</a></li> -->
+<!--             				<li th:if="${session.sessSeqUsr == null}"><a href="/v1/infra/usrmember/usrSignup">Sign up</a></li> -->
+<!--             				<li id="logoutBtn" th:if="${session.sessSeqUsr != null}"><a href="/v1/infra/usrmember/usrSignout">Logout</a></li> 로그인 시 로그아웃 버튼 -->
+<!--                         </ul> -->
+<!--                     </div> -->
+<!--                 </div> -->
+ 
+			<div class="row align-items-center">
+			    <div class="col-lg-6 col-md-6">
+			        <ul class="topbar-list">
+			            <th:block th:if="${session.sessSeqUsr != null}"> <!-- seq 세션 정보가 있을 때 -->
+			                <li th:text="${session.sessNameUsr} + ' 님 '"></li> <!-- 이름 + '님' 보여주기 -->
+			                <li th:text="${session.sessEmailUsr}"></li> <!-- 이메일 보여주기 -->
+			            </th:block>
+			            <th:block th:if="${session.sessSeqUsr == null}"> <!-- seq 세션 정보가 없을 때 -->
+			                <li>로그인해주세요</li> <!-- 로그아웃 시 표시 --> <!-- 로그인해주세요 보여주기 -->
+			            </th:block>
+			        </ul>       
+			    </div>   
+			    <div class="col-lg-6 col-md-6">
+			        <ul class="topbar-others-options">
+			            <th:block th:if="${session.sessSeqUsr == null}">
+			                <li><a href="/v1/infra/usrmember/usrSignin">Sign in</a></li>
+			                <li><a href="/v1/infra/usrmember/usrSignup">Sign up</a></li>
+			            </th:block>
+			            <th:block th:if="${session.sessSeqUsr != null}">
+			                <li id="logoutBtn"><a href="/v1/infra/usrmember/usrSignout">Logout</a></li> <!-- 로그인 시 로그아웃 버튼 -->
+			            </th:block>
+			        </ul>
+			    </div>
+			</div>
+
             </div>
         </div>
 
@@ -3568,6 +3590,7 @@
     <script src="/usr/v1/usertemplate/ui/assets/js/custom.js"></script>
     <script src="/usr/v1/usertemplate/ui/assets/js/add-form.js"></script>
     <script src="/usr/v1/usertemplate/ui/assets/js/form-dropdown.js"></script>
+    
     
     <script>
  	// 로그아웃

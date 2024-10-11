@@ -18,8 +18,8 @@ public class CheckLoginSessionInterceptor implements HandlerInterceptor {
 			throws Exception {
 		
      System.out.println("로그인 확인, htmSeq : " + request.getSession().getAttribute("sessSeqXdm"));
-
-		if (request.getSession().getAttribute("sessSeqXdm") != null) { // 로그인이 되어 있을 때 
+ 
+		if (request.getSession().getAttribute("sessSeqXdm") != null || request.getSession().getAttribute("sessSeqXdm") != "") { // 로그인이 되어 있을 때 
 			// by pass
 		} else { // 그게 아니라면 
 			response.sendRedirect(Constants.URL_LOGINFORM); // 로그인 페이지 경로로 이동      
