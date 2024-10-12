@@ -3,51 +3,39 @@
 
 <head>
 
-<meta charset="utf-8" />
-<title>Form Advanced Plugins | Dashonic - Admin & Dashboard
-	Template</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta content="Premium Multipurpose Admin & Dashboard Template"
-	name="description" />
-<meta content="Pichforest" name="author" />
-<!-- App favicon -->
-<link rel="shortcut icon"
-	href="/xdm/v1/template/ui/assets/images/favicon.ico">
+	<meta charset="utf-8" />
+    <title>Form Advanced Plugins | Dashonic - Admin & Dashboard Template</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
+    <meta content="Pichforest" name="author" />
+    <!-- App favicon -->
+    <link rel="shortcut icon" href="/xdm/v1/template/ui/assets/images/favicon.ico">
 
-<!-- plugin css -->
-<link
-	href="/xdm/v1/templ ate/ui/assets/libs/choices.js/public//xdm/v1/template/ui/assets/styles/choices.min.css"
-	rel="stylesheet" type="text/css" />
-<link href="/xdm/v1/template/ui/assets/libs/flatpickr/flatpickr.min.css"
-	rel="stylesheet">
+    <!-- plugin css -->
+    <link href="/xdm/v1/template/ui/assets/libs/choices.js/public/xdm/v1/template/ui/assets/styles/choices.min.css" rel="stylesheet" type="text/css" />
+    <link href="/xdm/v1/template/ui/assets/libs/flatpickr/flatpickr.min.css" rel="stylesheet">
 
-<!-- One of the following themes -->
-<link rel="stylesheet"
-	href="/xdm/v1/template/ui/assets/libs/@simonwep/pickr/themes/classic.min.css" />
-<!-- 'classic' theme -->
-<link rel="stylesheet"
-	href="/xdm/v1/template/ui/assets/libs/@simonwep/pickr/themes/monolith.min.css" />
-<!-- 'monolith' theme -->
-<link rel="stylesheet"
-	href="/xdm/v1/template/ui/assets/libs/@simonwep/pickr/themes/nano.min.css" />
-<!-- 'nano' theme -->
+    <!-- One of the following themes -->
+    <link rel="stylesheet" href="/xdm/v1/template/ui/assets/libs/@simonwep/pickr/themes/classic.min.css" /> <!-- 'classic' theme -->
+    <link rel="stylesheet" href="/xdm/v1/template/ui/assets/libs/@simonwep/pickr/themes/monolith.min.css" /> <!-- 'monolith' theme -->
+    <link rel="stylesheet" href="/xdm/v1/template/ui/assets/libs/@simonwep/pickr/themes/nano.min.css" /> <!-- 'nano' theme -->
 
-<!-- Bootstrap Css -->
-<link href="/xdm/v1/template/ui/assets/css/bootstrap.min.css"
-	id="bootstrap-style" rel="stylesheet" type="text/css" />
-<!-- Icons Css -->
-<link href="/xdm/v1/template/ui/assets/css/icons.min.css"
-	rel="stylesheet" type="text/css" />
-<!-- App Css-->
-<link href="/xdm/v1/template/ui/assets/css/app.min.css" id="app-style"
-	rel="stylesheet" type="text/css" />
+    <!-- Bootstrap Css -->
+    <link href="/xdm/v1/template/ui/assets/css/bootstrap.min.css" id="bootstrap-style" rel="stylesheet" type="text/css" />
+    <!-- Icons Css -->
+    <link href="/xdm/v1/template/ui/assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+    <!-- App Css-->
+    <link href="/xdm/v1/template/ui/assets/css/app.min.css" id="app-style" rel="stylesheet" type="text/css" />
 
-<link rel="stylesheet"
-	href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font/bootstrap-icons.css">
+
 
 </head>
 
 <style>
+
+
+
 </style>
 
 
@@ -1006,7 +994,8 @@
 													<label for="choices-single-groups"
 														class="form-label font-size-13 text-muted">이름</label> 
 														<input type="text" class="form-control" name="htmUserName" id="htmUserName">
-													<div class="valid-feedback">Looks good!</div>
+													<div class="invalid-feedback" id="userNameFeedback">이름을 입력해주세요</div>
+													<div class="invalid-feedback" id="userNameRegExp">이름을 확인해주세요</div>
 												</div>
 												<div class="col-md-3">
 													<label for="choices-single-default"
@@ -1017,6 +1006,7 @@
 															th:value="${list.ifcdSeq}" th:text="${list.ifcdName}"
 															th:selected="${list.ifcdSeq} == ${memberItem?.htmGrade}"></option>
 													</select>
+													<div class="invalid-feedback" id="userGradeFeedback">등급을 입력해주세요</div>
 												</div>
 											</div>
 											<div class="row gy-3">
@@ -1031,26 +1021,30 @@
 															th:selected="${list.ifcdSeq} == ${memberItem?.htmGender}">
 														</option>
 													</select>
+													<div class="invalid-feedback" id="userGenderFeedback">성별을 입력해주세요</div>
 												</div>
 												<div class="col-md-3">
 													<label for="choices-single-groups"
 														class="form-label font-size-13 text-muted">생년월일</label> 
 														<input type="text" class="form-control" id="htmBirth" name="htmBirth">
-													<div class="valid-feedback">Looks good!</div>
+													<div class="invalid-feedback" id="userBirthFeedback">생년월일을 입력해주세요</div>
+													<div class="invalid-feedback" id="userBirthRegExp">생년월일을 확인해주세요</div>
 												</div>
 												<div class="col-md-3">
 													<label for="choices-single-groups"
 														class="form-label font-size-13 text-muted">휴대폰번호</label> <input
 														type="text" class="form-control" id="htmPhoneNumber"
 														name="htmPhoneNumber">
-													<div class="valid-feedback">Looks good!</div>
+													<div class="invalid-feedback" id="userPhoneNumberFeedback">휴대폰번호를 입력해주세요</div>
+													<div class="invalid-feedback" id="userPhoneNumberRegExp">휴대폰번호를 확인해주세요</div>
 												</div>
 												<div class="col-md-3">
 													<label for="choices-single-groups"
 														class="form-label font-size-13 text-muted">이메일</label> <input
 														type="text" class="form-control" id="htmEmail"
 														name="htmEmail">
-													<div class="valid-feedback">Looks good!</div>
+													<div class="invalid-feedback" id="userEmailFeedback">이메일을 입력해주세요</div>
+													<div class="invalid-feedback" id="userEmailRegExp">이메일을 확인해주세요</div>
 												</div>
 											</div>
 
@@ -1060,21 +1054,21 @@
 														class="form-label font-size-13 text-muted">우편번호</label> <input
 														type="text" class="form-control" id="htmZipCode"
 														name="htmZipCode">
-													<div class="valid-feedback">Looks good!</div>
+													<div class="invalid-feedback" id="userZipCodeFeedback">우편번호를 입력해주세요</div>
 												</div>
 												<div class="col-md-3">
 													<label for="choices-single-groups"
 														class="form-label font-size-13 text-muted">주소</label> <input
 														type="text" class="form-control" id="htmAddress"
 														name="htmAddress">
-													<div class="valid-feedback">Looks good!</div>
+													<div class="invalid-feedback" id="userAddressFeedback">주소를 입력해주세요</div>
 												</div>
 												<div class="col-md-3">
 													<label for="choices-single-groups"
 														class="form-label font-size-13 text-muted">상세주소</label> <input
 														type="text" class="form-control" id="htmDetailedAddress"
 														name="htmDetailedAddress">
-													<div class="valid-feedback">Looks good!</div>
+													<div class="invalid-feedback" id="userDetailedAddressFeedback">상세주소를 입력해주세요</div>
 												</div>
 											</div>
 
@@ -1084,14 +1078,16 @@
 														class="form-label font-size-13 text-muted">아이디</label> <input
 														type="text" class="form-control" id="htmId"
 														name="htmId">
-													<div class="valid-feedback">Looks good!</div>
+													<div class="invalid-feedback" id="userIdFeedback">아이드를 입력해주세요</div>
+													<div class="invalid-feedback" id="userIdRegExp">아이디를 확인해주세요</div>
 												</div>
 												<div class="col-md-3">
 													<label for="choices-single-groups"
 														class="form-label font-size-13 text-muted">비밀번호</label> <input
 														type="text" class="form-control" id="htmPassword"
 														name="htmPassword">
-													<div class="valid-feedback">Looks good!</div>
+													<div class="invalid-feedback" id="userPasswordFeedback">아이드를 입력해주세요</div>
+													<div class="invalid-feedback" id="userPasswordRegExp">아이디를 확인해주세요</div>
 												</div>
 											</div>
 
@@ -1109,14 +1105,14 @@
 														class="form-label font-size-13 text-muted">회원등록일</label> <input
 														type="text" class="form-control" id="validationCustom01"
 														name="htmRegDate" disabled>
-													<div class="valid-feedback">Looks good!</div>
+													<div class="invalid-feedback">Looks good!</div>
 												</div>
 												<div class="col-md-3">
 													<label for="choices-single-groups"
 														class="form-label font-size-13 text-muted">회원정보수정일</label>
 													<input type="text" class="form-control"
 														id="validationCustom01" name="htmEditMemberDate" disabled>
-													<div class="valid-feedback">Looks good!</div>
+													<div class="invalid-feedback">Looks good!</div>
 												</div>
 <!-- 												<div class="col-md-3"> -->
 <!-- 													<label for="choices-single-default" -->
@@ -1456,34 +1452,27 @@
 			</div>
 			<!-- end slimscroll-menu-->
 		</div>
-		<!-- /Right-bar -->
+		        <!-- /Right-bar -->
 
-		<!-- Right bar overlay-->
-		<div class="rightbar-overlay"></div>
+        <!-- Right bar overlay-->
+        <div class="rightbar-overlay"></div>
 
-		<!-- JAVASCRIPT -->
-		<script
-			src="/xdm/v1/template/ui/assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
-		<script
-			src="/xdm/v1/template/ui/assets/libs/metismenujs/metismenujs.min.js"></script>
-		<script
-			src="/xdm/v1/template/ui/assets/libs/simplebar/simplebar.min.js"></script>
-		<script
-			src="/xdm/v1/template/ui/assets/libs/feather-icons/feather.min.js"></script>
+        <!-- JAVASCRIPT -->
+        <script src="/xdm/v1/template/ui/assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <script src="/xdm/v1/template/ui/assets/libs/metismenujs/metismenujs.min.js"></script>
+        <script src="/xdm/v1/template/ui/assets/libs/simplebar/simplebar.min.js"></script>
+        <script src="/xdm/v1/template/ui/assets/libs/feather-icons/feather.min.js"></script>
 
-		<!-- plugins -->
-		<script
-			src="/xdm/v1/template/ui/assets/libs/choices.js/public//xdm/v1/template/ui/assets/scripts/choices.min.js"></script>
-		<script
-			src="/xdm/v1/template/ui/assets/libs/flatpickr/flatpickr.min.js"></script>
+        <!-- plugins -->
+        <script src="/xdm/v1/template/ui/assets/libs/choices.js/public//xdm/v1/template/ui/assets/scripts/choices.min.js"></script>
+        <script src="/xdm/v1/template/ui/assets/libs/flatpickr/flatpickr.min.js"></script>
 
-		<!-- Modern colorpicker bundle -->
-		<script
-			src="/xdm/v1/template/ui/assets/libs/@simonwep/pickr/pickr.min.js"></script>
+        <!-- Modern colorpicker bundle -->
+        <script src="/xdm/v1/template/ui/assets/libs/@simonwep/pickr/pickr.min.js"></script>
 
-		<!-- init js -->
-		<script src="/xdm/v1/template/ui/assets/js/pages/form-advanced.init.js"></script>
-		<script src="/xdm/v1/template/ui/assets/js/pages/form-validation.init.js"></script>
+        <!-- init js -->
+        <script src="/xdm/v1/template/ui/assets/js/pages/form-advanced.init.js"></script>
+        <script src="/xdm/v1/template/ui/assets/js/pages/form-validation.init.js"></script>  
 
 		<script>
 		document.getElementById("btnSubmit").onclick = function() { // 버튼 id를 클릭하면 아래 함수를 실행 
@@ -1493,7 +1482,7 @@
 			// 이름 
 			let htmUserName = document.getElementById("htmUserName"); 
     	    let htmUserNameValue = document.getElementById("htmUserName").value.trim();
-    	    let htmUserNameRegExp = /^[ㄱ-ㅎ가-힣A-Za-z0-9]+$/; // 정규표현식
+    	    let htmUserNameRegExp = /^[가-힣]+$/; // 이름 정규식(한글만 가능)
     	    
     	    // 등급 
     	    let htmGrade = document.getElementById("htmGrade"); 
@@ -1506,22 +1495,21 @@
     	    // 생년월일
     	    let htmBirth = document.getElementById("htmBirth"); 
     	    let htmBirthValue = document.getElementById("htmBirth").value.trim();
-    	    let htmBirthRegExp = /^[ㄱ-ㅎ가-힣A-Za-z0-9]+$/; // 정규표현식 
+    	    let htmBirthRegExp = /^(19[0-9][0-9]|20\d{2})(0[0-9]|1[0-2])(0[1-9]|[1-2][0-9]|3[0-1])$/;
     	    
     	    // 휴대폰번호 
     	    let htmPhoneNumber = document.getElementById("htmPhoneNumber"); 
     	    let htmPhoneNumberValue = document.getElementById("htmPhoneNumber").value.trim();
-    	    let htmPhoneNumberRegExp = /^[ㄱ-ㅎ가-힣A-Za-z0-9]+$/; // 정규표현식 
+    	    let htmPhoneNumberRegExp = /^01([0|1|6|7|8|9])([0-9]{3,4})([0-9]{4})$/;
     	    
     	    // 이메일
     	    let htmEmail = document.getElementById("htmEmail"); 
-    	    let htmEmailValue = document.getElementById("htmPhoneNumber").value.trim();
-    	    let htmEmailRegExp = /^[ㄱ-ㅎ가-힣A-Za-z0-9]+$/; // 정규표현식
+    	    let htmEmailValue = document.getElementById("htmEmail").value.trim();
+    	    let htmEmailRegExp = /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/i;
     	    
     	    // 우편번호
     	    let htmZipCode = document.getElementById("htmZipCode"); 
     	    let htmZipCodeValue = document.getElementById("htmZipCode").value.trim();
-    	    let htmZipCodeRegExp = /^[ㄱ-ㅎ가-힣A-Za-z0-9]+$/; // 정규표현식
     	    
     	    // 주소
     	    let htmAddress = document.getElementById("htmAddress"); 
@@ -1534,18 +1522,87 @@
     	    // 아이디
     	    let htmId = document.getElementById("htmId"); 
     	    let htmIdValue = document.getElementById("htmId").value.trim();
+    	    let htmIdRegExp = /^[a-zA-Z0-9]{5,19}$/g;
     	    
     	    // 비밀번호
     	    let htmPassword = document.getElementById("htmPassword"); 
-    	    let htmPasswordValue = document.getElementById("htmPassword").value.trim(); 
+    	    let htmPasswordValue = document.getElementById("htmPassword").value.trim();
+    	    let htmPasswordRegExp = /^(?=.*[a-zA-Z])(?=.*[0-9]).{8,25}$/;
     	    
     	    
     	 	// Validation 초기화
-
+    	 	// 이름
+  			htmUserName.classList.remove('is-valid', 'is-invalid');
+  			userNameFeedback.style.display = 'none';
+  			userNameRegExp.style.display = 'none';
+    		// 등급
+    		htmGrade.classList.remove('is-valid', 'is-invalid');
+    		userGradeFeedback.style.display = 'none';
+    		// 성별
+    		htmGender.classList.remove('is-valid', 'is-invalid');
+    		userGenderFeedback.style.display = 'none';
+    		// 생년월일 
+    		htmBirth.classList.remove('is-valid', 'is-invalid');
+    		userBirthFeedback.style.display = 'none';
+    		userBirthRegExp.style.display = 'none';
+    		// 휴대폰번호
+    		htmPhoneNumber.classList.remove('is-valid', 'is-invalid');
+    		userPhoneNumberFeedback.style.display = 'none';
+    		userPhoneNumberRegExp.style.display = 'none';
+    		// 이메일
+    		htmEmail.classList.remove('is-valid', 'is-invalid');
+    		userEmailFeedback.style.display = 'none';
+    		userEmailRegExp.style.display = 'none';
+    		// 우편번호
+    		htmZipCode.classList.remove('is-valid', 'is-invalid');
+    		userZipCodeFeedback.style.display = 'none';
+    		// 주소
+    		htmAddress.classList.remove('is-valid', 'is-invalid');
+    		userAddressFeedback.style.display = 'none';
+    		// 상세주소
+    		htmDetailedAddress.classList.remove('is-valid', 'is-invalid');
+    		userDetailedAddressFeedback.style.display = 'none';
+    		// 아이디
+    		htmId.classList.remove('is-valid', 'is-invalid');
+    		userIdFeedback.style.display = 'none';
+    		userIdRegExp.style.display = 'none';
+    		// 비밀번호
+			htmPassword.classList.remove('is-valid', 'is-invalid');
+			userPasswordFeedback.style.display = 'none';
+			userPasswordRegExp.style.display = 'none';
 			
-
 			
-		
+			// 이름이 비어 있거나 없을 경우 
+	    	if(htmUserNameValue == "" || htmUserNameValue == null) {
+	    		userNameFeedback.style.display ='block'; 
+	    		htmUserName.classList.add('is-invalid');  
+	    		htmUserName.focus();  
+	 			return false; 
+	    	} else {
+	    		// by pass        
+	    	} 
+			
+	     	// 이름이 정규표현식에 맞지 않을 경우 
+	    	if(!htmUserNameRegExp.test(htmUserNameValue)) {
+	    		userNameRegExp.style.display='block';
+	    		htmUserName.classList.add('is-invalid');   
+	    		htmUserName.focus(); 
+		    	return false;
+	    	} else {
+	    		htmUserName.classList.add('is-valid');
+	    	}
+	     	
+	    	// 등급이 비어 있거나 없을 경우 
+	    	if(htmGradeValue == "" || htmGradeValue == null) {
+	    		userGradeFeedback.style.display ='block'; 
+	    		htmGrade.classList.add('is-invalid');  
+	    		htmGrade.focus();  
+	 			return false; 
+	    	} else {
+	    		// by pass        
+	    	} 
+			
+			
 			form.action = "/xdm/v1/infra/hotelmember/hotelMemberXdmInst"; // insert 경로로 이동 
 			form.submit();
 

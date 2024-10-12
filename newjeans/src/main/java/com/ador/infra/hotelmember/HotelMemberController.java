@@ -125,7 +125,10 @@ public class HotelMemberController {
 				System.out.println("sessSeqXdm: " + httpSession.getAttribute("sessSeqXdm"));
 				System.out.println("sessIdXdm: " + httpSession.getAttribute("sessIdXdm"));
 				System.out.println("sessNameXdm: " + httpSession.getAttribute("sessNameXdm"));
-				System.out.println("sessEmailXdm: " + httpSession.getAttribute("sessEmailXdm"));
+				System.out.println("sessEmailXdm: " + httpSession.getAttribute("sessEmailXdm")); 
+				
+				System.out.println("세션 유효 시간 " + httpSession.getMaxInactiveInterval() + "초");
+				
 			}
 		} else {
 			returnMap.put("rt", "fail"); // 로그인 실패 
@@ -145,10 +148,15 @@ public class HotelMemberController {
 	public Map<String, Object> signoutXdmProc(HttpSession httpSession) throws Exception {
 		Map<String, Object> returnMap = new HashMap<String, Object>();
 		//httpSession.invalidate(); //세션 전체 삭제
-		httpSession.setAttribute("sessSeqXdm", null);
-		httpSession.setAttribute("sessIdXdm", null);
-		httpSession.setAttribute("sessNameXdm", null);    
-		httpSession.setAttribute("sessEmailXdm", null);
+//		httpSession.setAttribute("sessSeqXdm", null);
+//		httpSession.setAttribute("sessIdXdm", null);
+//		httpSession.setAttribute("sessNameXdm", null);    
+//		httpSession.setAttribute("sessEmailXdm", null);
+		
+		httpSession.removeAttribute("sessSeqXdm");
+		httpSession.removeAttribute("sessIdXdm");
+		httpSession.removeAttribute("sessNameXdm");
+		httpSession.removeAttribute("sessEmailXdm");
 		
 		// 세션 쿠키 삭제
 	    Cookie cookie = new Cookie("JSESSIONID", null); // 세션 쿠키 이름 JSESSIONID
