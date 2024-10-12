@@ -1061,9 +1061,9 @@
                                                     <label for="choices-single-default"
                                                         class="form-label font-size-13 text-muted">약관동의여부
                                                     </label>
-                                                    <select class="form-select" name="htmRegAgreeContentNy">
-                                                        <option value="1" th:selected="${memberItem?.htmRegAgreeContentNy == 1}">동의</option>
-                                                        <option value="0" th:selected="${memberItem?.htmRegAgreeContentNy == 0}">동의하지 않음</option>
+                                                    <select class="form-select" name="htmRegAgreeContentNy" disabled>
+                                                        <option value="1" th:selected="${memberItem?.htmRegAgreeContentNy == 1}">Y</option>
+                                                        <option value="0" th:selected="${memberItem?.htmRegAgreeContentNy == 0}">N</option>
                                                     </select>
                                                 </div>
                                               	<div class="col-md-3">
@@ -1071,8 +1071,8 @@
                                                         class="form-label font-size-13 text-muted">탈퇴여부
                                                     </label>
                                                     <select class="form-select" name="htmDelNy" disabled>
+                                                    	<option value="0" th:selected="${memberItem?.htmDelNy == 0}">N</option>
                                                         <option value="1" th:selected="${memberItem?.htmDelNy == 1}">Y</option>
-                                                        <option value="0" th:selected="${memberItem?.htmDelNy == 0}">N</option>
                                                     </select>
                                                 </div>
                                             </div>

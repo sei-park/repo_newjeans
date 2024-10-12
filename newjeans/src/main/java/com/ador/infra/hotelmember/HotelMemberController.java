@@ -113,7 +113,7 @@ public class HotelMemberController {
 		if(rtMember != null) { // 로그인 정보가 있을 때 
 			HotelMemberDto rtMemberSession = hotelMemberService.selectOneLogin(hotelMemberDto); // 세션을 생성
 			if(rtMemberSession != null) { // 세션 정보가 있을 때 
-				httpSession.setMaxInactiveInterval(60 * Constants.SESSION_MINUTE_XDM); // 60second * 30 = 30minute 
+				httpSession.setMaxInactiveInterval(60 * Constants.SESSION_MINUTE_XDM); // 60second * 30 = 30minute
 				httpSession.setAttribute("sessSeqXdm", rtMemberSession.getHtmSeq()); // seq 정보를 가져옴 
 				httpSession.setAttribute("sessIdXdm", rtMemberSession.getHtmId()); // 아이디 정보를 가져옴
 				httpSession.setAttribute("sessNameXdm", rtMemberSession.getHtmUserName()); // 이름 정보를 가져옴 

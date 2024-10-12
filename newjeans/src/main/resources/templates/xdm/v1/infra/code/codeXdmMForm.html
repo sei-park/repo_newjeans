@@ -941,7 +941,7 @@
 								
 								<!--  Form 추가 --> <!-- form 태그 안에 novalidate  class="needs-validation" -->
                                 <div class="card-body">
-                                    <form method="post" action="/xdm/v1/infra/code/codeXdmUpdt" name="form">
+                                    <form method="post" action="/xdm/v1/infra/code/codeXdmUpdt" name="form" class="needs-validation" novalidate>
                                         <div class="row"> <!--col-md-8-->
                                             <div class="row">
                                             	 <div class="col-md-3">
@@ -949,11 +949,11 @@
                                                         class="form-label font-size-13 text-muted">코드그룹번호
                                                         <sup>*</sup>
                                                     </label>
-                                                    <select class="form-select" name="codegroup_ifcgSeq">
-                                                        <option value="">선택하세요</option>
+                                                    <select class="form-select" name="codegroup_ifcgSeq" id="codegroup_ifcgSeq">
                                                         <option th:each="list : ${listCodeGroup}" th:value="${list.ifcgSeq}" th:text="${list.ifcgName}" 
                                                         th:selected="${list.ifcgSeq == codeItem?.codegroup_ifcgSeq}"></option>
                                                     </select>
+                                                    <div class="invalid-feedback" id="codeNameFeedback">코드그룹을 선택해주세요</div>
                                                 </div>
                                             	  <div class="col-md-3"><!--col-md-6-->
                                                     <label for="choices-single-groups"
@@ -964,9 +964,10 @@
                                                 <div class="col-md-3"> <!--col-mb-3-->
                                                     <label for=" choices-single-groups"
                                                         class="form-label font-size-13 text-muted">코드이름</label>
-                                                    <input type="text" class="form-control" id="validationCustom03"
-                                                        placeholder="" name="ifcdName" th:value="${codeItem?.ifcdName}"> <!--  required -->
-                                                    <div class="invalid-feedback">Please provide a valid city.</div>
+                                                    <input type="text" class="form-control" id="ifcdName"
+                                                        placeholder="" name="ifcdName" th:value="${codeItem?.ifcdName}">
+                                                    <div class="invalid-feedback" id="nameFeedback">이름을 입력해주세요</div>
+                                                    <div class="invalid-feedback" id="nameRegExp">이름을 확인해주세요</div>
                                                 </div>
                                             </div>
 
@@ -976,16 +977,19 @@
                                                         class="form-label font-size-13 text-muted">사용여부
                                                         <sup>*</sup>
                                                     </label>
-                                                    <select class="form-select" name="ifcdUseNy" th:value="${codeItem?.ifcdUseNy}">
+                                                    <select class="form-select" name="ifcdUseNy" id="ifcdUseNy" th:value="${codeItem?.ifcdUseNy}">
                                                         <option value="1" th:selected="${codeItem?.ifcdUseNy == 1}">사용</option>
                                                         <option value="0" th:selected="${codeItem?.ifcdUseNy == 0}">미사용</option>
                                                     </select>
+                                                    <div class="invalid-feedback" id="useFeedback">사용여부를 선택해주세요</div>
                                                 </div>
                                                  <div class="col-md-3">
                                                     <label for="choices-single-groups"
                                                         class="form-label font-size-13 text-muted">순서</label>
                                                     <input class="form-control" type="text" value=""
-                                                        id="example-text-input" name="ifcdOrder" th:value="${codeItem?.ifcdOrder}">
+                                                        id="ifcdOrder" name="ifcdOrder" th:value="${codeItem?.ifcdOrder}">
+                                                    <div class="invalid-feedback" id="orderFeedback">순서를 입력해주세요</div>
+                                                    <div class="invalid-feedback" id="orderRegExp">순서를 확인해주세요</div>
                                                 </div>
                                             </div>
 
@@ -1154,7 +1158,7 @@
                                                 
                                                 <!-- 버튼 -->
                                                 <div class="col-md-1" align="right">
-                                                    <button type="submit" class="btn btn-outline-primary">
+                                                    <button type="button" class="btn btn-outline-primary" id="btnSubmit">
                                                         <i class="bx bx-data"></i>
                                                     </button>
                                                 </div>
@@ -1345,10 +1349,7 @@
 
         <!-- init js -->
         <script src="/xdm/v1/template/ui/assets/js/pages/form-advanced.init.js"></script>
-
         <script src="/xdm/v1/template/ui/assets/js/pages/form-validation.init.js"></script>
-
-<!--         <script src="/xdm/v1/template/ui/assets/js/app.js"></script> -->
 
 		<script>
 		// 휴지통 버튼 uelete
@@ -1366,6 +1367,122 @@
 		    form.action = "/xdm/v1/infra/code/codeXdmMDel";
 		    form.submit();
 		}
+		
+		document.getElementById("btnSubmit").onclick = function (){ // 버튼 id를 클릭하면 아래 함수를 실행
+        	
+        	// Validation
+        	
+        	// 코드그룹
+        	let codegroup_ifcgSeq = document.getElementById("codegroup_ifcgSeq");
+        	let codegroup_ifcgSeqValue = document.getElementById("codegroup_ifcgSeq").value.trim();
+        	
+        	// 코드이름 
+    	    let ifcdName = document.getElementById("ifcdName"); 
+    	    let ifcdNameValue = document.getElementById("ifcdName").value.trim();
+    	    let ifcdNameRegExp = /^[ㄱ-ㅎ가-힣A-Za-z0-9]+$/; // 정규표현식
+    	    
+    	    // 사용여부
+    	    let ifcdUseNy = document.getElementById("ifcdUseNy");
+    	    let ifcdUseNyValue = document.getElementById("ifcdUseNy").value.trim();
+    	    
+    	    // 순서
+    	    let ifcdOrder = document.getElementById("ifcdOrder");
+    	    let ifcdOrderValue = document.getElementById("ifcdOrder").value.trim();
+    	    let ifcdOrderRegExp = /[0-9]/;  
+    	    
+    	 	// Validation 초기화
+    	 	// 코드그룹
+    	 	codegroup_ifcgSeq.classList.remove('is-valid', 'is-invalid');
+    	 	codeNameFeedback.style.display = 'none';
+    	 	// 코드이름
+    	 	ifcdName.classList.remove('is-valid', 'is-invalid');
+    	 	nameFeedback.style.display = 'none';
+    	 	nameRegExp.style.display = 'none';
+    	 	// 사용여부
+    	 	ifcdUseNy.classList.remove('is-valid', 'is-invalid');
+    	 	useFeedback.style.display = 'none';
+    	 	// 순서
+    	 	ifcdOrder.classList.remove('is-valid', 'is-invalid');
+    	 	orderFeedback.style.display = 'none';
+    	 	orderRegExp.style.display = 'none';
+    	 	
+    	 	// 코드그룹이 비어 있거나 없을 경우 
+    	    if(codegroup_ifcgSeqValue == "" || codegroup_ifcgSeqValue == null) { 
+    	    	codeNameFeedback.style.display ='block';   
+    	    	codegroup_ifcgSeq.classList.add('is-invalid');  
+    	    	codegroup_ifcgSeq.focus(); 
+     			return false;   
+    	    } else {
+    	        codegroup_ifcgSeq.classList.remove('is-invalid');
+    	        codegroup_ifcgSeq.classList.add('is-valid');
+    	    }   
+    		 
+    	 	// 코드이름이 비어 있거나 없을 경우  
+    	    if (ifcdNameValue == "" || ifcdNameValue == null) {
+    	    	nameFeedback.style.display ='block';
+    	    	ifcdName.classList.add('is-invalid'); 
+    	    	ifcdName.focus(); 
+    			return false;
+    	    } else {  
+     			// by pass
+    	    }    
+    	  
+    	    // 코드이름이 정규표현식에 맞지 않을 경우
+    	    if(!ifcdNameRegExp.test(ifcdNameValue)) {  
+    	    	nameRegExp.style.display='block';  
+    	    	ifcdName.classList.add('is-invalid'); 
+    	    	ifcdName.focus();
+    	    	return false; 
+    	    } else {                                
+    	    	ifcdName.classList.add('is-valid'); 
+    	    }
+    	    
+    	    // 사용여부가 비어 있거나 없을 경우 
+    	    if (ifcdUseNyValue == "" || ifcdUseNyValue == null) {
+    	    	useFeedback.style.display ='block';
+    	    	ifcdUseNy.classList.add('is-invalid'); 
+    	    	ifcdUseNy.focus(); 
+    			return false;
+    	    } else {  
+    	    	ifcdUseNy.classList.remove('is-invalid');
+    	    	ifcdUseNy.classList.add('is-valid');
+    	    }
+    	      
+    	 	// 순서가 비어 있거나 없을 경우  
+    	    if (ifcdOrderValue == "" || ifcdOrderValue == null) {
+    	    	orderFeedback.style.display ='block';
+    	    	ifcdOrder.classList.add('is-invalid'); 
+    	    	ifcdOrder.focus(); 
+    			return false;
+    	    } else {  
+     			// by pass
+    	    }
+    	 	
+    	 	// 숫자 정규식에 맞지 않을 경우
+    	 	if(!ifcdOrderRegExp.test(ifcdOrderValue)) {  
+    	 		orderRegExp.style.display='block';  
+    	    	ifcdOrder.classList.add('is-invalid'); 
+    	    	ifcdOrder.focus();
+    	    	return false; 
+    	    } else {                                
+    	    	ifcdOrder.classList.add('is-valid'); 
+    	    }
+    	 	
+    	    
+    	    form.action = "/xdm/v1/infra/code/codeXdmInst"; // insert 경로로 이동 
+    		form.submit(); 
+     	    
+        } // btnSubmit end 
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 		</script>
 
 </body>

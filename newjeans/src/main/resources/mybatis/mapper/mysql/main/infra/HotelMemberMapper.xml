@@ -95,7 +95,7 @@
 			#{htmZipCode},
 			now(), 
 			3,
-			#{htmRegAgreeContentNy},
+			1,
 			now(),
 			0,
 			#{htmDesc}

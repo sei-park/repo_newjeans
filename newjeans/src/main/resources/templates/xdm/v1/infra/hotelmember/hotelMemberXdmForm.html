@@ -1005,8 +1005,7 @@
 												<div class="col-md-3">
 													<label for="choices-single-groups"
 														class="form-label font-size-13 text-muted">이름</label> 
-														<input type="text" class="form-control" name="htmUserName"
-														id="htmUserName">
+														<input type="text" class="form-control" name="htmUserName" id="htmUserName">
 													<div class="valid-feedback">Looks good!</div>
 												</div>
 												<div class="col-md-3">
@@ -1024,7 +1023,7 @@
 												<div class="col-md-3">
 													<label for="choices-single-default"
 														class="form-label font-size-13 text-muted">성별</label> 
-														<select class="form-select" name="htmGender">
+													<select class="form-select" name="htmGender" id="htmGender">
 														<option value="">선택하세요</option>
 														<option
 															th:each="list : ${@codeService.selectListCachedCode(1)}"
@@ -1035,22 +1034,21 @@
 												</div>
 												<div class="col-md-3">
 													<label for="choices-single-groups"
-														class="form-label font-size-13 text-muted">생년월일</label> <input
-														type="text" class="form-control" id="validationCustom01"
-														name="htmBirth">
+														class="form-label font-size-13 text-muted">생년월일</label> 
+														<input type="text" class="form-control" id="htmBirth" name="htmBirth">
 													<div class="valid-feedback">Looks good!</div>
 												</div>
 												<div class="col-md-3">
 													<label for="choices-single-groups"
 														class="form-label font-size-13 text-muted">휴대폰번호</label> <input
-														type="text" class="form-control" id="validationCustom01"
+														type="text" class="form-control" id="htmPhoneNumber"
 														name="htmPhoneNumber">
 													<div class="valid-feedback">Looks good!</div>
 												</div>
 												<div class="col-md-3">
 													<label for="choices-single-groups"
 														class="form-label font-size-13 text-muted">이메일</label> <input
-														type="text" class="form-control" id="validationCustom01"
+														type="text" class="form-control" id="htmEmail"
 														name="htmEmail">
 													<div class="valid-feedback">Looks good!</div>
 												</div>
@@ -1059,23 +1057,23 @@
 											<div class="row gy-3">
 												<div class="col-md-3">
 													<label for="choices-single-groups"
+														class="form-label font-size-13 text-muted">우편번호</label> <input
+														type="text" class="form-control" id="htmZipCode"
+														name="htmZipCode">
+													<div class="valid-feedback">Looks good!</div>
+												</div>
+												<div class="col-md-3">
+													<label for="choices-single-groups"
 														class="form-label font-size-13 text-muted">주소</label> <input
-														type="text" class="form-control" id="validationCustom01"
+														type="text" class="form-control" id="htmAddress"
 														name="htmAddress">
 													<div class="valid-feedback">Looks good!</div>
 												</div>
 												<div class="col-md-3">
 													<label for="choices-single-groups"
 														class="form-label font-size-13 text-muted">상세주소</label> <input
-														type="text" class="form-control" id="validationCustom01"
+														type="text" class="form-control" id="htmDetailedAddress"
 														name="htmDetailedAddress">
-													<div class="valid-feedback">Looks good!</div>
-												</div>
-												<div class="col-md-3">
-													<label for="choices-single-groups"
-														class="form-label font-size-13 text-muted">우편번호</label> <input
-														type="text" class="form-control" id="validationCustom01"
-														name="htmZipCode">
 													<div class="valid-feedback">Looks good!</div>
 												</div>
 											</div>
@@ -1084,16 +1082,27 @@
 												<div class="col-md-3">
 													<label for="choices-single-groups"
 														class="form-label font-size-13 text-muted">아이디</label> <input
-														type="text" class="form-control" id="validationCustom01"
+														type="text" class="form-control" id="htmId"
 														name="htmId">
 													<div class="valid-feedback">Looks good!</div>
 												</div>
 												<div class="col-md-3">
 													<label for="choices-single-groups"
 														class="form-label font-size-13 text-muted">비밀번호</label> <input
-														type="text" class="form-control" id="validationCustom01"
+														type="text" class="form-control" id="htmPassword"
 														name="htmPassword">
 													<div class="valid-feedback">Looks good!</div>
+												</div>
+											</div>
+
+											<div class="row gy-3">
+												<div class="col-md-3">
+													<label for="choices-single-default"
+														class="form-label font-size-13 text-muted">약관동의여부
+													</label> <select class="form-select" name="htmRegAgreeContentNy" disabled>
+														<option value="1">Y</option>
+														<option value="0">N</option>
+													</select>
 												</div>
 												<div class="col-md-3">
 													<label for="choices-single-groups"
@@ -1109,25 +1118,14 @@
 														id="validationCustom01" name="htmEditMemberDate" disabled>
 													<div class="valid-feedback">Looks good!</div>
 												</div>
-											</div>
-
-											<div class="row gy-3">
-												<div class="col-md-3">
-													<label for="choices-single-default"
-														class="form-label font-size-13 text-muted">약관동의여부
-													</label> <select class="form-select" name="htmRegAgreeContentNy">
-														<option value="1">동의</option>
-														<option value="0">미동의</option>
-													</select>
-												</div>
-												<div class="col-md-3">
-													<label for="choices-single-default"
-														class="form-label font-size-13 text-muted">삭제여부 </label> <select
-														class="form-select" name="htmDelNy">
-														<option value="1">사용</option>
-														<option value="0">미사용</option>
-													</select>
-												</div>
+<!-- 												<div class="col-md-3"> -->
+<!-- 													<label for="choices-single-default" -->
+<!-- 														class="form-label font-size-13 text-muted">탈퇴여부</label> <select -->
+<!-- 														class="form-select" name="htmDelNy"> -->
+<!-- 														<option value="1">사용</option> -->
+<!-- 														<option value="0">미사용</option> -->
+<!-- 													</select> -->
+<!-- 												</div> -->
 											</div>
 
 											<div class="row gy-3">
@@ -1484,40 +1482,74 @@
 			src="/xdm/v1/template/ui/assets/libs/@simonwep/pickr/pickr.min.js"></script>
 
 		<!-- init js -->
-		<script
-			src="/xdm/v1/template/ui/assets/js/pages/form-advanced.init.js"></script>
-		<script
-			src="/xdm/v1/template/ui/assets/js/pages/form-validation.init.js"></script>
+		<script src="/xdm/v1/template/ui/assets/js/pages/form-advanced.init.js"></script>
+		<script src="/xdm/v1/template/ui/assets/js/pages/form-validation.init.js"></script>
 
 		<script>
-			document.getElementById("btnSubmit").onclick = function() { // 버튼 id를 클릭하면 아래 함수를 실행 
+		document.getElementById("btnSubmit").onclick = function() { // 버튼 id를 클릭하면 아래 함수를 실행 
+			
+			// Validation
+			
+			// 이름 
+			let htmUserName = document.getElementById("htmUserName"); 
+    	    let htmUserNameValue = document.getElementById("htmUserName").value.trim();
+    	    let htmUserNameRegExp = /^[ㄱ-ㅎ가-힣A-Za-z0-9]+$/; // 정규표현식
+    	    
+    	    // 등급 
+    	    let htmGrade = document.getElementById("htmGrade"); 
+    	    let htmGradeValue = document.getElementById("htmGrade").value.trim();
+    	    
+    	    // 성별 
+    	    let htmGender = document.getElementById("htmGender"); 
+    	    let htmGenderValue = document.getElementById("htmGender").value.trim();
+    	    
+    	    // 생년월일
+    	    let htmBirth = document.getElementById("htmBirth"); 
+    	    let htmBirthValue = document.getElementById("htmBirth").value.trim();
+    	    let htmBirthRegExp = /^[ㄱ-ㅎ가-힣A-Za-z0-9]+$/; // 정규표현식 
+    	    
+    	    // 휴대폰번호 
+    	    let htmPhoneNumber = document.getElementById("htmPhoneNumber"); 
+    	    let htmPhoneNumberValue = document.getElementById("htmPhoneNumber").value.trim();
+    	    let htmPhoneNumberRegExp = /^[ㄱ-ㅎ가-힣A-Za-z0-9]+$/; // 정규표현식 
+    	    
+    	    // 이메일
+    	    let htmEmail = document.getElementById("htmEmail"); 
+    	    let htmEmailValue = document.getElementById("htmPhoneNumber").value.trim();
+    	    let htmEmailRegExp = /^[ㄱ-ㅎ가-힣A-Za-z0-9]+$/; // 정규표현식
+    	    
+    	    // 우편번호
+    	    let htmZipCode = document.getElementById("htmZipCode"); 
+    	    let htmZipCodeValue = document.getElementById("htmZipCode").value.trim();
+    	    let htmZipCodeRegExp = /^[ㄱ-ㅎ가-힣A-Za-z0-9]+$/; // 정규표현식
+    	    
+    	    // 주소
+    	    let htmAddress = document.getElementById("htmAddress"); 
+    	    let htmAddressValue = document.getElementById("htmAddress").value.trim();
+    	    
+    	    // 상세주소 
+    	    let htmDetailedAddress = document.getElementById("htmDetailedAddress"); 
+    	    let htmDetailedAddressValue = document.getElementById("htmDetailedAddress").value.trim();
+    	    
+    	    // 아이디
+    	    let htmId = document.getElementById("htmId"); 
+    	    let htmIdValue = document.getElementById("htmId").value.trim();
+    	    
+    	    // 비밀번호
+    	    let htmPassword = document.getElementById("htmPassword"); 
+    	    let htmPasswordValue = document.getElementById("htmPassword").value.trim(); 
+    	    
+    	    
+    	 	// Validation 초기화
 
-				var htmUserName = document.getElementById("htmUserName"); // id를 가져와 ifcgName 변수에 넣음 
-				var htmUserNameValue = document.getElementById("htmUserName").value.trim(); // id를 가져와 ifcgNameValue에 넣고 그 값의 앞 뒤 공백을 제거
+			
 
-				if (htmUserNameValue == "" || htmUserNameValue == null) { // 값이 비어 있거나 없을 경우
-					alert("이름을 입력해 주세요"); // alert창을 띄움
-					htmUserName.focus(); // ifcgName의 input창에 포커스 함
-					return false; // 함수를 빠져나옴 
-				} else {
-					// by pass
-				}
-				
-				var htmGradeName = document.getElementById("htmGrade"); 
-				var htmGradeNameValue = document.getElementById("htmGrade").value.trim();
-
-				if (htmGradeNameValue == "" || htmGradeNameValue == null) { 
-					alert("등급을 선택해 주세요"); 
-					htmGradeName.focus();
-					return false; 
-				} else {
-					// by pass
-				}
+			
 		
-				form.action = "/xdm/v1/infra/hotelmember/hotelMemberXdmInst"; // insert 경로로 이동 
-				form.submit();
+			form.action = "/xdm/v1/infra/hotelmember/hotelMemberXdmInst"; // insert 경로로 이동 
+			form.submit();
 
-			}
+		}
 		</script>
 </body>
 
