@@ -11,7 +11,7 @@ import com.ador.infra.hotel.HotelService;
 import com.ador.infra.hotel.HotelVo;
 
 @Controller
-public class usrProductController {
+public class usrProductController {     
 	
 	@Autowired
 	HotelService hotelService;
@@ -26,7 +26,12 @@ public class usrProductController {
 		}
 		
 		return "/usr/v1/infra/usrmember/usrHotelList"; 
-	}    
+	}   
+	
+	@RequestMapping(value="/v1/infra/usrmember/usrHotelDetails")
+	public String usrHotelDetails() {
+		return "/usr/v1/infra/usrmember/usrHotelDetails"; 
+	}
 	    
 
 	  

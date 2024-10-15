@@ -34,6 +34,15 @@ public class HotelDto {
 	private Integer htBreakfastNy;
 	private Integer htRoomServiceNy;
 	private Integer htElseNy;
+	
+	// 호텔 룸
+	private String htrseq;
+	private String htrRoomName;
+	private String htrRoomCondition;
+	private String htrRoomPrice;
+	private String htrStay;
+	private String hotel_seq;
+	
 	//--
 	public String getHtseq() {
 		return htseq;
@@ -191,7 +200,45 @@ public class HotelDto {
 	public void setHtElseNy(Integer htElseNy) {
 		this.htElseNy = htElseNy;
 	}
+	public String getHtrseq() {
+		return htrseq;
+	}
+	public void setHtrseq(String htrseq) {
+		this.htrseq = htrseq;
+	}
+	public String getHtrRoomName() {
+		return htrRoomName;
+	}
+	public void setHtrRoomName(String htrRoomName) {
+		this.htrRoomName = htrRoomName;
+	}
+	public String getHtrRoomCondition() {
+		return htrRoomCondition;
+	}
+	public void setHtrRoomCondition(String htrRoomCondition) {
+		this.htrRoomCondition = htrRoomCondition;
+	}
+	public String getHtrRoomPrice() {
+		return htrRoomPrice;
+	}
+	public void setHtrRoomPrice(String htrRoomPrice) {
+		this.htrRoomPrice = htrRoomPrice;
+	}
+	public String getHtrStay() {
+		return htrStay;
+	}
+	public void setHtrStay(String htrStay) {
+		this.htrStay = htrStay;
+	}
+	public String getHotel_seq() {
+		return hotel_seq;
+	}
+	public void setHotel_seq(String hotel_seq) {
+		this.hotel_seq = hotel_seq;
+	}
 	
+	
+
 	
 	
 	
