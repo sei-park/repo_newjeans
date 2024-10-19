@@ -6,7 +6,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.ador.infra.hotel.HotelDto;
 import com.ador.infra.hotel.HotelService;
 import com.ador.infra.hotel.HotelVo;
 
@@ -16,6 +15,7 @@ public class usrProductController {
 	@Autowired
 	HotelService hotelService;
 	
+	// 호텔 리스트
 	@RequestMapping(value="/v1/infra/usrmember/usrHotelList")  
 	public String usrHotelList(@ModelAttribute("vo") HotelVo hotelVo, Model model) {
 		
@@ -28,6 +28,7 @@ public class usrProductController {
 		return "/usr/v1/infra/usrmember/usrHotelList"; 
 	}   
 	
+	// 호텔 상세
 	@RequestMapping(value="/v1/infra/usrmember/usrHotelDetails")
 	public String usrHotelDetails() {
 		return "/usr/v1/infra/usrmember/usrHotelDetails"; 

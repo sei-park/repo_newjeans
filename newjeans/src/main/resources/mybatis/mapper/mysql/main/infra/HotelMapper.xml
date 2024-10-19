@@ -5,9 +5,10 @@
 
 	<resultMap type="com.ador.infra.hotel.HotelDto" id="resultMapObj"></resultMap>
 	
-	<sql id="selectCommon">
+	<sql id="selectCommon">   
 		from
 		    hotel a
+		left join (select * from hotelroom b order by b.htrRoomPrice limit 1) c on c.hotel_seq = a.htseq
 		where 1=1
 			<if test="shDelNy != null and !shDelNy.equals('')">AND htDelNy = #{shDelNy}</if> <!-- 삭제 여부 -->
 			
@@ -98,14 +99,25 @@
 		    a.htShuttleBusNy,
 		    a.htBreakfastNy,
 		    a.htRoomServiceNy,
-		    a.htElseNy  
+		    a.htElseNy,
+			c.htrseq,
+		    c.htrRoomName,
+		    c.htrRoomPrice,
+			c.htrStay,
+			c.bedoption,
+			c.aircondNy,
+			c.bathNy,
+			c.tvNy,
+			c.wifiNy,   
+			c.coffeeNy,
+			c.hotel_seq
 		<include refid="selectCommon"/>
 		order by
 			a.htseq desc
 		) aa
 		limit #{rowNumToShow} offset #{startRnumForMysql}
 	</select>
-	 
+
 	<insert id="hotelInsert">
 		insert into hotel (
 		    htName,

@@ -118,7 +118,8 @@ public class HotelMemberController {
 				httpSession.setAttribute("sessIdXdm", rtMemberSession.getHtmId()); // 아이디 정보를 가져옴
 				httpSession.setAttribute("sessNameXdm", rtMemberSession.getHtmUserName()); // 이름 정보를 가져옴 
 				httpSession.setAttribute("sessEmailXdm", rtMemberSession.getHtmEmail()); // 이메일 정보를 가져옴
-				
+				httpSession.setAttribute("sessGradeXdm", rtMemberSession.getHtmGrade()); // 등급 정보를 가져옴
+				 
 				returnMap.put("rt", "success"); // 로그인 성공 
 				  
 				// console

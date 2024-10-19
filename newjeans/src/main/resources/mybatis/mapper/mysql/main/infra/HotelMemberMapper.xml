@@ -135,7 +135,8 @@
 			a.htmId,
 		    a.htmPassword,
 		    a.htmUserName,
-		    a.htmEmail
+		    a.htmEmail,
+		   	a.htmGrade
 	   FROM
 			newjeans.hotelmember a	       
 	   WHERE 1=1

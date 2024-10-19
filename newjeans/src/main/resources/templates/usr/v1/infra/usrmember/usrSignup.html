@@ -624,8 +624,7 @@
                         </div>
                         <div class="common_author_form">
                             <!-- 폼 시작 -->
-                            <form method="post" class="needs-validation" novalidate name="form" id="main_author_form" 
-                            action="/xdm/v1/infra/hotelmember/hotelMemberXdmInst">
+                            <form method="post" class="needs-validation" novalidate name="form" id="main_author_form">
                             
                             <div class="row">
                             	<div class="col-md-12" align="center">
@@ -1186,7 +1185,7 @@
 			userPwCheck.classList.add('is-valid');
 		}
  		
-		form.action = "/xdm/v1/infra/hotelmember/hotelMemberXdmInst"; // insert 경로로 이동 
+		form.action = "/v1/infra/usrmember/hotelMemberusrInst"; // insert 경로로 이동
 		form.submit();
 	
     } // signupBtn end  

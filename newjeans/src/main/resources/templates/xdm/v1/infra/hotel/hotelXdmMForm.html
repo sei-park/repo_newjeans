@@ -1131,12 +1131,18 @@
                                                         <option value="1" th:selected="${hotelItem?.htDelNy == 1}">Y</option>
                                                     </select>
                                                 </div>
+                                                <div class="col-md-3">
+                                                    <label for="choices-single-groups"
+                                                        class="form-label font-size-13 text-muted">객실</label>
+                                                    <input type="text" class="form-control" id="validationCustom01" name="htrRoomName" th:text="${hotelItem?.htrRoomName}">
+                                                    <div class="valid-feedback">Looks good!</div>
+                                                </div>
                                             </div>
                                             
                                              <div class="row gy-3">
                                              	<div class="col-md-6">
                                                     <label for="choices-single-groups"class="form-label font-size-13 text-muted">공지사항</label>
-                                                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="htNotice"></textarea>
+                                                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="htNotice" th:text="${hotelItem?.htNotice}"></textarea>
                                                 </div>
                                              </div>
                                             

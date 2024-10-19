@@ -1013,6 +1013,12 @@
                                             </div>
 
                                             <div class="row gy-3">
+                                                <div class="col-md-3">
+                                                    <label for="choices-single-groups"
+                                                        class="form-label font-size-13 text-muted">우편번호</label>
+                                                    <input type="text" class="form-control" id="validationCustom01" name="htmZipCode" th:value="${memberItem?.htmZipCode}">
+                                                    <div class="valid-feedback">Looks good!</div>
+                                                </div>
                                                  <div class="col-md-3">
                                                     <label for="choices-single-groups"
                                                         class="form-label font-size-13 text-muted">주소</label>
@@ -1023,12 +1029,6 @@
                                                     <label for="choices-single-groups"
                                                         class="form-label font-size-13 text-muted">상세주소</label>
                                                     <input type="text" class="form-control" id="validationCustom01" name="htmDetailedAddress" th:value="${memberItem?.htmDetailedAddress}">
-                                                    <div class="valid-feedback">Looks good!</div>
-                                                </div>
-                                                <div class="col-md-3">
-                                                    <label for="choices-single-groups"
-                                                        class="form-label font-size-13 text-muted">우편번호</label>
-                                                    <input type="text" class="form-control" id="validationCustom01" name="htmZipCode" th:value="${memberItem?.htmZipCode}">
                                                     <div class="valid-feedback">Looks good!</div>
                                                 </div>
                                             </div>

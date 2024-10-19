@@ -67,7 +67,15 @@ public class usrMemberController {
 			returnMap.put("rt", "fail"); // 로그인 실패 
 		}
 		return returnMap;   
- 	} 
+ 	}
+	
+	// insert(회원가입 후 메인페이지로 이동)
+	@RequestMapping(value="/v1/infra/usrmember/hotelMemberusrInst")
+	public String hotelMemberXdmInst(HotelMemberDto hotelMemberDto) {
+			
+		hotelMemberService.memberInsert(hotelMemberDto);
+		return "redirect:/v1/infra/usrmember/usrIndex";
+	} 
 	
 	// logout
 	@ResponseBody         

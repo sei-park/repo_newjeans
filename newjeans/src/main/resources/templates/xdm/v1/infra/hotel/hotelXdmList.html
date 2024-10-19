@@ -1186,7 +1186,6 @@
                                                         <th scope="col">삭제여부</th>
                                                         <th scope="col">등록일</th>
                                                         <th scope="col">수정일</th>
-<!--                                                         <th scope="col">별점</th> -->
                                                         <!-- <th style="width: 80px; min-width: 80px;">Action</th> -->
                                                     </tr><!-- end tr -->
                                                 </thead><!-- end thead -->
@@ -1215,8 +1214,8 @@
                                                         <td th:if="${list.htDelNy eq 0}" class="codeUse">N</td>
 														<td th:unless="${list.htDelNy eq 0}" class="codeUse">Y</td>
 														<td th:text="${#dates.format(list.htRegDate,'yyyy-MM-dd HH:mm:ss')}"></td>
-														<td th:text="${#dates.format(list.htReviseDate,'yyyy-MM-dd HH:mm:ss')}"></td>
-<!-- 														<td th:text="${list.htStarSearch}"></td> -->
+														<td th:text="${#dates.format(list.htReviseDate,'yyyy-MM-dd HH:mm:ss')}"></td> 
+														
 	                                                 </tr><!-- end tr -->
                                                 </tbody><!-- end tbody -->
                                             </table><!-- end table -->

@@ -35,12 +35,17 @@ public class HotelDto {
 	private Integer htRoomServiceNy;
 	private Integer htElseNy;
 	
-	// 호텔 룸
+	// 호텔 룸 
 	private String htrseq;
 	private String htrRoomName;
-	private String htrRoomCondition;
 	private String htrRoomPrice;
 	private String htrStay;
+	private Integer bedoption;
+	private Integer aircondNy;
+	private Integer bathNy;
+	private Integer tvNy;
+	private Integer wifiNy;
+	private Integer coffeeNy;
 	private String hotel_seq;
 	
 	//--
@@ -212,12 +217,6 @@ public class HotelDto {
 	public void setHtrRoomName(String htrRoomName) {
 		this.htrRoomName = htrRoomName;
 	}
-	public String getHtrRoomCondition() {
-		return htrRoomCondition;
-	}
-	public void setHtrRoomCondition(String htrRoomCondition) {
-		this.htrRoomCondition = htrRoomCondition;
-	}
 	public String getHtrRoomPrice() {
 		return htrRoomPrice;
 	}
@@ -230,22 +229,48 @@ public class HotelDto {
 	public void setHtrStay(String htrStay) {
 		this.htrStay = htrStay;
 	}
+	public Integer getBedoption() {
+		return bedoption;
+	}
+	public void setBedoption(Integer bedoption) {
+		this.bedoption = bedoption;
+	}
+	public Integer getAircondNy() {
+		return aircondNy;
+	}
+	public void setAircondNy(Integer aircondNy) {
+		this.aircondNy = aircondNy;
+	}
+	public Integer getBathNy() {
+		return bathNy;
+	}
+	public void setBathNy(Integer bathNy) {
+		this.bathNy = bathNy;
+	}
+	public Integer getTvNy() {
+		return tvNy;
+	}
+	public void setTvNy(Integer tvNy) {
+		this.tvNy = tvNy;
+	}
+	public Integer getWifiNy() {
+		return wifiNy;
+	}
+	public void setWifiNy(Integer wifiNy) {
+		this.wifiNy = wifiNy;
+	}
+	public Integer getCoffeeNy() {
+		return coffeeNy;
+	}
+	public void setCoffeeNy(Integer coffeeNy) {
+		this.coffeeNy = coffeeNy;
+	}
 	public String getHotel_seq() {
 		return hotel_seq;
 	}
 	public void setHotel_seq(String hotel_seq) {
 		this.hotel_seq = hotel_seq;
 	}
-	
-	
-
-	
-	
-	
-	
-	
-	
-	
 	
 	
 	

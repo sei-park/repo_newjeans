@@ -2418,30 +2418,31 @@
                                                 </div>
                                                 <div class="cruise_content_middel_wrapper">
                                                     <div class="cruise_content_middel_left">
-                                                        <h5>여기에 룸 이름</h5>
-                                                        <p>여기에 룸 컨디션</p>
+                                                    	<p>객실</p>
+                                                        <h5 th:text="${list.htrRoomName}">룸 이름</h5>
                                                     </div>
                                                     <div class="cruise_content_middel_right">
                                                         <p>1박, 성인 2명</p>
                                                     </div>
-                                                </div>
+                                                </div>     
                                                 <div class="cruise_content_middel_wrapper">
                                                     <div class="cruise_content_middel_left">
                                                         <h5>일주일 전까지 무료 취소</h5>
                                                         <p>선결제</p>
                                                     </div>
-                                                    <div class="cruise_content_middel_right">
-                                                        <h3>₩786,500 <sub> / 1박</sub></h3>
+                                                    <div class="cruise_content_middel_right"> 
+<!--                                                         <h3 th:text=" '₩' + ${list.htrRoomPrice}">기본 금액 <sub> / 1박</sub></h3> -->
+														<h3 th:text="${'₩' + #numbers.formatInteger(list.htrRoomPrice, 3, 'COMMA')}"></h3>
                                                         <p>세금 및 기타 요금 포함</p>
                                                     </div>
                                                 </div>
                                                 <div class="cruise_content_bottom_wrapper">
                                                     <div class="cruise_content_bottom_left">
                                                         <ul>
-                                                            <li>조식</li>
-                                                            <li>레스토랑</li>
-                                                            <li>피트니스 센터</li>
-                                                            <li>수영장</li>
+                                                            <li>옵션1</li>
+                                                            <li>옵션2</li>
+                                                            <li>옵션3</li>
+                                                            <li>옵션4</li>
                                                         </ul>
                                                     </div>
                                                     <div class="cruise_content_bottom_right">

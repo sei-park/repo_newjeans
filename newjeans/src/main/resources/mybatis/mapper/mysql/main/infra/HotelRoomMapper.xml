@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.ador.infra.hotelRoom.HotelRoomDao">
+
+	<resultMap type="com.ador.infra.hotelRoom.HotelRoomDto" id="resultMapObj"></resultMap>
+	
+	<select id="selectRoomList" resultMap="resultMapObj">
+		select
+			a.htrseq,
+			a.htrRoomName,
+			a.htrRoomPrice,
+			a.htrStay,
+			a.bedoption,
+			a.aircondNy,
+			a.bathNy,
+			a.tvNy,
+			a.wifiNy,
+			a.coffeeNy,
+			hotel_seq
+		from
+			hotelroom a
+		order by 
+			a.htrseq desc
+	</select>
+	
+
+	  
+	
+
+	
+	
+
+</mapper>
+

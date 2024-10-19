@@ -1051,27 +1051,47 @@
 											</div>
 
 											<div class="row gy-3">
-												<div class="col-md-3">
-													<label for="choices-single-groups"
-														class="form-label font-size-13 text-muted">우편번호</label> <input
-														type="text" class="form-control" id="htmZipCode"
-														name="htmZipCode">
-													<div class="invalid-feedback" id="userZipCodeFeedback">우편번호를 입력해주세요</div>
+												<div style="display: flex; flex-direction: column; align-items: left; margin-bottom: 15px;">
+							    					<!-- 우편번호와 버튼 -->
+							    					<div style="display: flex; flex-direction: row; margin-bottom: 5px;">
+												        <input type="text" class="form-control" id="htmZipCode" name="htmZipCode" placeholder="우편번호" style="width: 240px; margin-right: 5px;">
+												        <input type="button" onclick="sample6_execDaumPostcode()" value="우편번호 찾기" id="postcodeBtn">
+							    					</div>
+							
+							    					<!-- 주소  -->
+							    					<div style="margin-bottom: 5px;">
+							        					<input type="text" class="form-control" id="htmAddress" name="htmAddress" placeholder="주소" style="width: 345px;">
+							    					</div>
+							  
+							    					<!-- 상세주소 -->
+							    					<div style="display: flex; flex-direction: row;">
+							    						<input type="text" class="form-control" id="htmDetailedAddress" name="htmDetailedAddress" placeholder="상세주소" style="width: 345px;">
+							    					</div>
+							    					<div class="invalid-feedback" id="userDetailedAddressFeedback">상세주소를 입력해주세요</div>
 												</div>
-												<div class="col-md-3">
-													<label for="choices-single-groups"
-														class="form-label font-size-13 text-muted">주소</label> <input
-														type="text" class="form-control" id="htmAddress"
-														name="htmAddress">
-													<div class="invalid-feedback" id="userAddressFeedback">주소를 입력해주세요</div>
-												</div>
-												<div class="col-md-3">
-													<label for="choices-single-groups"
-														class="form-label font-size-13 text-muted">상세주소</label> <input
-														type="text" class="form-control" id="htmDetailedAddress"
-														name="htmDetailedAddress">
-													<div class="invalid-feedback" id="userDetailedAddressFeedback">상세주소를 입력해주세요</div>
-												</div>
+											
+												
+<!-- 												<div class="col-md-3"> -->
+<!-- 													<label for="choices-single-groups" -->
+<!-- 														class="form-label font-size-13 text-muted">우편번호</label> <input -->
+<!-- 														type="text" class="form-control" id="htmZipCode" -->
+<!-- 														name="htmZipCode"> -->
+<!-- 													<div class="invalid-feedback" id="userZipCodeFeedback">우편번호를 입력해주세요</div> -->
+<!-- 												</div> -->
+<!-- 												<div class="col-md-3"> -->
+<!-- 													<label for="choices-single-groups" -->
+<!-- 														class="form-label font-size-13 text-muted">주소</label> <input -->
+<!-- 														type="text" class="form-control" id="htmAddress" -->
+<!-- 														name="htmAddress"> -->
+<!-- 													<div class="invalid-feedback" id="userAddressFeedback">주소를 입력해주세요</div> -->
+<!-- 												</div> -->
+<!-- 												<div class="col-md-3"> -->
+<!-- 													<label for="choices-single-groups" -->
+<!-- 														class="form-label font-size-13 text-muted">상세주소</label> <input -->
+<!-- 														type="text" class="form-control" id="htmDetailedAddress" -->
+<!-- 														name="htmDetailedAddress"> -->
+<!-- 													<div class="invalid-feedback" id="userDetailedAddressFeedback">상세주소를 입력해주세요</div> -->
+<!-- 												</div> -->
 											</div>
 
 											<div class="row gy-3">
@@ -1474,7 +1494,10 @@
 
         <!-- init js -->
         <script src="/xdm/v1/template/ui/assets/js/pages/form-advanced.init.js"></script>
-        <script src="/xdm/v1/template/ui/assets/js/pages/form-validation.init.js"></script>  
+        <script src="/xdm/v1/template/ui/assets/js/pages/form-validation.init.js"></script> 
+        
+        <!-- 카카오 우편번호 API -->
+    	<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 
 		<script>
 		document.getElementById("btnSubmit").onclick = function() { // 버튼 id를 클릭하면 아래 함수를 실행 
@@ -1509,13 +1532,13 @@
     	    let htmEmailValue = document.getElementById("htmEmail").value.trim();
     	    let htmEmailRegExp = /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/i;
     	    
-    	    // 우편번호
-    	    let htmZipCode = document.getElementById("htmZipCode"); 
-    	    let htmZipCodeValue = document.getElementById("htmZipCode").value.trim();
+//     	    // 우편번호
+//     	    let htmZipCode = document.getElementById("htmZipCode"); 
+//     	    let htmZipCodeValue = document.getElementById("htmZipCode").value.trim();
     	    
-    	    // 주소
-    	    let htmAddress = document.getElementById("htmAddress"); 
-    	    let htmAddressValue = document.getElementById("htmAddress").value.trim();
+//     	    // 주소
+//     	    let htmAddress = document.getElementById("htmAddress"); 
+//     	    let htmAddressValue = document.getElementById("htmAddress").value.trim();
 	    	    
     	    // 상세주소 
     	    let htmDetailedAddress = document.getElementById("htmDetailedAddress"); 
@@ -1555,12 +1578,12 @@
     		htmEmail.classList.remove('is-valid', 'is-invalid');
     		userEmailFeedback.style.display = 'none';
     		userEmailRegExp.style.display = 'none';
-    		// 우편번호
-    		htmZipCode.classList.remove('is-valid', 'is-invalid');
-    		userZipCodeFeedback.style.display = 'none';
-    		// 주소
-    		htmAddress.classList.remove('is-valid', 'is-invalid');
-    		userAddressFeedback.style.display = 'none';
+//     		// 우편번호
+//     		htmZipCode.classList.remove('is-valid', 'is-invalid');
+//     		userZipCodeFeedback.style.display = 'none';
+//     		// 주소
+//     		htmAddress.classList.remove('is-valid', 'is-invalid');
+//     		userAddressFeedback.style.display = 'none';
     		// 상세주소
     		htmDetailedAddress.classList.remove('is-valid', 'is-invalid');
     		userDetailedAddressFeedback.style.display = 'none';
@@ -1674,25 +1697,25 @@
 	    		htmEmail.classList.add('is-valid');
 	    	}
 	    	
-	    	// 우편번호가 비어 있거나 없을 경우 
-	    	if(htmZipCodeValue == "" || htmZipCodeValue == null) {
-	    		userZipCodeFeedback.style.display ='block'; 
-	    		htmZipCode.classList.add('is-invalid');  
-	    		htmZipCode.focus();  
-	 			return false; 
-	    	} else {
-	    		// by pass 
-	    	}
+// 	    	// 우편번호가 비어 있거나 없을 경우 
+// 	    	if(htmZipCodeValue == "" || htmZipCodeValue == null) {
+// 	    		userZipCodeFeedback.style.display ='block'; 
+// 	    		htmZipCode.classList.add('is-invalid');  
+// 	    		htmZipCode.focus();  
+// 	 			return false; 
+// 	    	} else {
+// 	    		// by pass 
+// 	    	}
 	    	
-	    	// 주소가 비어 있거나 없을 경우 
-	    	if(htmAddressValue == "" || htmAddressValue == null) {
-	    		userAddressFeedback.style.display ='block'; 
-	    		htmAddress.classList.add('is-invalid');  
-	    		htmAddress.focus();  
-	 			return false; 
-	    	} else {
-	    		// by pass 
-	    	}
+// 	    	// 주소가 비어 있거나 없을 경우 
+// 	    	if(htmAddressValue == "" || htmAddressValue == null) {
+// 	    		userAddressFeedback.style.display ='block'; 
+// 	    		htmAddress.classList.add('is-invalid');  
+// 	    		htmAddress.focus();  
+// 	 			return false; 
+// 	    	} else {
+// 	    		// by pass 
+// 	    	}
 	    	
 	    	// 상세주소가 비어 있거나 없을 경우 
 	    	if(htmDetailedAddressValue == "" || htmDetailedAddressValue == null) {
@@ -1749,6 +1772,55 @@
 			form.submit();
 
 		}
+		
+	    // 카카오 주소 API
+	    function sample6_execDaumPostcode() {
+	        new daum.Postcode({
+	            oncomplete: function(data) {
+	                // 팝업에서 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분.
+
+	                // 각 주소의 노출 규칙에 따라 주소를 조합한다.
+	                // 내려오는 변수가 값이 없는 경우엔 공백('')값을 가지므로, 이를 참고하여 분기 한다.
+	                var addr = ''; // 주소 변수
+	                var extraAddr = ''; // 참고항목 변수
+
+	                //사용자가 선택한 주소 타입에 따라 해당 주소 값을 가져온다.
+	                if (data.userSelectedType === 'R') { // 사용자가 도로명 주소를 선택했을 경우
+	                    addr = data.roadAddress;
+	                } else { // 사용자가 지번 주소를 선택했을 경우(J)
+	                    addr = data.jibunAddress;
+	                }
+
+	                // 사용자가 선택한 주소가 도로명 타입일때 참고항목을 조합한다.
+//	                 if(data.userSelectedType === 'R'){
+//	                     // 법정동명이 있을 경우 추가한다. (법정리는 제외)
+//	                     // 법정동의 경우 마지막 문자가 "동/로/가"로 끝난다.
+//	                     if(data.bname !== '' && /[동|로|가]$/g.test(data.bname)){
+//	                         extraAddr += data.bname;
+//	                     }
+//	                     // 건물명이 있고, 공동주택일 경우 추가한다.
+//	                     if(data.buildingName !== '' && data.apartment === 'Y'){
+//	                         extraAddr += (extraAddr !== '' ? ', ' + data.buildingName : data.buildingName);
+//	                     }
+//	                     // 표시할 참고항목이 있을 경우, 괄호까지 추가한 최종 문자열을 만든다.
+//	                     if(extraAddr !== ''){
+//	                         extraAddr = ' (' + extraAddr + ')';
+//	                     }
+//	                     // 조합된 참고항목을 해당 필드에 넣는다.
+//	                     document.getElementById("sample6_extraAddress").value = extraAddr;
+	                
+//	                 } else {
+//	                     document.getElementById("sample6_extraAddress").value = '';
+//	                 }
+
+	                // 우편번호와 주소 정보를 해당 필드에 넣는다.
+	                document.getElementById('htmZipCode').value = data.zonecode;
+	                document.getElementById("htmAddress").value = addr;
+	                // 커서를 상세주소 필드로 이동한다.
+	                document.getElementById("htmDetailedAddress").focus();
+	            }
+	        }).open();
+	    }
 		</script>
 </body>
 
