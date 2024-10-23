@@ -2390,6 +2390,7 @@
                         <div class="col-lg-12">
                             <div class="cruise_search_result_wrapper">
                             	<!-- 리스트 시작 -->
+                            	<form method="post" action="" name="form">
                                 <div class="cruise_search_item" th:if="${!#lists.isEmpty(hotelList)}" th:each="list : ${hotelList}">
                                     <div class="row">
                                         <div class="col-lg-4">
@@ -2438,26 +2439,40 @@
                                                 </div>
                                                 <div class="cruise_content_bottom_wrapper">
                                                     <div class="cruise_content_bottom_left">
+                                                        <ul style="margin-bottom:10px;">
+                                                            <li th:if="${list.htBreakfastNy == 1}" th:text="'조식'">옵션1</li>
+                                                            <li th:if="${list.htRoomServiceNy == 1}" th:text="'룸서비스'">옵션2</li>
+                                                            <li th:if="${list.htRestaurantNy == 1}" th:text="'레스토랑'">옵션3</li>  
+                                                            <li th:if="${list.htPoolNy == 1}" th:text="'수영장'">옵션4</li>
+                                                        </ul>
+                                                        <ul style="margin-bottom:10px;">
+                                                        	<li th:if="${list.htSpaNy == 1}" th:text="'스파/온천'">옵션5</li>
+                                                        	<li th:if="${list.htFitnessCenterNy == 1}" th:text="'피트니스센터'">옵션6</li>
+                                                        	<li th:if="${list.htloungeNy == 1}" th:text="'라운지'">옵션7</li>
+                                                        	<li th:if="${list.htStockRoomNy == 1}" th:text="'물품보관소'">옵션8</li>
+                                                        </ul>
                                                         <ul>
-                                                            <li>옵션1</li>
-                                                            <li>옵션2</li>
-                                                            <li>옵션3</li>
-                                                            <li>옵션4</li>
+                                                        	<li th:if="${list.htParkingNy == 1}" th:text="'무료주차'">옵션5</li>
+                                                        	<li th:if="${list.htShuttleBusNy == 1}" th:text="'셔틀버스'">옵션6</li>
                                                         </ul>
                                                     </div>
                                                     <div class="cruise_content_bottom_right">
-                                                       <a href="/v1/infra/usrmember/usrHotelDetails" class="btn btn_theme btn_md">예약 가능 옵션 보기</a>
+<!--                                                        <a href="/v1/infra/usrmember/usrHotelDetails" class="btn btn_theme btn_md">예약 가능 옵션 보기</a> -->
+                                                       <a th:href="@{/v1/infra/usrmember/usrHotelDetails(htseq=${list.htseq})}"
+                                                       class="btn btn_theme btn_md">예약 가능 옵션 보기</a>
                                                     </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+                                                </div>           
+                                            </div>  
+                                        </div>               
+                                    </div>ㄴ
                                 </div> <!-- item end -->
+                            </form>
+                                
                             </div>
                          </div>
                          	<!-- 페이징 -->
                             <div class="col-lg-12">
-                                <div class="pagination_area">
+                                <div class="pagination_area">                
                                     <ul class="pagination">
                                         <li class="page-item" th:if="${vo.startPage gt vo.pageNumToShow}" style="cursor: pointer;">
                                             <a class="page-link" href="javascript:goList(${vo.startPage - 1})" th:attr="onclick=|goList('${vo.startPage - 1}')|" aria-label="Previous">

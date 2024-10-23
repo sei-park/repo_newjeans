@@ -29,6 +29,6 @@ public interface HotelDao {
 	public int selectOneCount(HotelVo hotelVo);
 	
 
-		
+		                          
 	
 }

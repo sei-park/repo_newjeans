@@ -32,13 +32,11 @@
 </head>
 
 <style>
-	   /* Always set the map height explicitly to define the size of the div
-       * element that contains the map. */
-       
+      /*구글 맵*/       
       #map {
-        height: 300px;  
+      	width: 580px;
+        height: 300px;   
       }
-      /* Optional: Makes the sample page fill the window. */
 
       #description {
         font-family: Roboto;
@@ -58,7 +56,6 @@
         display: inline;
       }
       
-   
       .pac-card {
         margin: 10px 10px 0 0;
         border-radius: 2px 0 0 2px;
@@ -68,6 +65,7 @@
         box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
         background-color: #fff;
         font-family: Roboto;
+        width: 300px;
       }   
 
       #pac-container {
@@ -108,6 +106,8 @@
         font-weight: 500;
         padding: 6px 12px;
       }
+      
+      
 
 
 </style>
@@ -1037,12 +1037,6 @@
                                                     <div class="valid-feedback">Looks good!</div>
                                                 </div>
                                                 <div class="col-md-3">
-                                                    <label for="choices-single-groups"
-                                                        class="form-label font-size-13 text-muted">주소</label>
-                                                    <input type="text" class="form-control" id="htAddress" name="htAddress" value="">
-                                                    <div class="valid-feedback">Looks good!</div>
-                                                </div>
-                                                <div class="col-md-3">
                                                     <label for="choices-single-default"
                                                         class="form-label font-size-13 text-muted">국가
                                                     </label>
@@ -1055,13 +1049,27 @@
 														</option>
                                                     </select>
                                                 </div>
-                                            </div>  
+                                                <div class="col-md-3">
+                                                    <label for="choices-single-groups"
+                                                        class="form-label font-size-13 text-muted">객실</label>
+                                                    <input type="text" class="form-control" name="htrRoomName" id="htrRoomName">
+                                                    <div class="valid-feedback">Looks good!</div>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="row gy-3">
+                                            	 <div class="col-md-6">
+                                                    <label for="choices-single-groups"
+                                                        class="form-label font-size-13 text-muted">주소</label>
+                                                    <input type="text" class="form-control" id="htAddress" name="htAddress" value="">
+                                                    <div class="valid-feedback">Looks good!</div>
+                                                </div>
+                                            </div>
                                             
                                             <!--구글 맵 -->     
                                             <div class="row gy-3">
-                                            	<!-- <div id="googleMap" style="width: 100%;height: 300px;"></div> -->
                                             	<div class="pac-card" id="pac-card">
-											      <div>
+											      <div> <!-- 검색하기 -->
 											        <div id="title">
 											          검색하기
 											        </div>
@@ -1070,31 +1078,29 @@
 											          <label for="changetype-all">All</label>
 											
 											          <input type="radio" name="type" id="changetype-establishment">
-											          <label for="changetype-establishment">Establishments</label>
+											          <label for="changetype-establishment">시설</label>
 											
 											          <input type="radio" name="type" id="changetype-address">
-											          <label for="changetype-address">Addresses</label>
+											          <label for="changetype-address">주소</label>
 											
 											          <input type="radio" name="type" id="changetype-geocode">
-											          <label for="changetype-geocode">Geocodes</label>
+											          <label for="changetype-geocode">지역코드</label>
 											        </div>
-											        <div id="strict-bounds-selector" class="pac-controls">
-											          <input type="checkbox" id="use-strict-bounds" value="">
-											          <label for="use-strict-bounds">Strict Bounds</label>
-											        </div>
+<!-- 											        <div id="strict-bounds-selector" class="pac-controls"> -->
+<!-- 											          <input type="checkbox" id="use-strict-bounds" value=""> -->
+<!-- 											          <label for="use-strict-bounds">Strict Bounds</label> -->
+<!-- 											        </div> -->
 											      </div>
 											      <div id="pac-container">
-											        <input id="pac-input" type="text"
-											            placeholder="Enter a location">
+											        <input id="pac-input" type="text" placeholder="주소를 입력하세요" style="width:200px;">
 											      </div>
-											    </div> 
+											    </div>            
 											    <div id="map"></div>
 											    <div id="infowindow-content">
 											      <img src="" width="16" height="16" id="place-icon">
 											      <span id="place-name"  class="title"></span><br>
 											      <span id="place-address"></span>
 											    </div>
-											 
                                             </div> <!-- row gy-3 -->
                                             
 
@@ -1113,9 +1119,45 @@
                                             	</div>
                                             	<div class="col-md-3">
                                             		<label for="choices-single-default"
+                                                        class="form-label font-size-13 text-muted">조식
+                                                    </label>
+                                                    <select class="form-select" name="htBreakfastNy">
+                                                        <option value="0">N</option>
+                                                        <option value="1">Y</option>
+                                                    </select>
+                                            	</div>
+                                                 <div class="col-md-3">
+                                            		<label for="choices-single-default"
+                                                        class="form-label font-size-13 text-muted">룸서비스
+                                                    </label>
+                                                    <select class="form-select" name="htRoomServiceNy">
+                                                        <option value="0">N</option>
+                                                        <option value="1">Y</option>
+                                                    </select>
+                                            	</div>
+                                            	<div class="col-md-3">
+                                            		<label for="choices-single-default"
                                                         class="form-label font-size-13 text-muted">레스토랑
                                                     </label>
                                                     <select class="form-select" name="htRestaurantNy">
+                                                        <option value="0">N</option>
+                                                        <option value="1">Y</option>
+                                                    </select>
+                                            	</div>
+                                                <div class="col-md-3">
+                                            		<label for="choices-single-default"
+                                                        class="form-label font-size-13 text-muted">무료주차
+                                                    </label>
+                                                    <select class="form-select" name="htParkingNy">
+                                                        <option value="0">N</option>
+                                                        <option value="1">Y</option>
+                                                    </select>
+                                            	</div>
+                                            	 <div class="col-md-3">
+                                            		<label for="choices-single-default"
+                                                        class="form-label font-size-13 text-muted">수영장
+                                                    </label>
+                                                    <select class="form-select" name="htPoolNy">
                                                         <option value="0">N</option>
                                                         <option value="1">Y</option>
                                                     </select>
@@ -1138,27 +1180,15 @@
                                                         <option value="1">Y</option>
                                                     </select>
                                             	</div>
-                                            </div>
-                                            
-                                            <div class="row gy-3">
-                                            	 <div class="col-md-3">
-                                            		<label for="choices-single-default"
-                                                        class="form-label font-size-13 text-muted">수영장
-                                                    </label>
-                                                    <select class="form-select" name="htPoolNy">
-                                                        <option value="0">N</option>
-                                                        <option value="1">Y</option>
-                                                    </select>
-                                            	</div>
-                                            	<div class="col-md-3">
-                                            		<label for="choices-single-default"
-                                                        class="form-label font-size-13 text-muted">라운지
-                                                    </label>
-                                                    <select class="form-select" name="htloungeNy">
-                                                        <option value="0">N</option>
-                                                        <option value="1">Y</option>
-                                                    </select>
-                                            	</div>
+	                                             <div class="col-md-3">
+	                                            	<label for="choices-single-default"
+	                                                        class="form-label font-size-13 text-muted">라운지
+	                                                 </label>
+	                                                 <select class="form-select" name="htloungeNy">
+	                                                       <option value="0">N</option>
+	                                                       <option value="1">Y</option>
+	                                                  </select>
+	                                            </div>  
                                             	<div class="col-md-3">
                                             		<label for="choices-single-default"
                                                         class="form-label font-size-13 text-muted">물품보관소
@@ -1168,18 +1198,7 @@
                                                         <option value="1">Y</option>
                                                     </select>
                                             	</div>
-                                            	<div class="col-md-3">
-                                            		<label for="choices-single-default"
-                                                        class="form-label font-size-13 text-muted">무료주차
-                                                    </label>
-                                                    <select class="form-select" name="htParkingNy">
-                                                        <option value="0">N</option>
-                                                        <option value="1">Y</option>
-                                                    </select>
-                                            	</div>
-                                            </div>
                                             
-                                            <div class="row gy-3">
                                             	 <div class="col-md-3">
                                             		<label for="choices-single-default"
                                                         class="form-label font-size-13 text-muted">공항셔틀버스
@@ -1189,33 +1208,18 @@
                                                         <option value="1">Y</option>
                                                     </select>
                                             	</div>
-                                            	 <div class="col-md-3">
-                                            		<label for="choices-single-default"
-                                                        class="form-label font-size-13 text-muted">조식
-                                                    </label>
-                                                    <select class="form-select" name="htBreakfastNy">
-                                                        <option value="0">N</option>
-                                                        <option value="1">Y</option>
-                                                    </select>
-                                            	</div>
-                                            	 <div class="col-md-3">
-                                            		<label for="choices-single-default"
-                                                        class="form-label font-size-13 text-muted">룸서비스
-                                                    </label>
-                                                    <select class="form-select" name="htRoomServiceNy">
-                                                        <option value="0">N</option>
-                                                        <option value="1">Y</option>
-                                                    </select>
-                                            	</div>
-                                            	 <div class="col-md-3">
-                                            		<label for="choices-single-default"
-                                                        class="form-label font-size-13 text-muted">기타
-                                                    </label>
-                                                    <select class="form-select" name="htElseNy">
-                                                        <option value="0">N</option>
-                                                        <option value="1">Y</option>
-                                                    </select>
-                                            	</div>
+                                            </div>
+                                            
+                                            <div class="row gy-3">
+<!--                                             	<div class="col-md-3"> -->
+<!--                                             		<label for="choices-single-default" -->
+<!--                                                         class="form-label font-size-13 text-muted">기타 -->
+<!--                                                     </label> -->
+<!--                                                     <select class="form-select" name="htElseNy"> -->
+<!--                                                         <option value="0">N</option> -->
+<!--                                                         <option value="1">Y</option> -->
+<!--                                                     </select> -->
+<!--                                             	</div> -->
                                             </div>
                                             
                                             <div class="row gy-3">
@@ -1700,14 +1704,12 @@
               autocomplete.setOptions({strictBounds: this.checked});
             });
       }
-
-
-       
         </script>
         
         
-        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyADWyNQedLuX-WxYL6uNdz92ohBpbC-YUA&libraries=places&callback=initMap" defer></script>
+        
         <!-- 구글 맵 -->
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyADWyNQedLuX-WxYL6uNdz92ohBpbC-YUA&libraries=places&callback=initMap" defer></script>
         <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyADWyNQedLuX-WxYL6uNdz92ohBpbC-YUA&callback=myMap"></script>
 
 
