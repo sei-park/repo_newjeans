@@ -32,7 +32,7 @@ public class usrProductController {
 	// 호텔 상세페이지 
 	@RequestMapping(value="/v1/infra/usrmember/usrHotelDetails")
 	public String usrHotelDetails(HotelDto hotelDto, Model model) {
-	
+		
 		model.addAttribute("hotelRoomItem", hotelService.hotelSelectOne(hotelDto));
 		return "/usr/v1/infra/usrmember/usrHotelDetails"; 
 	}

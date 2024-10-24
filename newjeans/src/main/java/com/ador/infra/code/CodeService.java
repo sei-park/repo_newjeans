@@ -86,11 +86,17 @@ public class CodeService {
 	}
 
 	// code의 seq를 받아서 문자열로 출력 
-	public static String selectOneCachedCode(int code) {
+	public static String selectOneCachedCode(int code) { // selectOneCachedCode 라는 정적 매서드를 정의 
+		// 입력 인수로 정수형 code를 받음, 반환값은 문자열(String)
 //		System.out.println("code : " + code);
+		// rt라는 이름의 빈 문자열을 초기값으로 하는 변수를 선언, 최종적으로 반환될 값 
 		String rt = "";
+		// 	CodeDto.cachedCodeArrayList를 반복해서 codeRow라는 변수에 리스트의 각 요소를 하나씩 대입하면서 반복문을 실행 
 		for(CodeDto codeRow : CodeDto.cachedCodeArrayList) {
+			// codeRow 객체의 getIfcdSeq() 메서드를 호출하여 해당 객체의 IfcdSeq 값을 가져옴
+			// 그 값이 입력으로 받은 code와 동일한지 비교, 이때 code는 정수이기 때문에 Integer.toString(code)를 사용하여 문자열로 변환 후 비교
 			if (codeRow.getIfcdSeq().equals(Integer.toString(code))) {
+				// 만약 조건이 참(true)이라면, codeRow의 getIfcdName() 메서드를 호출하여 IfcdName 값을 반환받아 rt에 저장
 				rt = codeRow.getIfcdName();
 			} else {
 				// by pass

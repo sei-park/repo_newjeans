@@ -1,8 +1,12 @@
 package com.ador.infra.hotel;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import org.springframework.format.annotation.DateTimeFormat;
+
+import com.ador.infra.code.CodeDto;
 
 public class HotelDto {
 	
@@ -48,6 +52,9 @@ public class HotelDto {
 	private Integer coffeeNy;
 	private String hotel_seq;
 	
+	// for cache
+//	public static List<HotelDto> cachedHotelArrayList = new ArrayList<HotelDto>();
+	  
 	//--
 	public String getHtseq() {
 		return htseq;

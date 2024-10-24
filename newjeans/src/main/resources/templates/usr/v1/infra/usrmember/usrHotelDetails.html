@@ -33,6 +33,13 @@
     <link rel="stylesheet" href="/usr/v1/usertemplate/ui/assets/css/responsive.css" />
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="/usr/v1/usertemplate/ui/assets/img/favicon.png">
+    
+    <style>
+    #htNotice {
+    	font-family: 'Roboto', sans-serif;
+    }
+    
+    </style>
 
 </head>
 
@@ -563,23 +570,59 @@
                         <div class="tour_details_heading_wrapper">  
                             <div class="tour_details_top_heading">
                                 <h2 name="htName" th:text="${hotelRoomItem?.htName}">호텔 이름</h2>
-<!--                                 <i class="fas fa-map-marker-alt"></i><h5 name="htAddress" th:text="${hotelRoomItem?.htAddress}">호텔 주소</h5> -->
 									<div style="display: flex; align-items: center;">
 									    <i class="fas fa-map-marker-alt" style="margin-top:10px"></i>
 									    <h5 name="htAddress" th:text="${hotelRoomItem?.htAddress}" style="margin-left: 8px; margin-top:-5px;">호텔 주소</h5>
 									</div>
                             </div>             	             
                             <div class="tour_details_top_heading_right">    
-                                <!-- <h4>Excellent</h4> -->
                                 <h6 name="hotelRoomItem" th:text="${hotelRoomItem.htStarSearch} + ' / 5'">별점</h6>
                                 	<div class="cruise_content_top_right">
-                                     	<label class="form-check-label" for="flexCheckDefault">
-					                         <i class="fas fa-star color_theme"></i>
-					                         <i class="fas fa-star color_theme"></i>
-					                         <i class="fas fa-star color_theme"></i>
-					                         <i class="fas fa-star color_theme"></i>
-					                         <i class="fas fa-star color_theme"></i>
-                                        </label>
+                                		<th:block th:if="${hotelRoomItem.htStarSearch == 1}">
+	                                     	<label class="form-check-label" for="flexCheckDefault">
+						                         <i class="fas fa-star color_theme"></i>     
+						                         <i class="fas fa-star color_asse"></i>
+						                         <i class="fas fa-star color_asse"></i>
+						                         <i class="fas fa-star color_asse"></i>
+						                         <i class="fas fa-star color_asse"></i>
+	                                        </label>
+	                                    </th:block>
+                                		<th:block th:if="${hotelRoomItem.htStarSearch == 2}">
+	                                     	<label class="form-check-label" for="flexCheckDefault">
+						                         <i class="fas fa-star color_theme"></i>     
+						                         <i class="fas fa-star color_theme"></i>
+						                         <i class="fas fa-star color_asse"></i>
+						                         <i class="fas fa-star color_asse"></i>
+						                         <i class="fas fa-star color_asse"></i>
+	                                        </label>
+	                                    </th:block>
+                                		<th:block th:if="${hotelRoomItem.htStarSearch == 3}">
+	                                     	<label class="form-check-label" for="flexCheckDefault">
+						                         <i class="fas fa-star color_theme"></i>     
+						                         <i class="fas fa-star color_theme"></i>
+						                         <i class="fas fa-star color_theme"></i>
+						                         <i class="fas fa-star color_asse"></i>
+						                         <i class="fas fa-star color_asse"></i>
+	                                        </label>
+	                                    </th:block>
+                                		<th:block th:if="${hotelRoomItem.htStarSearch == 4}">
+	                                     	<label class="form-check-label" for="flexCheckDefault">
+						                         <i class="fas fa-star color_theme"></i>     
+						                         <i class="fas fa-star color_theme"></i>
+						                         <i class="fas fa-star color_theme"></i>
+						                         <i class="fas fa-star color_theme"></i>
+						                         <i class="fas fa-star color_asse"></i>
+	                                        </label>
+	                                    </th:block>
+                                		<th:block th:if="${hotelRoomItem.htStarSearch == 5}">
+	                                     	<label class="form-check-label" for="flexCheckDefault">
+						                         <i class="fas fa-star color_theme"></i>     
+						                         <i class="fas fa-star color_theme"></i>
+						                         <i class="fas fa-star color_theme"></i>
+						                         <i class="fas fa-star color_theme"></i>
+						                         <i class="fas fa-star color_theme"></i>
+	                                        </label>
+	                                    </th:block>
                                            <h4>(2035 reviewes)</h4>    
                                     </div>
                             </div>
@@ -659,7 +702,8 @@
                         </div>
                         <div class="tour_details_boxed">         
                             <h3 class="heading_theme">공지사항</h3>                        
-                            <div class="tour_details_boxed_inner" name="htNotice" th:text="${hotelRoomItem?.htNotice}">
+<!--                             <div class="tour_details_boxed_inner" name="htNotice" th:text="${hotelRoomItem?.htNotice}"> -->
+                            <pre class="tour_details_boxed_inner" id="htNotice" name="htNotice" th:text="${hotelRoomItem?.htNotice}">
                                 <!-- <ul>
                                     <li><i class="fas fa-circle"></i>Buffet breakfast as per the Itinerary</li>
                                     <li><i class="fas fa-circle"></i>Visit eight villages showcasing Polynesian culture
@@ -671,7 +715,7 @@
                                     <li><i class="fas fa-circle"></i>Comfortable and hygienic vehicle (SUV/Sedan) for
                                         sightseeing on all days as per the itinerary.</li>
                                 </ul> -->
-                            </div>
+                            </pre>
                         </div>
                         <div class="tour_details_boxed">
                             <h3 class="heading_theme">예약 가능한 객실</h3>
@@ -1641,6 +1685,15 @@
 
     <!-- hotel details 별점 -->
     <script src="/usr/v1/usertemplate/ui/assets/js/star.js"></script>
+    
+    <script>
+    $("#htNotice").val().replace(/(<br>|<br\/>|<br \/>)/g, '\r\n');
+
+
+   
+    
+    </script>
+    
 
 </body>
 

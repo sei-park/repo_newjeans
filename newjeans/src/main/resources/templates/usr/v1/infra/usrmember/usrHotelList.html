@@ -2406,14 +2406,59 @@
                                                         <p><i class="fas fa-map-marker-alt"></i><span th:text="${list.htAddress}" style="padding:5px";></span></p>
                                                     </div>  
                                                     <div class="cruise_content_top_right">
-                                                        <h5 th:text="${list.htStarSearch} + ' / 5'"></h5> 
-                                                          <label class="form-check-label" for="flexCheckDefault">
-					                                            <i class="fas fa-star color_theme"></i>
-					                                            <i class="fas fa-star color_theme"></i>
-					                                            <i class="fas fa-star color_theme"></i>
-					                                            <i class="fas fa-star color_theme"></i>
-					                                            <i class="fas fa-star color_theme"></i>
-                                        				  </label>
+                                                        <h5 th:text="${list.htStarSearch} + ' / 5'" align="center"></h5>
+                                                        	<th:block th:if="${list.htStarSearch == 1}">
+	                                                          <label class="form-check-label" for="flexCheckDefault">        
+						                                          <i class="fas fa-star color_theme"></i>
+						                                          <i class="fas fa-star color_asse"></i>
+						                                          <i class="fas fa-star color_asse"></i>
+						                                          <i class="fas fa-star color_asse"></i>
+						                                          <i class="fas fa-star color_asse"></i>
+	                                        				  </label>
+                                                        	</th:block>
+                                                        	<th:block th:if="${list.htStarSearch == 2}">
+	                                                          <label class="form-check-label" for="flexCheckDefault">        
+						                                          <i class="fas fa-star color_theme"></i>
+						                                          <i class="fas fa-star color_theme"></i>
+						                                          <i class="fas fa-star color_asse"></i>
+						                                          <i class="fas fa-star color_asse"></i>
+						                                          <i class="fas fa-star color_asse"></i>
+	                                        				  </label>
+                                                        	</th:block>
+                                                        	<th:block th:if="${list.htStarSearch == 3}">
+	                                                          <label class="form-check-label" for="flexCheckDefault">        
+						                                          <i class="fas fa-star color_theme"></i>
+						                                          <i class="fas fa-star color_theme"></i>
+						                                          <i class="fas fa-star color_theme"></i>
+						                                          <i class="fas fa-star color_asse"></i>
+						                                          <i class="fas fa-star color_asse"></i>
+	                                        				  </label>
+                                                        	</th:block>
+                                                        	<th:block th:if="${list.htStarSearch == 4}">
+	                                                          <label class="form-check-label" for="flexCheckDefault">        
+						                                          <i class="fas fa-star color_theme"></i>
+						                                          <i class="fas fa-star color_theme"></i>
+						                                          <i class="fas fa-star color_theme"></i>
+						                                          <i class="fas fa-star color_theme"></i>
+						                                          <i class="fas fa-star color_asse"></i>
+	                                        				  </label>
+                                                        	</th:block>
+                                                        	<th:block th:if="${list.htStarSearch == 5}">
+	                                                          <label class="form-check-label" for="flexCheckDefault">        
+						                                          <i class="fas fa-star color_theme"></i>
+						                                          <i class="fas fa-star color_theme"></i>
+						                                          <i class="fas fa-star color_theme"></i>
+						                                          <i class="fas fa-star color_theme"></i>
+						                                          <i class="fas fa-star color_theme"></i>
+	                                        				  </label>
+                                                        	</th:block>
+<!--                                                           <label class="form-check-label" for="flexCheckDefault">         -->
+<!-- 					                                            <i class="fas fa-star color_theme"></i> -->
+<!-- 					                                            <i class="fas fa-star color_theme"></i> -->
+<!-- 					                                            <i class="fas fa-star color_theme"></i> -->
+<!-- 					                                            <i class="fas fa-star color_theme"></i> -->
+<!-- 					                                            <i class="fas fa-star color_theme"></i> -->
+<!--                                         				  </label> -->
                                                         <h4>(2035 reviewes)</h4>
                                                     </div>
                                                 </div>
