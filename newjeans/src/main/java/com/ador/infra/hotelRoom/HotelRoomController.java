@@ -11,12 +11,45 @@ public class HotelRoomController {
 	@Autowired
 	HotelRoomService hotelRoomService;
 	
+	// selectList
 	@RequestMapping(value="/xdm/v1/infra/hotelRoom/hotelRoomList")
 	public String hotelRoomList(Model model) { 
 		
 		model.addAttribute("hotelRoomList", hotelRoomService.selectRoomList());
 		return "/xdm/v1/infra/hotelRoom/hotelRoomList";
 	}
+	
+	@RequestMapping(value="/xdm/v1/infra/hotelRoom/hotelRoomForm")
+	public String hotelRoomForm() {
+		
+		return "/xdm/v1/infra/hotelRoom/hotelRoomForm";
+	}
+	
+	// insert
+	@RequestMapping(value="/xdm/v1/infra/hotelRoom/hotelRoomInst")
+	public String hotelRoomInst(HotelRoomDto hotelRoomDto) {
+		
+		hotelRoomService.selectRoomInsert(hotelRoomDto);
+		
+		return "redirect:/xdm/v1/infra/hotelRoom/hotelRoomList";
+	}
+	
+	// selectOne
+	@RequestMapping(value="/xdm/v1/infra/hotelRoom/hotelRoomMForm")
+	public String hotelRoomMForm(HotelRoomDto hotelRoomDto, Model model) {
+		
+		model.addAttribute("hotelRoomItem", hotelRoomService.selectRoomSelectOne(hotelRoomDto));
+		return "/xdm/v1/infra/hotelRoom/hotelRoomMForm";
+	}
+	
+	// update
+	@RequestMapping(value="/xdm/v1/infra/hotelRoom/hotelRoomUpdt")
+	public String hotelRoomUpdt(HotelRoomDto hotelRoomDto) {
+		
+		hotelRoomService.selectRoomUpdate(hotelRoomDto);
+		return "redirect:/xdm/v1/infra/hotelRoom/hotelRoomList";
+	}
+
 	
  
 	

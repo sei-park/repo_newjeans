@@ -1068,9 +1068,8 @@
 															<th scope="col">객실번호</th>
 															<th scope="col">호텔번호</th>
 															<th scope="col">호텔이름</th>
-															<th scope="col">룸컨디션</th>
-															<th scope="col">호텔가격</th>
-															<th scope="col">1박</th>
+															<th scope="col">객실</th>
+															<th scope="col">객실가격</th>
 															<th scope="col">침대옵션</th>
 															<th scope="col">에어컨</th>
 															<th scope="col">욕실</th>
@@ -1098,14 +1097,20 @@
 															</th>
 															<td></td>
 															<td th:text="${list.htrseq}"></td>
-															<td th:text="${list.hotel_seq}"></td>
-															<td th:text="${list.htName}"></td>
-															<td th:text="${list.htrRoomName}"></td>
+															<td th:text="${list.htseq}"></td>
+															<td>
+									                      	<a th:href="@{/xdm/v1/infra/hotelRoom/hotelRoomMForm(htrseq=${list.htrseq})}"
+														  	 th:text="${list.htName}">
+														   	</a>
+														    </td>
+														    <td th:text="${list.htrRoomName}"></td>
 															<td th:text="${list.htrRoomPrice}"></td>
-															<td th:text="${list.htrStay}"></td>
 															<td th:if="${list.bedoption eq 1}">킹사이즈 침대 1개</td>
-															<td th:if="${list.bedoption eq 2}">더블사이즈 침대 2개</td>
-															<td th:if="${list.bedoption eq 3}">킹사이즈 침대 2개</td>
+															<td th:if="${list.bedoption eq 2}">킹사이즈 침대 2개</td>
+															<td th:if="${list.bedoption eq 3}">더블사이즈 침대 1개</td>
+															<td th:if="${list.bedoption eq 4}">더블사이즈 침대 2개</td>
+															<td th:if="${list.bedoption eq 5}">싱글사이즈 침대 1개</td>
+															<td th:if="${list.bedoption eq 6}">싱글사이즈 침대 2개</td>
 															<td th:if="${list.aircondNy eq 0}" class="codeUse">N</td> 
 															<td th:unless="${list.aircondNy eq 0}" class="codeUse">Y</td>
 															<td th:if="${list.bathNy eq 0}" class="codeUse">N</td> 
@@ -1174,7 +1179,7 @@
 												<button type="button" class="btn btn-success">
 													<i class="bi bi-file-earmark-excel"></i>
 												</button>
-												<a href="/xdm/v1/infra/hotelmember/hotelMemberXdmForm">
+												<a href="/xdm/v1/infra/hotelRoom/hotelRoomForm">
 													<button type="button" class="btn btn-primary">
 														<i class="bi bi-plus-lg"></i>
 													</button>

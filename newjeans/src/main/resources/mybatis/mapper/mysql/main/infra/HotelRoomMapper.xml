@@ -27,6 +27,75 @@
 			a.htrseq desc
 	</select>
 	
+	<insert id="selectRoomInsert">
+		insert into hotelroom (
+			htrseq,
+			htrRoomName,
+			htrRoomPrice,
+			htrStay,
+			bedoption,
+			aircondNy,
+			bathNy,
+			tvNy,
+			wifiNy,
+			coffeeNy,
+			htrDelNy,
+			hotel_seq
+		) values (
+			#{htrseq},
+			#{htrRoomName},
+			#{htrRoomPrice},
+			#{htrStay},
+			#{bedoption},
+			#{aircondNy},
+			#{bathNy},
+			#{tvNy},
+			#{wifiNy},
+			#{coffeeNy},
+			0,
+			#{hotel_seq}
+		)
+	</insert>
+	
+	<select id="selectRoomSelectOne" resultMap="resultMapObj">
+		select
+			a.htrseq,
+			a.htrRoomName,
+			a.htrRoomPrice,
+			a.htrStay,
+			a.bedoption,
+			a.aircondNy,
+			a.bathNy,
+			a.tvNy,
+			a.wifiNy,
+			a.coffeeNy,
+			a.htrDelNy,
+			b.htseq,
+    		b.htName,
+    		a.hotel_seq
+    	from hotelroom a
+    		 left join hotel b on a.hotel_seq = b.htseq
+    	where 1=1
+    	 	 and a.htrseq = #{htrseq}
+	</select>
+	
+	<update id="selectRoomUpdate">
+		update hotelroom
+		set 
+			htrRoomName = #{htrRoomName},
+			htrRoomPrice = #{htrRoomPrice},
+			bedoption = #{bedoption},
+			aircondNy = #{aircondNy},
+			bathNy = #{bathNy},
+			tvNy = #{tvNy},
+			wifiNy = #{wifiNy},
+			coffeeNy = #{coffeeNy},
+			htrDelNy = 0
+		where 1=1
+			and htrseq = #{htrseq}
+	</update>
+	
+	
 
 	  
 	

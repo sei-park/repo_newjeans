@@ -15,6 +15,7 @@ public class HotelRoomDto {
     private Integer htrDelNy;
     private String hotel_seq;
     
+    // 호텔
     private String htseq;
     private String htName;
     //--
@@ -102,6 +103,7 @@ public class HotelRoomDto {
 	public void setHtName(String htName) {
 		this.htName = htName;
 	}
+	
 	
     
 	
