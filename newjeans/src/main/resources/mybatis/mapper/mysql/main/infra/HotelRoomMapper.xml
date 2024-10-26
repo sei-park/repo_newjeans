@@ -17,9 +17,12 @@
 			a.tvNy,
 			a.wifiNy,
 			a.coffeeNy,
-			hotel_seq
-		from
-			hotelroom a
+			a.htrDelNy,
+			b.htseq,
+    		b.htName,
+    		a.hotel_seq
+		from hotelroom a
+		left join hotel b on a.hotel_seq = b.htseq
 		order by 
 			a.htrseq desc
 	</select>

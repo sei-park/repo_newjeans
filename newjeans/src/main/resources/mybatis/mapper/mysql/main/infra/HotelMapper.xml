@@ -117,7 +117,7 @@
 		) aa
 		limit #{rowNumToShow} offset #{startRnumForMysql}
 	</select>
-
+	
 	<insert id="hotelInsert">
 		insert into hotel (
 		    htName,

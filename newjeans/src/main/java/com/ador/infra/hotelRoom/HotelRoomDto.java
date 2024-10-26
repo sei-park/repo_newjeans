@@ -12,7 +12,11 @@ public class HotelRoomDto {
     private Integer tvNy;
     private Integer wifiNy;
     private Integer coffeeNy;
+    private Integer htrDelNy;
     private String hotel_seq;
+    
+    private String htseq;
+    private String htName;
     //--
 	public String getHtrseq() {
 		return htrseq;
@@ -74,12 +78,31 @@ public class HotelRoomDto {
 	public void setCoffeeNy(Integer coffeeNy) {
 		this.coffeeNy = coffeeNy;
 	}
+	public Integer getHtrDelNy() {
+		return htrDelNy;
+	}
+	public void setHtrDelNy(Integer htrDelNy) {
+		this.htrDelNy = htrDelNy;
+	}
 	public String getHotel_seq() {
 		return hotel_seq;
 	}
 	public void setHotel_seq(String hotel_seq) {
 		this.hotel_seq = hotel_seq;
 	}
+	public String getHtseq() {
+		return htseq;
+	}
+	public void setHtseq(String htseq) {
+		this.htseq = htseq;
+	}
+	public String getHtName() {
+		return htName;
+	}
+	public void setHtName(String htName) {
+		this.htName = htName;
+	}
+	
     
 	
 

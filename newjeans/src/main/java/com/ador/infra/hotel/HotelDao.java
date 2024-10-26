@@ -30,8 +30,7 @@ public interface HotelDao {
 	// paging 
 	public int selectOneCount(HotelVo hotelVo);
 	
-	// Cached
-//	public List<HotelDto> hotelList();
+
 	
 
 		                          

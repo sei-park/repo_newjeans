@@ -52,9 +52,10 @@ public class HotelDto {
 	private Integer coffeeNy;
 	private String hotel_seq;
 	
-	// for cache
-//	public static List<HotelDto> cachedHotelArrayList = new ArrayList<HotelDto>();
-	  
+	
+//	public static List<HotelDto> cachedCodeArrayList = new ArrayList<HotelDto>();
+	
+
 	//--
 	public String getHtseq() {
 		return htseq;
@@ -278,8 +279,9 @@ public class HotelDto {
 	public void setHotel_seq(String hotel_seq) {
 		this.hotel_seq = hotel_seq;
 	}
+
 	
-	
+    
 	
 
 

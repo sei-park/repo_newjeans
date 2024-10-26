@@ -51,39 +51,19 @@ public class HotelService {
 		return hotelDao.selectOneCount(hotelVo);
 	}
 	
-	
-	// 특정 함수를 구동시키는 어노테이션 
-//    @PostConstruct 
-//	public void hotelList() {
-//		List<HotelDto> codeListFromDb = (ArrayList<HotelDto>) hotelDao.hotelList(); 
-//		HotelDto.cachedHotelArrayList.clear(); 
-//		HotelDto.cachedHotelArrayList.addAll(codeListFromDb); 
-//		System.out.println("cachedCodeArrayList: " + HotelDto.cachedHotelArrayList.size() + " chached !");
-//	}
-//    
-//    // 데이터 삭제
-//    public static void clear() {
-//    	HotelDto.cachedHotelArrayList.clear();
-//	}
-    
-    // codegroup의 seq 번호를 받고 해당하는 code의 내용을 List로 출력 
-//	public static List<HotelDto> selectListCachedCode(String htseq) {
-//		List<CodeDto> rt = new ArrayList<CodeDto>();
-//		for(CodeDto codeRow : CodeDto.cachedCodeArrayList) {
-//			if (codeRow.getCodegroup_ifcgSeq().equals(htseq)) {
-//				rt.add(codeRow);
+	///////////////////////////////////////////////////////
+//	public static String selectOneCachedCode(int code) { 
+//		String rt = "";
+//		for(HotelDto codeRow : HotelDto.cachedCodeArrayList) {
+//			if (codeRow.getHtBreakfastNy().equals(Integer.toString(code))) {
+//				rt = codeRow.getHtBreakfastNy();
 //			} else {
 //				// by pass
 //			}
-//		}
+//		} 
 //		return rt;
 //	}
-//	
-
 	
 
-	
-
-	
 	
 }
