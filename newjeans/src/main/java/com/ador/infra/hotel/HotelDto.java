@@ -42,7 +42,7 @@ public class HotelDto {
 	// 호텔 룸 
 	private String htrseq;
 	private String htrRoomName;
-	private String htrRoomPrice;
+	private Integer htrRoomPrice;
 	private String htrStay;
 	private Integer bedoption;
 	private Integer aircondNy;
@@ -52,10 +52,6 @@ public class HotelDto {
 	private Integer coffeeNy;
 	private String hotel_seq;
 	
-	
-//	public static List<HotelDto> cachedCodeArrayList = new ArrayList<HotelDto>();
-	
-
 	//--
 	public String getHtseq() {
 		return htseq;
@@ -225,12 +221,6 @@ public class HotelDto {
 	public void setHtrRoomName(String htrRoomName) {
 		this.htrRoomName = htrRoomName;
 	}
-	public String getHtrRoomPrice() {
-		return htrRoomPrice;
-	}
-	public void setHtrRoomPrice(String htrRoomPrice) {
-		this.htrRoomPrice = htrRoomPrice;
-	}
 	public String getHtrStay() {
 		return htrStay;
 	}
@@ -279,6 +269,13 @@ public class HotelDto {
 	public void setHotel_seq(String hotel_seq) {
 		this.hotel_seq = hotel_seq;
 	}
+	public Integer getHtrRoomPrice() {
+		return htrRoomPrice;
+	}
+	public void setHtrRoomPrice(Integer htrRoomPrice) {
+		this.htrRoomPrice = htrRoomPrice;
+	}
+	
 
 	
     

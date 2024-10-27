@@ -5,6 +5,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.ador.infra.hotel.HotelDto;
+
 @Controller
 public class HotelRoomController {
 	
@@ -43,14 +45,22 @@ public class HotelRoomController {
 	}
 	
 	// update
-	@RequestMapping(value="/xdm/v1/infra/hotelRoom/hotelRoomUpdt")
+	@RequestMapping(value="/xdm/v1/infra/hotelRoom/hotelRoomUpdt") 
 	public String hotelRoomUpdt(HotelRoomDto hotelRoomDto) {
 		
 		hotelRoomService.selectRoomUpdate(hotelRoomDto);
 		return "redirect:/xdm/v1/infra/hotelRoom/hotelRoomList";
 	}
-
 	
+	// 호텔 상세페이지 hotelRoomDetails
+//	@RequestMapping(value="/v1/infra/usrmember/hotelRoomDetails")
+//	public String usrHotelDetails(HotelRoomDto hotelRoomDto, Model model) { 
+//		
+//		model.addAttribute("hotelRoomItem", hotelRoomService.selectRoomSelectOne(hotelRoomDto));
+//		return "/usr/v1/infra/usrmember/hotelRoomDetails";   
+//	}
+
+	 
  
 	
 

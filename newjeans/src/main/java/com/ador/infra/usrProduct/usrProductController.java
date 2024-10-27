@@ -29,7 +29,7 @@ public class usrProductController {
 		return "/usr/v1/infra/usrmember/usrHotelList"; 
 	}   
 	
-	// 호텔 상세페이지 
+	// 호텔 상세페이지 usrHotelDetails
 	@RequestMapping(value="/v1/infra/usrmember/usrHotelDetails")
 	public String usrHotelDetails(HotelDto hotelDto, Model model) {
 		

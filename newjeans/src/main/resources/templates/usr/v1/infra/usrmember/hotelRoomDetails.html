@@ -572,57 +572,12 @@
                                 <h2 name="htName" th:text="${hotelRoomItem?.htName}">호텔 이름</h2>
 									<div style="display: flex; align-items: center;">
 									    <i class="fas fa-map-marker-alt" style="margin-top:10px"></i>
-									    <h5 name="htAddress" th:text="${hotelRoomItem?.htAddress}" style="margin-left: 8px; margin-top:-5px;">호텔 주소</h5>
+									    <h5 style="margin-left: 8px; margin-top:-5px;">호텔 주소</h5>
 									</div>
                             </div>             	             
                             <div class="tour_details_top_heading_right">    
-                                <h6 name="hotelRoomItem" th:text="${hotelRoomItem.htStarSearch} + ' / 5'">별점</h6>
+                                <h6>별점</h6>
                                 	<div class="cruise_content_top_right">
-                                		<th:block th:if="${hotelRoomItem.htStarSearch == 1}">
-	                                     	<label class="form-check-label" for="flexCheckDefault">
-						                         <i class="fas fa-star color_theme"></i>     
-						                         <i class="fas fa-star color_asse"></i>
-						                         <i class="fas fa-star color_asse"></i>
-						                         <i class="fas fa-star color_asse"></i>
-						                         <i class="fas fa-star color_asse"></i>
-	                                        </label>
-	                                    </th:block>
-                                		<th:block th:if="${hotelRoomItem.htStarSearch == 2}">
-	                                     	<label class="form-check-label" for="flexCheckDefault">
-						                         <i class="fas fa-star color_theme"></i>     
-						                         <i class="fas fa-star color_theme"></i>
-						                         <i class="fas fa-star color_asse"></i>
-						                         <i class="fas fa-star color_asse"></i>
-						                         <i class="fas fa-star color_asse"></i>
-	                                        </label>
-	                                    </th:block>
-                                		<th:block th:if="${hotelRoomItem.htStarSearch == 3}">
-	                                     	<label class="form-check-label" for="flexCheckDefault">
-						                         <i class="fas fa-star color_theme"></i>     
-						                         <i class="fas fa-star color_theme"></i>
-						                         <i class="fas fa-star color_theme"></i>
-						                         <i class="fas fa-star color_asse"></i>
-						                         <i class="fas fa-star color_asse"></i>
-	                                        </label>
-	                                    </th:block>
-                                		<th:block th:if="${hotelRoomItem.htStarSearch == 4}">
-	                                     	<label class="form-check-label" for="flexCheckDefault">
-						                         <i class="fas fa-star color_theme"></i>     
-						                         <i class="fas fa-star color_theme"></i>
-						                         <i class="fas fa-star color_theme"></i>
-						                         <i class="fas fa-star color_theme"></i>
-						                         <i class="fas fa-star color_asse"></i>
-	                                        </label>
-	                                    </th:block>
-                                		<th:block th:if="${hotelRoomItem.htStarSearch == 5}">
-	                                     	<label class="form-check-label" for="flexCheckDefault">
-						                         <i class="fas fa-star color_theme"></i>     
-						                         <i class="fas fa-star color_theme"></i>
-						                         <i class="fas fa-star color_theme"></i>
-						                         <i class="fas fa-star color_theme"></i>
-						                         <i class="fas fa-star color_theme"></i>
-	                                        </label>
-	                                    </th:block>
                                            <h4>(2035 reviewes)</h4>    
                                     </div>
                             </div>
@@ -702,7 +657,7 @@
                         </div>
                         <div class="tour_details_boxed">         
                             <h3 class="heading_theme">공지사항</h3>                        
-                            <pre class="tour_details_boxed_inner" id="htNotice" name="htNotice" th:text="${hotelRoomItem?.htNotice}">
+                            <pre class="tour_details_boxed_inner" id="htNotice">
                             </pre>
                         </div>
                         <div class="tour_details_boxed">
@@ -719,10 +674,10 @@
                                                 </div>
                                                 <div class="room_booking_right_side">
                                                     <div class="room_booking_heading">
-                                                        <h3 name="htrRoomName" th:text="${hotelRoomItem?.htrRoomName}">객실1</h3> 
+                                                        <h3>객실1</h3>
                                                         <p>내부 시설</p> 
                                                         <div class="room_fasa_area">
-                                                            <ul>  
+                                                            <ul>
                                                                 <li><i class="fa fa-bed" aria-hidden="true"></i>룸 컨디션(침대)1</li>
                                                                 <li><img src="/usr/v1/usertemplate/ui/assets/img/icon/ac.png" alt="icon">에어컨
                                                                 </li>
@@ -740,8 +695,7 @@
                                                         </div>
                                                     </div>
                                                     <div class="room_person_select">
-                                                        <h3 name="htrRoomPrice" th:text="${'₩' + #numbers.formatInteger(hotelRoomItem?.htrRoomPrice, 3, 'COMMA')}"
-														>가격1<sub> / 1박</sub></h3>
+                                                        <h3>₩679,600<sub> / 1박</sub></h3>
                                                         <select class="form-select" aria-label="Default select example">
                                                             <option selected>1</option>
                                                             <option value="2">2</option>
@@ -752,79 +706,81 @@
                                                 </div>
                                             </div>
                                             
-                                            <div class="room_book_item">
-                                                <div class="room_book_img">
-                                                    <img src="/usr/v1/usertemplate/ui/assets/image/hotel_details01.jpg" alt="img" width="240"
-                                                        height="150">
-                                                </div>
-                                                <div class="room_booking_right_side">
-                                                    <div class="room_booking_heading">
-                                                        <h3><a href="room-booking.html">객실2</a></h3>
-                                                        <p>내부 시설</p>
-                                                        <div class="room_fasa_area">
-                                                            <ul>
-                                                                <li><i class="fa fa-bed" aria-hidden="true"></i>룸 컨디션(침대)2</li>
-                                                                <li><img src="/usr/v1/usertemplate/ui/assets/img/icon/ac.png" alt="icon">에어컨</li> 
-                                                                <li><i class="fa fa-bath" aria-hidden="true"></i>욕조</li>
-                                                            </ul>
-                                                            <ul>
-                                                                <li><img src="/usr/v1/usertemplate/ui/assets/img/icon/tv.png" alt="icon">TV</li>
-                                                                <li><img src="/usr/v1/usertemplate/ui/assets/img/icon/wifi.png" alt="icon">무료
-                                                                    Wi-fi</li>
-                                                                <li><i class="fa fa-coffee" aria-hidden="true"></i> 커피
-                                                                    머신</li>
-                                                            </ul>
-                                                        </div>
-                                                    </div>
-                                                    <div class="room_person_select">
-                                                        <h3>가격2 <sub> / 1박 </sub></h3>
-                                                        <select class="form-select" aria-label="Default select example">
-                                                            <option selected>1</option>
-                                                            <option value="2">2</option>
-                                                            <option value="3">3</option>
-                                                            <option value="4">4</option>
-                                                        </select>
-                                                    </div>
-                                                </div>
-                                            </div>
+<!--                                             <div class="room_book_item"> -->
+<!--                                                 <div class="room_book_img"> -->
+<!--                                                     <img src="/usr/v1/usertemplate/ui/assets/image/hotel_details01.jpg" alt="img" width="240" -->
+<!--                                                         height="150"> -->
+<!--                                                 </div> -->
+<!--                                                 <div class="room_booking_right_side"> -->
+<!--                                                     <div class="room_booking_heading"> -->
+<!--                                                         <h3><a href="room-booking.html">객실2</a></h3> -->
+<!--                                                         <p>내부 시설</p> -->
+<!--                                                         <div class="room_fasa_area"> -->
+<!--                                                             <ul> -->
+<!--                                                                 <li><i class="fa fa-bed" aria-hidden="true"></i>룸 컨디션(침대)2</li> -->
+<!--                                                                 <li><img src="/usr/v1/usertemplate/ui/assets/img/icon/ac.png" alt="icon">에어컨 -->
+<!--                                                                 </li> -->
+<!--                                                                 <li><i class="fa fa-bath" aria-hidden="true"></i> 욕조 -->
+<!--                                                                 </li> -->
+<!--                                                             </ul> -->
+<!--                                                             <ul> -->
+<!--                                                                 <li><img src="/usr/v1/usertemplate/ui/assets/img/icon/tv.png" alt="icon">TV</li> -->
+<!--                                                                 <li><img src="/usr/v1/usertemplate/ui/assets/img/icon/wifi.png" alt="icon">무료 -->
+<!--                                                                     Wi-fi</li> -->
+<!--                                                                 <li><i class="fa fa-coffee" aria-hidden="true"></i> 커피 -->
+<!--                                                                     머신</li> -->
+<!--                                                             </ul> -->
+<!--                                                         </div> -->
+<!--                                                     </div> -->
+<!--                                                     <div class="room_person_select"> -->
+<!--                                                         <h3>₩786,500 <sub> / 1박 </sub></h3> -->
+<!--                                                         <select class="form-select" aria-label="Default select example"> -->
+<!--                                                             <option selected>1</option> -->
+<!--                                                             <option value="2">2</option> -->
+<!--                                                             <option value="3">3</option> -->
+<!--                                                             <option value="4">4</option> -->
+<!--                                                         </select> -->
+<!--                                                     </div> -->
+<!--                                                 </div> -->
+<!--                                             </div> -->
                                             
-                                            <div class="room_book_item">
-                                                <div class="room_book_img">
-                                                    <img src="/usr/v1/usertemplate/ui/assets/image/hotel_details07.jpg" alt="img" width="240"
-                                                        height="160">
-                                                </div>
-                                                <div class="room_booking_right_side">
-                                                    <div class="room_booking_heading">
-                                                        <h3><a href="room-booking.html">객실3</a></h3>
-                                                        <p>내부 시설</p>
-                                                        <div class="room_fasa_area">
-                                                            <ul>
-                                                                <li><i class="fa fa-bed" aria-hidden="true"></i>룸 컨디션(침대)3</li>
-                                                                <li><img src="/usr/v1/usertemplate/ui/assets/img/icon/ac.png" alt="icon">에어컨
-                                                                </li>
-                                                                <li><i class="fa fa-bath" aria-hidden="true"></i> 욕조
-                                                                </li>
-                                                            </ul>
-                                                            <ul>
-                                                                <li><img src="/usr/v1/usertemplate/ui/assets/img/icon/tv.png" alt="icon">TV</li>
-                                                                <li><img src="/usr/v1/usertemplate/ui/assets/img/icon/wifi.png" alt="icon">무료
-                                                                    Wi-fi</li>
-                                                                <li><i class="fa fa-coffee" aria-hidden="true"></i> 커피
-                                                                    머신</li>
-                                                            </ul>
-                                                        </div>
-                                                    </div>
-                                                    <div class="room_person_select">
-                                                        <h3>가격3<sub> / 1박 </sub></h3>
-                                                        <select class="form-select" aria-label="Default select example">
-                                                            <option selected>1</option>
-                                                            <option value="2">2</option>
-                                                            <option value="3">3</option>
-                                                            <option value="4">4</option>
-                                                        </select>
-                                                    </div>
-                                                </div>
-                                            </div>
+<!--                                             <div class="room_book_item"> -->
+<!--                                                 <div class="room_book_img"> -->
+<!--                                                     <img src="/usr/v1/usertemplate/ui/assets/image/hotel_details07.jpg" alt="img" width="240" -->
+<!--                                                         height="160"> -->
+<!--                                                 </div> -->
+<!--                                                 <div class="room_booking_right_side"> -->
+<!--                                                     <div class="room_booking_heading"> -->
+<!--                                                         <h3><a href="room-booking.html">객실3</a></h3> -->
+<!--                                                         <p>내부 시설</p> -->
+<!--                                                         <div class="room_fasa_area"> -->
+<!--                                                             <ul> -->
+<!--                                                                 <li><i class="fa fa-bed" aria-hidden="true"></i>룸 컨디션(침대)3</li> -->
+<!--                                                                 <li><img src="/usr/v1/usertemplate/ui/assets/img/icon/ac.png" alt="icon">에어컨 -->
+<!--                                                                 </li> -->
+<!--                                                                 <li><i class="fa fa-bath" aria-hidden="true"></i> 욕조 -->
+<!--                                                                 </li> -->
+<!--                                                             </ul> -->
+<!--                                                             <ul> -->
+<!--                                                                 <li><img src="/usr/v1/usertemplate/ui/assets/img/icon/tv.png" alt="icon">TV</li> -->
+<!--                                                                 <li><img src="/usr/v1/usertemplate/ui/assets/img/icon/wifi.png" alt="icon">무료 -->
+<!--                                                                     Wi-fi</li> -->
+<!--                                                                 <li><i class="fa fa-coffee" aria-hidden="true"></i> 커피 -->
+<!--                                                                     머신</li> -->
+<!--                                                             </ul> -->
+<!--                                                         </div> -->
+<!--                                                     </div> -->
+<!--                                                     <div class="room_person_select"> -->
+<!--                                                         <h3>₩820,000<sub> / 1박 </sub></h3> -->
+<!--                                                         <select class="form-select" aria-label="Default select example"> -->
+<!--                                                             <option selected>1</option> -->
+<!--                                                             <option value="2">2</option> -->
+<!--                                                             <option value="3">3</option> -->
+<!--                                                             <option value="4">4</option> -->
+<!--                                                         </select> -->
+<!--                                                     </div> -->
+<!--                                                 </div> -->
+<!--                                             </div> -->
                                             
                                         </div>
                                     </div>
@@ -1544,13 +1500,6 @@
     <!-- hotel details 별점 -->
     <script src="/usr/v1/usertemplate/ui/assets/js/star.js"></script>
     
-    <script>
-    $("#htNotice").val().replace(/(<br>|<br\/>|<br \/>)/g, '\r\n');
-
-
-   
-    
-    </script>
     
 
 </body>

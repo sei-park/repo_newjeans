@@ -201,7 +201,18 @@
 		    a.htShuttleBusNy,
 		    a.htBreakfastNy,
 		    a.htRoomServiceNy,
-		    a.htElseNy
+		    a.htElseNy,
+		    c.htrseq,
+		    c.htrRoomName,
+		    c.htrRoomPrice,
+			c.htrStay,
+			c.bedoption,
+			c.aircondNy,
+			c.bathNy,
+			c.tvNy,
+			c.wifiNy,   
+			c.coffeeNy,
+			c.hotel_seq
 		from
 			hotel a
 		left join (select * from hotelroom b order by b.htrRoomPrice limit 1) c on c.hotel_seq = a.htseq

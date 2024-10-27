@@ -18,9 +18,12 @@
 			a.wifiNy,
 			a.coffeeNy,
 			a.htrDelNy,
-			b.htseq,
-    		b.htName,
-    		a.hotel_seq
+		    a.hotel_seq,
+		    b.htseq,
+		    b.htName,
+		    b.htAddress,
+		    b.htStarSearch,
+		    b.htNotice
 		from hotelroom a
 		left join hotel b on a.hotel_seq = b.htseq
 		order by 
@@ -70,9 +73,12 @@
 			a.wifiNy,
 			a.coffeeNy,
 			a.htrDelNy,
-			b.htseq,
-    		b.htName,
-    		a.hotel_seq
+			a.hotel_seq,
+		    b.htseq,
+		    b.htName,
+		    b.htAddress,
+		    b.htStarSearch,
+		    b.htNotice
     	from hotelroom a
     		 left join hotel b on a.hotel_seq = b.htseq
     	where 1=1
