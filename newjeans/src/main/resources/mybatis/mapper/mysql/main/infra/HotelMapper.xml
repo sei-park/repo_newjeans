@@ -5,10 +5,35 @@
 
 	<resultMap type="com.ador.infra.hotel.HotelDto" id="resultMapObj"></resultMap>
 	
-	<sql id="selectCommon">   
-		from
-		    hotel a
-		left join (select * from hotelroom b order by b.htrRoomPrice limit 1) c on c.hotel_seq = a.htseq
+	<sql id="selectCommon">
+		FROM 
+			hotel as a
+		LEFT JOIN  
+		(SELECT 
+			hotel_seq,
+			htrseq,
+			htrRoomName,
+			htrRoomPrice,
+			htrStay,
+			bedoption,
+			aircondNy,
+			bathNy,
+			tvNy,
+			wifiNy,
+			coffeeNy,
+			ROW_NUMBER() OVER (PARTITION BY hotel_seq ORDER BY htrRoomPrice) AS rn
+		 FROM 
+			hotelroom
+		) as b
+		ON a.htseq = b.hotel_seq AND b.rn = 1
+	LEFT JOIN
+		(SELECT 
+			hotel_seq, MIN(htrRoomPrice) AS minPrice
+		 FROM   
+			hotelroom
+		 GROUP BY hotel_seq
+		) as c	  
+		ON a.htseq = c.hotel_seq
 		where 1=1
 			<if test="shDelNy != null and !shDelNy.equals('')">AND htDelNy = #{shDelNy}</if> <!-- 삭제 여부 -->
 			
@@ -65,52 +90,53 @@
 				<when test="shOption == 3">AND htStarSearch LIKE CONCAT('%',#{shValue},'%')</when>
 			</choose> 
 	</sql>
-	
+	    
 	<select id="selectOneCount">
 		SELECT COUNT(*)
 		<include refid="selectCommon"/>	
 	</select>
 	
-	<select id="hotelList" resultMap="resultMapObj">
+	<select id="hotelList" resultMap="resultMapObj">   
 		select aa.* from (
 		select
-		 	a.htseq,
-		    a.htName,
-		    a.htAddress,
-		    a.htcountry,
-		    a.htDesc,
+			a.htseq,
+			a.htName,
+			a.htAddress,
+			a.htcountry,
+			a.htDesc,
 		    a.htDelNy,
-		    a.htRegDate,
-		    a.htReviseDate,
-		    a.htNotice,
-		    a.htMap,
-		    a.htInclusionItems,
-		    a.htNameSearch,
-		    a.htPriceSearch,
-		    a.htStarSearch,
-		    a.htClassSearch,
-		    a.htRestaurantNy,
-		    a.htSpaNy,
-		    a.htFitnessCenterNy,
-		    a.htPoolNy,
-		    a.htloungeNy,
-		    a.htStockRoomNy,
-		    a.htParkingNy,
-		    a.htShuttleBusNy,
-		    a.htBreakfastNy,
-		    a.htRoomServiceNy,
-		    a.htElseNy,
-			c.htrseq,
-		    c.htrRoomName,
-		    c.htrRoomPrice,
-			c.htrStay,
-			c.bedoption,
-			c.aircondNy,
-			c.bathNy,
-			c.tvNy,
-			c.wifiNy,   
-			c.coffeeNy,
-			c.hotel_seq
+			a.htRegDate,
+			a.htReviseDate,
+			a.htNotice,
+			a.htMap,
+			a.htInclusionItems,
+			a.htNameSearch,
+			a.htPriceSearch,
+			a.htStarSearch,
+			a.htClassSearch,
+			a.htRestaurantNy,
+			a.htSpaNy,
+			a.htFitnessCenterNy,
+			a.htPoolNy,
+			a.htloungeNy,
+			a.htStockRoomNy,
+			a.htParkingNy,
+			a.htShuttleBusNy,
+			a.htBreakfastNy,
+			a.htRoomServiceNy,
+			a.htElseNy,
+			b.htrseq,
+			b.htrRoomName,
+			b.htrRoomPrice,
+			b.htrStay,
+			b.bedoption,
+			b.aircondNy,
+			b.bathNy,
+			b.tvNy,
+			b.wifiNy,   
+			b.coffeeNy,
+			b.hotel_seq,
+		    c.minPrice
 		<include refid="selectCommon"/>
 		order by
 			a.htseq desc
@@ -232,7 +258,7 @@
 		    htNotice = #{htNotice},
 		    htMap = #{htMap},
 		    htInclusionItems = #{htInclusionItems},
-		    htNameSearch = #{htNameSearch},
+		    htNameSearch = #{htNameSearch},	
 		    htPriceSearch = #{htPriceSearch},
 		    htStarSearch = #{htStarSearch},
 		    htClassSearch = #{htClassSearch},

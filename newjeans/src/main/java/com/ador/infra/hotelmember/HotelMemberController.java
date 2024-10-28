@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.ador.common.constants.Constants;
 import com.ador.common.util.UtilDateTime;
+import com.ador.infra.mail.MailService;
 
 import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpSession;
@@ -22,7 +23,10 @@ public class HotelMemberController {
 	
 	@Autowired
 	HotelMemberService hotelMemberService;
-    
+	
+	@Autowired
+	MailService mailService;
+	
 	// selectList
 	@RequestMapping(value="/xdm/v1/infra/hotelmember/hotelMemberXdmList")
 	public String hotelMemberXdmList(@ModelAttribute("vo") HotelMemberVo hotelMemberVo, Model model) {
@@ -54,6 +58,17 @@ public class HotelMemberController {
 	// insert
 	@RequestMapping(value="/xdm/v1/infra/hotelmember/hotelMemberXdmInst")
 	public String hotelMemberXdmInst(HotelMemberDto hotelMemberDto) {
+		
+		// mailService.sendMailSimple();
+		
+		Thread thread = new Thread(new Runnable() {
+			@Override
+			public void run() {
+				mailService.sendMailSimple();
+			}
+		});
+		
+		thread.start();
 		
 		hotelMemberService.memberInsert(hotelMemberDto);
 		return "redirect:/xdm/v1/infra/hotelmember/hotelMemberXdmList";
