@@ -12,8 +12,8 @@ public class HotelRoomService {
 	HotelRoomDao hotelRoomDao;
 	
 	// selectList
-	public List<HotelRoomDto> selectRoomList() {
-		return hotelRoomDao.selectRoomList();
+	public List<HotelRoomDto> selectRoomList(HotelRoomVo hotelRoomVo) {
+		return hotelRoomDao.selectRoomList(hotelRoomVo);
 	}
 	
 	// insert
@@ -29,6 +29,11 @@ public class HotelRoomService {
 	// update
 	public int selectRoomUpdate(HotelRoomDto hotelRoomDto) {
 		return hotelRoomDao.selectRoomUpdate(hotelRoomDto);
+	}
+	
+	// paging
+	public int selectOneCount(HotelRoomVo hotelRoomVo) {
+		return hotelRoomDao.selectOneCount(hotelRoomVo);
 	}
 
 }

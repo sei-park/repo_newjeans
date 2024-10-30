@@ -37,10 +37,6 @@
 	margin-left: -20px;
 }
 
-.pagination {
-	padding-left: 35%;
-}
-
 .title th {
 	font-weight: bold;
 	text-align: center;
@@ -939,9 +935,9 @@
 							<div class="card">
 								<div class="card-body">
 									<form name="form" method="post"
-										action="/xdm/v1/infra/hotelmember/hotelMemberXdmList">
-										<!--                                    <input type="hidden" name="thisPage" th:value="${vo.thisPage}" default="1"/> -->
-										<!-- 								   <input type="hidden" id="rowNumToShow" name="rowNumToShow" th:value="${vo.rowNumToShow}"/> -->
+										action="/xdm/v1/infra/hotelRoom/hotelRoomList">
+										 <input type="hidden" name="thisPage" th:value="${vo.thisPage}" default="1"/>
+										 <input type="hidden" id="rowNumToShow" name="rowNumToShow" th:value="${vo.rowNumToShow}"/>
 										<div class="row">
 											<div>
 												<!--  class="col-md-10" -->
@@ -949,25 +945,25 @@
 													<!--input 추가-->
 													<div class="row mb-3 align-items-center">
 														<div class="mb-2">
-															<!-- <h6>page1 > page2 > Default</h6> -->
 															<h1>HotelRoom</h1>
 														</div>
 														<div class="col-md-2">
 															<select class="form-select"
-																aria-label="Default select example" name="shDelNy">
-																<option value="">탈퇴여부</option>
-																<option value="0">N</option>
-																<option value="1">Y</option>
+																aria-label="Default select example" name="shOption">
+																<option value="" th:selected="${vo.shOption == null}">검색구분</option>
+																<option value="1" th:selected="${vo.shOption == 1}">객실번호</option>
+																<option value="2" th:selected="${vo.shOption == 2}">호텔번호</option>
+																<option value="3" th:selected="${vo.shOption == 3}">호텔이름</option>
+																<option value="4" th:selected="${vo.shOption == 4}">객실</option>
 															</select>
 														</div>
 														<div class="col-md-2">
-															<select class="form-select"
-																aria-label="Default select example"
-																name="shRegAgreeContent">
-																<option value="">약관동의여부</option>
-																<option value="0">N</option>
-																<option value="1">Y</option>
-															</select>
+															<div class="input-group flex-nowrap ">
+																<input type="text" class="form-control"
+																	placeholder="검색어" aria-label="Username"
+																	aria-describedby="addon-wrapping" name="shValue"
+																	onkeyup="enterkey()" th:value="${vo.shValue}">
+															</div>
 														</div>
 														<div class="col-md-2">
 															<select class="form-select"
@@ -998,25 +994,55 @@
 													<div class="row mb-3 align-items-center">
 														<div class="col-md-2">
 															<select class="form-select"
-																aria-label="Default select example" name="shOption">
-																<option value="">검색구분</option>
-																<option value="1">회원번호</option>
-																<option value="2">이름</option>
-																<option value="3">성별</option>
-																<option value="4">등급</option>
-																<option value="5">이메일</option>
-																<option value="6">휴대폰번호</option>
-																<option value="7">아이디</option>
+																aria-label="Default select example" name="shDelNy">
+																<option value="">삭제여부</option>
+																<option value="0">N</option>
+																<option value="1">Y</option>
 															</select>
 														</div>
 														<div class="col-md-2">
-															<div class="input-group flex-nowrap ">
-																<input type="text" class="form-control"
-																	placeholder="검색어" aria-label="Username"
-																	aria-describedby="addon-wrapping" name="shValue"
-																	onkeyup="enterkey()">
-															</div>
+															<select class="form-select"
+																aria-label="Default select example" name="shaircondNy">
+																<option value="">에어컨여부</option>
+																<option value="0">N</option>
+																<option value="1">Y</option>
+															</select>
 														</div>
+														<div class="col-md-2">
+															<select class="form-select"
+																aria-label="Default select example" name="shbathNy">
+																<option value="">욕실여부</option>
+																<option value="0">N</option>
+																<option value="1">Y</option>
+															</select>
+														</div>
+														<div class="col-md-2">
+															<select class="form-select"
+																aria-label="Default select example" name="shtvNy">
+																<option value="">TV여부</option>
+																<option value="0">N</option>
+																<option value="1">Y</option>
+															</select>
+														</div>
+														<div class="col-md-2">
+															<select class="form-select"
+																aria-label="Default select example" name="shwifiNy">
+																<option value="">와이파이여부</option>
+																<option value="0">N</option>
+																<option value="1">Y</option>
+															</select>
+														</div>
+														<div class="col-md-2">
+															<select class="form-select"
+																aria-label="Default select example" name="shcoffeeNy">
+																<option value="">커피머신여부</option>
+																<option value="0">N</option>
+																<option value="1">Y</option>
+															</select>
+														</div>
+													</div>
+
+													<div class="row mb-3 align-items-center">
 														<div class="col-md-2" align="left">
 															<!-- 검색버튼 -->
 															<button type="submit" class="btn btn-outline-dark">
@@ -1032,7 +1058,8 @@
 												</div>
 												<div class="row mb-3">
 													<div class="col-md-2" style="padding-top: 10px;">
-														<h5 class="card-title"></h5>
+														<h5 class="card-title"
+															th:text="'Total : ' +${vo.totalRows}"></h5>
 													</div>
 
 													<div class="col-md-8"></div>
@@ -1087,7 +1114,8 @@
 																<p>There are no data!</p>
 															</td>
 														</tr>
-														<tr th:if="${!#lists.isEmpty(hotelRoomList)}" th:each="list : ${hotelRoomList}" class="contentList">
+														<tr th:if="${!#lists.isEmpty(hotelRoomList)}"
+															th:each="list : ${hotelRoomList}" class="contentList">
 															<th scope="row">
 																<div class="form-check font-size-16">
 																	<input type="checkbox" class="form-check-input"
@@ -1098,31 +1126,24 @@
 															<td></td>
 															<td th:text="${list.htrseq}"></td>
 															<td th:text="${list.htseq}"></td>
-															<td>
-									                      	<a th:href="@{/xdm/v1/infra/hotelRoom/hotelRoomMForm(htrseq=${list.htrseq})}"
-														  	 th:text="${list.htName}">
-														   	</a>
-														    </td>
-														    <td th:text="${list.htrRoomName}"></td>
+															<td><a
+																th:href="@{/xdm/v1/infra/hotelRoom/hotelRoomMForm(htrseq=${list.htrseq})}"
+																th:text="${list.htName}"> </a></td>
+															<td th:text="${list.htrRoomName}"></td>
 															<td th:text="${list.htrRoomPrice}"></td>
-															<td th:if="${list.bedoption eq 1}">킹사이즈 침대 1개</td>
-															<td th:if="${list.bedoption eq 2}">킹사이즈 침대 2개</td>
-															<td th:if="${list.bedoption eq 3}">더블사이즈 침대 1개</td>
-															<td th:if="${list.bedoption eq 4}">더블사이즈 침대 2개</td>
-															<td th:if="${list.bedoption eq 5}">싱글사이즈 침대 1개</td>
-															<td th:if="${list.bedoption eq 6}">싱글사이즈 침대 2개</td>
-															<td th:if="${list.aircondNy eq 0}" class="codeUse">N</td> 
+															<td th:text="${list.bedoption}"></td>
+															<td th:if="${list.aircondNy eq 0}" class="codeUse">N</td>
 															<td th:unless="${list.aircondNy eq 0}" class="codeUse">Y</td>
-															<td th:if="${list.bathNy eq 0}" class="codeUse">N</td> 
+															<td th:if="${list.bathNy eq 0}" class="codeUse">N</td>
 															<td th:unless="${list.bathNy eq 0}" class="codeUse">Y</td>
-															<td th:if="${list.tvNy eq 0}" class="codeUse">N</td> 
+															<td th:if="${list.tvNy eq 0}" class="codeUse">N</td>
 															<td th:unless="${list.tvNy eq 0}" class="codeUse">Y</td>
-															<td th:if="${list.wifiNy eq 0}" class="codeUse">N</td> 
+															<td th:if="${list.wifiNy eq 0}" class="codeUse">N</td>
 															<td th:unless="${list.wifiNy eq 0}" class="codeUse">Y</td>
-															<td th:if="${list.coffeeNy eq 0}" class="codeUse">N</td> 
+															<td th:if="${list.coffeeNy eq 0}" class="codeUse">N</td>
 															<td th:unless="${list.coffeeNy eq 0}" class="codeUse">Y</td>
-															<td th:if="${list.htrDelNy eq 0}" class="codeUse">N</td> 
-															<td th:unless="${list.htrDelNy eq 0}" class="codeUse">Y</td>         
+															<td th:if="${list.htrDelNy eq 0}" class="codeUse">N</td>
+															<td th:unless="${list.htrDelNy eq 0}" class="codeUse">Y</td>
 														</tr>
 														<!-- end tr -->
 													</tbody>
@@ -1135,34 +1156,24 @@
 										<!-- end row -->
 
 										<div class="row g-0 text-center text-sm-start">
-											<!--g-0-->
-<!-- 											<div class="gy-3 col-12 pagecol"> -->
-<!-- 												col-sm-6 -->
-<!-- 												<ul class="pagination pagination-rounded"> -->
-<!-- 													<li class="page-item" -->
-<!-- 														th:if="${vo.startPage gt vo.pageNumToShow}" -->
-<!-- 														style="cursor: pointer;"><a class="page-link" -->
-<!-- 														href="javascript:goList(${vo.startPage - 1})" -->
-<!-- 														th:attr="onclick=|goList('${vo.startPage - 1}')|"> <i -->
-<!-- 															class="mdi mdi-chevron-left"></i> -->
-<!-- 													</a></li> -->
-<!-- 													<li class="page-item" -->
-<!-- 														th:each="num: ${#numbers.sequence(vo.startPage, vo.endPage)}" -->
-<!-- 														th:classappend="${num eq vo.thisPage} ? active : ''" -->
-<!-- 														style="cursor: pointer;"><a class="page-link" -->
-<!-- 														th:attr="onclick=|goList('${num}')|" th:text="${num}"></a> -->
-<!-- 													</li> -->
-<!-- 													<li class="page-item" -->
-<!-- 														th:if="${vo.endPage ne vo.totalPages}"><a -->
-<!-- 														class="page-link" -->
-<!-- 														th:attr="onclick=|goList('${vo.endPage + 1}')|"> <i -->
-<!-- 															class="mdi mdi-chevron-right"></i> -->
-<!-- 													</a></li> -->
-<!-- 												</ul> -->
-<!-- 												end ul -->
-<!-- 											</div> -->
-											<!-- end col -->
-
+											<div class="gy-3 col-12 pagecol text-center">
+												<ul class="pagination pagination-rounded d-inline-flex">
+													<li class="page-item" th:if="${vo.startPage gt vo.pageNumToShow}" style="cursor: pointer;">
+														<a class="page-link" href="javascript:goList(${vo.startPage - 1})" th:attr="onclick=|goList('${vo.startPage - 1}')|">
+															<i class="mdi mdi-chevron-left"></i>
+            											</a>
+        											</li>
+        											<li class="page-item" th:each="num: ${#numbers.sequence(vo.startPage, vo.endPage)}" th:classappend="${num eq vo.thisPage} ? active : ''" style="cursor: pointer;">
+            											<a class="page-link" th:attr="onclick=|goList('${num}')|" th:text="${num}"></a>
+        											</li>
+											        <li class="page-item" th:if="${vo.endPage ne vo.totalPages}">
+											            <a class="page-link" th:attr="onclick=|goList('${vo.endPage + 1}')|">
+											                <i class="mdi mdi-chevron-right"></i>
+											            </a>
+											        </li>
+											    </ul>
+											</div>
+										
 											<!-- 하단 버튼 -->
 											<div class="col-md-1 bottom-button">
 												<button type="button" class="btn btn-danger">
@@ -1418,18 +1429,18 @@
 			});
 		});
 
-		// paging 
-		//  	goList = function (thisPage) {
-		// 		    document.querySelector("input[name=thisPage]").value = thisPage;
-		// 		    form.action = "/xdm/v1/infra/hotelmember/hotelMemberXdmList";
-		// 		    form.submit();
-		// 		}
+		//paging 
+		 	goList = function (thisPage) {
+				    document.querySelector("input[name=thisPage]").value = thisPage;
+				    form.action = "/xdm/v1/infra/hotelRoom/hotelRoomList";
+				    form.submit();
+				}
 
-		//  	goList = function (thisPage) {
-		//  	    document.querySelector("input[name=thisPage]").value = thisPage;
-		//  	    document.querySelector("form[name=form]").action = "/xdm/v1/infra/hotelmember/hotelMemberXdmList";
-		//  	    document.querySelector("form[name=form]").submit();
-		//  	}
+		 	goList = function (thisPage) {
+		 	    document.querySelector("input[name=thisPage]").value = thisPage;
+		 	    document.querySelector("form[name=form]").action = "/xdm/v1/infra/hotelRoom/hotelRoomList";
+		 	    document.querySelector("form[name=form]").submit();
+		 	}
 	</script>
 
 

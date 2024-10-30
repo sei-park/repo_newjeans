@@ -3,9 +3,35 @@
 
 <mapper namespace="com.ador.infra.hotelRoom.HotelRoomDao">
 
-	<resultMap type="com.ador.infra.hotelRoom.HotelRoomDto" id="resultMapObj"></resultMap>
+	<resultMap type="com.ador.infra.hotelRoom.HotelRoomDto" id="resultMapObj"></resultMap> 
 	
-	<select id="selectRoomList" resultMap="resultMapObj">
+	<sql id="selectCommon">
+		from hotelroom a
+		left join hotel b on a.hotel_seq = b.htseq
+		where 1=1
+			<if test="shDelNy != null and !shDelNy.equals('')">AND htrDelNy = #{shDelNy}</if> <!-- 삭제 여부 -->
+			<if test="shaircondNy != null and !shaircondNy.equals('')">AND aircondNy = #{shaircondNy}</if> <!-- 에어컨 -->
+			<if test="shbathNy != null and !shbathNy.equals('')">AND bathNy = #{shbathNy}</if> <!-- 욕실 -->
+			<if test="shtvNy != null and !shtvNy.equals('')">AND tvNy = #{shtvNy}</if> <!-- TV -->
+			<if test="shwifiNy != null and !shwifiNy.equals('')">AND wifiNy = #{shwifiNy}</if> <!-- 와이파이 -->
+			<if test="shcoffeeNy != null and !shcoffeeNy.equals('')">AND coffeeNy = #{shcoffeeNy}</if> <!-- 커피머신 --> 
+			
+			<!-- 검색 구분 -->
+			<choose> 
+				<when test="shOption == 1">AND htrseq = #{shValue}</when>
+				<when test="shOption == 2">AND htseq = #{shValue}</when>
+				<when test="shOption == 3">AND htName LIKE CONCAT('%',#{shValue},'%')</when>
+				<when test="shOption == 4">AND htrRoomName LIKE CONCAT('%',#{shValue},'%')</when>
+			</choose> 
+	</sql>
+	
+	<select id="selectOneCount">
+		SELECT COUNT(*)
+		<include refid="selectCommon"/>	
+	</select>
+	
+	<select id="selectRoomList" resultMap="resultMapObj"> 
+		select aa.* from (
 		select
 			a.htrseq,
 			a.htrRoomName,
@@ -24,10 +50,11 @@
 		    b.htAddress,
 		    b.htStarSearch,
 		    b.htNotice
-		from hotelroom a
-		left join hotel b on a.hotel_seq = b.htseq
+		<include refid="selectCommon"/>
 		order by 
 			a.htrseq desc
+		) aa
+		limit #{rowNumToShow} offset #{startRnumForMysql}
 	</select>
 	
 	<insert id="selectRoomInsert">

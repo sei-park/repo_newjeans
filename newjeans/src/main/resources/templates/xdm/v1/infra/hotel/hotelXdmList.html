@@ -31,10 +31,6 @@
         margin-left: -20px;
     } 
 
-    .pagination {
-        padding-left: 35%;
-    }
-      
     .title th {
     	font-weight: bold;
     	text-align: center;
@@ -975,14 +971,6 @@
                                                         </div>
                                                         <div class="col-md-2">
                                                             <select class="form-select"
-                                                                aria-label="Default select example" name="shDelNy">
-                                                                <option value=""  th:selected="${vo.shDelNy == null}">삭제여부</option>
-                                                                <option value="0" th:selected="${vo.shDelNy == 0}">N</option>
-																<option value="1" th:selected="${vo.shDelNy == 1}">Y</option>
-                                                            </select>
-                                                        </div>
-                                                        <div class="col-md-2">
-                                                            <select class="form-select"
                                                                 aria-label="Default select example" name="shOptionDate" id="shOptionDate">
                                                                 <option value="" th:selected="${vo.shOptionDate == null}">선택하세요</option>
                                                                 <option value="1" th:selected="${vo.shOptionDate == 1}">등록일</option>
@@ -1023,15 +1011,12 @@
                                                     </div>
 
                                                     <div class="row mb-3 align-items-center">
-                                                        <div class="col-md-2">
+                                                    	 <div class="col-md-2">
                                                             <select class="form-select"
-                                                                aria-label="Default select example" name="shStar">
-                                                                <option value="" th:selected="${vo.shStar == null}">별점</option>
-                                                                <option value="5" th:selected="${vo.shStar == 5}">5점</option>
-                                                                <option value="4" th:selected="${vo.shStar == 4}">4점</option>
-                                                                <option value="3" th:selected="${vo.shStar == 3}">3점</option>
-                                                                <option value="2" th:selected="${vo.shStar == 2}">2점</option>
-                                                                <option value="1" th:selected="${vo.shStar == 1}">1점</option>
+                                                                aria-label="Default select example" name="shDelNy">
+                                                                <option value=""  th:selected="${vo.shDelNy == null}">삭제여부</option>
+                                                                <option value="0" th:selected="${vo.shDelNy == 0}">N</option>
+																<option value="1" th:selected="${vo.shDelNy == 1}">Y</option>
                                                             </select>
                                                         </div>
                                                         <div class="col-md-2">
@@ -1066,7 +1051,10 @@
 																<option value="1" th:selected="${vo.shPool == 1}">Y</option>
                                                             </select>
                                                         </div>
-                                                         <div class="col-md-2">
+                                                    </div>
+                                                    
+                                                    <div class="row mb-3 align-items-center">
+                                                    	 <div class="col-md-2">
                                                             <select class="form-select"
                                                                 aria-label="Default select example" name="shlo	unge">
                                                                 <option value="" th:selected="${vo.shlounge == null}">라운지</option>
@@ -1074,10 +1062,6 @@
                                                                 <option value="1" th:selected="${vo.shlounge == 1}">Y</option>
                                                             </select>
                                                         </div>
-                                                 
-                                                    </div>
-                                                    
-                                                    <div class="row mb-3 align-items-center">
                                                          <div class="col-md-2">
                                                             <select class="form-select"
                                                                 aria-label="Default select example" name="shStockRoom">
@@ -1121,12 +1105,15 @@
                                                                 <option value="1" th:selected="${vo.shRoomService == 1}">Y</option>
                                                             </select>
                                                         </div>
-                                                         <div class="col-md-2">
+                                                        <div class="col-md-2">
                                                             <select class="form-select"
-                                                                aria-label="Default select example" name="shElse">
-                                                                <option value="" th:selected="${vo.shElse == null}">기타</option>
-                                                                <option value="0" th:selected="${vo.shElse == 0}">N</option>
-                                                                <option value="1" th:selected="${vo.shElse == 1}">Y</option>
+                                                                aria-label="Default select example" name="shStar">
+                                                                <option value="" th:selected="${vo.shStar == null}">별점</option>
+                                                                <option value="5" th:selected="${vo.shStar == 5}">5점</option>
+                                                                <option value="4" th:selected="${vo.shStar == 4}">4점</option>
+                                                                <option value="3" th:selected="${vo.shStar == 3}">3점</option>
+                                                                <option value="2" th:selected="${vo.shStar == 2}">2점</option>
+                                                                <option value="1" th:selected="${vo.shStar == 1}">1점</option>
                                                             </select>
                                                         </div>
                                                         <div class="col-md-2" align="left">  
@@ -1223,24 +1210,23 @@
                                     </div><!-- end row -->
 
                                     <div class="row g-0 text-center text-sm-start"><!--g-0-->
-                                        <div class="gy-3 col-12 pagecol"><!--col-sm-6-->
-                                            <ul class="pagination pagination-rounded">
-                                                	<li class="page-item" th:if="${vo.startPage gt vo.pageNumToShow}" style="cursor: pointer;">
+                                		<div class="gy-3 col-12 pagecol text-center">
+												<ul class="pagination pagination-rounded d-inline-flex">
+													<li class="page-item" th:if="${vo.startPage gt vo.pageNumToShow}" style="cursor: pointer;">
 														<a class="page-link" href="javascript:goList(${vo.startPage - 1})" th:attr="onclick=|goList('${vo.startPage - 1}')|">
-														<i class="mdi mdi-chevron-left"></i>
-														</a>
-													</li>
-													<li class="page-item" th:each="num: ${#numbers.sequence(vo.startPage, vo.endPage)}" th:classappend="${num eq vo.thisPage} ? active : ''" 
-													style="cursor: pointer;">
-														<a class="page-link" th:attr="onclick=|goList('${num}')|" th:text="${num}"></a>
-													</li>
-													<li class="page-item" th:if="${vo.endPage ne vo.totalPages}">
-														<a class="page-link" th:attr="onclick=|goList('${vo.endPage + 1}')|">
-														  <i class="mdi mdi-chevron-right"></i>
-														</a>
-													</li>
-                                            </ul><!-- end ul -->
-                                        </div><!-- end col -->
+															<i class="mdi mdi-chevron-left"></i>
+            											</a>
+        											</li>
+        											<li class="page-item" th:each="num: ${#numbers.sequence(vo.startPage, vo.endPage)}" th:classappend="${num eq vo.thisPage} ? active : ''" style="cursor: pointer;">
+            											<a class="page-link" th:attr="onclick=|goList('${num}')|" th:text="${num}"></a>
+        											</li>
+											        <li class="page-item" th:if="${vo.endPage ne vo.totalPages}">
+											            <a class="page-link" th:attr="onclick=|goList('${vo.endPage + 1}')|">
+											                <i class="mdi mdi-chevron-right"></i>
+											            </a>
+											        </li>
+											    </ul>
+											</div>
 
                                         <!-- 하단 버튼 -->
                                         <div class="col-md-1 bottom-button">

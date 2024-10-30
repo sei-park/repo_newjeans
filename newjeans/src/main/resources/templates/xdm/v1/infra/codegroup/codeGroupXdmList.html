@@ -33,10 +33,6 @@
 	margin-left: -20px;
 }
 
-.pagination {
-	padding-left: 35%;
-}
-
 .modal {
 	transform: translateY(-500px);
 }
@@ -1154,27 +1150,23 @@
 										<!-- end row -->
  										<!-- 페이징 -->
 										<div class="row g-0 text-center text-sm-start">
-											<div class="gy-3 col-12 pagecol">
-												<!--col-sm-6-->
-												<ul class="pagination pagination-rounded">
+											<div class="gy-3 col-12 pagecol text-center">
+												<ul class="pagination pagination-rounded d-inline-flex">
 													<li class="page-item" th:if="${vo.startPage gt vo.pageNumToShow}" style="cursor: pointer;">
 														<a class="page-link" href="javascript:goList(${vo.startPage - 1})" th:attr="onclick=|goList('${vo.startPage - 1}')|">
-														<i class="mdi mdi-chevron-left"></i>
-														</a>
-													</li>
-													<li class="page-item" th:each="num: ${#numbers.sequence(vo.startPage, vo.endPage)}" th:classappend="${num eq vo.thisPage} ? active : ''" 
-													style="cursor: pointer;">
-														<a class="page-link" th:attr="onclick=|goList('${num}')|" th:text="${num}"></a>
-													</li>
-													<li class="page-item" th:if="${vo.endPage ne vo.totalPages}">
-														<a class="page-link" th:attr="onclick=|goList('${vo.endPage + 1}')|">
-														  <i class="mdi mdi-chevron-right"></i>
-														</a>
-													</li>
-												</ul>
-												<!-- end ul -->
+															<i class="mdi mdi-chevron-left"></i>
+            											</a>
+        											</li>
+        											<li class="page-item" th:each="num: ${#numbers.sequence(vo.startPage, vo.endPage)}" th:classappend="${num eq vo.thisPage} ? active : ''" style="cursor: pointer;">
+            											<a class="page-link" th:attr="onclick=|goList('${num}')|" th:text="${num}"></a>
+        											</li>
+											        <li class="page-item" th:if="${vo.endPage ne vo.totalPages}">
+											            <a class="page-link" th:attr="onclick=|goList('${vo.endPage + 1}')|">
+											                <i class="mdi mdi-chevron-right"></i>
+											            </a>
+											        </li>
+											    </ul>
 											</div>
-											<!-- end col -->
 
 											<!-- 하단 버튼 -->
 											<div class="col-md-1 bottom-button">

@@ -142,7 +142,8 @@
 	   WHERE 1=1
 	   		<!-- htmId, htmPassword를 입력받아서 위에 select 값을 가져옴 -->
 			AND a.htmId = #{htmId}  
-			AND a.htmPassword = #{htmPassword}
+			<!-- AND a.htmPassword = #{htmPassword} 
+			 : 암호화가 되기 전의 비밀번호를 가져오기 때문에 비밀번호가 암호화 된 이후에는 비교했을 때 맞지 않음 --> 
 	</select>
 	
 	<!-- update -->

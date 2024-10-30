@@ -6,7 +6,7 @@ public class HotelRoomDto {
 	private String htrRoomName;
 	private String htrRoomPrice;
 	private String htrStay;
-    private Integer bedoption;
+    private String bedoption;
     private Integer aircondNy;
     private Integer bathNy;
     private Integer tvNy;
@@ -43,10 +43,10 @@ public class HotelRoomDto {
 	public void setHtrStay(String htrStay) {
 		this.htrStay = htrStay;
 	}
-	public Integer getBedoption() {
+	public String getBedoption() {
 		return bedoption;
 	}
-	public void setBedoption(Integer bedoption) {
+	public void setBedoption(String bedoption) {
 		this.bedoption = bedoption;
 	}
 	public Integer getAircondNy() {

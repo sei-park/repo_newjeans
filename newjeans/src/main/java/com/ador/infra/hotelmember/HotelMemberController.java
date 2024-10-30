@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -26,6 +27,18 @@ public class HotelMemberController {
 	
 	@Autowired
 	MailService mailService;
+	
+	// 암호화
+	public String encodeBcrypt(String planeText, int strength) {
+		return new BCryptPasswordEncoder(strength).encode(planeText);     
+	}
+
+	public boolean matchesBcrypt(String planeText, String hashValue, int strength) {
+		BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder(strength);
+		return passwordEncoder.matches(planeText, hashValue);
+	}
+	
+	/////////////////////////////////////////////////////////////////////////////////
 	
 	// selectList
 	@RequestMapping(value="/xdm/v1/infra/hotelmember/hotelMemberXdmList")
@@ -59,16 +72,20 @@ public class HotelMemberController {
 	@RequestMapping(value="/xdm/v1/infra/hotelmember/hotelMemberXdmInst")
 	public String hotelMemberXdmInst(HotelMemberDto hotelMemberDto) {
 		
-		// mailService.sendMailSimple();
-		
+		// 메일보내기(insert를 할 때마다 메일을 보냄)
+		// mailService.sendMailSimple(); -> 속도가 느림
+		// Thread를 사용하면 속도가 빠름
 		Thread thread = new Thread(new Runnable() {
 			@Override
 			public void run() {
 				mailService.sendMailSimple();
 			}
 		});
-		
+		 
 		thread.start();
+		 
+		// 암호화
+		hotelMemberDto.setHtmPassword(encodeBcrypt(hotelMemberDto.getHtmPassword(), 10));
 		
 		hotelMemberService.memberInsert(hotelMemberDto);
 		return "redirect:/xdm/v1/infra/hotelmember/hotelMemberXdmList";
@@ -123,10 +140,15 @@ public class HotelMemberController {
 		// 데이터가 있는지 확인하기 위해서는 객체 자체를 사용해야 함 
 		// 객체가 비어 있다고 가정했을 때 rtMember.getHtmId() 사용 불가
 		// 객체 내에 있는 함수를 사용하는 것이 아니라 객체 자체를 사용해야 함 
-		HotelMemberDto rtMember = hotelMemberService.selectOneLogin(hotelMemberDto); // 로그인 정보를 가져옴 
+		HotelMemberDto rtMember = hotelMemberService.selectOneLogin(hotelMemberDto); // 로그인 정보를 가져옴
+		
+		System.out.println("로그인 정보 가져옴");
 		 	
 		if(rtMember != null) { // 로그인 정보가 있을 때 
 			HotelMemberDto rtMemberSession = hotelMemberService.selectOneLogin(hotelMemberDto); // 세션을 생성
+			
+		  if(matchesBcrypt(hotelMemberDto.getHtmPassword(), rtMember.getHtmPassword(), 10)) { // 암호화
+			  
 			if(rtMemberSession != null) { // 세션 정보가 있을 때 
 				httpSession.setMaxInactiveInterval(60 * Constants.SESSION_MINUTE_XDM); // 60second * 30 = 30minute
 				httpSession.setAttribute("sessSeqXdm", rtMemberSession.getHtmSeq()); // seq 정보를 가져옴 
@@ -144,13 +166,16 @@ public class HotelMemberController {
 				System.out.println("sessEmailXdm: " + httpSession.getAttribute("sessEmailXdm")); 
 				
 				System.out.println("세션 유효 시간 " + httpSession.getMaxInactiveInterval() + "초");
-				
 			}
-		} else {
+			
+		 } // matchesBcrypt end
+			
+	  } else {
+		  	System.out.println("로그인 실패");
 			returnMap.put("rt", "fail"); // 로그인 실패 
-		}
+    }
 		return returnMap;   
- 	} 
+ } // end
 	
 	// mainpage 
 	@RequestMapping(value="/xdm/v1/infra/hotelmember/mainPage")

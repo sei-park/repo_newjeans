@@ -135,8 +135,7 @@
 			b.tvNy,
 			b.wifiNy,   
 			b.coffeeNy,
-			b.hotel_seq,
-		    c.minPrice
+			b.hotel_seq
 		<include refid="selectCommon"/>
 		order by
 			a.htseq desc

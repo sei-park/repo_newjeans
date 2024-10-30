@@ -1,17 +1,18 @@
-package com.ador.infra.hotelmember;
+package com.ador.infra.hotelRoom;
 
 import com.ador.common.constants.Constants;
 
-public class HotelMemberVo {
+public class HotelRoomVo {
 	
 	// search
 	private Integer shDelNy;
+	private Integer shaircondNy;
+	private Integer shbathNy;
+	private Integer shtvNy;
+	private Integer shwifiNy;
+	private Integer shcoffeeNy;
 	private Integer shOption;
 	private String shValue;
-	private String shDateStart;
-	private String shDateEnd;
-	private Integer shOptionDate;
-	private Integer shRegAgreeContent;
 	
 	// paging 
 	private int thisPage = 1;									// 현재 페이지
@@ -21,7 +22,7 @@ public class HotelMemberVo {
 	private int totalRows;										// 전체 데이터 갯수
 	private int totalPages;										// 전체 페이지 번호
 	private int startPage;										// 시작 페이지 번호
-	private int endPage;										// 마지막 페이지 번호
+    private int endPage;										// 마지막 페이지 번호
 
 	private int startRnumForMysql = 0;							// 쿼리 시작 row
 	//--
@@ -30,6 +31,36 @@ public class HotelMemberVo {
 	}
 	public void setShDelNy(Integer shDelNy) {
 		this.shDelNy = shDelNy;
+	}
+	public Integer getShaircondNy() {
+		return shaircondNy;
+	}
+	public void setShaircondNy(Integer shaircondNy) {
+		this.shaircondNy = shaircondNy;
+	}
+	public Integer getShbathNy() {
+		return shbathNy;
+	}
+	public void setShbathNy(Integer shbathNy) {
+		this.shbathNy = shbathNy;
+	}
+	public Integer getShtvNy() {
+		return shtvNy;
+	}
+	public void setShtvNy(Integer shtvNy) {
+		this.shtvNy = shtvNy;
+	}
+	public Integer getShwifiNy() {
+		return shwifiNy;
+	}
+	public void setShwifiNy(Integer shwifiNy) {
+		this.shwifiNy = shwifiNy;
+	}
+	public Integer getShcoffeeNy() {
+		return shcoffeeNy;
+	}
+	public void setShcoffeeNy(Integer shcoffeeNy) {
+		this.shcoffeeNy = shcoffeeNy;
 	}
 	public Integer getShOption() {
 		return shOption;
@@ -42,24 +73,6 @@ public class HotelMemberVo {
 	}
 	public void setShValue(String shValue) {
 		this.shValue = shValue;
-	}
-	public String getShDateStart() {
-		return shDateStart;
-	}
-	public void setShDateStart(String shDateStart) {
-		this.shDateStart = shDateStart;
-	}
-	public String getShDateEnd() {
-		return shDateEnd;
-	}
-	public void setShDateEnd(String shDateEnd) {
-		this.shDateEnd = shDateEnd;
-	}
-	public Integer getShOptionDate() {
-		return shOptionDate;
-	}
-	public void setShOptionDate(Integer shOptionDate) {
-		this.shOptionDate = shOptionDate;
 	}
 	public int getThisPage() {
 		return thisPage;
@@ -109,18 +122,10 @@ public class HotelMemberVo {
 	public void setStartRnumForMysql(int startRnumForMysql) {
 		this.startRnumForMysql = startRnumForMysql;
 	}
-	public Integer getShRegAgreeContent() {
-		return shRegAgreeContent;
-	}
-	public void setShRegAgreeContent(Integer shRegAgreeContent) {
-		this.shRegAgreeContent = shRegAgreeContent;
-	}
+	
+	/////////////////////////////////////////////////////////////////////
 	
 	
-	/////////////////////////////////////////////////
-	
-
-
 	public void setParamsPaging(int totalRows) {
 
 		setTotalRows(totalRows);
@@ -155,21 +160,8 @@ public class HotelMemberVo {
 			setStartRnumForMysql((getRowNumToShow() * (getThisPage()-1))); 
 			// (쿼리 시작 row) = (화면에 보여줄  데이터 개수) * (현재 페이지) - 1
 		}
-		
-		// 출력 
-		System.out.println("thispage : " +  getThisPage());
-		System.out.println("rowNumToShow : " + getRowNumToShow());
-		System.out.println("pageNumToShow : " + getPageNumToShow());
-		System.out.println("totalRows : " + getTotalRows());
-		System.out.println("totalPages : " + getTotalPages());
-		System.out.println("startPage : " + getStartPage());
-		System.out.println("endPage : " + getEndPage());
-		System.out.println("startRnumForMysql : " + getStartRnumForMysql());
 	
 	}
-	
-	
-	
 	
 	
 	

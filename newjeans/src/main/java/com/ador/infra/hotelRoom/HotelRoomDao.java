@@ -8,7 +8,7 @@ import org.springframework.stereotype.Repository;
 public interface HotelRoomDao {
 	
 	// selectList
-	public List<HotelRoomDto> selectRoomList();
+	public List<HotelRoomDto> selectRoomList(HotelRoomVo hotelRoomVo);
 	
 	// insert
 	public int selectRoomInsert(HotelRoomDto hotelRoomDto);
@@ -18,4 +18,8 @@ public interface HotelRoomDao {
 	
 	// update
 	public int selectRoomUpdate(HotelRoomDto hotelRoomDto);
+	
+	// paging
+	public int selectOneCount(HotelRoomVo hotelRoomVo);
+
 }

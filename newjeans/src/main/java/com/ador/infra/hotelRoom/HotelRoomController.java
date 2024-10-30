@@ -3,6 +3,7 @@ package com.ador.infra.hotelRoom;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.ador.infra.hotel.HotelDto;
@@ -15,9 +16,14 @@ public class HotelRoomController {
 	
 	// selectList
 	@RequestMapping(value="/xdm/v1/infra/hotelRoom/hotelRoomList")
-	public String hotelRoomList(Model model) { 
+	public String hotelRoomList(@ModelAttribute("vo") HotelRoomVo hotelRoomVo, Model model) { 
 		
-		model.addAttribute("hotelRoomList", hotelRoomService.selectRoomList());
+		hotelRoomVo.setParamsPaging(hotelRoomService.selectOneCount(hotelRoomVo));
+		
+		if(hotelRoomVo.getTotalRows() > 0) {
+			model.addAttribute("hotelRoomList", hotelRoomService.selectRoomList(hotelRoomVo));
+		}
+		
 		return "/xdm/v1/infra/hotelRoom/hotelRoomList";
 	}
 	
