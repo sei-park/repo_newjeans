@@ -9,30 +9,30 @@
 		FROM 
 			hotel as a
 		LEFT JOIN  
-		(SELECT 
-			hotel_seq,
-			htrseq,
-			htrRoomName,
-			htrRoomPrice,
-			htrStay,
-			bedoption,
-			aircondNy,
-			bathNy,
-			tvNy,
-			wifiNy,
-			coffeeNy,
-			ROW_NUMBER() OVER (PARTITION BY hotel_seq ORDER BY htrRoomPrice) AS rn
-		 FROM 
-			hotelroom
-		) as b
+			(SELECT 
+				hotel_seq,
+				htrseq,
+				htrRoomName,
+				htrRoomPrice,
+				htrStay,
+				bedoption,
+				aircondNy,
+				bathNy,
+				tvNy,
+				wifiNy,
+				coffeeNy,
+				ROW_NUMBER() OVER (PARTITION BY hotel_seq ORDER BY htrRoomPrice) AS rn
+			 FROM 
+				hotelroom
+			) as b
 		ON a.htseq = b.hotel_seq AND b.rn = 1
-	LEFT JOIN
-		(SELECT 
-			hotel_seq, MIN(htrRoomPrice) AS minPrice
-		 FROM   
-			hotelroom
-		 GROUP BY hotel_seq
-		) as c	  
+		LEFT JOIN
+			(SELECT 
+				hotel_seq, MIN(htrRoomPrice) AS minPrice
+			 FROM   
+				hotelroom
+			 GROUP BY hotel_seq
+			) as c	  
 		ON a.htseq = c.hotel_seq
 		where 1=1
 			<if test="shDelNy != null and !shDelNy.equals('')">AND htDelNy = #{shDelNy}</if> <!-- 삭제 여부 -->
@@ -143,6 +143,56 @@
 		limit #{rowNumToShow} offset #{startRnumForMysql}
 	</select>
 	
+	<!-- 호텔 상세페이지(사용자 페이지) 리스트 -->
+	<select id="hotelDetailList" resultMap="resultMapObj">
+		select
+			a.htseq,
+			a.htName,
+			a.htAddress, 
+			a.htcountry,
+			a.htDesc,
+		    a.htDelNy,
+			a.htRegDate,
+			a.htReviseDate,
+			a.htNotice,
+			a.htMap,
+			a.htInclusionItems,
+			a.htNameSearch,
+			a.htPriceSearch,
+			a.htStarSearch,
+			a.htClassSearch,
+			a.htRestaurantNy,
+			a.htSpaNy,
+			a.htFitnessCenterNy,
+			a.htPoolNy,
+			a.htloungeNy,
+			a.htStockRoomNy,
+			a.htParkingNy,
+			a.htShuttleBusNy,
+			a.htBreakfastNy,
+			a.htRoomServiceNy,
+			a.htElseNy,
+			b.htrseq,
+			b.htrRoomName,
+			b.htrRoomPrice,
+			b.htrStay,
+			b.bedoption,
+			b.aircondNy,
+			b.bathNy,
+			b.tvNy,  
+			b.wifiNy,   
+			b.coffeeNy,
+			b.hotel_seq
+		from 
+			hotel a 
+		left join
+			hotelroom b on b.hotel_seq = a.htseq
+		where 1=1
+			and a.htseq = #{htseq}
+		order by 
+			b.htrRoomPrice asc  
+	</select>  
+	
 	<insert id="hotelInsert">
 		insert into hotel (
 		    htName,
@@ -197,54 +247,146 @@
 			#{htRoomServiceNy},
 			#{htElseNy}
 		) 
-	</insert>
+	</insert>     
 	
+	<!-- 호텔 상세 페이지 -->
+<!-- 	<select id="hotelSelectOne" resultMap="resultMapObj"> -->
+<!-- 		select   -->
+<!-- 		 	a.htseq, -->
+<!-- 		    a.htName, -->
+<!-- 		    a.htAddress,         -->
+<!-- 		    a.htcountry, -->
+<!-- 		    a.htDesc, -->
+<!-- 		    a.htDelNy, -->
+<!-- 		    a.htRegDate, -->
+<!-- 		    a.htReviseDate, -->
+<!-- 		    a.htNotice, -->
+<!-- 		    a.htMap, -->
+<!-- 		    a.htInclusionItems, -->
+<!-- 		    a.htNameSearch, -->
+<!-- 		    a.htPriceSearch, -->
+<!-- 		    a.htStarSearch, -->
+<!-- 		    a.htClassSearch, -->
+<!-- 		    a.htRestaurantNy, -->
+<!-- 		    a.htSpaNy, -->
+<!-- 		    a.htFitnessCenterNy, -->
+<!-- 		    a.htPoolNy, -->
+<!-- 		    a.htloungeNy,  -->
+<!-- 		    a.htStockRoomNy, -->
+<!-- 		    a.htParkingNy, -->
+<!-- 		    a.htShuttleBusNy, -->
+<!-- 		    a.htBreakfastNy, -->
+<!-- 		    a.htRoomServiceNy, -->
+<!-- 		    a.htElseNy, -->
+<!-- 		    c.htrseq, -->
+<!-- 		    c.htrRoomName, -->
+<!-- 		    c.htrRoomPrice,   -->
+<!-- 			c.htrStay,    -->
+<!-- 			c.bedoption, -->
+<!-- 			c.aircondNy, -->
+<!-- 			c.bathNy, -->
+<!-- 			c.tvNy,  -->
+<!-- 			c.wifiNy,    -->
+<!-- 			c.coffeeNy, -->
+<!-- 			c.hotel_seq     -->
+<!-- 		from -->
+<!-- 			hotel a     -->
+<!-- 		left join (select * from hotelroom b order by b.htrRoomPrice limit 1) c on c.hotel_seq = a.htseq -->
+<!-- 	    where 1=1  -->
+<!-- 	    	AND a.htseq = #{htseq} -->
+<!-- 	</select> -->
+
 	<select id="hotelSelectOne" resultMap="resultMapObj">
 		select  
-		 	a.htseq,
-		    a.htName,
-		    a.htAddress,
-		    a.htcountry,
-		    a.htDesc,
+			a.htseq,
+			a.htName,
+			a.htAddress,
+			a.htcountry,
+			a.htDesc,
 		    a.htDelNy,
-		    a.htRegDate,
-		    a.htReviseDate,
-		    a.htNotice,
-		    a.htMap,
-		    a.htInclusionItems,
-		    a.htNameSearch,
-		    a.htPriceSearch,
-		    a.htStarSearch,
-		    a.htClassSearch,
-		    a.htRestaurantNy,
-		    a.htSpaNy,
-		    a.htFitnessCenterNy,
-		    a.htPoolNy,
-		    a.htloungeNy,
-		    a.htStockRoomNy,
-		    a.htParkingNy,
-		    a.htShuttleBusNy,
-		    a.htBreakfastNy,
-		    a.htRoomServiceNy,
-		    a.htElseNy,
-		    c.htrseq,
-		    c.htrRoomName,
-		    c.htrRoomPrice,
-			c.htrStay,
-			c.bedoption,
-			c.aircondNy,
-			c.bathNy,
-			c.tvNy,
-			c.wifiNy,   
-			c.coffeeNy,
-			c.hotel_seq
-		from
-			hotel a
-		left join (select * from hotelroom b order by b.htrRoomPrice limit 1) c on c.hotel_seq = a.htseq
-	    where 1=1
-	    	AND a.htseq = #{htseq}
+			a.htRegDate ,
+			a.htReviseDate,
+			a.htNotice,
+			a.htMap,
+			a.htInclusionItems,
+			a.htNameSearch,
+			a.htPriceSearch,
+			a.htStarSearch,
+			a.htClassSearch,
+			a.htRestaurantNy,
+			a.htSpaNy,
+			a.htFitnessCenterNy,
+			a.htPoolNy,
+			a.htloungeNy,
+			a.htStockRoomNy,
+			a.htParkingNy,
+			a.htShuttleBusNy,
+			a.htBreakfastNy,
+			a.htRoomServiceNy,
+			a.htElseNy,
+			b.htrseq,
+			b.htrRoomName,
+			b.htrRoomPrice,
+			b.htrStay,
+			b.bedoption,
+			b.aircondNy,
+			b.bathNy,
+			b.tvNy,
+			b.wifiNy,   
+			b.coffeeNy,
+			b.hotel_seq
+		FROM 
+			hotel as a
+		LEFT JOIN  
+			(SELECT 
+				hotel_seq,
+				htrseq,
+				htrRoomName,
+				htrRoomPrice,
+				htrStay,
+				bedoption,
+				aircondNy,
+				bathNy,
+				tvNy,
+				wifiNy,
+				coffeeNy,
+			ROW_NUMBER() OVER (PARTITION BY hotel_seq ORDER BY htrRoomPrice) AS rn
+			FROM hotelroom
+			) as b
+			ON a.htseq = b.hotel_seq AND b.rn = 1
+			LEFT JOIN
+			(SELECT 
+			hotel_seq, MIN(htrRoomPrice) AS minPrice
+		 	FROM   
+			hotelroom
+			 GROUP BY hotel_seq
+			) as c	  
+			ON a.htseq = c.hotel_seq
+			where 1=1
+				and a.htseq = #{htseq}
 	</select>
 	
+	<!-- hotel, hotelroom 연결 -->
+	<select id="selectListHotelRoom" resultMap="resultMapObj">
+		select
+			b.htrseq,
+			b.htrRoomName,
+			b.htrRoomPrice,
+			b.htrStay,
+			b.htrDelNy,
+			b.bedoption,
+			b.aircondNy,
+			b.bathNy,
+			b.tvNy,
+			b.wifiNy,   
+			b.coffeeNy,
+			b.hotel_seq
+		from 
+			hotelroom b
+		where 1=1
+			and b.htrDelNy = 0
+	</select>
+	 
 	<update id="hotelUpdate">
 		update hotel
 		set
@@ -286,12 +428,48 @@
 	
 	<delete id="delete">
 		delete from hotel
-		where 1=1 
+		where 1=1  
 			and htseq = #{htseq}
 	</delete>
 	
+	<insert id="insertUploaded">
+		insert into hotelUploaded(
+			htutype,
+			htudefaultNy,
+			htusort,
+			htupath,
+			htuoriginalName,
+			htuuuidName,
+			htuext,
+			htusize,
+			htudelNy,
+			htupseq,
+	 		hturegIp,
+		 	hturegSeq,
+		 	hturegDeviceCd,
+			hturegDateTime,
+		 	hturegDateTimeSvr
+		) values (
+			#{htutype},
+			#{htudefaultNy},
+			#{htusort},
+			#{htupath},
+			#{htuoriginalName},
+			#{htuuuidName},
+			#{htuext},
+			#{htusize},
+			0,
+			11,
+			#{hturegIp},
+			#{hturegSeq},
+			#{hturegDeviceCd},
+			#{hturegDateTime},
+			#{hturegDateTimeSvr}
+		)
+
 	
-	
+	</insert>
+
 	  
 	
 

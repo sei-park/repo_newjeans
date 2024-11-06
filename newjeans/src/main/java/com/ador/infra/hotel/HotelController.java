@@ -1,5 +1,7 @@
 package com.ador.infra.hotel;
 
+import java.util.UUID;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -7,13 +9,14 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.ador.common.util.UtilDateTime;
+import com.amazonaws.services.s3.model.ObjectMetadata;
 
 @Controller
 public class HotelController {
 	
 	@Autowired
 	HotelService hotelService;
-	
+	  
 	// selectList
 	@RequestMapping(value="/xdm/v1/infra/hotel/hotelXdmList")
 	public String hotelXdmList(@ModelAttribute("vo") HotelVo hotelVo, Model model) {
@@ -39,16 +42,18 @@ public class HotelController {
 	}
 	
 	@RequestMapping(value="/xdm/v1/infra/hotel/hotelXdmForm")
-	public String hotelXdmForm() {
+	public String hotelXdmForm(Model model) {
+		
+		model.addAttribute("listHotelRoom", hotelService.selectListHotelRoom()); // hotel, hotelroom 연결해서 보여줌
 		return "/xdm/v1/infra/hotel/hotelXdmForm";
 	}
 	
 	// insert 
 	@RequestMapping(value="/xdm/v1/infra/hotel/hotelXdmInst")
-	public String hotelXdmInst(HotelDto hotelDto) {
+	public String hotelXdmInst(HotelDto hotelDto) throws Exception {
 		
-		hotelService.hotelInsert(hotelDto);
-		return "redirect:/xdm/v1/infra/hotel/hotelXdmList";
+		hotelService.hotelInsert(hotelDto, 0);
+		return "redirect:/xdm/v1/infra/hotel/hotelXdmList";    
 	}
 	
 	// selectOne
@@ -83,6 +88,7 @@ public class HotelController {
 		return "redirect:/xdm/v1/infra/hotel/hotelXdmList";
 	}
 	
+
 	
 	
 	

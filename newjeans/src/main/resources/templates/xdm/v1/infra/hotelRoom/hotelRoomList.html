@@ -1130,7 +1130,8 @@
 																th:href="@{/xdm/v1/infra/hotelRoom/hotelRoomMForm(htrseq=${list.htrseq})}"
 																th:text="${list.htName}"> </a></td>
 															<td th:text="${list.htrRoomName}"></td>
-															<td th:text="${list.htrRoomPrice}"></td>
+<!-- 															<td th:text="${list.htrRoomPrice}"></td> -->
+															<td th:text="${#numbers.formatInteger(list.htrRoomPrice, 3, 'COMMA')}"></td>
 															<td th:text="${list.bedoption}"></td>
 															<td th:if="${list.aircondNy eq 0}" class="codeUse">N</td>
 															<td th:unless="${list.aircondNy eq 0}" class="codeUse">Y</td>
@@ -1172,7 +1173,7 @@
 											            </a>
 											        </li>
 											    </ul>
-											</div>
+										 </div>
 										
 											<!-- 하단 버튼 -->
 											<div class="col-md-1 bottom-button">

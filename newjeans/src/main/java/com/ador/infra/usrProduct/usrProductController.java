@@ -9,12 +9,17 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import com.ador.infra.hotel.HotelDto;
 import com.ador.infra.hotel.HotelService;
 import com.ador.infra.hotel.HotelVo;
+import com.ador.infra.hotelreview.HotelReviewDto;
+import com.ador.infra.hotelreview.HotelReviewService;
 
 @Controller
 public class usrProductController {     
 	
 	@Autowired
 	HotelService hotelService;
+	
+	@Autowired
+	HotelReviewService hotelReviewService;             
 	
 	// 호텔 리스트
 	@RequestMapping(value="/v1/infra/usrmember/usrHotelList")  
@@ -28,16 +33,31 @@ public class usrProductController {
 		
 		return "/usr/v1/infra/usrmember/usrHotelList"; 
 	}   
-	
-	// 호텔 상세페이지 usrHotelDetails
+	 
+	// 호텔 상세페이지 
 	@RequestMapping(value="/v1/infra/usrmember/usrHotelDetails")
-	public String usrHotelDetails(@ModelAttribute("vo") HotelDto hotelDto, Model model) {
+	public String usrHotelDetails(@ModelAttribute("vo") HotelDto hotelDto, HotelReviewDto hotelReviewDto, Model model) {
 		
-		model.addAttribute("hotelRoomItem", hotelService.hotelSelectOne(hotelDto));
+		model.addAttribute("hotelRoomItem", hotelService.hotelSelectOne(hotelDto)); // selectOne
+		model.addAttribute("hotelDetailList", hotelService.hotelDetailList(hotelDto)); // 호텔 상세 list
+		model.addAttribute("hotelReviewList", hotelReviewService.hotelReviewList(hotelReviewDto)); // 호텔 리뷰 list
 		return "/usr/v1/infra/usrmember/usrHotelDetails"; 
 	}
-	 
+	                            
+	// insert
+	@RequestMapping(value="/v1/infra/usrmember/usrHotelDetailsInst")
+	public String usrHotelDetailsInst(HotelReviewDto hotelReviewDto) {
+
+		hotelReviewService.hotelReviewInsert(hotelReviewDto);
+		return "redirect:/usr/v1/infra/usrmember/usrHotelDetails";
+	}
+	    
 	
+	         
+	
+	
+	 
+	 
 	     
 	                       
 	    

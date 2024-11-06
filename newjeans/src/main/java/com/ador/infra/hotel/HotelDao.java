@@ -30,8 +30,16 @@ public interface HotelDao {
 	// paging 
 	public int selectOneCount(HotelVo hotelVo);
 	
-
+	// detailList
+	public List<HotelDto> hotelDetailList(HotelDto hotelDto);
 	
+	// hotel, hotelroom 연결
+	public List<HotelDto> selectListHotelRoom();
+	
+	// S3 파일첨부
+	public void insertUploaded(HotelDto hotelDto);
+	
+
 
 		                          
 	

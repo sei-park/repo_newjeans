@@ -38,7 +38,6 @@ public class HotelRoomController {
 	public String hotelRoomInst(HotelRoomDto hotelRoomDto) {
 		
 		hotelRoomService.selectRoomInsert(hotelRoomDto);
-		
 		return "redirect:/xdm/v1/infra/hotelRoom/hotelRoomList";
 	}
 	

@@ -59,7 +59,6 @@
 	
 	<insert id="selectRoomInsert">
 		insert into hotelroom (
-			htrseq,
 			htrRoomName,
 			htrRoomPrice,
 			htrStay,
@@ -72,7 +71,6 @@
 			htrDelNy,
 			hotel_seq
 		) values (
-			#{htrseq},
 			#{htrRoomName},
 			#{htrRoomPrice},
 			#{htrStay},

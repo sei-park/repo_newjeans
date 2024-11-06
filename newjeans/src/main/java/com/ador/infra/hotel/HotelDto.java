@@ -1,12 +1,9 @@
 package com.ador.infra.hotel;
 
-import java.util.ArrayList;
 import java.util.Date;
-import java.util.List;
 
 import org.springframework.format.annotation.DateTimeFormat;
-
-import com.ador.infra.code.CodeDto;
+import org.springframework.web.multipart.MultipartFile;
 
 public class HotelDto {
 	
@@ -52,6 +49,25 @@ public class HotelDto {
 	private Integer coffeeNy;
 	private String hotel_seq;
 	
+	// S3 
+	private MultipartFile uploadFile;
+	private MultipartFile[] uploadFiles;
+	private Integer htuseq;
+	private Integer htutype;
+	private Integer htudefaultNy;
+	private Integer htusort;
+	private String htupath;
+	private String htuoriginalName;
+	private String htuuuidName;
+	private String htuext;
+	private long htusize;
+	private Integer htudelNy;
+	private Integer htupseq;
+	private String hturegIp;
+	private Integer hturegSeq;
+	private Integer hturegDeviceCd;
+	private Date hturegDateTime;
+	private Date hturegDateTimeSvr;
 	//--
 	public String getHtseq() {
 		return htseq;
@@ -221,13 +237,18 @@ public class HotelDto {
 	public void setHtrRoomName(String htrRoomName) {
 		this.htrRoomName = htrRoomName;
 	}
+	public Integer getHtrRoomPrice() {
+		return htrRoomPrice;
+	}
+	public void setHtrRoomPrice(Integer htrRoomPrice) {
+		this.htrRoomPrice = htrRoomPrice;
+	}
 	public String getHtrStay() {
 		return htrStay;
 	}
 	public void setHtrStay(String htrStay) {
 		this.htrStay = htrStay;
 	}
-	
 	public String getBedoption() {
 		return bedoption;
 	}
@@ -270,12 +291,119 @@ public class HotelDto {
 	public void setHotel_seq(String hotel_seq) {
 		this.hotel_seq = hotel_seq;
 	}
-	public Integer getHtrRoomPrice() {
-		return htrRoomPrice;
+	public MultipartFile getUploadFile() {
+		return uploadFile;
 	}
-	public void setHtrRoomPrice(Integer htrRoomPrice) {
-		this.htrRoomPrice = htrRoomPrice;
+	public void setUploadFile(MultipartFile uploadFile) {
+		this.uploadFile = uploadFile;
 	}
+	public MultipartFile[] getUploadFiles() {
+		return uploadFiles;
+	}
+	public void setUploadFiles(MultipartFile[] uploadFiles) {
+		this.uploadFiles = uploadFiles;
+	}
+	public Integer getHtuseq() {
+		return htuseq;
+	}
+	public void setHtuseq(Integer htuseq) {
+		this.htuseq = htuseq;
+	}
+	public Integer getHtutype() {
+		return htutype;
+	}
+	public void setHtutype(Integer htutype) {
+		this.htutype = htutype;
+	}
+	public Integer getHtudefaultNy() {
+		return htudefaultNy;
+	}
+	public void setHtudefaultNy(Integer htudefaultNy) {
+		this.htudefaultNy = htudefaultNy;
+	}
+	public Integer getHtusort() {
+		return htusort;
+	}
+	public void setHtusort(Integer htusort) {
+		this.htusort = htusort;
+	}
+	public String getHtupath() {
+		return htupath;
+	}
+	public void setHtupath(String htupath) {
+		this.htupath = htupath;
+	}
+	public String getHtuoriginalName() {
+		return htuoriginalName;
+	}
+	public void setHtuoriginalName(String htuoriginalName) {
+		this.htuoriginalName = htuoriginalName;
+	}
+	public String getHtuuuidName() {
+		return htuuuidName;
+	}
+	public void setHtuuuidName(String htuuuidName) {
+		this.htuuuidName = htuuuidName;
+	}
+	public String getHtuext() {
+		return htuext;
+	}
+	public void setHtuext(String htuext) {
+		this.htuext = htuext;
+	}
+	public long getHtusize() {
+		return htusize;
+	}
+	public void setHtusize(long htusize) {
+		this.htusize = htusize;
+	}
+	public Integer getHtudelNy() {
+		return htudelNy;
+	}
+	public void setHtudelNy(Integer htudelNy) {
+		this.htudelNy = htudelNy;
+	}
+	public Integer getHtupseq() {
+		return htupseq;
+	}
+	public void setHtupseq(Integer htupseq) {
+		this.htupseq = htupseq;
+	}
+	public String getHturegIp() {
+		return hturegIp;
+	}
+	public void setHturegIp(String hturegIp) {
+		this.hturegIp = hturegIp;
+	}
+	public Integer getHturegSeq() {
+		return hturegSeq;
+	}
+	public void setHturegSeq(Integer hturegSeq) {
+		this.hturegSeq = hturegSeq;
+	}
+	public Integer getHturegDeviceCd() {
+		return hturegDeviceCd;
+	}
+	public void setHturegDeviceCd(Integer hturegDeviceCd) {
+		this.hturegDeviceCd = hturegDeviceCd;
+	}
+	public Date getHturegDateTime() {
+		return hturegDateTime;
+	}
+	public void setHturegDateTime(Date hturegDateTime) {
+		this.hturegDateTime = hturegDateTime;
+	}
+	public Date getHturegDateTimeSvr() {
+		return hturegDateTimeSvr;
+	}
+	public void setHturegDateTimeSvr(Date hturegDateTimeSvr) {
+		this.hturegDateTimeSvr = hturegDateTimeSvr;
+	}
+	
+	
+	
+	
+	
 	
 
 	

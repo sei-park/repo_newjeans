@@ -160,6 +160,7 @@ public class HotelRoomVo {
 			setStartRnumForMysql((getRowNumToShow() * (getThisPage()-1))); 
 			// (쿼리 시작 row) = (화면에 보여줄  데이터 개수) * (현재 페이지) - 1
 		}
+		
 	
 	}
 	

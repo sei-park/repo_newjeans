@@ -7,7 +7,9 @@ public class Constants {
 	
 	public static final int SESSION_MINUTE_XDM = 30; // 로그인을 세션에 유지하는 시간
 	public static final String URL_LOGINFORM = "/xdm/v1/infra/hotelmember/signin"; // 로그인 페이지 경로 
-	 
+	
+	// S3
+	public static final String DATETIME_FORMAT_BASIC = "yyyy-MM-dd HH:mm:ss";
 	
 
 }

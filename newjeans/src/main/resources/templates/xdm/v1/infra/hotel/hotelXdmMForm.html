@@ -1047,12 +1047,14 @@
 														</option>
                                                     </select>
                                                 </div>
-                                                <div class="col-md-3">
-                                                    <label for="choices-single-groups"
-                                                        class="form-label font-size-13 text-muted">객실</label>
-                                                    <input type="text" class="form-control" id="validationCustom01" name="htrRoomName" th:value="${hotelItem?.htrRoomName}">
-                                                    <div class="valid-feedback">Looks good!</div>
-                                                </div>
+<!--                                                <div class="col-md-3"> -->
+<!--                                                     <label for="choices-single-groups" -->
+<!--                                                         class="form-label font-size-13 text-muted">객실</label> -->
+<!--                                                     <select class="form-select" name="hotel_seq" id="htcountry"> -->
+<!--                                                      	<option th:each="list : ${listHotelRoom}" th:value="${list.htrseq}" th:text="${list.htrRoomName}" -->
+<!--                                                      	th:selected="${list.htrseq == hotelItem?.hotel_seq}"></option> -->
+<!--                                                     </select> -->
+<!--                                                 </div> -->
                                             </div>  
                                             
                                             <div class="row gy-3">
@@ -1100,6 +1102,14 @@
 											      <span id="place-address"></span>
 											    </div>
                                             </div> <!-- row gy-3 -->
+                                            
+                                            <div class="row gy-3">
+                                            	 <div class="col-md-6">
+                                            	 	<label for="uploadFiles" class="form-label fs--1">파일첨부</label>
+													<img src="https://newjeans.s3.ap-northeast-2.amazonaws.com/hoteldto/0/2024/11/06/d9c7a735-7e2f-4077-a50d-a7f64f3ba080.jpg"
+													 style="width:580px"; height="300px">
+                                                </div>
+                                            </div>
                                             
                                             <div class="row gy-3">
                                             	<div class="col-md-3">
