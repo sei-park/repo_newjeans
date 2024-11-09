@@ -4,6 +4,7 @@ import com.ador.common.constants.Constants;
 
 public class HotelVo {
 	
+	// hotel admin search
 	private Integer shDelNy;
 	private String shDateStart;
 	private String shDateEnd;
@@ -33,8 +34,11 @@ public class HotelVo {
 	private int startPage;										// 시작 페이지 번호
 	private int endPage;										// 마지막 페이지 번호
 
-	private int startRnumForMysql = 0;							// 쿼리 시작 row
+	private int startRnumForMysql = 0;							// 쿼리 시작 row 
 	
+	// hotel usr list
+	private String shLListhtName;
+
 	//--
 	public Integer getShDelNy() {
 		return shDelNy;
@@ -192,9 +196,20 @@ public class HotelVo {
 	public void setStartRnumForMysql(int startRnumForMysql) {
 		this.startRnumForMysql = startRnumForMysql;
 	}
+	public String getShLListhtName() {
+		return shLListhtName;
+	}
+	public void setShLListhtName(String shLListhtName) {
+		this.shLListhtName = shLListhtName;
+	}
+	
+
+	
+	
+	
+	
 	
 	//////////////////////////////////////////////////////
-	
 	
 	public void setParamsPaging(int totalRows) {
 

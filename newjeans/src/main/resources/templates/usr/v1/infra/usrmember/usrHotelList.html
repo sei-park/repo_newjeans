@@ -2101,7 +2101,7 @@
     </section>
 
  <!-- 폼 시작 -->
- <form name="form" method="post" action="/xdm/v1/infra/hotel/hotelXdmList">
+ <form name="form" method="post" action="/v1/infra/usrmember/usrHotelList">
  <input type="hidden" name="thisPage" th:value="${vo.thisPage}" default="1"/>
  <input type="hidden" id="rowNumToShow" name="rowNumToShow" th:value="${vo.rowNumToShow}"/>
     <section id="explore_area" class="section_padding">
@@ -2134,13 +2134,17 @@
                             <div class="left_side_search_heading">
                                 <h5>이름으로 검색하기</h5>
                             </div>
-                            <div class="name_search_form">
-                                <input type="text" class="form-control" placeholder="메리어트 호텔">
-                                <i class="fas fa-search"></i>
-                            </div>
+<!--                             <div class="name_search_form"> -->
+<!--                                 <input type="text" class="form-control" placeholder="메리어트 호텔" name="shLListhtName"> -->
+<!--                                 <button type="submit" class="fas fa-search" style="border:none;background:none;"></button>   -->
+<!--                             </div> -->
+								<div class="name_search_form" style="position: relative; width: 100%; max-width: 300px;">
+								    <input type="text" class="form-control" placeholder="메리어트 호텔" name="shLListhtName" style="width: 100%; padding-right: 30px;">
+								    <button type="submit" class="fas fa-search" style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); border: none; background: none; cursor: pointer;"></button>
+								</div>
                         </div>
                         <div class="left_side_search_boxed">
-                            <div class="left_side_search_heading">
+                            <div class="left_side_search_heading"> 
                                 <h5>가격</h5>
                             </div>  
                             <div class="filter-price">
@@ -2390,7 +2394,6 @@
                         <div class="col-lg-12">
                             <div class="cruise_search_result_wrapper">
                             	<!-- 리스트 시작 -->
-                            	<form method="post" action="" name="form">
                                 <div class="cruise_search_item" th:if="${!#lists.isEmpty(hotelList)}" th:each="list : ${hotelList}">
                                     <div class="row">
                                         <div class="col-lg-4">
@@ -2402,65 +2405,24 @@
                                             <div class="cruise_item_inner_content">    
                                                 <div class="cruise_content_top_wrapper">  
                                                     <div class="cruise_content_top_left">
-                                                        <h4 th:text="${list.htName}"></h4>          
+                                                        <h4 th:text="${list.htName}">호텔 이름</h4>          
                                                         <p><i class="fas fa-map-marker-alt"></i><span th:text="${list.htAddress}" style="padding:5px";></span></p>
                                                     </div>  
                                                     <div class="cruise_content_top_right">
-                                                        <h5 th:text="${list.htStarSearch} + ' / 5'" align="center"></h5>
-                                                        	<th:block th:if="${list.htStarSearch == 1}">
-	                                                          <label class="form-check-label" for="flexCheckDefault">        
-						                                          <i class="fas fa-star color_theme"></i>
-						                                          <i class="fas fa-star color_asse"></i>
-						                                          <i class="fas fa-star color_asse"></i>
-						                                          <i class="fas fa-star color_asse"></i>
-						                                          <i class="fas fa-star color_asse"></i>
-	                                        				  </label>
-                                                        	</th:block>
-                                                        	<th:block th:if="${list.htStarSearch == 2}">
-	                                                          <label class="form-check-label" for="flexCheckDefault">        
-						                                          <i class="fas fa-star color_theme"></i>
-						                                          <i class="fas fa-star color_theme"></i>
-						                                          <i class="fas fa-star color_asse"></i>
-						                                          <i class="fas fa-star color_asse"></i>
-						                                          <i class="fas fa-star color_asse"></i>
-	                                        				  </label>
-                                                        	</th:block>
-                                                        	<th:block th:if="${list.htStarSearch == 3}">
-	                                                          <label class="form-check-label" for="flexCheckDefault">        
-						                                          <i class="fas fa-star color_theme"></i>
-						                                          <i class="fas fa-star color_theme"></i>
-						                                          <i class="fas fa-star color_theme"></i>
-						                                          <i class="fas fa-star color_asse"></i>
-						                                          <i class="fas fa-star color_asse"></i>
-	                                        				  </label>
-                                                        	</th:block>
-                                                        	<th:block th:if="${list.htStarSearch == 4}">
-	                                                          <label class="form-check-label" for="flexCheckDefault">        
-						                                          <i class="fas fa-star color_theme"></i>
-						                                          <i class="fas fa-star color_theme"></i>
-						                                          <i class="fas fa-star color_theme"></i>
-						                                          <i class="fas fa-star color_theme"></i>
-						                                          <i class="fas fa-star color_asse"></i>
-	                                        				  </label>
-                                                        	</th:block>
-                                                        	<th:block th:if="${list.htStarSearch == 5}">
-	                                                          <label class="form-check-label" for="flexCheckDefault">        
-						                                          <i class="fas fa-star color_theme"></i>
-						                                          <i class="fas fa-star color_theme"></i>
-						                                          <i class="fas fa-star color_theme"></i>
-						                                          <i class="fas fa-star color_theme"></i>
-						                                          <i class="fas fa-star color_theme"></i>
-	                                        				  </label>
-                                                        	</th:block>
-<!--                                                           <label class="form-check-label" for="flexCheckDefault">         -->
-<!-- 					                                            <i class="fas fa-star color_theme"></i> -->
-<!-- 					                                            <i class="fas fa-star color_theme"></i> -->
-<!-- 					                                            <i class="fas fa-star color_theme"></i> -->
-<!-- 					                                            <i class="fas fa-star color_theme"></i> -->
-<!-- 					                                            <i class="fas fa-star color_theme"></i> -->
-<!--                                         				  </label> -->
-                                                        <h4>(2035 reviewes)</h4>
-                                                    </div>
+                                                        	<label class="form-check-label" for="flexCheckDefault" align="center">
+                                                        		<div th:if="${list.average_star == null}">
+    																<h5 align="center" style="font-size:13px;">등록된 후기가 없습니다</h5>
+																</div>
+																<div th:if="${list.average_star != null}">
+    																<i class="fas fa-star color_theme" 
+      			 														th:each="i : ${#numbers.sequence(1, list.average_star)}">
+    																</i>
+																</div>
+	                                        					<div th:if="${list.review_count != null}">
+	                                        						<h4 th:text="|(${list.review_count != null ? list.review_count : 0})|"></h4>
+	                                        					</div>  
+	                                        				</label>
+                                                    </div> 
                                                 </div>
                                                 <div class="cruise_content_middel_wrapper">
                                                     <div class="cruise_content_middel_left">
@@ -2497,8 +2459,8 @@
                                                         	<li th:if="${list.htStockRoomNy == 1}" th:text="'물품보관소'">옵션8</li>
                                                         </ul>
                                                         <ul>
-                                                        	<li th:if="${list.htParkingNy == 1}" th:text="'무료주차'">옵션5</li>
-                                                        	<li th:if="${list.htShuttleBusNy == 1}" th:text="'셔틀버스'">옵션6</li>
+                                                        	<li th:if="${list.htParkingNy == 1}" th:text="'무료주차'">옵션9</li>
+                                                        	<li th:if="${list.htShuttleBusNy == 1}" th:text="'셔틀버스'">옵션10</li>
                                                         </ul>
                                                     </div>
                                                     <div class="cruise_content_bottom_right">

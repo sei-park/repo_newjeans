@@ -34,7 +34,18 @@
 			 GROUP BY hotel_seq
 			) as c	  
 		ON a.htseq = c.hotel_seq
-		where 1=1
+		LEFT JOIN 
+			(SELECT 
+				hotel_seq,
+				AVG(htrestars) AS average_star,
+       			COUNT(*) AS review_count
+	 	     FROM
+				hotelreview
+    			GROUP BY hotel_seq
+    		) AS avg_table 
+				ON a.htseq = avg_table.hotel_seq
+			where 1=1
+				AND a.htseq = htseq
 			<if test="shDelNy != null and !shDelNy.equals('')">AND htDelNy = #{shDelNy}</if> <!-- 삭제 여부 -->
 			
 			<!-- 별점 -->
@@ -89,6 +100,17 @@
 				<when test="shOption == 2">AND htName LIKE CONCAT('%',#{shValue},'%')</when>
 				<when test="shOption == 3">AND htStarSearch LIKE CONCAT('%',#{shValue},'%')</when>
 			</choose> 
+			
+			<!-- 호텔리스트 검색 -->
+			<if test="shLListhtName != null and !shLListhtName.equals('')">AND htName LIKE CONCAT('%',#{shLListhtName},'%')</if>
+			
+			
+
+			
+			
+			
+			
+			
 	</sql>
 	    
 	<select id="selectOneCount">
@@ -135,7 +157,9 @@
 			b.tvNy,
 			b.wifiNy,   
 			b.coffeeNy,
-			b.hotel_seq
+			b.hotel_seq,
+			avg_table.average_star,
+    		avg_table.review_count
 		<include refid="selectCommon"/>
 		order by
 			a.htseq desc
@@ -334,7 +358,9 @@
 			b.tvNy,
 			b.wifiNy,   
 			b.coffeeNy,
-			b.hotel_seq
+			b.hotel_seq,
+			avg_table.average_star,
+    		avg_table.review_count
 		FROM 
 			hotel as a
 		LEFT JOIN  
@@ -362,6 +388,16 @@
 			 GROUP BY hotel_seq
 			) as c	  
 			ON a.htseq = c.hotel_seq
+			LEFT JOIN 
+			(SELECT 
+				hotel_seq,
+				AVG(htrestars) AS average_star,
+       			COUNT(*) AS review_count
+	 	     FROM
+				hotelreview
+    			GROUP BY hotel_seq
+    		) AS avg_table 
+				ON a.htseq = avg_table.hotel_seq
 			where 1=1
 				and a.htseq = #{htseq}
 	</select>

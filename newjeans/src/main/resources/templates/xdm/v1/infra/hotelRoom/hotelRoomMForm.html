@@ -1020,7 +1020,7 @@
 													<label for="choices-single-groups"
 														class="form-label font-size-13 text-muted">객실가격</label> 
 														<input type="text" class="form-control" name="htrRoomPrice" id="htrRoomPrice" 
-														th:value="${#numbers.formatInteger(hotelRoomItem?.htrRoomPrice, 3, 'COMMA')}">
+														th:value="${hotelRoomItem?.htrRoomPrice}">
 													<div class="invalid-feedback" id="userNameFeedback">이름을 입력해주세요</div>
 													<div class="invalid-feedback" id="userNameRegExp">이름을 확인해주세요</div>
 												</div>

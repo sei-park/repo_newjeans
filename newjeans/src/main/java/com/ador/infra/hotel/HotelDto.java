@@ -36,7 +36,7 @@ public class HotelDto {
 	private Integer htRoomServiceNy;
 	private Integer htElseNy;
 	
-	// 호텔 룸 
+	// hotelRoom
 	private String htrseq;
 	private String htrRoomName;
 	private Integer htrRoomPrice;
@@ -68,6 +68,18 @@ public class HotelDto {
 	private Integer hturegDeviceCd;
 	private Date hturegDateTime;
 	private Date hturegDateTimeSvr;
+	
+	// hotelReview
+	private String htreseq;
+	private Integer htrestars;
+	private String htrecomments;
+	@DateTimeFormat(pattern="yyyy-MM-dd HH:mm:ss")
+	private Date htreRegDate;
+ 	private String hotelmember_htmSeq;
+	
+	// 리뷰 평균값, 리뷰 개수 
+	private Integer average_star;
+	private Integer review_count;
 	//--
 	public String getHtseq() {
 		return htseq;
@@ -398,6 +410,48 @@ public class HotelDto {
 	}
 	public void setHturegDateTimeSvr(Date hturegDateTimeSvr) {
 		this.hturegDateTimeSvr = hturegDateTimeSvr;
+	}
+	public String getHtreseq() {
+		return htreseq;
+	}
+	public void setHtreseq(String htreseq) {
+		this.htreseq = htreseq;
+	}
+	public Integer getHtrestars() {
+		return htrestars;
+	}
+	public void setHtrestars(Integer htrestars) {
+		this.htrestars = htrestars;
+	}
+	public String getHtrecomments() {
+		return htrecomments;
+	}
+	public void setHtrecomments(String htrecomments) {
+		this.htrecomments = htrecomments;
+	}
+	public Date getHtreRegDate() {
+		return htreRegDate;
+	}
+	public void setHtreRegDate(Date htreRegDate) {
+		this.htreRegDate = htreRegDate;
+	}
+	public String getHotelmember_htmSeq() {
+		return hotelmember_htmSeq;
+	}
+	public void setHotelmember_htmSeq(String hotelmember_htmSeq) {
+		this.hotelmember_htmSeq = hotelmember_htmSeq;
+	}
+	public Integer getAverage_star() {
+		return average_star;
+	}
+	public void setAverage_star(Integer average_star) {
+		this.average_star = average_star;
+	}
+	public Integer getReview_count() {
+		return review_count;
+	}
+	public void setReview_count(Integer review_count) {
+		this.review_count = review_count;
 	}
 	
 	

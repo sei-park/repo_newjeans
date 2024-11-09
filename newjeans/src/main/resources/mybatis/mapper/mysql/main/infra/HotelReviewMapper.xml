@@ -17,7 +17,7 @@
 		    b.htmId,
 		    b.htmEmail,
 		    c.htseq,
-		    c.htName            
+		    c.htName
 		from 
 			hotelreview a
 		left join 
