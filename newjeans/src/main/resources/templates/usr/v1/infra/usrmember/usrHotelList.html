@@ -31,6 +31,20 @@
     <link rel="icon" type="image/png" href="/usr/v1/usertemplate/ui/assets/img/favicon.png">
 </head>
 
+<style>
+	/* 왼쪽 검색하기 버튼 */
+	.left_side_search_boxed {
+	    display: grid;
+	    grid-template-rows: auto auto auto;
+	}
+
+	.apply {
+	    justify-self: end;
+	}
+
+</style>
+
+
 
 
 <body>
@@ -2110,7 +2124,7 @@
             <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-12">
                     <div class="section_heading_center">
-                        <h2>검색된 숙소</h2> 
+                        <h2>전체 숙소</h2> 
                         <div class="row">
                         	<div class="col-md-12" align="right" style="margin-left: -10px;">
                         		<div class="col-md-3">
@@ -2132,93 +2146,31 @@
                         </div>
                         <div class="left_side_search_boxed">
                             <div class="left_side_search_heading">
-                                <h5>이름으로 검색하기</h5>
+                                <h5>호텔 이름으로 검색하기</h5>
                             </div>
-<!--                             <div class="name_search_form"> -->
-<!--                                 <input type="text" class="form-control" placeholder="메리어트 호텔" name="shLListhtName"> -->
-<!--                                 <button type="submit" class="fas fa-search" style="border:none;background:none;"></button>   -->
-<!--                             </div> -->
-								<div class="name_search_form" style="position: relative; width: 100%; max-width: 300px;">
-								    <input type="text" class="form-control" placeholder="메리어트 호텔" name="shLListhtName" style="width: 100%; padding-right: 30px;">
-								    <button type="submit" class="fas fa-search" style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); border: none; background: none; cursor: pointer;"></button>
-								</div>
+							<div class="name_search_form" style="position: relative; width: 100%; max-width: 300px;">
+								<input type="text" class="form-control" placeholder="메리어트 호텔"  id="shLListhtName" name="shLListhtName" style="width: 100%; padding-right: 30px;" autocomplete="off">
+								<button type="submit" id="shLListhtNameBtn" class="fas fa-search" style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); border: none; background: none; cursor: pointer;"></button>
+							</div>
                         </div>
                         <div class="left_side_search_boxed">
                             <div class="left_side_search_heading"> 
                                 <h5>가격</h5>
                             </div>  
                             <div class="filter-price">
-                                <div id="price-slider"></div>
+                                <div id="price-slider"></div> 
                             </div>
-                            <button class="apply" type="button">적용하기</button>
+                            <button class="apply" type="button">검색하기</button>
                         </div>
-                        <div class="left_side_search_boxed">
-                            <div class="left_side_search_heading">
-                                <h5>별점</h5>
-                            </div>
-                            <div class="filter_review" style="padding-top:25px;">
-                                <form class="review_star">
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                        <label class="form-check-label" for="flexCheckDefault">
-                                            <i class="fas fa-star color_theme"></i>
-                                            <i class="fas fa-star color_theme"></i>
-                                            <i class="fas fa-star color_theme"></i>
-                                            <i class="fas fa-star color_theme"></i>
-                                            <i class="fas fa-star color_theme"></i>
-                                        </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault1">
-                                        <label class="form-check-label" for="flexCheckDefault1">
-                                            <i class="fas fa-star color_theme"></i>
-                                            <i class="fas fa-star color_theme"></i>
-                                            <i class="fas fa-star color_theme"></i>
-                                            <i class="fas fa-star color_theme"></i>
-                                            <i class="fas fa-star color_asse"></i>
-                                        </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault2">
-                                        <label class="form-check-label" for="flexCheckDefault2">
-                                            <i class="fas fa-star color_theme"></i>
-                                            <i class="fas fa-star color_theme"></i>
-                                            <i class="fas fa-star color_theme"></i>
-                                            <i class="fas fa-star color_asse"></i>
-                                            <i class="fas fa-star color_asse"></i>
-                                        </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault3">
-                                        <label class="form-check-label" for="flexCheckDefault3">
-                                            <i class="fas fa-star color_theme"></i>
-                                            <i class="fas fa-star color_theme"></i>
-                                            <i class="fas fa-star color_asse"></i>
-                                            <i class="fas fa-star color_asse"></i>
-                                            <i class="fas fa-star color_asse"></i>
-                                        </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault5">
-                                        <label class="form-check-label" for="flexCheckDefault5">
-                                            <i class="fas fa-star color_theme"></i>
-                                            <i class="fas fa-star color_asse"></i>
-                                            <i class="fas fa-star color_asse"></i>
-                                            <i class="fas fa-star color_asse"></i>
-                                            <i class="fas fa-star color_asse"></i>
-                                        </label>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
+                   	     
                         <div class="left_side_search_boxed">
                             <div class="left_side_search_heading">
                                 <h5>성급</h5>
                             </div>
-                            <div class="filter_review">
+                            <div class="filter_review" style="padding-top:25px;">
                                 <form class="review_star">
                                     <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefaulta">
+                                        <input class="form-check-input" type="checkbox" value="5" id="flexCheckDefaulta">
                                         <label class="form-check-label" for="flexCheckDefaulta">
                                             <i class="fas fa-star color_theme"></i>
                                             <i class="fas fa-star color_theme"></i>
@@ -2227,8 +2179,8 @@
                                             <i class="fas fa-star color_theme"></i>
                                         </label>
                                     </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value=""
+                                    <div class="form-check" style="padding-top:10px;">
+                                        <input class="form-check-input" type="checkbox" value="4"
                                             id="flexCheckDefaulf21">
                                         <label class="form-check-label" for="flexCheckDefaulf21">
                                             <i class="fas fa-star color_theme"></i>
@@ -2238,8 +2190,8 @@
                                             <i class="fas fa-star color_asse"></i>
                                         </label>
                                     </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value=""
+                                    <div class="form-check" style="padding-top:10px;">
+                                        <input class="form-check-input" type="checkbox" value="3"
                                             id="flexCheckDefaultf3">
                                         <label class="form-check-label" for="flexCheckDefaultf3">
                                             <i class="fas fa-star color_theme"></i>
@@ -2249,10 +2201,10 @@
                                             <i class="fas fa-star color_asse"></i>
                                         </label>
                                     </div>
-                                    <!-- <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value=""
-                                            id="flexCheckDefaultf4">
-                                        <label class="form-check-label" for="flexCheckDefaultf4">
+                                      <div class="form-check" style="padding-top:10px;">
+                                        <input class="form-check-input" type="checkbox" value="2"
+                                            id="flexCheckDefaultf3">
+                                        <label class="form-check-label" for="flexCheckDefaultf3">
                                             <i class="fas fa-star color_theme"></i>
                                             <i class="fas fa-star color_theme"></i>
                                             <i class="fas fa-star color_asse"></i>
@@ -2260,20 +2212,83 @@
                                             <i class="fas fa-star color_asse"></i>
                                         </label>
                                     </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value=""
-                                            id="flexCheckDefaultf5">
-                                        <label class="form-check-label" for="flexCheckDefaultf5">
+                                      <div class="form-check" style="padding-top:10px;">
+                                        <input class="form-check-input" type="checkbox" value="1"
+                                            id="flexCheckDefaultf3">
+                                        <label class="form-check-label" for="flexCheckDefaultf3">
                                             <i class="fas fa-star color_theme"></i>
                                             <i class="fas fa-star color_asse"></i>
                                             <i class="fas fa-star color_asse"></i>
                                             <i class="fas fa-star color_asse"></i>
                                             <i class="fas fa-star color_asse"></i>
                                         </label>
-                                    </div> -->
-                                </form>
+                                    </div>
+                                  </form>
                             </div>
+                            <button class="apply" type="button">검색하기</button>
                         </div>
+                        
+                        <div class="left_side_search_boxed">
+                            <div class="left_side_search_heading">
+                                <h5>별점</h5>
+                            </div>
+                            <div class="filter_review">
+                                <form class="review_star">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="5" th:selected="${vo.shStar == 5}" id="reviewStars05" onclick='is_checked()' name="shStar">
+                                        <label class="form-check-label" for="flexCheckDefaulta">
+                                            <i class="fas fa-star color_theme"></i>
+                                            <i class="fas fa-star color_theme"></i>
+                                            <i class="fas fa-star color_theme"></i>
+                                            <i class="fas fa-star color_theme"></i>
+                                            <i class="fas fa-star color_theme"></i>
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="4" id="reviewStars04" onclick='is_checked()' name="shStar">
+                                        <label class="form-check-label" for="flexCheckDefaulf21">
+                                            <i class="fas fa-star color_theme"></i>
+                                            <i class="fas fa-star color_theme"></i>
+                                            <i class="fas fa-star color_theme"></i>
+                                            <i class="fas fa-star color_theme"></i>
+                                            <i class="fas fa-star color_asse"></i>
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="3" id="reviewStars03" onclick='is_checked()' name="shStar">
+                                        <label class="form-check-label" for="flexCheckDefaultf3">
+                                            <i class="fas fa-star color_theme"></i>
+                                            <i class="fas fa-star color_theme"></i>
+                                            <i class="fas fa-star color_theme"></i>
+                                            <i class="fas fa-star color_asse"></i>
+                                            <i class="fas fa-star color_asse"></i>
+                                        </label>
+                                    </div>
+                                      <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="2" id="reviewStars02" onclick='is_checked()' name="shStar">
+                                        <label class="form-check-label" for="flexCheckDefaultf3">
+                                            <i class="fas fa-star color_theme"></i>
+                                            <i class="fas fa-star color_theme"></i>
+                                            <i class="fas fa-star color_asse"></i>
+                                            <i class="fas fa-star color_asse"></i>
+                                            <i class="fas fa-star color_asse"></i>
+                                        </label>
+                                    </div>
+                                      <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="1" id="reviewStars01" onclick='is_checked()' name="shStar">
+                                        <label class="form-check-label" for="flexCheckDefaultf3">
+                                            <i class="fas fa-star color_theme"></i>
+                                            <i class="fas fa-star color_asse"></i>
+                                            <i class="fas fa-star color_asse"></i>
+                                            <i class="fas fa-star color_asse"></i>
+                                            <i class="fas fa-star color_asse"></i>
+                                        </label>
+                                    </div>
+                                  </form>
+                            </div>
+                            <button class="apply" type="submit">검색하기</button>
+                        </div>
+                        
                         <div class="left_side_search_boxed">
                             <div class="left_side_search_heading">
                                 <h5>시설</h5>
@@ -2334,6 +2349,7 @@
                                     </label>
                                 </div>
                             </div>
+                            <button class="apply" type="button">검색하기</button>
                         </div>
                         <div class="left_side_search_boxed">
                             <div class="left_side_search_heading">
@@ -2386,6 +2402,7 @@
                                     </label>
                                 </div>
                             </div>
+                            <button class="apply" type="button">검색하기</button>
                         </div>
                     </div>
                 </div>
@@ -2393,7 +2410,10 @@
                     <div class="row">
                         <div class="col-lg-12">
                             <div class="cruise_search_result_wrapper">
-                            	<!-- 리스트 시작 -->
+                            	<!-- 리스트 시작 -->  
+                            	<div th:if="${#lists.isEmpty(hotelList)}">
+                            		<h4 align="center">검색된 숙소가 없습니다</h4> 
+                            	</div>
                                 <div class="cruise_search_item" th:if="${!#lists.isEmpty(hotelList)}" th:each="list : ${hotelList}">
                                     <div class="row">
                                         <div class="col-lg-4">
@@ -2680,7 +2700,67 @@
 	    document.querySelector("form[name=form]").action = "/v1/infra/usrmember/usrHotelList";
 	    document.querySelector("form[name=form]").submit();
 	}
+	
+	
+	// 호텔 이름으로 검색하기 : 아무것도 검색하지 않았을 때 창 띄우기
+	document.getElementById("shLListhtNameBtn").onclick = function () {
+		
+		let hotelName = document.getElementById("shLListhtName");
+		
+		if (hotelName.value == "") {
+			alert("검색어를 입력해주세요.");
+		    return; 
+		}
+ 	
+	}
+	
+	// 체크박스 선택 
+	function is_checked() {
+  
+	  // 1. checkbox element를 찾습니다.
+	  let checkbox05 = document.getElementById('reviewStars05');
+	  let checkbox04 = document.getElementById('reviewStars04');
+	
+	  // 2. checked 속성을 체크합니다.
+	  let is_checked05 = checkbox05.checked;
+	  let is_checked04 = checkbox04.checked;
+	   
+	  // 3. 결과를 출력합니다.
+	  let checkValue05 = checkbox05.value;
+	  let checkValue04 = checkbox04.value;
+	     
+	  if(is_checked05) {
+		  alert("체크박스 체크 : " + checkValue05);
+	  }   
+	  if(is_checked04) {
+		  alert("체크박스 체크 : " + checkValue04);
+	  } 
+	  
+	  alert("별점 확인" + checkbox05);
+	  
+	  var x = document.getElementsByName("shStar").length;
+	  
+	  alert("확인22 : " + x); 
+	  
+	  // 체크박스 개수(5)만큼 반복문 돌림 -> 반복문안에서 체크됐을 때 값을 새로운 배열에 넣음
+	  let arr = []; // 체크한 데이터를 담을 배열
+	  
+// 	  for(let i = 0; i < shStar.length)  
+	  
+	  
+	  // 새로운 배열을 반복문 돌리면서 값 출력 
+	  
+	  // Dto에 선언 
+   
+	}
+	
+
+	
+	
+	
+	
     
+	
     
     </script>
 

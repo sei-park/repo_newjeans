@@ -1000,6 +1000,7 @@
                                                                 <option value="1" th:selected="${vo.shOption == 1}">호텔번호</option>
                                                                 <option value="2" th:selected="${vo.shOption == 2}">호텔이름</option>
                                                                 <option value="3" th:selected="${vo.shOption == 3}">국가</option>
+                                                                <option value="4" th:selected="${vo.shOption == 4}">성급</option>
                                                             </select>
                                                         </div>
                                                         <div class="col-md-2">
@@ -1105,17 +1106,6 @@
                                                                 <option value="1" th:selected="${vo.shRoomService == 1}">Y</option>
                                                             </select>
                                                         </div>
-                                                        <div class="col-md-2">
-                                                            <select class="form-select"
-                                                                aria-label="Default select example" name="shStar">
-                                                                <option value="" th:selected="${vo.shStar == null}">별점</option>
-                                                                <option value="5" th:selected="${vo.shStar == 5}">5점</option>
-                                                                <option value="4" th:selected="${vo.shStar == 4}">4점</option>
-                                                                <option value="3" th:selected="${vo.shStar == 3}">3점</option>
-                                                                <option value="2" th:selected="${vo.shStar == 2}">2점</option>
-                                                                <option value="1" th:selected="${vo.shStar == 1}">1점</option>
-                                                            </select>
-                                                        </div>
                                                         <div class="col-md-2" align="left">  
                                                             <!-- 검색버튼 -->
                                                             <button type="submit" class="btn btn-outline-dark">
@@ -1168,6 +1158,7 @@
                                                         <th scope="col">No</th>
                                                         <th scope="col">호텔번호</th>
                                                         <th scope="col">호텔이름</th>
+                                                        <th scope="col">성급</th>
                                                         <th scope="col">주소</th>
                                                         <th scope="col">국가</th>
                                                         <th scope="col">삭제여부</th>
@@ -1192,12 +1183,10 @@
                                                         <td th:text="${vo.totalRows - ((vo.thisPage - 1) * vo.rowNumToShow + listStat.index)}" class="align-middle"></td>
                                                         <td th:text="${list.htseq}"></td> 
                                                         <td><a th:href="@{/xdm/v1/infra/hotel/hotelXdmMForm(htseq=${list.htseq})}" th:text="${list.htName}"></a></td>
+                                                        <td th:if="${list.htClassSearch != null}" th:text="${@codeService.selectOneCachedCode(list.htClassSearch)}"></td>
                                                         <td th:text="${list.htAddress}"></td>
-<!--                                                         <td th:text="${list.htcountry}"></td> -->
-
 														<td th:if="${list.htcountry != null}" th:text="${@codeService.selectOneCachedCode(list.htcountry)}"></td>
 														<td th:unless="${list.htcountry != null}"></td>
-														
                                                         <td th:if="${list.htDelNy eq 0}" class="codeUse">N</td>
 														<td th:unless="${list.htDelNy eq 0}" class="codeUse">Y</td>
 														<td th:text="${#dates.format(list.htRegDate,'yyyy-MM-dd HH:mm:ss')}"></td>

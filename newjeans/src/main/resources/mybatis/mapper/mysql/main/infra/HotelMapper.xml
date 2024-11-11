@@ -49,11 +49,11 @@
 			<if test="shDelNy != null and !shDelNy.equals('')">AND htDelNy = #{shDelNy}</if> <!-- 삭제 여부 -->
 			
 			<!-- 별점 -->
-			<if test="shStar == 5">AND htStarSearch = #{shStar}</if>
-			<if test="shStar == 4">AND htStarSearch = #{shStar}</if>
-			<if test="shStar == 3">AND htStarSearch = #{shStar}</if>
-			<if test="shStar == 2">AND htStarSearch = #{shStar}</if>
-			<if test="shStar == 1">AND htStarSearch = #{shStar}</if>
+<!-- 			<if test="shStar == 5">AND htStarSearch = #{shStar}</if> -->
+<!-- 			<if test="shStar == 4">AND htStarSearch = #{shStar}</if> -->
+<!-- 			<if test="shStar == 3">AND htStarSearch = #{shStar}</if> -->
+<!-- 			<if test="shStar == 2">AND htStarSearch = #{shStar}</if> -->
+<!-- 			<if test="shStar == 1">AND htStarSearch = #{shStar}</if> -->
 			
 			<!-- 레스토랑 -->
 			<if test="shRestaurant != null and !shRestaurant.equals('')">AND htRestaurantNy = #{shRestaurant}</if>
@@ -99,17 +99,19 @@
 				<when test="shOption == 1">AND htseq = #{shValue}</when>
 				<when test="shOption == 2">AND htName LIKE CONCAT('%',#{shValue},'%')</when>
 				<when test="shOption == 3">AND htStarSearch LIKE CONCAT('%',#{shValue},'%')</when>
+				<when test="shOption == 4">AND htClassSearch = #{shValue}</when>
 			</choose> 
 			
 			<!-- 호텔리스트 검색 -->
 			<if test="shLListhtName != null and !shLListhtName.equals('')">AND htName LIKE CONCAT('%',#{shLListhtName},'%')</if>
 			
-			
+			<!-- 별점 체크박스 검색 -->
+			<if test="shStar != null and shStar == '5'">AND average_star = #{shStar}</if>
+			<if test="shStar == 4">AND average_star = #{shStar}</if>
+			<if test="shStar == 3">AND average_star = #{shStar}</if>
+			<if test="shStar == 2">AND average_star = #{shStar}</if>
+			<if test="shStar == 1">AND average_star = #{shStar}</if>	
 
-			
-			
-			
-			
 			
 	</sql>
 	    
@@ -158,7 +160,7 @@
 			b.wifiNy,   
 			b.coffeeNy,
 			b.hotel_seq,
-			avg_table.average_star,
+			FLOOR(avg_table.average_star) AS average_star, 
     		avg_table.review_count
 		<include refid="selectCommon"/>
 		order by
@@ -502,9 +504,9 @@
 			#{hturegDateTime},
 			#{hturegDateTimeSvr}
 		)
-
-	
 	</insert>
+	
+
 
 	  
 	

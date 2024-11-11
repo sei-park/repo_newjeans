@@ -31,6 +31,8 @@ public class usrProductController {
 			model.addAttribute("hotelList", hotelService.hotelList(hotelVo));
 		}
 		
+		System.out.println("별점 체크 : " + hotelVo.getShStar());
+		
 		return "/usr/v1/infra/usrmember/usrHotelList"; 
 	}   
 	 

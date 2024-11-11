@@ -11,7 +11,6 @@ public class HotelVo {
 	private Integer shOptionDate;
 	private Integer shOption;
 	private String shValue;
-	private Integer shStar;
 	private Integer shRestaurant;
 	private Integer shSpa;
 	private Integer shFitnessCenter;
@@ -38,7 +37,7 @@ public class HotelVo {
 	
 	// hotel usr list
 	private String shLListhtName;
-
+	private Integer shStar;
 	//--
 	public Integer getShDelNy() {
 		return shDelNy;
