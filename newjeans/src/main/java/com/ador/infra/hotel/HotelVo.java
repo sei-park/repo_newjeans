@@ -38,6 +38,9 @@ public class HotelVo {
 	// hotel usr list
 	private String shLListhtName;
 	private Integer shStar;
+	
+	// 별점 여러 개 체크해서 검색하기
+	private String[] starsArr; 
 	//--
 	public Integer getShDelNy() {
 		return shDelNy;
@@ -201,14 +204,16 @@ public class HotelVo {
 	public void setShLListhtName(String shLListhtName) {
 		this.shLListhtName = shLListhtName;
 	}
-	
-
-	
-	
-	
+	public String[] getStarsArr() {
+		return starsArr;
+	}
+	public void setStarsArr(String[] starsArr) {
+		this.starsArr = starsArr;
+	}
 	
 	
 	//////////////////////////////////////////////////////
+
 	
 	public void setParamsPaging(int totalRows) {
 

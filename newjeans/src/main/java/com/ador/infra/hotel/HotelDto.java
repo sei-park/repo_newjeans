@@ -1,6 +1,7 @@
 package com.ador.infra.hotel;
 
 import java.util.Date;
+import java.util.List;
 
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.web.multipart.MultipartFile;
@@ -80,6 +81,7 @@ public class HotelDto {
 	// 리뷰 평균값, 리뷰 개수 
 	private Integer average_star;
 	private Integer review_count;
+	
 	//--
 	public String getHtseq() {
 		return htseq;
@@ -453,7 +455,7 @@ public class HotelDto {
 	public void setReview_count(Integer review_count) {
 		this.review_count = review_count;
 	}
-	
+
 	
 	
 	

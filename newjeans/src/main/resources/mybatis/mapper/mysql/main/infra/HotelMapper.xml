@@ -46,14 +46,14 @@
 				ON a.htseq = avg_table.hotel_seq
 			where 1=1
 				AND a.htseq = htseq
+				   <if test="starsArr != null and starsArr.length != 0">
+				   		AND TRUNCATE(avg_table.average_star, 0) IN (
+            		<foreach collection="starsArr" item="item" separator=",">
+                		#{item}
+            		</foreach>
+        		    )
+   				  </if>
 			<if test="shDelNy != null and !shDelNy.equals('')">AND htDelNy = #{shDelNy}</if> <!-- 삭제 여부 -->
-			
-			<!-- 별점 -->
-<!-- 			<if test="shStar == 5">AND htStarSearch = #{shStar}</if> -->
-<!-- 			<if test="shStar == 4">AND htStarSearch = #{shStar}</if> -->
-<!-- 			<if test="shStar == 3">AND htStarSearch = #{shStar}</if> -->
-<!-- 			<if test="shStar == 2">AND htStarSearch = #{shStar}</if> -->
-<!-- 			<if test="shStar == 1">AND htStarSearch = #{shStar}</if> -->
 			
 			<!-- 레스토랑 -->
 			<if test="shRestaurant != null and !shRestaurant.equals('')">AND htRestaurantNy = #{shRestaurant}</if>
@@ -106,11 +106,11 @@
 			<if test="shLListhtName != null and !shLListhtName.equals('')">AND htName LIKE CONCAT('%',#{shLListhtName},'%')</if>
 			
 			<!-- 별점 체크박스 검색 -->
-			<if test="shStar != null and shStar == '5'">AND average_star = #{shStar}</if>
-			<if test="shStar == 4">AND average_star = #{shStar}</if>
-			<if test="shStar == 3">AND average_star = #{shStar}</if>
-			<if test="shStar == 2">AND average_star = #{shStar}</if>
-			<if test="shStar == 1">AND average_star = #{shStar}</if>	
+<!-- 			<if test="shStar != null and shStar == 5">AND average_star = #{shStar}</if> -->
+<!-- 			<if test="shStar != null and shStar == 4">AND average_star = #{shStar}</if> -->
+<!-- 			<if test="shStar != null and shStar == 3">AND average_star = #{shStar}</if> -->
+<!-- 			<if test="shStar != null and shStar == 2">AND average_star = #{shStar}</if> -->
+<!-- 			<if test="shStar != null and shStar == 1">AND average_star = #{shStar}</if>	 -->
 
 			
 	</sql>
@@ -160,7 +160,8 @@
 			b.wifiNy,   
 			b.coffeeNy,
 			b.hotel_seq,
-			FLOOR(avg_table.average_star) AS average_star, 
+			avg_table.average_star,
+<!-- 			FLOOR(avg_table.average_star) AS average_star,  -->
     		avg_table.review_count
 		<include refid="selectCommon"/>
 		order by

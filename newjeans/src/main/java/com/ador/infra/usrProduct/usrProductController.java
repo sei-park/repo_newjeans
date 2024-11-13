@@ -31,7 +31,15 @@ public class usrProductController {
 			model.addAttribute("hotelList", hotelService.hotelList(hotelVo));
 		}
 		
-		System.out.println("별점 체크 : " + hotelVo.getShStar());
+		// 별점으로 검색하기 
+		if(hotelVo.getStarsArr() != null) {
+			if(hotelVo.getStarsArr().length > 0) {
+				for(int i = 0; i < hotelVo.getStarsArr().length; i++) { 
+					System.out.println("별점 체크 : " + hotelVo.getStarsArr()[i]);
+				}
+			}
+		}
+		
 		
 		return "/usr/v1/infra/usrmember/usrHotelList"; 
 	}   
