@@ -46,13 +46,32 @@
 				ON a.htseq = avg_table.hotel_seq
 			where 1=1
 				AND a.htseq = htseq
-				   <if test="starsArr != null and starsArr.length != 0">
+				   <!-- (체크박스) 별점으로 검색하기 -->
+				   <if test="starsArr != null and starsArr.length != 0"> 
 				   		AND TRUNCATE(avg_table.average_star, 0) IN (
             		<foreach collection="starsArr" item="item" separator=",">
                 		#{item}
             		</foreach>
         		    )
    				  </if>
+				   <!-- 성급으로 검색하기 -->
+				   <if test="classArr != null and classArr.length != 0">
+				   		AND TRUNCATE(htClassSearch, 0) IN (
+            		<foreach collection="classArr" item="item" separator=",">
+                		#{item}
+            		</foreach>
+        		    )
+   				  </if>
+   				  <!-- 호텔서비스 검색하기 -->
+   				  <if test="BreakfastNyArr != null and BreakfastNyArr.length != 0">
+				   		AND TRUNCATE(htBreakfastNy, 0) IN (
+            		<foreach collection="BreakfastNyArr" item="item" separator=",">
+                		#{item}
+            		</foreach>
+        		    )
+   				  </if>
+   				  
+   				  
 			<if test="shDelNy != null and !shDelNy.equals('')">AND htDelNy = #{shDelNy}</if> <!-- 삭제 여부 -->
 			
 			<!-- 레스토랑 -->
@@ -105,14 +124,7 @@
 			<!-- 호텔리스트 검색 -->
 			<if test="shLListhtName != null and !shLListhtName.equals('')">AND htName LIKE CONCAT('%',#{shLListhtName},'%')</if>
 			
-			<!-- 별점 체크박스 검색 -->
-<!-- 			<if test="shStar != null and shStar == 5">AND average_star = #{shStar}</if> -->
-<!-- 			<if test="shStar != null and shStar == 4">AND average_star = #{shStar}</if> -->
-<!-- 			<if test="shStar != null and shStar == 3">AND average_star = #{shStar}</if> -->
-<!-- 			<if test="shStar != null and shStar == 2">AND average_star = #{shStar}</if> -->
-<!-- 			<if test="shStar != null and shStar == 1">AND average_star = #{shStar}</if>	 -->
-
-			
+			<!-- 호텔 상세 페이지 달력 -->
 	</sql>
 	    
 	<select id="selectOneCount">
@@ -125,7 +137,7 @@
 		select
 			a.htseq,
 			a.htName,
-			a.htAddress,
+			a.htAddress, 
 			a.htcountry,
 			a.htDesc,
 		    a.htDelNy,
@@ -146,7 +158,7 @@
 			a.htStockRoomNy,
 			a.htParkingNy,
 			a.htShuttleBusNy,
-			a.htBreakfastNy,
+			(select count(a.htBreakfastNy) from hotel a where htBreakfastNy = 1) as Breakfastcount,
 			a.htRoomServiceNy,
 			a.htElseNy,
 			b.htrseq,
@@ -505,6 +517,53 @@
 			#{hturegDateTime},
 			#{hturegDateTimeSvr}
 		)
+	</insert>
+	
+	
+	
+	
+	<!-- 상세페이지에서 hotelbooking, hotelbookingmenu insert -->
+	<insert id="hotelBookingInsert" useGeneratedKeys="true" keyProperty="htbseq">
+	 INSERT INTO hotelbooking (
+	 		htbcheckIn,	
+	 		htbcheckOut,
+	 		htbTotalPrice,
+	 		htbPaymentType,
+	 		htbSettleDate,
+	 		htbRegDate,
+	 		htbEditDate,
+	 		htbDelNy,
+	 		htbAgreeContentNy,
+	 		hotelMember_htmSeq
+		) values (
+			#{htbcheckIn},
+			#{htbcheckOut},
+			#{htbTotalPrice},
+			null,
+			null,
+			now(),
+			now(),
+			0,
+			#{htbAgreeContentNy},
+			#{hotelMember_htmSeq}
+		)
+	</insert>
+	
+	<insert id="hotelBookingMenuInsert" parameterType="map">
+		INSERT INTO hotelbookingmenu (
+			htbmUseNy, 
+			htbmDelNy, 
+			hotelbooking_htbseq, 
+			hotelRoom_htrseq
+		) values 
+		<foreach collection="menuSeqs" item="menuSeq" separator=",">
+			(
+				1,
+				0,
+				#{htbseq}, 
+				#{menuSeq}
+			)
+		</foreach>
 	</insert>
 	
 

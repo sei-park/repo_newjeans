@@ -39,7 +39,7 @@ public class CodeController {
 //		List<CodeDto> codes = codeService.codeSelectList(codeVo);
 //		model.addAttribute("codelist", codes);
 		
-		return "/xdm/v1/infra/code/codeXdmList";
+		return "xdm/v1/infra/code/codeXdmList";
 	}
 	
 	// codegroup - code 연결 
@@ -49,7 +49,7 @@ public class CodeController {
 		List<CodeDto> codeGroups = codeService.selectListCode();
 		model.addAttribute("listCodeGroup", codeGroups);
 		
-		return "/xdm/v1/infra/code/codeXdmForm";
+		return "xdm/v1/infra/code/codeXdmForm";
 	}
 	
 	// insert 
@@ -70,7 +70,7 @@ public class CodeController {
 		model.addAttribute("listCodeGroup", codeGroups);  
 		
 		model.addAttribute("codeItem", codeService.codeSelectOne(codeDto));
-		return "/xdm/v1/infra/code/codeXdmMForm";
+		return "xdm/v1/infra/code/codeXdmMForm";
 	}
 	
 	// update

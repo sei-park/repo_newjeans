@@ -105,4 +105,21 @@ public class HotelService {
 		return hotelDao.selectListHotelRoom();
 	}
 	
+	// 예약
+	public int hotelBookingInsert(HotelDto hotelDto) {
+		return hotelDao.hotelBookingInsert(hotelDto);
+	}
+	
+	public int hotelBookingMenuInsert(HotelDto hotelDto) {
+		return hotelDao.hotelBookingMenuInsert(hotelDto);
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
 }

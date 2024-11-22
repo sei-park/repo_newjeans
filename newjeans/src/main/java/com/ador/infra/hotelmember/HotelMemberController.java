@@ -60,12 +60,12 @@ public class HotelMemberController {
 			model.addAttribute("memberList", hotelMemberService.memberSelectList(hotelMemberVo));
 		}
 				
-		return "/xdm/v1/infra/hotelmember/hotelMemberXdmList";
+		return "xdm/v1/infra/hotelmember/hotelMemberXdmList";
 	}
 	
 	@RequestMapping(value="/xdm/v1/infra/hotelmember/hotelMemberXdmForm")
 	public String hotelMemberXdmForm() {
-		return "/xdm/v1/infra/hotelmember/hotelMemberXdmForm";
+		return "xdm/v1/infra/hotelmember/hotelMemberXdmForm";
 	}
 	
 	// insert
@@ -96,7 +96,7 @@ public class HotelMemberController {
 	public String codeGroupXdmMForm(HotelMemberDto hotelMemberDto, Model model) {
 		
 		model.addAttribute("memberItem", hotelMemberService.memberSelectOne(hotelMemberDto));
-		return "/xdm/v1/infra/hotelmember/hotelMemberXdmMForm";
+		return "xdm/v1/infra/hotelmember/hotelMemberXdmMForm";
 	}
 	
 	// update 
@@ -128,7 +128,7 @@ public class HotelMemberController {
 	public String signin(HotelMemberDto hotelMemberDto) {
 		
 		hotelMemberService.selectOneLogin(hotelMemberDto);
-		return "/xdm/v1/infra/hotelmember/signin";	 
+		return "xdm/v1/infra/hotelmember/signin";	 
 	} 
 	
 	// login(로그인 처리)
@@ -180,7 +180,7 @@ public class HotelMemberController {
 	// mainpage 
 	@RequestMapping(value="/xdm/v1/infra/hotelmember/mainPage")
 	public String mainPage() {
-		return "/xdm/v1/infra/hotelmember/mainPage";
+		return "xdm/v1/infra/hotelmember/mainPage";
 	}        
      
 	// logout

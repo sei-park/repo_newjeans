@@ -87,14 +87,14 @@ public class CodeGroupController {
 		System.out.println("node.get(\"header\").get(\"resultMsg\").asText(): " + node.get("header").get("resultMsg").asText());
 		System.out.println("node.get(\"header\").get(\"resultMsg\").asText(): " + node.get("body").get("items").get(0).get("KIT_PROD_QTY").asText());
 															 
-		return "/xdm/v1/infra/codegroup/codeGroupXdmList";
+		return "xdm/v1/infra/codegroup/codeGroupXdmList";
 	} 
 	
 	
 	// 폼  
 	@RequestMapping(value="/xdm/v1/infra/codegroup/codeGroupXdmForm")
 	public String codeGroupXdmForm() {
-		return "/xdm/v1/infra/codegroup/codeGroupXdmForm";
+		return "xdm/v1/infra/codegroup/codeGroupXdmForm";
 	}
 	
 	////////// insert ////////// 
@@ -114,7 +114,7 @@ public class CodeGroupController {
 	public String codeGroupXdmMForm(CodeGroupDto codeGroupDto, Model model) {
 		
 		model.addAttribute("item" , codeGroupService.selectOne(codeGroupDto)); // "변수명", 객체
-		return "/xdm/v1/infra/codegroup/codeGroupXdmMForm";
+		return "xdm/v1/infra/codegroup/codeGroupXdmMForm";
 	}
 	
 	////////// update  ////////// 
@@ -157,7 +157,7 @@ public class CodeGroupController {
 	 
 	@RequestMapping(value="/xdm/v1/infra/codegroup/test")
 	public String test() {
-		return "/xdm/v1/infra/codegroup/test";
+		return "xdm/v1/infra/codegroup/test";
 	}
 	
 	

@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="zxx" xmlns:th="http://www.thymeleaf.org">
+<html lang="zxx">
 
-<head>      
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Title -->
-    <title>Hotel Details</title>
-    <!-- Bootstrap css -->	
+    <title>Room Booking</title>
+    <!-- Bootstrap css -->
     <link rel="stylesheet" href="/usr/v1/usertemplate/ui/assets/css/bootstrap.min.css" />
     <!-- animate css -->
     <link rel="stylesheet" href="/usr/v1/usertemplate/ui/assets/css/animate.min.css" />
@@ -15,10 +15,6 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.2/font/bootstrap-icons.css">
     <!-- owl.carousel css -->
     <link rel="stylesheet" href="/usr/v1/usertemplate/ui/assets/css/owl.carousel.min.css" />
-    <!-- Slick css -->
-    <link rel="stylesheet" type="text/css" href="/usr/v1/usertemplate/ui/assets/css/slick.min.css" />
-    <!--slick-theme.css-->
-    <link rel="stylesheet" type="text/css" href="/usr/v1/usertemplate/ui/assets/css/slick-theme.css" />
     <!-- Rangeslider css -->
     <link rel="stylesheet" href="/usr/v1/usertemplate/ui/assets/css/nouislider.css" />
     <!-- owl.theme.default css -->
@@ -33,92 +29,6 @@
     <link rel="stylesheet" href="/usr/v1/usertemplate/ui/assets/css/responsive.css" />
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="/usr/v1/usertemplate/ui/assets/img/favicon.png">
-    
-    <!-- by developer --> 
-	<link rel="stylesheet" href="/xdm/v1/css/datetimepicker/jquery.datetimepicker.min.css">
-    
-    <style>
-    #htNotice {
-    	font-family: 'Roboto', sans-serif;
-    }
-    
-          /*구글 맵*/       
-      #map {
-      	width: 580px;
-        height: 300px;   
-      }
-
-      #description {
-        font-family: Roboto;
-        font-size: 15px;
-        font-weight: 300;
-      }
-
-      #infowindow-content .title {
-        font-weight: bold;
-      }
-
-      #infowindow-content {
-        display: none;
-      }
-
-      #map #infowindow-content {
-        display: inline;
-      }
-      
-      .pac-card {
-        margin: 10px 10px 0 0;
-        border-radius: 2px 0 0 2px;
-        box-sizing: border-box;
-        -moz-box-sizing: border-box;
-        outline: none;
-        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
-        background-color: #fff;
-        font-family: Roboto;
-        width: 300px;
-      }   
-
-      #pac-container {
-        padding-bottom: 12px;
-        margin-right: 12px;
-      }
-
-      .pac-controls {
-        display: inline-block;
-        padding: 5px 11px;
-      }
-
-      .pac-controls label {
-        font-family: Roboto;
-        font-size: 13px;
-        font-weight: 300;
-      }
-
-      #pac-input {
-        background-color: #fff;
-        font-family: Roboto;
-        font-size: 15px;
-        font-weight: 300;
-        margin-left: 12px;
-        padding: 0 11px 0 13px;
-        text-overflow: ellipsis;
-        width: 400px;
-      } 
-
-      #pac-input:focus {
-        border-color: #4d90fe;
-      }
-
-      #title {
-        color: #fff;
-        background-color: #4d90fe;
-        font-size: 25px;
-        font-weight: 500;
-        padding: 6px 12px;
-      }
-   
-    </style>
-
 </head>
 
 <body>
@@ -200,6 +110,7 @@
                 </div>
             </div>
         </div>
+
         <!-- Navbar Bar -->
         <div class="navbar-area">
             <div class="main-responsive-nav">
@@ -216,7 +127,7 @@
             <div class="main-navbar">
                 <div class="container">
                     <nav class="navbar navbar-expand-md navbar-light">
-                        <a class="navbar-brand" href="/v1/infra/usrmember/usrIndex">
+                        <a class="navbar-brand" href="index.html">
                             <img src="/usr/v1/usertemplate/ui/assets/image/main_logo.png" alt="logo">
                         </a>
                         <div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent">
@@ -336,14 +247,13 @@
                                                     <a href="hotel-map.html" class="nav-link">Hotel Map</a>
                                                 </li>
                                                 <li class="nav-item">
-                                                    <a href="hotel-details.html" class="nav-link active">Hotel
-                                                        Booking</a>
+                                                    <a href="hotel-details.html" class="nav-link">Hotel Booking</a>
                                                 </li>
                                                 <li class="nav-item">
                                                     <a href="room-details.html" class="nav-link">Room Details</a>
                                                 </li>
                                                 <li class="nav-item">
-                                                    <a href="room-booking.html" class="nav-link">Room Booking</a>
+                                                    <a href="room-booking.html" class="nav-link active">Room Booking</a>
                                                 </li>
                                             </ul>
                                         </li>
@@ -500,7 +410,7 @@
                                     <a href="#" class="nav-link">Dashboard <i class="fas fa-angle-down"></i></a>
                                     <ul class="dropdown-menu">
                                         <li class="nav-item">
-                                            <a href="dashboard.html" class="nav-link">Dashboard</a>
+                                            <a href="dashboard.html" class="nav-link ">Dashboard</a>
                                         </li>
                                         <li class="nav-item">
                                             <a href="hotel-booking.html" class="nav-link">Hotel booking</a>
@@ -620,225 +530,207 @@
             </div>
         </div>
     </div>
- 
+
     <!-- Common Banner Area -->
     <section id="common_banner">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
                     <div class="common_bannner_text">
-                        <h2>Hotel details</h2>
+                        <h2>Room boking</h2>
                         <ul>
                             <li><a href="index.html">Home</a></li>
                             <li><span><i class="fas fa-circle"></i></span><a href="hotel-search.html">Hotel</a></li>
-                            <li><span><i class="fas fa-circle"></i></span> Hotel Details</li>
+                            <li><span><i class="fas fa-circle"></i></span><a href="hotel-details.html">Hotel details</a>
+                            </li>
+                            <li><span><i class="fas fa-circle"></i></span> Booking</li>
                         </ul>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-	
-    <!-- Hotel Search Areas -->          
-    <section id="tour_details_main" class="section_padding">
-    <form name="form" method="post" action="/usr/v1/infra/usrmember/usrHotelBookingInst">
+
+    <!-- Tour Booking Submission Areas -->
+    <section id="tour_booking_submission" class="section_padding">
         <div class="container">
-            <div class="row">  
+            <div class="row">
                 <div class="col-lg-8">
-                    <div class="tour_details_leftside_wrapper">
-                        <div class="tour_details_heading_wrapper">  
-                            <div class="tour_details_top_heading">   
-                                <h2 name="htName" th:text="${hotelRoomItem?.htName}">호텔 이름</h2>         
-									<div style="display: flex; align-items: center;">
-									    <i class="fas fa-map-marker-alt" style="margin-top:10px"></i> 
-									    <h5 id="htAddress" name="htAddress" th:text="${hotelRoomItem?.htAddress}" style="margin-left: 8px; margin-top:-5px;">호텔 주소</h5>
-									</div>
-                            </div>             	                   
-                            <div class="tour_details_top_heading_right" align="center">     
-                                	<div class="cruise_content_top_right">
-                                		<div th:if="${hotelRoomItem?.average_star == null}">
-<!--                                 			<h5 align="center" style="font-size:13px;">등록된 후기가 없습니다</h5> -->
-										</div>
-										<div th:if="${hotelRoomItem?.average_star != null}">
-											<i class="fas fa-star color_theme" 
- 												th:each="i : ${#numbers.sequence(1, hotelRoomItem?.average_star)}">
-    									    </i>
-									   </div>
-                                		<div th:if="${hotelRoomItem?.review_count != null}">
-                                			<h4 th:text="|(${hotelRoomItem?.review_count != null ? hotelRoomItem?.review_count : 0})|"></h4>
-	                                    </div> 
-                                    </div>
-                            </div>
-                        </div>
-                        <!-- <div class="tour_details_top_bottom">
-                            <div class="toru_details_top_bottom_item">
-                                <div class="tour_details_top_bottom_icon">
-                                    <img src="/usr/v1/usertemplate/ui/assets/img/icon/ac.png" alt="icon">
-                                </div>
-                                <div class="tour_details_top_bottom_text">
-                                    <p>Air condition</p>
-                                </div>
-                            </div>
-                            <div class="toru_details_top_bottom_item">
-                                <div class="tour_details_top_bottom_icon">
-                                    <img src="/usr/v1/usertemplate/ui/assets/img/icon/tv.png" alt="icon">
-                                </div>
-                                <div class="tour_details_top_bottom_text">
-                                    <p>Flat television</p>
-                                </div>
-                            </div>
-                            <div class="toru_details_top_bottom_item">
-                                <div class="tour_details_top_bottom_icon">
-                                    <img src="/usr/v1/usertemplate/ui/assets/img/icon/gym.png" alt="icon">
-                                </div>
-                                <div class="tour_details_top_bottom_text">
-                                    <p>Fitness center</p>
-                                </div>
-                            </div>
-                            <div class="toru_details_top_bottom_item">
-                                <div class="tour_details_top_bottom_icon">
-                                    <img src="/usr/v1/usertemplate/ui/assets/img/icon/wifi.png" alt="icon">
-                                </div>
-                                <div class="tour_details_top_bottom_text">
-                                    <p>Free Wi-fi</p>
-                                </div>
-                            </div>
-                        </div> -->
-                        <div class="tour_details_img_wrapper">
-                            <div class="slider slider-for"> 
-                                <div>
-                                    <img src="/usr/v1/usertemplate/ui/assets/image/hotel_details_main.jpg" alt="img">
-                                </div>
-                                <div>
-                                    <img src="/usr/v1/usertemplate/ui/assets/image/hotel_details01.jpg" alt="img">
-                                </div>
-                                <div>
-                                    <img src="/usr/v1/usertemplate/ui/assets/image/hotel_details02.jpg" alt="img">
-                                </div>
-                                <div>
-                                    <img src="/usr/v1/usertemplate/ui/assets/image/hotel_details03.jpg" alt="img">
-                                </div>
-                                <div>
-                                    <img src="/usr/v1/usertemplate/ui/assets/image/hotel_details04.jpg" alt="img">
-                                </div>
-                            </div>
-                            <div class="slider slider-nav">
-                                <div>
-                                    <img src="/usr/v1/usertemplate/ui/assets/image/hotel_details01.jpg" alt="img">
-                                </div>
-                                <div>
-                                    <img src="/usr/v1/usertemplate/ui/assets/image/hotel_details02.jpg" alt="img">
-                                </div>
-                                <div>
-                                    <img src="/usr/v1/usertemplate/ui/assets/image/hotel_details03.jpg" alt="img">
-                                </div>
-                                <div>
-                                    <img src="/usr/v1/usertemplate/ui/assets/image/hotel_details04.jpg" alt="img">
-                                </div>
-                                <div>
-                                    <img src="/usr/v1/usertemplate/ui/assets/image/hotel_details05.jpg" alt="img">
-                                </div>
-                                <div>
-                                    <img src="/usr/v1/usertemplate/ui/assets/image/hotel_details06.jpg" alt="img">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="tour_details_boxed">         
-                            <h3 class="heading_theme">공지사항</h3>                        
-                            <pre class="tour_details_boxed_inner" id="htNotice" name="htNotice" th:text="${hotelRoomItem?.htNotice}">
-                            </pre>
-                        </div>
-                        <div class="tour_details_boxed">   
-                            <h3 class="heading_theme">예약 가능한 객실</h3>
-                            <div class="room_select_area">
-                                <div class="tab-content" id="myTabContent">
-                                    <div class="tab-pane fade show active" id="home" role="tabpanel"
-                                        aria-labelledby="home-tab">
-                                        <div class="room_booking_area">
-                                        
-                                            <div class="room_book_item" th:each="list : ${hotelDetailList}">
-                                                <div class="room_book_img">
-                                                    <img src="/usr/v1/usertemplate/ui/assets/image/hotel_details03.jpg" alt="img" width="240" height="150">
-                                                </div>
-                                                <div class="room_booking_right_side">  
-                                                    <div class="room_booking_heading">
-                                                        <h3 th:text="${list.htrRoomName}">객실1</h3>
-                                                        <p>내부 시설</p>             
-                                                        <div class="room_fasa_area"> 
-                                                            <ul> 
-                                                                <i class="fa fa-bed" aria-hidden="true"></i><li th:if="${list.bedoption != null}" th:text="${list.bedoption}">침대옵션</li>
-                                                                <img src="/usr/v1/usertemplate/ui/assets/img/icon/ac.png" alt="icon" style="width:20px; height:17px;" th:if="${list.aircondNy == 1}">
-                                                                <li th:if="${list.aircondNy == 1}" th:text="'에어컨'">에어컨</li>
-                                                                <i class="fa fa-bath" aria-hidden="true" th:if="${list.bathNy == 1}"></i>
-                                                                <li th:if="${list.bathNy == 1}" th:text="'욕조'">욕조</li>
-                                                            </ul>
-                                                            <ul>
-                                                                <img src="/usr/v1/usertemplate/ui/assets/img/icon/tv.png" alt="icon" style="width:20px; height:17px;" th:if="${list.tvNy == 1}">
-                                                                <li th:if="${list.tvNy == 1}" th:text="'TV'">TV</li>
-                                                                <img src="/usr/v1/usertemplate/ui/assets/img/icon/wifi.png" alt="icon" style="width:20px; height:17px;" th:if="${list.wifiNy == 1}">
-                                                                <li th:if="${list.wifiNy == 1}" th:text="'무료 Wi-fi'">무료 Wi-fi</li>
-                                                                <i class="fa fa-coffee" aria-hidden="true" th:if="${list.coffeeNy == 1}"></i>
-                                                                <li th:if="${list.coffeeNy == 1}" th:text="'커피머신'">커피머신</li>
-                                                            </ul>
-                                                        </div>
-                                                    </div>
-                                                    <div class="room_person_select">
-                                                        <h3 name="htrRoomPrice" th:text="${'₩' + #numbers.formatInteger(list.htrRoomPrice, 3, 'COMMA')}">가격<sub> / 1박</sub></h3>
-                                                        <select class="form-select" aria-label="Default select example">
-                                                            <option selected>1</option>
-                                                            <option value="2">2</option>
-                                                            <option value="3">3</option> 
-                                                            <option value="4">4</option>
-                                                        </select>
-                                                    </div>
-                                                    <div class="room_person_select">
-                                                    	<label>
-                                                    		<input type="checkbox" name="menuSeqs" class="menu-checkbox" th:value="${list.htrseq}" th:attr="data-price=${list.htrRoomPrice != null ? list.htrRoomPrice : 0}" 
-                                                    		onchange="updateTotalPrice()">
-                                                    		<input type="hidden" name="htbTotalPrice" id="totalPriceInput">
-                                                    		<p>선택</p>
-                                                    	</label>
-                                                    </div>
-                                                </div> 
+                    <div class="tou_booking_form_Wrapper">
+                        <div class="booking_tour_form">
+                            <h3 class="heading_theme">예약하기</h3>
+                            <div class="tour_booking_form_box">
+                                <form action="!#" id="tour_bookking_form_item">
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            <div class="form-group">
+                                                <input type="text" class="form-control bg_input" placeholder="이름*">
                                             </div>
-                                            
                                         </div>
+                                        <!-- <div class="col-lg-6">
+                                            <div class="form-group">
+                                                <input type="text" class="form-control bg_input"
+                                                    placeholder="Last name*">
+                                            </div>
+                                        </div> -->
+                                        <div class="col-lg-6">
+                                            <div class="form-group">
+                                                <input type="text" class="form-control bg_input" placeholder="이메일 주소">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <div class="form-group">
+                                                <input type="text" class="form-control bg_input" placeholder="휴대폰 번호*">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-12">
+                                            <div class="form-group">
+                                                <input type="text" class="form-control bg_input" placeholder="주소">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-12">
+                                            <div class="form-group">
+                                                <input type="text" class="form-control bg_input" placeholder="상세주소">
+                                            </div>
+                                        </div>
+                                        <!-- <div class="col-lg-6">
+                                            <div class="form-group">
+                                                <select class="form-control form-select bg_input">
+                                                    <option value="1">Khulna</option>
+                                                    <option value="1">New York</option>
+                                                    <option value="1">Barisal</option>
+                                                    <option value="1">Nator</option>
+                                                    <option value="1">Joybangla</option>
+                                                </select>
+                                            </div>
+                                        </div> -->
+                                        <!-- <div class="col-lg-6">
+                                            <div class="form-group">
+                                                <select class="form-control form-select bg_input">
+                                                    <option value="1">도시</option>
+                                                    <option value="1">New York</option>
+                                                    <option value="1">Barisal</option>
+                                                    <option value="1">Nator</option>
+                                                    <option value="1">Joybangla</option>
+                                                </select>
+                                            </div>
+                                        </div> -->
+                                        <div class="col-lg-12">
+                                            <div class="form-group">
+                                                <input type="text" class="form-control bg_input" placeholder="우편번호">
+                                            </div>
+                                            <!-- <div class="form-group">
+                                                <select class="form-control form-select bg_input">
+                                                    <option value="1">Country</option>
+                                                    <option value="1">New York</option>
+                                                    <option value="1">Barisal</option>
+                                                    <option value="1">Nator</option>
+                                                    <option value="1">Joybangla</option>
+                                                </select>
+                                            </div> -->
+                                        </div>
+
                                     </div>
-                                    <div class="tab-pane fade" id="profile" role="tabpanel"
-                                        aria-labelledby="profile-tab">
-                                        <div class="write_review_inner_boxed">
+                                </form>
+                            </div>
+                        </div>
+                        <div class="booking_tour_form">
+                            <h3 class="heading_theme">결제 방법</h3>
+                            <div class="tour_booking_form_box">
+                                <div class="booking_payment_boxed">
+                                    <form action="!#" id="payment_checked">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                                id="flexRadioDefault1" value="red">
+                                            <label class="form-check-label" for="flexRadioDefault1">
+                                                신용카드
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                                id="flexRadioDefault2" value="green">
+                                            <label class="form-check-label" for="flexRadioDefault2">
+                                                무통장 입금
+                                            </label>
+                                        </div>
+                                        <!-- <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                                id="flexRadioDefault3" value="black">
+                                            <label class="form-check-label" for="flexRadioDefault3">
+                                                숙소에서 결제
+                                            </label>
+                                        </div> -->
+                                        <!-- <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                                id="flexRadioDefault4" value="white">
+                                            <label class="form-check-label" for="flexRadioDefault4">
+                                                네이버페이
+                                            </label>
+                                        </div> -->
+                                        <div class="payment_filed_wrapper">
+                                            <div class="payment_card payment_toggle red">
                                                 <div class="row">
                                                     <div class="col-lg-6">
-                                                        <div class="form-froup">
+                                                        <div class="form-group">
                                                             <input type="text" class="form-control bg_input"
-                                                                placeholder="Enter full name">
+                                                                placeholder="Card number">
                                                         </div>
                                                     </div>
                                                     <div class="col-lg-6">
-                                                        <div class="form-froup">
+                                                        <div class="form-group">
                                                             <input type="text" class="form-control bg_input"
-                                                                placeholder="Enter email address">
+                                                                placeholder="Cardholder name">
                                                         </div>
                                                     </div>
-                                                    <div class="col-lg-12">
-                                                        <div class="form-froup">
-                                                            <textarea rows="6" placeholder="Write your comments"
-                                                                class="form-control bg_input"></textarea>
+                                                    <div class="col-lg-6">
+                                                        <div class="form-group">
+                                                            <input type="text" class="form-control bg_input"
+                                                                placeholder="Date of expiry">
                                                         </div>
-                                                        <div class="comment_form_submit">
-                                                            <button class="btn btn_theme btn_md">Enquiry</button>
+                                                    </div>
+                                                    <div class="col-lg-6">
+                                                        <div class="form-group">
+                                                            <input type="text" class="form-control bg_input"
+                                                                placeholder="Security code">
                                                         </div>
                                                     </div>
                                                 </div>
+                                            </div>
+                                            <div class="paypal_payment payment_toggle green">
+                                                <div class="row">
+                                                    <div class="col-lg-6">
+                                                        <div class="form-group">
+                                                            <input type="text" class="form-control bg_input"
+                                                                placeholder="Email Address">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="payoneer_payment payment_toggle black">
+                                                <div class="row">
+                                                    <div class="col-lg-6">
+                                                        <div class="form-group">
+                                                            <input type="text" class="form-control bg_input"
+                                                                placeholder="Email Address">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
-                                    </div>
+                                    </form>
                                 </div>
                             </div>
                         </div>
-                        <div class="tour_details_boxed">
-                            <h3 class="heading_theme">위치</h3>
-                            <!-- 구글 맵 -->
-                            <div id="map" style="height: 500px; width: 100%;"></div>
+                        <div class="booking_tour_form_submit">
+                            <div class="form-check write_spical_check">
+                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefaultf1">
+                                <label class="form-check-label" for="flexCheckDefaultf1">
+                                    <span class="main_spical_check">
+                                        <span><a href="terms-service.html">결제 조건 및 서비스 약관</a>에 동의합니다</span>
+                                    </span>
+                                </label>
+                            </div>
+                            <a href="booking-confirmation.html" class="btn btn_theme btn_md">결제하기</a>
                         </div>
                     </div>
                 </div>
@@ -847,314 +739,144 @@
                         <div class="tour_detail_right_sidebar">
                             <div class="tour_details_right_boxed">
                                 <div class="tour_details_right_box_heading">
-                                    <h3>가격 확인</h3>
+                                    <h3>프리미어 더블룸</h3>
                                 </div>
-                                <div class="tour_package_bar_price">
-                                    <h3 name="htrRoomPrice" th:text="${'₩' + #numbers.formatInteger(hotelRoomItem?.htrRoomPrice, 3, 'COMMA') + ' ~'}">최저가<sub> / 1박</sub></h3>
-                                </div>      
-
+                                <div class="valid_date_area">
+                                    <div class="valid_date_area_one">
+                                        <h5>입실</h5>
+                                        <p>01 Feb 2022</p>
+                                    </div>
+                                    <div class="valid_date_area_one">
+                                        <h5>퇴실</h5>
+                                        <p>15 Feb 2022</p>
+                                    </div>
+                                    <div class="valid_date_area_one">
+                                        <h5>인원 수</h5>
+                                        <p>성인 2명</p>
+                                    </div>
+                                </div>
+                                <div class="tour_package_details_bar_list">
+                                    <h5>포함사항</h5>
+                                    <ul>
+                                        <li>피트니스 센터 이용</li>
+                                        <li>수영장 이용</li>
+                                        <li>조식</li>
+                                    </ul>
+                                </div>
                                 <div class="tour_package_details_bar_list">
                                     <h5>시설</h5>
-                                    <ul> 
-                                        <li th:if="${hotelRoomItem?.htBreakfastNy == 1}" th:text="'조식'">옵션1</li>
-                                        <li th:if="${hotelRoomItem?.htRoomServiceNy == 1}" th:text="'룸서비스'">옵션2</li>
-                                        <li th:if="${hotelRoomItem?.htRestaurantNy == 1}" th:text="'레스토랑'">옵션3</li>  
-                                        <li th:if="${hotelRoomItem?.htPoolNy == 1}" th:text="'수영장'">옵션4</li>
-                                        <li th:if="${hotelRoomItem?.htSpaNy == 1}" th:text="'스파/온천'">옵션5</li>  
-                                        <li th:if="${hotelRoomItem?.htFitnessCenterNy == 1}" th:text="'피트니스센터'">옵션6</li>
-                                        <li th:if="${hotelRoomItem?.htloungeNy == 1}" th:text="'라운지'">옵션7</li>
-                                        <li th:if="${hotelRoomItem?.htStockRoomNy == 1}" th:text="'물품보관소'">옵션8</li>
-                                        <li th:if="${hotelRoomItem?.htParkingNy == 1}" th:text="'무료주차'">옵션9</li>
-                                        <li th:if="${hotelRoomItem?.htShuttleBusNy == 1}" th:text="'셔틀버스'">옵션10</li>
-                                    </ul>  
+                                    <ul>
+                                        <li>레스토랑 & 바</li>
+                                        <li>물품보관소</li>
+                                        <li>내부 전용 주차장</li>
+                                    </ul>
+                                </div>
+                                <div class="tour_package_details_bar_price">
+                                    <h5>가격 확인</h5>
+                                    <div class="tour_package_bar_price">
+                                        <!-- <h6><del>₩786,500</del></h6> -->
+                                        <h3>₩786,500<sub> / 1박</sub> </h3>
+                                    </div>
                                 </div>
                             </div>
                         </div>
+                        <!-- <div class="tour_detail_right_sidebar">
+                            <div class="tour_details_right_boxed">
+                                <div class="tour_details_right_box_heading">
+                                    <h3>Travel date</h3>
+                                </div>
+                                <div class="edit_date_form">
+                                    <div class="form-group">
+                                        <label for="dates">Edit Date</label>
+                                        <input type="date" id="dates" value="2022-05-05" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="tour_package_details_bar_list">
+                                    <h5>Tourist</h5>
+                                    <div class="select_person_item">
+                                        <div class="select_person_left">
+                                            <h6>Adult</h6>
+                                            <p>12y+</p>
+                                        </div>
+                                        <div class="select_person_right">
+                                            <h6>01</h6>
+                                        </div>
+                                    </div>
 
+                                    <div class="select_person_item">
+                                        <div class="select_person_left">
+                                            <h6>Children</h6>
+                                            <p>2 - 12 years</p>
+                                        </div>
+                                        <div class="select_person_right">
+                                            <h6>01</h6>
+                                        </div>
+                                    </div>
+                                    <div class="select_person_item">
+                                        <div class="select_person_left">
+                                            <h6>Infant</h6>
+                                            <p>Below 2 years</p>
+                                        </div>
+                                        <div class="select_person_right">
+                                            <h6>01</h6>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="edit_person">
+                                    <p>Edit person</p>
+                                </div>
+                            </div>
+                        </div> -->
                         <div class="tour_detail_right_sidebar">
                             <div class="tour_details_right_boxed">
                                 <div class="tour_details_right_box_heading">
-                                    <h3>날짜 선택</h3>
-                                </div> 
-                                <div class="tour_package_details_bar_list first_child_padding_none">
-                                	<div class="row mb-3">
-                                		<div class="col-md-8">
-                                		 	<input type="text" class="form-select" id="dateStart" autocomplete="off" placeholder="입실" style="cursor:pointer;">
+                                    <h3>쿠폰 등록</h3>
+                                </div>
+                                <div class="coupon_code_area_booking">
+                                    <form action="#!">
+                                        <div class="form-group">
+                                            <input type="text" class="form-control bg_input" placeholder="쿠폰 번호를 입력하세요">
                                         </div>
-                                	</div> 
-                                	<div class="row">
-                                		<div class="col-md-8">
-                                		 	<input type="text" class="form-select" id="dateEnd" autocomplete="off" placeholder="퇴실" style="cursor:pointer;">
+                                        <div class="coupon_code_submit">
+                                            <button class="btn btn_theme btn_md">등록</button>
                                         </div>
-                                	</div>
+                                    </form>
                                 </div>
-                                <br>
-                                <div class="tour_package_details_bar_list first_child_padding_none">
-                                	<div class="row mb-3">
-                                		<div class="col-md-8">
-                                			<p>입실일 : <span id="checkIn"></span></p>
-                                        </div>
-                                	</div>  
-                                	<div class="row mb-3">
-                                		<div class="col-md-8">
-                                			<p>퇴실일 : <span id="checkOut"></span></p>
-                                        </div> 
-                                	</div>
-                                	<div class="row">
-                                		<div class="col-md-8">
-                                			<p>총 금액 : <span id="totalPrice"></span></p>
-                                        </div>  
-                                	</div>
-                                	<div class="comment_form_submit" style="margin-top:25px;">
-                                		<a href="/usr/v1/infra/usrmember/usrHotelBooking">
-                                         <button type="button" class="btn btn_theme btn_md" id="bookingBtn">예약하기</button>
-                                        </a>
-                                    </div>
-                                </div> 
-                            </div> 
-                        </div> 
-                    </div>
-                </div>           
-            </div>
-        </div>
-     </form>
-        
-        
-        
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8">
-                    <div class="write_your_review_wrapper">
-                        <h3 class="heading_theme">후기 작성</h3>
-                        <p>별점 남기기</p>
-                        <div class="write_review_inner_boxed">
-                            <div class="row">
-                                <div class="col-lg-2">
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="htrestars" id="htrestars01" value="1">
-                                        <label class="form-check-label" for="flexRadioDefault1">
-                                            <div class="rating">
-                                                <i class="rating__star fas fa-star"></i>
-                                                <i class="rating__star far fa-star"></i>
-                                                <i class="rating__star far fa-star"></i>
-                                                <i class="rating__star far fa-star"></i>
-                                                <i class="rating__star far fa-star"></i>
-                                            </div>
-                                        </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="htrestars" id="htrestars04" value="4">
-                                        <label class="form-check-label" for="flexRadioDefault1">
-                                            <div class="rating">
-                                                <i class="rating__star fas fa-star"></i>
-                                                <i class="rating__star fas fa-star"></i>
-                                                <i class="rating__star fas fa-star"></i>
-                                                <i class="rating__star fas fa-star"></i>
-                                                <i class="rating__star far fa-star"></i>
-                                            </div>
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="col-lg-2">
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="htrestars" id="htrestars02" value="2">
-                                        <label class="form-check-label" for="flexRadioDefault1">
-                                            <div class="rating">
-                                                <i class="rating__star fas fa-star"></i>
-                                                <i class="rating__star fas fa-star"></i>
-                                                <i class="rating__star far fa-star"></i>
-                                                <i class="rating__star far fa-star"></i>
-                                                <i class="rating__star far fa-star"></i>
-                                            </div>
-                                        </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="htrestars" id="htrestars05" value="5">
-                                        <label class="form-check-label" for="flexRadioDefault1">
-                                            <div class="rating">
-                                                <i class="rating__star fas fa-star"></i>
-                                                <i class="rating__star fas fa-star"></i>
-                                                <i class="rating__star fas fa-star"></i>
-                                                <i class="rating__star fas fa-star"></i>
-                                                <i class="rating__star fas fa-star"></i>
-                                            </div>
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="col-lg-2">
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="htrestars" id="htrestars03" value="3">
-                                        <label class="form-check-label" for="flexRadioDefault1">
-                                            <div class="rating">
-                                                <i class="rating__star fas fa-star"></i>
-                                                <i class="rating__star fas fa-star"></i>
-                                                <i class="rating__star fas fa-star"></i>
-                                                <i class="rating__star far fa-star"></i>
-                                                <i class="rating__star far fa-star"></i>
-                                            </div>
-                                        </label>
-                                    </div>
-                                </div>
-                            </div>
 
-                            <form action="!#" id="news_comment_form">
-                                <div class="row">
-                                    <div class="col-lg-6">
-                                        <div class="form-froup">
-                                            <input type="text" class="form-control bg_input" placeholder="아이디" name="htmId">
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-6">
-                                        <div class="form-froup">
-                                            <input type="text" class="form-control bg_input" placeholder="이메일 주소" name="htmEmail">
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-12 gy-3">
-                                        <div class="form-froup">
-                                            <textarea rows="6" placeholder="내용 작성하기" class="form-control bg_input" name="htrecomments"></textarea>
-                                        </div>
-                                        <div class="comment_form_submit" style="margin-top:25px;">
-                                            <button type="submit" class="btn btn_theme btn_md">저장하기</button>
-                                        </div>
-                                    </div>
-                                </div> <!--row-->
-                            </form>
+                            </div>
                         </div>
-                 </div>
-               </div>
-            </div>
+                        <div class="tour_detail_right_sidebar">
+                            <div class="tour_details_right_boxed">
+                                <div class="tour_details_right_box_heading">
+                                    <h3>결제 금액</h3>
+                                </div>
 
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="all_review_wrapper">
-                        <h3 class="heading_theme">후기</h3>
-                    </div>
-                </div>
-                	
-                <div class="col-lg-12" th:if="${#lists.isEmpty(hotelReviewList)}">	  
-                	<div>
-                        <h5>등록된 후기가 없습니다</h5>
-                    </div>								
-				</div>							
-                <div class="col-lg-4 col-md-6" th:if="${!#lists.isEmpty(hotelReviewList)}" th:each="list : ${hotelReviewList}">
-                    <div class="all_review_box">
-                        <div class="all_review_date_area">
-                            <div class="all_review_date">
-                                <h5 th:text="${#dates.format(list.htreRegDate,'yyyy-MM-dd')}">날짜</h5>
+                                <div class="tour_booking_amount_area">
+                                    <ul>
+                                        <li>상품 금액 <span>₩786,500</span></li>
+                                        <li>할인 <span>₩-50,000</span></li>
+                                        <li>세금 및 수수료<span>₩16,000</span></li>
+                                    </ul>
+                                    <div class="tour_bokking_subtotal_area">
+                                        <h6>총 금액 <span>₩752,500</span></h6>
+                                    </div>
+                                    <div class="coupon_add_area">
+                                        <h6>쿠폰 할인
+                                            <!-- <span class="remove_coupon_tour">취소</span>  -->
+                                            <span>₩-10,000</span>
+                                        </h6>
+                                    </div>
+                                    <div class="total_subtotal_booking">
+                                        <h6>총 결제 금액 <span>₩742,500</span> </h6>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="all_review_star row">
-	                            <div class="review_star_all" >
-	                                 <i class="fas fa-star" th:each="i : ${#numbers.sequence(1, list.htrestars)}">&nbsp;</i>   
-	                            </div>
-                            </div> 
-                        </div>     
-                        <div class="all_review_text">
-                            <img src="/usr/v1/usertemplate/ui/assets/image/user_img.png" alt="img">
-                            <h4 th:text="${list.htmId}">아이디</h4>
-                            <p th:text="${list.htrecomments}">리뷰 내용</p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-
-    <!--Related tour packages Area -->
-    <!-- <section id="related_tour_packages" class="section_padding_bottom">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-12">
-                    <div class="section_heading_center">
-                        <h2>Related hotels</h2>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="promotional_tour_slider owl-theme owl-carousel dot_style">
-                        <div class="theme_common_box_two img_hover">
-                            <div class="theme_two_box_img">
-                                <a href="hotel-details.html"><img src="/usr/v1/usertemplate/ui/assets/img/tab-img/hotel1.png" alt="img"></a>
-                                <p><i class="fas fa-map-marker-alt"></i>New beach, Thailand</p>
-                            </div>
-                            <div class="theme_two_box_content">
-                                <h4><a href="hotel-details.html">Kantua hotel, Thailand</a></h4>
-                                <p><span class="review_rating">4.8/5 Excellent</span> <span class="review_count">
-                                    (1214 reviewes)</span></p>
-                                <h3>$99.00 <span>Price starts from</span></h3>
-                            </div>
-                        </div>
-                        <div class="theme_common_box_two img_hover">
-                            <div class="theme_two_box_img">
-                                <a href="hotel-details.html"><img src="/usr/v1/usertemplate/ui/assets/img/tab-img/hotel2.png" alt="img"></a>
-                                <p><i class="fas fa-map-marker-alt"></i>Indonesia</p>
-                                <div class="discount_tab">
-                                    <span>50%</span>
-                                </div>
-                            </div>
-                            <div class="theme_two_box_content">
-                                <h4><a href="hotel-details.html">Hotel paradise international</a></h4>
-                                <p><span class="review_rating">4.8/5 Excellent</span> <span class="review_count">(1214
-                                        reviewes)</span></p>
-                                <h3>$99.00 <span>Price starts from</span></h3>
-                            </div>
-                        </div>
-                        <div class="theme_common_box_two img_hover">
-                            <div class="theme_two_box_img">
-                                <a href="hotel-details.html"><img src="/usr/v1/usertemplate/ui/assets/img/tab-img/hotel3.png" alt="img"></a>
-                                <p><i class="fas fa-map-marker-alt"></i>Kualalampur</p>
-                            </div>
-                            <div class="theme_two_box_content">
-                                <h4><a href="hotel-details.html">Hotel kualalampur</a></h4>
-                                <p><span class="review_rating">4.8/5 Excellent</span> <span class="review_count">(1214
-                                        reviewes)</span></p>
-                                <h3>$99.00 <span>Price starts from</span></h3>
-                            </div>
-                        </div>
-                        <div class="theme_common_box_two img_hover">
-                            <div class="theme_two_box_img">
-                                <a href="hotel-details.html"><img src="/usr/v1/usertemplate/ui/assets/img/tab-img/hotel4.png" alt="img"></a>
-                                <p><i class="fas fa-map-marker-alt"></i>Mariana island</p>
-                                <div class="discount_tab">
-                                    <span>50%</span>
-                                </div>
-                            </div>
-                            <div class="theme_two_box_content">
-                                <h4><a href="hotel-details.html">Hotel deluxe</a></h4>
-                                <p><span class="review_rating">4.8/5 Excellent</span> <span class="review_count">(1214
-                                        reviewes)</span></p>
-                                <h3>$99.00 <span>Price starts from</span></h3>
-                            </div>
-                        </div>
-                        <div class="theme_common_box_two img_hover">
-                            <div class="theme_two_box_img">
-                                <a href="hotel-details.html"><img src="/usr/v1/usertemplate/ui/assets/img/tab-img/hotel6.png" alt="img"></a>
-                                <p><i class="fas fa-map-marker-alt"></i>Beach view</p>
-                            </div>
-                            <div class="theme_two_box_content">
-                                <h4><a href="#!">Thailand grand suit</a></h4>
-                                <p><span class="review_rating">4.8/5 Excellent</span> <span class="review_count">(1214
-                                        reviewes)</span></p>
-                                <h3>$99.00 <span>Price starts from</span></h3>
-                            </div>
-                        </div>
-                        <div class="theme_common_box_two img_hover">
-                            <div class="theme_two_box_img">
-                                <a href="hotel-details.html"><img src="/usr/v1/usertemplate/ui/assets/img/tab-img/hotel7.png" alt="img"></a>
-                                <p><i class="fas fa-map-marker-alt"></i>Long island</p>
-                            </div>
-                            <div class="theme_two_box_content">
-                                <h4><a href="hotel-details.html">Zefi resort and spa</a></h4>
-                                <p><span class="review_rating">4.8/5 dfdsdf</span> <span class="review_count">(1214
-                                        reviewes)</span></p>
-                                <h3>$99.00 <span>Price starts from</span></h3>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section> -->
 
     <!-- Cta Area -->
     <!-- <section id="cta_area">
@@ -1275,14 +997,13 @@
             </div>
         </div>
     </footer>
-
     <div class="copyright_area">
         <div class="container">
             <div class="row align-items-center">
                 <div class="co-lg-6 col-md-6 col-sm-12 col-12">
-                    <div class="copyright_left">
-                        <!-- <p>Copyright © 2022 All Rights Reserved</p> -->
-                    </div>
+                    <!-- <div class="copyright_left">
+                        <p>Copyright © 2022 All Rights Reserved</p>
+                    </div> -->
                 </div>
                 <div class="co-lg-6 col-md-6 col-sm-12 col-12">
                     <div class="copyright_right">
@@ -1302,131 +1023,14 @@
     <script src="/usr/v1/usertemplate/ui/assets/js/bootstrap.bundle.js"></script>
     <!-- Meanu js -->
     <script src="/usr/v1/usertemplate/ui/assets/js/jquery.meanmenu.js"></script>
-    <!-- Range js -->
-    <script src="/usr/v1/usertemplate/ui/assets/js/nouislider.min.js"></script>
-    <script src="/usr/v1/usertemplate/ui/assets/js/wNumb.js"></script>
     <!-- owl carousel js -->
     <script src="/usr/v1/usertemplate/ui/assets/js/owl.carousel.min.js"></script>
-    <!-- Slick js -->
-    <script src="/usr/v1/usertemplate/ui/assets/js/slick.min.js"></script>
-    <script src="/usr/v1/usertemplate/ui/assets/js/slick-slider.js"></script>
     <!-- wow.js -->
     <script src="/usr/v1/usertemplate/ui/assets/js/wow.min.js"></script>
     <!-- Custom js -->
     <script src="/usr/v1/usertemplate/ui/assets/js/custom.js"></script>
     <script src="/usr/v1/usertemplate/ui/assets/js/add-form.js"></script>
-
-    <!-- hotel details 별점 -->
-    <script src="/usr/v1/usertemplate/ui/assets/js/star.js"></script>
-    
-     <!-- 구글 맵 -->
-     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyADWyNQedLuX-WxYL6uNdz92ohBpbC-YUA&libraries=places&callback=initMap" defer></script>
-     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyADWyNQedLuX-WxYL6uNdz92ohBpbC-YUA&callback=myMap"></script>
-     
-     <!-- Google Maps API 및 Places 라이브러리 추가 -->
-	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyADWyNQedLuX-WxYL6uNdz92ohBpbC-YUA&callback=initMap&libraries=places" async defer></script>
-    <script src="/xdm/v1/js/datetimepicker/jquery.datetimepicker.full.min.js"></script>
-    <script>
-    $("#htNotice").val().replace(/(<br>|<br\/>|<br \/>)/g, '\r\n');
-     
-  
-  // 구글 맵
-  function initMap() {
-        var map = new google.maps.Map(document.getElementById('map'), {
-          zoom: 13,
-        });
-
-        var infowindow = new google.maps.InfoWindow();
-        var marker = new google.maps.Marker({
-          map: map
-        });
-
-        // h5 태그에 있는 주소를 가져옴
-        var address = document.getElementById("htAddress").innerText;
-
-        // Geocoding API를 사용하여 주소를 좌표로 변환
-        var geocoder = new google.maps.Geocoder();
-
-        geocoder.geocode({ 'address': address }, function(results, status) {
-          if (status === 'OK') {
-            // 지도를 주소의 좌표로 초기화
-            map.setCenter(results[0].geometry.location);
-            marker.setPosition(results[0].geometry.location);
-            infowindow.setContent(address);
-            infowindow.open(map, marker);
-          } else {
-            alert('Geocode was not successful for the following reason: ' + status);
-          }
-        });
-    }
-  
-	// 달력으로 날짜 선택
-	window.addEventListener('load', function() {
-		$.datetimepicker.setLocale('ko'); 
-	
-		$("#dateStart").datetimepicker({
-			timepicker:false, 
-			format: 'Y-m-d' 
-		}).on('change', function () {
-			const selectedDate = $(this).val();
-			$('#checkIn').text(selectedDate);
-		});
-		
-		$("#dateEnd").datetimepicker({
-			timepicker:false, 
-			format: 'Y-m-d' 
-		}).on('change', function () {
-			const selectedDate = $(this).val();
-			$('#checkOut').text(selectedDate);
-		});
-		
-	});
-	
-	// 메뉴 가격 합산 및 선택된 메뉴 seq 처리
-	function updateTotalPrice() {
-		
-		let total = 0; // 총 금액 초기화   
-		let selectedMenuSeqs = []; // 선택된 메뉴 seq 배열 초기화
-		
-	    // 선택된 체크박스들의 데이터(가격, seq)를 처리
-	    document.querySelectorAll('.menu-checkbox:checked').forEach(checkbox => {
-	    	
-	        const price = checkbox.getAttribute('data-price'); // data-price 읽기
-	        console.log('data-price:', price); // 디버깅 출력
-	
-	        const priceValue = isNaN(price) || price === null || price === '' ? 0 : parseInt(price, 10);
-	
-	        total += priceValue; // 총 금액 합산
-	        selectedMenuSeqs.push(checkbox.value); // 메뉴 seq 저장
-	        
-	    });
-		
-	   // 총 금액을 화면에 표시 (boTotalPrice)
-	   document.getElementById('totalPrice').textContent = total.toLocaleString(); // 숫자 형식화
-
-	   // 총 금액을 hidden 필드에 설정
-	   document.getElementById('totalPriceInput').value = total;
-	   
-	   // 선택된 메뉴 seq를 디버깅 로그로 출력 
-	   console.log('선택된 메뉴 seq:', selectedMenuSeqs);
-	   console.log('총 금액:', total);
-		
-	}
-	
-	// 예약하기 버튼 - insert
-	document.getElementById('bookingBtn').onclick = function(){
- 		form.action="/usr/v1/infra/usrmember/usrHotelBookingInst";
-		form.submit();
-	}
-	
-
-
- 
-
-
-    
-    </script>
-    
+    <script src="/usr/v1/usertemplate/ui/assets/js/payment-form.js"></script>
 
 </body>
 

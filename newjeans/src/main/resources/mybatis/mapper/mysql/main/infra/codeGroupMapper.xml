@@ -41,7 +41,7 @@
 	        a.ifcgDesc,
 	        a.regDateTime,
 	        a.regDateTimeRevise,
-	        (select count(ifcdSeq) from Code b where 1=1 and b.codegroup_ifcgSeq = a.ifcgSeq) as count <!-- 카운트 -->
+	        (select count(ifcdSeq) from code b where 1=1 and b.codegroup_ifcgSeq = a.ifcgSeq) as count <!-- 카운트 -->
 	    <include refid="selectCommon"/>
 		ORDER BY 
 			a.ifcgSeq desc 

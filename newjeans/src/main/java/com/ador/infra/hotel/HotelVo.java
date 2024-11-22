@@ -22,6 +22,7 @@ public class HotelVo {
 	private Integer shBreakfast;
 	private Integer shRoomService;
 	private Integer shElse;
+	private Integer shStar;
 	
 	// paging 
 	private int thisPage = 1;									// 현재 페이지
@@ -37,10 +38,19 @@ public class HotelVo {
 	
 	// hotel usr list
 	private String shLListhtName;
-	private Integer shStar;
 	
 	// 별점 여러 개 체크해서 검색하기
-	private String[] starsArr; 
+	private String[] starsArr;
+
+	// 성급 여러 개 체크해서 검색하기
+	private String[] classArr;
+	
+	// 호텔서비스 여러 개 체크해서 검색하기
+	private String[] BreakfastNyArr;
+	
+	private int Breakfastcount;
+	
+ 	
 	//--
 	public Integer getShDelNy() {
 		return shDelNy;
@@ -210,11 +220,32 @@ public class HotelVo {
 	public void setStarsArr(String[] starsArr) {
 		this.starsArr = starsArr;
 	}
+	public String[] getClassArr() {
+		return classArr;
+	}
+	public void setClassArr(String[] classArr) {
+		this.classArr = classArr;
+	}
+	public String[] getBreakfastNyArr() {
+		return BreakfastNyArr;
+	}
+	public void setBreakfastNyArr(String[] breakfastNyArr) {
+		BreakfastNyArr = breakfastNyArr;
+	}
+	public int getBreakfastcount() {
+		return Breakfastcount;
+	}
+	public void setBreakfastcount(int breakfastcount) {
+		Breakfastcount = breakfastcount;
+	}
+	
 	
 	
 	//////////////////////////////////////////////////////
-
 	
+	  
+	
+
 	public void setParamsPaging(int totalRows) {
 
 		setTotalRows(totalRows);

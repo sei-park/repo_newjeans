@@ -39,6 +39,13 @@ public interface HotelDao {
 	// S3 파일첨부
 	public void insertUploaded(HotelDto hotelDto);
 	
+	// 예약 insert
+	public int hotelBookingInsert(HotelDto hotelDto);
+	
+	public int hotelBookingMenuInsert(HotelDto hotelDto);
+
+
+	
 
 
 		                          

@@ -38,14 +38,14 @@ public class HotelController {
 			model.addAttribute("hotelList", hotelService.hotelList(hotelVo));
 		}
 		
-		return "/xdm/v1/infra/hotel/hotelXdmList";  
+		return "xdm/v1/infra/hotel/hotelXdmList";  
 	}
 	
 	@RequestMapping(value="/xdm/v1/infra/hotel/hotelXdmForm")
 	public String hotelXdmForm(Model model) {
 		
 		model.addAttribute("listHotelRoom", hotelService.selectListHotelRoom()); // hotel, hotelroom 연결해서 보여줌
-		return "/xdm/v1/infra/hotel/hotelXdmForm";
+		return "xdm/v1/infra/hotel/hotelXdmForm";
 	}
 	
 	// insert 
@@ -61,7 +61,7 @@ public class HotelController {
 	public String hotelXdmMForm(HotelDto hotelDto, Model model) {
 		
 		model.addAttribute("hotelItem", hotelService.hotelSelectOne(hotelDto));
-		return "/xdm/v1/infra/hotel/hotelXdmMForm";
+		return "xdm/v1/infra/hotel/hotelXdmMForm";
 	}
 	
 	// update
