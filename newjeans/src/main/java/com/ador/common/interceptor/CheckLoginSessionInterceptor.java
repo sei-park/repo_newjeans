@@ -14,19 +14,40 @@ public class CheckLoginSessionInterceptor implements HandlerInterceptor {
 	// 로그인 여부를 체크해서 로그인이 되었을 때만 페이지에 접근 허용   
 	@Override
 	// HandlerInterceptor에서 제공하는 매서드 
-	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) 
-			throws Exception {
+	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
 		
-     System.out.println("로그인 확인, htmSeq : " + request.getSession().getAttribute("sessSeqXdm"));
+     // System.out.println("로그인 확인, htmSeq : " + request.getSession().getAttribute("sessSeqXdm"));
  
-		if (request.getSession().getAttribute("sessSeqXdm") != null) { // 로그인이 되어 있을 때 
-			//System.out.println("로그인이 된 상태");
-		} else { // 그게 아니라면 
-			response.sendRedirect(Constants.URL_LOGINFORM); // 로그인 페이지 경로로 이동      
-	        return false; // 함수를 빠져나감
+//		if (request.getSession().getAttribute("sessSeqXdm") != null) { // 로그인이 되어 있을 때 
+//			//System.out.println("로그인이 된 상태");
+//		} else { // 그게 아니라면 
+//			response.sendRedirect(Constants.URL_LOGINFORM); // 로그인 페이지 경로로 이동      
+//	        return false; // 함수를 빠져나감
+//		}
+//		 
+//		return HandlerInterceptor.super.preHandle(request, response, handler);
+     
+     	if (request.getSession().getAttribute("sessSeqXdm") != null) { // 로그인이 되어 있을 때 
+			return true; // 요청을 계속 진행
 		}
-		 
-		return HandlerInterceptor.super.preHandle(request, response, handler);
+     	
+     	if (request.getSession().getAttribute("sessSeqUsr") != null) { // 로그인이 되어 있을 때 
+			return true; // 요청을 계속 진행
+		} 
+		
+		// 로그인이 되어 있지 않은 경우, 요청 URL에 따라 다른 로그인 페이지로 리다이렉트
+		String requestURI = request.getRequestURI(); 
+		if (requestURI.startsWith("/usr")) { 
+			response.sendRedirect("/v1/infra/usrmember/usrSignin"); // usr 경로의 로그인 페이지로 이동
+		} else if (requestURI.startsWith("/xdm")){ 
+			response.sendRedirect(Constants.URL_LOGINFORM); // xdm 경로의 로그인 페이지로 이동
+		}
+		
+		return false; // 요청을 중단
+		
+ 
+		
+		
 	}
 	
 	    

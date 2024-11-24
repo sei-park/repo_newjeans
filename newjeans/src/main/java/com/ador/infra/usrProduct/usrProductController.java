@@ -13,9 +13,11 @@ import org.springframework.web.bind.annotation.RequestParam;
 import com.ador.infra.hotel.HotelDto;
 import com.ador.infra.hotel.HotelService;
 import com.ador.infra.hotel.HotelVo;
+import com.ador.infra.hotelmember.HotelMemberService;
 import com.ador.infra.hotelreview.HotelReviewDto;
 import com.ador.infra.hotelreview.HotelReviewService;
 
+import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
 
 @Controller
@@ -25,8 +27,12 @@ public class usrProductController {
 	HotelService hotelService;
 	
 	@Autowired
-	HotelReviewService hotelReviewService;             
+	HotelReviewService hotelReviewService;
 	
+	@Autowired
+	HotelMemberService hotelMemberService;
+	
+	            
 	// 호텔 리스트
 	@RequestMapping(value="/v1/infra/usrmember/usrHotelList")  
 	public String usrHotelList(@ModelAttribute("vo") HotelVo hotelVo, Model model) {
@@ -67,22 +73,31 @@ public class usrProductController {
 		return "redirect:/usr/v1/infra/usrmember/usrHotelDetails";
 	}
 	 
-	// 호텔 결제 페이지
-	@RequestMapping(value="/usr/v1/infra/usrmember/usrHotelBooking")
-	public String usrHotelBooking() {
-		return "usr/v1/infra/usrmember/usrHotelBooking";
-	}
 	
 	// 상세페이지에서 예약 정보 insert
-	@RequestMapping(value="/usr/v1/infra/usrmember/usrHotelBookingInst")
+	@RequestMapping(value="/v1/infra/usrmember/usrHotelBookingInst")
 	public String usrHotelBookingInst(HotelDto hotelDto,@RequestParam("menuSeqs") List<String> menuSeqs, HttpSession httpSession) {
 		
 		// 세션에서 sessSeqXdm 값 가져오기
-	    String sessSeqXdm = (String) httpSession.getAttribute("sessSeqXdm"); 
+	    String sessSeqUsr = (String) httpSession.getAttribute("sessSeqUsr"); 
 	    
-	    if (sessSeqXdm != null) {
+//	    if(sessSeqUsr == null) {
+//	        // 세션에 사용자 정보가 없으면 로그인 페이지로 리다이렉트
+//	        return "redirect:/v1/infra/usrmember/usrSignin";
+//	    } 
+//	
+//	    // 로그인이 된 경우: 세션 정보를 활용해 예약 처리
+//	    hotelDto.setHotelmember_htmSeq(sessSeqUsr);
+//	    hotelDto.setMenuSeqs(menuSeqs); // HotelDto에 menuSeqs 필드 설정
+//	    
+//	    // 예약 삽입 처리
+//	    hotelService.hotelBookingInsert(hotelDto);
+//	    hotelService.hotelBookingMenuInsert(hotelDto);
+	  
+	    
+	    if (sessSeqUsr != null) {
 			// B_user_usrSeq로 사용되는 값 설정
-	    	hotelDto.setHotelmember_htmSeq(sessSeqXdm);
+	    	hotelDto.setHotelmember_htmSeq(sessSeqUsr);
 			
 			// menuSeqs 값을 shopDto에 설정
 	    	hotelDto.setMenuSeqs(menuSeqs);	// shopDto에 menuSeqs 필드 추가
@@ -95,12 +110,20 @@ public class usrProductController {
 			hotelService.hotelBookingMenuInsert(hotelDto);
 		} else {
 			// 세션에 사용자 정보가 없으면 처리
-			return "redirect:/usr/v1/infra/usrmember/usrHotelList"; // 로그인 페이지로 리디렉션
+			return "redirect:/usr/v1/infra/usrmember/usrSignin"; // 로그인 페이지로 리디렉션
 		}
 	    
 	    return "usr/v1/infra/usrmember/usrHotelBooking";
 
 	}
+	
+	// 호텔 결제 페이지
+	@RequestMapping(value="/usr/v1/infra/usrmember/usrHotelBooking")
+	public String usrHotelBooking(HttpServletRequest request) {
+		return "usr/v1/infra/usrmember/usrHotelBooking";
+	}
+	
+	
 
 
 	         

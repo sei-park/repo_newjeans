@@ -4,7 +4,6 @@ import java.util.List;
 
 import org.springframework.stereotype.Repository;
 
-import com.ador.infra.code.CodeDto;
 
 @Repository
 public interface HotelDao {
@@ -43,6 +42,8 @@ public interface HotelDao {
 	public int hotelBookingInsert(HotelDto hotelDto);
 	
 	public int hotelBookingMenuInsert(HotelDto hotelDto);
+	
+	
 
 
 	

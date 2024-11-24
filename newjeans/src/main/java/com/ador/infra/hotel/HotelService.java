@@ -107,12 +107,15 @@ public class HotelService {
 	
 	// 예약
 	public int hotelBookingInsert(HotelDto hotelDto) {
+		System.out.println("hotelBookingInsert");
 		return hotelDao.hotelBookingInsert(hotelDto);
 	}
 	
 	public int hotelBookingMenuInsert(HotelDto hotelDto) {
+		System.out.println("hotelBookingMenuInsert");
 		return hotelDao.hotelBookingMenuInsert(hotelDto);
 	}
+	
 	
 	
 	

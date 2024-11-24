@@ -18,7 +18,7 @@
     <!-- Slick css -->
     <link rel="stylesheet" type="text/css" href="/usr/v1/usertemplate/ui/assets/css/slick.min.css" />
     <!--slick-theme.css-->
-    <link rel="stylesheet" type="text/css" href="/usr/v1/usertemplate/ui/assets/css/slick-theme.css" />
+<!--     <link rel="stylesheet" type="text/css" href="/usr/v1/usertemplate/ui/assets/css/slick-theme.css" /> -->
     <!-- Rangeslider css -->
     <link rel="stylesheet" href="/usr/v1/usertemplate/ui/assets/css/nouislider.css" />
     <!-- owl.theme.default css -->
@@ -641,7 +641,7 @@
 	
     <!-- Hotel Search Areas -->          
     <section id="tour_details_main" class="section_padding">
-    <form name="form" method="post" action="/usr/v1/infra/usrmember/usrHotelBookingInst">
+    <form name="form" method="post" action="/v1/infra/usrmember/usrHotelBookingInst">
         <div class="container">
             <div class="row">  
                 <div class="col-lg-8">
@@ -795,7 +795,7 @@
                                                     	<label>
                                                     		<input type="checkbox" name="menuSeqs" class="menu-checkbox" th:value="${list.htrseq}" th:attr="data-price=${list.htrRoomPrice != null ? list.htrRoomPrice : 0}" 
                                                     		onchange="updateTotalPrice()">
-                                                    		<input type="hidden" name="htbTotalPrice" id="totalPriceInput">
+                                                    		<input type="hidden" name="htbTotalPrice" id="totalPriceInput" th:value="${list.htbTotalPrice}">
                                                     		<p>선택</p>
                                                     	</label>
                                                     </div>
@@ -902,7 +902,7 @@
                                 	</div>
                                 	<div class="row">
                                 		<div class="col-md-8">
-                                			<p>총 금액 : <span id="totalPrice"></span></p>
+                                			<p>총 금액 : <span id="htbTotalPrice"></span></p>
                                         </div>  
                                 	</div>
                                 	<div class="comment_form_submit" style="margin-top:25px;">
@@ -1319,105 +1319,115 @@
     <!-- hotel details 별점 -->
     <script src="/usr/v1/usertemplate/ui/assets/js/star.js"></script>
     
-     <!-- 구글 맵 -->
-     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyADWyNQedLuX-WxYL6uNdz92ohBpbC-YUA&libraries=places&callback=initMap" defer></script>
-     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyADWyNQedLuX-WxYL6uNdz92ohBpbC-YUA&callback=myMap"></script>
-     
-     <!-- Google Maps API 및 Places 라이브러리 추가 -->
-	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyADWyNQedLuX-WxYL6uNdz92ohBpbC-YUA&callback=initMap&libraries=places" async defer></script>
+    <!-- datetimepicker -->
     <script src="/xdm/v1/js/datetimepicker/jquery.datetimepicker.full.min.js"></script>
+    
+     <!-- 구글 맵 -->                                         
+<!--     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyADWyNQedLuX-WxYL6uNdz92ohBpbC-YUA&libraries=places&callback=initMap" defer></script> -->
+<!--     <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap&libraries=places" async defer></script> -->
+    
+     
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyADWyNQedLuX-WxYL6uNdz92ohBpbC-YUA&callback=initMap&libraries=places" async defer></script>
+    
+    
+    
+    
+    
+    
     <script>
     $("#htNotice").val().replace(/(<br>|<br\/>|<br \/>)/g, '\r\n');
      
   
-  // 구글 맵
-  function initMap() {
-        var map = new google.maps.Map(document.getElementById('map'), {
-          zoom: 13,
-        });
-
-        var infowindow = new google.maps.InfoWindow();
-        var marker = new google.maps.Marker({
-          map: map
-        });
-
-        // h5 태그에 있는 주소를 가져옴
-        var address = document.getElementById("htAddress").innerText;
-
-        // Geocoding API를 사용하여 주소를 좌표로 변환
-        var geocoder = new google.maps.Geocoder();
-
-        geocoder.geocode({ 'address': address }, function(results, status) {
-          if (status === 'OK') {
-            // 지도를 주소의 좌표로 초기화
-            map.setCenter(results[0].geometry.location);
-            marker.setPosition(results[0].geometry.location);
-            infowindow.setContent(address);
-            infowindow.open(map, marker);
-          } else {
-            alert('Geocode was not successful for the following reason: ' + status);
-          }
-        });
-    }
+	  // 구글 맵
+	  function initMap() {
+	        var map = new google.maps.Map(document.getElementById('map'), {
+	          zoom: 13,
+	        });
+	
+	        var infowindow = new google.maps.InfoWindow();
+	        var marker = new google.maps.Marker({ // google.maps.Marker
+	          map: map
+	        });
+	
+	        // h5 태그에 있는 주소를 가져옴
+	        var address = document.getElementById("htAddress").innerText;
+	
+	        // Geocoding API를 사용하여 주소를 좌표로 변환
+	        var geocoder = new google.maps.Geocoder();
+	
+	        geocoder.geocode({ 'address': address }, function(results, status) {
+	          if (status === 'OK') {
+	            // 지도를 주소의 좌표로 초기화
+	            map.setCenter(results[0].geometry.location);
+	            marker.setPosition(results[0].geometry.location);
+	            infowindow.setContent(address);
+	            infowindow.open(map, marker);
+	          } else {
+	            alert('Geocode was not successful for the following reason: ' + status);
+	          }
+	        });
+	    }
   
-	// 달력으로 날짜 선택
-	window.addEventListener('load', function() {
-		$.datetimepicker.setLocale('ko'); 
-	
-		$("#dateStart").datetimepicker({
-			timepicker:false, 
-			format: 'Y-m-d' 
-		}).on('change', function () {
-			const selectedDate = $(this).val();
-			$('#checkIn').text(selectedDate);
+		// 달력으로 날짜 선택
+		window.addEventListener('load', function() {
+			$.datetimepicker.setLocale('ko'); 
+		     
+			// 입실
+			$("#dateStart").datetimepicker({
+				timepicker:false, 
+				format: 'Y-m-d' 
+			}).on('change', function () {
+				const selectedDate = $(this).val();
+				$('#checkIn').text(selectedDate);
+			});
+			
+			// 퇴실
+			$("#dateEnd").datetimepicker({
+				timepicker:false, 
+				format: 'Y-m-d' 
+			}).on('change', function () {
+				const selectedDate = $(this).val();
+				$('#checkOut').text(selectedDate);
+			});
+			
 		});
-		
-		$("#dateEnd").datetimepicker({
-			timepicker:false, 
-			format: 'Y-m-d' 
-		}).on('change', function () {
-			const selectedDate = $(this).val();
-			$('#checkOut').text(selectedDate);
-		});
-		
-	});
 	
-	// 메뉴 가격 합산 및 선택된 메뉴 seq 처리
-	function updateTotalPrice() {
+		// 메뉴 가격 합산 및 선택된 메뉴 seq 처리
+		function updateTotalPrice() {
+			
+			let total = 0; // 총 금액 초기화   
+			let selectedMenuSeqs = []; // 선택된 메뉴 seq 배열 초기화
+			
+		    // 선택된 체크박스들의 데이터(가격, seq)를 처리
+		    document.querySelectorAll('.menu-checkbox:checked').forEach(checkbox => {
+		    	
+		        const price = checkbox.getAttribute('data-price'); // data-price 읽기
+		        console.log('data-price:', price); // 디버깅 출력
 		
-		let total = 0; // 총 금액 초기화   
-		let selectedMenuSeqs = []; // 선택된 메뉴 seq 배열 초기화
+		        const priceValue = isNaN(price) || price === null || price === '' ? 0 : parseInt(price, 10);
 		
-	    // 선택된 체크박스들의 데이터(가격, seq)를 처리
-	    document.querySelectorAll('.menu-checkbox:checked').forEach(checkbox => {
-	    	
-	        const price = checkbox.getAttribute('data-price'); // data-price 읽기
-	        console.log('data-price:', price); // 디버깅 출력
+		        total += priceValue; // 총 금액 합산
+		        selectedMenuSeqs.push(checkbox.value); // 메뉴 seq 저장
+		        
+		    });
+		
+		   // 총 금액을 화면에 표시 (boTotalPrice)
+		   document.getElementById('htbTotalPrice').textContent = total.toLocaleString(); // 숫자 형식화
 	
-	        const priceValue = isNaN(price) || price === null || price === '' ? 0 : parseInt(price, 10);
-	
-	        total += priceValue; // 총 금액 합산
-	        selectedMenuSeqs.push(checkbox.value); // 메뉴 seq 저장
-	        
-	    });
+		   // 총 금액을 hidden 필드에 설정
+		   document.getElementById('totalPriceInput').value = total;
+		   
+		   // 선택된 메뉴 seq를 디버깅 로그로 출력 
+		   console.log('선택된 메뉴 seq:', selectedMenuSeqs);
+		   console.log('총 금액:', total);
 		
-	   // 총 금액을 화면에 표시 (boTotalPrice)
-	   document.getElementById('totalPrice').textContent = total.toLocaleString(); // 숫자 형식화
-
-	   // 총 금액을 hidden 필드에 설정
-	   document.getElementById('totalPriceInput').value = total;
-	   
-	   // 선택된 메뉴 seq를 디버깅 로그로 출력 
-	   console.log('선택된 메뉴 seq:', selectedMenuSeqs);
-	   console.log('총 금액:', total);
-		
-	}
+		}
 	
-	// 예약하기 버튼 - insert
-	document.getElementById('bookingBtn').onclick = function(){
- 		form.action="/usr/v1/infra/usrmember/usrHotelBookingInst";
-		form.submit();
-	}
+		// 예약하기 버튼 - insert
+		document.getElementById('bookingBtn').onclick = function(){
+	 		form.action="/v1/infra/usrmember/usrHotelBookingInst";
+			form.submit();
+		}
 	
 
 

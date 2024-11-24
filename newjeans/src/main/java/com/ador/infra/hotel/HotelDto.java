@@ -75,7 +75,7 @@ public class HotelDto {
 	private Integer htbmDelNy;
 	private String hotelbooking_htbseq;	
 	private String hotelRoom_htrseq; 
-	private List<String> menuSeqs;
+	private List<String> menuSeqs;                       
 	
 	// S3 
 	private MultipartFile uploadFile;
