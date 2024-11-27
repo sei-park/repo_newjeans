@@ -78,6 +78,7 @@ public class usrProductController {
 	@RequestMapping(value="/v1/infra/usrmember/usrHotelBookingInst")
 	public String usrHotelBookingInst(HotelDto hotelDto,@RequestParam("menuSeqs") List<String> menuSeqs, HttpSession httpSession) {
 		
+		
 		// 세션에서 sessSeqXdm 값 가져오기
 	    String sessSeqUsr = (String) httpSession.getAttribute("sessSeqUsr"); 
 	    
@@ -97,7 +98,7 @@ public class usrProductController {
 	    
 	    if (sessSeqUsr != null) {
 			// B_user_usrSeq로 사용되는 값 설정
-	    	hotelDto.setHotelmember_htmSeq(sessSeqUsr);
+	    	hotelDto.setHotelMember_htmSeq(sessSeqUsr);
 			
 			// menuSeqs 값을 shopDto에 설정
 	    	hotelDto.setMenuSeqs(menuSeqs);	// shopDto에 menuSeqs 필드 추가

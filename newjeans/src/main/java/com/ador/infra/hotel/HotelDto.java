@@ -103,12 +103,12 @@ public class HotelDto {
 	private String htrecomments;
 	@DateTimeFormat(pattern="yyyy-MM-dd HH:mm:ss")
 	private Date htreRegDate;
- 	private String hotelmember_htmSeq;
 	
 	// 리뷰 평균값, 리뷰 개수 
 	private Integer average_star;
-	private Integer review_count;	
- 
+	private Integer review_count;
+	
+	
 	//--
 	public String getHtseq() {
 		return htseq;
@@ -332,6 +332,108 @@ public class HotelDto {
 	public void setHotel_seq(String hotel_seq) {
 		this.hotel_seq = hotel_seq;
 	}
+	public String getHtbseq() {
+		return htbseq;
+	}
+	public void setHtbseq(String htbseq) {
+		this.htbseq = htbseq;
+	}
+	public Date getHtbcheckIn() {
+		return htbcheckIn;
+	}
+	public void setHtbcheckIn(Date htbcheckIn) {
+		this.htbcheckIn = htbcheckIn;
+	}
+	public Date getHtbcheckOut() {
+		return htbcheckOut;
+	}
+	public void setHtbcheckOut(Date htbcheckOut) {
+		this.htbcheckOut = htbcheckOut;
+	}
+	public Integer getHtbTotalPrice() {
+		return htbTotalPrice;
+	}
+	public void setHtbTotalPrice(Integer htbTotalPrice) {
+		this.htbTotalPrice = htbTotalPrice;
+	}
+	public Integer getHtbPaymentType() {
+		return htbPaymentType;
+	}
+	public void setHtbPaymentType(Integer htbPaymentType) {
+		this.htbPaymentType = htbPaymentType;
+	}
+	public Date getHtbSettleDate() {
+		return htbSettleDate;
+	}
+	public void setHtbSettleDate(Date htbSettleDate) {
+		this.htbSettleDate = htbSettleDate;
+	}
+	public Date getHtbRegDate() {
+		return htbRegDate;
+	}
+	public void setHtbRegDate(Date htbRegDate) {
+		this.htbRegDate = htbRegDate;
+	}
+	public Date getHtbEditDate() {
+		return htbEditDate;
+	}
+	public void setHtbEditDate(Date htbEditDate) {
+		this.htbEditDate = htbEditDate;
+	}
+	public Integer getHtbDelNy() {
+		return htbDelNy;
+	}
+	public void setHtbDelNy(Integer htbDelNy) {
+		this.htbDelNy = htbDelNy;
+	}
+	public Integer getHtbAgreeContentNy() {
+		return htbAgreeContentNy;
+	}
+	public void setHtbAgreeContentNy(Integer htbAgreeContentNy) {
+		this.htbAgreeContentNy = htbAgreeContentNy;
+	}
+	public String getHotelMember_htmSeq() {
+		return hotelMember_htmSeq;
+	}
+	public void setHotelMember_htmSeq(String hotelMember_htmSeq) {
+		this.hotelMember_htmSeq = hotelMember_htmSeq;
+	}
+	public String getHtbmSeq() {
+		return htbmSeq;
+	}
+	public void setHtbmSeq(String htbmSeq) {
+		this.htbmSeq = htbmSeq;
+	}
+	public Integer getHtbmUseNy() {
+		return htbmUseNy;
+	}
+	public void setHtbmUseNy(Integer htbmUseNy) {
+		this.htbmUseNy = htbmUseNy;
+	}
+	public Integer getHtbmDelNy() {
+		return htbmDelNy;
+	}
+	public void setHtbmDelNy(Integer htbmDelNy) {
+		this.htbmDelNy = htbmDelNy;
+	}
+	public String getHotelbooking_htbseq() {
+		return hotelbooking_htbseq;
+	}
+	public void setHotelbooking_htbseq(String hotelbooking_htbseq) {
+		this.hotelbooking_htbseq = hotelbooking_htbseq;
+	}
+	public String getHotelRoom_htrseq() {
+		return hotelRoom_htrseq;
+	}
+	public void setHotelRoom_htrseq(String hotelRoom_htrseq) {
+		this.hotelRoom_htrseq = hotelRoom_htrseq;
+	}
+	public List<String> getMenuSeqs() {
+		return menuSeqs;
+	}
+	public void setMenuSeqs(List<String> menuSeqs) {
+		this.menuSeqs = menuSeqs;
+	}
 	public MultipartFile getUploadFile() {
 		return uploadFile;
 	}
@@ -464,12 +566,6 @@ public class HotelDto {
 	public void setHtreRegDate(Date htreRegDate) {
 		this.htreRegDate = htreRegDate;
 	}
-	public String getHotelmember_htmSeq() {
-		return hotelmember_htmSeq;
-	}
-	public void setHotelmember_htmSeq(String hotelmember_htmSeq) {
-		this.hotelmember_htmSeq = hotelmember_htmSeq;
-	}
 	public Integer getAverage_star() {
 		return average_star;
 	}
@@ -481,109 +577,10 @@ public class HotelDto {
 	}
 	public void setReview_count(Integer review_count) {
 		this.review_count = review_count;
-	}
-	public String getHtbseq() {
-		return htbseq;
-	}
-	public void setHtbseq(String htbseq) {
-		this.htbseq = htbseq;
-	}
-	public Date getHtbcheckIn() {
-		return htbcheckIn;
-	}
-	public void setHtbcheckIn(Date htbcheckIn) {
-		this.htbcheckIn = htbcheckIn;
-	}
-	public Date getHtbcheckOut() {
-		return htbcheckOut;
-	}
-	public void setHtbcheckOut(Date htbcheckOut) {
-		this.htbcheckOut = htbcheckOut;
-	}
-	public Integer getHtbTotalPrice() {
-		return htbTotalPrice;
-	}
-	public void setHtbTotalPrice(Integer htbTotalPrice) {
-		this.htbTotalPrice = htbTotalPrice;
-	}
-	public Integer getHtbPaymentType() {
-		return htbPaymentType;
-	}
-	public void setHtbPaymentType(Integer htbPaymentType) {
-		this.htbPaymentType = htbPaymentType;
-	}
-	public Date getHtbSettleDate() {
-		return htbSettleDate;
-	}
-	public void setHtbSettleDate(Date htbSettleDate) {
-		this.htbSettleDate = htbSettleDate;
-	}
-	public Date getHtbRegDate() {
-		return htbRegDate;
-	}
-	public void setHtbRegDate(Date htbRegDate) {
-		this.htbRegDate = htbRegDate;
-	}
-	public Date getHtbEditDate() {
-		return htbEditDate;
-	}
-	public void setHtbEditDate(Date htbEditDate) {
-		this.htbEditDate = htbEditDate;
-	}
-	public Integer getHtbDelNy() {
-		return htbDelNy;
-	}
-	public void setHtbDelNy(Integer htbDelNy) {
-		this.htbDelNy = htbDelNy;
-	}
-	public Integer getHtbAgreeContentNy() {
-		return htbAgreeContentNy;
-	}
-	public void setHtbAgreeContentNy(Integer htbAgreeContentNy) {
-		this.htbAgreeContentNy = htbAgreeContentNy;
-	}
-	public String getHotelMember_htmSeq() {
-		return hotelMember_htmSeq;
-	}
-	public void setHotelMember_htmSeq(String hotelMember_htmSeq) {
-		this.hotelMember_htmSeq = hotelMember_htmSeq;
-	}
-	public String getHtbmSeq() {
-		return htbmSeq;
-	}
-	public void setHtbmSeq(String htbmSeq) {
-		this.htbmSeq = htbmSeq;
-	}
-	public Integer getHtbmUseNy() {
-		return htbmUseNy;
-	}
-	public void setHtbmUseNy(Integer htbmUseNy) {
-		this.htbmUseNy = htbmUseNy;
-	}
-	public Integer getHtbmDelNy() {
-		return htbmDelNy;
-	}
-	public void setHtbmDelNy(Integer htbmDelNy) {
-		this.htbmDelNy = htbmDelNy;
-	}
-	public String getHotelbooking_htbseq() {
-		return hotelbooking_htbseq;
-	}
-	public void setHotelbooking_htbseq(String hotelbooking_htbseq) {
-		this.hotelbooking_htbseq = hotelbooking_htbseq;
-	}
-	public String getHotelRoom_htrseq() {
-		return hotelRoom_htrseq;
-	}
-	public void setHotelRoom_htrseq(String hotelRoom_htrseq) {
-		this.hotelRoom_htrseq = hotelRoom_htrseq;
-	}
-	public List<String> getMenuSeqs() {
-		return menuSeqs;
-	}
-	public void setMenuSeqs(List<String> menuSeqs) {
-		this.menuSeqs = menuSeqs;
-	}
+	}	
+ 
+	
+	
 	
 	
 

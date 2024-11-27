@@ -42,7 +42,7 @@
     	font-family: 'Roboto', sans-serif;
     }
     
-          /*구글 맵*/       
+     /*구글 맵*/       
       #map {
       	width: 580px;
         height: 300px;   
@@ -116,6 +116,40 @@
         font-weight: 500;
         padding: 6px 12px;
       }
+      
+      /* 객실 선택하기 체크박스 */
+      .custom-checkbox {
+	 	    display: inline-flex; 
+	 	    align-items: center; /* 수직(위-아래) 가운데 정렬 */ 
+	 	    justify-content: center; /* 수평(좌-우) 가운데 정렬 */ 
+	 	    cursor: pointer; 
+	 	    position: relative;
+	 	    color: var(--white-color); 
+	 	    background-color: var(--main-color); 
+	 	    width: 150px; 
+	 	    height: 50px; 
+	 	    border-radius: 5px; 
+	 	    text-align: center; /* 텍스트 가운데 정렬 */
+	 	    transition: background-color 0.3s ease;
+ 	   }  
+ 	   
+       .custom-checkbox:hover {
+       	  background: #212529;
+       }
+       
+       .custom-checkbox input[type="checkbox"] { 
+          display: none;  
+  	   } 
+  	   
+  	   .custom-checkbox.checked {
+    	 background-color: #212529 !important; /* 강제 적용 */
+       }
+  	   
+
+  	   
+  
+ 
+       
    
     </style>
 
@@ -762,7 +796,7 @@
                                                 </div>
                                                 <div class="room_booking_right_side">  
                                                     <div class="room_booking_heading">
-                                                        <h3 th:text="${list.htrRoomName}">객실1</h3>
+                                                        <h3 th:text="${list.htrRoomName}">객실</h3>
                                                         <p>내부 시설</p>             
                                                         <div class="room_fasa_area"> 
                                                             <ul> 
@@ -782,25 +816,26 @@
                                                             </ul>
                                                         </div>
                                                     </div>
+<!--                                                     <div class="room_person_select"> -->
+<!--                                                         <h3 name="htrRoomPrice" th:text="${'₩' + #numbers.formatInteger(list.htrRoomPrice, 3, 'COMMA')}">가격<sub> / 1박</sub></h3> -->
+<!--                                                         <select class="form-select" aria-label="Default select example"> -->
+<!--                                                             <option selected>1</option> -->
+<!--                                                             <option value="2">2</option> -->
+<!--                                                             <option value="3">3</option>  -->
+<!--                                                             <option value="4">4</option> -->
+<!--                                                         </select> -->
+<!--                                                     </div> -->
                                                     <div class="room_person_select">
-                                                        <h3 name="htrRoomPrice" th:text="${'₩' + #numbers.formatInteger(list.htrRoomPrice, 3, 'COMMA')}">가격<sub> / 1박</sub></h3>
-                                                        <select class="form-select" aria-label="Default select example">
-                                                            <option selected>1</option>
-                                                            <option value="2">2</option>
-                                                            <option value="3">3</option> 
-                                                            <option value="4">4</option>
-                                                        </select>
-                                                    </div>
-                                                    <div class="room_person_select">
-                                                    	<label>
-                                                    		<input type="checkbox" name="menuSeqs" class="menu-checkbox" th:value="${list.htrseq}" th:attr="data-price=${list.htrRoomPrice != null ? list.htrRoomPrice : 0}" 
+                                                    	<label class="custom-checkbox"> <!-- btn btn_theme btn_md -->
+                                                    		<input type="checkbox" name="menuSeqs" id="menuSeqs" class="menu-checkbox" th:value="${list.htrseq}" th:attr="data-price=${list.htrRoomPrice != null ? list.htrRoomPrice : 0}" 
                                                     		onchange="updateTotalPrice()">
+                                                    		<!-- DB에 htbTotalPrice을 넘기기 위해 hidden을 만듦 -->
                                                     		<input type="hidden" name="htbTotalPrice" id="totalPriceInput" th:value="${list.htbTotalPrice}">
-                                                    		<p>선택</p>
+                                                    		<span>선택하기</span>
                                                     	</label>
                                                     </div>
                                                 </div> 
-                                            </div>
+                                            </div> 
                                             
                                         </div>
                                     </div>
@@ -879,12 +914,12 @@
                                 <div class="tour_package_details_bar_list first_child_padding_none">
                                 	<div class="row mb-3">
                                 		<div class="col-md-8">
-                                		 	<input type="text" class="form-select" id="dateStart" autocomplete="off" placeholder="입실" style="cursor:pointer;">
+                                		 	<input type="text" class="form-select" id="dateStart" name="htbcheckIn" autocomplete="off" placeholder="입실" style="cursor:pointer;">
                                         </div>
                                 	</div> 
                                 	<div class="row">
                                 		<div class="col-md-8">
-                                		 	<input type="text" class="form-select" id="dateEnd" autocomplete="off" placeholder="퇴실" style="cursor:pointer;">
+                                		 	<input type="text" class="form-select" id="dateEnd" name="htbcheckOut" autocomplete="off" placeholder="퇴실" style="cursor:pointer;">
                                         </div>
                                 	</div>
                                 </div>
@@ -906,9 +941,7 @@
                                         </div>  
                                 	</div>
                                 	<div class="comment_form_submit" style="margin-top:25px;">
-                                		<a href="/usr/v1/infra/usrmember/usrHotelBooking">
                                          <button type="button" class="btn btn_theme btn_md" id="bookingBtn">예약하기</button>
-                                        </a>
                                     </div>
                                 </div> 
                             </div> 
@@ -1327,7 +1360,7 @@
 <!--     <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap&libraries=places" async defer></script> -->
     
      
-	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyADWyNQedLuX-WxYL6uNdz92ohBpbC-YUA&callback=initMap&libraries=places" async defer></script>
+<!-- 	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyADWyNQedLuX-WxYL6uNdz92ohBpbC-YUA&callback=initMap&libraries=places" async defer></script> -->
     
     
     
@@ -1372,63 +1405,178 @@
 		window.addEventListener('load', function() {
 			$.datetimepicker.setLocale('ko'); 
 		     
-			// 입실
-			$("#dateStart").datetimepicker({
-				timepicker:false, 
-				format: 'Y-m-d' 
-			}).on('change', function () {
-				const selectedDate = $(this).val();
-				$('#checkIn').text(selectedDate);
-			});
+// 			// 입실
+// 			$("#dateStart").datetimepicker({
+// 				timepicker:false, 
+// 				format: 'Y-m-d' 
+// 			}).on('change', function () {
+// 				const selectedDate = $(this).val();
+// 				$('#checkIn').text(selectedDate);
+// 			});
 			
-			// 퇴실
-			$("#dateEnd").datetimepicker({
-				timepicker:false, 
-				format: 'Y-m-d' 
+// 			// 퇴실
+// 			$("#dateEnd").datetimepicker({
+// 				timepicker:false, 
+// 				format: 'Y-m-d' 
+// 			}).on('change', function () {
+// 				const selectedDate = $(this).val();
+// 				$('#checkOut').text(selectedDate);
+// 			});
+
+
+
+			// 입실일 선택 시 화면에 표시
+			$("#dateStart").datetimepicker({
+			    timepicker: false,
+			    format: 'Y-m-d'
 			}).on('change', function () {
-				const selectedDate = $(this).val();
-				$('#checkOut').text(selectedDate);
+			    const selectedDate = $(this).val();
+			    $('#checkIn').text(selectedDate || ''); // 빈 문자열로 초기화
+			    updateTotalPrice(); // 날짜 변경 시 금액 업데이트
 			});
+
+			// 퇴실일 선택 시 화면에 표시
+			$("#dateEnd").datetimepicker({
+			    timepicker: false,
+			    format: 'Y-m-d'
+			}).on('change', function () {
+			    const selectedDate = $(this).val();
+			    $('#checkOut').text(selectedDate || ''); // 빈 문자열로 초기화
+			    updateTotalPrice(); // 날짜 변경 시 금액 업데이트
+			});
+
 			
 		});
+		
+// 		// 메뉴 가격 합산 및 선택된 메뉴 seq 처리
+// 		function updateTotalPrice() {
+			
+// 			let total = 0; // 총 금액 초기화   
+// 			let selectedMenuSeqs = []; // 선택된 메뉴 seq 배열 초기화
+			
+// 		    // 선택된 체크박스들의 데이터(가격, seq)를 처리
+// 		    document.querySelectorAll('.menu-checkbox:checked').forEach(checkbox => {
+		    	
+// 		        const price = checkbox.getAttribute('data-price'); // data-price 읽기
+// 		        console.log('data-price:', price); // 디버깅 출력
+		
+// 		        const priceValue = isNaN(price) || price === null || price === '' ? 0 : parseInt(price, 10);
+		
+// 		        total += priceValue; // 총 금액 합산
+// 		        selectedMenuSeqs.push(checkbox.value); // 메뉴 seq 저장
+		        
+// 		    });
+		
+// 		   // 총 금액을 화면에 표시 (boTotalPrice)
+// 		   document.getElementById('htbTotalPrice').textContent = total.toLocaleString(); // 숫자 형식화
 	
-		// 메뉴 가격 합산 및 선택된 메뉴 seq 처리
+// 		   // 총 금액을 hidden 필드에 설정
+// 		   document.getElementById('totalPriceInput').value = total;
+		   
+// 		   // 선택된 메뉴 seq를 디버깅 로그로 출력 
+// 		   console.log('선택된 메뉴 seq:', selectedMenuSeqs);
+// 		   console.log('총 금액:', total);
+		
+// 		}  
+
+		// 입실, 퇴실 선택한 후 숙박 일수 계산 
+		function calculateNights() {
+	    const checkInDate = new Date(document.getElementById('checkIn').textContent || null); // checkIn에 보여지는 날짜를 반환 
+	    const checkOutDate = new Date(document.getElementById('checkOut').textContent || null); // checkOut에 보여지는 날짜를 반환
+	
+	    // 날짜가 유효하지 않으면 숙박 일수를 0으로 반환
+	    if (isNaN(checkInDate) || isNaN(checkOutDate)) {
+	        return 0;
+	    }
+	
+	    const timeDiff = checkOutDate - checkInDate; // (체크아웃날짜 - 체크인날짜)를 timeDiff에 넣음 
+	    const nights = Math.ceil(timeDiff / (1000 * 60 * 60 * 24)); // 밀리초를 일 단위로 변환
+	    return nights > 0 ? nights : 0; // 0박 이하 방지
+	    
+		}
+		
+		
+		function updateCheckboxState() {
+		    document.querySelectorAll('.menu-checkbox').forEach(checkbox => {
+		        const parent = checkbox.closest('.custom-checkbox');
+		        if (checkbox.checked) {
+		            parent.classList.add('checked'); // 체크된 상태
+		        } else {
+		            parent.classList.remove('checked'); // 체크 해제 상태
+		        }
+		    });
+		}
+		
+		
+		// 총 객실 가격과 숙박 일수 계산
 		function updateTotalPrice() {
 			
-			let total = 0; // 총 금액 초기화   
-			let selectedMenuSeqs = []; // 선택된 메뉴 seq 배열 초기화
-			
-		    // 선택된 체크박스들의 데이터(가격, seq)를 처리
-		    document.querySelectorAll('.menu-checkbox:checked').forEach(checkbox => {
-		    	
-		        const price = checkbox.getAttribute('data-price'); // data-price 읽기
-		        console.log('data-price:', price); // 디버깅 출력
-		
-		        const priceValue = isNaN(price) || price === null || price === '' ? 0 : parseInt(price, 10);
-		
-		        total += priceValue; // 총 금액 합산
-		        selectedMenuSeqs.push(checkbox.value); // 메뉴 seq 저장
-		        
-		    });
-		
-		   // 총 금액을 화면에 표시 (boTotalPrice)
-		   document.getElementById('htbTotalPrice').textContent = total.toLocaleString(); // 숫자 형식화
-	
-		   // 총 금액을 hidden 필드에 설정
-		   document.getElementById('totalPriceInput').value = total;
+		    let total = 0; // 총 금액 초기화
+		    const nights = calculateNights(); // 숙박 일수 계산
+
+		    // 숙박 일수가 0 이하이면 아무 작업도 하지 않음
+		    if (nights <= 0) {
+		        document.getElementById('htbTotalPrice').textContent = '0'; // 화면에 "0원" 표시
+		        document.getElementById('totalPriceInput').value = 0; // 0을 totalPriceInput에 넣음   
+		        return;
+		    } 
+		    
+		    
+		    // 선택된 객실의 가격 계산
+		    // menu-checkbox 클래스를 가진 요소 중에서 체크된 체크박스를 모두 선택해서 반복문 실행
+		    document.querySelectorAll('.menu-checkbox:checked').forEach(checkbox => { 
+		    	// 현재 체크박스의 data-price 속성을 가져옴(체크된 금액)
+		    	// 가져온 문자열 형태의 data-price 값을 정수로 변환 
+		    	// 두 번째 매개변수 10은 10진수로 변환하라는 뜻
+		    	// data-price가 null, undefined, NaN 또는 잘못된 값일 경우, 기본값으로 0을 사용(data-price 값이 없거나 유효하지 않을 경우 계산 오류를 방지) 
+		    	// pricePerNight = 객실의 1박 요금 
+		        const pricePerNight = parseInt(checkbox.getAttribute('data-price'), 10) || 0;  
+		        total += pricePerNight * nights; // 1박 요금 * 숙박 일수
+		    }); 
+  
+		    // 결과를 화면에 반영
+		    document.getElementById('htbTotalPrice').textContent = total.toLocaleString(); // "1,000,000" 형식
+		    document.getElementById('totalPriceInput').value = total; // hidden input 값 설정
 		   
-		   // 선택된 메뉴 seq를 디버깅 로그로 출력 
-		   console.log('선택된 메뉴 seq:', selectedMenuSeqs);
-		   console.log('총 금액:', total);
+		} // updateTotalPrice() end 
 		
-		}
+		// 이벤트 리스너 등록
+		document.querySelectorAll('.menu-checkbox').forEach(checkbox => {
+		    checkbox.addEventListener('change', () => {
+		        updateCheckboxState(); // 체크박스 상태 업데이트
+		        updateTotalPrice(); // 금액 계산
+		    });
+		});
+		
+		// 날짜 변경 이벤트에서 updateTotalPrice() 호출
+		document.getElementById('dateStart').addEventListener('change', updateTotalPrice);
+		document.getElementById('dateEnd').addEventListener('change', updateTotalPrice);
+		
+		// 객실 선택 이벤트에서 updateTotalPrice() 호출
+		document.querySelectorAll('.menu-checkbox').forEach(checkbox => {
+    		checkbox.addEventListener('change', updateTotalPrice);
+		});
+		
+		// 웹 페이지가 로드된 직후 updateTotalPrice() 함수를 호출하여 초기 금액을 계산하고 화면에 표시
+		window.addEventListener('load', () => {
+			updateCheckboxState(); // 체크박스 상태 초기화
+		    updateTotalPrice(); // 초기 금액 계산
+		});
 	
 		// 예약하기 버튼 - insert
 		document.getElementById('bookingBtn').onclick = function(){
 	 		form.action="/v1/infra/usrmember/usrHotelBookingInst";
 			form.submit();
 		}
+		
+		
+		
+		
 	
+
+
+
+
 
 
  

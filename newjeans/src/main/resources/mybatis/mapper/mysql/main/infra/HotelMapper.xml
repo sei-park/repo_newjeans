@@ -524,29 +524,29 @@
 	
 	<!-- 상세페이지에서 hotelbooking, hotelbookingmenu insert -->
 	<insert id="hotelBookingInsert" useGeneratedKeys="true" keyProperty="htbseq">
-	 INSERT INTO hotelbooking (
-	 		htbcheckIn,	
-	 		htbcheckOut,
-	 		htbTotalPrice,
-	 		htbPaymentType,
-	 		htbSettleDate,
-	 		htbRegDate,
-	 		htbEditDate,
-	 		htbDelNy,
-	 		htbAgreeContentNy,
-	 		hotelMember_htmSeq
-		) values (
-			#{htbcheckIn},
-			#{htbcheckOut},
-			#{htbTotalPrice},
-			null,
-			null,
-			now(),
-			now(),
-			0,
-			#{htbAgreeContentNy},
-			#{hotelMember_htmSeq}
-		)
+		 INSERT INTO hotelbooking (
+		 		htbcheckIn,	
+		 		htbcheckOut,
+		 		htbTotalPrice,
+		 		htbPaymentType,
+		 		htbSettleDate,
+		 		htbRegDate,
+		 		htbEditDate,
+		 		htbDelNy,
+		 		htbAgreeContentNy,
+		 		hotelMember_htmSeq
+			) values (
+				#{htbcheckIn},
+				#{htbcheckOut},
+				#{htbTotalPrice},
+				null,
+				null,
+				now(),
+				now(),
+				0,
+				1,
+				#{hotelMember_htmSeq}
+			)
 	</insert>
 	
 	<insert id="hotelBookingMenuInsert" parameterType="map">

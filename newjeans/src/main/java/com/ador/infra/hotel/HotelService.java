@@ -105,7 +105,7 @@ public class HotelService {
 		return hotelDao.selectListHotelRoom();
 	}
 	
-	// 예약
+	// 예약 insert
 	public int hotelBookingInsert(HotelDto hotelDto) {
 		System.out.println("hotelBookingInsert");
 		return hotelDao.hotelBookingInsert(hotelDto);
