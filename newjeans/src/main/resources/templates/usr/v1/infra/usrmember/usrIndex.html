@@ -57,23 +57,6 @@
         <!-- Top Bar -->
         <div class="topbar-area">
             <div class="container">
-<!--                 <div class="row align-items-center"> -->
-<!--                     <div class="col-lg-6 col-md-6"> -->
-<!--                         <ul class="topbar-list"> -->
-<!-- 							<li th:if="${session.sessSeqUsr != null}" th:text="${session.sessNameUsr} + ' 님 '"></li>  -->
-<!--             				<li th:if="${session.sessSeqUsr != null}" th:text="${session.sessEmailUsr}"></li> -->
-<!--            					<li th:if="${session.sessSeqUsr == null}">로그인해주세요</li> 로그아웃 시 표시 -->
-<!--                         </ul>        -->
-<!--                     </div>    -->
-<!--                     <div class="col-lg-6 col-md-6"> -->
-<!--                         <ul class="topbar-others-options"> -->
-<!-- 							<li th:if="${session.sessSeqUsr == null}"><a href="/v1/infra/usrmember/usrSignin">Sign in</a></li> -->
-<!--             				<li th:if="${session.sessSeqUsr == null}"><a href="/v1/infra/usrmember/usrSignup">Sign up</a></li> -->
-<!--             				<li id="logoutBtn" th:if="${session.sessSeqUsr != null}"><a href="/v1/infra/usrmember/usrSignout">Logout</a></li> 로그인 시 로그아웃 버튼 -->
-<!--                         </ul> -->
-<!--                     </div> -->
-<!--                 </div> -->
- 
 			<div class="row align-items-center">
 			    <div class="col-lg-6 col-md-6">
 			        <ul class="topbar-list">
@@ -93,8 +76,7 @@
 			                <li><a href="/v1/infra/usrmember/usrSignup">Sign up</a></li>
 			            </th:block>
 			            <th:block th:if="${session.sessSeqUsr != null}">
-<!-- 			                <li id="logoutBtn"><a href="/v1/infra/usrmember/usrSignout">Logout</a></li> 로그인 시 로그아웃 버튼 -->
- 								<li id="logoutBtn" style="color:#fff;cursor:pointer;"><a>Logout</a></li>
+ 						  <li id="logoutBtn" style="color:#fff;cursor:pointer;"><a>Logout</a></li>
 			            </th:block>
 			        </ul>
 			    </div>
@@ -124,56 +106,56 @@
                         </a>
                         <div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent">
                             <ul class="navbar-nav">
-                                <li class="nav-item">
-                                    <a href="#" class="nav-link active">
-                                        Home
-                                        <i class="fas fa-angle-down"></i>
-                                    </a>
-                                    <ul class="dropdown-menu">
-                                        <li class="nav-item">
-                                            <a href="index.html" class="nav-link active">Home One</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="index-2.html" class="nav-link">Home Two</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="index-3.html" class="nav-link">Home Three</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="index-4.html" class="nav-link">Home Four</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="index-5.html" class="nav-link">Home Five</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="index-6.html" class="nav-link">Home six</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="index-7.html" class="nav-link">Home seven</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="index-8.html" class="nav-link">Home Eight</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="index-9.html" class="nav-link">Home nine</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="index-10.html" class="nav-link">Home ten</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="index-11.html" class="nav-link">Home eleven</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="index-12.html" class="nav-link">Home twelve</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="index-13.html" class="nav-link">Home thirteen</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="index-14.html" class="nav-link">Home fourteen</a>
-                                        </li>
-                                    </ul>
-                                </li>
+<!--                                 <li class="nav-item"> -->
+<!--                                     <a href="#" class="nav-link active"> -->
+<!--                                         Home -->
+<!--                                         <i class="fas fa-angle-down"></i> -->
+<!--                                     </a> -->
+<!--                                     <ul class="dropdown-menu"> -->
+<!--                                         <li class="nav-item"> -->
+<!--                                             <a href="index.html" class="nav-link active">Home One</a> -->
+<!--                                         </li> -->
+<!--                                         <li class="nav-item"> -->
+<!--                                             <a href="index-2.html" class="nav-link">Home Two</a> -->
+<!--                                         </li> -->
+<!--                                         <li class="nav-item"> -->
+<!--                                             <a href="index-3.html" class="nav-link">Home Three</a> -->
+<!--                                         </li> -->
+<!--                                         <li class="nav-item"> -->
+<!--                                             <a href="index-4.html" class="nav-link">Home Four</a> -->
+<!--                                         </li> -->
+<!--                                         <li class="nav-item"> -->
+<!--                                             <a href="index-5.html" class="nav-link">Home Five</a> -->
+<!--                                         </li> -->
+<!--                                         <li class="nav-item"> -->
+<!--                                             <a href="index-6.html" class="nav-link">Home six</a> -->
+<!--                                         </li> -->
+<!--                                         <li class="nav-item"> -->
+<!--                                             <a href="index-7.html" class="nav-link">Home seven</a> -->
+<!--                                         </li> -->
+<!--                                         <li class="nav-item"> -->
+<!--                                             <a href="index-8.html" class="nav-link">Home Eight</a> -->
+<!--                                         </li> -->
+<!--                                         <li class="nav-item"> -->
+<!--                                             <a href="index-9.html" class="nav-link">Home nine</a> -->
+<!--                                         </li> -->
+<!--                                         <li class="nav-item"> -->
+<!--                                             <a href="index-10.html" class="nav-link">Home ten</a> -->
+<!--                                         </li> -->
+<!--                                         <li class="nav-item"> -->
+<!--                                             <a href="index-11.html" class="nav-link">Home eleven</a> -->
+<!--                                         </li> -->
+<!--                                         <li class="nav-item"> -->
+<!--                                             <a href="index-12.html" class="nav-link">Home twelve</a> -->
+<!--                                         </li> -->
+<!--                                         <li class="nav-item"> -->
+<!--                                             <a href="index-13.html" class="nav-link">Home thirteen</a> -->
+<!--                                         </li> -->
+<!--                                         <li class="nav-item"> -->
+<!--                                             <a href="index-14.html" class="nav-link">Home fourteen</a> -->
+<!--                                         </li> -->
+<!--                                     </ul> -->
+<!--                                 </li> -->
                                 <li class="nav-item">
                                     <a href="#" class="nav-link">
                                         Categories
@@ -3413,96 +3395,8 @@
     </section> -->
 
     <!-- Footer  -->
-    <footer id="footer_area">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-3 col-md-6 col-sm-6 col-12 footer_information">
-                    <div class="footer_heading_area footer_heading_area_index">
-                        <h5>문의하기</h5>
-                    </div>
-                    <div class="footer_first_area footer_first_area_index">
-                        <div class="footer_inquery_area footer_inquery_area_index">
-                            <h5>Call 24/7 for any help</h5>
-                            <h3> <a href="tel:+00-123-456-789">+00 123 456 789</a></h3>
-                        </div>
-                        <div class="footer_inquery_area footer_inquery_area_index">
-                            <h5>Mail to our support team</h5>
-                            <h3> <a href="mailto:support@domain.com">Hotelbora@gmail.com</a></h3>
-                        </div>
-                        <div class="footer_inquery_area footer_inquery_area_index">
-                            <h5>Follow us on</h5>
-                            <ul class="soical_icon_footer soical_icon_footer_index">
-                                <li><a href="#!"><i class="fab fa-facebook"></i></a></li>
-                                <li><a href="#!"><i class="fab fa-twitter-square"></i></a></li>
-                                <li><a href="#!"><i class="fab fa-instagram"></i></a></li>
-                                <li><a href="#!"><i class="fab fa-linkedin"></i></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <!-- <div class="col-lg-2 offset-lg-1 col-md-6 col-sm-6 col-12">
-                    <div class="footer_heading_area">
-                        <h5>Company</h5>
-                    </div>
-                    <div class="footer_link_area">
-                        <ul>
-                            <li><a href="about.html">About Us</a></li>
-                            <li><a href="testimonials.html">Testimonials</a></li>
-                            <li><a href="faqs.html">Rewards</a></li>
-                            <li><a href="terms-service.html">Work with Us</a></li>
-                            <li><a href="tour-guides.html">Meet the Team </a></li>
-                            <li><a href="news.html">Blog</a></li>
-                        </ul>
-                    </div>
-                </div> -->
-                <!-- <div class="col-lg-2 col-md-4 col-sm-6 col-12">
-                    <div class="footer_heading_area">
-                        <h5>Support</h5>
-                    </div>
-                    <div class="footer_link_area">
-                        <ul>
-                            <li><a href="dashboard.html">Account</a></li>
-                            <li><a href="faq.html">Faq</a></li>
-                            <li><a href="testimonials.html">Legal</a></li>
-                            <li><a href="contact.html">Contact</a></li>
-                            <li><a href="top-destinations.html"> Affiliate Program</a></li>
-                            <li><a href="privacy-policy.html">Privacy Policy</a></li>
-                        </ul>
-                    </div>
-                </div> -->
-                <!-- <div class="col-lg-2 col-md-4 col-sm-6 col-12">
-                    <div class="footer_heading_area">
-                        <h5>Other Services</h5>
-                    </div>
-                    <div class="footer_link_area">
-                        <ul>
-                            <li><a href="top-destinations-details.html">Community program</a></li>
-                            <li><a href="top-destinations-details.html">Investor Relations</a></li>
-                            <li><a href="flight-search-result.html">Rewards Program</a></li>
-                            <li><a href="room-booking.html">PointsPLUS</a></li>
-                            <li><a href="testimonials.html">Partners</a></li>
-                            <li><a href="hotel-search.html">List My Hotel</a></li>
-                        </ul>
-                    </div>
-                </div> -->
-                <!-- <div class="col-lg-2 col-md-4 col-sm-6 col-12">
-                    <div class="footer_heading_area">
-                        <h5>Top cities</h5>
-                    </div>
-                    <div class="footer_link_area">
-                        <ul>
-                            <li><a href="room-details.html">Chicago</a></li>
-                            <li><a href="hotel-details.html">New York</a></li>
-                            <li><a href="hotel-booking.html">San Francisco</a></li>
-                            <li><a href="tour-search.html">California</a></li>
-                            <li><a href="tour-booking.html">Ohio </a></li>
-                            <li><a href="tour-guides.html">Alaska</a></li>
-                        </ul>
-                    </div>
-                </div> -->
-            </div>
-        </div>
-    </footer>
+    <div th:replace="~{usr/v1/infra/usrmember/common/footer :: footer}"></div>
+    
     <div class="copyright_area">
         <div class="container">
             <div class="row align-items-center">
@@ -3538,30 +3432,8 @@
     <script src="/usr/v1/usertemplate/ui/assets/js/add-form.js"></script>
     <script src="/usr/v1/usertemplate/ui/assets/js/form-dropdown.js"></script>
     
-    
-    <script>
- 	// 로그아웃
-    document.getElementById("logoutBtn").onclick = function () {
-       	   $.ajax({  
-      			async: true   
-      			,cache: false
-      			,type: "post"
-      			/* ,dataType:"json" */
-      			,url: "/v1/infra/usrmember/usrSignoutProc"
-      			/* ,data : $("#formLogin").serialize() */
-      			,success: function(response) {
-      				if(response.rt == "success") {
-      					location.href="/v1/infra/usrmember/usrIndex";  
-      				} else {        
-      					// by pass  
-      				}
-      			  }      
-                }); // ajax end
-                
-     } // logoutBtn end
-    
-    
-    </script>
+    <!-- common.js-->
+    <script src="/usr/v1/js/common.js"></script>
 </body>
 
 </html>
