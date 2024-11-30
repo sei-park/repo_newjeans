@@ -483,6 +483,7 @@
 			and htseq = #{htseq}
 	</delete>
 	
+	<!-- S3 파일 업로드 -->
 	<insert id="insertUploaded">
 		insert into hotelUploaded(
 			htutype,

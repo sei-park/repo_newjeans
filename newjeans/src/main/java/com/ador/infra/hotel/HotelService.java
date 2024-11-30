@@ -32,6 +32,7 @@ public class HotelService {
 			
 			if(!hotelDto.getUploadFiles()[i].isEmpty()) {
 				
+				// 파일 정보 설정
 				String className = hotelDto.getClass().getSimpleName().toString().toLowerCase();		
 				String fileName = hotelDto.getUploadFiles()[i].getOriginalFilename();
 				String ext = fileName.substring(fileName.lastIndexOf(".") + 1);
@@ -44,14 +45,16 @@ public class HotelService {
 //				String pathForView = Constants.UPLOADED_PATH_PREFIX_FOR_VIEW_LOCAL + "/" + pathModule + "/" + type + "/" + pathDate + "/";
 				
 				
+				// S3에 업로드
 		        ObjectMetadata metadata = new ObjectMetadata();
 		        metadata.setContentLength(hotelDto.getUploadFiles()[i].getSize());
 		        metadata.setContentType(hotelDto.getUploadFiles()[i].getContentType());
-		        
 		        amazonS3Client.putObject("newjeans", path + uuidFileName, hotelDto.getUploadFiles()[i].getInputStream(), metadata);
 				
+		        // S3 URL 생성
 		        String objectUrl = amazonS3Client.getUrl("newjeans", path + uuidFileName).toString();
 		        
+		        // Dto에 정보 설정
 		        hotelDto.setHtupath(objectUrl);
 		        hotelDto.setHtuoriginalName(fileName);
 		        hotelDto.setHtuuuidName(uuidFileName);

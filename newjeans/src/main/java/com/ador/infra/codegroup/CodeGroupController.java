@@ -78,15 +78,15 @@ public class CodeGroupController {
         }
         rd.close();
         conn.disconnect();
-        System.out.println(sb.toString());
+       // System.out.println(sb.toString());
         
     	ObjectMapper objectMapper = new ObjectMapper();   
 		JsonNode node = objectMapper.readTree(sb.toString());
 		
-		System.out.println("node.get(\"header\").get(\"resultCode\").asText(): " + node.get("header").get("resultCode").asText());
-		System.out.println("node.get(\"header\").get(\"resultMsg\").asText(): " + node.get("header").get("resultMsg").asText());
-		System.out.println("node.get(\"header\").get(\"resultMsg\").asText(): " + node.get("body").get("items").get(0).get("KIT_PROD_QTY").asText());
-															 
+//		System.out.println("node.get(\"header\").get(\"resultCode\").asText(): " + node.get("header").get("resultCode").asText());
+//		System.out.println("node.get(\"header\").get(\"resultMsg\").asText(): " + node.get("header").get("resultMsg").asText());
+//		System.out.println("node.get(\"header\").get(\"resultMsg\").asText(): " + node.get("body").get("items").get(0).get("KIT_PROD_QTY").asText());
+		
 		return "xdm/v1/infra/codegroup/codeGroupXdmList";
 	} 
 	

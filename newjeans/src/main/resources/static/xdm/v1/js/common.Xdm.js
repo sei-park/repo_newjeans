@@ -18,7 +18,7 @@ if (exampleModal) {
 
 // 로그아웃
 document.getElementById("logoutBtn").onclick = function () {
-   	alert("로그아웃되었습니다");
+   	//alert("로그아웃되었습니다");
    	   $.ajax({  
   			async: true   
   			,cache: false
