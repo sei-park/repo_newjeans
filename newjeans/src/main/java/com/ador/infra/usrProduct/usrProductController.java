@@ -119,12 +119,24 @@ public class usrProductController {
 	}
 	
 	// 호텔 결제 페이지
+//	@RequestMapping(value="/usr/v1/infra/usrmember/usrHotelBooking")
+//	public String usrHotelBooking(HotelDto hotelDto, @RequestParam("htbseq") String htbseq, Model model) {
+//		
+//		model.addAttribute("bookingItem", hotelService.paymentSelectOne(hotelDto));
+//		model.addAttribute("bookingMenuItem", hotelService.paymentSelectList(hotelDto));
+//		model.addAttribute("hotelItem", hotelService.paymentHotelSelectOne(hotelDto));
+//		return "usr/v1/infra/usrmember/usrHotelBooking";
+//	}
+	
 	@RequestMapping(value="/usr/v1/infra/usrmember/usrHotelBooking")
 	public String usrHotelBooking(HttpServletRequest request) {
+		
 		return "usr/v1/infra/usrmember/usrHotelBooking";
 	}
+	 
 	
-	
+
+
 
 
 	         

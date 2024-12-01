@@ -419,25 +419,27 @@
         <div class="vertical-menu">
 
             <!-- LOGO -->
-            <div class="navbar-brand-box">
-                <a href="index.html" class="logo logo-dark">
-                    <span class="logo-sm">
-                        <img src="/xdm/v1/template/ui/assets/images/logo-sm.png" alt="" height="22">
-                    </span>
-                    <span class="logo-lg">
-                        <img src="/xdm/v1/template/ui/assets/images/logo-dark.png" alt="" height="22">
-                    </span>
-                </a>
+            <div th:replace="~{xdm/v1/infra/include/logo :: aside}"></div>
+            
+<!--             <div class="navbar-brand-box"> -->
+<!--                 <a href="/xdm/v1/infra/hotelmember/mainPage" class="logo logo-dark"> -->
+<!--                     <span class="logo-sm"> -->
+<!--                         <img src="/xdm/v1/template/ui/assets/images/logo-sm.png" alt="" height="22"> -->
+<!--                     </span> -->
+<!--                     <span class="logo-lg"> -->
+<!--                         <img src="/xdm/v1/template/ui/assets/images/logo-dark.png" alt="" height="22"> -->
+<!--                     </span> -->
+<!--                 </a> -->
 
-                <a href="index.html" class="logo logo-light">
-                    <span class="logo-lg">
-                        <img src="/xdm/v1/template/ui/assets/images/logo-light.png" alt="" height="22">
-                    </span>
-                    <span class="logo-sm">
-                        <img src="/xdm/v1/template/ui/assets/images/logo-sm-light.png" alt="" height="22">
-                    </span>
-                </a>
-            </div>
+<!--                 <a href="/xdm/v1/infra/hotelmember/mainPage" class="logo logo-light"> -->
+<!--                     <span class="logo-lg"> -->
+<!--                         <img src="/xdm/v1/template/ui/assets/images/logo-light.png" alt="" height="22"> -->
+<!--                     </span> -->
+<!--                     <span class="logo-sm"> -->
+<!--                         <img src="/xdm/v1/template/ui/assets/images/logo-sm-light.png" alt="" height="22"> -->
+<!--                     </span> -->
+<!--                 </a> -->
+<!--             </div> -->
 
             <button type="button" class="btn btn-sm px-3 font-size-16 header-item vertical-menu-btn">
                 <i class="fa fa-fw fa-bars"></i>

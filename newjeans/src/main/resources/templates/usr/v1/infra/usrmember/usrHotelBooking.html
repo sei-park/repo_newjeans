@@ -101,91 +101,37 @@
     <!-- Tour Booking Submission Areas -->
     <section id="tour_booking_submission" class="section_padding">
         <div class="container">
+        <!-- 폼 시작 -->
+           <form name="form" method="post" action="">
             <div class="row">
                 <div class="col-lg-8">
                     <div class="tou_booking_form_Wrapper">
                         <div class="booking_tour_form">
                             <h3 class="heading_theme">예약하기</h3>
                             <div class="tour_booking_form_box">
-                                <form action="!#" id="tour_bookking_form_item">
                                     <div class="row">
-                                        <div class="col-lg-12">
+                                        <div class="col-lg-12" style="margin-bottom: 20px;">
                                             <div class="form-group">
-                                                <input type="text" class="form-control bg_input" placeholder="이름*">
+                                                <input type="text" class="form-control bg_input" placeholder="이름">
                                             </div>
                                         </div>
-                                        <!-- <div class="col-lg-6">
-                                            <div class="form-group">
-                                                <input type="text" class="form-control bg_input"
-                                                    placeholder="Last name*">
-                                            </div>
-                                        </div> -->
                                         <div class="col-lg-6">
-                                            <div class="form-group">
+                                            <div class="form-group" style="margin-bottom: 20px;">
                                                 <input type="text" class="form-control bg_input" placeholder="이메일 주소">
                                             </div>
                                         </div>
                                         <div class="col-lg-6">
                                             <div class="form-group">
-                                                <input type="text" class="form-control bg_input" placeholder="휴대폰 번호*">
+                                                <input type="text" class="form-control bg_input" placeholder="휴대폰 번호">
                                             </div>
                                         </div>
-                                        <div class="col-lg-12">
-                                            <div class="form-group">
-                                                <input type="text" class="form-control bg_input" placeholder="주소">
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-12">
-                                            <div class="form-group">
-                                                <input type="text" class="form-control bg_input" placeholder="상세주소">
-                                            </div>
-                                        </div>
-                                        <!-- <div class="col-lg-6">
-                                            <div class="form-group">
-                                                <select class="form-control form-select bg_input">
-                                                    <option value="1">Khulna</option>
-                                                    <option value="1">New York</option>
-                                                    <option value="1">Barisal</option>
-                                                    <option value="1">Nator</option>
-                                                    <option value="1">Joybangla</option>
-                                                </select>
-                                            </div>
-                                        </div> -->
-                                        <!-- <div class="col-lg-6">
-                                            <div class="form-group">
-                                                <select class="form-control form-select bg_input">
-                                                    <option value="1">도시</option>
-                                                    <option value="1">New York</option>
-                                                    <option value="1">Barisal</option>
-                                                    <option value="1">Nator</option>
-                                                    <option value="1">Joybangla</option>
-                                                </select>
-                                            </div>
-                                        </div> -->
-                                        <div class="col-lg-12">
-                                            <div class="form-group">
-                                                <input type="text" class="form-control bg_input" placeholder="우편번호">
-                                            </div>
-                                            <!-- <div class="form-group">
-                                                <select class="form-control form-select bg_input">
-                                                    <option value="1">Country</option>
-                                                    <option value="1">New York</option>
-                                                    <option value="1">Barisal</option>
-                                                    <option value="1">Nator</option>
-                                                    <option value="1">Joybangla</option>
-                                                </select>
-                                            </div> -->
-                                        </div>
-
                                     </div>
-                                </form>
                             </div>
                         </div>
                         <div class="booking_tour_form">
                             <h3 class="heading_theme">결제 방법</h3>
                             <div class="tour_booking_form_box">
                                 <div class="booking_payment_boxed">
-                                    <form action="!#" id="payment_checked">
                                         <div class="form-check">
                                             <input class="form-check-input" type="radio" name="flexRadioDefault"
                                                 id="flexRadioDefault1" value="red">
@@ -243,7 +189,6 @@
                                                 </div>
                                             </div>
                                         </div>
-                                    </form>
                                 </div>
                             </div>
                         </div>
@@ -256,7 +201,10 @@
                                     </span>
                                 </label>
                             </div>
-                            <a href="booking-confirmation.html" class="btn btn_theme btn_md">결제하기</a>
+                            <div class="comment_form_submit" style="margin-top:25px;">
+                                 <button type="button" class="btn btn_theme btn_md">결제하기</button>
+                            </div>
+<!--                             <a href="booking-confirmation.html" class="btn btn_theme btn_md">결제하기</a> -->
                         </div>
                     </div>
                 </div>
@@ -265,112 +213,31 @@
                         <div class="tour_detail_right_sidebar">
                             <div class="tour_details_right_boxed">
                                 <div class="tour_details_right_box_heading">
-                                    <h3>프리미어 더블룸</h3>
+                                    <h3>호텔 이름</h3> 
                                 </div>
                                 <div class="valid_date_area">
                                     <div class="valid_date_area_one">
                                         <h5>입실</h5>
-                                        <p>01 Feb 2022</p>
+                                        <p>입실날짜</p>
                                     </div>
                                     <div class="valid_date_area_one">
                                         <h5>퇴실</h5>
-                                        <p>15 Feb 2022</p>
+                                        <p>퇴실날짜</p>
                                     </div>
                                     <div class="valid_date_area_one">
                                         <h5>인원 수</h5>
-                                        <p>성인 2명</p>
+                                        <p>성인 2명</p> 
                                     </div>
                                 </div>
-                                <div class="tour_package_details_bar_list">
-                                    <h5>포함사항</h5>
-                                    <ul>
-                                        <li>피트니스 센터 이용</li>
-                                        <li>수영장 이용</li>
-                                        <li>조식</li>
-                                    </ul>
-                                </div>
-                                <div class="tour_package_details_bar_list">
-                                    <h5>시설</h5>
-                                    <ul>
-                                        <li>레스토랑 & 바</li>
-                                        <li>물품보관소</li>
-                                        <li>내부 전용 주차장</li>
-                                    </ul>
-                                </div>
                                 <div class="tour_package_details_bar_price">
-                                    <h5>가격 확인</h5>
+                                    <h5>룸이름</h5>
                                     <div class="tour_package_bar_price">
                                         <!-- <h6><del>₩786,500</del></h6> -->
-                                        <h3>₩786,500<sub> / 1박</sub> </h3>
+                                        <h3>금액<sub> / 1박</sub> </h3>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <!-- <div class="tour_detail_right_sidebar">
-                            <div class="tour_details_right_boxed">
-                                <div class="tour_details_right_box_heading">
-                                    <h3>Travel date</h3>
-                                </div>
-                                <div class="edit_date_form">
-                                    <div class="form-group">
-                                        <label for="dates">Edit Date</label>
-                                        <input type="date" id="dates" value="2022-05-05" class="form-control">
-                                    </div>
-                                </div>
-                                <div class="tour_package_details_bar_list">
-                                    <h5>Tourist</h5>
-                                    <div class="select_person_item">
-                                        <div class="select_person_left">
-                                            <h6>Adult</h6>
-                                            <p>12y+</p>
-                                        </div>
-                                        <div class="select_person_right">
-                                            <h6>01</h6>
-                                        </div>
-                                    </div>
-
-                                    <div class="select_person_item">
-                                        <div class="select_person_left">
-                                            <h6>Children</h6>
-                                            <p>2 - 12 years</p>
-                                        </div>
-                                        <div class="select_person_right">
-                                            <h6>01</h6>
-                                        </div>
-                                    </div>
-                                    <div class="select_person_item">
-                                        <div class="select_person_left">
-                                            <h6>Infant</h6>
-                                            <p>Below 2 years</p>
-                                        </div>
-                                        <div class="select_person_right">
-                                            <h6>01</h6>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="edit_person">
-                                    <p>Edit person</p>
-                                </div>
-                            </div>
-                        </div> -->
-<!--                         <div class="tour_detail_right_sidebar"> -->
-<!--                             <div class="tour_details_right_boxed"> -->
-<!--                                 <div class="tour_details_right_box_heading"> -->
-<!--                                     <h3>쿠폰 등록</h3> -->
-<!--                                 </div> -->
-<!--                                 <div class="coupon_code_area_booking"> -->
-<!--                                     <form action="#!"> -->
-<!--                                         <div class="form-group"> -->
-<!--                                             <input type="text" class="form-control bg_input" placeholder="쿠폰 번호를 입력하세요"> -->
-<!--                                         </div> -->
-<!--                                         <div class="coupon_code_submit"> -->
-<!--                                             <button class="btn btn_theme btn_md">등록</button> -->
-<!--                                         </div> -->
-<!--                                     </form> -->
-<!--                                 </div> -->
-
-<!--                             </div> -->
-<!--                         </div> -->
                         <div class="tour_detail_right_sidebar">
                             <div class="tour_details_right_boxed">
                                 <div class="tour_details_right_box_heading">
@@ -386,10 +253,11 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div>  
                     </div>
                 </div>
             </div>
+         </form>  
         </div>
     </section>
 

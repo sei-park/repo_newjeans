@@ -1,36 +1,10 @@
-<!doctype html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
 
-    <head>
-
-        <meta charset="utf-8" />
-        <title>Sales Dashboard | Dashonic - Admin & Dashboard Template</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
-        <meta content="Pichforest" name="author" />
-        <!-- App favicon -->
-        <link rel="shortcut icon" href="/xdm/v1/template/ui/assets/images/favicon.ico">
-
-        <!-- plugin css -->
-        <link href="/xdm/v1/template/ui/assets/libs/jsvectormap/css/jsvectormap.min.css" rel="stylesheet" type="text/css" />
-
-        <!-- Bootstrap Css -->
-        <link href="/xdm/v1/template/ui/assets/css/bootstrap.min.css" id="bootstrap-style" rel="stylesheet" type="text/css" />
-        <!-- Icons Css -->
-        <link href="/xdm/v1/template/ui/assets/css/icons.min.css" rel="stylesheet" type="text/css" />
-        <!-- App Css-->
-        <link href="/xdm/v1/template/ui/assets/css/app.min.css" id="app-style" rel="stylesheet" type="text/css" />
-
-    </head>
-    
-    
-    <body> 
         <header id="page-topbar">
             <div class="navbar-header">
                 <div class="d-flex">
                     <!-- LOGO -->
                     <div class="navbar-brand-box">
-                        <a href="index.html" class="logo logo-dark">
+                        <a href="/xdm/v1/infra/hotelmember/mainPage" class="logo logo-dark">
                             <span class="logo-sm">
                                 <img src="/xdm/v1/template/ui/assets/images/logo-sm.png" alt="" height="22">
                             </span>
@@ -39,7 +13,7 @@
                             </span>
                         </a>
 
-                        <a href="index.html" class="logo logo-light">
+                        <a href="/xdm/v1/infra/hotelmember/mainPage" class="logo logo-light">
                             <span class="logo-sm">
                                 <img src="/xdm/v1/template/ui/assets/images/logo-sm.png" alt="" height="22">
                             </span>
@@ -53,88 +27,88 @@
                         <i class="fa fa-fw fa-bars"></i>
                     </button>
 
-                    <div class="dropdown d-none d-lg-block ms-2">
-                        <button type="button" class="btn header-item" data-bs-toggle="dropdown" aria-haspopup="false" aria-expanded="false">
-                            <span>Components</span>
-                            <i class="mdi mdi-chevron-down"></i> 
-                        </button>
-                        <div class="dropdown-menu dropdown-menu-xl p-2">
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <a class="dropdown-item" href="#!">Alerts</a>
-                                    <a class="dropdown-item" href="#!">Buttons</a>
-                                    <a class="dropdown-item" href="#!">Cards</a>
-                                    <a class="dropdown-item" href="#!">Dropdowns</a>
-                                    <a class="dropdown-item" href="#!">Lightbox</a>
-                                    <a class="dropdown-item" href="#!">Modals</a>
-                                    <a class="dropdown-item" href="#!">Range Slider</a>
-                                </div>
-                                <div class="col-md-6">
-                                    <a class="dropdown-item" href="#!">Progress Bars</a>
-                                    <a class="dropdown-item" href="#!">Sweet-Alert</a>
-                                    <a class="dropdown-item" href="#!">Tabs & Accordions</a>
-                                    <a class="dropdown-item" href="#!">Typography</a>
-                                    <a class="dropdown-item" href="#!">General</a>
-                                    <a class="dropdown-item" href="#!">Rating</a>
-                                    <a class="dropdown-item" href="#!">Notifications</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+<!--                     <div class="dropdown d-none d-lg-block ms-2"> -->
+<!--                         <button type="button" class="btn header-item" data-bs-toggle="dropdown" aria-haspopup="false" aria-expanded="false"> -->
+<!--                             <span>Components</span> -->
+<!--                             <i class="mdi mdi-chevron-down"></i>  -->
+<!--                         </button> -->
+<!--                         <div class="dropdown-menu dropdown-menu-xl p-2"> -->
+<!--                             <div class="row"> -->
+<!--                                 <div class="col-md-6"> -->
+<!--                                     <a class="dropdown-item" href="#!">Alerts</a> -->
+<!--                                     <a class="dropdown-item" href="#!">Buttons</a> -->
+<!--                                     <a class="dropdown-item" href="#!">Cards</a> -->
+<!--                                     <a class="dropdown-item" href="#!">Dropdowns</a> -->
+<!--                                     <a class="dropdown-item" href="#!">Lightbox</a> -->
+<!--                                     <a class="dropdown-item" href="#!">Modals</a> -->
+<!--                                     <a class="dropdown-item" href="#!">Range Slider</a> -->
+<!--                                 </div> -->
+<!--                                 <div class="col-md-6"> -->
+<!--                                     <a class="dropdown-item" href="#!">Progress Bars</a> -->
+<!--                                     <a class="dropdown-item" href="#!">Sweet-Alert</a> -->
+<!--                                     <a class="dropdown-item" href="#!">Tabs & Accordions</a> -->
+<!--                                     <a class="dropdown-item" href="#!">Typography</a> -->
+<!--                                     <a class="dropdown-item" href="#!">General</a> -->
+<!--                                     <a class="dropdown-item" href="#!">Rating</a> -->
+<!--                                     <a class="dropdown-item" href="#!">Notifications</a> -->
+<!--                                 </div> -->
+<!--                             </div> -->
+<!--                         </div> -->
+<!--                     </div> -->
 
-                    <div class="dropdown dropdown-mega d-none d-lg-block">
-                        <button type="button" class="btn header-item" data-bs-toggle="dropdown" aria-haspopup="false" aria-expanded="false">
-                            <span>Categories</span>
-                            <i class="mdi mdi-chevron-down"></i> 
-                        </button>
-                        <div class="dropdown-menu p-2 dropdown-megamenu">
-                            <div class="row">
-                                <div class="col">
-                                    <h5 class="font-size-14 mx-4 mt-2">Computers & Accessories</h5>
-                                    <a class="dropdown-item" href="#!">Laptops &amp; Tablets</a>
-                                    <a class="dropdown-item" href="#!">Desktop Computers</a>
-                                    <a class="dropdown-item" href="#!">Networking Products (NAS)</a>
-                                    <a class="dropdown-item" href="#!">Monitors</a>
-                                    <a class="dropdown-item" href="#!">Bags, Cases &amp; Sleeves</a>
-                                    <a class="dropdown-item" href="#!">Batteries</a>
-                                    <a class="dropdown-item" href="#!">Charges &amp; Adapters</a>
-                                </div>
-                                <div class="col">
-                                    <h5 class="font-size-14 ms-4 mt-2">Smartphones & Tablets</h5>
-                                    <a class="dropdown-item" href="#!">Apple iPhone</a>
-                                    <a class="dropdown-item" href="#!">Android Smartphones</a>
-                                    <a class="dropdown-item" href="#!">Phablets</a>
-                                    <a class="dropdown-item" href="#!">Apple iPad</a>
-                                    <a class="dropdown-item" href="#!">Android Tablets</a>
-                                    <a class="dropdown-item" href="#!">Tablets with Keyboard</a>
-                                </div>
-                                <div class="col">
-                                    <h5 class="font-size-14 ms-4 mt-2">Television & Video</h5>
-                                    <a class="dropdown-item" href="#!">TV Sets</a>
-                                    <a class="dropdown-item" href="#!">Home Theater Systems</a>
-                                    <a class="dropdown-item" href="#!">DVD Players & Recorders</a>
-                                    <a class="dropdown-item" href="#!">DVD-VCR Combos</a>
-                                    <a class="dropdown-item" href="#!">Projectors</a>
-                                    <a class="dropdown-item" href="#!">Projection Screens</a>
-                                    <a class="dropdown-item" href="#!">Satelite Television</a>
-                                </div>
-                                <div class="col">
-                                    <h5 class="font-size-14 ms-4 mt-2">Cameras, Photo & Video</h5>
-                                    <a class="dropdown-item" href="#!">Point & Shoot Digital Cameras</a>
-                                    <a class="dropdown-item" href="#!">DSLR Cameras</a>
-                                    <a class="dropdown-item" href="#!">Mirrorless Cameras</a>
-                                    <a class="dropdown-item" href="#!">Body Mounted Cameras</a>
-                                    <a class="dropdown-item" href="#!">Camera Lenses</a>
-                                    <a class="dropdown-item" href="#!">Video Studio</a>
-                                </div>
-                                <div class="col">
-                                    <div class="py-lg-2 pr-lg-2">
-                                        <img src="/xdm/v1/template/ui/assets/images/illustrator/1.png" alt="" class="img-fluid mx-auto" style="max-height: 250px;">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+<!--                     <div class="dropdown dropdown-mega d-none d-lg-block"> -->
+<!--                         <button type="button" class="btn header-item" data-bs-toggle="dropdown" aria-haspopup="false" aria-expanded="false"> -->
+<!--                             <span>Categories</span> -->
+<!--                             <i class="mdi mdi-chevron-down"></i>  -->
+<!--                         </button> -->
+<!--                         <div class="dropdown-menu p-2 dropdown-megamenu"> -->
+<!--                             <div class="row"> -->
+<!--                                 <div class="col"> -->
+<!--                                     <h5 class="font-size-14 mx-4 mt-2">Computers & Accessories</h5> -->
+<!--                                     <a class="dropdown-item" href="#!">Laptops &amp; Tablets</a> -->
+<!--                                     <a class="dropdown-item" href="#!">Desktop Computers</a> -->
+<!--                                     <a class="dropdown-item" href="#!">Networking Products (NAS)</a> -->
+<!--                                     <a class="dropdown-item" href="#!">Monitors</a> -->
+<!--                                     <a class="dropdown-item" href="#!">Bags, Cases &amp; Sleeves</a> -->
+<!--                                     <a class="dropdown-item" href="#!">Batteries</a> -->
+<!--                                     <a class="dropdown-item" href="#!">Charges &amp; Adapters</a> -->
+<!--                                 </div> -->
+<!--                                 <div class="col"> -->
+<!--                                     <h5 class="font-size-14 ms-4 mt-2">Smartphones & Tablets</h5> -->
+<!--                                     <a class="dropdown-item" href="#!">Apple iPhone</a> -->
+<!--                                     <a class="dropdown-item" href="#!">Android Smartphones</a> -->
+<!--                                     <a class="dropdown-item" href="#!">Phablets</a> -->
+<!--                                     <a class="dropdown-item" href="#!">Apple iPad</a> -->
+<!--                                     <a class="dropdown-item" href="#!">Android Tablets</a> -->
+<!--                                     <a class="dropdown-item" href="#!">Tablets with Keyboard</a> -->
+<!--                                 </div> -->
+<!--                                 <div class="col"> -->
+<!--                                     <h5 class="font-size-14 ms-4 mt-2">Television & Video</h5> -->
+<!--                                     <a class="dropdown-item" href="#!">TV Sets</a> -->
+<!--                                     <a class="dropdown-item" href="#!">Home Theater Systems</a> -->
+<!--                                     <a class="dropdown-item" href="#!">DVD Players & Recorders</a> -->
+<!--                                     <a class="dropdown-item" href="#!">DVD-VCR Combos</a> -->
+<!--                                     <a class="dropdown-item" href="#!">Projectors</a> -->
+<!--                                     <a class="dropdown-item" href="#!">Projection Screens</a> -->
+<!--                                     <a class="dropdown-item" href="#!">Satelite Television</a> -->
+<!--                                 </div> -->
+<!--                                 <div class="col"> -->
+<!--                                     <h5 class="font-size-14 ms-4 mt-2">Cameras, Photo & Video</h5> -->
+<!--                                     <a class="dropdown-item" href="#!">Point & Shoot Digital Cameras</a> -->
+<!--                                     <a class="dropdown-item" href="#!">DSLR Cameras</a> -->
+<!--                                     <a class="dropdown-item" href="#!">Mirrorless Cameras</a> -->
+<!--                                     <a class="dropdown-item" href="#!">Body Mounted Cameras</a> -->
+<!--                                     <a class="dropdown-item" href="#!">Camera Lenses</a> -->
+<!--                                     <a class="dropdown-item" href="#!">Video Studio</a> -->
+<!--                                 </div> -->
+<!--                                 <div class="col"> -->
+<!--                                     <div class="py-lg-2 pr-lg-2"> -->
+<!--                                         <img src="/xdm/v1/template/ui/assets/images/illustrator/1.png" alt="" class="img-fluid mx-auto" style="max-height: 250px;"> -->
+<!--                                     </div> -->
+<!--                                 </div> -->
+<!--                             </div> -->
+<!--                         </div> -->
+<!--                     </div> -->
                 </div>
 
                 <div class="d-flex">
@@ -409,24 +383,3 @@
                 </div>
             </div>
         </header>
-
-    <!-- JAVASCRIPT -->
-    <script src="/xdm/v1/template/ui/assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="/xdm/v1/template/ui/assets/libs/metismenujs/metismenujs.min.js"></script>
-    <script src="/xdm/v1/template/ui/assets/libs/simplebar/simplebar.min.js"></script>
-    <script src="/xdm/v1/template/ui/assets/libs/feather-icons/feather.min.js"></script>
-
-    <!-- apexcharts -->
-    <script src="/xdm/v1/template/ui/assets/libs/apexcharts/apexcharts.min.js"></script>
-
-    <!-- Vector map-->
-    <script src="/xdm/v1/template/ui/assets/libs/jsvectormap/js/jsvectormap.min.js"></script>
-    <script src="/xdm/v1/template/ui/assets/libs/jsvectormap/maps/world-merc.js"></script>
-    <script src="/xdm/v1/template/ui/assets/js/pages/dashboard-sales.init.js"></script>
-    
-    <script src="/xdm/v1/jquery/jquery-3.7.1.min.js"></script>
-	<script src="/xdm/v1/js/common.Xdm.js"></script>
-
-    </body>
-
-</html>

@@ -120,6 +120,24 @@ public class HotelService {
 	}
 	
 	
+//	// 결제 정보 출력
+//	// hotelbooking + hotelmember  정보 출력
+//	public HotelDto paymentSelectOne(HotelDto hotelDto) {
+//		return hotelDao.paymentSelectOne(hotelDto);
+//	}
+//	
+//	// hotelbookingmenu + hotelmember  정보 출력 
+//	public List<HotelDto> paymentSelectList(HotelDto hotelDto) {
+//		return hotelDao.paymentSelectList(hotelDto);
+//	}
+//	
+//	// hotel 정보 출력 
+//    public HotelDto paymentHotelSelectOne(HotelDto hotelDto) {
+//    	return hotelDao.paymentHotelSelectOne(hotelDto);
+//    }
+	
+	
+	
 	
 	
 	
