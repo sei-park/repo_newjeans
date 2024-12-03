@@ -103,52 +103,51 @@ public class usrProductController {
 			// menuSeqs 값을 shopDto에 설정
 	    	hotelDto.setMenuSeqs(menuSeqs);	// shopDto에 menuSeqs 필드 추가
 			
-			// boTotalPrice 값 설정 (자동으로 폼에서 전달된 값이 ShopDto로 바인딩됨)
+			// totalPrice 값 설정 (자동으로 폼에서 전달된 값이 ShopDto로 바인딩됨)
 			System.out.println("총 금액: " + hotelDto.getHtbTotalPrice()); // 확인용 출력
 			
-			// 실제 shopBookingInsert와 관련된 서비스 호출
+			// 실제 BookingInsert와 관련된 서비스 호출
 			hotelService.hotelBookingInsert(hotelDto);
 			hotelService.hotelBookingMenuInsert(hotelDto);
+			
+			// htbseq 값을 결제페이지로 리다이렉션 
+			return "redirect:/usr/v1/infra/usrmember/usrHotelBooking?htbseq=" + hotelDto.getHtbseq();
+			
 		} else {
 			// 세션에 사용자 정보가 없으면 처리
 			return "redirect:/usr/v1/infra/usrmember/usrSignin"; // 로그인 페이지로 리디렉션
 		}
-	    
-	    return "usr/v1/infra/usrmember/usrHotelBooking";
-
+	      
 	}
 	
 	// 호텔 결제 페이지
-//	@RequestMapping(value="/usr/v1/infra/usrmember/usrHotelBooking")
-//	public String usrHotelBooking(HotelDto hotelDto, @RequestParam("htbseq") String htbseq, Model model) {
-//		
-//		model.addAttribute("bookingItem", hotelService.paymentSelectOne(hotelDto));
-//		model.addAttribute("bookingMenuItem", hotelService.paymentSelectList(hotelDto));
-//		model.addAttribute("hotelItem", hotelService.paymentHotelSelectOne(hotelDto));
-//		return "usr/v1/infra/usrmember/usrHotelBooking";
-//	}
-	
 	@RequestMapping(value="/usr/v1/infra/usrmember/usrHotelBooking")
-	public String usrHotelBooking(HttpServletRequest request) {
-		
+	public String usrHotelBooking(HotelDto hotelDto, @RequestParam("htbseq") String htbseq, Model model) {
+			
+		model.addAttribute("bookingItem", hotelService.paymentSelectOne(hotelDto)); // 결제 정보 출력
+		model.addAttribute("bookingMenuList", hotelService.paymentSelectList(hotelDto)); // hotelRoom 정보 출력
+		model.addAttribute("hotelItem", hotelService.paymentHotelSelectOne(hotelDto)); // hotel 정보 출력 
 		return "usr/v1/infra/usrmember/usrHotelBooking";
 	}
+	
+	// 결제 정보 업데이트
+	@RequestMapping(value="/usr/v1/infra/usrmember/usrHotelBookingUpdt")
+	public String usrHotelBookingUpdt(HotelDto hotelDto) {
+		
+		hotelService.bookingUpdate(hotelDto);
+		return "usr/v1/infra/usrmember/paymentComplete";
+	}  
 	 
+	// 결제 완료
+	@RequestMapping(value="/usr/v1/infra/usrmember/paymentComplete")
+	public String paymentComplete() {
+		
+		return "usr/v1/infra/usrmember/paymentComplete";
+	}
 	
-
-
-
-
-	         
 	
-	
-	  
-	 
-	     
-	                       
-	    
+   
 
-	    
 		  
 
 }

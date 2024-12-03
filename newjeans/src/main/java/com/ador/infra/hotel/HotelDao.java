@@ -42,15 +42,19 @@ public interface HotelDao {
 
 	public int hotelBookingMenuInsert(HotelDto hotelDto); 
 	
-//	// 결제 출력
-//	// hotelbooking + hotelmember  정보 출력
-//	public HotelDto paymentSelectOne(HotelDto hotelDto);
-//	
-//	// hotelbookingmenu + hotelmember  정보 출력 
-//	public List<HotelDto> paymentSelectList(HotelDto hotelDto);
-//	
-//	// hotel 정보 출력 
-//	public HotelDto paymentHotelSelectOne(HotelDto hotelDto);
+	// 결제 출력
+	// hotelbooking + hotelmember  정보 출력
+	public HotelDto paymentSelectOne(HotelDto hotelDto);
+	
+	// hotelbookingmenu + hotelmember  정보 출력 
+	public List<HotelDto> paymentSelectList(HotelDto hotelDto);
+	
+	// hotel 정보 출력 
+	public HotelDto paymentHotelSelectOne(HotelDto hotelDto);
+	
+	// 결제 정보 업데이트
+	public int bookingUpdate(HotelDto hotelDto);
+	
 
 
 }

@@ -568,54 +568,66 @@
 	</insert>
 	
 	
-    	<!-- 결제페이지에 결제정보 출력--> 
-<!-- 	<select id="paymentSelectOne" resultMap="resultMapObj" parameterType="String" resultType="map"> -->
-<!-- 		select -->
-<!-- 			a.htmSeq, -->
-<!-- 			a.htmUserName, -->
-<!-- 			a.htmPhoneNumber, -->
-<!-- 			a.htmEmail, -->
-<!-- 			b.htbseq, -->
-<!-- 			b.htbcheckIn, -->
-<!-- 			b.htbcheckOut, -->
-<!-- 			b.htbTotalPrice -->
-<!-- 		from hotelbooking as b  -->
-<!-- 			left join hotelmember as a -->
-<!-- 				on b.hotelMember_htmSeq = a.htmSeq -->
-<!-- 		where 1=1 -->
-<!-- 			and a.htmSeq = #{htmSeq} -->
-<!-- 	</select> -->
+    <!-- 결제페이지에 결제정보 출력--> 
+	<select id="paymentSelectOne" resultMap="resultMapObj" parameterType="String" resultType="map">
+		select
+			a.htmSeq,
+			a.htmUserName,
+			a.htmPhoneNumber,
+			a.htmEmail,
+			b.htbseq,
+			b.htbcheckIn,
+			b.htbcheckOut,
+			b.htbTotalPrice
+		from hotelbooking as b 
+			left join hotelmember as a
+				on b.hotelMember_htmSeq = a.htmSeq
+		where 1=1
+			and b.htbseq = #{htbseq}  
+	</select>
 	
-    	<!-- 결제페이지에 hotelBookingMenu 테이블 정보 출력 --> 
-<!-- 	<select id="paymentSelectList" resultMap="resultMapObj" parameterType="String" resultType="map"> -->
-<!-- 		select -->
-<!-- 			c.htrRoomName, -->
-<!-- 		    c.htrRoomPrice -->
-<!-- 		from hotelbookingmenu as d  -->
-<!-- 			left join hotelroom as c -->
-<!-- 				on d.hotelRoom_htrseq = c.htrseq  -->
-<!-- 			left join hotelbooking as b  -->
-<!-- 				on d.hotelbooking_htbseq = b.htbseq -->
-<!-- 		where 1=1 -->
-<!-- 			and htmSeq = #{htmSeq} -->
-<!-- 	</select> -->
+    <!-- 결제페이지에 hotelBookingMenu 테이블 정보 출력 -->
+	<select id="paymentSelectList" resultMap="resultMapObj" parameterType="String" resultType="map">
+		select
+			c.htrRoomName,
+		    c.htrRoomPrice
+		from hotelbookingmenu as d 
+			left join hotelroom as c
+				on d.hotelRoom_htrseq = c.htrseq 
+			left join hotelbooking as b 
+				on d.hotelbooking_htbseq = b.htbseq
+		where 1=1
+			and htbseq = #{htbseq}
+	</select>
 
-<!--     결제페이지에 hotel 테이블 정보 출력  -->
-<!--     DISTINCT를 사용해서 쿼리가 특정 칼럼만 중복되지 않도록 보장하면서 중복을 제거 -->
-<!--     <select id="paymentHotelSelectOne" resultMap="resultMapObj" parameterType="String" resultType="map"> -->
-<!--     	select DISTINCT -->
-<!-- 			e.htName, -->
-<!-- 		    e.htAddress -->
-<!-- 		from hotelbookingmenu as d -->
-<!-- 			left join hotelroom as c -->
-<!-- 				on d.hotelRoom_htrseq = c.htrseq -->
-<!-- 			left join hotel as e -->
-<!-- 				on c.hotel_seq = e.htseq -->
-<!-- 			left join hotelbooking as b -->
-<!-- 				on d.hotelbooking_htbseq = b.htbseq -->
-<!--      	where 1=1 -->
-<!--      		and htmSeq = #{htmSeq} -->
-<!--     </select> -->
+    <!-- 결제페이지에 hotel 테이블 정보 출력 -->
+    <!-- DISTINCT를 사용해서 쿼리가 특정 칼럼만 중복되지 않도록 보장하면서 중복을 제거 -->
+    <select id="paymentHotelSelectOne" resultMap="resultMapObj" parameterType="String" resultType="map">
+    	select DISTINCT
+			e.htName,
+		    e.htAddress
+		from 
+			hotelbookingmenu as d
+			left join hotelroom as c
+				on d.hotelRoom_htrseq = c.htrseq
+			left join hotel as e
+				on c.hotel_seq = e.htseq
+			left join hotelbooking as b
+				on d.hotelbooking_htbseq = b.htbseq
+     	where 1=1
+     		and htbseq = #{htbseq}
+    </select>
+    
+    <!-- 결제 정보 업데이트 -->
+    <update id="bookingUpdate">
+    	update hotelbooking
+    	set 
+    		htbPaymentType = #{htbPaymentType},
+    		htbSettleDate = now()
+    	where 1=1
+    		and htbseq = #{htbseq} 
+    </update> 
+
     
 
 	  

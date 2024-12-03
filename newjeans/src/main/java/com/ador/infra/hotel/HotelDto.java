@@ -108,6 +108,12 @@ public class HotelDto {
 	private Integer average_star;
 	private Integer review_count;
 	
+	// 멤버
+	private String htmSeq;
+	private String htmUserName;
+	private String htmPhoneNumber;
+	
+	
 	
 	//--
 	public String getHtseq() {
@@ -577,8 +583,33 @@ public class HotelDto {
 	}
 	public void setReview_count(Integer review_count) {
 		this.review_count = review_count;
-	}	
- 
+	}
+	public String getHtmSeq() {
+		return htmSeq;
+	}
+	public void setHtmSeq(String htmSeq) {
+		this.htmSeq = htmSeq;
+	}
+	public String getHtmUserName() {
+		return htmUserName;
+	}
+	public void setHtmUserName(String htmUserName) {
+		this.htmUserName = htmUserName;
+	}
+	public String getHtmPhoneNumber() {
+		return htmPhoneNumber;
+	}
+	public void setHtmPhoneNumber(String htmPhoneNumber) {
+		this.htmPhoneNumber = htmPhoneNumber;
+	}
+	public String getHtmEmail() {
+		return htmEmail;
+	}
+	public void setHtmEmail(String htmEmail) {
+		this.htmEmail = htmEmail;
+	}
+	private String htmEmail;
+	
 	
 	
 	

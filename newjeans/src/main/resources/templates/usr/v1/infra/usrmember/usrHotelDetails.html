@@ -363,15 +363,15 @@
                                                             </ul>
                                                         </div>
                                                     </div>
-<!--                                                     <div class="room_person_select"> -->
-<!--                                                         <h3 name="htrRoomPrice" th:text="${'₩' + #numbers.formatInteger(list.htrRoomPrice, 3, 'COMMA')}">가격<sub> / 1박</sub></h3> -->
+                                                    <div class="room_person_select">
+                                                        <h3 name="htrRoomPrice" th:text="${'₩' + #numbers.formatInteger(list.htrRoomPrice, 3, 'COMMA')}">가격<sub> / 1박</sub></h3>
 <!--                                                         <select class="form-select" aria-label="Default select example"> -->
 <!--                                                             <option selected>1</option> -->
 <!--                                                             <option value="2">2</option> -->
 <!--                                                             <option value="3">3</option>  -->
 <!--                                                             <option value="4">4</option> -->
 <!--                                                         </select> -->
-<!--                                                     </div> -->
+                                                    </div>
                                                     <div class="room_person_select">
                                                     	<label class="custom-checkbox"> <!-- btn btn_theme btn_md -->
                                                     		<input type="checkbox" name="menuSeqs" id="menuSeqs" class="menu-checkbox" th:value="${list.htrseq}" th:attr="data-price=${list.htrRoomPrice != null ? list.htrRoomPrice : 0}" 
@@ -765,96 +765,7 @@
     </section> -->
 
     <!-- Footer  -->
-    <footer id="footer_area">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-3 col-md-6 col-sm-6 col-12">
-                    <div class="footer_heading_area">
-                        <h5>Need any help?</h5>
-                    </div>
-                    <div class="footer_first_area">
-                        <div class="footer_inquery_area">
-                            <h5>Call 24/7 for any help</h5>
-                            <h3> <a href="tel:+00-123-456-789">+00 123 456 789</a></h3>
-                        </div>
-                        <div class="footer_inquery_area">
-                            <h5>Mail to our support team</h5>
-                            <h3> <a href="mailto:support@domain.com">support@domain.com</a></h3>
-                        </div>
-                        <div class="footer_inquery_area">
-                            <h5>Follow us on</h5>
-                            <ul class="soical_icon_footer">
-                                <li><a href="#!"><i class="fab fa-facebook"></i></a></li>
-                                <li><a href="#!"><i class="fab fa-twitter-square"></i></a></li>
-                                <li><a href="#!"><i class="fab fa-instagram"></i></a></li>
-                                <li><a href="#!"><i class="fab fa-linkedin"></i></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-2 offset-lg-1 col-md-6 col-sm-6 col-12">
-                    <div class="footer_heading_area">
-                        <h5>Company</h5>
-                    </div>
-                    <div class="footer_link_area">
-                        <ul>
-                            <li><a href="about.html">About Us</a></li>
-                            <li><a href="testimonials.html">Testimonials</a></li>
-                            <li><a href="faqs.html">Rewards</a></li>
-                            <li><a href="terms-service.html">Work with Us</a></li>
-                            <li><a href="tour-guides.html">Meet the Team </a></li>
-                            <li><a href="news.html">Blog</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-lg-2 col-md-4 col-sm-6 col-12">
-                    <div class="footer_heading_area">
-                        <h5>Support</h5>
-                    </div>
-                    <div class="footer_link_area">
-                        <ul>
-                            <li><a href="dashboard.html">Account</a></li>
-                            <li><a href="faq.html">Faq</a></li>
-                            <li><a href="testimonials.html">Legal</a></li>
-                            <li><a href="contact.html">Contact</a></li>
-                            <li><a href="top-destinations.html"> Affiliate Program</a></li>
-                            <li><a href="privacy-policy.html">Privacy Policy</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-lg-2 col-md-4 col-sm-6 col-12">
-                    <div class="footer_heading_area">
-                        <h5>Other Services</h5>
-                    </div>
-                    <div class="footer_link_area">
-                        <ul>
-                            <li><a href="top-destinations-details.html">Community program</a></li>
-                            <li><a href="top-destinations-details.html">Investor Relations</a></li>
-                            <li><a href="flight-search-result.html">Rewards Program</a></li>
-                            <li><a href="room-booking.html">PointsPLUS</a></li>
-                            <li><a href="testimonials.html">Partners</a></li>
-                            <li><a href="hotel-search.html">List My Hotel</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-lg-2 col-md-4 col-sm-6 col-12">
-                    <div class="footer_heading_area">
-                        <h5>Top cities</h5>
-                    </div>
-                    <div class="footer_link_area">
-                        <ul>
-                            <li><a href="room-details.html">Chicago</a></li>
-                            <li><a href="hotel-details.html">New York</a></li>
-                            <li><a href="hotel-booking.html">San Francisco</a></li>
-                            <li><a href="tour-search.html">California</a></li>
-                            <li><a href="tour-booking.html">Ohio </a></li>
-                            <li><a href="tour-guides.html">Alaska</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
+  	<div th:replace="~{usr/v1/infra/usrmember/common/footer :: footer}"></div>
 
     <div class="copyright_area">
         <div class="container">
@@ -903,53 +814,140 @@
     <script src="/xdm/v1/js/datetimepicker/jquery.datetimepicker.full.min.js"></script>
     
     <!-- common.js-->
-    <script src="/usr/v1/js/common.js"></script>
+    <script src="/usr/v1/js/common.js"></script>  
     
      <!-- 구글 맵 -->                                         
 <!--     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyADWyNQedLuX-WxYL6uNdz92ohBpbC-YUA&libraries=places&callback=initMap" defer></script> -->
 <!--     <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap&libraries=places" async defer></script> -->
     
-     
-	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyADWyNQedLuX-WxYL6uNdz92ohBpbC-YUA&callback=initMap&libraries=places" async defer></script>
-    
-    
-    
-    
-    
-    
+<!--     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyADWyNQedLuX-WxYL6uNdz92ohBpbC-YUA&callback=initMap&libraries=places" async></script> -->
+
+		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyADWyNQedLuX-WxYL6uNdz92ohBpbC-YUA&callback=initMap&libraries=places&v=weekly&libraries=marker" async></script>
+
+  
     <script>
     $("#htNotice").val().replace(/(<br>|<br\/>|<br \/>)/g, '\r\n');
      
   
 	  // 구글 맵
-	  function initMap() {
-	        var map = new google.maps.Map(document.getElementById('map'), {
-	          zoom: 13,
-	        });
+// 	  function initMap() {
+// 	        var map = new google.maps.Map(document.getElementById('map'), {
+// 	          zoom: 13,
+// 	        });
 	
-	        var infowindow = new google.maps.InfoWindow();
-	        var marker = new google.maps.Marker({ // google.maps.Marker
-	          map: map
-	        });
+// 	        var infowindow = new google.maps.InfoWindow();
+// 	        var marker = new google.maps.Marker({ // google.maps.Marker
+// 	          map: map
+// 	        });
 	
-	        // h5 태그에 있는 주소를 가져옴
-	        var address = document.getElementById("htAddress").innerText;
+// 	        // h5 태그에 있는 주소를 가져옴
+// 	        var address = document.getElementById("htAddress").innerText;
 	
-	        // Geocoding API를 사용하여 주소를 좌표로 변환
-	        var geocoder = new google.maps.Geocoder();
+// 	        // Geocoding API를 사용하여 주소를 좌표로 변환
+// 	        var geocoder = new google.maps.Geocoder();
 	
-	        geocoder.geocode({ 'address': address }, function(results, status) {
-	          if (status === 'OK') {
-	            // 지도를 주소의 좌표로 초기화
-	            map.setCenter(results[0].geometry.location);
-	            marker.setPosition(results[0].geometry.location);
-	            infowindow.setContent(address);
-	            infowindow.open(map, marker);
-	          } else {
-	            alert('Geocode was not successful for the following reason: ' + status);
-	          }
-	        });
-	    }
+// 	        geocoder.geocode({ 'address': address }, function(results, status) {
+// 	          if (status === 'OK') {
+// 	            // 지도를 주소의 좌표로 초기화
+// 	            map.setCenter(results[0].geometry.location);
+// 	            marker.setPosition(results[0].geometry.location);
+// 	            infowindow.setContent(address);
+// 	            infowindow.open(map, marker);
+// 	          } else {
+// 	            alert('Geocode was not successful for the following reason: ' + status);
+// 	          }  
+// 	        });   
+// 	    }
+	  
+	  
+// 	   function initMap() {
+// 		    const map = new google.maps.Map(document.getElementById("map"), {
+// 		      center: { lat: 37.7749, lng: -122.4194 },
+// 		      zoom: 13,
+// 		    });
+		
+// 		    const geocoder = new google.maps.Geocoder();
+// 		    const address = document.getElementById("htAddress").innerText;
+		
+// 		    geocoder.geocode({ address: address }, (results, status) => {
+// 		      if (status === "OK" && results.length > 0) {
+// 		        const location = results[0].geometry.location;
+// 		        map.setCenter(location);
+		
+// 		        new google.maps.Marker({
+// 		          map: map,
+// 		          position: location,
+// 		        });
+// 		      } else {
+// 		        console.error("Geocoding 실패: ", status);
+// 		        alert("Geocoding 실패: " + status);
+// 		      }
+// 		    });
+//   		}
+
+// 	  document.addEventListener("DOMContentLoaded", () => {
+// 	    console.log("DOM 준비 완료");
+// 	    initMap();
+// 	  }); 
+	  
+	  
+// 	  function initMap() {
+// 	        const map = new google.maps.Map(document.getElementById("map"), {
+// 	          center: { lat: 37.7749, lng: -122.4194 },
+// 	          zoom: 13,
+// 	        });
+
+// 	        const geocoder = new google.maps.Geocoder();
+// 	        const address = document.getElementById("htAddress").innerText;
+
+// 	        geocoder.geocode({ address: address }, (results, status) => {
+// 	          if (status === "OK" && results.length > 0) {
+// 	            const location = results[0].geometry.location;
+// 	            map.setCenter(location);
+
+// 	            new google.maps.Marker({
+// 	              map: map,
+// 	              position: location,
+// 	            });
+// 	          } else { 
+// 	            console.error("Geocoding 실패: ", status);
+// 	            alert("Geocoding 실패: " + status);
+// 	          }
+// 	        });
+// 	      }
+
+		async function initMap() {
+        const map = new google.maps.Map(document.getElementById("map"), {
+          center: { lat: 37.7749, lng: -122.4194 },
+          zoom: 13,
+          mapId: "map",
+        });
+
+        const geocoder = new google.maps.Geocoder();
+        const address = document.getElementById("htAddress").innerText;
+
+        geocoder.geocode({ address: address }, (results, status) => {
+          if (status === "OK" && results.length > 0) {
+            const location = results[0].geometry.location;
+            map.setCenter(location);
+
+            // AdvancedMarkerElement 사용
+            const advancedMarker = new google.maps.marker.AdvancedMarkerElement({
+              map: map,
+              position: location,
+              title: "Selected Location", // 마커에 툴팁 추가
+            });
+
+          } else {
+            console.error("Geocoding 실패: ", status);
+            alert("Geocoding 실패: " + status);
+          }
+        });
+      }
+	  
+	  
+	  
+	  
   
 		// 달력으로 날짜 선택
 		window.addEventListener('load', function() {

@@ -110,35 +110,42 @@ public class HotelService {
 	
 	// 예약 insert
 	public int hotelBookingInsert(HotelDto hotelDto) {
-		System.out.println("hotelBookingInsert");
+		
+		System.out.println("예약 insert, hotelBookingInsert");
 		return hotelDao.hotelBookingInsert(hotelDto);
 	}
 	
 	public int hotelBookingMenuInsert(HotelDto hotelDto) {
-		System.out.println("hotelBookingMenuInsert");
+		
+		System.out.println("예약 insert, hotelBookingMenuInsert");
 		return hotelDao.hotelBookingMenuInsert(hotelDto);
 	}
 	
 	
-//	// 결제 정보 출력
-//	// hotelbooking + hotelmember  정보 출력
-//	public HotelDto paymentSelectOne(HotelDto hotelDto) {
-//		return hotelDao.paymentSelectOne(hotelDto);
-//	}
-//	
-//	// hotelbookingmenu + hotelmember  정보 출력 
-//	public List<HotelDto> paymentSelectList(HotelDto hotelDto) {
-//		return hotelDao.paymentSelectList(hotelDto);
-//	}
-//	
-//	// hotel 정보 출력 
-//    public HotelDto paymentHotelSelectOne(HotelDto hotelDto) {
-//    	return hotelDao.paymentHotelSelectOne(hotelDto);
-//    }
+	// 결제 정보 출력
+	// hotelbooking + hotelmember  정보 출력
+	public HotelDto paymentSelectOne(HotelDto hotelDto) {
+		return hotelDao.paymentSelectOne(hotelDto);
+	}
+	 
+	// hotelbookingmenu + hotelmember  정보 출력 
+	public List<HotelDto> paymentSelectList(HotelDto hotelDto) {
+		return hotelDao.paymentSelectList(hotelDto);
+	}
 	
+	// hotel 정보 출력 
+    public HotelDto paymentHotelSelectOne(HotelDto hotelDto) {
+    	return hotelDao.paymentHotelSelectOne(hotelDto);
+    }
+    
+    // 결제 정보 업데이트
+ 	public int bookingUpdate(HotelDto hotelDto) {
+ 		return hotelDao.bookingUpdate(hotelDto);
+ 	}
 	
+
 	
-	
+	 
 	
 	
 	

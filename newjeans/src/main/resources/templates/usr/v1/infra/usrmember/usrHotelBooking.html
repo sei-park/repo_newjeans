@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zxx">
+<html lang="zxx" xmlns:th="http://www.thymeleaf.org">
 
 <head>
     <meta charset="utf-8">
@@ -102,7 +102,9 @@
     <section id="tour_booking_submission" class="section_padding">
         <div class="container">
         <!-- 폼 시작 -->
-           <form name="form" method="post" action="">
+           <form name="form" method="post" action="/usr/v1/infra/usrmember/usrHotelBookingUpdt">
+           <!-- booking 테이블의 htbseq 정보 update로 넘겨주기 -->
+		   <input type="hidden" name="htbseq" th:value="${bookingItem?.htbseq}">  
             <div class="row">
                 <div class="col-lg-8">
                     <div class="tou_booking_form_Wrapper">
@@ -112,17 +114,20 @@
                                     <div class="row">
                                         <div class="col-lg-12" style="margin-bottom: 20px;">
                                             <div class="form-group">
-                                                <input type="text" class="form-control bg_input" placeholder="이름">
+                                                <input type="text" class="form-control bg_input" placeholder="이름" name="htmUserName"
+                                                th:value="${bookingItem?.htmUserName}" autocomplete="off">
                                             </div>
                                         </div>
                                         <div class="col-lg-6">
                                             <div class="form-group" style="margin-bottom: 20px;">
-                                                <input type="text" class="form-control bg_input" placeholder="이메일 주소">
+                                                <input type="text" class="form-control bg_input" placeholder="이메일 주소" name="htmEmail"
+                                                th:value="${bookingItem?.htmEmail}" autocomplete="off">
                                             </div>
                                         </div>
                                         <div class="col-lg-6">
                                             <div class="form-group">
-                                                <input type="text" class="form-control bg_input" placeholder="휴대폰 번호">
+                                                <input type="text" class="form-control bg_input" placeholder="휴대폰 번호" name="htmPhoneNumber"
+                                                th:value="${bookingItem?.htmPhoneNumber}" autocomplete="off">
                                             </div>
                                         </div>
                                     </div>
@@ -133,76 +138,75 @@
                             <div class="tour_booking_form_box">
                                 <div class="booking_payment_boxed">
                                         <div class="form-check">
-                                            <input class="form-check-input" type="radio" name="flexRadioDefault"
-                                                id="flexRadioDefault1" value="red">
+                                            <input class="form-check-input" type="radio" name="htbPaymentType" value="23">
                                             <label class="form-check-label" for="flexRadioDefault1">
                                                 카카오페이
                                             </label>
                                         </div>
-                                        <div class="payment_filed_wrapper">
-                                            <div class="payment_card payment_toggle red">
-                                                <div class="row">
-                                                    <div class="col-lg-6">
-                                                        <div class="form-group">
-                                                            <input type="text" class="form-control bg_input"
-                                                                placeholder="Card number">
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-lg-6">
-                                                        <div class="form-group">
-                                                            <input type="text" class="form-control bg_input"
-                                                                placeholder="Cardholder name">
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-lg-6">
-                                                        <div class="form-group">
-                                                            <input type="text" class="form-control bg_input"
-                                                                placeholder="Date of expiry">
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-lg-6">
-                                                        <div class="form-group">
-                                                            <input type="text" class="form-control bg_input"
-                                                                placeholder="Security code">
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="paypal_payment payment_toggle green">
-                                                <div class="row">
-                                                    <div class="col-lg-6">
-                                                        <div class="form-group">
-                                                            <input type="text" class="form-control bg_input"
-                                                                placeholder="Email Address">
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="payoneer_payment payment_toggle black">
-                                                <div class="row">
-                                                    <div class="col-lg-6">
-                                                        <div class="form-group">
-                                                            <input type="text" class="form-control bg_input"
-                                                                placeholder="Email Address">
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
+<!--                                         <div class="payment_filed_wrapper"> -->
+<!--                                             <div class="payment_card payment_toggle red"> -->
+<!--                                                 <div class="row"> -->
+<!--                                                     <div class="col-lg-6"> -->
+<!--                                                         <div class="form-group"> -->
+<!--                                                             <input type="text" class="form-control bg_input" -->
+<!--                                                                 placeholder="Card number"> -->
+<!--                                                         </div> -->
+<!--                                                     </div> -->
+<!--                                                     <div class="col-lg-6"> -->
+<!--                                                         <div class="form-group"> -->
+<!--                                                             <input type="text" class="form-control bg_input" -->
+<!--                                                                 placeholder="Cardholder name"> -->
+<!--                                                         </div> -->
+<!--                                                     </div> -->
+<!--                                                     <div class="col-lg-6"> -->
+<!--                                                         <div class="form-group"> -->
+<!--                                                             <input type="text" class="form-control bg_input" -->
+<!--                                                                 placeholder="Date of expiry"> -->
+<!--                                                         </div> -->
+<!--                                                     </div> -->
+<!--                                                     <div class="col-lg-6"> -->
+<!--                                                         <div class="form-group"> -->
+<!--                                                             <input type="text" class="form-control bg_input" -->
+<!--                                                                 placeholder="Security code"> -->
+<!--                                                         </div> -->
+<!--                                                     </div> -->
+<!--                                                 </div> -->
+<!--                                             </div> -->
+<!--                                             <div class="paypal_payment payment_toggle green"> -->
+<!--                                                 <div class="row"> -->
+<!--                                                     <div class="col-lg-6"> -->
+<!--                                                         <div class="form-group"> -->
+<!--                                                             <input type="text" class="form-control bg_input" -->
+<!--                                                                 placeholder="Email Address"> -->
+<!--                                                         </div> -->
+<!--                                                     </div> -->
+<!--                                                 </div> -->
+<!--                                             </div> -->
+<!--                                             <div class="payoneer_payment payment_toggle black"> -->
+<!--                                                 <div class="row"> -->
+<!--                                                     <div class="col-lg-6"> -->
+<!--                                                         <div class="form-group"> -->
+<!--                                                             <input type="text" class="form-control bg_input" -->
+<!--                                                                 placeholder="Email Address"> -->
+<!--                                                         </div> -->
+<!--                                                     </div> -->
+<!--                                                 </div> -->
+<!--                                             </div> -->
+<!--                                         </div> -->
                                 </div>
                             </div>
                         </div>
                         <div class="booking_tour_form_submit">
-                            <div class="form-check write_spical_check">
-                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefaultf1">
-                                <label class="form-check-label" for="flexCheckDefaultf1">
-                                    <span class="main_spical_check">
-                                        <span><a href="terms-service.html">결제 조건 및 서비스 약관</a>에 동의합니다</span>
-                                    </span>
-                                </label>
-                            </div>
+<!--                             <div class="form-check write_spical_check"> -->
+<!--                                 <input class="form-check-input" type="checkbox" value="" id="flexCheckDefaultf1"> -->
+<!--                                 <label class="form-check-label" for="flexCheckDefaultf1"> -->
+<!--                                     <span class="main_spical_check"> -->
+<!--                                         <span><a href="terms-service.html">결제 조건 및 서비스 약관</a>에 동의합니다</span> -->
+<!--                                     </span> -->
+<!--                                 </label> -->
+<!--                             </div> -->
                             <div class="comment_form_submit" style="margin-top:25px;">
-                                 <button type="button" class="btn btn_theme btn_md">결제하기</button>
+                                 <button type="button" id="paymentBtn" class="btn btn_theme btn_md">결제하기</button>
                             </div>
 <!--                             <a href="booking-confirmation.html" class="btn btn_theme btn_md">결제하기</a> -->
                         </div>
@@ -213,27 +217,26 @@
                         <div class="tour_detail_right_sidebar">
                             <div class="tour_details_right_boxed">
                                 <div class="tour_details_right_box_heading">
-                                    <h3>호텔 이름</h3> 
+                                    <h3 th:text="${hotelItem?.htName}">호텔 이름</h3> 
                                 </div>
                                 <div class="valid_date_area">
                                     <div class="valid_date_area_one">
                                         <h5>입실</h5>
-                                        <p>입실날짜</p>
+                                        <p th:text="${#dates.format(bookingItem?.htbcheckIn,'yyyy-MM-dd')}">입실날짜</p>
                                     </div>
                                     <div class="valid_date_area_one">
-                                        <h5>퇴실</h5>
-                                        <p>퇴실날짜</p>
+                                        <h5>퇴실</h5>  
+                                        <p th:text="${#dates.format(bookingItem?.htbcheckOut,'yyyy-MM-dd')}">퇴실날짜</p>
                                     </div>
                                     <div class="valid_date_area_one">
                                         <h5>인원 수</h5>
                                         <p>성인 2명</p> 
                                     </div>
                                 </div>
-                                <div class="tour_package_details_bar_price">
-                                    <h5>룸이름</h5>
+                                <div class="tour_package_details_bar_price" th:each="list : ${bookingMenuList}">
+                                    <h5 th:text="${list.htrRoomName}">룸이름</h5>
                                     <div class="tour_package_bar_price">
-                                        <!-- <h6><del>₩786,500</del></h6> -->
-                                        <h3>금액<sub> / 1박</sub> </h3>
+                                        <h3 th:text="${'₩' + #numbers.formatInteger(list.htrRoomPrice, 3, 'COMMA')}">금액<sub> / 1박</sub></h3>
                                     </div>
                                 </div>
                             </div>
@@ -246,10 +249,10 @@
 
                                 <div class="tour_booking_amount_area">
                                     <ul>
-                                        <li>상품 금액 <span>₩786,500</span></li>
+                                        <li>상품 금액 <span th:text="${'₩' + #numbers.formatInteger(bookingItem?.htbTotalPrice, 3, 'COMMA')}"></span></li>
                                     </ul>
                                     <div class="total_subtotal_booking">
-                                        <h6>총 결제 금액 <span>₩742,500</span> </h6>
+                                        <h6>총 결제 금액 <span th:text="${'₩' + #numbers.formatInteger(bookingItem?.htbTotalPrice, 3, 'COMMA')}"></span></h6>
                                     </div>
                                 </div>
                             </div>
@@ -296,9 +299,6 @@
         <div class="container">
             <div class="row align-items-center">
                 <div class="co-lg-6 col-md-6 col-sm-12 col-12">
-                    <!-- <div class="copyright_left">
-                        <p>Copyright © 2022 All Rights Reserved</p>
-                    </div> -->
                 </div>
                 <div class="co-lg-6 col-md-6 col-sm-12 col-12">
                     <div class="copyright_right">
@@ -329,6 +329,18 @@
     
     <!-- common.js-->
     <script src="/usr/v1/js/common.js"></script>
+    
+    <script>
+    document.getElementById('paymentBtn').onclick = function() {
+    	
+    	form.action = "/usr/v1/infra/usrmember/usrHotelBookingUpdt";
+    	form.submit();
+    }
+    
+    
+    
+    
+    </script>
 
 </body>
 
