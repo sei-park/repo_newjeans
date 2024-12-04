@@ -1,4 +1,3 @@
-// 로그아웃
 document.getElementById("logoutBtn").onclick = function () {
    	   $.ajax({  
   			async: true   

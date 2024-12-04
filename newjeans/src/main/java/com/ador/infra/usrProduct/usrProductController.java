@@ -141,10 +141,15 @@ public class usrProductController {
 	// 결제 완료
 	@RequestMapping(value="/usr/v1/infra/usrmember/paymentComplete")
 	public String paymentComplete() {
-		
 		return "usr/v1/infra/usrmember/paymentComplete";
 	}
 	
+	// 예약 내역 
+	@RequestMapping(value="/usr/v1/infra/usrmember/usrHotelBookingHistory")
+	public String usrHotelBookingHistory() {
+		return "usr/v1/infra/usrmember/usrHotelBookingHistory";
+	} 
+	 
 	
    
 

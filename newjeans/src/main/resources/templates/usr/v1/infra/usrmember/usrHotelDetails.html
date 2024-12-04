@@ -822,11 +822,14 @@
     
 <!--     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyADWyNQedLuX-WxYL6uNdz92ohBpbC-YUA&callback=initMap&libraries=places" async></script> -->
 
-		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyADWyNQedLuX-WxYL6uNdz92ohBpbC-YUA&callback=initMap&libraries=places&v=weekly&libraries=marker" async></script>
+<!-- 		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyADWyNQedLuX-WxYL6uNdz92ohBpbC-YUA&callback=initMap&libraries=places&v=weekly&libraries=marker" async></script> -->
+		
+<!-- 		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyADWyNQedLuX-WxYL6uNdz92ohBpbC-YUA&libraries=places&v=weekly&libraries=marker&callback=initMap" defer></script> -->
+		
 
   
     <script>
-    $("#htNotice").val().replace(/(<br>|<br\/>|<br \/>)/g, '\r\n');
+   // $("#htNotice").val().replace(/(<br>|<br\/>|<br \/>)/g, '\r\n');
      
   
 	  // 구글 맵
@@ -917,62 +920,40 @@
 // 	      }
 
 		async function initMap() {
-        const map = new google.maps.Map(document.getElementById("map"), {
-          center: { lat: 37.7749, lng: -122.4194 },
-          zoom: 13,
-          mapId: "map",
-        });
+	        const map = new google.maps.Map(document.getElementById("map"), {
+	          center: { lat: 37.7749, lng: -122.4194 },
+	          zoom: 13,
+	          mapId: "map",
+	        });
 
-        const geocoder = new google.maps.Geocoder();
-        const address = document.getElementById("htAddress").innerText;
-
-        geocoder.geocode({ address: address }, (results, status) => {
-          if (status === "OK" && results.length > 0) {
-            const location = results[0].geometry.location;
-            map.setCenter(location);
-
-            // AdvancedMarkerElement 사용
-            const advancedMarker = new google.maps.marker.AdvancedMarkerElement({
-              map: map,
-              position: location,
-              title: "Selected Location", // 마커에 툴팁 추가
-            });
-
-          } else {
-            console.error("Geocoding 실패: ", status);
-            alert("Geocoding 실패: " + status);
-          }
-        });
-      }
-	  
-	  
-	  
+	        const geocoder = new google.maps.Geocoder();
+	        const address = document.getElementById("htAddress").innerText;
+	
+	        geocoder.geocode({ address: address }, (results, status) => {
+	          if (status === "OK" && results.length > 0) {
+	            const location = results[0].geometry.location;
+	            map.setCenter(location);
+	
+	            // AdvancedMarkerElement 사용
+	            const advancedMarker = new google.maps.marker.AdvancedMarkerElement({
+	              map: map,
+	              position: location,
+	              title: "Selected Location", // 마커에 툴팁 추가
+	            });
+	
+	          } else {
+	            console.error("Geocoding 실패: ", status);
+	            alert("Geocoding 실패: " + status);
+	          }
+	        });
+       }
+		
 	  
   
 		// 달력으로 날짜 선택
 		window.addEventListener('load', function() {
 			$.datetimepicker.setLocale('ko'); 
 		     
-// 			// 입실
-// 			$("#dateStart").datetimepicker({
-// 				timepicker:false, 
-// 				format: 'Y-m-d' 
-// 			}).on('change', function () {
-// 				const selectedDate = $(this).val();
-// 				$('#checkIn').text(selectedDate);
-// 			});
-			
-// 			// 퇴실
-// 			$("#dateEnd").datetimepicker({
-// 				timepicker:false, 
-// 				format: 'Y-m-d' 
-// 			}).on('change', function () {
-// 				const selectedDate = $(this).val();
-// 				$('#checkOut').text(selectedDate);
-// 			});
-
-
-
 			// 입실일 선택 시 화면에 표시
 			$("#dateStart").datetimepicker({
 			    timepicker: false,
@@ -996,36 +977,6 @@
 			
 		});
 		
-// 		// 메뉴 가격 합산 및 선택된 메뉴 seq 처리
-// 		function updateTotalPrice() {
-			
-// 			let total = 0; // 총 금액 초기화   
-// 			let selectedMenuSeqs = []; // 선택된 메뉴 seq 배열 초기화
-			
-// 		    // 선택된 체크박스들의 데이터(가격, seq)를 처리
-// 		    document.querySelectorAll('.menu-checkbox:checked').forEach(checkbox => {
-		    	
-// 		        const price = checkbox.getAttribute('data-price'); // data-price 읽기
-// 		        console.log('data-price:', price); // 디버깅 출력
-		
-// 		        const priceValue = isNaN(price) || price === null || price === '' ? 0 : parseInt(price, 10);
-		
-// 		        total += priceValue; // 총 금액 합산
-// 		        selectedMenuSeqs.push(checkbox.value); // 메뉴 seq 저장
-		        
-// 		    });
-		
-// 		   // 총 금액을 화면에 표시 (boTotalPrice)
-// 		   document.getElementById('htbTotalPrice').textContent = total.toLocaleString(); // 숫자 형식화
-	
-// 		   // 총 금액을 hidden 필드에 설정
-// 		   document.getElementById('totalPriceInput').value = total;
-		   
-// 		   // 선택된 메뉴 seq를 디버깅 로그로 출력 
-// 		   console.log('선택된 메뉴 seq:', selectedMenuSeqs);
-// 		   console.log('총 금액:', total);
-		
-// 		}  
 
 		// 입실, 퇴실 선택한 후 숙박 일수 계산 
 		function calculateNights() {
@@ -1113,19 +1064,38 @@
 	
 		// 예약하기 버튼 - insert
 		document.getElementById('bookingBtn').onclick = function(){
-	 		form.action="/v1/infra/usrmember/usrHotelBookingInst";
-			form.submit();
+			
+		    // 입실일과 퇴실일 확인
+		    const checkInDate = document.getElementById('checkIn').textContent.trim(); // 체크인에 있는 텍스트 가져옴
+		    const checkOutDate = document.getElementById('checkOut').textContent.trim(); // 체크아웃에 있는 텍스트 가져옴
+
+		    // 객실 선택 여부 확인
+		    const selectedRooms = document.querySelectorAll('.menu-checkbox:checked'); // 객실 체크 확인
+
+		    // 유효성 검사
+		    if (!checkInDate) { // 입실일 선택이 안됐을 경우
+		        alert("입실일을 선택해주세요.");
+		        return; // 화면 이동 차단
+		    }
+
+		    if (!checkOutDate) { // 퇴실일 선택이 안됐을 경우 
+		        alert("퇴실일을 선택해주세요.");
+		        return; // 화면 이동 차단
+		    }
+
+		    if (selectedRooms.length === 0) { // 객실이 선택이 안됐을 경우 
+		        alert("객실을 선택해주세요.");
+		        return; // 화면 이동 차단
+		    }
+
+		    // 모든 조건이 만족되면 폼을 제출
+		    form.action = "/v1/infra/usrmember/usrHotelBookingInst";
+		    form.submit();
+		
 		}
 		
-		
-		
-		
+			
 	
-
-
-
-
-
 
  
 
