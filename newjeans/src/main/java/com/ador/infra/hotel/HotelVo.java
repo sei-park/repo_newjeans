@@ -50,6 +50,8 @@ public class HotelVo {
 	
 	private int Breakfastcount;
 	
+	private String htmSeq;
+	
  	
 	//--
 	public Integer getShDelNy() {
@@ -238,6 +240,13 @@ public class HotelVo {
 	public void setBreakfastcount(int breakfastcount) {
 		Breakfastcount = breakfastcount;
 	}
+	public String getHtmSeq() {
+		return htmSeq;
+	}
+	public void setHtmSeq(String htmSeq) {
+		this.htmSeq = htmSeq;
+	}
+	
 	
 	
 	
@@ -246,6 +255,7 @@ public class HotelVo {
 	  
 	
 
+	
 	public void setParamsPaging(int totalRows) {
 
 		setTotalRows(totalRows);

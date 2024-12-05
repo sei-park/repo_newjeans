@@ -143,9 +143,15 @@ public class HotelService {
  		return hotelDao.bookingUpdate(hotelDto);
  	}
 	
-
+ 	// 예약 내역 리스트
+ 	public List<HotelDto> bookingHistorySelectList(HotelVo hotelVo) {
+ 		return hotelDao.bookingHistorySelectList(hotelVo);
+ 	}
 	
-	 
+ 	// 예약 내역 paging
+ 	public int bookingHistorySelectOneCount(HotelVo hotelVo) {
+ 		return hotelDao.bookingHistorySelectOneCount(hotelVo);
+ 	}
 	
 	
 	

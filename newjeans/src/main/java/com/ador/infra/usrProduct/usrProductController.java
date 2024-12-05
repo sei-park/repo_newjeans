@@ -75,11 +75,12 @@ public class usrProductController {
 	 
 	
 	// 상세페이지에서 예약 정보 insert
+	// 호텔 예약 정보 처리, 사용자 세션 정보를 활용해서 예약 데이터 저장
 	@RequestMapping(value="/v1/infra/usrmember/usrHotelBookingInst")
 	public String usrHotelBookingInst(HotelDto hotelDto,@RequestParam("menuSeqs") List<String> menuSeqs, HttpSession httpSession) {
 		
 		
-		// 세션에서 sessSeqXdm 값 가져오기
+		// 세션에서 sessSeqUsr 값 가져오기
 	    String sessSeqUsr = (String) httpSession.getAttribute("sessSeqUsr"); 
 	    
 //	    if(sessSeqUsr == null) {
@@ -97,13 +98,13 @@ public class usrProductController {
 	  
 	    
 	    if (sessSeqUsr != null) {
-			// B_user_usrSeq로 사용되는 값 설정
+			// hotelMember_htmSeq로 사용되는 값 설정
 	    	hotelDto.setHotelMember_htmSeq(sessSeqUsr);
 			
-			// menuSeqs 값을 shopDto에 설정
+			// menuSeqs 값을 hotelDto에 설정
 	    	hotelDto.setMenuSeqs(menuSeqs);	// shopDto에 menuSeqs 필드 추가
 			
-			// totalPrice 값 설정 (자동으로 폼에서 전달된 값이 ShopDto로 바인딩됨)
+			// totalPrice 값 설정 (자동으로 폼에서 전달된 값이 hotelDto로 바인딩됨)
 			System.out.println("총 금액: " + hotelDto.getHtbTotalPrice()); // 확인용 출력
 			
 			// 실제 BookingInsert와 관련된 서비스 호출
@@ -121,7 +122,7 @@ public class usrProductController {
 	}
 	
 	// 호텔 결제 페이지
-	@RequestMapping(value="/usr/v1/infra/usrmember/usrHotelBooking")
+	@RequestMapping(value="/v1/infra/usrmember/usrHotelBooking")
 	public String usrHotelBooking(HotelDto hotelDto, @RequestParam("htbseq") String htbseq, Model model) {
 			
 		model.addAttribute("bookingItem", hotelService.paymentSelectOne(hotelDto)); // 결제 정보 출력
@@ -131,7 +132,7 @@ public class usrProductController {
 	}
 	
 	// 결제 정보 업데이트
-	@RequestMapping(value="/usr/v1/infra/usrmember/usrHotelBookingUpdt")
+	@RequestMapping(value="/v1/infra/usrmember/usrHotelBookingUpdt")
 	public String usrHotelBookingUpdt(HotelDto hotelDto) {
 		
 		hotelService.bookingUpdate(hotelDto);
@@ -139,14 +140,40 @@ public class usrProductController {
 	}  
 	 
 	// 결제 완료
-	@RequestMapping(value="/usr/v1/infra/usrmember/paymentComplete")
+	@RequestMapping(value="/v1/infra/usrmember/paymentComplete")
 	public String paymentComplete() {
 		return "usr/v1/infra/usrmember/paymentComplete";
 	}
 	
 	// 예약 내역 
-	@RequestMapping(value="/usr/v1/infra/usrmember/usrHotelBookingHistory")
-	public String usrHotelBookingHistory() {
+	@RequestMapping(value="/v1/infra/usrmember/usrHotelBookingHistory")
+	public String usrHotelBookingHistory(@ModelAttribute("vo") HotelVo hotelVo, Model model, HttpSession httpSession) { 
+		
+		// 세션에서 sessSeqUsr 값 가져오기
+	    String sessSeqUsr = (String) httpSession.getAttribute("sessSeqUsr");
+	    
+	    // hotelVo에 htmseq를 set
+	    hotelVo.setHtmSeq(sessSeqUsr);
+	    
+	    // 로그인 여부 확인
+	    if (sessSeqUsr == null) {
+	        // 세션에 사용자 정보가 없으면 로그인 페이지로 리다이렉트   
+	        return "redirect:/usr/v1/infra/usrmember/usrIndex";
+	    }  
+	    
+	    // 사용자 ID를 기반으로 예약 내역 조회
+	    //List<HotelDto> bookingHistoryList = hotelService.bookingHistorySelectList(hotelVo);
+
+	    // 조회한 데이터를 모델에 추가
+	    //model.addAttribute("bookingHistoryList", bookingHistoryList);
+	    
+	    hotelVo.setParamsPaging(hotelService.bookingHistorySelectOneCount(hotelVo));
+	    
+	    if(hotelVo.getTotalRows() > 0) {
+	    	model.addAttribute("bookingHistoryList", hotelService.bookingHistorySelectList(hotelVo));
+		} 
+		
+		//model.addAttribute("bookingHistoryList", hotelService.bookingHistorySelectList());
 		return "usr/v1/infra/usrmember/usrHotelBookingHistory";
 	} 
 	 

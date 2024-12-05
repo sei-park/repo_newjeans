@@ -240,7 +240,8 @@
     -webkit-transition: var(--transition);
     transition: var(--transition);
     font-weight: 300;
-    font-family: 'Poppins', sans-serif;
+/*     font-family: 'Poppins', sans-serif; */
+    font-family: 'Pretendard-Regular'
 }
 
 .main-navbar .navbar .navbar-nav .nav-item a i {

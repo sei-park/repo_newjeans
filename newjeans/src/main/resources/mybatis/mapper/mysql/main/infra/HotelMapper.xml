@@ -133,7 +133,7 @@
 	</select>
 	
 	<select id="hotelList" resultMap="resultMapObj">   
-		select aa.* from (
+	select aa.* from (
 		select
 			a.htseq,
 			a.htName,
@@ -627,8 +627,59 @@
     	where 1=1
     		and htbseq = #{htbseq} 
     </update> 
-
     
+    
+   
+   
+   
+    
+    <sql id="bookingHistorySelectCommon">
+	    from 
+	    	hotelbookingmenu as a 
+		left join hotelroom as b
+			on a.hotelRoom_htrseq = b.htrseq
+		left join hotelbooking as c
+			on a.hotelbooking_htbseq = c.htbseq
+		left join hotelmember as d
+			on c.hotelMember_htmSeq = d.htmSeq
+		left join hotel as e 
+			on b.hotel_seq = e.htseq 
+		where 1=1 
+			and d.htmSeq = #{htmSeq}
+    </sql>
+    
+    <select id="bookingHistorySelectOneCount">
+		SELECT COUNT(DISTINCT c.htbseq) 
+		<include refid="bookingHistorySelectCommon"/>	
+	</select>
+    
+    <!-- 예약 내역 리스트 -->
+    <select id="bookingHistorySelectList" resultMap="resultMapObj">
+    select aa.* from (
+    	select DISTINCT
+    			c.htbseq,
+				c.htbcheckIn,
+			    c.htbcheckOut,
+			    c.htbTotalPrice,
+			    c.htbSettleDate,
+			    d.htmSeq,
+			    d.htmUserName,
+			    e.htseq,
+			    e.htName
+	    <include refid="bookingHistorySelectCommon"/>	
+		order by
+			c.htbSettleDate desc
+		) aa
+		limit #{rowNumToShow} offset #{startRnumForMysql}
+    </select>
+
+
+
+
+
+
+
+ 
 
 	  
 </mapper>

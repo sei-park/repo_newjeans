@@ -55,6 +55,12 @@ public interface HotelDao {
 	// 결제 정보 업데이트
 	public int bookingUpdate(HotelDto hotelDto);
 	
+	// 예약 내역 리스트
+	public List<HotelDto> bookingHistorySelectList(HotelVo hotelVo);
+	
+	// 예약 내역 paging
+	public int bookingHistorySelectOneCount(HotelVo hotelVo);
+	
 
 
 }
