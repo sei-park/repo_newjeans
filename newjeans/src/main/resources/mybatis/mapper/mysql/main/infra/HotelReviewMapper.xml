@@ -30,23 +30,35 @@
 			a.htreseq desc
 	</select>
 	
+<!-- 	<insert id="hotelReviewInsert"> -->
+<!-- 		insert into hotelreview ( -->
+<!-- 			hotel_seq, -->
+<!-- 			hotelmember_htmSeq, -->
+<!-- 			htrestars, -->
+<!-- 			htrecomments,	 -->
+<!-- 			htreRegDate, -->
+<!-- 			htmId, -->
+<!-- 			htmEmail       -->
+<!-- 		) values ( -->
+<!-- 			#{hotel_seq}, -->
+<!-- 			#{hotelmember_htmSeq}, -->
+<!-- 			#{htrestars}, -->
+<!-- 			#{htrecomments}, -->
+<!-- 			now(), -->
+<!-- 			#{htmId}, -->
+<!-- 			#{htmEmail} -->
+<!-- 		) -->
+<!-- 	</insert>   -->
+	        
 	<insert id="hotelReviewInsert">
 		insert into hotelreview (
-			hotel_seq,
-			hotelmember_htmSeq,
 			htrestars,
 			htrecomments,	
-			htreRegDate,
-			htmId,
-			htmEmail      
+			htreRegDate
 		) values (
-			#{hotel_seq},
-			#{hotelmember_htmSeq},
 			#{htrestars},
 			#{htrecomments},
-			now(),
-			#{htmId},
-			#{htmEmail}
+			now()
 		)
 	</insert>          
 	   

@@ -102,7 +102,7 @@
     <section id="tour_booking_submission" class="section_padding">
         <div class="container">
         <!-- 폼 시작 -->
-           <form name="form" method="post" action="/usr/v1/infra/usrmember/usrHotelBookingUpdt">
+           <form name="form" method="post" action="/v1/infra/usrmember/usrHotelBookingUpdt">
            <!-- booking 테이블의 htbseq 정보 update로 넘겨주기 -->
 		   <input type="hidden" name="htbseq" th:value="${bookingItem?.htbseq}">  
             <div class="row">
@@ -333,7 +333,7 @@
     <script>
     document.getElementById('paymentBtn').onclick = function() {
     	
-    	form.action = "/usr/v1/infra/usrmember/usrHotelBookingUpdt";
+    	form.action = "/v1/infra/usrmember/usrHotelBookingUpdt";
     	form.submit();
     }
     

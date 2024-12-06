@@ -37,6 +37,10 @@
 	border-color: #8B3EEA;
 }
 
+table {
+	border:1px solid red;
+	
+}
 
 </style>
 
@@ -110,12 +114,12 @@
     <section id="dashboard_main_arae" class="section_padding">
         <div class="container">
             <div class="row">
-                <div class="col-lg-12">
-                <form name="form" method="post" action="/v1/infra/usrmember/usrHotelBookingHistory">
+                <div class="col-lg-12">                 
+                <form name="form" method="post" action="/usr/v1/infra/usrmember/usrHotelBookingHistory">
                 <input type="hidden" name="thisPage" th:value="${vo.thisPage}" default="1"/>
  				<input type="hidden" id="rowNumToShow" name="rowNumToShow" th:value="${vo.rowNumToShow}"/>
                     <div class="dashboard_common_table">
-                        <h3 th:text="'예약 내역 : ' +${vo.totalRows}"></h3>
+                        <h3 th:text="'예약 내역 ' + '(' + ${vo.totalRows} + ')' "></h3>
                         <div class="table-responsive-lg table_common_area">
                             <table class="table">
                                 <thead>
@@ -135,9 +139,13 @@
                                 		</td>
                                 	</tr>
                                     <tr th:if="${!#lists.isEmpty(bookingHistoryList)}" th:each="list : ${bookingHistoryList}">
-                                        <td></td>
+                                        <td th:text="${vo.totalRows - ((vo.thisPage - 1) * vo.rowNumToShow + listStat.index)}"></td>
                                         <td th:text="${#dates.format(list.htbSettleDate,'yyyy-MM-dd')}">예약일</td>
-                                        <td th:text="${list.htName}">호텔</td>
+                                        <td>
+											<a th:href="@{/v1/infra/usrmember/usrHotelBookingHistoryDetails(htbseq=${list.htbseq})}"
+												th:text="${list.htName}" style="text-decoration: underline;">
+											</a>
+										</td>  
                                         <td th:text="${#dates.format(list.htbcheckIn,'yyyy-MM-dd')}">체크인</td>
                                         <td th:text="${#dates.format(list.htbcheckOut,'yyyy-MM-dd')}">체크아웃</td>
                                         <td th:text="${'₩' + #numbers.formatInteger(list.htbTotalPrice, 3, 'COMMA')}">결제금액</td>
@@ -219,13 +227,13 @@
 	// paging 
 	goList = function (thisPage) {
 	    document.querySelector("input[name=thisPage]").value = thisPage;
-	    form.action = "/v1/infra/usrmember/usrHotelBookingHistory";
+	    form.action = "/usr/v1/infra/usrmember/usrHotelBookingHistory";
 	    form.submit();
 	}
 	
 	goList = function (thisPage) {
 	    document.querySelector("input[name=thisPage]").value = thisPage;
-	    document.querySelector("form[name=form]").action = "/v1/infra/usrmember/usrHotelBookingHistory";
+	    document.querySelector("form[name=form]").action = "/usr/v1/infra/usrmember/usrHotelBookingHistory";
 	    document.querySelector("form[name=form]").submit();
 	}
     

@@ -19,10 +19,10 @@ public class WebMvcConfigurerImpl implements WebMvcConfigurer {
 				.excludePathPatterns( // 인터셉터에서 제외할 패턴 지정(예외 처리)  
    					    "/resources/**", 
 //						"/xdm/v1/**", // resources 하위 폴더
-						"/xdm/v1/infra/hotelmember/signin", // 로그인 페이지 제외 
-						"/xdm/v1/infra/hotelmember/signinXdmProc", // 로그인 처리 페이지 제외
-						"/v1/infra/usrmember/usrSignin",
-						"/v1/infra/usrmember/usrSigninProc"
+						"/xdm/v1/infra/hotelmember/signin", // 관리자 로그인 페이지 제외 
+						"/xdm/v1/infra/hotelmember/signinXdmProc", // 관리자 로그인 처리 페이지 제외
+						"/v1/infra/usrmember/usrSignin", // 사용자 로그인 페이지 제외
+						"/v1/infra/usrmember/usrSigninProc" // 관리자 로그인 처리 페이지 제외
 				);       
 	}   
 	      

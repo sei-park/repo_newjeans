@@ -630,8 +630,6 @@
     
     
    
-   
-   
     
     <sql id="bookingHistorySelectCommon">
 	    from 
@@ -672,8 +670,49 @@
 		) aa
 		limit #{rowNumToShow} offset #{startRnumForMysql}
     </select>
+    
+    <!-- 예약 내역 상세페이지 -->
+<!--     <select id="bookingHistoryDetailsSelectOne" resultMap="resultMapObj"> -->
+<!-- 	    select  -->
+<!-- 			e.htseq, -->
+<!-- 		    e.htName, -->
+<!-- 			b.htrseq, -->
+<!-- 		    b.htrRoomName, -->
+<!-- 		    b.htrRoomPrice -->
+<!-- 		from hotelbookingmenu as a  -->
+<!-- 			left join hotelroom as b -->
+<!-- 				on a.hotelRoom_htrseq = b.htrseq -->
+<!-- 			left join hotelbooking as c -->
+<!-- 				on a.hotelbooking_htbseq = c.htbseq -->
+<!-- 			left join hotelmember as d -->
+<!-- 				on c.hotelMember_htmSeq = d.htmSeq -->
+<!-- 			left join hotel as e  -->
+<!-- 				on b.hotel_seq = e.htseq  -->
+<!-- 		where 1=1  -->
+<!-- 			and c.htbseq = #{htbseq} -->
+<!--     </select> -->
+    
+    <select id="bookingHistoryDetailsSelectList" resultMap="resultMapObj"> 
+    	 select 
+			e.htseq,
+		    e.htName,
+			b.htrseq,
+		    b.htrRoomName,
+		    b.htrRoomPrice
+		from hotelbookingmenu as a 
+			left join hotelroom as b
+				on a.hotelRoom_htrseq = b.htrseq
+			left join hotelbooking as c
+				on a.hotelbooking_htbseq = c.htbseq
+			left join hotelmember as d
+				on c.hotelMember_htmSeq = d.htmSeq
+			left join hotel as e 
+				on b.hotel_seq = e.htseq 
+		where 1=1 
+			and c.htbseq = #{htbseq}
+    </select> 
 
-
+ 
 
 
 

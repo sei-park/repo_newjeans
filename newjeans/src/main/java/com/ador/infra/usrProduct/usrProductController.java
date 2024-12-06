@@ -1,7 +1,9 @@
 package com.ador.infra.usrProduct;
 
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -9,6 +11,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.ador.infra.hotel.HotelDto;
 import com.ador.infra.hotel.HotelService;
@@ -65,12 +68,33 @@ public class usrProductController {
 		return "usr/v1/infra/usrmember/usrHotelDetails"; 
 	}
 	                            
-	// insert
+	// 리뷰 댓글 insert
+//	@RequestMapping(value="/v1/infra/usrmember/usrHotelDetailsInst")
+//	public String usrHotelDetailsInst(HotelReviewDto hotelReviewDto) {
+//
+//		hotelReviewService.hotelReviewInsert(hotelReviewDto);
+//		return "redirect:/usr/v1/infra/usrmember/usrHotelDetails";
+//	}
+	
+	// 리뷰 댓글 insert
+	@ResponseBody
 	@RequestMapping(value="/v1/infra/usrmember/usrHotelDetailsInst")
-	public String usrHotelDetailsInst(HotelReviewDto hotelReviewDto) {
-
-		hotelReviewService.hotelReviewInsert(hotelReviewDto);
-		return "redirect:/usr/v1/infra/usrmember/usrHotelDetails";
+	public Map<String, Object> usrHotelDetailsInst(HotelReviewDto hotelReviewDto) { 
+		Map<String, Object> returnMap = new HashMap<String, Object>(); 
+		 
+	    int result = hotelReviewService.hotelReviewInsert(hotelReviewDto); 
+	    
+	    if (result > 0) {
+	    	System.out.println("리뷰 댓글 insert");
+	    	returnMap.put("success", true);
+	        returnMap.put("comment", hotelReviewDto.getHtrecomments());
+	        returnMap.put("stars", hotelReviewDto.getHtrestars());
+	        } else {
+	            System.out.println("댓글 등록 실패");
+	        }
+	    
+	    return returnMap;
+		
 	}
 	 
 	
@@ -112,7 +136,7 @@ public class usrProductController {
 			hotelService.hotelBookingMenuInsert(hotelDto);
 			
 			// htbseq 값을 결제페이지로 리다이렉션 
-			return "redirect:/usr/v1/infra/usrmember/usrHotelBooking?htbseq=" + hotelDto.getHtbseq();
+			return "redirect:/v1/infra/usrmember/usrHotelBooking?htbseq=" + hotelDto.getHtbseq();
 			
 		} else {
 			// 세션에 사용자 정보가 없으면 처리
@@ -146,7 +170,7 @@ public class usrProductController {
 	}
 	
 	// 예약 내역 
-	@RequestMapping(value="/v1/infra/usrmember/usrHotelBookingHistory")
+	@RequestMapping(value="/usr/v1/infra/usrmember/usrHotelBookingHistory")
 	public String usrHotelBookingHistory(@ModelAttribute("vo") HotelVo hotelVo, Model model, HttpSession httpSession) { 
 		
 		// 세션에서 sessSeqUsr 값 가져오기
@@ -154,12 +178,6 @@ public class usrProductController {
 	    
 	    // hotelVo에 htmseq를 set
 	    hotelVo.setHtmSeq(sessSeqUsr);
-	    
-	    // 로그인 여부 확인
-	    if (sessSeqUsr == null) {
-	        // 세션에 사용자 정보가 없으면 로그인 페이지로 리다이렉트   
-	        return "redirect:/usr/v1/infra/usrmember/usrIndex";
-	    }  
 	    
 	    // 사용자 ID를 기반으로 예약 내역 조회
 	    //List<HotelDto> bookingHistoryList = hotelService.bookingHistorySelectList(hotelVo);
@@ -176,7 +194,15 @@ public class usrProductController {
 		//model.addAttribute("bookingHistoryList", hotelService.bookingHistorySelectList());
 		return "usr/v1/infra/usrmember/usrHotelBookingHistory";
 	} 
-	 
+	
+	// 예약 내역 상세 페이지
+	@RequestMapping(value="/v1/infra/usrmember/usrHotelBookingHistoryDetails")
+	public String usrHotelBookingHistoryDetails(HotelDto hotelDto, Model model) {	
+		
+		model.addAttribute("bookingHistoryDetailsList", hotelService.bookingHistoryDetailsSelectList(hotelDto));
+		return "usr/v1/infra/usrmember/usrHotelBookingHistoryDetails";
+	}
+	  
 	
    
 

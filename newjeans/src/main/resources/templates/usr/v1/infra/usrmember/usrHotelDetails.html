@@ -511,7 +511,7 @@
                             <div class="row">
                                 <div class="col-lg-2">
                                     <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="htrestars" id="htrestars01" value="1">
+                                        <input class="form-check-input" type="radio" name="htrestars" value="1">
                                         <label class="form-check-label" for="flexRadioDefault1">
                                             <div class="rating">
                                                 <i class="rating__star fas fa-star"></i>
@@ -523,7 +523,7 @@
                                         </label>
                                     </div>
                                     <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="htrestars" id="htrestars04" value="4">
+                                        <input class="form-check-input" type="radio" name="htrestars" value="4">
                                         <label class="form-check-label" for="flexRadioDefault1">
                                             <div class="rating">
                                                 <i class="rating__star fas fa-star"></i>
@@ -531,39 +531,39 @@
                                                 <i class="rating__star fas fa-star"></i>
                                                 <i class="rating__star fas fa-star"></i>
                                                 <i class="rating__star far fa-star"></i>
-                                            </div>
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="col-lg-2">
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="htrestars" id="htrestars02" value="2">
-                                        <label class="form-check-label" for="flexRadioDefault1">
-                                            <div class="rating">
-                                                <i class="rating__star fas fa-star"></i>
-                                                <i class="rating__star fas fa-star"></i>
-                                                <i class="rating__star far fa-star"></i>
-                                                <i class="rating__star far fa-star"></i>
-                                                <i class="rating__star far fa-star"></i>
-                                            </div>
-                                        </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="htrestars" id="htrestars05" value="5">
-                                        <label class="form-check-label" for="flexRadioDefault1">
-                                            <div class="rating">
-                                                <i class="rating__star fas fa-star"></i>
-                                                <i class="rating__star fas fa-star"></i>
-                                                <i class="rating__star fas fa-star"></i>
-                                                <i class="rating__star fas fa-star"></i>
-                                                <i class="rating__star fas fa-star"></i>
                                             </div>
                                         </label>
                                     </div>
                                 </div>
                                 <div class="col-lg-2">
                                     <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="htrestars" id="htrestars03" value="3">
+                                        <input class="form-check-input" type="radio" name="htrestars"  value="2">
+                                        <label class="form-check-label" for="flexRadioDefault1">
+                                            <div class="rating">
+                                                <i class="rating__star fas fa-star"></i>
+                                                <i class="rating__star fas fa-star"></i>
+                                                <i class="rating__star far fa-star"></i>
+                                                <i class="rating__star far fa-star"></i>
+                                                <i class="rating__star far fa-star"></i>
+                                            </div>
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="htrestars" value="5">
+                                        <label class="form-check-label" for="flexRadioDefault1">
+                                            <div class="rating">
+                                                <i class="rating__star fas fa-star"></i>
+                                                <i class="rating__star fas fa-star"></i>
+                                                <i class="rating__star fas fa-star"></i>
+                                                <i class="rating__star fas fa-star"></i>
+                                                <i class="rating__star fas fa-star"></i>
+                                            </div>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-2">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="htrestars" id="htrestars" value="3">
                                         <label class="form-check-label" for="flexRadioDefault1">
                                             <div class="rating">
                                                 <i class="rating__star fas fa-star"></i>
@@ -581,20 +581,22 @@
                                 <div class="row">
                                     <div class="col-lg-6">
                                         <div class="form-froup">
-                                            <input type="text" class="form-control bg_input" placeholder="아이디" name="htmId">
+                                            <input type="text" class="form-control bg_input" placeholder="아이디" name="htmId" id="htmId" 
+                                            th:value="${session.sessIdUsr}">
                                         </div>
                                     </div>
                                     <div class="col-lg-6">
                                         <div class="form-froup">
-                                            <input type="text" class="form-control bg_input" placeholder="이메일 주소" name="htmEmail">
+                                            <input type="text" class="form-control bg_input" placeholder="이메일 주소" name="htmEmail" id="htmEmail"
+                                            th:value="${session.sessEmailUsr}">
                                         </div>
                                     </div>
                                     <div class="col-lg-12 gy-3">
                                         <div class="form-froup">
-                                            <textarea rows="6" placeholder="내용 작성하기" class="form-control bg_input" name="htrecomments"></textarea>
+                                            <textarea rows="6" placeholder="내용 작성하기" class="form-control bg_input" name="htrecomments" id="htrecomments"></textarea>
                                         </div>
                                         <div class="comment_form_submit" style="margin-top:25px;">
-                                            <button type="submit" class="btn btn_theme btn_md">저장하기</button>
+                                            <button type="submit" class="btn btn_theme btn_md" id="contentSaveBtn">저장하기</button>
                                         </div>
                                     </div>
                                 </div> <!--row-->
@@ -631,138 +633,13 @@
                         <div class="all_review_text">
                             <img src="/usr/v1/usertemplate/ui/assets/image/user_img.png" alt="img">
                             <h4 th:text="${list.htmId}">아이디</h4>
-                            <p th:text="${list.htrecomments}">리뷰 내용</p>
+                            <p th:text="${list.htrecomments}" id="htrecomments">리뷰 내용</p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-
-    <!--Related tour packages Area -->
-    <!-- <section id="related_tour_packages" class="section_padding_bottom">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-12">
-                    <div class="section_heading_center">
-                        <h2>Related hotels</h2>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="promotional_tour_slider owl-theme owl-carousel dot_style">
-                        <div class="theme_common_box_two img_hover">
-                            <div class="theme_two_box_img">
-                                <a href="hotel-details.html"><img src="/usr/v1/usertemplate/ui/assets/img/tab-img/hotel1.png" alt="img"></a>
-                                <p><i class="fas fa-map-marker-alt"></i>New beach, Thailand</p>
-                            </div>
-                            <div class="theme_two_box_content">
-                                <h4><a href="hotel-details.html">Kantua hotel, Thailand</a></h4>
-                                <p><span class="review_rating">4.8/5 Excellent</span> <span class="review_count">
-                                    (1214 reviewes)</span></p>
-                                <h3>$99.00 <span>Price starts from</span></h3>
-                            </div>
-                        </div>
-                        <div class="theme_common_box_two img_hover">
-                            <div class="theme_two_box_img">
-                                <a href="hotel-details.html"><img src="/usr/v1/usertemplate/ui/assets/img/tab-img/hotel2.png" alt="img"></a>
-                                <p><i class="fas fa-map-marker-alt"></i>Indonesia</p>
-                                <div class="discount_tab">
-                                    <span>50%</span>
-                                </div>
-                            </div>
-                            <div class="theme_two_box_content">
-                                <h4><a href="hotel-details.html">Hotel paradise international</a></h4>
-                                <p><span class="review_rating">4.8/5 Excellent</span> <span class="review_count">(1214
-                                        reviewes)</span></p>
-                                <h3>$99.00 <span>Price starts from</span></h3>
-                            </div>
-                        </div>
-                        <div class="theme_common_box_two img_hover">
-                            <div class="theme_two_box_img">
-                                <a href="hotel-details.html"><img src="/usr/v1/usertemplate/ui/assets/img/tab-img/hotel3.png" alt="img"></a>
-                                <p><i class="fas fa-map-marker-alt"></i>Kualalampur</p>
-                            </div>
-                            <div class="theme_two_box_content">
-                                <h4><a href="hotel-details.html">Hotel kualalampur</a></h4>
-                                <p><span class="review_rating">4.8/5 Excellent</span> <span class="review_count">(1214
-                                        reviewes)</span></p>
-                                <h3>$99.00 <span>Price starts from</span></h3>
-                            </div>
-                        </div>
-                        <div class="theme_common_box_two img_hover">
-                            <div class="theme_two_box_img">
-                                <a href="hotel-details.html"><img src="/usr/v1/usertemplate/ui/assets/img/tab-img/hotel4.png" alt="img"></a>
-                                <p><i class="fas fa-map-marker-alt"></i>Mariana island</p>
-                                <div class="discount_tab">
-                                    <span>50%</span>
-                                </div>
-                            </div>
-                            <div class="theme_two_box_content">
-                                <h4><a href="hotel-details.html">Hotel deluxe</a></h4>
-                                <p><span class="review_rating">4.8/5 Excellent</span> <span class="review_count">(1214
-                                        reviewes)</span></p>
-                                <h3>$99.00 <span>Price starts from</span></h3>
-                            </div>
-                        </div>
-                        <div class="theme_common_box_two img_hover">
-                            <div class="theme_two_box_img">
-                                <a href="hotel-details.html"><img src="/usr/v1/usertemplate/ui/assets/img/tab-img/hotel6.png" alt="img"></a>
-                                <p><i class="fas fa-map-marker-alt"></i>Beach view</p>
-                            </div>
-                            <div class="theme_two_box_content">
-                                <h4><a href="#!">Thailand grand suit</a></h4>
-                                <p><span class="review_rating">4.8/5 Excellent</span> <span class="review_count">(1214
-                                        reviewes)</span></p>
-                                <h3>$99.00 <span>Price starts from</span></h3>
-                            </div>
-                        </div>
-                        <div class="theme_common_box_two img_hover">
-                            <div class="theme_two_box_img">
-                                <a href="hotel-details.html"><img src="/usr/v1/usertemplate/ui/assets/img/tab-img/hotel7.png" alt="img"></a>
-                                <p><i class="fas fa-map-marker-alt"></i>Long island</p>
-                            </div>
-                            <div class="theme_two_box_content">
-                                <h4><a href="hotel-details.html">Zefi resort and spa</a></h4>
-                                <p><span class="review_rating">4.8/5 dfdsdf</span> <span class="review_count">(1214
-                                        reviewes)</span></p>
-                                <h3>$99.00 <span>Price starts from</span></h3>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section> -->
-
-    <!-- Cta Area -->
-    <!-- <section id="cta_area">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-7">
-                    <div class="cta_left">
-                        <div class="cta_icon">
-                            <img src="/usr/v1/usertemplate/ui/assets/img/common/email.png" alt="icon">
-                        </div>
-                        <div class="cta_content">
-                            <h4>Get the latest news and offers</h4>
-                            <h2>Subscribe to our newsletter</h2>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-5">
-                    <div class="cat_form">
-                        <form id="cta_form_wrappper">
-                            <div class="input-group"><input type="text" class="form-control"
-                                    placeholder="Enter your mail address"><button class="btn btn_theme btn_md"
-                                    type="button">Subscribe</button></div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section> -->
 
     <!-- Footer  -->
   	<div th:replace="~{usr/v1/infra/usrmember/common/footer :: footer}"></div>
@@ -1062,6 +939,9 @@
 		    updateTotalPrice(); // 초기 금액 계산
 		});
 	
+		
+		
+	
 		// 예약하기 버튼 - insert
 		document.getElementById('bookingBtn').onclick = function(){
 			
@@ -1069,7 +949,7 @@
 		    const checkInDate = document.getElementById('checkIn').textContent.trim(); // 체크인에 있는 텍스트 가져옴
 		    const checkOutDate = document.getElementById('checkOut').textContent.trim(); // 체크아웃에 있는 텍스트 가져옴
 
-		    // 객실 선택 여부 확인
+		    // 객실 선택 여부 확인	
 		    const selectedRooms = document.querySelectorAll('.menu-checkbox:checked'); // 객실 체크 확인
 
 		    // 유효성 검사
@@ -1093,6 +973,38 @@
 		    form.submit();
 		
 		}
+	
+		
+		
+		document.getElementById('contentSaveBtn').onclick = function() {
+			
+			const selectedStar = $("input[name='htrestars']:checked").val(); // 선택된 체크박스 값 가져오기
+
+	        $.ajax({ // AJAX 요청을 시작하는 jQuery 매서드
+				async: true // 요청을 비동기로 처리 
+				,cache: false // 요청 결과를 캐시하지 않도록 설정 
+				,type: "post" // HTTP 매서드를 POST로 설정 
+				/* ,dataType:"json" */
+				,url: "/v1/infra/usrmember/usrHotelDetailsInst" // 요청을 보낼 url 
+				/* ,data : $("#formLogin").serialize() */ 
+				,data : { 
+					"htrestars": selectedStar,
+					"htrecomments" : $("#htrecomments").val(), 
+					"htreRegDate" : $("#htreRegDate").val()
+				} 
+				,success: function(response) { // 요청이 성공적으로 완료되면 실행될 함수 
+					alert("댓글 입력 성공"); 
+				  }
+	          }); // ajax end
+	          
+			return false;
+		}
+		
+		
+		
+	
+
+		
 		
 			
 	

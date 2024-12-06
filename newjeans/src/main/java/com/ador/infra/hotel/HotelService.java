@@ -152,6 +152,16 @@ public class HotelService {
  	public int bookingHistorySelectOneCount(HotelVo hotelVo) {
  		return hotelDao.bookingHistorySelectOneCount(hotelVo);
  	}
+ 	
+ 	// 예약 내역 상세페이지
+// 	public HotelDto bookingHistoryDetailsSelectOne(HotelDto hotelDto) {
+// 		return hotelDao.bookingHistoryDetailsSelectOne(hotelDto);
+// 	}
+ 	
+ 	// 예약 내역 상세페이지 selectList
+ 	public List<HotelDto> bookingHistoryDetailsSelectList(HotelDto hotelDto) {
+ 		return hotelDao.bookingHistoryDetailsSelectList(hotelDto);
+ 	}
 	
 	
 	

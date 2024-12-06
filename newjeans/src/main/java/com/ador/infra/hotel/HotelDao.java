@@ -61,6 +61,12 @@ public interface HotelDao {
 	// 예약 내역 paging
 	public int bookingHistorySelectOneCount(HotelVo hotelVo);
 	
+	// 예약 내역 상세페이지 selectOne
+//	public HotelDto bookingHistoryDetailsSelectOne(HotelDto hotelDto); 
+	
+	// 예약 내역 상세페이지 selectList
+	public List<HotelDto> bookingHistoryDetailsSelectList(HotelDto hotelDto);
+	
 
 
 }
