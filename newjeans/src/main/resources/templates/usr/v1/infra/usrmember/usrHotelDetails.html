@@ -617,9 +617,10 @@
                 	<div>
                         <h5>등록된 후기가 없습니다</h5>
                     </div>								
-				</div>							
-                <div class="col-lg-4 col-md-6" th:if="${!#lists.isEmpty(hotelReviewList)}" th:each="list : ${hotelReviewList}">
-                    <div class="all_review_box">
+				</div>
+				
+                <div class="col-lg-4 col-md-6" th:if="${!#lists.isEmpty(hotelReviewList)}" th:each="list : ${hotelReviewList}" id="reviewListContainer">
+                    <div class="all_review_box" >
                         <div class="all_review_date_area">
                             <div class="all_review_date">
                                 <h5 th:text="${#dates.format(list.htreRegDate,'yyyy-MM-dd')}">날짜</h5>
@@ -637,6 +638,7 @@
                         </div>
                     </div>
                 </div>
+                
             </div>
         </div>
     </section>
@@ -993,12 +995,45 @@
 					"htreRegDate" : $("#htreRegDate").val()
 				} 
 				,success: function(response) { // 요청이 성공적으로 완료되면 실행될 함수 
-					alert("댓글 입력 성공"); 
+					alert("댓글 입력 성공");
+				
+					console.log(response);
+				
+					 const newReviewHtml = `
+		                    <div class="all_review_box">
+		                        <div class="all_review_date_area">
+		                            <div class="all_review_date">
+		                                <h5>${response.date}</h5> <!-- 등록일 --> 
+		                            </div>
+		                            <div class="all_review_star row">
+		                                <div class="review_star_all">
+		                                    ${Array.from({ length: response.stars }, () => `<i class="fas fa-star">&nbsp;</i>`).join('')}
+		                                </div>
+		                            </div>
+		                        </div>
+		                        <div class="all_review_text">
+		                            <img src="/usr/v1/usertemplate/ui/assets/image/user_img.png" alt="img">
+		                            <h4></h4>
+		                            <p>${response.comment}</p> <!-- 댓글 내용 -->
+		                        </div>  
+		                    </div>
+		                    `;
+
+		                // 댓글 리스트 추가
+		                $("#reviewListContainer").append(newReviewHtml);
+		                
+		                console.log($("#reviewListContainer").length);
+
+		                // 입력 필드 초기화
+		                $("#htrecomments").val('');
+		                $("input[name='htrestars']").prop('checked', false);
 				  }
+				
 	          }); // ajax end
 	          
 			return false;
-		}
+	          
+		} // contentSaveBtn end
 		
 		
 		

@@ -85,8 +85,8 @@ public class usrProductController {
 	    int result = hotelReviewService.hotelReviewInsert(hotelReviewDto); 
 	    
 	    if (result > 0) {
-	    	System.out.println("리뷰 댓글 insert");
-	    	returnMap.put("success", true);
+	    	returnMap.put("success", true); 
+	    	returnMap.put("date", hotelReviewDto.getHtreRegDate());
 	        returnMap.put("comment", hotelReviewDto.getHtrecomments());
 	        returnMap.put("stars", hotelReviewDto.getHtrestars());
 	        } else {
