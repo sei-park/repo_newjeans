@@ -81,7 +81,7 @@ public class usrProductController {
 	@RequestMapping(value="/v1/infra/usrmember/usrHotelDetailsInst")
 	public Map<String, Object> usrHotelDetailsInst(HotelReviewDto hotelReviewDto) { 
 		Map<String, Object> returnMap = new HashMap<String, Object>(); 
-		 
+		
 	    int result = hotelReviewService.hotelReviewInsert(hotelReviewDto); 
 	    
 	    if (result > 0) {
@@ -89,11 +89,12 @@ public class usrProductController {
 	    	returnMap.put("date", hotelReviewDto.getHtreRegDate());
 	        returnMap.put("comment", hotelReviewDto.getHtrecomments());
 	        returnMap.put("stars", hotelReviewDto.getHtrestars());
+	        returnMap.put("memberId", hotelReviewDto.getHotelmember_htmSeq());
 	        } else {
 	            System.out.println("댓글 등록 실패");
 	        }
 	    
-	    return returnMap;
+	    return returnMap;  
 		
 	}
 	 
@@ -174,7 +175,7 @@ public class usrProductController {
 	public String usrHotelBookingHistory(@ModelAttribute("vo") HotelVo hotelVo, Model model, HttpSession httpSession) { 
 		
 		// 세션에서 sessSeqUsr 값 가져오기
-	    String sessSeqUsr = (String) httpSession.getAttribute("sessSeqUsr");
+	    String sessSeqUsr = (String) httpSession.getAttribute("sessSeqUsr"); // 사용자 seq
 	    
 	    // hotelVo에 htmseq를 set
 	    hotelVo.setHtmSeq(sessSeqUsr);

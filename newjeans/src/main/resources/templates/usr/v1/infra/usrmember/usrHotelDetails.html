@@ -619,8 +619,8 @@
                     </div>								
 				</div>
 				
-                <div class="col-lg-4 col-md-6" th:if="${!#lists.isEmpty(hotelReviewList)}" th:each="list : ${hotelReviewList}" id="reviewListContainer">
-                    <div class="all_review_box" >
+                <div class="col-lg-4 col-md-6" th:if="${!#lists.isEmpty(hotelReviewList)}" th:each="list : ${hotelReviewList}">
+                    <div class="all_review_box">
                         <div class="all_review_date_area">
                             <div class="all_review_date">
                                 <h5 th:text="${#dates.format(list.htreRegDate,'yyyy-MM-dd')}">날짜</h5>
@@ -980,7 +980,7 @@
 		
 		document.getElementById('contentSaveBtn').onclick = function() {
 			
-			const selectedStar = $("input[name='htrestars']:checked").val(); // 선택된 체크박스 값 가져오기
+			let selectedStar = $("input[name='htrestars']:checked").val(); // 선택된 체크박스 값 가져오기
 
 	        $.ajax({ // AJAX 요청을 시작하는 jQuery 매서드
 				async: true // 요청을 비동기로 처리 
@@ -996,37 +996,32 @@
 				} 
 				,success: function(response) { // 요청이 성공적으로 완료되면 실행될 함수 
 					alert("댓글 입력 성공");
-				
-					console.log(response);
-				
-					 const newReviewHtml = `
-		                    <div class="all_review_box">
-		                        <div class="all_review_date_area">
-		                            <div class="all_review_date">
-		                                <h5>${response.date}</h5> <!-- 등록일 --> 
-		                            </div>
-		                            <div class="all_review_star row">
-		                                <div class="review_star_all">
-		                                    ${Array.from({ length: response.stars }, () => `<i class="fas fa-star">&nbsp;</i>`).join('')}
-		                                </div>
-		                            </div>
-		                        </div>
-		                        <div class="all_review_text">
-		                            <img src="/usr/v1/usertemplate/ui/assets/image/user_img.png" alt="img">
-		                            <h4></h4>
-		                            <p>${response.comment}</p> <!-- 댓글 내용 -->
-		                        </div>  
-		                    </div>
-		                    `;
+					
+					let newReview = '';
+					
+					newReview += '<div class="all_review_box">';
+				    newReview += '<div class="all_review_date_area">';
+				    newReview += '<div class="all_review_date">';    
+				    newReview += '<h5>' + (response.date != null ? formatDate(response.date) : '등록일 없음') + '</h5>';                        
+				    newReview += '</div>';                 
+				    newReview += '<div class="all_review_star row">';    
+				    newReview += '<div class="review_star_all">';                          
+				    newReview += '<i class="fas fa-star">' + (response.stars == null || response.stars == 0 ? '별점 없음' : '') + '</i>';                         
+				    newReview += '</div>';                        
+				    newReview += '</div>';                    
+				    newReview += '</div>' ;        
+				    newReview += '<div class="all_review_text">';             
+				    newReview += '<img src="/usr/v1/usertemplate/ui/assets/image/user_img.png" alt="img">';        
+				    newReview += '<h4>' + (response.memberId) + '</h4>';           
+				    newReview += '<p>' + (response.comment) + '</p>';   
+				    newReview += '</div>';       
+				    newReview += '</div>'; 
+				    
+				    //console.log(newReview.length);
 
-		                // 댓글 리스트 추가
-		                $("#reviewListContainer").append(newReviewHtml);
-		                
-		                console.log($("#reviewListContainer").length);
-
-		                // 입력 필드 초기화
-		                $("#htrecomments").val('');
-		                $("input[name='htrestars']").prop('checked', false);
+		            // 입력창초기화
+		            $("#htrecomments").val('');
+		            $("input[name='htrestars']").prop('checked', false);
 				  }
 				
 	          }); // ajax end
