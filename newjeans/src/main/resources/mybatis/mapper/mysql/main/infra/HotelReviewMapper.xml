@@ -8,6 +8,7 @@
 	<select id="hotelReviewList" resultMap="resultMapObj">
 		select
 			a.htreseq,
+			a.htrId,
 			a.htrestars,
 			a.htrecomments,
 			a.htreRegDate,
@@ -19,46 +20,28 @@
 		    c.htseq,
 		    c.htName
 		from 
-			hotelreview a
-		left join 
-			hotelmember b on b.htmSeq = a.hotelmember_htmSeq
-		left join 
-			hotel c on c.htseq = a.hotel_seq
+			hotelreview as a
+		left join hotelmember as b 
+			on b.htmSeq = a.hotelmember_htmSeq
+		left join hotel as c 
+			on c.htseq = a.hotel_seq
 		where 1=1     
-			and c.htseq = #{htseq}
+			and c.htseq = #{htseq} 
 		order by
 			a.htreseq desc
 	</select>
 	
-<!-- 	<insert id="hotelReviewInsert"> -->
-<!-- 		insert into hotelreview ( -->
-<!-- 			hotel_seq, -->
-<!-- 			hotelmember_htmSeq, -->
-<!-- 			htrestars, -->
-<!-- 			htrecomments,	 -->
-<!-- 			htreRegDate, -->
-<!-- 			htmId, -->
-<!-- 			htmEmail       -->
-<!-- 		) values ( -->
-<!-- 			#{hotel_seq}, -->
-<!-- 			#{hotelmember_htmSeq}, -->
-<!-- 			#{htrestars}, -->
-<!-- 			#{htrecomments}, -->
-<!-- 			now(), -->
-<!-- 			#{htmId}, -->
-<!-- 			#{htmEmail} -->
-<!-- 		) -->
-<!-- 	</insert>   -->
-	        
 	<insert id="hotelReviewInsert">
 		insert into hotelreview (
 			htrestars,
 			htrecomments,	
-			htreRegDate
+			htreRegDate,
+			htrId
 		) values (
 			#{htrestars},
 			#{htrecomments},
-			now()
+			now(),
+			#{htrId}
 		)
 	</insert>          
 	   

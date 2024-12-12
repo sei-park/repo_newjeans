@@ -28,7 +28,7 @@ public class HotelService {
 	// insert 
 	public int hotelInsert(HotelDto hotelDto, int type) throws Exception {
 		
-		for(int i=0; i < hotelDto.getUploadFiles().length; i++) { 
+		for(int i=0; i < hotelDto.getUploadFiles().length -1; i++) { 
 			
 			if(!hotelDto.getUploadFiles()[i].isEmpty()) {
 				
@@ -64,7 +64,7 @@ public class HotelService {
 		        // hotelDto.setTableName(tableName);      
 		        hotelDto.setHtutype(type);
 		        // hotelDto.setHtusort(maxNumber + i);
-		        hotelDto.setHtupseq(hotelDto.getHtupseq());
+		        hotelDto.setHtupseq(hotelDto.getHtseq());
 		        
 		        hotelDao.insertUploaded(hotelDto);      
 			}
@@ -78,10 +78,62 @@ public class HotelService {
 		return hotelDao.hotelSelectOne(hotelDto);
 	}
 	
-	// update
-	public int hotelUpdate(HotelDto hotelDto) {
+//	// update
+//	public int hotelUpdate(HotelDto hotelDto) {
+//		return hotelDao.hotelUpdate(hotelDto);
+//	}
+	
+	// update   
+	public int hotelUpdate(HotelDto hotelDto, int type) throws Exception {
+		
+	for(int i=0; i < hotelDto.getUploadFiles().length - 1; i++) { 
+			
+			if(!hotelDto.getUploadFiles()[i].isEmpty()) {
+				
+				// 파일 정보 설정
+				String className = hotelDto.getClass().getSimpleName().toString().toLowerCase();		
+				String fileName = hotelDto.getUploadFiles()[i].getOriginalFilename();
+				String ext = fileName.substring(fileName.lastIndexOf(".") + 1);
+				String uuid = UUID.randomUUID().toString();
+				String uuidFileName = uuid + "." + ext;
+				String pathModule = className;
+				String nowString = UtilDateTime.nowString();
+				String pathDate = nowString.substring(0,4) + "/" + nowString.substring(5,7) + "/" + nowString.substring(8,10); 
+				String path = pathModule + "/" + type + "/" + pathDate + "/";
+//				String pathForView = Constants.UPLOADED_PATH_PREFIX_FOR_VIEW_LOCAL + "/" + pathModule + "/" + type + "/" + pathDate + "/";
+				
+				
+				// S3에 업로드
+		        ObjectMetadata metadata = new ObjectMetadata();
+		        metadata.setContentLength(hotelDto.getUploadFiles()[i].getSize());
+		        metadata.setContentType(hotelDto.getUploadFiles()[i].getContentType());
+		        amazonS3Client.putObject("newjeans", path + uuidFileName, hotelDto.getUploadFiles()[i].getInputStream(), metadata);
+				
+		        // S3 URL 생성
+		        String objectUrl = amazonS3Client.getUrl("newjeans", path + uuidFileName).toString();
+		        
+		        // Dto에 정보 설정
+		        hotelDto.setHtupath(objectUrl);
+		        hotelDto.setHtuoriginalName(fileName);
+		        hotelDto.setHtuuuidName(uuidFileName);
+		        hotelDto.setHtuext(ext);
+		        hotelDto.setHtusize(hotelDto.getUploadFiles()[i].getSize());
+
+		        // hotelDto.setTableName(tableName);      
+		        hotelDto.setHtutype(type);
+		        // hotelDto.setHtusort(maxNumber + i);
+		        hotelDto.setHtupseq(hotelDto.getHtseq());
+		        
+		        hotelDao.insertUploaded(hotelDto);      
+			}
+		}
+	    
 		return hotelDao.hotelUpdate(hotelDto);
 	}
+	
+	public int insertUploaded(HotelDto hotelDto) {
+		return hotelDao.insertUploaded(hotelDto);
+	} 
 	
 	// update delete 
 	public int uelete(HotelDto hotelDto) {
@@ -162,6 +214,8 @@ public class HotelService {
  	public List<HotelDto> bookingHistoryDetailsSelectList(HotelDto hotelDto) {
  		return hotelDao.bookingHistoryDetailsSelectList(hotelDto);
  	}
+ 	
+ 	
 	
 	
 	

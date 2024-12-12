@@ -175,6 +175,13 @@
 			avg_table.average_star,
 <!-- 			FLOOR(avg_table.average_star) AS average_star,  -->
     		avg_table.review_count
+    		
+    		,(select aa.htupath from hoteluploaded aa where 1=1 and aa.htupseq = a.htseq and aa.htuOrder = 1) as mainImg
+			, (select aa.htupath from hoteluploaded aa where 1=1 and aa.htupseq = a.htseq and aa.htuOrder = 2) as subImg1
+			, (select aa.htupath from hoteluploaded aa where 1=1 and aa.htupseq = a.htseq and aa.htuOrder = 3) as subImg2
+			, (select aa.htupath from hoteluploaded aa where 1=1 and aa.htupseq = a.htseq and aa.htuOrder = 4) as subImg3
+			, (select aa.htupath from hoteluploaded aa where 1=1 and aa.htupseq = a.htseq and aa.htuOrder = 5) as subImg4
+    		
 		<include refid="selectCommon"/>
 		order by
 			a.htseq desc
@@ -485,7 +492,7 @@
 	
 	<!-- S3 파일 업로드 -->
 	<insert id="insertUploaded">
-		insert into hotelUploaded(
+		insert into hoteluploaded (
 			htutype,
 			htudefaultNy,
 			htusort,
@@ -511,12 +518,12 @@
 			#{htuext},
 			#{htusize},
 			0,
-			11,
+			#{htupseq},
 			#{hturegIp},
 			#{hturegSeq},
 			#{hturegDeviceCd},
 			#{hturegDateTime},
-			#{hturegDateTimeSvr}
+			#{hturegDateTimeSvr} 
 		)
 	</insert>
 	

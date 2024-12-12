@@ -10,6 +10,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -20,7 +21,6 @@ import com.ador.infra.hotelmember.HotelMemberService;
 import com.ador.infra.hotelreview.HotelReviewDto;
 import com.ador.infra.hotelreview.HotelReviewService;
 
-import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
 
 @Controller
@@ -67,29 +67,45 @@ public class usrProductController {
 		model.addAttribute("hotelReviewList", hotelReviewService.hotelReviewList(hotelReviewDto)); // 호텔 리뷰 list
 		return "usr/v1/infra/usrmember/usrHotelDetails"; 
 	}
-	                            
-	// 리뷰 댓글 insert
-//	@RequestMapping(value="/v1/infra/usrmember/usrHotelDetailsInst")
-//	public String usrHotelDetailsInst(HotelReviewDto hotelReviewDto) {
-//
-//		hotelReviewService.hotelReviewInsert(hotelReviewDto);
-//		return "redirect:/usr/v1/infra/usrmember/usrHotelDetails";
-//	}
 	
 	// 리뷰 댓글 insert
 	@ResponseBody
-	@RequestMapping(value="/v1/infra/usrmember/usrHotelDetailsInst")
-	public Map<String, Object> usrHotelDetailsInst(HotelReviewDto hotelReviewDto) { 
-		Map<String, Object> returnMap = new HashMap<String, Object>(); 
+	@RequestMapping(value="/v1/infra/usrmember/usrHotelDetailsInst", method = RequestMethod.POST)
+	public Map<String, Object> usrHotelDetailsInst(@RequestParam("htseq") String htseq, HotelReviewDto hotelReviewDto, HttpSession httpSession) { 
+		Map<String, Object> returnMap = new HashMap<String, Object>();
 		
-	    int result = hotelReviewService.hotelReviewInsert(hotelReviewDto); 
+		// 세션에서 sessSeqUsr 값 가져오기
+	    String sessSeqUsr = (String) httpSession.getAttribute("sessSeqUsr");
+	    String sessIdUsr = (String) httpSession.getAttribute("sessIdUsr");
+	    
+	    hotelReviewDto.setHotelmember_htmSeq(sessSeqUsr);
+	    hotelReviewDto.setHotel_seq(htseq);
+	    
+	    hotelReviewDto.setHtrId(sessIdUsr); // 리뷰 아이디
+	    hotelReviewDto.setHtmId(sessIdUsr);
+	    
+//	    String sessNameUsr = (String) httpSession.getAttribute("sessNameUsr");
+//	    String sessEmailUsr = (String) httpSession.getAttribute("sessEmailUsr");
+//	    
+	   // hotelReviewDto.setHotel_seq(hotelReviewDto.getHotel_seq()); 
+	   // hotelReviewDto.setHotel_seq(htseq);
+	    
+//	    hotelReviewDto.setHotelmember_htmSeq(sessSeqUsr);
+	    
+	    
+ 
+	    System.out.println(" @@@@@@@@@@@@@@@@ ID @@@@@@@@@@@@ :" + hotelReviewDto.getHtrId()); 
+	    
+		
+	    int result = hotelReviewService.hotelReviewInsert(hotelReviewDto);
 	    
 	    if (result > 0) {
 	    	returnMap.put("success", true); 
 	    	returnMap.put("date", hotelReviewDto.getHtreRegDate());
 	        returnMap.put("comment", hotelReviewDto.getHtrecomments());
 	        returnMap.put("stars", hotelReviewDto.getHtrestars());
-	        returnMap.put("memberId", hotelReviewDto.getHotelmember_htmSeq());
+	        returnMap.put("memberId", hotelReviewDto.getHtrId());
+	        
 	        } else {
 	            System.out.println("댓글 등록 실패");
 	        }
@@ -102,7 +118,7 @@ public class usrProductController {
 	// 상세페이지에서 예약 정보 insert
 	// 호텔 예약 정보 처리, 사용자 세션 정보를 활용해서 예약 데이터 저장
 	@RequestMapping(value="/v1/infra/usrmember/usrHotelBookingInst")
-	public String usrHotelBookingInst(HotelDto hotelDto,@RequestParam("menuSeqs") List<String> menuSeqs, HttpSession httpSession) {
+	public String usrHotelBookingInst(HotelDto hotelDto, @RequestParam("menuSeqs") List<String> menuSeqs, HttpSession httpSession) {
 		
 		
 		// 세션에서 sessSeqUsr 값 가져오기

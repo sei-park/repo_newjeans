@@ -18,6 +18,7 @@ public class HotelReviewDto {
 	private String htmEmail;
 	private String htseq;
 	private String htName;
+	private String htrId;
 	//--     
 	public String getHtreseq() {
 		return htreseq;
@@ -84,6 +85,12 @@ public class HotelReviewDto {
 	}
 	public void setHtName(String htName) {
 		this.htName = htName;
+	}
+	public String getHtrId() {
+		return htrId;
+	}
+	public void setHtrId(String htrId) {
+		this.htrId = htrId;
 	}
     
 	

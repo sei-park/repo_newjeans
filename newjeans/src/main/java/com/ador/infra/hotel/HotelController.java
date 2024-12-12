@@ -51,6 +51,7 @@ public class HotelController {
 	public String hotelXdmInst(HotelDto hotelDto) throws Exception {
 		
 		hotelService.hotelInsert(hotelDto, 0);
+		hotelService.insertUploaded(hotelDto);
 		return "redirect:/xdm/v1/infra/hotel/hotelXdmList";    
 	}
 	
@@ -64,9 +65,10 @@ public class HotelController {
 	
 	// update
 	@RequestMapping(value="/xdm/v1/infra/hotel/hotelXdmUpdt")
-	public String hotelXdmUpdt(HotelDto hotelDto) {
+	public String hotelXdmUpdt(HotelDto hotelDto) throws Exception {
 		
-		hotelService.hotelUpdate(hotelDto);
+		hotelService.hotelUpdate(hotelDto, 0);
+		hotelService.insertUploaded(hotelDto);
 		return "redirect:/xdm/v1/infra/hotel/hotelXdmList";
 	}
 	

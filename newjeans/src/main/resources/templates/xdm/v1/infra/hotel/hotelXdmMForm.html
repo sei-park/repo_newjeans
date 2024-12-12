@@ -1019,9 +1019,9 @@
                                 </div><!-- end card header -->
 
                                 <div class="card-body">
-                                    <form method="post" action="/xdm/v1/infra/hotel/hotelXdmUpdt" name="form">
+                                    <form method="post" action="/xdm/v1/infra/hotel/hotelXdmUpdt" name="form" enctype="multipart/form-data">
                                         <div class="row"> <!--col-md-8-->
-                                            <div class="row">
+                                            <div class="row"> 
                                                 <div class="col-md-3">
                                                     <label for="choices-single-groups"
                                                         class="form-label font-size-13 text-muted">호텔번호</label>
@@ -1103,11 +1103,19 @@
 											    </div>
                                             </div> <!-- row gy-3 -->
                                             
-                                            <div class="row gy-3">
+<!--                                             <div class="row gy-3"> -->
+<!--                                             	 <div class="col-md-6"> -->
+<!--                                             	 	<label for="uploadFiles" class="form-label fs--1">파일첨부</label> -->
+<!-- 													<img src="https://newjeans.s3.ap-northeast-2.amazonaws.com/hoteldto/0/2024/11/06/d9c7a735-7e2f-4077-a50d-a7f64f3ba080.jpg" -->
+<!-- 													 style="width:580px"; height="300px"> -->
+<!--                                                 </div> -->
+<!--                                             </div> -->
+                                            
+                                             <div class="row gy-3">
                                             	 <div class="col-md-6">
                                             	 	<label for="uploadFiles" class="form-label fs--1">파일첨부</label>
-													<img src="https://newjeans.s3.ap-northeast-2.amazonaws.com/hoteldto/0/2024/11/06/d9c7a735-7e2f-4077-a50d-a7f64f3ba080.jpg"
-													 style="width:580px"; height="300px">
+													<input type="file" id="uploadFiles" name="uploadFiles" multiple class="form-control">
+													<div class="invalid-feedback" id="uploadFilesFeedback"></div>
                                                 </div>
                                             </div>
                                             

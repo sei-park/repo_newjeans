@@ -90,7 +90,7 @@ public class HotelDto {
 	private String htuext;
 	private long htusize;
 	private Integer htudelNy;
-	private Integer htupseq;
+	private String htupseq;
 	private String hturegIp;
 	private Integer hturegSeq;
 	private Integer hturegDeviceCd;
@@ -113,6 +113,12 @@ public class HotelDto {
 	private String htmUserName;
 	private String htmPhoneNumber;
 	
+	// 이미지 이름
+	private String mainImg;
+	private String subImg1;
+	private String subImg2;
+	private String subImg3;
+	private String subImg4;
 	
 	
 	//--
@@ -512,10 +518,10 @@ public class HotelDto {
 	public void setHtudelNy(Integer htudelNy) {
 		this.htudelNy = htudelNy;
 	}
-	public Integer getHtupseq() {
+	public String getHtupseq() {
 		return htupseq;
 	}
-	public void setHtupseq(Integer htupseq) {
+	public void setHtupseq(String htupseq) {
 		this.htupseq = htupseq;
 	}
 	public String getHturegIp() {
@@ -602,13 +608,40 @@ public class HotelDto {
 	public void setHtmPhoneNumber(String htmPhoneNumber) {
 		this.htmPhoneNumber = htmPhoneNumber;
 	}
-	public String getHtmEmail() {
-		return htmEmail;
+	public String getMainImg() {
+		return mainImg;
 	}
-	public void setHtmEmail(String htmEmail) {
-		this.htmEmail = htmEmail;
+	public void setMainImg(String mainImg) {
+		this.mainImg = mainImg;
 	}
-	private String htmEmail;
+	public String getSubImg1() {
+		return subImg1;
+	}
+	public void setSubImg1(String subImg1) {
+		this.subImg1 = subImg1;
+	}
+	public String getSubImg2() {
+		return subImg2;
+	}
+	public void setSubImg2(String subImg2) {
+		this.subImg2 = subImg2;
+	}
+	public String getSubImg3() {
+		return subImg3;
+	}
+	public void setSubImg3(String subImg3) {
+		this.subImg3 = subImg3;
+	}
+	public String getSubImg4() {
+		return subImg4;
+	}
+	public void setSubImg4(String subImg4) {
+		this.subImg4 = subImg4;
+	}
+	
+	
+	
+	
 	
 	
 	
