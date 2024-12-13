@@ -5,7 +5,6 @@ import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.web.multipart.MultipartFile;
 
 import com.ador.common.util.UtilDateTime;
 import com.amazonaws.services.s3.AmazonS3Client;
@@ -28,7 +27,7 @@ public class HotelService {
 	// insert 
 	public int hotelInsert(HotelDto hotelDto, int type) throws Exception {
 		
-		for(int i=0; i < hotelDto.getUploadFiles().length -1; i++) { 
+		for(int i=0; i < hotelDto.getUploadFiles().length; i++) { 
 			
 			if(!hotelDto.getUploadFiles()[i].isEmpty()) {
 				
@@ -71,6 +70,7 @@ public class HotelService {
 		}
 		
 		return hotelDao.hotelInsert(hotelDto);
+		  
 	}
 	
 	// selectOne
@@ -86,7 +86,7 @@ public class HotelService {
 	// update   
 	public int hotelUpdate(HotelDto hotelDto, int type) throws Exception {
 		
-	for(int i=0; i < hotelDto.getUploadFiles().length - 1; i++) { 
+	for(int i=0; i < hotelDto.getUploadFiles().length; i++) { 
 			
 			if(!hotelDto.getUploadFiles()[i].isEmpty()) {
 				

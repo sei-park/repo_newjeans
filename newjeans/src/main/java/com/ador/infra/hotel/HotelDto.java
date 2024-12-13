@@ -113,12 +113,18 @@ public class HotelDto {
 	private String htmUserName;
 	private String htmPhoneNumber;
 	
-	// 이미지 이름
+	// 호텔 이미지 
 	private String mainImg;
-	private String subImg1;
-	private String subImg2;
-	private String subImg3;
-	private String subImg4;
+	private String subImg01;
+	private String subImg02;
+  	private String subImg03;
+	private String subImg04;
+	
+	// 호텔 룸 이미지
+	private String roomImg01;
+	private String roomImg02;
+	private String roomImg03;
+    
 	
 	
 	//--
@@ -614,30 +620,54 @@ public class HotelDto {
 	public void setMainImg(String mainImg) {
 		this.mainImg = mainImg;
 	}
-	public String getSubImg1() {
-		return subImg1;
+	public String getSubImg01() {
+		return subImg01;
 	}
-	public void setSubImg1(String subImg1) {
-		this.subImg1 = subImg1;
+	public void setSubImg01(String subImg01) {
+		this.subImg01 = subImg01;
 	}
-	public String getSubImg2() {
-		return subImg2;
+	public String getSubImg02() {
+		return subImg02;
 	}
-	public void setSubImg2(String subImg2) {
-		this.subImg2 = subImg2;
+	public void setSubImg02(String subImg02) {
+		this.subImg02 = subImg02;
 	}
-	public String getSubImg3() {
-		return subImg3;
+	public String getSubImg03() {
+		return subImg03;
 	}
-	public void setSubImg3(String subImg3) {
-		this.subImg3 = subImg3;
+	public void setSubImg03(String subImg03) {
+		this.subImg03 = subImg03;
 	}
-	public String getSubImg4() {
-		return subImg4;
+	public String getSubImg04() {
+		return subImg04;
 	}
-	public void setSubImg4(String subImg4) {
-		this.subImg4 = subImg4;
+	public void setSubImg04(String subImg04) {
+		this.subImg04 = subImg04;
 	}
+	public String getRoomImg01() {
+		return roomImg01;
+	}
+	public void setRoomImg01(String roomImg01) {
+		this.roomImg01 = roomImg01;
+	}
+	public String getRoomImg02() {
+		return roomImg02;
+	}
+	public void setRoomImg02(String roomImg02) {
+		this.roomImg02 = roomImg02;
+	}
+	public String getRoomImg03() {
+		return roomImg03;
+	}
+	public void setRoomImg03(String roomImg03) {
+		this.roomImg03 = roomImg03;
+	}
+	
+	
+	
+	
+	
+	
 	
 	
 	

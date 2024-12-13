@@ -174,14 +174,10 @@
 			b.hotel_seq,
 			avg_table.average_star,
 <!-- 			FLOOR(avg_table.average_star) AS average_star,  -->
-    		avg_table.review_count
+    		avg_table.review_count  
     		
     		,(select aa.htupath from hoteluploaded aa where 1=1 and aa.htupseq = a.htseq and aa.htuOrder = 1) as mainImg
-			, (select aa.htupath from hoteluploaded aa where 1=1 and aa.htupseq = a.htseq and aa.htuOrder = 2) as subImg1
-			, (select aa.htupath from hoteluploaded aa where 1=1 and aa.htupseq = a.htseq and aa.htuOrder = 3) as subImg2
-			, (select aa.htupath from hoteluploaded aa where 1=1 and aa.htupseq = a.htseq and aa.htuOrder = 4) as subImg3
-			, (select aa.htupath from hoteluploaded aa where 1=1 and aa.htupseq = a.htseq and aa.htuOrder = 5) as subImg4
-    		
+			, (select aa.htupath from hoteluploaded aa where 1=1 and aa.htupseq = a.htseq and aa.htuOrder = 2) as subImg01
 		<include refid="selectCommon"/>
 		order by
 			a.htseq desc
@@ -229,6 +225,11 @@
 			b.wifiNy,   
 			b.coffeeNy,
 			b.hotel_seq
+			
+			,(select aa.htupath from hoteluploaded aa where 1=1 and aa.hturegSeq = b.htrseq and aa.htudefaultNy = 1) as roomImg01
+			,(select aa.htupath from hoteluploaded aa where 1=1 and aa.hturegSeq = b.htrseq and aa.htudefaultNy = 2) as roomImg02
+			,(select aa.htupath from hoteluploaded aa where 1=1 and aa.hturegSeq = b.htrseq and aa.htudefaultNy = 3) as roomImg03
+			
 		from 
 			hotel a 
 		left join
@@ -383,6 +384,12 @@
 			b.hotel_seq,
 			avg_table.average_star,
     		avg_table.review_count
+    		
+    		,(select aa.htupath from hoteluploaded aa where 1=1 and aa.htupseq = a.htseq and aa.htuOrder = 1) as mainImg
+			, (select aa.htupath from hoteluploaded aa where 1=1 and aa.htupseq = a.htseq and aa.htuOrder = 2) as subImg01
+
+
+    		
 		FROM 
 			hotel as a
 		LEFT JOIN  

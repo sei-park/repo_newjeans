@@ -126,6 +126,44 @@
 			and htrseq = #{htrseq}
 	</update>
 	
+	<!-- S3 파일 업로드 -->
+	<insert id="insertUploaded">
+		insert into hoteluploaded (
+			htutype,
+			htudefaultNy,
+			htusort,
+			htupath,
+			htuoriginalName,
+			htuuuidName,
+			htuext,
+			htusize,
+			htudelNy,
+			htupseq,
+	 		hturegIp,
+		 	hturegSeq,
+		 	hturegDeviceCd,
+			hturegDateTime,
+		 	hturegDateTimeSvr
+		) values (
+			#{htutype},
+			#{htudefaultNy},
+			#{htusort},
+			#{htupath},
+			#{htuoriginalName},
+			#{htuuuidName},
+			#{htuext},
+			#{htusize},
+			0,
+			#{htupseq},
+			#{hturegIp},
+			#{hturegSeq},
+			#{hturegDeviceCd},
+			#{hturegDateTime},
+			#{hturegDateTimeSvr} 
+		)
+	</insert>
+	
+		
 	
 
 	  

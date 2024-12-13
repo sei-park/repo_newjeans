@@ -1,6 +1,7 @@
 package com.ador.infra.usrProduct;
 
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -61,6 +62,18 @@ public class usrProductController {
 	// 호텔 상세페이지 
 	@RequestMapping(value="/v1/infra/usrmember/usrHotelDetails")
 	public String usrHotelDetails(@ModelAttribute("vo") HotelDto hotelDto, HotelReviewDto hotelReviewDto, Model model) {
+		
+//		 List<HotelDto> hotelDetailList = hotelService.hotelDetailList(hotelDto);
+//		    
+//		    // 이미지 리스트 생성
+//		    for (HotelDto detail : hotelDetailList) {
+//		        List<String> images = new ArrayList<>();
+//		        if (detail.getSubImg02() != null) images.add(detail.getSubImg02());
+//		        if (detail.getSubImg03() != null) images.add(detail.getSubImg03());
+//		        if (detail.getSubImg04() != null) images.add(detail.getSubImg04());
+//		        detail.setImages(images); // HotelDto에 추가된 images 필드
+//		        
+//		    }
 		
 		model.addAttribute("hotelRoomItem", hotelService.hotelSelectOne(hotelDto)); // selectOne
 		model.addAttribute("hotelDetailList", hotelService.hotelDetailList(hotelDto)); // 호텔 상세 list

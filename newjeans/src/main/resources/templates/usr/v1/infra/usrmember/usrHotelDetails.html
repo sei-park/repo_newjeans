@@ -251,78 +251,44 @@
                                     </div>
                             </div>
                         </div>
-                        <!-- <div class="tour_details_top_bottom">
-                            <div class="toru_details_top_bottom_item">
-                                <div class="tour_details_top_bottom_icon">
-                                    <img src="/usr/v1/usertemplate/ui/assets/img/icon/ac.png" alt="icon">
-                                </div>
-                                <div class="tour_details_top_bottom_text">
-                                    <p>Air condition</p>
-                                </div>
-                            </div>
-                            <div class="toru_details_top_bottom_item">
-                                <div class="tour_details_top_bottom_icon">
-                                    <img src="/usr/v1/usertemplate/ui/assets/img/icon/tv.png" alt="icon">
-                                </div>
-                                <div class="tour_details_top_bottom_text">
-                                    <p>Flat television</p>
-                                </div>
-                            </div>
-                            <div class="toru_details_top_bottom_item">
-                                <div class="tour_details_top_bottom_icon">
-                                    <img src="/usr/v1/usertemplate/ui/assets/img/icon/gym.png" alt="icon">
-                                </div>
-                                <div class="tour_details_top_bottom_text">
-                                    <p>Fitness center</p>
-                                </div>
-                            </div>
-                            <div class="toru_details_top_bottom_item">
-                                <div class="tour_details_top_bottom_icon">
-                                    <img src="/usr/v1/usertemplate/ui/assets/img/icon/wifi.png" alt="icon">
-                                </div>
-                                <div class="tour_details_top_bottom_text">
-                                    <p>Free Wi-fi</p>
-                                </div>
-                            </div>
-                        </div> -->
                         <div class="tour_details_img_wrapper">
-                            <div class="slider slider-for"> 
+                            <div class="slider slider-for">   
                                 <div>
-                                    <img src="/usr/v1/usertemplate/ui/assets/image/hotel_details_main.jpg" alt="img">
+                                    <img th:src="${hotelRoomItem?.subImg01}" alt="img"> 
                                 </div>
-                                <div>
-                                    <img src="/usr/v1/usertemplate/ui/assets/image/hotel_details01.jpg" alt="img">
-                                </div>
-                                <div>
-                                    <img src="/usr/v1/usertemplate/ui/assets/image/hotel_details02.jpg" alt="img">
-                                </div>
-                                <div>
-                                    <img src="/usr/v1/usertemplate/ui/assets/image/hotel_details03.jpg" alt="img">
-                                </div>
-                                <div>
-                                    <img src="/usr/v1/usertemplate/ui/assets/image/hotel_details04.jpg" alt="img">
-                                </div>
+<!--                                 <div> -->
+<!--                                     <img src="/usr/v1/usertemplate/ui/assets/image/hotel_details01.jpg" alt="img"> -->
+<!--                                 </div> -->
+<!--                                 <div> -->
+<!--                                     <img src="/usr/v1/usertemplate/ui/assets/image/hotel_details02.jpg" alt="img"> -->
+<!--                                 </div> -->
+<!--                                 <div> -->
+<!--                                     <img src="/usr/v1/usertemplate/ui/assets/image/hotel_details03.jpg" alt="img"> -->
+<!--                                 </div> -->
+<!--                                 <div> -->
+<!--                                     <img src="/usr/v1/usertemplate/ui/assets/image/hotel_details04.jpg" alt="img"> -->
+<!--                                 </div> -->
                             </div>
-                            <div class="slider slider-nav">
-                                <div>
-                                    <img src="/usr/v1/usertemplate/ui/assets/image/hotel_details01.jpg" alt="img">
-                                </div>
-                                <div>
-                                    <img src="/usr/v1/usertemplate/ui/assets/image/hotel_details02.jpg" alt="img">
-                                </div>
-                                <div>
-                                    <img src="/usr/v1/usertemplate/ui/assets/image/hotel_details03.jpg" alt="img">
-                                </div>
-                                <div>
-                                    <img src="/usr/v1/usertemplate/ui/assets/image/hotel_details04.jpg" alt="img">
-                                </div>
-                                <div>
-                                    <img src="/usr/v1/usertemplate/ui/assets/image/hotel_details05.jpg" alt="img">
-                                </div>
-                                <div>
-                                    <img src="/usr/v1/usertemplate/ui/assets/image/hotel_details06.jpg" alt="img">
-                                </div>
-                            </div>
+<!--                             <div class="slider slider-nav"> -->
+<!--                                 <div> -->
+<!--                                     <img src="/usr/v1/usertemplate/ui/assets/image/hotel_details01.jpg" alt="img"> -->
+<!--                                 </div> -->
+<!--                                 <div> -->
+<!--                                     <img src="/usr/v1/usertemplate/ui/assets/image/hotel_details02.jpg" alt="img"> -->
+<!--                                 </div> -->
+<!--                                 <div> -->
+<!--                                     <img src="/usr/v1/usertemplate/ui/assets/image/hotel_details03.jpg" alt="img"> -->
+<!--                                 </div> -->
+<!--                                 <div> -->
+<!--                                     <img src="/usr/v1/usertemplate/ui/assets/image/hotel_details04.jpg" alt="img"> -->
+<!--                                 </div> -->
+<!--                                 <div> -->
+<!--                                     <img src="/usr/v1/usertemplate/ui/assets/image/hotel_details05.jpg" alt="img"> -->
+<!--                                 </div> -->
+<!--                                 <div> -->
+<!--                                     <img src="/usr/v1/usertemplate/ui/assets/image/hotel_details06.jpg" alt="img"> -->
+<!--                                 </div> -->
+<!--                             </div> -->
                         </div>
                         <div class="tour_details_boxed">         
                             <h3 class="heading_theme">공지사항</h3>                        
@@ -339,8 +305,8 @@
                                         
                                             <div class="room_book_item" th:each="list : ${hotelDetailList}">
                                                 <div class="room_book_img">
-                                                    <img src="/usr/v1/usertemplate/ui/assets/image/hotel_details03.jpg" alt="img" width="240" height="150">
-                                                </div>
+                                                    <img th:src="${list.roomImg01}" alt="img" width="240" height="150">
+                                                </div> 
                                                 <div class="room_booking_right_side">  
                                                     <div class="room_booking_heading">
                                                         <h3 th:text="${list.htrRoomName}">객실</h3>
@@ -711,7 +677,7 @@
 
 <!-- 		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyADWyNQedLuX-WxYL6uNdz92ohBpbC-YUA&callback=initMap&libraries=places&v=weekly&libraries=marker" async></script> -->
 		
-<!-- 		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyADWyNQedLuX-WxYL6uNdz92ohBpbC-YUA&libraries=places&v=weekly&libraries=marker&callback=initMap" defer></script> -->
+		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyADWyNQedLuX-WxYL6uNdz92ohBpbC-YUA&libraries=places&v=weekly&libraries=marker&callback=initMap" defer></script>
 		
 
   

@@ -6,13 +6,16 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.ador.infra.hotel.HotelDto;
+import com.ador.infra.hotel.HotelService;
 
 @Controller
 public class HotelRoomController {
 	
 	@Autowired
 	HotelRoomService hotelRoomService;
+	
+	@Autowired
+	HotelService hotelService;
 	
 	// selectList
 	@RequestMapping(value="/xdm/v1/infra/hotelRoom/hotelRoomList")
@@ -51,9 +54,10 @@ public class HotelRoomController {
 	
 	// update
 	@RequestMapping(value="/xdm/v1/infra/hotelRoom/hotelRoomUpdt") 
-	public String hotelRoomUpdt(HotelRoomDto hotelRoomDto) {
+	public String hotelRoomUpdt(HotelRoomDto hotelRoomDto) throws Exception {
 		
-		hotelRoomService.selectRoomUpdate(hotelRoomDto);
+		hotelRoomService.selectRoomUpdate(hotelRoomDto, 0);
+		hotelRoomService.insertUploaded(hotelRoomDto);
 		return "redirect:/xdm/v1/infra/hotelRoom/hotelRoomList";
 	}
 	

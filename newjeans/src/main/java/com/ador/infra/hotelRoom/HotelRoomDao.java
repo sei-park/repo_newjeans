@@ -4,6 +4,8 @@ import java.util.List;
 
 import org.springframework.stereotype.Repository;
 
+import com.ador.infra.hotel.HotelDto;
+
 @Repository
 public interface HotelRoomDao {
 	
@@ -21,5 +23,8 @@ public interface HotelRoomDao {
 	
 	// paging
 	public int selectOneCount(HotelRoomVo hotelRoomVo);
+	
+	// S3 파일첨부
+	public int insertUploaded(HotelRoomDto hotelRoomDto);
 
 }
