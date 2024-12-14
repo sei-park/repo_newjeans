@@ -215,6 +215,11 @@ public class HotelService {
  		return hotelDao.bookingHistoryDetailsSelectList(hotelDto);
  	}
  	
+ 	// best 호텔 리스트
+ 	public List<HotelDto> bestHotelList(HotelDto hotelDto) {
+ 		return hotelDao.bestHotelList(hotelDto);
+ 	}
+ 	
  	
 	
 	

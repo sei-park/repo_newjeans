@@ -36,6 +36,13 @@ public class usrProductController {
 	@Autowired
 	HotelMemberService hotelMemberService;
 	
+	// 호텔 메인 페이지
+	@RequestMapping(value="/v1/infra/usrmember/usrIndex")
+	public String usrIndex(HotelDto hotelDto, Model model) {
+		
+		model.addAttribute("bestHotelList", hotelService.bestHotelList(hotelDto));
+		return "usr/v1/infra/usrmember/usrIndex";
+	}
 	            
 	// 호텔 리스트
 	@RequestMapping(value="/v1/infra/usrmember/usrHotelList")  

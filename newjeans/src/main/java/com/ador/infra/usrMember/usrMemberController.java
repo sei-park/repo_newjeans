@@ -34,10 +34,10 @@ public class usrMemberController {
 	/////////////////////////////////////////////////////////////////////////////////
 	
 	// index(사용자 메인페이지)  
-	@RequestMapping(value="/v1/infra/usrmember/usrIndex")
-	public String usrIndex() {
-		return "usr/v1/infra/usrmember/usrIndex";
-	}
+//	@RequestMapping(value="/v1/infra/usrmember/usrIndex")
+//	public String usrIndex() {
+//		return "usr/v1/infra/usrmember/usrIndex";
+//	}
 	
     // signup(회원가입)
 	@RequestMapping(value="/v1/infra/usrmember/usrSignup")

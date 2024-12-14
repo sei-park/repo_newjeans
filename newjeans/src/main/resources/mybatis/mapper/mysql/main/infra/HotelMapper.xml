@@ -686,26 +686,6 @@
     </select>
     
     <!-- 예약 내역 상세페이지 -->
-<!--     <select id="bookingHistoryDetailsSelectOne" resultMap="resultMapObj"> -->
-<!-- 	    select  -->
-<!-- 			e.htseq, -->
-<!-- 		    e.htName, -->
-<!-- 			b.htrseq, -->
-<!-- 		    b.htrRoomName, -->
-<!-- 		    b.htrRoomPrice -->
-<!-- 		from hotelbookingmenu as a  -->
-<!-- 			left join hotelroom as b -->
-<!-- 				on a.hotelRoom_htrseq = b.htrseq -->
-<!-- 			left join hotelbooking as c -->
-<!-- 				on a.hotelbooking_htbseq = c.htbseq -->
-<!-- 			left join hotelmember as d -->
-<!-- 				on c.hotelMember_htmSeq = d.htmSeq -->
-<!-- 			left join hotel as e  -->
-<!-- 				on b.hotel_seq = e.htseq  -->
-<!-- 		where 1=1  -->
-<!-- 			and c.htbseq = #{htbseq} -->
-<!--     </select> -->
-    
     <select id="bookingHistoryDetailsSelectList" resultMap="resultMapObj"> 
     	 select 
 			e.htseq,
@@ -724,7 +704,45 @@
 				on b.hotel_seq = e.htseq 
 		where 1=1 
 			and c.htbseq = #{htbseq}
+    </select>
+    
+    <!-- 인기 호텔(예약 많이 된 순서대로) -->
+    <select id="bestHotelList" resultMap="resultMapObj">
+    	select
+		    e.htseq,
+		    e.htName,
+		    e.htcountry,
+		    COUNT(c.htbseq) AS reservation_count,
+		    average_star,  
+    	    review_count
+    	    
+    	    ,(select aa.htupath from hoteluploaded aa where 1=1 and aa.htupseq = e.htseq and aa.htuOrder = 1) as mainImg
+			, (select aa.htupath from hoteluploaded aa where 1=1 and aa.htupseq = e.htseq and aa.htuOrder = 2) as subImg01
+    	    
+    	from hotelbookingmenu AS a
+    		left join hotelroom AS b
+				on a.hotelRoom_htrseq = b.htrseq
+			left join hotelbooking AS c
+				on a.hotelbooking_htbseq = c.htbseq
+			left join hotelmember AS d
+				on c.hotelMember_htmSeq = d.htmSeq
+			left join hotel AS e
+				on b.hotel_seq = e.htseq
+			LEFT JOIN 
+			(SELECT 
+				hotel_seq,
+				AVG(htrestars) AS average_star,
+       			COUNT(*) AS review_count
+	 	     FROM
+				hotelreview
+    			GROUP BY hotel_seq
+    		) AS avg_table 
+				ON e.htseq = avg_table.hotel_seq
+		GROUP BY e.htseq, e.htName
+		ORDER BY reservation_count DESC
+		limit 4
     </select> 
+    
 
  
 

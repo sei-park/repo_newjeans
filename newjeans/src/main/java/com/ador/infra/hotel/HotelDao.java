@@ -67,6 +67,9 @@ public interface HotelDao {
 	// 예약 내역 상세페이지 selectList
 	public List<HotelDto> bookingHistoryDetailsSelectList(HotelDto hotelDto);
 	
+	// best 호텔 리스트
+	public List<HotelDto> bestHotelList(HotelDto hotelDto);
+	
 
 
 }

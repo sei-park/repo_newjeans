@@ -112,10 +112,13 @@ public class HotelDto {
 	private String htmSeq;
 	private String htmUserName;
 	private String htmPhoneNumber;
+	private String htmEmail;
 	
 	// 호텔 이미지 
 	private String mainImg;
 	private String subImg01;
+	
+	// 안 씀
 	private String subImg02;
   	private String subImg03;
 	private String subImg04;
@@ -661,6 +664,12 @@ public class HotelDto {
 	}
 	public void setRoomImg03(String roomImg03) {
 		this.roomImg03 = roomImg03;
+	}
+	public String getHtmEmail() {
+		return htmEmail;
+	}
+	public void setHtmEmail(String htmEmail) {
+		this.htmEmail = htmEmail;
 	}
 	
 	
