@@ -543,7 +543,7 @@
                                 </div>
                             </div>
 
-                            <form action="!#" id="news_comment_form">
+<!--                             <form action="!#" id="news_comment_form"> -->
                                 <div class="row">
                                     <div class="col-lg-6">
                                         <div class="form-froup">
@@ -553,7 +553,7 @@
                                     </div>
                                     <div class="col-lg-6">
                                         <div class="form-froup">
-                                            <input type="text" class="form-control bg_input" placeholder="이메일 주소" name="htmEmail" id="htmEmail"
+                                            <input type="text" class="form-control bg_input" placeholder="작성일" name="htmEmail" id="htmEmail"
                                             th:value="${session.sessEmailUsr}">
                                         </div>
                                     </div>
@@ -568,7 +568,7 @@
                                         </div>
                                     </div> 
                                 </div> <!--row--> 
-                            </form>
+<!--                             </form> -->
                         </div>
                  </div>
                </div>
@@ -581,14 +581,7 @@
                     </div>
                 </div>
                 	
-<!--                 <div class="col-lg-12" th:if="${#lists.isEmpty(hotelReviewList)}">	   -->
-<!--                 	<div> -->
-<!--                         <h5>등록된 후기가 없습니다</h5> -->
-<!--                     </div>								 -->
-<!-- 				</div>  -->
-
-				<div id="reviewListContainer" class="row">  
-<!-- 				default S -->
+				<div class="row" id="reviewListContainer">    
 	                <div class="col-lg-4 col-md-6" th:each="list : ${hotelReviewList}">  
 	                    <div class="all_review_box">
 	                        <div class="all_review_date_area">
@@ -596,7 +589,7 @@
 	                                <h5 th:text="${#dates.format(list.htreRegDate,'yyyy-MM-dd')}">날짜</h5>
 	                            </div>
 	                            <div class="all_review_star row">
-		                            <div class="review_star_all" >
+		                            <div class="review_star_all">
 	<!-- 	                                 <i class="fas fa-star" th:each="i : ${#numbers.sequence(1, list.htrestars)}">&nbsp;</i>    -->
 										<i class="fas fa-star" th:each="i : ${#numbers.sequence(1, list.htrestars ?: 0)}">&nbsp;</i>
 		                            </div>
@@ -609,8 +602,6 @@
 	                        </div>
 	                    </div>
 	                </div>
- <!-- 				default E -->
- 
                 </div>	
                 
             </div>
@@ -971,6 +962,20 @@
 			const htseq = document.querySelector('input[name="htseq"]').value;
 			
 			let selectedStar = $("input[name='htrestars']:checked").val(); // 선택된 체크박스 값 가져오기
+			
+			if(selectedStar == null) {
+				alert("별점을 체크해주세요");
+				return false; 
+			} else {
+				// by pass
+			}
+			
+			if($("#htrecomments").val() == null || $("#htrecomments").val() == "") {
+				alert("내용을 입력해주세요");
+				return false;
+			} else {
+				// by pass
+			}
 
 	        $.ajax({ // AJAX 요청을 시작하는 jQuery 매서드
 				async: true // 요청을 비동기로 처리 
@@ -982,8 +987,7 @@
 				,data : { 
 					"htrestars" : selectedStar,
 					"htrecomments" : $("#htrecomments").val(), 
-					"htreRegDate" : $("#htreRegDate").val(),
-// 					"htmId" : $("#htmId").val(),
+					"htrId" : $("#htrId").val(),
 					"htseq" : htseq
  				} 
 				,success: function(response) { // 요청이 성공적으로 완료되면 실행될 함수 
@@ -994,27 +998,22 @@
 					newReview += '<div class="all_review_box">';
 				    newReview += '	<div class="all_review_date_area">';
 				    newReview += '		<div class="all_review_date">';    
-				    newReview += '			<h5>' + (response.date != null ? formatDate(response.date) : '등록일 없음') + '</h5>';                        
+				    newReview += '			<h5>' + (response.htreRegDate != null ? formatDate(response.htreRegDate) : '등록일 없음') + '</h5>';                        
 				    newReview += '		</div>';                 
 				    newReview += '		<div class="all_review_star row">';    
 				    newReview += '			<div class="review_star_all">';                          
-				    newReview += '				<i class="fas fa-star">' + (response.stars == null || response.stars == 0 ? '별점 없음' : '') + '</i>';                         
+				    newReview += '				<i class="fas fa-star">' + (response.htrestars == null || response.htrestars == 0 ? '별점 없음' : '') + '</i>';                         
 				    newReview += '			</div>';                        
 				    newReview += '		</div>';                    
 				    newReview += '	</div>' ;         
 				    newReview += '	<div class="all_review_text">';             
 				    newReview += '		<img src="/usr/v1/usertemplate/ui/assets/image/user_img.png" alt="img">';        
-				    newReview += '		<h4>' + (returnMap.returnMap) + '</h4>';           
-				    newReview += '		<p>' + (response.comment) + '</p>';   
+				    newReview += '		<h4>' + (response.htrId) + '</h4>';           
+				    newReview += '		<p>' + (response.htrecomments) + '</p>';   
 				    newReview += '	</div>';       
 				    newReview += '</div>'; 
 				    
 				    $("#reviewListContainer").append(newReview);
-				    
-				    
-				    //alert(newReview);
-				    
-				    //console.log(newReview.length);
 				    
 		            // 입력창초기화
 		            $("#htrecomments").val('');

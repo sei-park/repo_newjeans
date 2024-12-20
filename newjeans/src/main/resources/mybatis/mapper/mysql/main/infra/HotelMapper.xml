@@ -177,7 +177,7 @@
     		avg_table.review_count  
     		
     		,(select aa.htupath from hoteluploaded aa where 1=1 and aa.htupseq = a.htseq and aa.htuOrder = 1) as mainImg
-			, (select aa.htupath from hoteluploaded aa where 1=1 and aa.htupseq = a.htseq and aa.htuOrder = 2) as subImg01
+			,(select aa.htupath from hoteluploaded aa where 1=1 and aa.htupseq = a.htseq and aa.htuOrder = 2) as subImg01
 		<include refid="selectCommon"/>
 		order by
 			a.htseq desc

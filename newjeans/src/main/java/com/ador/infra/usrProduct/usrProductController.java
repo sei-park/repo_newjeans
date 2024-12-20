@@ -46,7 +46,7 @@ public class usrProductController {
 	            
 	// 호텔 리스트
 	@RequestMapping(value="/v1/infra/usrmember/usrHotelList")  
-	public String usrHotelList(@ModelAttribute("vo") HotelVo hotelVo, Model model) {
+	public String usr(@ModelAttribute("vo") HotelVo hotelVo, Model model) {
 		
 		hotelVo.setParamsPaging(hotelService.selectOneCount(hotelVo));
 		  
@@ -92,7 +92,7 @@ public class usrProductController {
 	@ResponseBody
 	@RequestMapping(value="/v1/infra/usrmember/usrHotelDetailsInst", method = RequestMethod.POST)
 	public Map<String, Object> usrHotelDetailsInst(@RequestParam("htseq") String htseq, HotelReviewDto hotelReviewDto, HttpSession httpSession) { 
-		Map<String, Object> returnMap = new HashMap<String, Object>();
+		Map<String, Object> response = new HashMap<String, Object>();
 		
 		// 세션에서 sessSeqUsr 값 가져오기
 	    String sessSeqUsr = (String) httpSession.getAttribute("sessSeqUsr");
@@ -120,17 +120,16 @@ public class usrProductController {
 	    int result = hotelReviewService.hotelReviewInsert(hotelReviewDto);
 	    
 	    if (result > 0) {
-	    	returnMap.put("success", true); 
-	    	returnMap.put("date", hotelReviewDto.getHtreRegDate());
-	        returnMap.put("comment", hotelReviewDto.getHtrecomments());
-	        returnMap.put("stars", hotelReviewDto.getHtrestars());
-	        returnMap.put("memberId", hotelReviewDto.getHtrId());
+	    	response.put("success", true); 
+	    	response.put("htrecomments", hotelReviewDto.getHtrecomments());
+	    	response.put("htrestars", hotelReviewDto.getHtrestars());
+	    	response.put("htrId", hotelReviewDto.getHtrId());
 	        
 	        } else {
 	            System.out.println("댓글 등록 실패");
 	        }
 	    
-	    return returnMap;  
+	    return response;  
 		
 	}
 	 

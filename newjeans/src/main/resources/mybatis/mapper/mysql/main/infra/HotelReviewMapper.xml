@@ -36,12 +36,16 @@
 			htrestars,
 			htrecomments,	
 			htreRegDate,
-			htrId
+			htrId,
+			hotel_seq,
+			hotelmember_htmSeq
 		) values (
 			#{htrestars},
 			#{htrecomments},
 			now(),
-			#{htrId}
+			#{htrId},
+			#{hotel_seq},
+			#{hotelmember_htmSeq}
 		)
 	</insert>          
 	   
