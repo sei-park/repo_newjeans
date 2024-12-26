@@ -995,25 +995,50 @@
 					
 					let newReview = '';
 					
-					newReview += '<div class="all_review_box">';
-				    newReview += '	<div class="all_review_date_area">';
-				    newReview += '		<div class="all_review_date">';    
-				    newReview += '			<h5>' + (response.htreRegDate != null ? formatDate(response.htreRegDate) : '등록일 없음') + '</h5>';                        
-				    newReview += '		</div>';                 
-				    newReview += '		<div class="all_review_star row">';    
-				    newReview += '			<div class="review_star_all">';                          
-				    newReview += '				<i class="fas fa-star">' + (response.htrestars == null || response.htrestars == 0 ? '별점 없음' : '') + '</i>';                         
-				    newReview += '			</div>';                        
-				    newReview += '		</div>';                    
-				    newReview += '	</div>' ;         
-				    newReview += '	<div class="all_review_text">';             
-				    newReview += '		<img src="/usr/v1/usertemplate/ui/assets/image/user_img.png" alt="img">';        
-				    newReview += '		<h4>' + (response.htrId) + '</h4>';           
-				    newReview += '		<p>' + (response.htrecomments) + '</p>';   
-				    newReview += '	</div>';       
-				    newReview += '</div>'; 
+// 					newReview += '<div class="all_review_box">';
+// 				    newReview += '	<div class="all_review_date_area">';
+// 				    newReview += '		<div class="all_review_date">';    
+// 				    newReview += '			<h5>' + (response.htreRegDate != null ? formatDate(response.htreRegDate) : '등록일 없음') + '</h5>';                        
+// 				    newReview += '		</div>';                 
+// 				    newReview += '		<div class="all_review_star row">';    
+// 				    newReview += '			<div class="review_star_all">';                          
+// 				    newReview += '				<i class="fas fa-star">' + (response.htrestars == null || response.htrestars == 0 ? '별점 없음' : '') + '</i>';                         
+// 				    newReview += '			</div>';                        
+// 				    newReview += '		</div>';                    
+// 				    newReview += '	</div>' ;         
+// 				    newReview += '	<div class="all_review_text">';             
+// 				    newReview += '		<img src="/usr/v1/usertemplate/ui/assets/image/user_img.png" alt="img">';        
+// 				    newReview += '		<h4>' + (response.htrId) + '</h4>';           
+// 				    newReview += '		<p>' + (response.htrecomments) + '</p>';   
+// 				    newReview += '	</div>';       
+// 				    newReview += '</div>'; 
+
+				    newReview += '<div class="col-lg-4 col-md-6">';
+		            newReview += '    <div class="all_review_box">';
+		            newReview += '        <div class="all_review_date_area">';
+		            newReview += '            <div class="all_review_date">';
+		            newReview += '                <h5>' + (response.htreRegDate ? formatDate(response.htreRegDate) : '등록일 없음') + '</h5>';
+		            newReview += '            </div>';
+		            newReview += '            <div class="all_review_star row">';
+		            newReview += '                <div class="review_star_all">';
+		            for (let i = 1; i <= (response.htrestars || 0); i++) {
+		                newReview += '                    <i class="fas fa-star">&nbsp;</i>';
+		            }
+		            newReview += '                </div>';
+		            newReview += '            </div>';
+		            newReview += '        </div>';
+		            newReview += '        <div class="all_review_text">';
+		            newReview += '            <img src="/usr/v1/usertemplate/ui/assets/image/user_img.png" alt="img">';
+		            newReview += '            <h4>' + response.htrId + '</h4>';
+		            newReview += '            <p>' + response.htrecomments + '</p>';
+		            newReview += '        </div>';
+		            newReview += '    </div>';
+		            newReview += '</div>';
+
 				    
-				    $("#reviewListContainer").append(newReview);
+				   // $("#reviewListContainer").append(newReview);
+				   
+				    $("#reviewListContainer").prepend(newReview);
 				    
 		            // 입력창초기화
 		            $("#htrecomments").val('');
