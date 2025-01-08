@@ -47,7 +47,21 @@
 			#{hotel_seq},
 			#{hotelmember_htmSeq}
 		)
-	</insert>          
+	</insert>
+	
+	<!-- 최신 리뷰 조회 -->
+<!-- 	<select id="findLatestReviewByUser" resultMap="resultMapObj"> -->
+<!-- 	    SELECT * -->
+<!-- 	    FROM  -->
+<!-- 	    	hotelreview -->
+<!-- 	    WHERE  -->
+<!-- 	    	htrId = #{htrId} AND  -->
+<!-- 	    	hotel_seq = #{hotelSeq} -->
+<!-- 	    ORDER BY  -->
+<!-- 	    	htreRegDate DESC -->
+<!-- 	    LIMIT 1 -->
+<!-- 	</select> -->
+	
 	   
 	
 	

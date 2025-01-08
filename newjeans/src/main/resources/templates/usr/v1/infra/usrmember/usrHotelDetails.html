@@ -945,7 +945,7 @@
 		
 		document.addEventListener('DOMContentLoaded', () => {
 			const urlParams = new URLSearchParams(window.location.search);
-			const htseq = urlParams.get('htseq');
+			const htseq = urlParams.get('htseq'); 
 			
 			if(htseq) {
 				document.querySelector('input[name="htseq"]').value = htseq;
@@ -988,10 +988,12 @@
 					"htrestars" : selectedStar,
 					"htrecomments" : $("#htrecomments").val(), 
 					"htrId" : $("#htrId").val(),
-					"htseq" : htseq
+					"htseq" : htseq,
  				} 
 				,success: function(response) { // 요청이 성공적으로 완료되면 실행될 함수 
 					alert("댓글 입력 성공");
+				
+					console.log(response);
 					
 					let newReview = '';
 					

@@ -103,6 +103,7 @@ public class usrProductController {
 	    
 	    hotelReviewDto.setHtrId(sessIdUsr); // 리뷰 아이디
 	    hotelReviewDto.setHtmId(sessIdUsr);
+	   
 	    
 //	    String sessNameUsr = (String) httpSession.getAttribute("sessNameUsr");
 //	    String sessEmailUsr = (String) httpSession.getAttribute("sessEmailUsr");
@@ -111,11 +112,6 @@ public class usrProductController {
 	   // hotelReviewDto.setHotel_seq(htseq);
 	    
 //	    hotelReviewDto.setHotelmember_htmSeq(sessSeqUsr);
-	    
-	    
- 
-	    System.out.println(" @@@@@@@@@@@@@@@@ ID @@@@@@@@@@@@ :" + hotelReviewDto.getHtrId()); 
-	    
 		
 	    int result = hotelReviewService.hotelReviewInsert(hotelReviewDto);
 	    
@@ -124,10 +120,25 @@ public class usrProductController {
 	    	response.put("htrecomments", hotelReviewDto.getHtrecomments());
 	    	response.put("htrestars", hotelReviewDto.getHtrestars());
 	    	response.put("htrId", hotelReviewDto.getHtrId());
-	        
-	        } else {
-	            System.out.println("댓글 등록 실패");
-	        }
+	    	response.put("htreRegDate", hotelReviewDto.getHtreRegDate());
+	     } else {
+	        System.out.println("댓글 등록 실패");
+	     }
+	    
+//	    if (result > 0) {
+//	        // 삽입 성공 시 DB에서 최신 리뷰 데이터 조회
+//	        HotelReviewDto savedReview = hotelReviewService.getLatestReviewByUser(sessIdUsr, htseq);
+//
+//	        // 조회된 데이터를 응답에 포함
+//	        response.put("success", true);
+//	        response.put("htrecomments", savedReview.getHtrecomments());
+//	        response.put("htrestars", savedReview.getHtrestars());
+//	        response.put("htrId", savedReview.getHtrId());
+//	        response.put("htreRegDate", savedReview.getHtreRegDate()); // 등록일
+//	    } else {
+//	        response.put("success", false);
+//	        response.put("message", "댓글 등록 실패");
+//	    }
 	    
 	    return response;  
 		
