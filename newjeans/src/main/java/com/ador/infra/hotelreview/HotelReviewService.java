@@ -21,10 +21,8 @@ public class HotelReviewService {
 		return hotelReviewDao.hotelReviewInsert(hotelReviewDto);
 	}
 	
-	// 최신 리뷰 조회 메서드
-//	public HotelReviewDto getLatestReviewByUser(String htrId, String hotelSeq) {
-//	    return hotelReviewDao.findLatestReviewByUser(htrId, hotelSeq);
+//	public HotelReviewDto getLatestReviewByUser(String userId, String hotelSeq) {
+//	    return hotelReviewDao.getLatestReviewByUser(userId, hotelSeq);
 //	}
-	
           
 }

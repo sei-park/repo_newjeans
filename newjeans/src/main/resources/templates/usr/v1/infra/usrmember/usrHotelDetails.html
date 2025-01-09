@@ -548,18 +548,19 @@
                                     <div class="col-lg-6">
                                         <div class="form-froup">
                                             <input type="text" class="form-control bg_input" placeholder="아이디" name="htmId" id="htmId" 
-                                            th:value="${session.sessIdUsr}">
+                                            th:value="${session.sessIdUsr}" autocomplete="off">
                                         </div>
                                     </div>
                                     <div class="col-lg-6">
                                         <div class="form-froup">
-                                            <input type="text" class="form-control bg_input" placeholder="작성일" name="htmEmail" id="htmEmail"
-                                            th:value="${session.sessEmailUsr}">
+                                            <input type="text" class="form-control bg_input" placeholder="이메일" name="htmEmail" id="htmEmail"
+                                            th:value="${session.sessEmailUsr}" autocomplete="off">
                                         </div>
                                     </div>
                                     <div class="col-lg-12 gy-3">
                                         <div class="form-froup">
-                                            <textarea rows="6" placeholder="내용 작성하기" class="form-control bg_input" name="htrecomments" id="htrecomments"></textarea>
+                                            <textarea rows="6" placeholder="내용 작성하기" class="form-control bg_input" name="htrecomments" id="htrecomments"
+                                            autocomplete="off"></textarea>
                                         </div>
                                         <div class="comment_form_submit" style="margin-top:25px;"> 
                                         	<div id="hiddenData" data-ht-seq="${htseq}"></div>
@@ -907,7 +908,6 @@
 		});
 	
 		
-		
 	
 		// 예약하기 버튼 - insert
 		document.getElementById('bookingBtn').onclick = function(){
@@ -954,7 +954,7 @@
 			console.log("htseq : " + htseq);
 			
 		})
-	
+		
 		
 		// 리뷰 insert, 리스트 뿌리기
 		document.getElementById('contentSaveBtn').onclick = function() {
@@ -963,6 +963,10 @@
 			
 			let selectedStar = $("input[name='htrestars']:checked").val(); // 선택된 체크박스 값 가져오기
 			
+			// 로그인 세션이 없을 경우 
+			
+			
+			// 별점이 체크되지 않았을 경우
 			if(selectedStar == null) {
 				alert("별점을 체크해주세요");    
 				return false; 
@@ -970,6 +974,7 @@
 				// by pass
 			}
 			
+			// 내용이 입력되지 않았을 경우 
 			if($("#htrecomments").val() == null || $("#htrecomments").val() == "") {
 				alert("내용을 입력해주세요");
 				return false;
@@ -993,7 +998,16 @@
 				,success: function(response) { // 요청이 성공적으로 완료되면 실행될 함수 
 					alert("댓글 입력 성공");
 				
-					console.log(response);
+   					console.log(response);
+   					
+   					function getToday(){
+   					    var date = new Date();
+   					    var year = date.getFullYear();
+   					    var month = ("0" + (1 + date.getMonth())).slice(-2);
+   					    var day = ("0" + date.getDate()).slice(-2);
+
+   					    return year + "-" + month + "-" + day;
+   					}
 					
 					let newReview = '';
 					
@@ -1019,7 +1033,8 @@
 		            newReview += '    <div class="all_review_box">';
 		            newReview += '        <div class="all_review_date_area">';
 		            newReview += '            <div class="all_review_date">';
-		            newReview += '                <h5>' + (response.htreRegDate ? formatDate(response.htreRegDate) : '등록일 없음') + '</h5>';
+// 		            newReview += '                <h5>' + (response.htreRegDate ? formatDate(response.htreRegDate) : '등록일 없음') + '</h5>';
+		            newReview += '                <h5>' + getToday() + '</h5>';
 		            newReview += '            </div>';
 		            newReview += '            <div class="all_review_star row">';
 		            newReview += '                <div class="review_star_all">';
@@ -1036,8 +1051,7 @@
 		            newReview += '        </div>';
 		            newReview += '    </div>';
 		            newReview += '</div>';
-
-				    
+		            
 				   // $("#reviewListContainer").append(newReview);
 				   
 				    $("#reviewListContainer").prepend(newReview);
@@ -1055,10 +1069,7 @@
 		} // contentSaveBtn end
 		
 		
-		
 	
-
-		
 		
 			
 	

@@ -13,6 +13,5 @@ public interface HotelReviewDao {
 	// insert
 	public int hotelReviewInsert(HotelReviewDto hotelReviewDto);
 	
-	// 최신 리뷰 조회 메서드
-//	public HotelReviewDto findLatestReviewByUser(String htrId, String hotelSeq);
+//	public HotelReviewDto getLatestReviewByUser(String userId, String hotelSeq);
 }

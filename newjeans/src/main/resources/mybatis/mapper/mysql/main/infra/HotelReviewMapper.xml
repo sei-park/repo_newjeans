@@ -49,9 +49,15 @@
 		)
 	</insert>
 	
-	<!-- 최신 리뷰 조회 -->
-<!-- 	<select id="findLatestReviewByUser" resultMap="resultMapObj"> -->
-<!-- 	    SELECT * -->
+<!-- 	<select id="getLatestReviewByUser" parameterType="map" resultMap="resultMapObj"> -->
+<!-- 	    SELECT  -->
+<!-- 	    	htreseq, -->
+<!-- 	    	htrestars, -->
+<!-- 	    	htrecomments, -->
+<!-- 	    	htreRegDate, -->
+<!-- 	    	htrId, -->
+<!-- 	    	hotel_seq, -->
+<!-- 	    	hotelmember_htmSeq -->
 <!-- 	    FROM  -->
 <!-- 	    	hotelreview -->
 <!-- 	    WHERE  -->
