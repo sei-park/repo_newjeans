@@ -21,7 +21,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 public class CodeGroupController {
 	
 	@Autowired
-	CodeGroupService codeGroupService;
+	CodeGroupService codeGroupService;  
 	
 	//////////select ////////// 
 	@RequestMapping(value="/xdm/v1/infra/codegroup/codeGroupXdmList")
