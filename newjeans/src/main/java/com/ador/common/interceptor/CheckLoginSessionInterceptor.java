@@ -42,7 +42,7 @@ public class CheckLoginSessionInterceptor implements HandlerInterceptor {
 			response.sendRedirect("/v1/infra/usrmember/usrSignin"); // usr 경로의 로그인 페이지로 이동
 		} else if (requestURI.startsWith("/xdm")){ 
 			response.sendRedirect(Constants.URL_LOGINFORM); // xdm 경로의 로그인 페이지로 이동
-		}
+		} 
 		
 		return false; // 요청을 중단
 		
