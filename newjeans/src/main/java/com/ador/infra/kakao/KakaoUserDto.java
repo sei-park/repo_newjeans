@@ -24,13 +24,26 @@ public class KakaoUserDto {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	
 	// 생성자
     public KakaoUserDto(String id, String nickname, String email) {
         this.id = id;
         this.nickname = nickname;
         this.email = email;
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
 	
 
 }
