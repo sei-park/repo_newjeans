@@ -37,10 +37,10 @@ public class KakaoLoginService {
             // 사용자의 ID, 닉네임, 이메일을 추출. 이메일의 경우 존재 여부를 확인 후 추출
             String id = jsonObject.get("id").toString();
             String nickname = profile.getString("nickname");
-            String kakaoEmail = kakaoAccount.has("kakaoEmail") ? kakaoAccount.getString("kakaoEmail") : "";
+            String email = kakaoAccount.has("email") ? kakaoAccount.getString("email") : "";
             
             // 추출한 정보를 기반으로 KakaoUserDto 객체를 생성하여 반환
-            dto = new KakaoUserDto(id, nickname, kakaoEmail);
+            dto = new KakaoUserDto(id, nickname, email);
 
         } catch (Exception e) {
             e.printStackTrace();

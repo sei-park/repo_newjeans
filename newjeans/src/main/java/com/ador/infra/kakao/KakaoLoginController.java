@@ -88,9 +88,9 @@ public class KakaoLoginController {
             
             System.out.println("카카오 아이디: " + userDto.getId());
             System.out.println("카카오 닉네임: " + userDto.getNickname());
-            System.out.println("카카오 이메일: " + userDto.getEmail());
+            System.out.println("카카오 이메일: " + userDto.getEmail());      
             
-            // 4. 리다이렉트 처리
+            // 4. 리다이렉트 처리 
             String redirectUrl = (state != null) ? state : "/v1/infra/usrmember/usrIndex";
            
             return "redirect:" + redirectUrl;
@@ -100,8 +100,6 @@ public class KakaoLoginController {
             return "redirect:/error"; // 실패 시 에러 페이지로
         } 
 
-        //return "redirect:/usr/v1/infra/usrmember/usrIndex"; // 로그인 후 이동할 페이지
-        
     }
 
 
