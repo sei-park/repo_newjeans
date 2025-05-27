@@ -137,62 +137,10 @@
                             <h3 class="heading_theme">결제 방법</h3>
                             <div class="tour_booking_form_box">
                                 <div class="booking_payment_boxed">
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="radio" name="htbPaymentType" value="23">
-                                            <label class="form-check-label" for="flexRadioDefault1">
-                                                카카오페이
-                                            </label>
-                                        </div>
-<!--                                         <div class="payment_filed_wrapper"> -->
-<!--                                             <div class="payment_card payment_toggle red"> -->
-<!--                                                 <div class="row"> -->
-<!--                                                     <div class="col-lg-6"> -->
-<!--                                                         <div class="form-group"> -->
-<!--                                                             <input type="text" class="form-control bg_input" -->
-<!--                                                                 placeholder="Card number"> -->
-<!--                                                         </div> -->
-<!--                                                     </div> -->
-<!--                                                     <div class="col-lg-6"> -->
-<!--                                                         <div class="form-group"> -->
-<!--                                                             <input type="text" class="form-control bg_input" -->
-<!--                                                                 placeholder="Cardholder name"> -->
-<!--                                                         </div> -->
-<!--                                                     </div> -->
-<!--                                                     <div class="col-lg-6"> -->
-<!--                                                         <div class="form-group"> -->
-<!--                                                             <input type="text" class="form-control bg_input" -->
-<!--                                                                 placeholder="Date of expiry"> -->
-<!--                                                         </div> -->
-<!--                                                     </div> -->
-<!--                                                     <div class="col-lg-6"> -->
-<!--                                                         <div class="form-group"> -->
-<!--                                                             <input type="text" class="form-control bg_input" -->
-<!--                                                                 placeholder="Security code"> -->
-<!--                                                         </div> -->
-<!--                                                     </div> -->
-<!--                                                 </div> -->
-<!--                                             </div> -->
-<!--                                             <div class="paypal_payment payment_toggle green"> -->
-<!--                                                 <div class="row"> -->
-<!--                                                     <div class="col-lg-6"> -->
-<!--                                                         <div class="form-group"> -->
-<!--                                                             <input type="text" class="form-control bg_input" -->
-<!--                                                                 placeholder="Email Address"> -->
-<!--                                                         </div> -->
-<!--                                                     </div> -->
-<!--                                                 </div> -->
-<!--                                             </div> -->
-<!--                                             <div class="payoneer_payment payment_toggle black"> -->
-<!--                                                 <div class="row"> -->
-<!--                                                     <div class="col-lg-6"> -->
-<!--                                                         <div class="form-group"> -->
-<!--                                                             <input type="text" class="form-control bg_input" -->
-<!--                                                                 placeholder="Email Address"> -->
-<!--                                                         </div> -->
-<!--                                                     </div> -->
-<!--                                                 </div> -->
-<!--                                             </div> -->
-<!--                                         </div> -->
+<!--                                 	<div class="form-check"> -->   
+<!--                                 		<input class="form-check-input" type="radio" name="htbPaymentType" value="23"> -->
+<!--                                         <label class="form-check-label" for="flexRadioDefault1">카카오페이</label> -->
+<!--                                     </div> -->
                                 </div>
                             </div>
                         </div>
@@ -208,7 +156,6 @@
                             <div class="comment_form_submit" style="margin-top:25px;">
                                  <button type="button" id="paymentBtn" class="btn btn_theme btn_md">결제하기</button>
                             </div>
-<!--                             <a href="booking-confirmation.html" class="btn btn_theme btn_md">결제하기</a> -->
                         </div>
                     </div>
                 </div>
@@ -260,8 +207,16 @@
                     </div>
                 </div>
             </div>
-         </form>  
-        </div>
+         </form> 
+         
+         <form method="post" action="/kakaoPay">
+         <!-- 카카오페이 -->
+         	<button id="kakaoPayBtn" style="border:none; background:none;">
+         		<img src="/usr/v1/usertemplate/ui/assets/image/payment_icon_yellow_small.png" alt="img">
+			</button>
+     	 </form>
+         
+        </div> <!-- container end -->
     </section>
 
     <!-- Cta Area -->
@@ -333,10 +288,23 @@
     <script>
     document.getElementById('paymentBtn').onclick = function() {
     	
+    	alert("결제 완료");
+    	
     	form.action = "/v1/infra/usrmember/usrHotelBookingUpdt";
     	form.submit();
     }
     
+    
+    $("#kakaoPayBtn").click(function (){
+    	
+    	alert("카카오 페이 확인");
+     
+    })
+    
+
+    
+    
+   
     
     
     
