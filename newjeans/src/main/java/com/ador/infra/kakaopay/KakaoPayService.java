@@ -31,6 +31,7 @@ public class KakaoPayService {
         String auth = "KakaoAK " + payProperties.getSecretKey();
         headers.set("Authorization", auth);
         headers.set("Content-Type", "application/json");
+        headers.set("Accept", "application/json");
         return headers; 
     }
     
@@ -38,6 +39,11 @@ public class KakaoPayService {
      * 결제 완료 요청
      */
     public KakaoReadyResponse kakaoPayReady() {
+    	
+    	System.out.println("카카오페이 요청시작");
+    	System.out.println("Authorization: KakaoAK " + payProperties.getSecretKey());
+    	System.out.println("URL: https://kapi.kakao.com/v1/payment/ready");
+    	
         Map<String, Object> parameters = new HashMap<>();
 
         parameters.put("cid", payProperties.getCid());
