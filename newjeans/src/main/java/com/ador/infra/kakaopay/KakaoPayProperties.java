@@ -7,14 +7,32 @@ import org.springframework.stereotype.Component;
 @ConfigurationProperties(prefix = "kakaopay")
 public class KakaoPayProperties {
 	
-	private String secretKey;
+//	private String secretKey;
+//	private String cid;
+	//--
+//	public String getSecretKey() {
+//		return secretKey;
+//	}
+//	public void setSecretKey(String secretKey) {
+//		this.secretKey = secretKey;
+//	}
+//	public String getCid() {
+//		return cid;
+//	}
+//	public void setCid(String cid) {
+//		this.cid = cid;
+//	}
+	
+	
+	
+	private String adminKey; // Admin Key
 	private String cid;
 	//--
-	public String getSecretKey() {
-		return secretKey;
+	public String getAdminKey() {
+		return adminKey;
 	}
-	public void setSecretKey(String secretKey) {
-		this.secretKey = secretKey;
+	public void setAdminKey(String adminKey) {
+		this.adminKey = adminKey;
 	}
 	public String getCid() {
 		return cid;
@@ -22,6 +40,7 @@ public class KakaoPayProperties {
 	public void setCid(String cid) {
 		this.cid = cid;
 	}
+	
 	
 
 }

@@ -60,6 +60,7 @@ public class KakaoPayController {
     }
     
     
+    // http://localhost:8080/payment/ready
     
 
 }
