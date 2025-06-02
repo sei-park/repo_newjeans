@@ -126,8 +126,10 @@ public class HotelDto {
 	// 호텔 룸 이미지
 	private String roomImg01;
 	private String roomImg02;
-	private String roomImg03;
+	private String roomImg03; 
     
+	// 카카오페이
+	private String bookingStatus;
 	
 	
 	//--
@@ -671,7 +673,12 @@ public class HotelDto {
 	public void setHtmEmail(String htmEmail) {
 		this.htmEmail = htmEmail;
 	}
-	
+	public String getBookingStatus() {
+		return bookingStatus;
+	}
+	public void setBookingStatus(String bookingStatus) {
+		this.bookingStatus = bookingStatus;
+	}
 	
 	
 	

@@ -21,6 +21,7 @@ import com.ador.infra.hotelmember.HotelMemberService;
 import com.ador.infra.hotelreview.HotelReviewDto;
 import com.ador.infra.hotelreview.HotelReviewService;
 
+import ch.qos.logback.core.recovery.ResilientSyslogOutputStream;
 import jakarta.servlet.http.HttpSession;
 
 @Controller
@@ -200,8 +201,11 @@ public class usrProductController {
 		model.addAttribute("bookingItem", hotelService.paymentSelectOne(hotelDto)); // 결제 정보 출력
 		model.addAttribute("bookingMenuList", hotelService.paymentSelectList(hotelDto)); // hotelRoom 정보 출력
 		model.addAttribute("hotelItem", hotelService.paymentHotelSelectOne(hotelDto)); // hotel 정보 출력 
+		
+		System.out.println("호텔 룸 결제 페이지 확인");
+		
 		return "usr/v1/infra/usrmember/usrHotelBooking";
-	}
+	}	
 	
 	// 결제 정보 업데이트
 	@RequestMapping(value="/v1/infra/usrmember/usrHotelBookingUpdt")

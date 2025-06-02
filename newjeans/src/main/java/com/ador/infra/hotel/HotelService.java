@@ -220,6 +220,8 @@ public class HotelService {
  		return hotelDao.bestHotelList(hotelDto);
  	}
  	
+ 
+
  	
 	
 	
