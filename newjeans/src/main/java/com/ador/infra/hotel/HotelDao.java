@@ -70,6 +70,7 @@ public interface HotelDao {
 	// best 호텔 리스트
 	public List<HotelDto> bestHotelList(HotelDto hotelDto);
 	
-
+	// 카카오페이
+	public void insertBooking(HotelDto bookingItem);
 
 }

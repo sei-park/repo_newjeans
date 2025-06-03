@@ -60,7 +60,6 @@ public class KakaoPayService {
         headers.setAccept(Collections.singletonList(MediaType.APPLICATION_JSON));
     	
         MultiValueMap<String, String> parameters = new LinkedMultiValueMap<>();
-        
         parameters.add("cid", payProperties.getCid());
         parameters.add("partner_order_id", "ORDER_ID");
         parameters.add("partner_user_id", "USER_ID");
@@ -70,8 +69,8 @@ public class KakaoPayService {
         parameters.add("vat_amount", "200");
         parameters.add("tax_free_amount", "0");
         parameters.add("approval_url", "http://localhost:8080/payment/success");
-        parameters.add("fail_url", "http://localhost:8080/payment/fail");
         parameters.add("cancel_url", "http://localhost:8080/payment/cancel");
+        parameters.add("fail_url", "http://localhost:8080/payment/fail");
 
         HttpEntity<MultiValueMap<String, String>> requestEntity = new HttpEntity<>(parameters, getHeaders());
 
@@ -125,22 +124,23 @@ public class KakaoPayService {
 //    }
     
     
-    public KakaoApproveResponse approveResponse(String tid, String pgToken) {
+    public KakaoApproveResponse approveResponse(String pgToken, HotelDto bookingItem) {
         Map<String, String> parameters = new HashMap<>();
         parameters.put("cid", payProperties.getCid());
-        parameters.put("tid", tid);
-        parameters.put("partner_order_id", "ORDER_ID");
+        parameters.put("tid", kakaoReady.getTid());
+        parameters.put("partner_order_id", "ORDER_ID"); // 나중에 bookingItem에서 가져와도 됨
         parameters.put("partner_user_id", "USER_ID");
         parameters.put("pg_token", pgToken);
 
         HttpEntity<Map<String, String>> requestEntity = new HttpEntity<>(parameters, this.getHeaders());
 
         return restTemplate.postForObject(
-                "https://kapi.kakao.com/v1/payment/approve",
-                requestEntity,
-                KakaoApproveResponse.class
+            "https://kapi.kakao.com/v1/payment/approve",
+            requestEntity,
+            KakaoApproveResponse.class
         );
     }
+
 
 
 }

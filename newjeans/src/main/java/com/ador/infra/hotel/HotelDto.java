@@ -129,7 +129,7 @@ public class HotelDto {
 	private String roomImg03; 
     
 	// 카카오페이
-	private String bookingStatus;
+	private Integer bookingStatus;
 	
 	
 	//--
@@ -673,10 +673,10 @@ public class HotelDto {
 	public void setHtmEmail(String htmEmail) {
 		this.htmEmail = htmEmail;
 	}
-	public String getBookingStatus() {
+	public Integer getBookingStatus() {
 		return bookingStatus;
 	}
-	public void setBookingStatus(String bookingStatus) {
+	public void setBookingStatus(Integer bookingStatus) {
 		this.bookingStatus = bookingStatus;
 	}
 	

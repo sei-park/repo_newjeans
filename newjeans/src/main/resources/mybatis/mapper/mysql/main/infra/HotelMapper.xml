@@ -743,8 +743,26 @@
 		limit 4
     </select> 
     
-
- 
+    <!-- 카카오페이 -->
+ 	<insert id="insertBooking">
+ 		insert into hotelbooking (
+ 			htbseq, 
+ 			hotelRoom_htrseq, 
+ 			hotelMember_htmSeq,
+            htbcheckIn, 
+            htbcheckOut, 
+            htbTotalPrice,
+        	bookingStatus
+ 		) values (
+ 			#{htbseq},
+ 			#{hotelRoom_htrseq},
+ 			#{hotelMember_htmSeq},
+ 			#{htbcheckIn},
+ 			#{htbcheckOut},
+ 			#{htbTotalPrice},
+ 			#{bookingStatus}
+ 		)
+ 	</insert>
 
 
 

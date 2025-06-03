@@ -220,7 +220,10 @@ public class HotelService {
  		return hotelDao.bestHotelList(hotelDto);
  	}
  	
- 
+ 	// 카카오페이
+ 	public void insertBooking(HotelDto hotelDto) {
+ 	    hotelDao.insertBooking(hotelDto);
+ 	}
 
  	
 	
