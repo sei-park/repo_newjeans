@@ -73,22 +73,22 @@ public class KakaoPayController {
     /**
      * 결제성공
      */
-    @PostMapping("/kakaoPay/success")
+    @GetMapping("/kakaoPay/success")
     public String afterPayRequest(@RequestParam("pg_token") String pgToken, HttpSession session) {
         HotelDto bookingItem = (HotelDto) session.getAttribute("bookingItem");
 
         if (bookingItem == null) {
             return "error";
         }
-
+        
         KakaoApproveResponse kakaoApprove = kakaoPayService.approveResponse(pgToken, bookingItem);
 
         // 결제 상태 저장 (1: 결제완료)
         bookingItem.setBookingStatus(1);
-        hotelService.insertBooking(bookingItem);
+        hotelService.insertBooking(bookingItem); 
 
         session.removeAttribute("bookingItem");
-        return "redirect:/v1/infra/usrmember/usrHotelBookingList";
+		return "redirect:/v1/infra/usrmember/paymentComplete";
     }
 
 

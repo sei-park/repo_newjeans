@@ -68,7 +68,7 @@ public class KakaoPayService {
         parameters.add("total_amount", "2200");
         parameters.add("vat_amount", "200");
         parameters.add("tax_free_amount", "0");
-        parameters.add("approval_url", "http://localhost:8080/payment/success");
+        parameters.add("approval_url", "http://localhost:8080/v1/infra/usrmember/paymentComplete");
         parameters.add("cancel_url", "http://localhost:8080/payment/cancel");
         parameters.add("fail_url", "http://localhost:8080/payment/fail");
 
