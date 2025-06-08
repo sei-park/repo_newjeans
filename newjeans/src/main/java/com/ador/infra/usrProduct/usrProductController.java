@@ -203,7 +203,9 @@ public class usrProductController {
 		model.addAttribute("hotelItem", hotelService.paymentHotelSelectOne(hotelDto)); // hotel 정보 출력 
 		
 		System.out.println("호텔 룸 결제 페이지 확인");
-		
+		HotelDto bookingItem = hotelService.paymentSelectOne(hotelDto);
+		System.out.println("총 결제 금액 : " + bookingItem.getHtbTotalPrice());
+		  
 		return "usr/v1/infra/usrmember/usrHotelBooking";
 	}	
 	

@@ -54,10 +54,13 @@ public class KakaoPayService {
      */
     public KakaoReadyResponse kakaoPayReady(HotelDto bookingItem) {
     	
+    	System.out.println("호텔 금액 확인 : " + bookingItem.getHtbTotalPrice());
+    	
         HttpHeaders headers = new HttpHeaders();
         headers.set("Authorization", "KakaoAK " + payProperties.getAdminKey());
         headers.setContentType(MediaType.APPLICATION_FORM_URLENCODED);
         headers.setAccept(Collections.singletonList(MediaType.APPLICATION_JSON));
+        
     	
         MultiValueMap<String, String> parameters = new LinkedMultiValueMap<>();
         parameters.add("cid", payProperties.getCid());
@@ -65,7 +68,15 @@ public class KakaoPayService {
         parameters.add("partner_user_id", "USER_ID");
         parameters.add("item_name", "ITEM_NAME");
         parameters.add("quantity", "1");
-        parameters.add("total_amount", "2200");
+        //parameters.add("total_amount", "2200");
+        
+        Integer totalPrice = bookingItem.getHtbTotalPrice();
+        if (totalPrice == null) {
+            totalPrice = 1000; // 기본값
+        }
+        
+        parameters.add("total_amount", String.valueOf(totalPrice));
+        
         parameters.add("vat_amount", "200");
         parameters.add("tax_free_amount", "0");
         parameters.add("approval_url", "http://localhost:8080/v1/infra/usrmember/paymentComplete");
