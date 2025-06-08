@@ -178,8 +178,8 @@ public class usrProductController {
 	    	hotelDto.setMenuSeqs(menuSeqs);	// shopDto에 menuSeqs 필드 추가
 			
 			// totalPrice 값 설정 (자동으로 폼에서 전달된 값이 hotelDto로 바인딩됨)
-			System.out.println("총 금액: " + hotelDto.getHtbTotalPrice()); // 확인용 출력
-			
+			System.out.println("총 금액: " + hotelDto.getHtbTotalPrice()); // 확인용 출력 
+			  
 			// 실제 BookingInsert와 관련된 서비스 호출
 			hotelService.hotelBookingInsert(hotelDto);
 			hotelService.hotelBookingMenuInsert(hotelDto);
@@ -211,6 +211,8 @@ public class usrProductController {
 	@RequestMapping(value="/v1/infra/usrmember/usrHotelBookingUpdt")
 	public String usrHotelBookingUpdt(HotelDto hotelDto) {
 		
+		System.out.println("호텔 결제 정보 Controller");
+		
 		hotelService.bookingUpdate(hotelDto);
 		return "usr/v1/infra/usrmember/paymentComplete";
 	}  
@@ -237,7 +239,7 @@ public class usrProductController {
 	    // 조회한 데이터를 모델에 추가
 	    //model.addAttribute("bookingHistoryList", bookingHistoryList);
 	    
-	    hotelVo.setParamsPaging(hotelService.bookingHistorySelectOneCount(hotelVo));
+	    hotelVo.setParamsPaging(hotelService.bookingHistorySelectOneCount(hotelVo)); 
 	    
 	    if(hotelVo.getTotalRows() > 0) {
 	    	model.addAttribute("bookingHistoryList", hotelService.bookingHistorySelectList(hotelVo));

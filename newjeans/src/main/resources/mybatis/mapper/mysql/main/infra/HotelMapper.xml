@@ -555,7 +555,7 @@
 				#{htbcheckOut},
 				#{htbTotalPrice},
 				null,
-				null,
+				now(),
 				now(),
 				now(),
 				0,
