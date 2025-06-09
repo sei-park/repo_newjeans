@@ -59,15 +59,35 @@ public class KakaoPayController {
     
     
     // 세션에 저장
-    @RequestMapping("/kakaoPay")
-    public String kakaoPayReady(HttpSession session, HotelDto bookingItem) {
-    	
-        session.setAttribute("bookingItem", bookingItem); // 결제에 필요한 정보 세션에 저장
-        KakaoReadyResponse kakaoReady = kakaoPayService.kakaoPayReady(bookingItem);
-        return "redirect:" + kakaoReady.getNext_redirect_pc_url();
-        
-    }
+//    @RequestMapping("/kakaoPay")
+//    public String kakaoPayReady(HttpSession session, HotelDto bookingItem) {
+//    	
+//    	 //DB에서 bookingItem을 다시 조회해서 완전한 정보 확보
+//        HotelDto fullBookingItem = hotelService.paymentSelectOne(bookingItem);
+//
+//        System.out.println("카카오페이 요청 직전 총 결제 금액: " + fullBookingItem.getHtbTotalPrice());
+//    	
+//        session.setAttribute("bookingItem", bookingItem); // 결제에 필요한 정보 세션에 저장
+//        KakaoReadyResponse kakaoReady = kakaoPayService.kakaoPayReady(bookingItem);
+//        return "redirect:" + kakaoReady.getNext_redirect_pc_url();
+//        
+//    }
+	
+	@RequestMapping("/kakaoPay")
+	public String kakaoPayReady(HttpSession session, @RequestParam("htbseq") String htbseq) {
+	    HotelDto tmp = new HotelDto();
+	    tmp.setHtbseq(htbseq);
+	    HotelDto full = hotelService.paymentSelectOne(tmp);  // DB에서 완전한 데이터 가져오기
 
+	    System.out.println("총 결제 금액 (controller): " + full.getHtbTotalPrice());
+
+	    session.setAttribute("bookingItem", full);  // 세션에 저장
+	    KakaoReadyResponse kakaoReady = kakaoPayService.kakaoPayReady(full);
+	    return "redirect:" + kakaoReady.getNext_redirect_pc_url();
+	}
+
+	
+	
 
     
     /**
