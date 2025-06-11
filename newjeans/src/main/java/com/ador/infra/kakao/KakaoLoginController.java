@@ -31,7 +31,7 @@ public class KakaoLoginController {
 		
 	    if (state != null) {
 		        session.setAttribute("kakao_redirect", state);  // 세션에 저장
-		}
+		}   
 		
         String redirectUri = "http://localhost:8080/auth/login/kakao"; // 카카오 로그인 후 리다이렉트될 URI
         String clientId = "c8323bd1164b06cbdaa6e19f1382b07e"; // 카카오 애플리케이션의 REST API
