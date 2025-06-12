@@ -49,7 +49,7 @@ public class KakaoLoginController {
     public String kakaoCallback(@RequestParam("code") String code,
             @RequestParam(value = "state", required = false) String state,
             HttpSession session) {
-    	
+    	   
     	
         try {
             // 1. Access Token 요청
