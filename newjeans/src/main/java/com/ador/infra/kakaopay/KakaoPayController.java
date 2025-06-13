@@ -33,91 +33,58 @@ public class KakaoPayController {
 	
 	
 	 /**    
-     * 결제요청
+     * 결제 요청 (결제창 이동)
      */
-//    @PostMapping("/ready")
-//    public KakaoReadyResponse readyToKakaoPay() {
-//
-//        return kakaoPayService.kakaoPayReady();
-//    }
-    
-    
-//    @PostMapping("/kakaoPay/ready")
-//    public void kakaoPayReady(@RequestParam("htbseq") String htbseq, HttpServletResponse response) throws IOException {
-//        HotelDto hotelDto = new HotelDto();
-//        hotelDto.setHtbseq(htbseq);
-//
-//        // 예약 정보 조회 (금액, 객실명 등)
-//        HotelDto bookingItem = hotelService.paymentSelectOne(hotelDto);
-//
-//        // 결제 요청 (카카오페이 결제 준비)
-//        KakaoReadyResponse kakaoReady = kakaoPayService.kakaoPayReady(bookingItem);
-//
-//        // 카카오페이 결제 URL로 리다이렉트
-//        response.sendRedirect(kakaoReady.getNext_redirect_pc_url());
-//    }
-    
-    
-    // 세션에 저장
-//    @RequestMapping("/kakaoPay")
-//    public String kakaoPayReady(HttpSession session, HotelDto bookingItem) {
-//    	
-//    	 //DB에서 bookingItem을 다시 조회해서 완전한 정보 확보
-//        HotelDto fullBookingItem = hotelService.paymentSelectOne(bookingItem);
-//
-//        System.out.println("카카오페이 요청 직전 총 결제 금액: " + fullBookingItem.getHtbTotalPrice());
-//    	
-//        session.setAttribute("bookingItem", bookingItem); // 결제에 필요한 정보 세션에 저장
-//        KakaoReadyResponse kakaoReady = kakaoPayService.kakaoPayReady(bookingItem);
-//        return "redirect:" + kakaoReady.getNext_redirect_pc_url();
-//        
-//    }
-	
 	@RequestMapping("/kakaoPay")
 	public String kakaoPayReady(HttpSession session, @RequestParam("htbseq") String htbseq) {
+		
 	    HotelDto tmp = new HotelDto();
 	    tmp.setHtbseq(htbseq);
+	    
+	    // DB에서 결제에 필요한 전체 정보 조회
 	    HotelDto full = hotelService.paymentSelectOne(tmp);  // DB에서 완전한 데이터 가져오기
 
 	    System.out.println("총 결제 금액 (controller): " + full.getHtbTotalPrice());
-
-	    session.setAttribute("bookingItem", full);  // 세션에 저장
+	    
+	    // 세션에 결제 정보 저장
+	    session.setAttribute("bookingItem", full);  
+	    
+	    // 결제 준비 요청 후 결제 URL 반환
 	    KakaoReadyResponse kakaoReady = kakaoPayService.kakaoPayReady(full);
+	     
+	    // 사용자 브라우저를 결제창 URL로 리다이렉트
 	    return "redirect:" + kakaoReady.getNext_redirect_pc_url();
 	}
 
-	
-	
 
     
     /**
-     * 결제성공
+     * 결제 성공 콜백 처리
      */
     @GetMapping("/kakaoPay/success")
     public String afterPayRequest(@RequestParam("pg_token") String pgToken, HttpSession session) {
+    	
         HotelDto bookingItem = (HotelDto) session.getAttribute("bookingItem");
 
         if (bookingItem == null) {
             return "error";
         }
         
+        // 결제 승인 요청
         KakaoApproveResponse kakaoApprove = kakaoPayService.approveResponse(pgToken, bookingItem);
 
-        // 결제 상태 저장 (1: 결제완료)
+        // 결제 상태 업데이트 후 DB 저장
         bookingItem.setBookingStatus(1);
         hotelService.insertBooking(bookingItem); 
-
+        
+        // 세션에서 결제 정보 제거
         session.removeAttribute("bookingItem");
+        
 		return "redirect:/v1/infra/usrmember/paymentComplete";
     }
 
-
+   
   
-
-    
-    
-    
-	
     /**
      * 결제 진행 중 취소
      */
@@ -129,7 +96,7 @@ public class KakaoPayController {
 
     
     /**
-     * 결제실패
+     * 결제 실패
      */
     @GetMapping("/fail")
     public void fail() {
