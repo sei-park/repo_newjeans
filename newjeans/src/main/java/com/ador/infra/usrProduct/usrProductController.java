@@ -104,15 +104,6 @@ public class usrProductController {
 	    hotelReviewDto.setHtrId(sessIdUsr); // 리뷰 아이디
 	    //hotelReviewDto.setHtmId(sessIdUsr);
 	   
-	    
-//	    String sessNameUsr = (String) httpSession.getAttribute("sessNameUsr");
-//	    String sessEmailUsr = (String) httpSession.getAttribute("sessEmailUsr");
-//	    	
-	   // hotelReviewDto.setHotel_seq(hotelReviewDto.getHotel_seq()); 
-	   // hotelReviewDto.setHotel_seq(htseq);
-	    
-//	    hotelReviewDto.setHotelmember_htmSeq(sessSeqUsr);
-	    
 		
 	    int result = hotelReviewService.hotelReviewInsert(hotelReviewDto);
 	    
@@ -126,21 +117,6 @@ public class usrProductController {
 	        System.out.println("댓글 등록 실패");
 	     }
 	    
-//	    if (result > 0) {
-//	        // 방금 삽입된 데이터 가져오기
-//	        HotelReviewDto savedReview = hotelReviewService.getLatestReviewByUser(sessIdUsr, htseq);
-//
-//	        response.put("success", true);
-//	        response.put("htrecomments", savedReview.getHtrecomments());
-//	        response.put("htrestars", savedReview.getHtrestars());
-//	        response.put("htrId", savedReview.getHtrId());
-//	        response.put("htreRegDate", savedReview.getHtreRegDate()); // 등록일
-//	    } else {
-//	        response.put("success", false);
-//	        response.put("message", "댓글 등록 실패");
-//	    }
-	    
-
 	    
 	    return response;  
 		
@@ -155,20 +131,6 @@ public class usrProductController {
 		
 		// 세션에서 sessSeqUsr 값 가져오기
 	    String sessSeqUsr = (String) httpSession.getAttribute("sessSeqUsr"); 
-	    
-//	    if(sessSeqUsr == null) {
-//	        // 세션에 사용자 정보가 없으면 로그인 페이지로 리다이렉트
-//	        return "redirect:/v1/infra/usrmember/usrSignin";
-//	    } 
-//	
-//	    // 로그인이 된 경우: 세션 정보를 활용해 예약 처리
-//	    hotelDto.setHotelmember_htmSeq(sessSeqUsr);
-//	    hotelDto.setMenuSeqs(menuSeqs); // HotelDto에 menuSeqs 필드 설정
-//	    
-//	    // 예약 삽입 처리
-//	    hotelService.hotelBookingInsert(hotelDto);
-//	    hotelService.hotelBookingMenuInsert(hotelDto);
-	  
 	    
 	    if (sessSeqUsr != null) {
 			// hotelMember_htmSeq로 사용되는 값 설정

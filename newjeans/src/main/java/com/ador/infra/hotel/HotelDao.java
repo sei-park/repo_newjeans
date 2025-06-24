@@ -34,7 +34,7 @@ public interface HotelDao {
 	// hotel, hotelroom 연결
 	public List<HotelDto> selectListHotelRoom();
 
-	// S3 파일첨부
+	// S3 파일첨부   
 	public int insertUploaded(HotelDto hotelDto);
 
 	// 예약 insert
