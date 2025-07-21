@@ -103,7 +103,7 @@ public class usrProductController {
 	    
 	    hotelReviewDto.setHtrId(sessIdUsr); // 리뷰 아이디
 	    //hotelReviewDto.setHtmId(sessIdUsr);
-	   
+	        
 		
 	    int result = hotelReviewService.hotelReviewInsert(hotelReviewDto);
 	    
