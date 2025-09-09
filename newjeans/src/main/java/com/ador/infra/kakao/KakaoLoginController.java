@@ -30,7 +30,7 @@ public class KakaoLoginController {
     public String KakaoRedirect(@RequestParam(value = "state", required = false) String state, HttpSession session) {
 		
 	    if (state != null) {
-		        session.setAttribute("kakao_redirect", state);  // 세션에 저장
+		        session.setAttribute("kakao_redirect", state);  // 세션에 저장   
 		}   
 		
         String redirectUri = "http://localhost:8080/auth/login/kakao"; // 카카오 로그인 후 리다이렉트될 URI
